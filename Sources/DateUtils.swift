@@ -8,7 +8,7 @@
 
 import Foundation
 
-open enum DateFormateType:String{
+public enum DateFormateType:String{
     case YMDHMS = "yyyy-MM-dd HH:mm:ss" //年月日时分秒 2019-01-01 12:00:00
     case YMDHM = "yyyy-MM-dd HH:mm"  // 年月日时分 2019-01-01 12:00
     case MDHM = "MM-dd HH:mm"  // 月日时分 01-01 12:00
