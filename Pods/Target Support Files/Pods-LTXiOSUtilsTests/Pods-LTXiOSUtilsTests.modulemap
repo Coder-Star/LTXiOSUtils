@@ -1,0 +1,6 @@
+framework module Pods_LTXiOSUtilsTests {
+  umbrella header "Pods-LTXiOSUtilsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
