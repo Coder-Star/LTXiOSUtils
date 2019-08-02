@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class ColorUtils:NSObject{
+open class ColorUtils:NSObject{
     
 }
 
 extension UIColor{
     // Hex String -> UIColor
-    convenience init(hexString: String,alpha:CGFloat = 1.0) {
+    public convenience init(hexString: String,alpha:CGFloat = 1.0) {
         var hexString = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
         hexString = hexString.lowercased()
         
@@ -48,7 +48,7 @@ extension UIColor{
     }
     
     // UIColor -> Hex String
-    var hexString: String? {
+  public var hexString: String? {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
@@ -80,7 +80,7 @@ extension UIColor{
     }
     
     // color to image
-    func toImage(size: CGSize) -> UIImage{
+   public func toImage(size: CGSize) -> UIImage{
         let rect: CGRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContext(rect.size)
         let context: CGContext = UIGraphicsGetCurrentContext()!
