@@ -137,11 +137,9 @@
 		DC4AB9BB22F4606000A5F003 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */,
+				DC4AB9EC22F461A700A5F003 /* Media */,
+				DC4AB9EB22F4618400A5F003 /* System */,
 				DC4AB9BE22F4606000A5F003 /* ViewController.swift */,
-				DC4AB9C022F4606000A5F003 /* Main.storyboard */,
-				DC4AB9C322F4606100A5F003 /* Assets.xcassets */,
-				DC4AB9C522F4606100A5F003 /* LaunchScreen.storyboard */,
 				DC4AB9C822F4606100A5F003 /* Info.plist */,
 			);
 			path = LTXiOSUtilsDemo;
@@ -165,6 +163,24 @@
 			path = LTXiOSUtilsDemoUITests;
 			sourceTree = "<group>";
 		};
+		DC4AB9EB22F4618400A5F003 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				DC4AB9C522F4606100A5F003 /* LaunchScreen.storyboard */,
+				DC4AB9C022F4606000A5F003 /* Main.storyboard */,
+				DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		DC4AB9EC22F461A700A5F003 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				DC4AB9C322F4606100A5F003 /* Assets.xcassets */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,6 +192,7 @@
 				DC4AB9B522F4606000A5F003 /* Sources */,
 				DC4AB9B622F4606000A5F003 /* Frameworks */,
 				DC4AB9B722F4606000A5F003 /* Resources */,
+				D47B8AAABCFB60037CAB79AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -337,6 +354,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D47B8AAABCFB60037CAB79AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LTXiOSUtils/LTXiOSUtils.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTXiOSUtils.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D726E9C0B3EDDC246A438589 /* [CP] Check Pods Manifest.lock */ = {
