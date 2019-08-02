@@ -16,8 +16,6 @@
 		DC0794D222F41EA40020667C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0794D022F41EA40020667C /* LaunchScreen.storyboard */; };
 		DC0794DD22F41EA40020667C /* LTXiOSUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0794DC22F41EA40020667C /* LTXiOSUtilsTests.swift */; };
 		DC0794E822F41EA40020667C /* LTXiOSUtilsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0794E722F41EA40020667C /* LTXiOSUtilsUITests.swift */; };
-		DC0794F922F4263F0020667C /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0794F822F4263F0020667C /* DateUtils.swift */; };
-		DC4AB97522F4283000A5F003 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB97422F4283000A5F003 /* ColorUtils.swift */; };
 		F720B4A71B0C6F75CFCD8FC8 /* Pods_LTXiOSUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29551CF652E382D13D9D52B8 /* Pods_LTXiOSUtils.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +56,6 @@
 		DC0794E322F41EA40020667C /* LTXiOSUtilsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTXiOSUtilsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0794E722F41EA40020667C /* LTXiOSUtilsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTXiOSUtilsUITests.swift; sourceTree = "<group>"; };
 		DC0794E922F41EA40020667C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC0794F822F4263F0020667C /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
-		DC4AB97422F4283000A5F003 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		E3C2431F2F5340408B64BCA6 /* Pods_LTXiOSUtilsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A1E13F481E727CC6FF6BF7 /* Pods-LTXiOSUtilsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsUITests/Pods-LTXiOSUtilsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCD6192F2404D4D2BCD77DE4 /* Pods-LTXiOSUtilsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsTests/Pods-LTXiOSUtilsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,7 +115,6 @@
 		DC0794BB22F41EA40020667C = {
 			isa = PBXGroup;
 			children = (
-				DC0794F722F41FAD0020667C /* Sources */,
 				DC0794C622F41EA40020667C /* LTXiOSUtils */,
 				DC0794DB22F41EA40020667C /* LTXiOSUtilsTests */,
 				DC0794E622F41EA40020667C /* LTXiOSUtilsUITests */,
@@ -184,15 +179,6 @@
 				DC0794CE22F41EA40020667C /* Assets.xcassets */,
 			);
 			path = Media;
-			sourceTree = "<group>";
-		};
-		DC0794F722F41FAD0020667C /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				DC0794F822F4263F0020667C /* DateUtils.swift */,
-				DC4AB97422F4283000A5F003 /* ColorUtils.swift */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,9 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0794CA22F41EA40020667C /* ViewController.swift in Sources */,
-				DC0794F922F4263F0020667C /* DateUtils.swift in Sources */,
 				DC0794C822F41EA40020667C /* AppDelegate.swift in Sources */,
-				DC4AB97522F4283000A5F003 /* ColorUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
