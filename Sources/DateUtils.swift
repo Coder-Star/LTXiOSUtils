@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum DateFormateType:String{
+open enum DateFormateType:String{
     case YMDHMS = "yyyy-MM-dd HH:mm:ss" //年月日时分秒 2019-01-01 12:00:00
     case YMDHM = "yyyy-MM-dd HH:mm"  // 年月日时分 2019-01-01 12:00
     case MDHM = "MM-dd HH:mm"  // 月日时分 01-01 12:00
@@ -19,13 +19,13 @@ public enum DateFormateType:String{
     case HM = "HH:mm" // 时分 12:00
 }
 
-class DateUtils:NSObject{
+open class DateUtils:NSObject{
     
 }
 
 extension Date{
     //根据格式对日期进行格式化
-    func formatDate(format: DateFormateType) -> String {
+   public func formatDate(format: DateFormateType) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
         dateFormatter.timeZone = TimeZone.current
