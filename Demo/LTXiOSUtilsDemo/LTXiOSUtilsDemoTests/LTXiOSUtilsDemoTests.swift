@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import LTXiOSUtils
 @testable import LTXiOSUtilsDemo
 
 class LTXiOSUtilsDemoTests: XCTestCase {
