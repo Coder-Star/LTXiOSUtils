@@ -1,15 +1,15 @@
 //
-//  LTXiOSUtilsTests.swift
-//  LTXiOSUtilsTests
+//  LTXiOSUtilsDemoTests.swift
+//  LTXiOSUtilsDemoTests
 //
 //  Created by 李天星 on 2019/8/2.
 //  Copyright © 2019年 李天星. All rights reserved.
 //
 
 import XCTest
-@testable import LTXiOSUtils
+@testable import LTXiOSUtilsDemo
 
-class LTXiOSUtilsTests: XCTestCase {
+class LTXiOSUtilsDemoTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
