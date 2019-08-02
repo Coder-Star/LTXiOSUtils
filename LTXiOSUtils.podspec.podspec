@@ -8,6 +8,5 @@
     s.author       = { "CoderStar" => "1340529758@qq.com" }
     s.source       = { :git => "https://github.com/Coder-Star/LTXiOSUtils.git", :tag => s.version }
     s.source_files = "Sources/*"
-    s.frameworks   = 'Foundation', 'UIKit'
     s.requires_arc = true
 end
