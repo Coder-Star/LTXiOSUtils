@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "LTXiOSUtils"
-    s.version      = "1.0.0"
+    s.version      = "1.0.1"
     s.ios.deployment_target = '10.0'
     s.summary      = "一些工具类以及类扩展"
     s.homepage     = "https://github.com/Coder-Star"
