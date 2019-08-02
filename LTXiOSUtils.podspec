@@ -9,4 +9,7 @@ Pod::Spec.new do |s|
     s.source       = { :git => "https://github.com/Coder-Star/LTXiOSUtils.git", :tag => s.version }
     s.source_files = "Sources/*"
     s.requires_arc = true
+    if s.respond_to? 'swift_version'
+      s.swift_version = "4.2"
+    end
 end
