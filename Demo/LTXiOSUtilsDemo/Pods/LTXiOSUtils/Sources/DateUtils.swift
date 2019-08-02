@@ -19,13 +19,13 @@ public enum DateFormateType:String{
     case HM = "HH:mm" // 时分 12:00
 }
 
-class DateUtils:NSObject{
+open class DateUtils:NSObject{
     
 }
 
 extension Date{
     //根据格式对日期进行格式化
-    func formatDate(format: DateFormateType) -> String {
+   public func formatDate(format: DateFormateType) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
         dateFormatter.timeZone = TimeZone.current

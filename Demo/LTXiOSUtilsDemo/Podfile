@@ -6,7 +6,7 @@ target 'LTXiOSUtilsDemo' do
   use_frameworks!
 
   # Pods for LTXiOSUtilsDemo
-  pod 'LTXiOSUtils'
+  pod 'LTXiOSUtils','~> 1.0.2'
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths
     # Pods for testing
