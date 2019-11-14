@@ -2,6 +2,8 @@
 # platform :ios, '9.0'
 
 target 'LTXiOSUtilsDemo' do
+  source 'https://github.com/CocoaPods/Specs.git' #公有库地址
+  source 'https://github.com/Coder-Star/LTXSpecs.git' #私有库地址
   use_frameworks!
 
   pod 'LTXiOSUtils',:path => '../'
