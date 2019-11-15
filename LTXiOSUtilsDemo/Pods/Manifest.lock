@@ -1,5 +1,7 @@
 PODS:
-  - LTXiOSUtils (1.0.2)
+  - LTXiOSUtils (1.0.2):
+    - LTXiOSUtils/Utils (= 1.0.2)
+  - LTXiOSUtils/Utils (1.0.2)
 
 DEPENDENCIES:
   - LTXiOSUtils (from `../`)
@@ -9,8 +11,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LTXiOSUtils: a1ef4f54a133398d77eb72d453464b871f1815c9
+  LTXiOSUtils: d48b27d03673cc9aa4cbd1c455e4da782b2a088d
 
-PODFILE CHECKSUM: 70cf1ffdf69684e883a620f565a5ab1c8e199f9a
+PODFILE CHECKSUM: 0102e8f35b85524031d4a4445da82219f388a1ca
 
 COCOAPODS: 1.7.5
