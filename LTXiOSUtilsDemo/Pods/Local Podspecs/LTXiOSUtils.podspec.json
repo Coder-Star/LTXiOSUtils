@@ -4,7 +4,7 @@
   "platforms": {
     "ios": "10.0"
   },
-  "summary": "一些工具类以及类扩展",
+  "summary": "通用工具类以及组件的整合、封装",
   "homepage": "https://github.com/Coder-Star",
   "license": {
     "type": "MIT",
@@ -14,11 +14,16 @@
     "CoderStar": "1340529758@qq.com"
   },
   "source": {
-    "git": "https://github.com/Coder-Star/LTXiOSUtils.git",
+    "git": "local",
     "tag": "1.0.2"
   },
-  "source_files": "Sources/*",
   "requires_arc": true,
   "swift_versions": "4.2",
+  "subspecs": [
+    {
+      "name": "Utils",
+      "source_files": "LTXiOSUtils/Classes/Utils/*.swift"
+    }
+  ],
   "swift_version": "4.2"
 }
