@@ -13,10 +13,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let date = Date().formatDate(format: .HM)
-        print(date)
     }
 
-
 }
-

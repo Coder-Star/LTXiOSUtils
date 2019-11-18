@@ -1,5 +1,5 @@
 //
-//  ColorUtils.swift
+//  ColorUtil.swift
 //  LTXiOSUtils
 //  颜色工具类以及扩展
 //  Created by 李天星 on 2019/8/2.
@@ -9,57 +9,63 @@
 import Foundation
 import UIKit
 
-open class ColorUtils:NSObject{
-    
+/// 颜色工具类
+open class ColorUtil:NSObject {
+
 }
 
-extension UIColor{
-    // Hex String -> UIColor
+// MARK: - 颜色扩展
+extension UIColor {
+
+    /// 颜色hex值转颜色，如果hex值去除头部符号后不满6位，返回默认色-白色
+    ///
+    /// - Parameters:
+    ///   - hexString: hex值
+    ///   - alpha: 透明度
     public convenience init(hexString: String,alpha:CGFloat = 1.0) {
         var hexString = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
         hexString = hexString.lowercased()
-        
-        if hexString.hasPrefix("#"){
+
+        if hexString.hasPrefix("#") {
             hexString = String(hexString.dropFirst())
         }
-        if hexString.hasPrefix("0x"){
+        if hexString.hasPrefix("0x") {
             hexString = String(hexString.dropFirst(2))
         }
-        //hex值少于6位，返回黑色
-        if hexString.count < 6{
-            self.init(red: 0, green: 0, blue: 0, alpha: alpha)
-        }else{
+        //hex值少于6位，返回白色
+        if hexString.count < 6 {
+            self.init(red: 255, green: 255, blue: 255, alpha: alpha)
+        } else {
             let scanner = Scanner(string: hexString)
             var color: UInt32 = 0
             scanner.scanHexInt32(&color)
-            
+
             let mask = 0x000000FF
             let r = Int(color >> 16) & mask
             let g = Int(color >> 8) & mask
             let b = Int(color) & mask
-            
+
             let red   = CGFloat(r) / 255.0
             let green = CGFloat(g) / 255.0
             let blue  = CGFloat(b) / 255.0
-            
+
             self.init(red: red, green: green, blue: blue, alpha: alpha)
         }
-        
     }
-    
-    // UIColor -> Hex String
-  public var hexString: String? {
+
+    /// 颜色转hex值
+    public var hexString: String? {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
-        
+
         let multiplier = CGFloat(255.999999)
-        
+
         guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
             return nil
         }
-        
+
         if alpha == 1.0 {
             return String(
                 format: "#%02lX%02lX%02lX",
@@ -67,8 +73,7 @@ extension UIColor{
                 Int(green * multiplier),
                 Int(blue * multiplier)
             )
-        }
-        else {
+        } else {
             return String(
                 format: "#%02lX%02lX%02lX%02lX",
                 Int(red * multiplier),
@@ -78,9 +83,12 @@ extension UIColor{
             )
         }
     }
-    
-    // color to image
-   public func toImage(size: CGSize) -> UIImage{
+
+    /// 颜色生成指定大小的UIImage
+    ///
+    /// - Parameter size: 图片尺寸
+    /// - Returns: 图片
+    public func toImage(size: CGSize) -> UIImage? {
         let rect: CGRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContext(rect.size)
         let context: CGContext = UIGraphicsGetCurrentContext()!
@@ -88,6 +96,6 @@ extension UIColor{
         context.fill(rect)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsGetCurrentContext()
-        return image!
+        return image
     }
 }
