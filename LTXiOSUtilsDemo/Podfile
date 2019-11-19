@@ -20,3 +20,24 @@ target 'LTXiOSUtilsDemo' do
   end
 
 end
+
+swift_42 = [
+'SwifterSwift',
+'SwiftyJSON',
+]
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    swift_version = nil
+
+    if swift_42.include?(target.name)
+      swift_version = '4.2'
+    end
+
+    if swift_version
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = swift_version
+      end
+    end
+  end
+end

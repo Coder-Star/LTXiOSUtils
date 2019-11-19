@@ -1,5 +1,5 @@
 //
-//  ColorUtil.swift
+//  ColorExtensions.swift
 //  LTXiOSUtils
 //  颜色工具类以及扩展
 //  Created by 李天星 on 2019/8/2.
@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 
-/// 颜色工具类
-open class ColorUtil:NSObject {
-
-}
-
 // MARK: - 颜色扩展
 extension UIColor {
 
@@ -22,7 +17,7 @@ extension UIColor {
     /// - Parameters:
     ///   - hexString: hex值
     ///   - alpha: 透明度
-    public convenience init(hexString: String,alpha:CGFloat = 1.0) {
+    public convenience init(hexString: String, alpha: CGFloat = 1.0) {
         var hexString = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
         hexString = hexString.lowercased()
 

@@ -19,10 +19,29 @@
   },
   "requires_arc": true,
   "swift_versions": "4.2",
+  "dependencies": {
+    "SwiftyJSON": [
+      "4.2.0"
+    ],
+    "SwifterSwift": [
+      "4.6.0"
+    ],
+    "UITextView+Placeholder": [
+
+    ]
+  },
   "subspecs": [
     {
       "name": "Utils",
       "source_files": "LTXiOSUtils/Classes/Utils/*.swift"
+    },
+    {
+      "name": "Views",
+      "source_files": "LTXiOSUtils/Classes/Views/*.swift"
+    },
+    {
+      "name": "ViewControllers",
+      "source_files": "LTXiOSUtils/Classes/ViewControllers/*.swift"
     }
   ],
   "swift_version": "4.2"
