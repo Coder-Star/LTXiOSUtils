@@ -13,7 +13,16 @@ Pod::Spec.new do |s|
 
     s.dependency 'SwiftyJSON','4.2.0'
     s.dependency 'SwifterSwift','4.6.0'
+    s.dependency 'SnapKit'
+    s.dependency 'Alamofire'
+    s.dependency 'Moya'
+    s.dependency 'Kingfisher','5.9.0'
+    s.dependency 'SwiftyBeaver'
     s.dependency 'UITextView+Placeholder' #OC库
+    s.dependency 'BRPickerView' #OC库
+    s.dependency 'MBProgressHUD' #OC库
+    s.dependency 'MJRefresh'  #OC库
+    s.dependency 'ZYCornerRadius' #OC库
     
 #    s.resources     = 'Source/Resource/**/*'
 
