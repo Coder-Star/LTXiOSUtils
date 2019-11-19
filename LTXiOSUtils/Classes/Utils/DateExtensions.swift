@@ -1,17 +1,12 @@
 //
-//  DateUtil.swift
+//  DateExtensions.swift
 //  LTXiOSUtils
-//  关于时间的一些工具类与扩展
+//  时间扩展
 //  Created by 李天星 on 2019/8/2.
 //  Copyright © 2019年 李天星. All rights reserved.
 //
 
 import Foundation
-
-/// 日志工具类
-open class DateUtil:NSObject {
-
-}
 
 /// 日期格式化类型
 ///
@@ -24,7 +19,7 @@ open class DateUtil:NSObject {
 /// - MD:      月日/2019-01
 /// - HMS:     时分秒/12:00:00
 /// - HM:      时分/12:00
-public enum DateFormateType:String {
+public enum DateFormateType: String {
     case YMDHMS = "yyyy-MM-dd HH:mm:ss"
     case YMDHM = "yyyy-MM-dd HH:mm"
     case MDHM = "MM-dd HH:mm"
@@ -54,10 +49,12 @@ extension Date {
 
 }
 
-extension DispatchTime: ExpressibleByIntegerLiteral,ExpressibleByFloatLiteral {
+extension DispatchTime: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
+
     public init(integerLiteral value: Int) {
         self = DispatchTime.now() + .seconds(value)
     }
+
     public init(floatLiteral value: Double) {
         self = DispatchTime.now() + .milliseconds(Int(value * 1000))
     }
@@ -70,6 +67,6 @@ extension DispatchQueue {
     ///   - delay: 延时时间
     ///   - execute: 闭包执行
     func delay(_ delay: Double, execute: @escaping () -> Void) {
-        asyncAfter(deadline:DispatchTime.init(floatLiteral: delay), execute: execute)
+        asyncAfter(deadline: DispatchTime.init(floatLiteral: delay), execute: execute)
     }
 }

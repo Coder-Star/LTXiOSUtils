@@ -137,7 +137,7 @@
 		DC4AB9BB22F4606000A5F003 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DC4AB9EC22F461A700A5F003 /* Media */,
+				DC4AB9EC22F461A700A5F003 /* Resource */,
 				DC4AB9EB22F4618400A5F003 /* System */,
 				DC4AB9BE22F4606000A5F003 /* ViewController.swift */,
 				DC4AB9C822F4606100A5F003 /* Info.plist */,
@@ -173,12 +173,12 @@
 			path = System;
 			sourceTree = "<group>";
 		};
-		DC4AB9EC22F461A700A5F003 /* Media */ = {
+		DC4AB9EC22F461A700A5F003 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				DC4AB9C322F4606100A5F003 /* Assets.xcassets */,
 			);
-			path = Media;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
