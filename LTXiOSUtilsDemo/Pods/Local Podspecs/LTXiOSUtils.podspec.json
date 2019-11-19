@@ -26,7 +26,34 @@
     "SwifterSwift": [
       "4.6.0"
     ],
+    "SnapKit": [
+
+    ],
+    "Alamofire": [
+
+    ],
+    "Moya": [
+
+    ],
+    "Kingfisher": [
+      "5.9.0"
+    ],
+    "SwiftyBeaver": [
+
+    ],
     "UITextView+Placeholder": [
+
+    ],
+    "BRPickerView": [
+
+    ],
+    "MBProgressHUD": [
+
+    ],
+    "MJRefresh": [
+
+    ],
+    "ZYCornerRadius": [
 
     ]
   },

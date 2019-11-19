@@ -1,0 +1,6 @@
+framework module ZYCornerRadius {
+  umbrella header "ZYCornerRadius-umbrella.h"
+
+  export *
+  module * { export * }
+}

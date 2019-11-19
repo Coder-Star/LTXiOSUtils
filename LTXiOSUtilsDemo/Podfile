@@ -27,6 +27,10 @@ swift_42 = [
 'SwiftyJSON',
 'R.swift',
 'R.swift.Library',
+'Kingfisher',
+'Alamofire',
+'Moya',
+'SnapKit',
 ]
 
 post_install do |installer|
