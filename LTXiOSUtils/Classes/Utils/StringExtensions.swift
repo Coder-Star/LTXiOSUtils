@@ -53,6 +53,10 @@ extension String {
         return String(self[startStr..<endStr])
     }
 
+    /// 时间转日期
+    ///
+    /// - Parameter dateType: 日期类型
+    /// - Returns: 日期
     public func toDate(dateType: DateFormateType = .YMD) -> Date? {
         let selfLowercased = self.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().replacingOccurrences(of: "T", with: " ")
         let formatter = DateFormatter()

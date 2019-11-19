@@ -10,11 +10,13 @@
 		1DE6BC8F899BF5D1B26891B2 /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7E3B9A1FE6E5138DABE297 /* Pods_LTXiOSUtilsDemoTests.framework */; };
 		C5F09030FAB02C728C249770 /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B5530C402C1946D40DE090 /* Pods_LTXiOSUtilsDemoUITests.framework */; };
 		C66D5214375B1A7AA2E778A9 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD79B9B14BDB14BB8C00E0 /* Pods_LTXiOSUtilsDemo.framework */; };
+		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
 		DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */; };
 		DC4AB9BF22F4606000A5F003 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BE22F4606000A5F003 /* ViewController.swift */; };
 		DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC4AB9C322F4606100A5F003 /* Assets.xcassets */; };
 		DC4AB9D222F4606100A5F003 /* LTXiOSUtilsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9D122F4606100A5F003 /* LTXiOSUtilsDemoTests.swift */; };
 		DC4AB9DD22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9DC22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift */; };
+		DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC62A7C72384084A00DE7800 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,7 @@
 		7B7E3B9A1FE6E5138DABE297 /* Pods_LTXiOSUtilsDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E69F21B8737A1842F9552D7 /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B94D39D73C90A84C93A55928 /* Pods-LTXiOSUtilsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC32F1A323840A3E008D3D67 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DC4AB9B922F4606000A5F003 /* LTXiOSUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTXiOSUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC4AB9BE22F4606000A5F003 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +57,8 @@
 		DC4AB9D822F4606100A5F003 /* LTXiOSUtilsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTXiOSUtilsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4AB9DC22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTXiOSUtilsDemoUITests.swift; sourceTree = "<group>"; };
 		DC4AB9DE22F4606100A5F003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC62A7C62384084A00DE7800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FEA6FDCDB130B877B872D978 /* Pods-LTXiOSUtilsDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +142,7 @@
 				DC4AB9EB22F4618400A5F003 /* System */,
 				DC4AB9BE22F4606000A5F003 /* ViewController.swift */,
 				DC4AB9C822F4606100A5F003 /* Info.plist */,
+				DC32F1A323840A3E008D3D67 /* R.generated.swift */,
 			);
 			path = LTXiOSUtilsDemo;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				DC4AB9C322F4606100A5F003 /* Assets.xcassets */,
+				DC62A7C72384084A00DE7800 /* Localizable.strings */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -183,6 +190,7 @@
 			buildConfigurationList = DC4AB9E122F4606100A5F003 /* Build configuration list for PBXNativeTarget "LTXiOSUtilsDemo" */;
 			buildPhases = (
 				D726E9C0B3EDDC246A438589 /* [CP] Check Pods Manifest.lock */,
+				DC62A7C92384093900DE7800 /* R.swift */,
 				DC4AB9B522F4606000A5F003 /* Sources */,
 				DC4AB9B622F4606000A5F003 /* Frameworks */,
 				DC4AB9B722F4606000A5F003 /* Resources */,
@@ -266,6 +274,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = DC4AB9B022F4606000A5F003;
 			productRefGroup = DC4AB9BA22F4606000A5F003 /* Products */;
@@ -285,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */,
+				DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +398,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DC62A7C92384093900DE7800 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/LTXiOSUtilsDemo/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/LTXiOSUtilsDemo/R.generated.swift\"\n";
+		};
 		DCF41C2D2382282D00D7B13D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -415,6 +445,7 @@
 			files = (
 				DC4AB9BF22F4606000A5F003 /* ViewController.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
+				DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,11 +480,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		DC62A7C72384084A00DE7800 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC62A7C62384084A00DE7800 /* en */,
+				DC62A7C82384088400DE7800 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		DC4AB9DF22F4606100A5F003 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -515,6 +559,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

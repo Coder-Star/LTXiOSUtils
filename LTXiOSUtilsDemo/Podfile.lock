@@ -18,6 +18,9 @@ PODS:
     - SwifterSwift (= 4.6.0)
     - SwiftyJSON (= 4.2.0)
     - "UITextView+Placeholder"
+  - R.swift (5.1.0):
+    - R.swift.Library (~> 5.1.0)
+  - R.swift.Library (5.1.0)
   - SwifterSwift (4.6.0):
     - SwifterSwift/AppKit (= 4.6.0)
     - SwifterSwift/CoreGraphics (= 4.6.0)
@@ -40,9 +43,12 @@ PODS:
 
 DEPENDENCIES:
   - LTXiOSUtils (from `../`)
+  - R.swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - R.swift
+    - R.swift.Library
     - SwifterSwift
     - SwiftyJSON
     - "UITextView+Placeholder"
@@ -53,10 +59,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   LTXiOSUtils: 7aa2b2cfe060c2a3cc2e0dbb5319dd67ddf56a8e
+  R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
+  R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
 
-PODFILE CHECKSUM: e58caa001bb537369fc5662516445705e52413de
+PODFILE CHECKSUM: 41f519345b13285c584ec45a67b3f1a8dde5bb2c
 
 COCOAPODS: 1.7.5

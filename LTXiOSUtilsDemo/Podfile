@@ -8,6 +8,7 @@ target 'LTXiOSUtilsDemo' do
   use_frameworks!
 
   pod 'LTXiOSUtils',:path => '../'
+  pod 'R.swift'
 
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths
@@ -24,6 +25,8 @@ end
 swift_42 = [
 'SwifterSwift',
 'SwiftyJSON',
+'R.swift',
+'R.swift.Library',
 ]
 
 post_install do |installer|
