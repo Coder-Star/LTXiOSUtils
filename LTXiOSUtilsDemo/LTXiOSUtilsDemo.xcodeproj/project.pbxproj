@@ -12,9 +12,7 @@
 		C66D5214375B1A7AA2E778A9 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD79B9B14BDB14BB8C00E0 /* Pods_LTXiOSUtilsDemo.framework */; };
 		DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */; };
 		DC4AB9BF22F4606000A5F003 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BE22F4606000A5F003 /* ViewController.swift */; };
-		DC4AB9C222F4606000A5F003 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC4AB9C022F4606000A5F003 /* Main.storyboard */; };
 		DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC4AB9C322F4606100A5F003 /* Assets.xcassets */; };
-		DC4AB9C722F4606100A5F003 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC4AB9C522F4606100A5F003 /* LaunchScreen.storyboard */; };
 		DC4AB9D222F4606100A5F003 /* LTXiOSUtilsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9D122F4606100A5F003 /* LTXiOSUtilsDemoTests.swift */; };
 		DC4AB9DD22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9DC22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift */; };
 /* End PBXBuildFile section */
@@ -48,9 +46,7 @@
 		DC4AB9B922F4606000A5F003 /* LTXiOSUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTXiOSUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC4AB9BE22F4606000A5F003 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DC4AB9C122F4606000A5F003 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC4AB9C322F4606100A5F003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DC4AB9C622F4606100A5F003 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC4AB9C822F4606100A5F003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC4AB9CD22F4606100A5F003 /* LTXiOSUtilsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTXiOSUtilsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4AB9D122F4606100A5F003 /* LTXiOSUtilsDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTXiOSUtilsDemoTests.swift; sourceTree = "<group>"; };
@@ -166,8 +162,6 @@
 		DC4AB9EB22F4618400A5F003 /* System */ = {
 			isa = PBXGroup;
 			children = (
-				DC4AB9C522F4606100A5F003 /* LaunchScreen.storyboard */,
-				DC4AB9C022F4606000A5F003 /* Main.storyboard */,
 				DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */,
 			);
 			path = System;
@@ -290,9 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC4AB9C722F4606100A5F003 /* LaunchScreen.storyboard in Resources */,
 				DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */,
-				DC4AB9C222F4606000A5F003 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,25 +449,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		DC4AB9C022F4606000A5F003 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DC4AB9C122F4606000A5F003 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DC4AB9C522F4606100A5F003 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DC4AB9C622F4606100A5F003 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		DC4AB9DF22F4606100A5F003 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -598,6 +571,7 @@
 			baseConfigurationReference = 7E69F21B8737A1842F9552D7 /* Pods-LTXiOSUtilsDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6C67KJ54CD;
 				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
@@ -617,6 +591,7 @@
 			baseConfigurationReference = 58C69EFBC8200F3382DF3C87 /* Pods-LTXiOSUtilsDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6C67KJ54CD;
 				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
