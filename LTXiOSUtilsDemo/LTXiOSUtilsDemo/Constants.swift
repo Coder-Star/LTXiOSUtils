@@ -12,3 +12,4 @@
 @_exported import SnapKit
 @_exported import SwiftyJSON
 @_exported import UITextView_Placeholder
+@_exported import UITableView_FDTemplateLayoutCell

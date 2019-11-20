@@ -8,10 +8,10 @@
 import Foundation
 import SnapKit
 
-class BaseUIViewViewController: BaseViewController {
+class BaseUIViewController: BaseViewController {
 
     /// 基础view
-    private lazy var baseView:UIView = {
+    lazy var baseView:UIView = {
         return UIView()
     }()
 

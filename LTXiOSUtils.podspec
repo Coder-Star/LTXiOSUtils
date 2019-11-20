@@ -9,13 +9,13 @@ Pod::Spec.new do |s|
 #    s.source       = { :git => "https://github.com/Coder-Star/LTXiOSUtils.git", :tag => s.version }
     s.source       = { :git => 'local', :tag => s.version}
     s.requires_arc = true
-    s.swift_version = "4.2"  #['4.2', '5']
+    s.swift_version = ["4.2"]
 
     s.dependency 'SwiftyJSON','4.2.0'
     s.dependency 'SwifterSwift','4.6.0'
-    s.dependency 'SnapKit'
-    s.dependency 'Alamofire'
-    s.dependency 'Moya'
+    s.dependency 'SnapKit','4.2.0'
+    s.dependency 'Alamofire','4.8.2'
+    s.dependency 'Moya','12.0.1'
     s.dependency 'Kingfisher','5.9.0'
     s.dependency 'SwiftyBeaver'
     s.dependency 'UITextView+Placeholder' #OC库
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
     s.dependency 'MBProgressHUD' #OC库
     s.dependency 'MJRefresh'  #OC库
     s.dependency 'ZYCornerRadius' #OC库
-    
+    s.dependency 'UITableView+FDTemplateLayoutCell' #OC库
 #    s.resources     = 'Source/Resource/**/*'
 
     s.subspec 'Utils' do |ss1|
@@ -31,10 +31,12 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'Views' do |ss2|
+      ss2.dependency 'LTXiOSUtils/Utils'
       ss2.source_files = 'LTXiOSUtils/Classes/Views/*.swift'
     end
 
     s.subspec 'ViewControllers' do |ss3|
+      ss3.dependency 'LTXiOSUtils/Utils'
       ss3.source_files = 'LTXiOSUtils/Classes/ViewControllers/*.swift'
     end
 

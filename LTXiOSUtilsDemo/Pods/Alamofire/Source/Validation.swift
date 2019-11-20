@@ -219,10 +219,7 @@ extension DataRequest {
     /// - returns: The request.
     @discardableResult
     public func validate() -> Self {
-        let contentTypes = { [unowned self] in
-            self.acceptableContentTypes
-        }
-        return validate(statusCode: acceptableStatusCodes).validate(contentType: contentTypes())
+        return validate(statusCode: self.acceptableStatusCodes).validate(contentType: self.acceptableContentTypes)
     }
 }
 
@@ -313,9 +310,6 @@ extension DownloadRequest {
     /// - returns: The request.
     @discardableResult
     public func validate() -> Self {
-        let contentTypes = { [unowned self] in
-            self.acceptableContentTypes
-        }
-        return validate(statusCode: acceptableStatusCodes).validate(contentType: contentTypes())
+        return validate(statusCode: self.acceptableStatusCodes).validate(contentType: self.acceptableContentTypes)
     }
 }
