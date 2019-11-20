@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (4.8.2)
   - BRPickerView (2.4.2):
     - BRPickerView/AddressPickerView (= 2.4.2)
     - BRPickerView/Base (= 2.4.2)
@@ -16,7 +16,7 @@ PODS:
     - Kingfisher/Core (= 5.9.0)
   - Kingfisher/Core (5.9.0)
   - LTXiOSUtils (1.0.2):
-    - Alamofire
+    - Alamofire (= 4.8.2)
     - BRPickerView
     - Kingfisher (= 5.9.0)
     - LTXiOSUtils/Utils (= 1.0.2)
@@ -24,64 +24,70 @@ PODS:
     - LTXiOSUtils/Views (= 1.0.2)
     - MBProgressHUD
     - MJRefresh
-    - Moya
-    - SnapKit
+    - Moya (= 12.0.1)
+    - SnapKit (= 4.2.0)
     - SwifterSwift (= 4.6.0)
     - SwiftyBeaver
     - SwiftyJSON (= 4.2.0)
+    - "UITableView+FDTemplateLayoutCell"
     - "UITextView+Placeholder"
     - ZYCornerRadius
   - LTXiOSUtils/Utils (1.0.2):
-    - Alamofire
+    - Alamofire (= 4.8.2)
     - BRPickerView
     - Kingfisher (= 5.9.0)
     - MBProgressHUD
     - MJRefresh
-    - Moya
-    - SnapKit
+    - Moya (= 12.0.1)
+    - SnapKit (= 4.2.0)
     - SwifterSwift (= 4.6.0)
     - SwiftyBeaver
     - SwiftyJSON (= 4.2.0)
+    - "UITableView+FDTemplateLayoutCell"
     - "UITextView+Placeholder"
     - ZYCornerRadius
   - LTXiOSUtils/ViewControllers (1.0.2):
-    - Alamofire
+    - Alamofire (= 4.8.2)
     - BRPickerView
     - Kingfisher (= 5.9.0)
+    - LTXiOSUtils/Utils
     - MBProgressHUD
     - MJRefresh
-    - Moya
-    - SnapKit
+    - Moya (= 12.0.1)
+    - SnapKit (= 4.2.0)
     - SwifterSwift (= 4.6.0)
     - SwiftyBeaver
     - SwiftyJSON (= 4.2.0)
+    - "UITableView+FDTemplateLayoutCell"
     - "UITextView+Placeholder"
     - ZYCornerRadius
   - LTXiOSUtils/Views (1.0.2):
-    - Alamofire
+    - Alamofire (= 4.8.2)
     - BRPickerView
     - Kingfisher (= 5.9.0)
+    - LTXiOSUtils/Utils
     - MBProgressHUD
     - MJRefresh
-    - Moya
-    - SnapKit
+    - Moya (= 12.0.1)
+    - SnapKit (= 4.2.0)
     - SwifterSwift (= 4.6.0)
     - SwiftyBeaver
     - SwiftyJSON (= 4.2.0)
+    - "UITableView+FDTemplateLayoutCell"
     - "UITextView+Placeholder"
     - ZYCornerRadius
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.2.2)
-  - Moya (13.0.1):
-    - Moya/Core (= 13.0.1)
-  - Moya/Core (13.0.1):
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 4.1)
+    - Result (~> 4.0)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
   - Result (4.1.0)
-  - SnapKit (5.0.1)
+  - SnapKit (4.2.0)
   - SwifterSwift (4.6.0):
     - SwifterSwift/AppKit (= 4.6.0)
     - SwifterSwift/CoreGraphics (= 4.6.0)
@@ -101,6 +107,7 @@ PODS:
   - SwifterSwift/UIKit (4.6.0)
   - SwiftyBeaver (1.8.3)
   - SwiftyJSON (4.2.0)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
   - "UITextView+Placeholder (1.3.3)"
   - ZYCornerRadius (1.0.2)
 
@@ -123,6 +130,7 @@ SPEC REPOS:
     - SwifterSwift
     - SwiftyBeaver
     - SwiftyJSON
+    - "UITableView+FDTemplateLayoutCell"
     - "UITextView+Placeholder"
     - ZYCornerRadius
 
@@ -131,20 +139,21 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   BRPickerView: 4bb8d37b590ba3b06c5affe84de669aea6d091a1
   Kingfisher: ff98240aebb7302bdc4f1ecd701761030ce18b16
-  LTXiOSUtils: 11cef18b8ef1804417d3e34a7ad57a264fd40399
+  LTXiOSUtils: 08e55ab2a0eb20b92c4a9ed561f32db9890e2b02
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 72a46ecaa2a0feaf48fc5198dff95f25f8bb27c6
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
   SwiftyBeaver: 3d3e93a12d648bd400b6f2948a7ef128b5b183c7
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
