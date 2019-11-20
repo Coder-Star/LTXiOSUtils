@@ -13,3 +13,4 @@
 @_exported import SwiftyJSON
 @_exported import UITextView_Placeholder
 @_exported import UITableView_FDTemplateLayoutCell
+@_exported import IQKeyboardManagerSwift

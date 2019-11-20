@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BaseGroupTableMenuViewController: BaseUIViewController {
+open class BaseGroupTableMenuViewController: BaseUIViewController {
 
     lazy var groupTableView:UITableView = {
         let groupTableView = UITableView(frame:baseView.frame, style:.grouped)
@@ -27,19 +27,24 @@ class BaseGroupTableMenuViewController: BaseUIViewController {
     ///         [ConstantsEnum.code:"code3",ConstantsEnum.title:"title3",ConstantsEnum.image:"image3"]
     ///     ],
     // /   ]
-    var menu = [[[String:String]]]()
+    public var menu = [[[String:String]]]()
 
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
+        setMenu()
         initTableView()
     }
 
-    func initTableView() {
+    open func setMenu() {
+
+    }
+
+    open func initTableView() {
         baseView.addSubview(groupTableView)
         locationTableView()
     }
 
-    func locationTableView() {
+    open func locationTableView() {
         groupTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -48,34 +53,41 @@ class BaseGroupTableMenuViewController: BaseUIViewController {
 // MARK: - UITableViewDataSource
 extension BaseGroupTableMenuViewController:UITableViewDataSource {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    /// 分组个数
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return menu.count
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    /// 每组cell个数
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menu[section].count
     }
 
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    /// sectionFooter高度
+    open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
 
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    /// sectionFooterView
+    open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    /// sectionHeader高度
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return UIView()
     }
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    /// sectionHeaderView
+    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    /// 渲染每一个cell
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var tableCell = tableView.dequeueReusableCell(withIdentifier: ConstantsEnum.cell)
         if tableCell == nil {
-            tableCell = UITableViewCell(style:.default, reuseIdentifier: ConstantsEnum.cell) //将default换成subtitle可以显示副标题
+            tableCell = UITableViewCell(style:.default, reuseIdentifier: ConstantsEnum.cell)
         }
 
         if let title = menu[indexPath.section][indexPath.row][ConstantsEnum.title] {
@@ -95,8 +107,15 @@ extension BaseGroupTableMenuViewController:UITableViewDataSource {
 // MARK: - UITableViewDataSource
 extension BaseGroupTableMenuViewController:UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if let code = menu[indexPath.section][indexPath.row][ConstantsEnum.code] {
+            click(code: code)
+        }
+    }
+
+    @objc open func click(code:String) {
+
     }
 
 }

@@ -12,12 +12,14 @@ PODS:
     - BRPickerView/Base
   - BRPickerView/StringPickerView (2.4.2):
     - BRPickerView/Base
+  - IQKeyboardManagerSwift (6.1.0)
   - Kingfisher (5.9.0):
     - Kingfisher/Core (= 5.9.0)
   - Kingfisher/Core (5.9.0)
   - LTXiOSUtils (1.0.2):
     - Alamofire (= 4.8.2)
     - BRPickerView
+    - IQKeyboardManagerSwift (= 6.1.0)
     - Kingfisher (= 5.9.0)
     - LTXiOSUtils/Utils (= 1.0.2)
     - LTXiOSUtils/ViewControllers (= 1.0.2)
@@ -35,6 +37,7 @@ PODS:
   - LTXiOSUtils/Utils (1.0.2):
     - Alamofire (= 4.8.2)
     - BRPickerView
+    - IQKeyboardManagerSwift (= 6.1.0)
     - Kingfisher (= 5.9.0)
     - MBProgressHUD
     - MJRefresh
@@ -49,6 +52,7 @@ PODS:
   - LTXiOSUtils/ViewControllers (1.0.2):
     - Alamofire (= 4.8.2)
     - BRPickerView
+    - IQKeyboardManagerSwift (= 6.1.0)
     - Kingfisher (= 5.9.0)
     - LTXiOSUtils/Utils
     - MBProgressHUD
@@ -64,6 +68,7 @@ PODS:
   - LTXiOSUtils/Views (1.0.2):
     - Alamofire (= 4.8.2)
     - BRPickerView
+    - IQKeyboardManagerSwift (= 6.1.0)
     - Kingfisher (= 5.9.0)
     - LTXiOSUtils/Utils
     - MBProgressHUD
@@ -119,6 +124,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - BRPickerView
+    - IQKeyboardManagerSwift
     - Kingfisher
     - MBProgressHUD
     - MJRefresh
@@ -141,8 +147,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   BRPickerView: 4bb8d37b590ba3b06c5affe84de669aea6d091a1
+  IQKeyboardManagerSwift: f5004f5860d9a8ed23a7ef7a156ae168828eb018
   Kingfisher: ff98240aebb7302bdc4f1ecd701761030ce18b16
-  LTXiOSUtils: 08e55ab2a0eb20b92c4a9ed561f32db9890e2b02
+  LTXiOSUtils: ba59df875420f7603a1602ac053f5387a8de9035
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 72a46ecaa2a0feaf48fc5198dff95f25f8bb27c6
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f

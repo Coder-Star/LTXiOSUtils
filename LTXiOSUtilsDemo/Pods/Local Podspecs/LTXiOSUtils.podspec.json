@@ -5,7 +5,7 @@
     "ios": "10.0"
   },
   "summary": "通用工具类以及组件的整合、封装",
-  "homepage": "https://github.com/Coder-Star",
+  "homepage": "https://github.com/Coder-Star/LTXiOSUtils",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -42,6 +42,9 @@
     ],
     "SwiftyBeaver": [
 
+    ],
+    "IQKeyboardManagerSwift": [
+      "6.1.0"
     ],
     "UITextView+Placeholder": [
 
