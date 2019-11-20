@@ -7,14 +7,21 @@
 //
 
 import UIKit
-import LTXiOSUtils
-
-class ViewController: UIViewController {
+class ViewController: BaseGroupTableMenuViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         title = R.string.localizable.menu()
     }
+    //ConstantsEnum
+    override func setMenu() {
+        let fisrtMenu = [
+            [ConstantsEnum.title:"第一个功能",ConstantsEnum.image:"123",ConstantsEnum.code:"123"]
+        ]
+        menu.append(fisrtMenu)
+    }
 
+    override func click(code: String) {
+        print(code)
+    }
 }

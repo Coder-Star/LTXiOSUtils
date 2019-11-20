@@ -7,17 +7,17 @@
 //
 
 import Foundation
-class BaseViewController:UIViewController {
+open class BaseViewController:UIViewController {
 
     var statusBarHeight:CGFloat?
 
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         setupData()
 
     }
 
-    func setupData() {
+    open func setupData() {
         statusBarHeight = self.navigationController?.navigationBar.frame.height
     }
 
