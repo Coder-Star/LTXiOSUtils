@@ -8,7 +8,17 @@ target 'LTXiOSUtilsDemo' do
   use_frameworks!
 
   pod 'LTXiOSUtils',:path => '../'
+
   pod 'R.swift'
+  pod 'XCGLogger','6.1.0'
+  pod 'SwiftyUserDefaults','4.0.0'
+  pod 'SwifterSwift','4.6.0'
+  pod 'Kingfisher','5.9.0'
+  pod 'IQKeyboardManagerSwift','6.1.0'
+  pod 'UITextView+Placeholder' #OC库
+  pod 'BRPickerView' #OC库
+  pod 'ZYCornerRadius' #OC库
+  pod 'UITableView+FDTemplateLayoutCell' #OC库
 
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths

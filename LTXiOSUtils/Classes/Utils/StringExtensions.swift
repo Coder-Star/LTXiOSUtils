@@ -80,3 +80,7 @@ extension String {
         return !self.isContentEmpty
     }
 }
+
+extension String {
+
+}
