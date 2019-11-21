@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LTXiOSUtils
 class ViewController: BaseGroupTableMenuViewController {
 
     override func viewDidLoad() {
@@ -22,6 +23,9 @@ class ViewController: BaseGroupTableMenuViewController {
     }
 
     override func click(code: String) {
-        print(code)
+        LogUtil.enabled = true
+        let log = LogUtil.shard
+        log.d(12)
+//        QL1(1)
     }
 }

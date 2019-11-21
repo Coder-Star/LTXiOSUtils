@@ -169,14 +169,15 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Result/Result.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZYCornerRadius/ZYCornerRadius.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -188,14 +189,15 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Result/Result.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZYCornerRadius/ZYCornerRadius.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

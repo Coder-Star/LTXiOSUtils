@@ -12,17 +12,18 @@ Pod::Spec.new do |s|
     s.swift_version = ["4.2"]
 
     s.dependency 'SwiftyJSON','4.2.0'
-    s.dependency 'SwifterSwift','4.6.0'
     s.dependency 'SnapKit','4.2.0'
     s.dependency 'Alamofire','4.8.2'
     s.dependency 'Moya','12.0.1'
+    s.dependency 'XCGLogger','6.1.0'
+    s.dependency 'MBProgressHUD' #OC库
+    s.dependency 'MJRefresh'  #OC库
+
+    s.dependency 'SwifterSwift','4.6.0'
     s.dependency 'Kingfisher','5.9.0'
-    s.dependency 'SwiftyBeaver'
     s.dependency 'IQKeyboardManagerSwift','6.1.0'
     s.dependency 'UITextView+Placeholder' #OC库
     s.dependency 'BRPickerView' #OC库
-    s.dependency 'MBProgressHUD' #OC库
-    s.dependency 'MJRefresh'  #OC库
     s.dependency 'ZYCornerRadius' #OC库
     s.dependency 'UITableView+FDTemplateLayoutCell' #OC库
 
