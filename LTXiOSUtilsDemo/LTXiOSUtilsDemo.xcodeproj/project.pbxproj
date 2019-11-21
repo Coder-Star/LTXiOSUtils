@@ -17,6 +17,7 @@
 		DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC4AB9C322F4606100A5F003 /* Assets.xcassets */; };
 		DC4AB9D222F4606100A5F003 /* LTXiOSUtilsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9D122F4606100A5F003 /* LTXiOSUtilsDemoTests.swift */; };
 		DC4AB9DD22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9DC22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift */; };
+		DC5E25DF238578EC00B18F51 /* AppdelegateConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E25DE238578EC00B18F51 /* AppdelegateConfig.swift */; };
 		DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC62A7C72384084A00DE7800 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		DC4AB9D822F4606100A5F003 /* LTXiOSUtilsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTXiOSUtilsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4AB9DC22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTXiOSUtilsDemoUITests.swift; sourceTree = "<group>"; };
 		DC4AB9DE22F4606100A5F003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC5E25DE238578EC00B18F51 /* AppdelegateConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppdelegateConfig.swift; sourceTree = "<group>"; };
 		DC62A7C62384084A00DE7800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FEA6FDCDB130B877B872D978 /* Pods-LTXiOSUtilsDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */,
+				DC5E25DE238578EC00B18F51 /* AppdelegateConfig.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				DC4AB9BF22F4606000A5F003 /* ViewController.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
 				DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */,
+				DC5E25DF238578EC00B18F51 /* AppdelegateConfig.swift in Sources */,
 				DC32F1A823841359008D3D67 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,8 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootViewController = UINavigationController(rootViewController: ViewController())
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
-
-        IQKeyboardManager.shared.enable = true
+        AppdelegateConfig.initConfig()
         return true
     }
 
