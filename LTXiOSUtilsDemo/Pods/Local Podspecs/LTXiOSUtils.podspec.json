@@ -34,34 +34,10 @@
     "Moya": [
       "12.0.1"
     ],
-    "XCGLogger": [
-      "6.1.0"
-    ],
     "MBProgressHUD": [
 
     ],
     "MJRefresh": [
-
-    ],
-    "SwifterSwift": [
-      "4.6.0"
-    ],
-    "Kingfisher": [
-      "5.9.0"
-    ],
-    "IQKeyboardManagerSwift": [
-      "6.1.0"
-    ],
-    "UITextView+Placeholder": [
-
-    ],
-    "BRPickerView": [
-
-    ],
-    "ZYCornerRadius": [
-
-    ],
-    "UITableView+FDTemplateLayoutCell": [
 
     ]
   },

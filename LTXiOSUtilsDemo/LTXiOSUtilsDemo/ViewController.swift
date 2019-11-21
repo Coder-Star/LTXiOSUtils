@@ -23,9 +23,6 @@ class ViewController: BaseGroupTableMenuViewController {
     }
 
     override func click(code: String) {
-        LogUtil.enabled = true
-        let log = LogUtil.shard
-        log.d(12)
-//        QL1(1)
+
     }
 }
