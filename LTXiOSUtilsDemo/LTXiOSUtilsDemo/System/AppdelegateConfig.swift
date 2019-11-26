@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import IQKeyboardManagerSwift
+
 class AppdelegateConfig {
 
     private init() {
