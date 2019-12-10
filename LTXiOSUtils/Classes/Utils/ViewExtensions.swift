@@ -13,6 +13,7 @@ extension UIView {
     private struct UIViewAssociatedKey {
         static var dataStr: Void?
         static var dataJSON: Void?
+        static var dataAny: Void?
     }
 
     /// 为view绑定字符串数据
@@ -40,9 +41,23 @@ extension UIView {
             return JSON()
         }
     }
+
+    /// 为view绑定Any类型数据
+    var dataAny: Any {
+        set {
+            objc_setAssociatedObject(self, &UIViewAssociatedKey.dataAny, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+        get {
+            if let rs = objc_getAssociatedObject(self, &UIViewAssociatedKey.dataAny) {
+                return rs
+            }
+            return Any.self
+        }
+    }
+
 }
 
-// MARK: - 获取view的所有子视图以及指定子视图
+// MARK: - view视图相关
 extension UIView {
     private static var allSubviews: [UIView] = []
 
@@ -68,6 +83,18 @@ extension UIView {
     public func getAllSubViews() -> [UIView] {
         UIView.allSubviews = []
         return viewArray(root: self)
+    }
+
+    /// 移除所有子视图
+    public func removeAllChildView() {
+        _ = self.subviews.map {
+            $0.removeFromSuperview()
+        }
+    }
+
+    /// 同时添加多个视图
+    public func add(_ subviews: UIView...) {
+        subviews.forEach(addSubview)
     }
 }
 
