@@ -138,7 +138,7 @@ SPEC CHECKSUMS:
   BRPickerView: 0bd32f1fc4e338ecf6643b5e82f7a7c77db68cbe
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
-  LTXiOSUtils: cf2b237cdbd227088bd66fa375ecb7fa0d5ecfe1
+  LTXiOSUtils: 8cdfdf96a129480ba49f9b9807a428891306a0d0
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e

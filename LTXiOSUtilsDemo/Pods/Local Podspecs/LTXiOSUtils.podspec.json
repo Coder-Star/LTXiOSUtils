@@ -19,8 +19,8 @@
   },
   "requires_arc": true,
   "swift_versions": [
-    "4.2",
-    "5"
+    "5",
+    "4.2"
   ],
   "dependencies": {
     "SwiftyJSON": [

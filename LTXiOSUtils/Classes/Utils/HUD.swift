@@ -55,7 +55,7 @@ open class HUD:MBProgressHUD {
     open class func getHUD(title: String = "") -> HUD {
         let view = viewToShow()
         let hud = HUD.showAdded(to: view, animated: true)
-        hud.label.text = "1234"
+        hud.detailsLabel.text = title
         hud.removeFromSuperViewOnHide = true
         return hud
     }
