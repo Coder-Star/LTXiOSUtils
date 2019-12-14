@@ -9,11 +9,10 @@ import UIKit
 import Foundation
 
 /// 压缩类型
-///
-/// - session 某一边最大为800
-/// - timeline 某一边最大为1200(默认)
 public enum ImageCompressType {
+    /// 某一边最大为800
     case session
+    /// 某一边最大为1200(默认)
     case timeline
 }
 

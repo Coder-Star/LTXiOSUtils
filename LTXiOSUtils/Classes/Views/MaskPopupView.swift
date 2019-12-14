@@ -39,11 +39,10 @@ public protocol MaskPopupViewAnimationProtocol: AnyObject {
 }
 
 /// 蒙板类型
-///
-/// - solidColor: 灰色
-/// - blur: 叠加色
 public enum MaskPopupViewBackgroundStyle {
+    /// - solidColor: 灰色
     case solidColor
+    /// - blur: 叠加色
     case blur
 }
 
