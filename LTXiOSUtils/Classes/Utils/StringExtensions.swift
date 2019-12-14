@@ -105,7 +105,7 @@ extension String {
 
     /// 是否车牌号
     public var isCarNumber: Bool {
-        if self.count != 7 , self.count != 8{
+        if self.count != 7 , self.count != 8 {
             return false
         }
         var pattern = ""
