@@ -268,10 +268,12 @@
 					};
 					DC4AB9CC22F4606100A5F003 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1120;
 						TestTargetID = DC4AB9B822F4606000A5F003;
 					};
 					DC4AB9D722F4606100A5F003 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1120;
 						TestTargetID = DC4AB9B822F4606000A5F003;
 					};
 				};
@@ -679,7 +681,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LTXiOSUtilsDemo.app/LTXiOSUtilsDemo";
 			};
@@ -701,7 +703,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LTXiOSUtilsDemo.app/LTXiOSUtilsDemo";
 			};
@@ -722,7 +724,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = LTXiOSUtilsDemo;
 			};
@@ -743,7 +745,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = LTXiOSUtilsDemo;
 			};

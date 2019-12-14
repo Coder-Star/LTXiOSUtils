@@ -11,13 +11,13 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'local', :tag => s.version} #本地开发
 
   s.requires_arc = true
-  s.swift_version = ["4.2"]
+  s.swift_version = ["4.2","5"]
 
-  s.dependency 'SwiftyJSON','4.2.0' # 处理JSON
-  s.dependency 'SnapKit','4.2.0' # 自动布局
-  s.dependency 'Alamofire','4.8.2' # 网络请求
-  s.dependency 'Moya','12.0.1' # 网络抽象层
-  s.dependency 'QorumLogs','0.9' # 日志工具
+  s.dependency 'SwiftyJSON' # 处理JSON
+  s.dependency 'SnapKit' # 自动布局
+  s.dependency 'Alamofire' # 网络请求
+  s.dependency 'Moya' # 网络抽象层
+  s.dependency 'QorumLogs' # 日志工具
   
   s.dependency 'MBProgressHUD' # 加载框，OC库
   s.dependency 'MJRefresh'  # 下拉刷新、下拉加载，OC库
