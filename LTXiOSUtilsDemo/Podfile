@@ -18,8 +18,8 @@ target 'LTXiOSUtilsDemo' do
 
   #工具类
   pod 'SwiftyUserDefaults','4.0.0' # UserDefaults存储
-  pod 'SwifterSwift','4.6.0' #
-  pod 'IQKeyboardManagerSwift','6.1.0'
+  pod 'SwifterSwift','4.6.0' # Swift相关扩展
+  pod 'IQKeyboardManagerSwift','6.1.0' # 键盘控制
 
 
   #UI控件及处理等
