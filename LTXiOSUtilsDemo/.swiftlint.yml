@@ -17,26 +17,33 @@ included: # 检索的路径
   - LTXiOSUtilsDemo
   - ../LTXiOSUtils
 
-# 可配置的规则可以通过这个配置文件来自定义
-# 二进制规则可以设置他们的严格程度
-force_cast: warning # 隐式
+#强制转换 as!
+force_cast: warning 
+
+#强制获取错误 try!
 force_try:
   severity: warning # 显式
+
 # 同时有警告和错误等级的规则，可以只设置它的警告等级
 # 隐式
-line_length: 300
+line_length: 1000 #单行最多字符数
+
 # 可以通过一个数组同时进行隐式设置
 type_body_length:
   - 300 # warning
   - 400 # error
+
 # 或者也可以同时进行显式设置
 file_length:
   warning: 500
   error: 1200
+
 function_body_length:
   warning: 200
+
 cyclomatic_complexity:
   error: 40
+
 # 命名规则可以设置最小长度和最大程度的警告/错误
 # 此外它们也可以设置排除在外的名字
 type_name:
@@ -45,6 +52,7 @@ type_name:
     warning: 40
     error: 50
   excluded: iPhone # 排除某个名字
+
 identifier_name:
   min_length: # 只有最小长度
     warning: 1 
@@ -54,4 +62,5 @@ identifier_name:
     - id
     - URL
     - GlobalAPIKey
+
 reporter: "xcode" # 报告类型 (xcode, json, csv, checkstyle, junit, html, emoji)
