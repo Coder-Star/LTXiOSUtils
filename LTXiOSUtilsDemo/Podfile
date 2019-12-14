@@ -7,18 +7,30 @@ target 'LTXiOSUtilsDemo' do
   platform :ios, '10.0'
   use_frameworks!
 
-  pod 'LTXiOSUtils',:path => '../'
+  pod 'LTXiOSUtils',:path => '../' # 基础功能库
 
-  pod 'R.swift'
-  pod 'XCGLogger','6.1.0'
-  pod 'SwiftyUserDefaults','4.0.0'
-  pod 'SwifterSwift','4.6.0'
-  pod 'Kingfisher','5.9.0'
+  # 本地配置
+  pod 'R.swift','5.1.0' # 资源映射
+  pod 'SwiftLint','0.38.0' # 代码规范限制，使用swiftlint autocorrect 可自动修复一部分格式问题
+
+  #图片相关
+  pod 'Kingfisher','5.9.0' # 图片预览
+
+  #工具类
+  pod 'SwiftyUserDefaults','4.0.0' # UserDefaults存储
+  pod 'SwifterSwift','4.6.0' #
   pod 'IQKeyboardManagerSwift','6.1.0'
-  pod 'UITextView+Placeholder' #OC库
-  pod 'BRPickerView' #OC库
-  pod 'ZYCornerRadius' #OC库
-  pod 'UITableView+FDTemplateLayoutCell' #OC库
+
+
+  #UI控件及处理等
+  pod 'BRPickerView' # 选择器，OC库
+  pod 'UITextView+Placeholder' # UITextView添加Placeholder属性，OC库
+  pod 'ZYCornerRadius' #  UIImageView高性能设置圆角，OC库
+  pod 'UITableView+FDTemplateLayoutCell' #  UITableView缓存高度，OC库
+
+
+  #收录
+  #  pod 'XCGLogger','6.1.0' # 日志工具，可以写入文件等
 
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths

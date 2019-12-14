@@ -22,7 +22,7 @@ extension Optional {
     public var isSome: Bool {
         return !isNone
     }
-    
+
     /// 返回解包后的值或者默认值
     public func or(_ default: Wrapped) -> Wrapped {
         return self ?? `default`

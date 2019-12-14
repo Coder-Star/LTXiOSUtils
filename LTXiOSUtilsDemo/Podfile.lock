@@ -24,6 +24,7 @@ PODS:
     - MBProgressHUD
     - MJRefresh
     - Moya (= 12.0.1)
+    - QorumLogs (= 0.9)
     - SnapKit (= 4.2.0)
     - SwiftyJSON (= 4.2.0)
   - LTXiOSUtils/Utils (1.0.2):
@@ -31,6 +32,7 @@ PODS:
     - MBProgressHUD
     - MJRefresh
     - Moya (= 12.0.1)
+    - QorumLogs (= 0.9)
     - SnapKit (= 4.2.0)
     - SwiftyJSON (= 4.2.0)
   - LTXiOSUtils/ViewControllers (1.0.2):
@@ -39,6 +41,7 @@ PODS:
     - MBProgressHUD
     - MJRefresh
     - Moya (= 12.0.1)
+    - QorumLogs (= 0.9)
     - SnapKit (= 4.2.0)
     - SwiftyJSON (= 4.2.0)
   - LTXiOSUtils/Views (1.0.2):
@@ -47,6 +50,7 @@ PODS:
     - MBProgressHUD
     - MJRefresh
     - Moya (= 12.0.1)
+    - QorumLogs (= 0.9)
     - SnapKit (= 4.2.0)
     - SwiftyJSON (= 4.2.0)
   - MBProgressHUD (1.1.0)
@@ -56,9 +60,7 @@ PODS:
   - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.0)
-  - ObjcExceptionBridging (1.0.1):
-    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
-  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - QorumLogs (0.9)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
@@ -81,14 +83,11 @@ PODS:
   - SwifterSwift/SpriteKit (4.6.0)
   - SwifterSwift/SwiftStdlib (4.6.0)
   - SwifterSwift/UIKit (4.6.0)
+  - SwiftLint (0.38.0)
   - SwiftyJSON (4.2.0)
   - SwiftyUserDefaults (4.0.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - "UITextView+Placeholder (1.3.3)"
-  - XCGLogger (6.1.0):
-    - XCGLogger/Core (= 6.1.0)
-  - XCGLogger/Core (6.1.0):
-    - ObjcExceptionBridging
   - ZYCornerRadius (1.0.2)
 
 DEPENDENCIES:
@@ -96,12 +95,12 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 6.1.0)
   - Kingfisher (= 5.9.0)
   - LTXiOSUtils (from `../`)
-  - R.swift
+  - R.swift (= 5.1.0)
   - SwifterSwift (= 4.6.0)
+  - SwiftLint (= 0.38.0)
   - SwiftyUserDefaults (= 4.0.0)
   - "UITableView+FDTemplateLayoutCell"
   - "UITextView+Placeholder"
-  - XCGLogger (= 6.1.0)
   - ZYCornerRadius
 
 SPEC REPOS:
@@ -113,17 +112,17 @@ SPEC REPOS:
     - MBProgressHUD
     - MJRefresh
     - Moya
-    - ObjcExceptionBridging
+    - QorumLogs
     - R.swift
     - R.swift.Library
     - Result
     - SnapKit
     - SwifterSwift
+    - SwiftLint
     - SwiftyJSON
     - SwiftyUserDefaults
     - "UITableView+FDTemplateLayoutCell"
     - "UITextView+Placeholder"
-    - XCGLogger
     - ZYCornerRadius
 
 EXTERNAL SOURCES:
@@ -135,23 +134,23 @@ SPEC CHECKSUMS:
   BRPickerView: 4bb8d37b590ba3b06c5affe84de669aea6d091a1
   IQKeyboardManagerSwift: f5004f5860d9a8ed23a7ef7a156ae168828eb018
   Kingfisher: ff98240aebb7302bdc4f1ecd701761030ce18b16
-  LTXiOSUtils: e894b2ddf819c2a8bc14f86914069b03c353436e
+  LTXiOSUtils: 30bccfa2a950e119555e4e2aeaae77a99b6bdcfc
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 72a46ecaa2a0feaf48fc5198dff95f25f8bb27c6
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
-  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  QorumLogs: 9a484df6973a3697ac79fe2273140fde6b36dccc
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
+  SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
-  XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: d7e800a4b65599eeec078ac78d695fe389be7743
+PODFILE CHECKSUM: ecc2c898ce6f3b020660ae13ebdddcce6cf64042
 
 COCOAPODS: 1.7.5

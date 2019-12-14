@@ -1,0 +1,6 @@
+framework module QorumLogs {
+  umbrella header "QorumLogs-umbrella.h"
+
+  export *
+  module * { export * }
+}
