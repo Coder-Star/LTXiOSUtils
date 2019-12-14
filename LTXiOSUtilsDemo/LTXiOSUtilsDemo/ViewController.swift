@@ -22,6 +22,6 @@ class ViewController: BaseGroupTableMenuViewController {
     }
 
     override func click(code: String) {
-       HUD.show("123")
+       HUD.show("这是一个很长很长很长很长很长很长很长很长很长很长很长很长")
     }
 }
