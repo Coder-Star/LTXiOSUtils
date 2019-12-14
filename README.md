@@ -1,2 +1,6 @@
-# LTXiOSUtils
-ios工具类以及扩展，用于发布
+
+# LTXiOSUtil基础iOS项目介绍及使用手册
+
+## 一、LTXiOSUtil库介绍
+
+## 二、LTXiOSUtilDemo使用第三方库介绍
