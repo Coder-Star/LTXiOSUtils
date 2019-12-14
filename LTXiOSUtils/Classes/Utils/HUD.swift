@@ -13,32 +13,32 @@ open class HUD:MBProgressHUD {
     private var isClickHidden: Bool = false
 
     /// 显示等待消息
-    open class func showWait(_ title: String = "",click:Bool = false) {
+    open class func showWait(_ title: String = "", click: Bool = false) {
         let hud = getHUD(title: title)
         hud.isClickHidden = click
     }
 
-    open class func show(_ title:String,_ delay:Double = 1.0) {
+    public class func show(_ title: String, _ delay: Double = 1.0) {
         let hud = getHUD(title: title)
         hud.mode = .text
         hud.hide(animated: true, afterDelay: delay)
     }
 
-    open class func showInfo(_ title:String,_ delay:Double = 1.0) {
+    open class func showInfo(_ title: String, _ delay: Double = 1.0) {
         let hud = customHUD(title,image:UIImage(named: ""))
         hud.minSize = CGSize(width:160, height: 80)
         hud.label.font = UIFont.systemFont(ofSize: 18)
         hud.hide(animated: true, afterDelay: delay)
     }
 
-    open class func showSuccess(_ title:String,_ delay:Double = 1.0) {
+    open class func showSuccess(_ title: String,_ delay: Double = 1.0) {
         let hud = customHUD(title,image:UIImage(named: ""))
         hud.minSize = CGSize(width:160, height: 80)
         hud.label.font = UIFont.systemFont(ofSize: 18)
         hud.hide(animated: true, afterDelay: delay)
     }
 
-    open class func showError(_ title:String,_ delay:Double = 1.0) {
+    open class func showError(_ title: String,_ delay: Double = 1.0) {
         let hud = customHUD(title,image:UIImage(named: ""))
         hud.minSize = CGSize(width:160, height: 80)
         hud.label.font = UIFont.systemFont(ofSize: 18)
@@ -52,10 +52,10 @@ open class HUD:MBProgressHUD {
         return hud
     }
 
-    open class func getHUD(title:String = "") -> HUD {
+    open class func getHUD(title: String = "") -> HUD {
         let view = viewToShow()
         let hud = HUD.showAdded(to: view, animated: true)
-        hud.label.text = title
+        hud.label.text = "1234"
         hud.removeFromSuperViewOnHide = true
         return hud
     }
