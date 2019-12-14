@@ -17,12 +17,14 @@ class AppdelegateConfig {
 
     /// 基础配置
     static func initConfig() {
-        initLog()
+        initLogConfig()
         IQKeyboardManager.shared.enable = true
     }
 
     /// 日志设置
-    static func initLog() {
-
+    static func initLogConfig() {
+        QorumLogs.enabled = true
+        // 日志最低显示级别
+        QorumLogs.minimumLogLevelShown = 1
     }
 }
