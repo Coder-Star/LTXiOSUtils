@@ -10,16 +10,16 @@ target 'LTXiOSUtilsDemo' do
   pod 'LTXiOSUtils',:path => '../' # 基础功能库
 
   # 本地配置
-  pod 'R.swift','5.1.0' # 资源映射
-  pod 'SwiftLint','0.38.0' # 代码规范限制，使用swiftlint autocorrect 可自动修复一部分格式问题
+  pod 'R.swift' # 资源映射
+  pod 'SwiftLint' # 代码规范限制，使用swiftlint autocorrect 可自动修复一部分格式问题
 
   #图片相关
-  pod 'Kingfisher','5.9.0' # 图片预览
+  pod 'Kingfisher' # 图片预览
 
   #工具类
-  pod 'SwiftyUserDefaults','4.0.0' # UserDefaults存储
-  pod 'SwifterSwift','4.6.0' # Swift相关扩展
-  pod 'IQKeyboardManagerSwift','6.1.0' # 键盘控制
+  pod 'SwiftyUserDefaults' # UserDefaults存储
+  pod 'SwifterSwift' # Swift相关扩展
+  pod 'IQKeyboardManagerSwift' # 键盘控制
 
 
   #UI控件及处理等
@@ -44,29 +44,29 @@ target 'LTXiOSUtilsDemo' do
 
 end
 
-swift_42 = [
-'SwifterSwift',
-'SwiftyJSON',
-'R.swift',
-'R.swift.Library',
-'Kingfisher',
-'Alamofire',
-'Moya',
-'SnapKit',
-]
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    swift_version = nil
-
-    if swift_42.include?(target.name)
-      swift_version = '4.2'
-    end
-
-    if swift_version
-      target.build_configurations.each do |config|
-        config.build_settings['SWIFT_VERSION'] = swift_version
-      end
-    end
-  end
-end
+#swift_42 = [
+#'SwifterSwift',
+#'SwiftyJSON',
+#'R.swift',
+#'R.swift.Library',
+#'Kingfisher',
+#'Alamofire',
+#'Moya',
+#'SnapKit',
+#]
+#
+#post_install do |installer|
+#  installer.pods_project.targets.each do |target|
+#    swift_version = nil
+#
+#    if swift_42.include?(target.name)
+#      swift_version = '4.2'
+#    end
+#
+#    if swift_version
+#      target.build_configurations.each do |config|
+#        config.build_settings['SWIFT_VERSION'] = swift_version
+#      end
+#    end
+#  end
+#end

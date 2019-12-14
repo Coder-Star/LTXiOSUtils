@@ -19,23 +19,24 @@
   },
   "requires_arc": true,
   "swift_versions": [
-    "4.2"
+    "4.2",
+    "5"
   ],
   "dependencies": {
     "SwiftyJSON": [
-      "4.2.0"
+
     ],
     "SnapKit": [
-      "4.2.0"
+
     ],
     "Alamofire": [
-      "4.8.2"
+
     ],
     "Moya": [
-      "12.0.1"
+
     ],
     "QorumLogs": [
-      "0.9"
+
     ],
     "MBProgressHUD": [
 
@@ -68,5 +69,5 @@
       "source_files": "LTXiOSUtils/Classes/ViewControllers/*.swift"
     }
   ],
-  "swift_version": "4.2"
+  "swift_version": "5"
 }

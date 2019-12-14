@@ -12,7 +12,7 @@
 
 /// 日期选择器格式
 typedef NS_ENUM(NSInteger, BRDatePickerMode) {
-    // --- 以下4种是系统自带的样式 ---
+    // ----- 以下4种是系统自带的样式 -----
     /** 【HH:mm】UIDatePickerModeTime */
     BRDatePickerModeTime = 1,
     /** 【yyyy-MM-dd】UIDatePickerModeDate */
@@ -22,13 +22,17 @@ typedef NS_ENUM(NSInteger, BRDatePickerMode) {
     /** 【HH:mm】UIDatePickerModeCountDownTimer */
     BRDatePickerModeCountDownTimer,
     
-    // --- 以下8种是自定义样式 ---
+    // ----- 以下11种是自定义样式 -----
+    /** 【yyyy-MM-dd HH:mm:ss】年月日时分秒 */
+    BRDatePickerModeYMDHMS,
     /** 【yyyy-MM-dd HH:mm】年月日时分 */
     BRDatePickerModeYMDHM,
     /** 【yyyy-MM-dd HH】年月日时 */
     BRDatePickerModeYMDH,
     /** 【MM-dd HH:mm】月日时分 */
     BRDatePickerModeMDHM,
+    /** 【yyyy-MM-ddEEE】年月日星期 */
+    BRDatePickerModeYMDE,
     /** 【yyyy-MM-dd】年月日 */
     BRDatePickerModeYMD,
     /** 【yyyy-MM】年月 */
@@ -37,37 +41,45 @@ typedef NS_ENUM(NSInteger, BRDatePickerMode) {
     BRDatePickerModeY,
     /** 【MM-dd】月日 */
     BRDatePickerModeMD,
+    /** 【HH:mm:ss】时分秒 */
+    BRDatePickerModeHMS,
     /** 【HH:mm】时分 */
     BRDatePickerModeHM
 };
 
-typedef void(^BRDateResultBlock)(NSString *selectValue);
+typedef void (^BRDateResultBlock)(NSDate *selectDate, NSString *selectValue);
 
 @interface BRDatePickerView : BRBaseView
 
 /**
-//////////////////////////////////////////////////////////////////////////
-///
-///   【用法一】：推荐使用！！！
-///    1. 初始化选择器（使用 initWithPickerMode: 方法）
-///    2. 设置相关属性；一些公共的属性或方法参见基类文件 BRBaseView.h
-///    3. 显示选择器（使用 show 方法）
-///
-////////////////////////////////////////////////////////////////////////*/
+ //////////////////////////////////////////////////////////////////////////
+ ///
+ ///   【用法一】：推荐使用！！！
+ ///    1. 初始化选择器（使用 initWithPickerMode: 方法）
+ ///    2. 设置相关属性；一些公共的属性或方法参见基类文件 BRBaseView.h
+ ///    3. 显示选择器（使用 show 方法）
+ ///
+ ////////////////////////////////////////////////////////////////////////*/
 
-/** 默认选中的时间（默认选中当前时间） */
-@property (nonatomic, copy) NSString *selectValue;
-@property (nonatomic, copy) NSString *defaultSelValue BRPickerViewDeprecated("推荐使用 selectValue");
+/** 设置默认选中的时间（不设置或为nil时，默认就选中当前时间）*/
+@property (nonatomic, strong) NSDate *selectDate;
+@property (nonatomic, copy) NSString *selectValue;  // 推荐使用 selectDate
 
-/** 最小时间（请使用 NSDate+BRPickerView 分类中和显示类型格式对应的方法创建 minDate）*/
+/** 最小时间（可使用 NSDate+BRPickerView 分类中对应的方法进行创建）*/
 @property (nonatomic, strong) NSDate *minDate;
-/** 最大时间（请使用 NSDate+BRPickerView 分类中和显示类型格式对应的方法创建 maxDate）*/
+/** 最大时间（可使用 NSDate+BRPickerView 分类中对应的方法进行创建）*/
 @property (nonatomic, strong) NSDate *maxDate;
 
 /** 隐藏日期单位，默认为NO（值为YES时，配合 addSubViewToPicker: 方法，可以自定义单位的显示样式）*/
 @property (nonatomic, assign) BOOL hiddenDateUnit;
 
-/** 选择结果的回调 */
+/** 是否显示“今天”，默认为 NO  */
+@property (nonatomic, assign, getter=isShowToday) BOOL showToday;
+
+/** 是否添加“至今”，默认为 NO */
+@property (nonatomic, assign, getter=isAddToNow) BOOL addToNow;
+
+/** 选择结果的回调（提示：新增了 selectDate 参数） */
 @property (nonatomic, copy) BRDateResultBlock resultBlock;
 
 /// 初始化时间选择器
@@ -87,11 +99,11 @@ typedef void(^BRDateResultBlock)(NSString *selectValue);
 
 
 /**
-//////////////////////////////////////////////////////////////////////////
-///
-///   【用法二】：快捷使用，直接选择下面其中的一个方法进行使用
-///
-////////////////////////////////////////////////////////////////////////*/
+ //////////////////////////////////////////////////////////////////////////
+ ///
+ ///   【用法二】：快捷使用，直接选择下面其中的一个方法进行使用
+ ///
+ ////////////////////////////////////////////////////////////////////////*/
 
 /**
  *  1.显示时间选择器

@@ -21,11 +21,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-
 import UIKit
 
 /** @abstract UITextView with placeholder support   */
-open class IQTextView : UITextView {
+open class IQTextView: UITextView {
     
     @objc required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -36,7 +35,7 @@ open class IQTextView : UITextView {
         let UITextViewTextDidChange = Notification.Name.UITextViewTextDidChange
         #endif
 
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name:UITextViewTextDidChange, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: UITextViewTextDidChange, object: self)
     }
     
     @objc override public init(frame: CGRect, textContainer: NSTextContainer?) {
@@ -68,8 +67,16 @@ open class IQTextView : UITextView {
         NotificationCenter.default.removeObserver(self)
     }
 
-    private var placeholderInsets : UIEdgeInsets {
+    private var placeholderInsets: UIEdgeInsets {
         return UIEdgeInsets(top: self.textContainerInset.top, left: self.textContainerInset.left + self.textContainer.lineFragmentPadding, bottom: self.textContainerInset.bottom, right: self.textContainerInset.right + self.textContainer.lineFragmentPadding)
+    }
+    
+    private var placeholderExpectedFrame: CGRect {
+        let placeholderInsets = self.placeholderInsets
+        let maxWidth = self.frame.width-placeholderInsets.left-placeholderInsets.right
+        let expectedSize = placeholderLabel.sizeThatFits(CGSize(width: maxWidth, height: self.frame.height-placeholderInsets.top-placeholderInsets.bottom))
+        
+        return CGRect(x: placeholderInsets.left, y: placeholderInsets.top, width: maxWidth, height: expectedSize.height)
     }
 
     lazy var placeholderLabel: UILabel = {
@@ -81,7 +88,11 @@ open class IQTextView : UITextView {
         label.font = self.font
         label.textAlignment = self.textAlignment
         label.backgroundColor = UIColor.clear
-        label.textColor = UIColor(white: 0.7, alpha: 1.0)
+        #if swift(>=5.1)
+        label.textColor = UIColor.systemGray
+        #else
+        label.textColor = UIColor.lightText
+        #endif
         label.alpha = 0
         self.addSubview(label)
         
@@ -89,7 +100,7 @@ open class IQTextView : UITextView {
     }()
     
     /** @abstract To set textView's placeholder text color. */
-    @IBInspectable open var placeholderTextColor : UIColor? {
+    @IBInspectable open var placeholderTextColor: UIColor? {
         
         get {
             return placeholderLabel.textColor
@@ -101,7 +112,7 @@ open class IQTextView : UITextView {
     }
     
     /** @abstract To set textView's placeholder text. Default is nil.    */
-    @IBInspectable open var placeholder : String? {
+    @IBInspectable open var placeholder: String? {
         
         get {
             return placeholderLabel.text
@@ -112,20 +123,28 @@ open class IQTextView : UITextView {
             refreshPlaceholder()
         }
     }
+
+    /** @abstract To set textView's placeholder attributed text. Default is nil.    */
+    open var attributedPlaceholder: NSAttributedString? {
+        get {
+            return placeholderLabel.attributedText
+        }
+
+        set {
+            placeholderLabel.attributedText = newValue
+            refreshPlaceholder()
+        }
+    }
     
     @objc override open func layoutSubviews() {
         super.layoutSubviews()
         
-        let placeholderInsets = self.placeholderInsets
-        let maxWidth = self.frame.width-placeholderInsets.left-placeholderInsets.right
-        let expectedSize = placeholderLabel.sizeThatFits(CGSize(width: maxWidth, height: self.frame.height-placeholderInsets.top-placeholderInsets.bottom))
-        
-        placeholderLabel.frame = CGRect(x: placeholderInsets.left, y: placeholderInsets.top, width: maxWidth, height: expectedSize.height)
+        placeholderLabel.frame = placeholderExpectedFrame
     }
     
     @objc internal func refreshPlaceholder() {
         
-        if !text.isEmpty {
+        if !text.isEmpty || !attributedText.string.isEmpty {
             placeholderLabel.alpha = 0
         } else {
             placeholderLabel.alpha = 1
@@ -135,13 +154,18 @@ open class IQTextView : UITextView {
     @objc override open var text: String! {
         
         didSet {
-            
             refreshPlaceholder()
-            
         }
     }
     
-    @objc override open var font : UIFont? {
+    open override var attributedText: NSAttributedString! {
+        
+        didSet {
+            refreshPlaceholder()
+        }
+    }
+    
+    @objc override open var font: UIFont? {
         
         didSet {
             
@@ -153,14 +177,13 @@ open class IQTextView : UITextView {
         }
     }
     
-    @objc override open var textAlignment: NSTextAlignment
-        {
+    @objc override open var textAlignment: NSTextAlignment {
         didSet {
             placeholderLabel.textAlignment = textAlignment
         }
     }
     
-    @objc override open var delegate : UITextViewDelegate? {
+    @objc override open var delegate: UITextViewDelegate? {
         
         get {
             refreshPlaceholder()
@@ -171,6 +194,37 @@ open class IQTextView : UITextView {
             super.delegate = newValue
         }
     }
+    
+    @objc override open var intrinsicContentSize: CGSize {
+        guard !hasText else {
+            return super.intrinsicContentSize
+        }
+        
+        var newSize = super.intrinsicContentSize
+        let placeholderInsets = self.placeholderInsets
+        newSize.height = placeholderExpectedFrame.height + placeholderInsets.top + placeholderInsets.bottom
+        
+        return newSize
+    }
 }
 
-
+//#if swift(>=5.1)
+//import SwiftUI
+//
+//struct IQTextViewSwiftUI: UIViewRepresentable {
+//    func makeUIView(context: Context) -> IQTextView {
+//        IQTextView(frame: .zero)
+//    }
+//
+//    func updateUIView(_ view: IQTextView, context: Context) {
+//    }
+//}
+//
+//struct IQTextViewSwiftUI_Preview: PreviewProvider {
+//    static var previews: some View {
+//        IQTextViewSwiftUI()
+//    }
+//}
+//
+//#endif
+//

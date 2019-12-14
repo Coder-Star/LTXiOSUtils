@@ -27,12 +27,12 @@ import UIKit
 private var kIQShouldIgnoreScrollingAdjustment      = "kIQShouldIgnoreScrollingAdjustment"
 private var kIQShouldRestoreScrollViewContentOffset = "kIQShouldRestoreScrollViewContentOffset"
 
-public extension UIScrollView {
+@objc public extension UIScrollView {
     
     /**
      If YES, then scrollview will ignore scrolling (simply not scroll it) for adjusting textfield position. Default is NO.
      */
-    @objc public var shouldIgnoreScrollingAdjustment: Bool {
+    @objc var shouldIgnoreScrollingAdjustment: Bool {
         get {
             
             if let aValue = objc_getAssociatedObject(self, &kIQShouldIgnoreScrollingAdjustment) as? Bool {
@@ -49,7 +49,7 @@ public extension UIScrollView {
     /**
      To set customized distance from keyboard for textField/textView. Can't be less than zero
      */
-    @objc public var shouldRestoreScrollViewContentOffset: Bool {
+    @objc var shouldRestoreScrollViewContentOffset: Bool {
         get {
             
             if let aValue = objc_getAssociatedObject(self, &kIQShouldRestoreScrollViewContentOffset) as? Bool {
@@ -60,6 +60,52 @@ public extension UIScrollView {
         }
         set(newValue) {
             objc_setAssociatedObject(self, &kIQShouldRestoreScrollViewContentOffset, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+}
+
+internal extension UITableView {
+    
+    func previousIndexPath(of indexPath: IndexPath) -> IndexPath? {
+        var previousRow = indexPath.row - 1
+        var previousSection = indexPath.section
+        
+        //Fixing indexPath
+        if previousRow < 0 {
+            previousSection -= 1
+            
+            if previousSection >= 0 {
+                previousRow = self.numberOfRows(inSection: previousSection) - 1
+            }
+        }
+        
+        if previousRow >= 0 && previousSection >= 0 {
+            return IndexPath(row: previousRow, section: previousSection)
+        } else {
+            return nil
+        }
+    }
+}
+
+internal extension UICollectionView {
+    
+    func previousIndexPath(of indexPath: IndexPath) -> IndexPath? {
+        var previousRow = indexPath.row - 1
+        var previousSection = indexPath.section
+        
+        //Fixing indexPath
+        if previousRow < 0 {
+            previousSection -= 1
+            
+            if previousSection >= 0 {
+                previousRow = self.numberOfItems(inSection: previousSection) - 1
+            }
+        }
+        
+        if previousRow >= 0 && previousSection >= 0 {
+            return IndexPath(item: previousRow, section: previousSection)
+        } else {
+            return nil
         }
     }
 }
