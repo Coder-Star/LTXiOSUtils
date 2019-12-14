@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'local', :tag => s.version} #本地开发
 
   s.requires_arc = true
-  s.swift_version = ["4.2","5"]
+  s.swift_version = ["5","4.2"]
 
   s.dependency 'SwiftyJSON' # 处理JSON
   s.dependency 'SnapKit' # 自动布局
