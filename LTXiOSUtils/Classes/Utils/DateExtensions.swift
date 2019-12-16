@@ -59,14 +59,3 @@ extension DispatchTime: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
         self = DispatchTime.now() + .milliseconds(Int(value * 1000))
     }
 }
-
-extension DispatchQueue {
-    /// 延时扩展
-    ///
-    /// - Parameters:
-    ///   - delay: 延时时间
-    ///   - execute: 闭包执行
-    public func delay(_ delay: Double, execute: @escaping () -> Void) {
-        asyncAfter(deadline: DispatchTime.init(floatLiteral: delay), execute: execute)
-    }
-}

@@ -181,7 +181,7 @@ extension UIView {
         return self
     }
 
-    private func addGesture(gesture: @escaping GestureClosures, for gestureType: GestureType, disEnabledtimeInterval:CGFloat = 0.0) {
+    private func addGesture(gesture: @escaping GestureClosures, for gestureType: GestureType, disEnabledtimeInterval: CGFloat = 0.0) {
         let gestureKey = String(gestureType.rawValue)
         if var gestureDict = self.gestureDict {
             gestureDict.updateValue(gesture, forKey: gestureKey)
@@ -192,7 +192,7 @@ extension UIView {
         isUserInteractionEnabled = true
         switch gestureType {
         case .tapGesture:
-            let tap = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction(_:)),disEnabledtimeInterval: disEnabledtimeInterval)
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction(_:)), disEnabledtimeInterval: disEnabledtimeInterval)
             addGestureRecognizer(tap)
         case .pinchGesture:
             let pinch = UIPinchGestureRecognizer(target: self, action: #selector(pinchGestureAction(_:)))
@@ -241,7 +241,7 @@ extension UIView {
 }
 
 // MARK: - UITapGestureRecognizer添加不可用时间间隔
-extension UITapGestureRecognizer:UIGestureRecognizerDelegate {
+extension UITapGestureRecognizer: UIGestureRecognizerDelegate {
     private struct UITapGestureDictKey {
         static var key: Void?
     }
@@ -257,7 +257,7 @@ extension UITapGestureRecognizer:UIGestureRecognizerDelegate {
         }
     }
 
-    convenience init(target: Any?, action: Selector?,disEnabledtimeInterval:CGFloat) {
+    convenience init(target: Any?, action: Selector?, disEnabledtimeInterval: CGFloat) {
         self.init(target: target, action: action)
         self.disEnabledtimeInterval = disEnabledtimeInterval
         self.delegate = self
@@ -265,8 +265,8 @@ extension UITapGestureRecognizer:UIGestureRecognizerDelegate {
 
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         self.isEnabled = false
-        let time:TimeInterval = TimeInterval(disEnabledtimeInterval ?? 0.0)
-        DispatchQueue.main.asyncAfter(deadline:.now() + time) {
+        let time: TimeInterval = TimeInterval(disEnabledtimeInterval ?? 0.0)
+        DispatchQueue.main.asyncAfter(deadline: .now() + time) {
             self.isEnabled = true
         }
         return true

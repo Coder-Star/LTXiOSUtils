@@ -411,6 +411,7 @@
 		DB2D6EBC95F3851690A78BB0C916DFDA /* SCNCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1649CDD4BECFCF915D4B216FAD9B2 /* SCNCapsule.swift */; };
 		DB315D5698CFDF320D16D8F36996C142 /* UIActivityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FECA81C29FBB1769BAC3EE08D7F9B /* UIActivityExtensions.swift */; };
 		DCC76E4E23A78C8D0029590C /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC76E4D23A78C8D0029590C /* UIButtonExtensions.swift */; };
+		DCC76E5023A78DDF0029590C /* DispatchQueueExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC76E4F23A78DDF0029590C /* DispatchQueueExtensions.swift */; };
 		DCDC042F8DD1859C5682B8D7E49D40F0 /* UISwitchExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A122B571929FD3ED34C45054C18EA /* UISwitchExtensions.swift */; };
 		DDCCDA0CC4F6901364FFA98C9D878CF0 /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3054627D8C6231E47A99120151F38 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */; };
 		DE086886728A731AF3B4447DE41B902E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE36B07812E3612C2D1F033CE6375841 /* Foundation.framework */; };
@@ -1185,6 +1186,7 @@
 		DB9DE937ACD5DCB4FFEFCEAFD3C8220E /* MJRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MJRefresh-Info.plist"; sourceTree = "<group>"; };
 		DC11F263EC09CCC242AC6ACB8EDC6771 /* Pods-LTXiOSUtilsDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LTXiOSUtilsDemoTests.modulemap"; sourceTree = "<group>"; };
 		DCC76E4D23A78C8D0029590C /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIButtonExtensions.swift; path = LTXiOSUtils/Classes/Utils/UIButtonExtensions.swift; sourceTree = "<group>"; };
+		DCC76E4F23A78DDF0029590C /* DispatchQueueExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DispatchQueueExtensions.swift; path = LTXiOSUtils/Classes/Utils/DispatchQueueExtensions.swift; sourceTree = "<group>"; };
 		DCE627C70CD289032364ED68F7D792B3 /* SCNPlaneExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCNPlaneExtensions.swift; path = Sources/SwifterSwift/SceneKit/SCNPlaneExtensions.swift; sourceTree = "<group>"; };
 		DD9CCF281406ADA3A4FD18293387310F /* UIWindowExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIWindowExtensions.swift; path = Sources/SwifterSwift/UIKit/UIWindowExtensions.swift; sourceTree = "<group>"; };
 		DEA2140F6E6770378BEE8D61A7C583F8 /* StringResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringResource.swift; path = Library/Core/StringResource.swift; sourceTree = "<group>"; };
@@ -2329,6 +2331,7 @@
 				14F5A8B6DEB1DCCCBD7FCBE95F961027 /* UIImageViewExtensions.swift */,
 				74C44339B779EB28201714B84015B171 /* UIViewExtensions.swift */,
 				DCC76E4D23A78C8D0029590C /* UIButtonExtensions.swift */,
+				DCC76E4F23A78DDF0029590C /* DispatchQueueExtensions.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -3586,6 +3589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CCCDE0453725A5CD25B91A1557DA101 /* BaseGroupTableMenuViewController.swift in Sources */,
+				DCC76E5023A78DDF0029590C /* DispatchQueueExtensions.swift in Sources */,
 				C292F0A3814FB1DC78D3F802F8967BA1 /* BaseUIViewController.swift in Sources */,
 				D87C0A3E4AB1D56D9DF708F7D7547B53 /* BaseViewController.swift in Sources */,
 				B063D2E12CF148C178500C27281FDE3A /* Checkbox.swift in Sources */,
