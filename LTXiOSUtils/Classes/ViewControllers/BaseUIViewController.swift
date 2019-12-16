@@ -11,7 +11,7 @@ import SnapKit
 open class BaseUIViewController: BaseViewController {
 
     /// 基础view
-    lazy var baseView:UIView = {
+    lazy var baseView: UIView = {
         return UIView()
     }()
 

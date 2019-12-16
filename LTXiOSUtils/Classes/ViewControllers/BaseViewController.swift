@@ -7,9 +7,9 @@
 //
 
 import Foundation
-open class BaseViewController:UIViewController {
+open class BaseViewController: UIViewController {
 
-    var statusBarHeight:CGFloat?
+    var statusBarHeight: CGFloat?
 
     override open func viewDidLoad() {
         super.viewDidLoad()

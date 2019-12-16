@@ -43,7 +43,7 @@ public enum CallbackQueue {
     case untouch
     /// Dispatches to a specified `DispatchQueue`.
     case dispatch(DispatchQueue)
-    
+
     public func execute(_ block: @escaping () -> Void) {
         switch self {
         case .mainAsync:
@@ -71,7 +71,7 @@ extension DispatchQueue {
     // This method will dispatch the `block` to self.
     // If `self` is the main queue, and current thread is main thread, the block
     // will be invoked immediately instead of being dispatched.
-    func safeAsync(_ block: @escaping ()->()) {
+    func safeAsync(_ block: @escaping () -> Void) {
         if self === DispatchQueue.main && Thread.isMainThread {
             block()
         } else {

@@ -7,8 +7,12 @@
 //
 
 import UIKit
-class ViewController: BaseGroupTableMenuViewController {
+import LTXiOSUtils
 
+class ViewController: BaseGroupTableMenuViewController {
+    var hud:HUD!
+    var timer:Timer!
+    var i:Float = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         title = R.string.localizable.menu()
@@ -22,6 +26,14 @@ class ViewController: BaseGroupTableMenuViewController {
     }
 
     override func click(code: String) {
-       HUD.show("这是一个很长很长很长很长很长很长很长很长很长很长很长很长")
+        hud = HUD.showProgress(title: "123")
+        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(time), userInfo: nil, repeats: true)
+        timer.fire()
+
+    }
+
+    @objc func time() {
+        i += 0.1
+        hud.updateProgress(progress: i, title: "这是\(i)", successTitle: "完成")
     }
 }

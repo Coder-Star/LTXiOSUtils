@@ -14,18 +14,17 @@ import Foundation
     import UIKit
 #endif
 
-
 ///  Debug error level
-private let kLogDebug : String = "Debug";
+private let kLogDebug : String = "Debug"
 
 ///  Info error level
-private let kLogInfo : String = "Info";
+private let kLogInfo : String = "Info"
 
 ///  Warning error level
-private let kLogWarning : String = "Warning";
+private let kLogWarning : String = "Warning"
 
 ///  Error error level
-private let kLogError : String = "Error";
+private let kLogError : String = "Error"
 
 public struct QorumLogs {
 
@@ -52,13 +51,13 @@ public struct QorumLogs {
         "💛", //3
         "❤️", //4
         "💜"] //5
-    
+
     /// Uses emojis instead of colors when this is false
     public static var useColors = false
-    
+
     //TODO: Show example in documentation
     /// Set your function that will get called whenever something new is logged
-    public static var trackLogFunction: ((String)->())? = nil
+    public static var trackLogFunction: ((String) -> Void)?
 
     private static var showFiles = [String]()
 
@@ -121,16 +120,16 @@ public struct QorumLogs {
 }
 
 ///  Debug error level
-private let kOnlineLogDebug : String = "1Debug";
+private let kOnlineLogDebug : String = "1Debug"
 
 ///  Info error level
-private let kOnlineLogInfo : String = "2Info";
+private let kOnlineLogInfo : String = "2Info"
 
 ///  Warning error level
-private let kOnlineLogWarning : String = "3Warning";
+private let kOnlineLogWarning : String = "3Warning"
 
 ///  Error error level
-private let kOnlineLogError : String = "4Error";
+private let kOnlineLogError : String = "4Error"
 
 public struct QorumOnlineLogs {
 
@@ -223,7 +222,6 @@ public struct QorumOnlineLogs {
     }
 }
 
-
 ///Detailed logs only used while debugging
 public func QL1<T>(_ debug: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
     QLManager(debug, file: file, function: function, line: line, level:1)
@@ -243,7 +241,6 @@ public func QL3<T>(_ warning: T, _ file: String = #file, _ function: String = #f
 public func QL4<T>(_ error: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
     QLManager(error,file: file,function: function,line: line,level:4)
 }
-
 
 private func printLog<T>(_ informationPart: String, text: T, level: Int) {
     print(" \(ColorLog.colorizeString(informationPart, colorId: 0))", terminator: "")
@@ -265,7 +262,7 @@ public func QLPlusLine(_ file: String = #file, _ function: String = #function, _
 ///Print data with level
 private func QLManager<T>(_ debug: T, file: String, function: String, line: Int, level : Int) {
 
-    let levelText : String;
+    let levelText : String
 
     switch (level) {
     case 1: levelText = kOnlineLogDebug
@@ -277,7 +274,7 @@ private func QLManager<T>(_ debug: T, file: String, function: String, line: Int,
 
     let fileExtension = file.ns.lastPathComponent.ns.pathExtension
     let filename = file.ns.lastPathComponent.ns.deletingPathExtension
-    
+
     var text = ""
     if let stringObject = debug as? String {
         text = stringObject
@@ -343,7 +340,7 @@ open class QLColor {
     #elseif os(iOS) || os(tvOS)
     var color: UIColor
     #endif
-    
+
     public init(r: CGFloat, g: CGFloat, b: CGFloat) {
         #if os(OSX)
             color = NSColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1)
@@ -351,17 +348,17 @@ open class QLColor {
             color = UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1)
         #endif
     }
-    
+
     public convenience init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
         self.init(r: red * 255, g: green * 255, b: blue * 255)
     }
-    
+
     var redColor: Int {
         var r: CGFloat = 0
         color.getRed(&r, green: nil, blue: nil, alpha: nil)
         return Int(r * 255)
     }
-    
+
     var greenColor: Int {
         var g: CGFloat = 0
         color.getRed(nil, green: &g, blue: nil, alpha: nil)

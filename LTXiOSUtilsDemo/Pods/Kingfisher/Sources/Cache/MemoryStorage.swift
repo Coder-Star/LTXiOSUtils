@@ -52,7 +52,7 @@ public enum MemoryStorage {
         // See https://github.com/onevcat/Kingfisher/issues/1233
         var keys = Set<String>()
 
-        private var cleanTimer: Timer? = nil
+        private var cleanTimer: Timer?
         private let lock = NSLock()
 
         /// The config used in this storage. It is a value you can set and
@@ -103,8 +103,7 @@ public enum MemoryStorage {
         func store(
             value: T,
             forKey key: String,
-            expiration: StorageExpiration? = nil) throws
-        {
+            expiration: StorageExpiration? = nil) throws {
             storeNoThrow(value: value, forKey: key, expiration: expiration)
         }
 
@@ -113,19 +112,18 @@ public enum MemoryStorage {
         func storeNoThrow(
             value: T,
             forKey key: String,
-            expiration: StorageExpiration? = nil)
-        {
+            expiration: StorageExpiration? = nil) {
             lock.lock()
             defer { lock.unlock() }
             let expiration = expiration ?? config.expiration
             // The expiration indicates that already expired, no need to store.
             guard !expiration.isExpired else { return }
-            
+
             let object = StorageObject(value, key: key, expiration: expiration)
             storage.setObject(object, forKey: key as NSString, cost: value.cacheCost)
             keys.insert(key)
         }
-        
+
         /// Use this when you actually access the memory cached item.
         /// By default, this will extend the expired data for the accessed item.
         ///
@@ -208,14 +206,14 @@ extension MemoryStorage {
         let value: T
         let expiration: StorageExpiration
         let key: String
-        
+
         private(set) var estimatedExpiration: Date
-        
+
         init(_ value: T, key: String, expiration: StorageExpiration) {
             self.value = value
             self.key = key
             self.expiration = expiration
-            
+
             self.estimatedExpiration = expiration.estimatedExpirationSinceNow
         }
 
@@ -229,7 +227,7 @@ extension MemoryStorage {
                 self.estimatedExpiration = expirationTime.estimatedExpirationSinceNow
             }
         }
-        
+
         var expired: Bool {
             return estimatedExpiration.isPast
         }

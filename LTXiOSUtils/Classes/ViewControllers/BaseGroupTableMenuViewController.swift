@@ -9,8 +9,8 @@ import Foundation
 
 open class BaseGroupTableMenuViewController: BaseUIViewController {
 
-    lazy var groupTableView:UITableView = {
-        let groupTableView = UITableView(frame:baseView.frame, style:.grouped)
+    lazy var groupTableView: UITableView = {
+        let groupTableView = UITableView(frame: baseView.frame, style: .grouped)
         groupTableView.delegate = self
         groupTableView.dataSource = self
         return groupTableView
@@ -27,7 +27,7 @@ open class BaseGroupTableMenuViewController: BaseUIViewController {
     ///         [ConstantsEnum.code:"code3",ConstantsEnum.title:"title3",ConstantsEnum.image:"image3"]
     ///     ],
     // /   ]
-    public var menu = [[[String:String]]]()
+    public var menu = [[[String: String]]]()
 
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ open class BaseGroupTableMenuViewController: BaseUIViewController {
     }
 }
 // MARK: - UITableViewDataSource
-extension BaseGroupTableMenuViewController:UITableViewDataSource {
+extension BaseGroupTableMenuViewController: UITableViewDataSource {
 
     /// 分组个数
     open func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,7 +87,7 @@ extension BaseGroupTableMenuViewController:UITableViewDataSource {
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var tableCell = tableView.dequeueReusableCell(withIdentifier: ConstantsEnum.cell)
         if tableCell == nil {
-            tableCell = UITableViewCell(style:.default, reuseIdentifier: ConstantsEnum.cell)
+            tableCell = UITableViewCell(style: .default, reuseIdentifier: ConstantsEnum.cell)
         }
 
         if let title = menu[indexPath.section][indexPath.row][ConstantsEnum.title] {
@@ -105,7 +105,7 @@ extension BaseGroupTableMenuViewController:UITableViewDataSource {
 }
 
 // MARK: - UITableViewDataSource
-extension BaseGroupTableMenuViewController:UITableViewDelegate {
+extension BaseGroupTableMenuViewController: UITableViewDelegate {
 
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -114,7 +114,7 @@ extension BaseGroupTableMenuViewController:UITableViewDelegate {
         }
     }
 
-    @objc open func click(code:String) {
+    @objc open func click(code: String) {
 
     }
 

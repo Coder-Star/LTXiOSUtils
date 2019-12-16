@@ -49,14 +49,14 @@ public protocol ImageDownloadRequestModifier {
 /// A wrapper for creating an `ImageDownloadRequestModifier` easier.
 /// This type conforms to `ImageDownloadRequestModifier` and wraps an image modify block.
 public struct AnyModifier: ImageDownloadRequestModifier {
-    
+
     let block: (URLRequest) -> URLRequest?
 
     /// For `ImageDownloadRequestModifier` conformation.
     public func modified(for request: URLRequest) -> URLRequest? {
         return block(request)
     }
-    
+
     /// Creates a value of `ImageDownloadRequestModifier` which runs `modify` block.
     ///
     /// - Parameter modify: The request modifying block runs when a request modifying task comes.

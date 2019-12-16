@@ -28,26 +28,26 @@ class PageControl: UIView {
         }
     }
     // 普通状态的颜色
-    open var normorlColor : UIColor = UIColor.lightGray
+    open var normorlColor: UIColor = UIColor.lightGray
     // 当前页的颜色
-    open var currentColor : UIColor = UIColor.white
+    open var currentColor: UIColor = UIColor.white
     // 普通状态的尺寸
-    open var normalSize : CGSize = CGSize(width: 10, height: 10)
+    open var normalSize: CGSize = CGSize(width: 10, height: 10)
     // 当前状态的尺寸(适用于bigSmall样式)
-    open var currentSize : CGSize = CGSize(width: 10, height: 10)
+    open var currentSize: CGSize = CGSize(width: 10, height: 10)
     // 当前页字体(number 样式专用)
-    open var currentFont : CGFloat = 17
+    open var currentFont: CGFloat = 17
     // 普通页字体(number 样式专业)
-    open var normalFont : CGFloat = 14
+    open var normalFont: CGFloat = 14
 
     // 间距
-    fileprivate var margin : CGFloat = 0
+    fileprivate var margin: CGFloat = 0
     // pageControl的样式
-    var style : PageControlStyle = .original
+    var style: PageControlStyle = .original
 
     // 初始化方法
-    convenience init(frame: CGRect, style : PageControlStyle) {
-        self.init(frame : frame)
+    convenience init(frame: CGRect, style: PageControlStyle) {
+        self.init(frame: frame)
         self.tag = -999     // 避免后面遍历tag混乱
         backgroundColor = UIColor.clear
         self.style = style
@@ -69,7 +69,7 @@ class PageControl: UIView {
 
     // 布局默认样式 ring样式 square样式
     fileprivate func layoutOrgPages() {
-        let y : CGFloat = (self.frame.height - normalSize.height)*0.5
+        let y: CGFloat = (self.frame.height - normalSize.height)*0.5
         for i in 0..<numberOfPages {
             let point = UIView(frame: CGRect(x: CGFloat(i) * (margin + normalSize.width) + margin, y: y, width: normalSize.width, height: normalSize.height))
             point.tag = i
@@ -98,8 +98,8 @@ class PageControl: UIView {
 
     // 布局bigSmall样式
     fileprivate func layoutBigSmallPages() {
-        let y1 : CGFloat = (self.frame.height - normalSize.height)*0.5
-        let y2 : CGFloat = (self.frame.height - currentSize.height)*0.5
+        let y1: CGFloat = (self.frame.height - normalSize.height)*0.5
+        let y2: CGFloat = (self.frame.height - currentSize.height)*0.5
         for i in 0..<numberOfPages {
             let point = UIView(frame: CGRect(x: CGFloat(i) * (margin + normalSize.width) + margin, y: i == currentPage ? y2 : y1, width: i == currentPage ? currentSize.width : normalSize.width, height: i == currentPage ? currentSize.height : normalSize.height))
             point.tag = i
@@ -131,9 +131,9 @@ class PageControl: UIView {
     fileprivate func setPage() {
         if self.subviews.isEmpty { return }
         // 索引容错
-        if currentPage > numberOfPages , currentPage < 0 { return }
+        if currentPage > numberOfPages, currentPage < 0 { return }
         switch style {
-        case .original , .bigSmall , .square :
+        case .original, .bigSmall, .square :
             for view in self.subviews {
                 view.backgroundColor = normorlColor
                 if style == .bigSmall {
