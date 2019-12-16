@@ -1,5 +1,5 @@
 //
-//  ColorExtensions.swift
+//  UIColorExtensions.swift
 //  LTXiOSUtils
 //  颜色工具类以及扩展
 //  Created by 李天星 on 2019/8/2.

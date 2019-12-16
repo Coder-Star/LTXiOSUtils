@@ -1,5 +1,5 @@
 //
-//  UIImageExtension.swift
+//  UIImageExtensions.swift
 //  LTXiOSUtils
 //
 //  Created by 李天星 on 2019/11/21.
