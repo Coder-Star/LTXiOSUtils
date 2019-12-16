@@ -110,11 +110,15 @@ extension BaseGroupTableMenuViewController: UITableViewDelegate {
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let code = menu[indexPath.section][indexPath.row][ConstantsEnum.code] {
-            click(code: code)
+            guard let title = menu[indexPath.section][indexPath.row][ConstantsEnum.title] else {
+                click(code: code, title: "")
+                return
+            }
+            click(code: code, title: title)
         }
     }
 
-    @objc open func click(code: String) {
+    @objc open func click(code: String, title: String) {
 
     }
 
