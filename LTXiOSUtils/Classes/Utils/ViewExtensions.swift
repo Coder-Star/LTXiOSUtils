@@ -115,7 +115,7 @@ extension UIView {
     }
 }
 
-// MARK: - 闭包实现view操作手势的链式监听
+// MARK: - 闭包实现view操作手势的链式监听，建议使用这个，内部加入了防重复点击
 extension UIView {
 
     private struct GestureDictKey {
@@ -142,9 +142,12 @@ extension UIView {
     public typealias GestureClosures = (UIGestureRecognizer) -> Void
 
     /// 点击
+    /// - Parameters:
+    ///   - disEnabledtimeInterval: 不可用时间，默认时间为0.5s
+    ///   - gesture: 手势回调
     @discardableResult
-    public func addTapGesture(_ gesture: @escaping GestureClosures) -> UIView {
-        addGesture(gesture: gesture, for: .tapGesture)
+    public func addTapGesture(disEnabledtimeInterval: CGFloat = 0.5, _ gesture: @escaping GestureClosures) -> UIView {
+        addGesture(gesture: gesture, for: .tapGesture, disEnabledtimeInterval: disEnabledtimeInterval)
         return self
     }
     /// 捏合
@@ -178,7 +181,7 @@ extension UIView {
         return self
     }
 
-    private func addGesture(gesture: @escaping GestureClosures, for gestureType: GestureType) {
+    private func addGesture(gesture: @escaping GestureClosures, for gestureType: GestureType, disEnabledtimeInterval:CGFloat = 0.0) {
         let gestureKey = String(gestureType.rawValue)
         if var gestureDict = self.gestureDict {
             gestureDict.updateValue(gesture, forKey: gestureKey)
@@ -189,7 +192,7 @@ extension UIView {
         isUserInteractionEnabled = true
         switch gestureType {
         case .tapGesture:
-            let tap = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction(_:)))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction(_:)),disEnabledtimeInterval: disEnabledtimeInterval)
             addGestureRecognizer(tap)
         case .pinchGesture:
             let pinch = UIPinchGestureRecognizer(target: self, action: #selector(pinchGestureAction(_:)))
@@ -234,5 +237,38 @@ extension UIView {
         if let gestureDict = self.gestureDict, let gestureReg = gestureDict[gestureKey] {
             gestureReg(gesture)
         }
+    }
+}
+
+// MARK: - UITapGestureRecognizer添加不可用时间间隔
+extension UITapGestureRecognizer:UIGestureRecognizerDelegate {
+    private struct UITapGestureDictKey {
+        static var key: Void?
+    }
+
+    /// 不可用时间间隔
+    var disEnabledtimeInterval: CGFloat? {
+        set {
+            objc_setAssociatedObject(self, &UITapGestureDictKey.key, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+            self.delegate = self
+        }
+        get {
+            return  objc_getAssociatedObject(self, &UITapGestureDictKey.key) as? CGFloat
+        }
+    }
+
+    convenience init(target: Any?, action: Selector?,disEnabledtimeInterval:CGFloat) {
+        self.init(target: target, action: action)
+        self.disEnabledtimeInterval = disEnabledtimeInterval
+        self.delegate = self
+    }
+
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        self.isEnabled = false
+        let time:TimeInterval = TimeInterval(disEnabledtimeInterval ?? 0.0)
+        DispatchQueue.main.asyncAfter(deadline:.now() + time) {
+            self.isEnabled = true
+        }
+        return true
     }
 }
