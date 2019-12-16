@@ -66,7 +66,7 @@ extension DispatchQueue {
     /// - Parameters:
     ///   - delay: 延时时间
     ///   - execute: 闭包执行
-    func delay(_ delay: Double, execute: @escaping () -> Void) {
+    public func delay(_ delay: Double, execute: @escaping () -> Void) {
         asyncAfter(deadline: DispatchTime.init(floatLiteral: delay), execute: execute)
     }
 }

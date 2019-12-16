@@ -10,9 +10,6 @@ import UIKit
 import LTXiOSUtils
 
 class ViewController: BaseGroupTableMenuViewController {
-    var hud:HUD!
-    var timer:Timer?
-    var i:Float = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,23 +18,17 @@ class ViewController: BaseGroupTableMenuViewController {
 
     override func setMenu() {
         let fisrtMenu = [
-            [ConstantsEnum.title:"第一个功能",ConstantsEnum.image:"123",ConstantsEnum.code:"123"]
+            [ConstantsEnum.title:"HUD加载框",ConstantsEnum.image:"",ConstantsEnum.code:"HUD"]
         ]
         menu.append(fisrtMenu)
     }
 
-    override func click(code: String) {
-        hud = HUD.showProgress(title: "123")
-        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(time), userInfo: nil, repeats: true)
-        timer?.fire()
-
-    }
-
-    @objc func time() {
-        i += 0.1
-        hud.updateProgress(progress: i, title: "这是\(i)", successTitle: "完成")
-        if i > 1 {
-            timer?.invalidate()
+    override func click(code: String, title: String) {
+        switch code {
+        case "HUD":
+            navigationController?.pushViewController(HUDDemoViewController(), animated: true)
+        default:
+            HUD.showText("暂无此模块")
         }
     }
 }
