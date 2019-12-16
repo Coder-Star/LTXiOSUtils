@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LTXiOSUtils"
-  s.version      = "1.0.0"
+  s.version      = "1.0.3"
   s.platform     = :ios, "10.0" #iOS平台最低版本 10.0
   s.summary      = "通用工具类以及组件的整合、封装以及使用介绍"
   s.homepage     = "https://github.com/Coder-Star/LTXiOSUtils"
