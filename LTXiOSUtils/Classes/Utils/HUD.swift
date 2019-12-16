@@ -57,7 +57,7 @@ open class HUD: MBProgressHUD {
         return hud
     }
 
-    /// 显示进度框
+    /// 显示进度框,与updateProgress搭配使用
     /// - Parameter title: 标题
     @discardableResult
     open class func showProgress(title: String) -> HUD {

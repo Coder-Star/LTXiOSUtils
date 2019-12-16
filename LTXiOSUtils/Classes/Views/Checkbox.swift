@@ -1,6 +1,8 @@
 //
 //  Checkbox.swift
-//
+//  LTXiOSUtils
+//  选择框
+//  Created by 李天星 on 2019/11/21.
 //
 
 import Foundation
