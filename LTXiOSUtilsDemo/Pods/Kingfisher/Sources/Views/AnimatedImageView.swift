@@ -72,15 +72,15 @@ let KFRunLoopModeCommon = RunLoopMode.commonModes
 /// Kingfisher supports setting GIF animated data to either `UIImageView` and `AnimatedImageView` out of box. So
 /// it would be fairly easy to switch between them.
 open class AnimatedImageView: UIImageView {
-    
+
     /// Proxy object for preventing a reference cycle between the `CADDisplayLink` and `AnimatedImageView`.
     class TargetProxy {
         private weak var target: AnimatedImageView?
-        
+
         init(target: AnimatedImageView) {
             self.target = target
         }
-        
+
         @objc func onScreenUpdate() {
             target?.updateFrameIfNeeded()
         }
@@ -109,14 +109,14 @@ open class AnimatedImageView: UIImageView {
             }
         }
     }
-    
+
     // MARK: - Public property
     /// Whether automatically play the animation when the view become visible. Default is `true`.
     public var autoPlayAnimatedImage = true
-    
+
     /// The count of the frames should be preloaded before shown.
     public var framePreloadCount = 10
-    
+
     /// Specifies whether the GIF frames should be pre-scaled to the image view's size or not.
     /// If the downloaded image is larger than the image view's size, it will help to reduce some memory use.
     /// Default is `true`.
@@ -137,7 +137,7 @@ open class AnimatedImageView: UIImageView {
             startAnimating()
         }
     }
-    
+
     /// The repeat count. The animated image will keep animate until it the loop count reaches this value.
     /// Setting this value to another one will reset current animation.
     ///
@@ -154,7 +154,7 @@ open class AnimatedImageView: UIImageView {
 
     /// Delegate of this `AnimatedImageView` object. See `AnimatedImageViewDelegate` protocol for more.
     public weak var delegate: AnimatedImageViewDelegate?
-    
+
     // MARK: - Private property
     /// `Animator` instance that holds the frames of a specific image in memory.
     private var animator: Animator?
@@ -163,10 +163,10 @@ open class AnimatedImageView: UIImageView {
     private lazy var preloadQueue: DispatchQueue = {
         return DispatchQueue(label: "com.onevcat.Kingfisher.Animator.preloadQueue")
     }()
-    
+
     // A flag to avoid invalidating the displayLink on deinit if it was never created, because displayLink is so lazy.
     private var isDisplayLinkInitialized: Bool = false
-    
+
     // A display link that keeps calling the `updateFrame` method on every screen refresh.
     private lazy var displayLink: CADisplayLink = {
         isDisplayLinkInitialized = true
@@ -176,7 +176,7 @@ open class AnimatedImageView: UIImageView {
         displayLink.isPaused = true
         return displayLink
     }()
-    
+
     // MARK: - Override
     override open var image: KFCrossPlatformImage? {
         didSet {
@@ -187,13 +187,13 @@ open class AnimatedImageView: UIImageView {
             layer.setNeedsDisplay()
         }
     }
-    
+
     deinit {
         if isDisplayLinkInitialized {
             displayLink.invalidate()
         }
     }
-    
+
     override open var isAnimating: Bool {
         if isDisplayLinkInitialized {
             return !displayLink.isPaused
@@ -201,7 +201,7 @@ open class AnimatedImageView: UIImageView {
             return super.isAnimating
         }
     }
-    
+
     /// Starts the animation.
     override open func startAnimating() {
         guard !isAnimating else { return }
@@ -211,7 +211,7 @@ open class AnimatedImageView: UIImageView {
 
         displayLink.isPaused = false
     }
-    
+
     /// Stops the animation.
     override open func stopAnimating() {
         super.stopAnimating()
@@ -219,7 +219,7 @@ open class AnimatedImageView: UIImageView {
             displayLink.isPaused = true
         }
     }
-    
+
     override open func display(_ layer: CALayer) {
         if let currentFrame = animator?.currentFrameImage {
             layer.contents = currentFrame.cgImage
@@ -227,12 +227,12 @@ open class AnimatedImageView: UIImageView {
             layer.contents = image?.cgImage
         }
     }
-    
+
     override open func didMoveToWindow() {
         super.didMoveToWindow()
         didMove()
     }
-    
+
     override open func didMoveToSuperview() {
         super.didMoveToSuperview()
         didMove()
@@ -263,7 +263,7 @@ open class AnimatedImageView: UIImageView {
         }
         didMove()
     }
-    
+
     private func didMove() {
         if autoPlayAnimatedImage && animator != nil {
             if let _ = superview, let _ = window {
@@ -273,7 +273,7 @@ open class AnimatedImageView: UIImageView {
             }
         }
     }
-    
+
     /// Update the current frame with the displayLink duration.
     private func updateFrameIfNeeded() {
         guard let animator = animator else {
@@ -516,7 +516,7 @@ extension AnimatedImageView {
             let image = KFCrossPlatformImage(cgImage: cgImage)
             return backgroundDecode ? image.kf.decoded : image
         }
-        
+
         private func updatePreloadedFrames() {
             guard preloadingIsNeeded else {
                 return
@@ -570,14 +570,14 @@ extension AnimatedImageView {
 class SafeArray<Element> {
     private var array: Array<Element> = []
     private let lock = NSLock()
-    
+
     subscript(index: Int) -> Element? {
         get {
             lock.lock()
             defer { lock.unlock() }
             return array.indices ~= index ? array[index] : nil
         }
-        
+
         set {
             lock.lock()
             defer { lock.unlock() }
@@ -586,25 +586,25 @@ class SafeArray<Element> {
             }
         }
     }
-    
+
     var count : Int {
         lock.lock()
         defer { lock.unlock() }
         return array.count
     }
-    
+
     func reserveCapacity(_ count: Int) {
         lock.lock()
         defer { lock.unlock() }
         array.reserveCapacity(count)
     }
-    
+
     func append(_ element: Element) {
         lock.lock()
         defer { lock.unlock() }
         array += [element]
     }
-    
+
     func removeAll() {
         lock.lock()
         defer { lock.unlock() }

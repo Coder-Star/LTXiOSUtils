@@ -28,13 +28,13 @@ private var kIQShouldIgnoreScrollingAdjustment      = "kIQShouldIgnoreScrollingA
 private var kIQShouldRestoreScrollViewContentOffset = "kIQShouldRestoreScrollViewContentOffset"
 
 @objc public extension UIScrollView {
-    
+
     /**
      If YES, then scrollview will ignore scrolling (simply not scroll it) for adjusting textfield position. Default is NO.
      */
-    @objc var shouldIgnoreScrollingAdjustment: Bool {
+    var shouldIgnoreScrollingAdjustment: Bool {
         get {
-            
+
             if let aValue = objc_getAssociatedObject(self, &kIQShouldIgnoreScrollingAdjustment) as? Bool {
                 return aValue
             } else {
@@ -49,9 +49,9 @@ private var kIQShouldRestoreScrollViewContentOffset = "kIQShouldRestoreScrollVie
     /**
      To set customized distance from keyboard for textField/textView. Can't be less than zero
      */
-    @objc var shouldRestoreScrollViewContentOffset: Bool {
+    var shouldRestoreScrollViewContentOffset: Bool {
         get {
-            
+
             if let aValue = objc_getAssociatedObject(self, &kIQShouldRestoreScrollViewContentOffset) as? Bool {
                 return aValue
             } else {
@@ -65,20 +65,20 @@ private var kIQShouldRestoreScrollViewContentOffset = "kIQShouldRestoreScrollVie
 }
 
 internal extension UITableView {
-    
+
     func previousIndexPath(of indexPath: IndexPath) -> IndexPath? {
         var previousRow = indexPath.row - 1
         var previousSection = indexPath.section
-        
+
         //Fixing indexPath
         if previousRow < 0 {
             previousSection -= 1
-            
+
             if previousSection >= 0 {
                 previousRow = self.numberOfRows(inSection: previousSection) - 1
             }
         }
-        
+
         if previousRow >= 0 && previousSection >= 0 {
             return IndexPath(row: previousRow, section: previousSection)
         } else {
@@ -88,20 +88,20 @@ internal extension UITableView {
 }
 
 internal extension UICollectionView {
-    
+
     func previousIndexPath(of indexPath: IndexPath) -> IndexPath? {
         var previousRow = indexPath.row - 1
         var previousSection = indexPath.section
-        
+
         //Fixing indexPath
         if previousRow < 0 {
             previousSection -= 1
-            
+
             if previousSection >= 0 {
                 previousRow = self.numberOfItems(inSection: previousSection) - 1
             }
         }
-        
+
         if previousRow >= 0 && previousSection >= 0 {
             return IndexPath(item: previousRow, section: previousSection)
         } else {

@@ -85,10 +85,10 @@ extension UIImage {
     ///
     /// - Parameter reSize: 图片尺寸
     /// - Returns: 处理后的图片
-    public func setSize(reSize:CGSize) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(reSize,false,UIScreen.main.scale)
+    public func setSize(reSize: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(reSize, false, UIScreen.main.scale)
         self.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height))
-        let reSizeImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let reSizeImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return reSizeImage
     }
@@ -97,10 +97,10 @@ extension UIImage {
     ///
     /// - Parameter scaleSize: 缩放比例
     /// - Returns: 缩放后的图片
-    public func scaleImage(scaleSize:CGFloat) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width:self.size.width * scaleSize , height: self.size.height * scaleSize),false,UIScreen.main.scale)
+    public func scaleImage(scaleSize: CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize), false, UIScreen.main.scale)
         self.draw(in: CGRect(x: 0, y: 0, width: self.size.width * scaleSize, height: self.size.height * scaleSize))
-        let reSizeImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let reSizeImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return reSizeImage
     }
@@ -109,7 +109,7 @@ extension UIImage {
     ///
     /// - Parameter orientation: 旋转方向
     /// - Returns: 旋转后的图片
-    public func rotate(orientation:Orientation) -> UIImage {
+    public func rotate(orientation: Orientation) -> UIImage {
         return UIImage(cgImage: self.cgImage!, scale: self.scale, orientation: orientation)
     }
 }
@@ -157,13 +157,13 @@ extension UIImage {
             return delay
         }
 
-        let gifProperties:CFDictionary = unsafeBitCast(gifPropertiesPointer.pointee, to: CFDictionary.self)
+        let gifProperties: CFDictionary = unsafeBitCast(gifPropertiesPointer.pointee, to: CFDictionary.self)
 
         var delayObject: AnyObject = unsafeBitCast(
-            CFDictionaryGetValue(gifProperties,Unmanaged.passUnretained(kCGImagePropertyGIFUnclampedDelayTime).toOpaque()),
+            CFDictionaryGetValue(gifProperties, Unmanaged.passUnretained(kCGImagePropertyGIFUnclampedDelayTime).toOpaque()),
             to: AnyObject.self)
         if delayObject.doubleValue == 0 {
-            delayObject = unsafeBitCast(CFDictionaryGetValue(gifProperties,Unmanaged.passUnretained(kCGImagePropertyGIFDelayTime).toOpaque()), to: AnyObject.self)
+            delayObject = unsafeBitCast(CFDictionaryGetValue(gifProperties, Unmanaged.passUnretained(kCGImagePropertyGIFDelayTime).toOpaque()), to: AnyObject.self)
         }
 
         delay = delayObject as? Double ?? 0
@@ -225,7 +225,7 @@ extension UIImage {
             if let image = CGImageSourceCreateImageAtIndex(source, i, nil) {
                 images.append(image)
             }
-            let delaySeconds = UIImage.delayForImageAtIndex(Int(i),source: source)
+            let delaySeconds = UIImage.delayForImageAtIndex(Int(i), source: source)
             delays.append(Int(delaySeconds * 2000.0))
         }
 
@@ -248,7 +248,7 @@ extension UIImage {
                 frames.append(frame)
             }
         }
-        let animation = UIImage.animatedImage(with: frames,duration: Double(duration) / 3000.0)
+        let animation = UIImage.animatedImage(with: frames, duration: Double(duration) / 3000.0)
         return animation
     }
 

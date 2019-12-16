@@ -105,7 +105,7 @@ open class ImageDownloader {
     // MARK: Public Properties
     /// The duration before the downloading is timeout. Default is 15 seconds.
     open var downloadTimeout: TimeInterval = 15.0
-    
+
     /// A set of trusted hosts when receiving server trust challenges. A challenge with host name contained in this
     /// set will be ignored. You can use this set to specify the self-signed site. It only will be used if you don't
     /// specify the `authenticationChallengeResponder`.
@@ -113,7 +113,7 @@ open class ImageDownloader {
     /// If `authenticationChallengeResponder` is set, this property will be ignored and the implementation of
     /// `authenticationChallengeResponder` will be used instead.
     open var trustedHosts: Set<String>?
-    
+
     /// Use this to set supply a configuration for the downloader. By default,
     /// NSURLSessionConfiguration.ephemeralSessionConfiguration() will be used.
     ///
@@ -125,13 +125,13 @@ open class ImageDownloader {
             session = URLSession(configuration: sessionConfiguration, delegate: sessionDelegate, delegateQueue: nil)
         }
     }
-    
+
     /// Whether the download requests should use pipeline or not. Default is false.
     open var requestsUsePipelining = false
 
     /// Delegate of this `ImageDownloader` object. See `ImageDownloaderDelegate` protocol for more.
     open weak var delegate: ImageDownloaderDelegate?
-    
+
     /// A responder for authentication challenge. 
     /// Downloader will forward the received authentication challenge for the downloading session to this responder.
     open weak var authenticationChallengeResponder: AuthenticationChallengeResponsable?
@@ -206,8 +206,7 @@ open class ImageDownloader {
     open func downloadImage(
         with url: URL,
         options: KingfisherParsedOptionsInfo,
-        completionHandler: ((Result<ImageLoadingResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
-    {
+        completionHandler: ((Result<ImageLoadingResult, KingfisherError>) -> Void)? = nil) -> DownloadTask? {
         // Creates default request.
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: downloadTimeout)
         request.httpShouldUsePipelining = requestsUsePipelining
@@ -222,7 +221,7 @@ open class ImageDownloader {
             }
             request = r
         }
-        
+
         // There is a possibility that request modifier changed the url to `nil` or empty.
         // In this case, throw an error.
         guard let url = request.url, !url.absoluteString.isEmpty else {
@@ -335,8 +334,7 @@ open class ImageDownloader {
         with url: URL,
         options: KingfisherOptionsInfo? = nil,
         progressBlock: DownloadProgressBlock? = nil,
-        completionHandler: ((Result<ImageLoadingResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
-    {
+        completionHandler: ((Result<ImageLoadingResult, KingfisherError>) -> Void)? = nil) -> DownloadTask? {
         var info = KingfisherParsedOptionsInfo(options)
         if let block = progressBlock {
             info.onDataReceived = (info.onDataReceived ?? []) + [ImageLoadingProgressSideEffect(block)]

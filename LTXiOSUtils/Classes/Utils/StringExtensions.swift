@@ -92,20 +92,20 @@ extension String {
     /// 是否手机号
     public var isMobiel: Bool {
         let pattern = "^1[0-9]{10}$"
-        let regex = NSPredicate(format: "SELF MATCHES %@",pattern)
+        let regex = NSPredicate(format: "SELF MATCHES %@", pattern)
         return regex.evaluate(with: self)
     }
 
     /// 是否身份证号
     public var isIDNumber: Bool {
         let pattern = "^(\\d{14}|\\d{17})(\\d|[xX])$"
-        let regex = NSPredicate(format: "SELF MATCHES %@",pattern)
+        let regex = NSPredicate(format: "SELF MATCHES %@", pattern)
         return regex.evaluate(with: self)
     }
 
     /// 是否车牌号
     public var isCarNumber: Bool {
-        if self.count != 7 , self.count != 8 {
+        if self.count != 7, self.count != 8 {
             return false
         }
         var pattern = ""
@@ -114,7 +114,7 @@ extension String {
         } else if self.count == 8 {
             pattern = "^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF]$)|([DF][A-HJ-NP-Z0-9][0-9]{4}$))"
         }
-        let regex = NSPredicate(format: "SELF MATCHES %@",pattern)
+        let regex = NSPredicate(format: "SELF MATCHES %@", pattern)
         return regex.evaluate(with: self)
     }
 
@@ -131,6 +131,6 @@ extension String {
         CFStringTransform(mutableString, nil, kCFStringTransformToLatin, false)
         CFStringTransform(mutableString, nil, kCFStringTransformStripDiacritics, false)
         let string = String(mutableString)
-        return string.replacingOccurrences(of:" ", with: "")
+        return string.replacingOccurrences(of: " ", with: "")
     }
 }

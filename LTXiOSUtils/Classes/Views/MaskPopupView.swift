@@ -35,7 +35,7 @@ public protocol MaskPopupViewAnimationProtocol: AnyObject {
     ///   - backgroundView: 背景视图
     ///   - animated: 是否需要动画
     ///   - completion: 动画完成后的回调
-    func dismiss(contentView: UIView, backgroundView: MaskBackgroundView,animated: Bool, completion: @escaping () -> Void)
+    func dismiss(contentView: UIView, backgroundView: MaskBackgroundView, animated: Bool, completion: @escaping () -> Void)
 }
 
 /// 蒙板类型
@@ -271,7 +271,7 @@ open class MaskPopupViewBaseAnimator: MaskPopupViewAnimationProtocol {
         if animated {
             UIView.animate(withDuration: displayDuration, delay: 0, options: displayAnimationOptions, animations: {
                 self.displayAnimateBlock?()
-            },completion: { _ in
+            }, completion: { _ in
                 completion()
             })
         } else {
@@ -284,7 +284,7 @@ open class MaskPopupViewBaseAnimator: MaskPopupViewAnimationProtocol {
         if animated {
             UIView.animate(withDuration: dismissDuration, delay: 0, options: dismissAnimationOptions, animations: {
                 self.dismissAnimateBlock?()
-            },completion: { _ in
+            }, completion: { _ in
                 completion()
             })
         } else {
@@ -419,7 +419,7 @@ open class MaskPopupViewSpringDownwardAnimator: MaskPopupViewDownwardAnimator {
         if animated {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.7, options: displayAnimationOptions, animations: {
                 self.displayAnimateBlock?()
-            },completion: { _ in
+            }, completion: { _ in
                 completion()
             })
         } else {
