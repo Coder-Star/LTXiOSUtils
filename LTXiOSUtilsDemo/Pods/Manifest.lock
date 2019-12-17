@@ -16,43 +16,43 @@ PODS:
   - Kingfisher (5.12.0):
     - Kingfisher/Core (= 5.12.0)
   - Kingfisher/Core (5.12.0)
-  - LTXiOSUtils (1.0.2):
-    - Alamofire
-    - LTXiOSUtils/Utils (= 1.0.2)
-    - LTXiOSUtils/ViewControllers (= 1.0.2)
-    - LTXiOSUtils/Views (= 1.0.2)
-    - MBProgressHUD
-    - MJRefresh
-    - Moya
-    - QorumLogs
-    - SnapKit
-    - SwiftyJSON
-  - LTXiOSUtils/Utils (1.0.2):
-    - Alamofire
-    - MBProgressHUD
-    - MJRefresh
-    - Moya
-    - QorumLogs
-    - SnapKit
-    - SwiftyJSON
-  - LTXiOSUtils/ViewControllers (1.0.2):
-    - Alamofire
+  - LTXiOSUtils (1.0.0):
+    - Alamofire (= 4.9.1)
+    - LTXiOSUtils/Utils (= 1.0.0)
+    - LTXiOSUtils/ViewControllers (= 1.0.0)
+    - LTXiOSUtils/Views (= 1.0.0)
+    - MBProgressHUD (= 1.1.0)
+    - MJRefresh (= 3.3.1)
+    - Moya (= 13.0.1)
+    - QorumLogs (= 0.9)
+    - SnapKit (= 5.0.1)
+    - SwiftyJSON (= 5.0.0)
+  - LTXiOSUtils/Utils (1.0.0):
+    - Alamofire (= 4.9.1)
+    - MBProgressHUD (= 1.1.0)
+    - MJRefresh (= 3.3.1)
+    - Moya (= 13.0.1)
+    - QorumLogs (= 0.9)
+    - SnapKit (= 5.0.1)
+    - SwiftyJSON (= 5.0.0)
+  - LTXiOSUtils/ViewControllers (1.0.0):
+    - Alamofire (= 4.9.1)
     - LTXiOSUtils/Utils
-    - MBProgressHUD
-    - MJRefresh
-    - Moya
-    - QorumLogs
-    - SnapKit
-    - SwiftyJSON
-  - LTXiOSUtils/Views (1.0.2):
-    - Alamofire
+    - MBProgressHUD (= 1.1.0)
+    - MJRefresh (= 3.3.1)
+    - Moya (= 13.0.1)
+    - QorumLogs (= 0.9)
+    - SnapKit (= 5.0.1)
+    - SwiftyJSON (= 5.0.0)
+  - LTXiOSUtils/Views (1.0.0):
+    - Alamofire (= 4.9.1)
     - LTXiOSUtils/Utils
-    - MBProgressHUD
-    - MJRefresh
-    - Moya
-    - QorumLogs
-    - SnapKit
-    - SwiftyJSON
+    - MBProgressHUD (= 1.1.0)
+    - MJRefresh (= 3.3.1)
+    - Moya (= 13.0.1)
+    - QorumLogs (= 0.9)
+    - SnapKit (= 5.0.1)
+    - SwiftyJSON (= 5.0.0)
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.3.1)
   - Moya (13.0.1):
@@ -108,7 +108,7 @@ DEPENDENCIES:
   - ZYCornerRadius
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - BRPickerView
     - IQKeyboardManagerSwift
@@ -138,7 +138,7 @@ SPEC CHECKSUMS:
   BRPickerView: 0bd32f1fc4e338ecf6643b5e82f7a7c77db68cbe
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
-  LTXiOSUtils: 8cdfdf96a129480ba49f9b9807a428891306a0d0
+  LTXiOSUtils: 37dd89e9abb5b8e54ba7a6ea81acf1530c3f4bbe
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
@@ -157,4 +157,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: cff067b537df5c52a2b952e21a5f0d664ffb95f2
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4
