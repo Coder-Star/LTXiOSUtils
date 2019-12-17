@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LTXiOSUtils"
-  s.version      = "1.0.0"
+  s.version      = "1.0.0.1"
   s.platform     = :ios, "10.0" #iOS平台最低版本 10.0
   s.summary      = "通用工具类以及组件的整合、封装以及使用介绍"
   s.homepage     = "https://github.com/Coder-Star/LTXiOSUtils"
@@ -13,14 +13,14 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.swift_version = ["5","4.2"]
 
-  s.dependency 'SwiftyJSON' # 处理JSON
-  s.dependency 'SnapKit' # 自动布局
-  s.dependency 'Alamofire' # 网络请求
-  s.dependency 'Moya' # 网络抽象层
-  s.dependency 'QorumLogs' # 日志工具
+  s.dependency 'SwiftyJSON','5.0.0' # 处理JSON
+  s.dependency 'SnapKit','5.0.1' # 自动布局
+  s.dependency 'Alamofire','4.9.1' # 网络请求
+  s.dependency 'Moya','13.0.1' # 网络抽象层
+  s.dependency 'QorumLogs','0.9' # 日志工具
   
-  s.dependency 'MBProgressHUD' # 加载框，OC库
-  s.dependency 'MJRefresh'  # 下拉刷新、下拉加载，OC库
+  s.dependency 'MBProgressHUD','1.1.0' # 加载框，OC库
+  s.dependency 'MJRefresh','3.3.1'  # 下拉刷新、下拉加载，OC库
 
   #    s.resources     = 'Source/Resource/**/*' # 资源路径
 
