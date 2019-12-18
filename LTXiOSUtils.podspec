@@ -14,17 +14,19 @@ Pod::Spec.new do |s|
   s.swift_version = ["5","4.2"]
 
 #  s.dependency 'QorumLogs','0.9' # 日志工具
-
 #  s.dependency 'Alamofire','4.9.1' # 网络请求
 #  s.dependency 'Moya','13.0.1' # 网络抽象层
 #  s.dependency 'MJRefresh','3.3.1'  # 下拉刷新、下拉加载，OC库
-  s.dependency 'MBProgressHUD','1.1.0' # 加载框，OC库
-
 #  s.dependency 'SwiftyJSON','5.0.0' # 处理JSON
 
   #    s.resources     = 'Source/Resource/**/*' # 资源路径
 
+  s.subspec 'Constants' do |constants|
+    constants.source_files = 'LTXiOSUtils/Classes/Constants/*.swift'
+  end
+
   s.subspec 'Utils' do |utils|
+    utils.dependency 'MBProgressHUD','1.1.0' # 加载框，OC库
     utils.source_files = 'LTXiOSUtils/Classes/Utils/*.swift'
   end
 
@@ -34,7 +36,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'ViewControllers' do |viewControllers|
-    viewControllers.dependency 'LTXiOSUtils/Utils'
+#    viewControllers.dependency 'LTXiOSUtils/Utils'
     viewControllers.dependency 'SnapKit','5.0.1' # 自动布局
     viewControllers.source_files = 'LTXiOSUtils/Classes/ViewControllers/*.swift'
   end

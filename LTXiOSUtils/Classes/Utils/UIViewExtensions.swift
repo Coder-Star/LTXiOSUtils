@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - view绑定数据
-extension UIView {
+public extension UIView {
     private struct UIViewAssociatedKey {
         static var dataStr: Void?
         static var dataAny: Void?
@@ -43,7 +43,7 @@ extension UIView {
 }
 
 // MARK: - view视图相关
-extension UIView {
+public extension UIView {
     private static var allSubviews: [UIView] = []
 
     // 递归遍历view的所有子孙view，深度优先遍历
@@ -58,39 +58,39 @@ extension UIView {
     }
 
     /// 获取指定子视图
-    public func getSubView(name: String) -> [UIView] {
+    func getSubView(name: String) -> [UIView] {
         UIView.allSubviews = []
         let viewArr = viewArray(root: self)
         return viewArr.filter {$0.className == name}
     }
 
     /// 获取所有子视图
-    public func getAllSubViews() -> [UIView] {
+    func getAllSubViews() -> [UIView] {
         UIView.allSubviews = []
         return viewArray(root: self)
     }
 
     /// 移除所有子视图
-    public func removeAllChildView() {
+    func removeAllChildView() {
         _ = self.subviews.map {
             $0.removeFromSuperview()
         }
     }
 
     /// 同时添加多个视图
-    public func add(_ subviews: UIView...) {
+    func add(_ subviews: UIView...) {
         subviews.forEach(addSubview)
     }
 }
 
-extension UIView {
+public extension UIView {
 
     /// 设置View部分圆角,若使用自动布局，应在设置宽高约束后使用
     /// 示例：view.setCorner(size:5, roundingCorners:[.topLeft,.topRight])，
     /// - Parameters:
     ///   - size: 圆角大小
     ///   - roundingCorners: 圆角位置
-    public func setCorner(size: CGFloat, roundingCorners: UIRectCorner) {
+    func setCorner(size: CGFloat, roundingCorners: UIRectCorner) {
         self.layoutIfNeeded()
         let fieldPath = UIBezierPath.init(roundedRect: self.bounds, byRoundingCorners: roundingCorners, cornerRadii: CGSize(width: size, height: size) )
         let fieldLayer = CAShapeLayer()
@@ -101,7 +101,7 @@ extension UIView {
 }
 
 // MARK: - 闭包实现view操作手势的链式监听，建议使用这个，内部加入了防重复点击
-extension UIView {
+public extension UIView {
 
     private struct GestureDictKey {
         static var key: Void?
@@ -124,44 +124,44 @@ extension UIView {
         }
     }
     /// 闭包
-    public typealias GestureClosures = (UIGestureRecognizer) -> Void
+    typealias GestureClosures = (UIGestureRecognizer) -> Void
 
     /// 点击
     /// - Parameters:
     ///   - disEnabledtimeInterval: 不可用时间，默认时间为0.5s
     ///   - gesture: 手势回调
     @discardableResult
-    public func addTapGesture(disEnabledtimeInterval: CGFloat = 0.5, _ gesture: @escaping GestureClosures) -> UIView {
+    func addTapGesture(disEnabledtimeInterval: CGFloat = 0.5, _ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .tapGesture, disEnabledtimeInterval: disEnabledtimeInterval)
         return self
     }
     /// 捏合
     @discardableResult
-    public func addPinchGesture(_ gesture: @escaping GestureClosures) -> UIView {
+    func addPinchGesture(_ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .pinchGesture)
         return self
     }
     /// 旋转
     @discardableResult
-    public func addRotationGesture(_ gesture: @escaping GestureClosures) -> UIView {
+    func addRotationGesture(_ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .rotationGesture)
         return self
     }
     /// 滑动
     @discardableResult
-    public func addSwipeGesture(_ gesture: @escaping GestureClosures) -> UIView {
+    func addSwipeGesture(_ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .swipeGesture)
         return self
     }
     /// 拖动
     @discardableResult
-    public func addPanGesture(_ gesture: @escaping GestureClosures) -> UIView {
+    func addPanGesture(_ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .panGesture)
         return self
     }
     /// 长按
     @discardableResult
-    public func addLongPressGesture(_ gesture: @escaping GestureClosures) -> UIView {
+    func addLongPressGesture(_ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .longPressGesture)
         return self
     }
@@ -232,7 +232,7 @@ extension UITapGestureRecognizer: UIGestureRecognizerDelegate {
     }
 
     /// 不可用时间间隔
-    var disEnabledtimeInterval: CGFloat? {
+    public var disEnabledtimeInterval: CGFloat? {
         set {
             objc_setAssociatedObject(self, &UITapGestureDictKey.key, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
             self.delegate = self
@@ -242,7 +242,7 @@ extension UITapGestureRecognizer: UIGestureRecognizerDelegate {
         }
     }
 
-    convenience init(target: Any?, action: Selector?, disEnabledtimeInterval: CGFloat) {
+    public convenience init(target: Any?, action: Selector?, disEnabledtimeInterval: CGFloat) {
         self.init(target: target, action: action)
         self.disEnabledtimeInterval = disEnabledtimeInterval
         self.delegate = self

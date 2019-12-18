@@ -11,12 +11,12 @@ import UIKit
 // MARK: - 按钮防重复点击处理
 // app启动时需要调用一下UIButton.initializeMethod()
 // 分为两种模式，一种是时间等候模式，一种事件完成模式，事件完成之后需要重新将isFinishEvent赋值为false才可以让按钮再进行响应
-extension UIButton {
+public extension UIButton {
     /// 时间等待模式默认的等待时间 0.5s
     static let defaultDuration = 0.5
 
     /// 使用模式
-    public enum RepeatButtonClickType: String {
+    enum RepeatButtonClickType: String {
         /// 时间等候模式，默认
         case durationTime
         /// 事件完成模式
@@ -31,7 +31,7 @@ extension UIButton {
     }
 
     /// 使用模式
-    public var repeatButtonClickType: RepeatButtonClickType {
+    var repeatButtonClickType: RepeatButtonClickType {
         set {
             objc_setAssociatedObject(self, &AssociatedKeysWithUIButtonMultiClick.repeatButtonClickType, newValue as RepeatButtonClickType, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
@@ -44,7 +44,7 @@ extension UIButton {
     }
 
     /// 点击间隔时间
-    public var clickDurationTime: TimeInterval {
+    var clickDurationTime: TimeInterval {
         set {
             objc_setAssociatedObject(self, &AssociatedKeysWithUIButtonMultiClick.clickDurationTime, newValue as TimeInterval, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
@@ -57,7 +57,7 @@ extension UIButton {
     }
 
     /// 是否完成点击事件
-       public var isFinishEvent: Bool {
+    var isFinishEvent: Bool {
            set {
                objc_setAssociatedObject(self, &AssociatedKeysWithUIButtonMultiClick.isFinish, newValue as Bool, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
            }
@@ -87,7 +87,7 @@ extension UIButton {
     ///   - action: 执行函数
     ///   - target: 执行者
     ///   - event: 事件
-    @objc public func my_sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+    @objc private func my_sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
         if (self.isKind(of: UIButton.self)) {
             switch self.repeatButtonClickType {
             case .durationTime:
@@ -116,7 +116,7 @@ extension UIButton {
     }
 
     /// 初始化，需手动调用一下
-    public class func initializeMethod() {
+    class func initializeMethod() {
         if self !== UIButton.self {
             return
         }

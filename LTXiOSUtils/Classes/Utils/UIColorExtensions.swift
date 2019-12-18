@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 // MARK: - 颜色扩展
-extension UIColor {
+public extension UIColor {
 
     /// 颜色hex值转颜色，如果hex值去除头部符号后不满6位，返回默认色-白色
     ///
     /// - Parameters:
     ///   - hexString: hex值
     ///   - alpha: 透明度
-    public convenience init(hexString: String, alpha: CGFloat = 1.0) {
+    convenience init(hexString: String, alpha: CGFloat = 1.0) {
         var hexString = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
         hexString = hexString.lowercased()
 
@@ -49,7 +49,7 @@ extension UIColor {
     }
 
     /// 颜色转hex值
-    public var hexString: String? {
+    var hexString: String? {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
@@ -83,7 +83,7 @@ extension UIColor {
     ///
     /// - Parameter size: 图片尺寸
     /// - Returns: 图片
-    public func toImage(size: CGSize) -> UIImage? {
+    func toImage(size: CGSize) -> UIImage? {
         let rect: CGRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContext(rect.size)
         let context: CGContext = UIGraphicsGetCurrentContext()!

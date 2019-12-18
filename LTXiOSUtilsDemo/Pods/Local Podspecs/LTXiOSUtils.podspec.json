@@ -22,14 +22,18 @@
     "5",
     "4.2"
   ],
-  "dependencies": {
-    "MBProgressHUD": [
-      "1.1.0"
-    ]
-  },
   "subspecs": [
     {
+      "name": "Constants",
+      "source_files": "LTXiOSUtils/Classes/Constants/*.swift"
+    },
+    {
       "name": "Utils",
+      "dependencies": {
+        "MBProgressHUD": [
+          "1.1.0"
+        ]
+      },
       "source_files": "LTXiOSUtils/Classes/Utils/*.swift"
     },
     {
@@ -44,9 +48,6 @@
     {
       "name": "ViewControllers",
       "dependencies": {
-        "LTXiOSUtils/Utils": [
-
-        ],
         "SnapKit": [
           "5.0.1"
         ]

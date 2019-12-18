@@ -17,13 +17,13 @@ public enum ImageCompressType {
 }
 
 // MARK: - UIImage压缩相关
-extension UIImage {
+public extension UIImage {
 
     /// 压缩图片
     /// 注意压缩后含有透明背景图片的背景会变成白色
     /// - Parameter type: 压缩类型
     /// - Returns: 压缩后的图片
-    public func compress(type: ImageCompressType = .timeline) -> UIImage {
+    func compress(type: ImageCompressType = .timeline) -> UIImage {
         let size = self.wxImageSize(type: type)
         let reImage = resizedImage(size: size)
         let data = reImage.jpegData(compressionQuality: 0.5)!
@@ -79,13 +79,13 @@ extension UIImage {
 }
 
 // MARK: - 扩展
-extension UIImage {
+public extension UIImage {
 
     /// 设置图片尺寸
     ///
     /// - Parameter reSize: 图片尺寸
     /// - Returns: 处理后的图片
-    public func setSize(reSize: CGSize) -> UIImage {
+    func setSize(reSize: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(reSize, false, UIScreen.main.scale)
         self.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height))
         let reSizeImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -97,7 +97,7 @@ extension UIImage {
     ///
     /// - Parameter scaleSize: 缩放比例
     /// - Returns: 缩放后的图片
-    public func scaleImage(scaleSize: CGFloat) -> UIImage {
+    func scaleImage(scaleSize: CGFloat) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize), false, UIScreen.main.scale)
         self.draw(in: CGRect(x: 0, y: 0, width: self.size.width * scaleSize, height: self.size.height * scaleSize))
         let reSizeImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -109,15 +109,15 @@ extension UIImage {
     ///
     /// - Parameter orientation: 旋转方向
     /// - Returns: 旋转后的图片
-    public func rotate(orientation: Orientation) -> UIImage {
+    func rotate(orientation: Orientation) -> UIImage {
         return UIImage(cgImage: self.cgImage!, scale: self.scale, orientation: orientation)
     }
 }
 
 // MARK: - 加载gif图片
-extension UIImage {
+public extension UIImage {
     /// 加载gif图片data数据
-    public class func gif(data: Data) -> UIImage? {
+    class func gif(data: Data) -> UIImage? {
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
             return nil
         }
@@ -126,7 +126,7 @@ extension UIImage {
     }
 
     /// 加载远程gif文件
-    public class func gif(url: String) -> UIImage? {
+    class func gif(url: String) -> UIImage? {
         guard let bundleURL = URL(string: url) else {
             return nil
         }
@@ -138,7 +138,7 @@ extension UIImage {
     }
 
     /// 加载本地gif文件
-    public class func gif(name: String) -> UIImage? {
+    class func gif(name: String) -> UIImage? {
         guard let bundleURL = Bundle.main.url(forResource: name, withExtension: "gif") else {
             return nil
         }
