@@ -26,10 +26,12 @@ var provider = MoyaProvider<APIManager>(requestClosure: requestTimeoutClosure, p
 
 /// 网络请求工具类
 public class NetworkManager {
-
-    public typealias successBlock = (_ data: JSON) -> Void
-    public typealias progressBlock = (_ progressResponse: ProgressResponse) -> Void
-    public typealias failureBlock = (_ st: RequestError) -> Void
+    /// 成功回调闭包
+    public typealias SuccessBlock = (_ data: JSON) -> Void
+     /// 进度回调闭包
+    public typealias ProgressBlock = (_ progressResponse: ProgressResponse) -> Void
+     /// 失败回调闭包
+    public typealias FailureBlock = (_ st: RequestError) -> Void
 
     /// 网络请求
     ///
@@ -53,7 +55,7 @@ public class NetworkManager {
     ///   - requestParam: 请求参数
     ///   - progress: 进度回调
     ///   - success: 成功回调
-    public class func sendRequest(requestParam: RequestParam, progress: @escaping progressBlock, success: @escaping successBlock) {
+    public class func sendRequest(requestParam: RequestParam, progress: @escaping ProgressBlock, success: @escaping SuccessBlock) {
         sendRequest(requestParam: requestParam, progress: { resultProgress in
             progress(resultProgress)
         }, success: { data in
@@ -70,7 +72,7 @@ public class NetworkManager {
     ///   - requestParam: 请求参数
     ///   - success: 成功回调
     ///   - failure: 失败回调
-    public class func sendRequest(requestParam: RequestParam, success: @escaping successBlock, failure: @escaping failureBlock) {
+    public class func sendRequest(requestParam: RequestParam, success: @escaping SuccessBlock, failure: @escaping FailureBlock) {
         sendRequest(requestParam: requestParam, progress: { _ in
             //       print(resultProgress)
         }, success: { data in
@@ -88,7 +90,7 @@ public class NetworkManager {
     ///   - progress: 进度回调
     ///   - success: 成功回调
     ///   - failure: 失败回调
-    public class func sendRequest(requestParam: RequestParam, progress: @escaping progressBlock, success: @escaping successBlock, failure: @escaping failureBlock) {
+    public class func sendRequest(requestParam: RequestParam, progress: @escaping ProgressBlock, success: @escaping SuccessBlock, failure: @escaping FailureBlock) {
         print("请求url详细信息")
         requestParam.printInfo()
 

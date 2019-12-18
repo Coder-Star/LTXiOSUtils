@@ -29,6 +29,7 @@ PODS:
   - LTXiOSUtils/Tools/Extensions (1.0.0.1)
   - LTXiOSUtils/Tools/Network (1.0.0.1):
     - Alamofire (= 4.9.1)
+    - LTXiOSUtils/Tools/Extensions
     - LTXiOSUtils/Tools/Utils
     - Moya (= 13.0.1)
     - SwiftyJSON (= 5.0.0)
@@ -122,7 +123,7 @@ SPEC CHECKSUMS:
   BRPickerView: 0bd32f1fc4e338ecf6643b5e82f7a7c77db68cbe
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
-  LTXiOSUtils: 0d39911b5654872e373c18af86f249ad62ea97b2
+  LTXiOSUtils: 3eeae7b1c9177298294d1ac2457801de1b83c2f0
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   QorumLogs: 9a484df6973a3697ac79fe2273140fde6b36dccc

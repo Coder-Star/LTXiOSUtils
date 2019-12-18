@@ -45,6 +45,9 @@
             "LTXiOSUtils/Tools/Utils": [
 
             ],
+            "LTXiOSUtils/Tools/Extensions": [
+
+            ],
             "Alamofire": [
               "4.9.1"
             ],
