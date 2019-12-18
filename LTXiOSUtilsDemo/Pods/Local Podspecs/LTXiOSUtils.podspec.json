@@ -24,30 +24,55 @@
   ],
   "subspecs": [
     {
+      "name": "Tools",
+      "subspecs": [
+        {
+          "name": "Extensions",
+          "source_files": "LTXiOSUtils/Classes/Tools/Extensions/*.swift"
+        },
+        {
+          "name": "Utils",
+          "dependencies": {
+            "MBProgressHUD": [
+              "1.1.0"
+            ]
+          },
+          "source_files": "LTXiOSUtils/Classes/Tools/Utils/*.swift"
+        },
+        {
+          "name": "Network",
+          "dependencies": {
+            "LTXiOSUtils/Tools/Utils": [
+
+            ],
+            "Alamofire": [
+              "4.9.1"
+            ],
+            "Moya": [
+              "13.0.1"
+            ],
+            "SwiftyJSON": [
+              "5.0.0"
+            ]
+          },
+          "source_files": "LTXiOSUtils/Classes/Tools/Network/*.swift"
+        }
+      ]
+    },
+    {
       "name": "Constants",
       "source_files": "LTXiOSUtils/Classes/Constants/*.swift"
     },
     {
-      "name": "Utils",
-      "dependencies": {
-        "MBProgressHUD": [
-          "1.1.0"
-        ]
-      },
-      "source_files": "LTXiOSUtils/Classes/Utils/*.swift"
-    },
-    {
       "name": "Views",
-      "dependencies": {
-        "LTXiOSUtils/Utils": [
-
-        ]
-      },
       "source_files": "LTXiOSUtils/Classes/Views/*.swift"
     },
     {
       "name": "ViewControllers",
       "dependencies": {
+        "LTXiOSUtils/Constants": [
+
+        ],
         "SnapKit": [
           "5.0.1"
         ]
