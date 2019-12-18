@@ -12,15 +12,16 @@ import Result
 
 public struct AuthPlugin: PluginType {
     /// 令牌字符串
-    public var token: String = "defalutToken"
+    public var token: String = ""
 
     /// 准备网络请求
     public func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
-        guard let target = target as? CustomizeTargetType, target.needAuth else {
+        guard token.isNotEmpty || NetworkConfig.token.isNotEmpty else {
             return request
         }
         var request = request
-        request.addValue(token, forHTTPHeaderField: NetworkConfig.Authorization) //将token添加到请求头中
+        let requestToken = token.isNotEmpty ? token : NetworkConfig.token
+        request.addValue(requestToken, forHTTPHeaderField: NetworkConfig.Authorization) //将token添加到请求头中
         return request
     }
 

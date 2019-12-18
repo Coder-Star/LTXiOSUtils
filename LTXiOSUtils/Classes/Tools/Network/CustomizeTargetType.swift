@@ -10,8 +10,6 @@ import Foundation
 import Moya
 
 public protocol CustomizeTargetType: TargetType {
-    /// 返回是否需要授权
-    var needAuth: Bool { get }
 
     ///等待框相关
     var hudConfig: HudConfig { get }

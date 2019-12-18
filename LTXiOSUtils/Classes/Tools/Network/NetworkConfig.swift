@@ -10,10 +10,13 @@ import Foundation
 
 /// 网络请求配置类
 public class NetworkConfig {
-    /// 超时时间
-    static let requestTimeOut: Double = 30.0
+    /// 超时时间,单位为秒
+    public static var requestTimeOut: Double = 30.0
 
     /// token认证key值
-    static let Authorization = "Authorization"
+    public static var Authorization = "Authorization"
+
+    /// 令牌字符串,如果将该值赋值，则所有请求都会加上令牌
+    public static var token: String = ""
 
 }

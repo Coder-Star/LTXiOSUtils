@@ -57,7 +57,7 @@ public struct QorumLogs {
 
     //TODO: Show example in documentation
     /// Set your function that will get called whenever something new is logged
-    public static var trackLogFunction: ((String)->Void)?
+    public static var trackLogFunction: ((String) -> Void)?
 
     private static var showFiles = [String]()
 
