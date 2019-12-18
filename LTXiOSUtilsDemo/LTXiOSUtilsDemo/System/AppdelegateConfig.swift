@@ -17,7 +17,9 @@ class AppdelegateConfig {
 
     /// 基础配置
     static func initConfig() {
+
         initLogConfig()
+
         IQKeyboardManager.shared.enable = true
     }
 

@@ -18,7 +18,8 @@ class ViewController: BaseGroupTableMenuViewController {
 
     override func setMenu() {
         let fisrtMenu = [
-            [ConstantsEnum.title:"HUD加载框",ConstantsEnum.image:"",ConstantsEnum.code:"HUD"]
+            [ConstantsEnum.title:"HUD加载框",ConstantsEnum.image:"",ConstantsEnum.code:"HUD"],
+            [ConstantsEnum.title:"网络请求相关",ConstantsEnum.image:"",ConstantsEnum.code:"Network"]
         ]
         menu.append(fisrtMenu)
     }
@@ -27,6 +28,8 @@ class ViewController: BaseGroupTableMenuViewController {
         switch code {
         case "HUD":
             navigationController?.pushViewController(HUDDemoViewController(), animated: true)
+        case "Network":
+            navigationController?.pushViewController(NetworkDemoMenuViewController(), animated: true)
         default:
             HUD.showText("暂无此模块")
         }
