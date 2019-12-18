@@ -42,8 +42,8 @@ class NetworkDemoMenuViewController: BaseGroupTableMenuViewController {
 extension NetworkDemoMenuViewController {
     func request() {
         let parameters: Parameters = ["loginname":"6918","password":"1234567","uuid":"","ismobile":"1"]
-        let baseUrl = "http://172.20.3.53:8919/toa"
-        let path = "/toa/toaMobileLogin_login.json"
+        let baseUrl = "http://172.20.3.53:8919/toa1"
+        let path = "/toa/toaMobileLogin_login1.json"
         let requestParam = RequestParam(baseUrl:baseUrl, path: path,parameters:parameters)
         NetworkManager.sendRequest(requestParam:requestParam) { data in
             QL1(data)

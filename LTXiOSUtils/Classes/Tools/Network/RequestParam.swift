@@ -19,9 +19,7 @@ public class RequestParam {
     public var parameters: [String: Any] = [String: Any]()
     /// 等待框相关配置
     public var hud: HudConfig = HudConfig()
-    /// 是否需要token
-    public var needAuth: Bool = true
-    ///  当needAuth为true，可以设置token值将某个请求定制一个token
+    ///  当token不为空，此次请求会使用该token
     public var token: String = ""
     /// 超时时间
     public var timeOut: Double = NetworkConfig.requestTimeOut
@@ -46,16 +44,19 @@ public class RequestParam {
     }
 
     /// 打印信息
-    public class func printInfo(requestParam: RequestParam) {
-        print("baseUrl: \(requestParam.baseUrl)")
-        print("path: \(requestParam.path)")
-        print("parameters: \(requestParam.parameters)")
-        print("hud: \(requestParam.hud)")
-        print("needAuth: \(requestParam.needAuth)")
-        print("token: \(requestParam.token)")
-        print("method: \(requestParam.method)")
-        print("header: \(requestParam.header ?? ["": ""])")
-        print("file: \(requestParam.fileList ?? [FileInfo()])")
+    func printInfo() {
+        print("url: \(self.baseUrl + self.path)")
+        print("parameters: \(self.parameters)")
+        print("method: \(self.method)")
+        if self.token.isNotEmpty {
+            print("token: \(self.token)")
+        }
+        if self.header.isNotNil {
+            print("header: \(String(describing: self.header?.description))")
+        }
+        if self.fileList.isNotNil {
+            print("file: \(String(describing: self.fileList?.compactMap {$0.name}.description))")
+        }
     }
 }
 

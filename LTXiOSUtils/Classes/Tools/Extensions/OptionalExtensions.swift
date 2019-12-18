@@ -9,7 +9,7 @@ import Foundation
 
 public extension Optional {
     /// 判断是否为空
-    var isNone: Bool {
+    var isNil: Bool {
         switch self {
         case .none:
             return true
@@ -19,8 +19,8 @@ public extension Optional {
     }
 
     /// 判断是否有值
-    var isSome: Bool {
-        return !isNone
+    var isNotNil: Bool {
+        return !isNil
     }
 
     /// 返回解包后的值或者默认值

@@ -86,16 +86,6 @@ extension APIManager: CustomizeTargetType {
         return false
     }
 
-    /// 设置需要token的url
-    public var needAuth: Bool {
-        switch self {
-        case .getData(let requestParam):
-            return requestParam.needAuth
-        default:
-            return true
-        }
-    }
-
     /// 是否显示等待框
     public var hudConfig: HudConfig {
         switch self {

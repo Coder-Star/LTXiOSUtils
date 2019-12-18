@@ -77,7 +77,7 @@ public extension NSObject {
     ///
     /// - Parameter property: 属性
     /// - Returns: 属性值
-    func getValueOfProperty(property:String) -> AnyObject? {
+    func getValueOfProperty(property: String) -> AnyObject? {
         let allPropertys = self.getAllPropertys()
         if(allPropertys.contains(property)) {
             return self.value(forKey: property) as AnyObject
@@ -91,7 +91,7 @@ public extension NSObject {
     /// - Parameters:
     ///   - property: 属性
     ///   - value: 属性新值
-    func setValueOfProperty(property:String,value:AnyObject) {
+    func setValueOfProperty(property: String, value: AnyObject) {
         let allPropertys = self.getAllPropertys()
         if(allPropertys.contains(property)) {
             self.setValue(value, forKey: property)
@@ -101,8 +101,8 @@ public extension NSObject {
     /// 获取所有属性还有值
     ///
     /// - Returns: 属性以及对应的值
-    func getAllPropertysAndValue() -> [String:Any] {
-        var result = [String:Any]()
+    func getAllPropertysAndValue() -> [String: Any] {
+        var result = [String: Any]()
         for item in getAllPropertys() {
             result[item] = getValueOfProperty(property: item)
         }
@@ -113,7 +113,7 @@ public extension NSObject {
     /// 获取对象的所有属性
     /// 注意:必须在获取类的class前添加 @objcMembers，不然获取为空数组
     /// - Returns: 属性列表
-    class func getAllPropertys(ignoredProperties:[String] = [String]()) -> [String] {
+    class func getAllPropertys(ignoredProperties: [String] = [String]()) -> [String] {
         var count: UInt32 = 0
         let properties = class_copyPropertyList(self.classForCoder(), &count)
         var propertyNames: [String] = []
