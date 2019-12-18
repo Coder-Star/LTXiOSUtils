@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension NSObject {
+public extension NSObject {
 
     /// className
     var className: String {
@@ -21,7 +21,7 @@ extension NSObject {
 }
 
 // MARK: - 闭包链式调用
-extension NSObject {
+public extension NSObject {
 
     /// 存储key值
     private struct NotificationAction {
@@ -29,7 +29,7 @@ extension NSObject {
     }
 
     /// 闭包
-    public typealias NotificationClosures = (Notification) -> Void
+    typealias NotificationClosures = (Notification) -> Void
 
     private var notificationClosuresDict: [NSNotification.Name: NotificationClosures]? {
         get {
@@ -40,12 +40,12 @@ extension NSObject {
         }
     }
     /// 发出通知
-    public func postNotification(_ name: String, userInfo: [AnyHashable: Any]?) {
+    func postNotification(_ name: String, userInfo: [AnyHashable: Any]?) {
         NotificationCenter.default.post(name: NSNotification.Name(name), object: self, userInfo: userInfo)
     }
 
     /// 通知监听
-    public func observerNotification(_ name: String, action: @escaping NotificationClosures) {
+    func observerNotification(_ name: String, action: @escaping NotificationClosures) {
         if var dict = notificationClosuresDict {
             guard dict[NSNotification.Name(name)] == nil else {
                 return
@@ -59,12 +59,12 @@ extension NSObject {
     }
 
     /// 移除监听
-    public func removeNotification(_ name: String) {
+    func removeNotification(_ name: String) {
         NotificationCenter.default.removeObserver(self)
         notificationClosuresDict?.removeValue(forKey: NSNotification.Name(name))
     }
 
-    @objc func notificationAction(notify: Notification) {
+    @objc private func notificationAction(notify: Notification) {
         if let notificationClosures = notificationClosuresDict, let closures = notificationClosures[notify.name] {
             closures(notify)
         }

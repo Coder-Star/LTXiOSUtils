@@ -8,9 +8,9 @@
 import Foundation
 
 // MARK: - 加载gif图片
-extension UIImageView {
+public extension UIImageView {
     /// 加载本地gif文件
-    public func loadGif(name: String) {
+    func loadGif(name: String) {
         DispatchQueue.global().async {
             let image = UIImage.gif(name: name)
             DispatchQueue.main.async {
@@ -19,7 +19,7 @@ extension UIImageView {
         }
     }
     /// 加载远程gif文件
-    public func loadGif(url: String) {
+    func loadGif(url: String) {
         DispatchQueue.global().async {
             let image = UIImage.gif(url: url)
             DispatchQueue.main.async {

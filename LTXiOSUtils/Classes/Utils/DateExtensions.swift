@@ -32,13 +32,13 @@ public enum DateFormateType: String {
 }
 
 // MARK: - 日期扩展
-extension Date {
+public extension Date {
 
     /// Date格式化
     ///
     /// - Parameter format: 格式化类型
     /// - Returns: 格式化后的字符串
-    public func formatDate(format: DateFormateType) -> String {
+    func formatDate(format: DateFormateType) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
         dateFormatter.timeZone = TimeZone.current
