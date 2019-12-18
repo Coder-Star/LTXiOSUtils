@@ -6,13 +6,11 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 // MARK: - view绑定数据
 extension UIView {
     private struct UIViewAssociatedKey {
         static var dataStr: Void?
-        static var dataJSON: Void?
         static var dataAny: Void?
     }
 
@@ -26,19 +24,6 @@ extension UIView {
                 return rs
             }
             return ""
-        }
-    }
-
-    /// 为view绑定json数据
-    var dataJSON: JSON {
-        set {
-            objc_setAssociatedObject(self, &UIViewAssociatedKey.dataJSON, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
-        }
-        get {
-            if let rs = objc_getAssociatedObject(self, &UIViewAssociatedKey.dataJSON) as? JSON {
-                return rs
-            }
-            return JSON()
         }
     }
 
