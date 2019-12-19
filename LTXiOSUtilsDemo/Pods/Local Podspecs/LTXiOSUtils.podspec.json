@@ -68,7 +68,15 @@
     },
     {
       "name": "Views",
-      "source_files": "LTXiOSUtils/Classes/Views/*.swift"
+      "dependencies": {
+        "LTXiOSUtils/Tools/Extensions": [
+
+        ],
+        "SnapKit": [
+          "5.0.1"
+        ]
+      },
+      "source_files": "LTXiOSUtils/Classes/Views/**/*.swift"
     },
     {
       "name": "ViewControllers",

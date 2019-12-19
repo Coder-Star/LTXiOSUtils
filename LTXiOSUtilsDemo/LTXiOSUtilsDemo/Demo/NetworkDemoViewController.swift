@@ -1,5 +1,5 @@
 //
-//  NetWorkDemoMenuViewController.swift
+//  NetWorkDemoViewController.swift
 //  LTXiOSUtilsDemo
 //
 //  Created by 李天星 on 2019/12/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkDemoMenuViewController: BaseGroupTableMenuViewController {
+class NetworkDemoViewController: BaseGroupTableMenuViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class NetworkDemoMenuViewController: BaseGroupTableMenuViewController {
     }
 }
 
-extension NetworkDemoMenuViewController {
+extension NetworkDemoViewController {
     func request() {
         let parameters: Parameters = ["loginname":"6918","password":"1234567","uuid":"","ismobile":"1"]
         let baseUrl = "http://172.20.3.53:8919/toa1"
@@ -50,13 +50,13 @@ extension NetworkDemoMenuViewController {
     }
 }
 
-extension NetworkDemoMenuViewController {
+extension NetworkDemoViewController {
     func upload() {
 
     }
 }
 
-extension NetworkDemoMenuViewController {
+extension NetworkDemoViewController {
     func download() {
 
     }

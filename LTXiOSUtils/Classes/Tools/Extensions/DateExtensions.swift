@@ -38,26 +38,41 @@ public extension Date {
     /// - Parameter format: 格式化类型
     /// - Returns: 格式化后的字符串
     func formatDate(format: DateFormateType) -> String {
+        return self.formatDate(formatStr: format.rawValue)
+    }
+
+    /// Date格式化
+    ///
+    /// - Parameter format: 日期格式
+    /// - Returns: 格式化后的字符串
+    func formatDate(formatStr: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
         dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = format.rawValue
+        dateFormatter.dateFormat = formatStr
         let dateString = dateFormatter.string(from: self)
         return dateString
     }
 
     /// 获取星期
     var weekDay: String {
-        let weekDays = [NSNull.init(),"日","一","二","三","四","五","六"] as [Any]
+        let weekDays = [NSNull.init(), "日", "一", "二", "三", "四", "五", "六"] as [Any]
         let calendar = NSCalendar.init(calendarIdentifier: .gregorian)
         let timeZone = TimeZone.current
         calendar?.timeZone = timeZone
         let calendarUnit = NSCalendar.Unit.weekday
-        let theComponents = calendar?.components(calendarUnit, from:self)
-        if let index = theComponents?.weekday , weekDays.count > index , let weekday = weekDays[index] as? String {
+        let theComponents = calendar?.components(calendarUnit, from: self)
+        if let index = theComponents?.weekday, weekDays.count > index, let weekday = weekDays[index] as? String {
             return weekday
         }
         return ""
+    }
+
+    /// 获取相对指定时间之前几天或者之后几天的日期，之前的填入负数
+    /// - Parameter days: 日期
+    func getDateByDays(days: Int) -> Date {
+        let date = Date(timeInterval: TimeInterval(days * 24 * 60 * 60), since: self)
+        return date
     }
 
 }
@@ -80,14 +95,14 @@ public extension Date {
     }
 
     /// 获取毫秒级时间戳 - 13位
-       var milliStamp : CLongLong {
+       var milliStamp: CLongLong {
            let timeInterval: TimeInterval = self.timeIntervalSince1970
            let millisecond = CLongLong(round(timeInterval*1000))
            return millisecond
        }
 
     /// 获取毫秒级时间戳 - 13位
-    var milliStampStr : String {
+    var milliStampStr: String {
         let timeInterval: TimeInterval = self.timeIntervalSince1970
         let millisecond = CLongLong(round(timeInterval*1000))
         return "\(millisecond)"
