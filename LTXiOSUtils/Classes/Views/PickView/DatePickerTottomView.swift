@@ -16,6 +16,7 @@ public enum DurationDatePickViewDateType: String {
     case YMD = "yyyy-MM-dd"
 }
 
+/// 起止时间弹出框
 open class DurationDatePickView: UIView {
 
     public typealias SureBlock = (_ startDate: String, _ endDate: String) -> Void
@@ -292,7 +293,8 @@ extension DurationDatePickView {
             if dateType == .YMD {
                 startBtn.setTitle(titleString, for: .normal)
                 if titleString > endBtn.currentTitle ?? ""{
-                    endBtn.setTitle(titleString, for: .normal)
+                    let tempDate = titleString.toDate(dateTypeStr: dateType.rawValue)?.getDateByDays(days: 1).formatDate(format: .YMD) ?? ""
+                    endBtn.setTitle(tempDate, for: .normal)
                 }
             } else if dateType == .YMDHM {
                 let title = DurationDatePickView.appendTime(dateAndTime: titleString)
