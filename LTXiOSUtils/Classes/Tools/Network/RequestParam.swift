@@ -12,9 +12,9 @@ import Moya
 /// 网络请求参数类
 public class RequestParam {
     /// 基础url
-    public var baseUrl: String = ""
+    public var baseUrl: String
     /// 请求路径
-    public var path: String = ""
+    public var path: String
     /// 传递参数
     public var parameters: [String: Any] = [String: Any]()
     /// 等待框相关配置
@@ -29,12 +29,6 @@ public class RequestParam {
     public var header: [String: String]?
     /// 上传文件数组
     public var fileList: [FileInfo]?
-
-
-    /// 构造函数
-    public init() {
-
-    }
 
     /// 构造函数
     public init(baseUrl: String, path: String) {
@@ -69,19 +63,13 @@ public class RequestParam {
 ///文件信息
 public struct FileInfo {
     /// 数据
-    public var data: Data = Data()
+    public var data: Data
     /// 文件名称
-    public var name: String = ""
+    public var name: String
     /// 文件尺寸
-    public var size: String = ""
+    public var size: String
     /// 文件类型
-    public var type: String = ""
-
-
-    /// 构造函数
-    public init() {
-
-    }
+    public var type: String
 
     /// 构造函数
     /// - Parameters:
