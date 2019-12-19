@@ -8,20 +8,6 @@
 import Foundation
 import UIKit
 
-private let kGaoJianLongScreenWidth: CGFloat = UIScreen.main.bounds.size.width
-private let kGaoJianLongScreenHeight: CGFloat = UIScreen.main.bounds.size.height
-
-//弹窗距离左右边距
-private let kGaoJianLongSpaceLeftOrRight: CGFloat = 35
-//弹窗距离上边距
-private let kGaoJianLongSpaceTop: CGFloat = 114
-//弹窗宽度
-private let kGaoJianLongPopupViewWidth: CGFloat = kGaoJianLongScreenWidth - (kGaoJianLongSpaceLeftOrRight * 2)
-//弹窗高度
-private let kGaoJianLongPopupViewHeight: CGFloat = 220
-//时间选择器的高度
-private let kGaoJianLongDatePickerHeight: CGFloat = 200
-
 /// 起止时间弹出框代理
 @objc public protocol DurationDatePickViewDelegate {
     /// 确定
@@ -42,16 +28,19 @@ public enum DurationDatePickViewDateType: String {
 }
 
 open class DurationDatePickView: UIView {
-    public var titleLabel = UILabel() //标题Label，修改标题名称
+
+    public typealias SureBlock = (_ startDate: String, _ endDate: String) -> Void
+    public typealias CancelBlock = () -> Void
 
     public var isDateCanGreatNow = false //选择日期是否可大于现在
     public var isDateCanLessNow = true // 选择日期是否可小于现在
 
-    private var dateType: DurationDatePickViewDateType = .YMD
+    public var sureBlock: SureBlock?
+    public var cancelBlock: CancelBlock?
 
+    private var dateType: DurationDatePickViewDateType = .YMD
     private var startDateDefaultYMDHM = Date.getCurrentTime()
     private var endDateDefaultYMDHM = Date.getCurrentTime()
-
     private var startDateDefault = Date.getCurrentDate()
     private var endDateDefault = Date.getCurrentDate()
 
@@ -59,30 +48,51 @@ open class DurationDatePickView: UIView {
     let nowDate: Date = Date.init(timeIntervalSinceNow: 60 * 60)
     let maxDate: Date = Date.init(timeIntervalSinceNow: TimeInterval(60*60*24*365*5)) // 默认最大时间
 
-    // 代理属性
+    /// 弹窗距离左右边距
+    private let leftAndRightMargin: CGFloat = 35
+    /// 弹窗距离上边距
+    private let topMargin: CGFloat = 114
+    /// 弹窗高度
+    private let popupViewHeight: CGFloat = 220
+    /// 时间选择器的高度
+    private let datePickerHeight: CGFloat = 200
+
+    /// 代理属性
     weak var delegate: DurationDatePickViewDelegate?
-    fileprivate var datePicker: UIDatePicker = UIDatePicker()
 
-    // MARK: 属性
-    fileprivate lazy var coverView: UIView = {
-        let v = UIView()
-        v.frame = CGRect.init(x: 0, y: 0, width: kGaoJianLongScreenWidth, height: kGaoJianLongScreenHeight)
-        v.backgroundColor = UIColor.black
-        v.alpha = 0
-        return v
+    private var datePicker: UIDatePicker = UIDatePicker()
+
+    // MARK: 内部控件，懒加载
+    public lazy var coverView: UIView = {
+        let coverView = UIView()
+        coverView.frame = CGRect.init(x: 0, y: 0, width: ConstantsEnum.SizeEnum.screenWith, height: ConstantsEnum.SizeEnum.screenHeight)
+        coverView.backgroundColor = UIColor.black
+        coverView.alpha = 0
+        return coverView
     }()
 
-    fileprivate lazy var popupView: UIView = {
-        let v = UIView()
-        v.frame = CGRect.init(x: kGaoJianLongSpaceLeftOrRight, y: kGaoJianLongSpaceTop, width: kGaoJianLongPopupViewWidth, height: kGaoJianLongPopupViewHeight)
-        v.backgroundColor = UIColor.white
-        v.layer.masksToBounds = true
-        v.layer.cornerRadius = 10
-        v.alpha = 0
-        return v
+    public lazy var popupView: UIView = {
+        let popupView = UIView()
+        let width = ConstantsEnum.SizeEnum.screenWith - (leftAndRightMargin * 2)
+        popupView.frame = CGRect.init(x: leftAndRightMargin, y: topMargin, width: width, height: popupViewHeight)
+        popupView.backgroundColor = UIColor.white
+        popupView.layer.masksToBounds = true
+        popupView.layer.cornerRadius = 10
+        popupView.alpha = 0
+        return popupView
     }()
 
-    fileprivate lazy var startBtn: UIButton = {
+    public lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.frame = CGRect.init(x: 0, y: 0, width: popupView.frame.width, height: 50)
+        titleLabel.text = "请选择起止时间"
+        titleLabel.font = UIFont.systemFont(ofSize: 16)
+        titleLabel.textColor = .black
+        titleLabel.textAlignment = .center
+        return titleLabel
+    }()
+
+    public lazy var startBtn: UIButton = {
         let btn = UIButton.init(type: .custom)
         btn.setTitleColor(UIColor(hexString: "#333333"), for: .normal)
         btn.setTitleColor(UIColor(hexString: "#0F9CFE"), for: .selected)
@@ -103,7 +113,7 @@ open class DurationDatePickView: UIView {
         return btn
     }()
 
-    fileprivate lazy var endBtn: UIButton = {
+    public lazy var endBtn: UIButton = {
         let btn = UIButton.init(type: .custom)
         btn.setTitleColor(UIColor(hexString: "#333333"), for: .normal)
         btn.setTitleColor(UIColor(hexString: "#0F9CFE"), for: .selected)
@@ -118,7 +128,7 @@ open class DurationDatePickView: UIView {
         return btn
     }()
 
-    fileprivate lazy var cancelBtn: UIButton = {
+    public lazy var cancelBtn: UIButton = {
         let btn = UIButton.init(type: .custom)
         btn.frame = CGRect.init(x: 0, y: self.popupView.frame.height - 49, width: (self.popupView.frame.width - 1) / 2.0, height: 49)
         btn.setTitle("取消", for: .normal)
@@ -128,7 +138,7 @@ open class DurationDatePickView: UIView {
         return btn
     }()
 
-    fileprivate lazy var confirmBtn: UIButton = {
+    public lazy var confirmBtn: UIButton = {
         let btn = UIButton.init(type: .custom)
         let x: CGFloat = self.popupView.frame.width - self.cancelBtn.frame.width - 1
         let y: CGFloat = self.popupView.frame.height - 49
@@ -162,6 +172,7 @@ open class DurationDatePickView: UIView {
 
 }
 
+// MARK: - 暴露出去的方法，供外部调用
 public extension DurationDatePickView {
     class func getPopupView(delegate: DurationDatePickViewDelegate,
                            startDate: Date,
@@ -201,7 +212,6 @@ public extension DurationDatePickView {
         return popupView
     }
 
-
     class func showPopupView(delegate: DurationDatePickViewDelegate,
                             startDate: Date,
                             endDate: Date,
@@ -234,9 +244,9 @@ public extension DurationDatePickView {
 
 }
 
+// MARK: - 事件处理
 extension DurationDatePickView {
 
-    // MARK: 自定义
     @objc func startBtnAction(btn: UIButton) {
         btn.isSelected = true
         endBtn.isSelected = false
@@ -285,12 +295,9 @@ extension DurationDatePickView {
 
     @objc func datePicekerValueChanged(picker: UIDatePicker) {
         let date = picker.date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateType.rawValue
-        let titleString: String = dateFormatter.string(from: date)
-        let isStartSelected: String = startBtn.isSelected ? "true" : "false"
+        let titleString = date.formatDate(formatStr: dateType.rawValue)
 
-        if isStartSelected == "true"{
+        if startBtn.isSelected {
             if dateType == .YMD {
                 startBtn.setTitle(titleString, for: .normal)
                 if titleString > endBtn.currentTitle ?? Date().formatDate(format: .YMD) {
@@ -315,18 +322,19 @@ extension DurationDatePickView {
     }
 }
 
+// MARK: - 私有方法
 extension DurationDatePickView {
 
-    fileprivate func rollCurrentDate(btn: UIButton) {
+    private func rollCurrentDate(btn: UIButton) {
         if let dateStr = btn.currentTitle, let date = dateStr.toDate(dateTypeStr: dateType.rawValue) {
             datePicker.setDate(date, animated: true)
         }
     }
 
     /// 设置日期选择器相关属性
-    fileprivate func setDatePickerStyle() {
+    private func setDatePickerStyle() {
         datePicker.alpha = 0
-        datePicker.frame = CGRect.init(x: 0, y: kGaoJianLongScreenHeight - kGaoJianLongDatePickerHeight + 20, width: kGaoJianLongScreenWidth, height: kGaoJianLongDatePickerHeight)
+        datePicker.frame = CGRect.init(x: 0, y: ConstantsEnum.SizeEnum.screenHeight - datePickerHeight + 20, width: ConstantsEnum.SizeEnum.screenWith, height: datePickerHeight)
         datePicker.backgroundColor = UIColor.white
         datePicker.calendar = Calendar.current
         datePicker.locale = Locale.current
@@ -352,15 +360,10 @@ extension DurationDatePickView {
     }
 
     /// 设置popupView上的子控件
-    fileprivate func setPopupView() {
-        //第一部分
-        titleLabel.frame = CGRect.init(x: 0, y: 0, width: popupView.frame.width, height: 50)
-        titleLabel.text = "请选择起止时间"
-        titleLabel.font = UIFont.systemFont(ofSize: 16)
-        titleLabel.textColor = .black
-        titleLabel.textAlignment = .center
-        popupView.addSubview(titleLabel)
+    private func setPopupView() {
 
+        //第一部分
+        popupView.addSubview(titleLabel)
         let topLineView = UIView()
         topLineView.frame = CGRect.init(x: 0, y: 50, width: popupView.frame.width, height: 1)
         topLineView.backgroundColor = UIColor(hexString: "#F2F2F2")
@@ -388,7 +391,7 @@ extension DurationDatePickView {
         self.endBtn.titleLabel?.textAlignment = .center
 
         let bottomLineView = UIView()
-        bottomLineView.frame = CGRect.init(x: 0, y: kGaoJianLongPopupViewHeight - 50, width: popupView.frame.width, height: 1)
+        bottomLineView.frame = CGRect.init(x: 0, y: popupViewHeight - 50, width: popupView.frame.width, height: 1)
         bottomLineView.backgroundColor = UIColor(hexString: "#F2F2F2")
         popupView.addSubview(bottomLineView)
 
@@ -404,11 +407,13 @@ extension DurationDatePickView {
     }
 }
 
+// MARK: - 方法
 extension DurationDatePickView {
 
-    static func appendTime(dateAndTime: String) -> String {
+    private static func appendTime(dateAndTime: String) -> String {
         let date = dateAndTime.getDateStr(dateType: .YMD)
         let time = dateAndTime.getDateStr(dateType: .HM)
         return date + "\n" + time
     }
+
 }
