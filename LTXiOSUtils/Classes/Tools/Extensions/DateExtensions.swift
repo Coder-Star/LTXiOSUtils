@@ -9,25 +9,24 @@
 import Foundation
 
 /// 日期格式化类型
-///
-/// - YMDHMS:  年月日时分秒/2019-01-01 12:00:00
-/// - YMDHM:   年月日时分/2019-01-01 12:00
-/// - MDHM:    月日时分/01-01 12:00
-/// - YMDE:    日期星期/2019-01-01 星期一
-/// - YMD:     年月日/2019-01-01
-/// - YM:      年月日/2019-01
-/// - MD:      月日/2019-01
-/// - HMS:     时分秒/12:00:00
-/// - HM:      时分/12:00
 public enum DateFormateType: String {
+    /// - YMDHMS:  年月日时分秒/2019-01-01 12:00:00
     case YMDHMS = "yyyy-MM-dd HH:mm:ss"
+    /// - YMDHM:   年月日时分/2019-01-01 12:00
     case YMDHM = "yyyy-MM-dd HH:mm"
+    /// - MDHM:    月日时分/01-01 12:00
     case MDHM = "MM-dd HH:mm"
+    /// - YMDE:    日期星期/2019-01-01 星期一
     case YMDE = "yyyy-MM-dd EEEE"
+    /// - YMD:     年月日/2019-01-01
     case YMD = "yyyy-MM-dd"
+    /// - HMS:     时分秒/12:00:00
     case HMS = "HH:mm:ss"
+    /// - YM:      年月日/2019-01
     case YM = "yyyy-MM"
+    /// - MD:      月日/2019-01
     case MD = "MM-dd"
+    /// - HM:      时分/12:00
     case HM = "HH:mm"
 }
 
@@ -47,8 +46,56 @@ public extension Date {
         return dateString
     }
 
+    /// 获取星期
+    var weekDay: String {
+        let weekDays = [NSNull.init(),"日","一","二","三","四","五","六"] as [Any]
+        let calendar = NSCalendar.init(calendarIdentifier: .gregorian)
+        let timeZone = TimeZone.current
+        calendar?.timeZone = timeZone
+        let calendarUnit = NSCalendar.Unit.weekday
+        let theComponents = calendar?.components(calendarUnit, from:self)
+        if let index = theComponents?.weekday , weekDays.count > index , let weekday = weekDays[index] as? String {
+            return weekday
+        }
+        return ""
+    }
+
 }
 
+// MARK: - 时间戳相关
+public extension Date {
+
+    /// 秒级时间戳 - 10位
+    var timeStamp: Int {
+        let timeInterval: TimeInterval = self.timeIntervalSince1970
+        let timeStamp = Int(timeInterval)
+        return timeStamp
+    }
+
+    /// 获取秒级时间戳 - 10位
+    var timeStampStr: String {
+        let timeInterval: TimeInterval = self.timeIntervalSince1970
+        let timeStamp = Int(timeInterval)
+        return "\(timeStamp)"
+    }
+
+    /// 获取毫秒级时间戳 - 13位
+       var milliStamp : CLongLong {
+           let timeInterval: TimeInterval = self.timeIntervalSince1970
+           let millisecond = CLongLong(round(timeInterval*1000))
+           return millisecond
+       }
+
+    /// 获取毫秒级时间戳 - 13位
+    var milliStampStr : String {
+        let timeInterval: TimeInterval = self.timeIntervalSince1970
+        let millisecond = CLongLong(round(timeInterval*1000))
+        return "\(millisecond)"
+    }
+
+}
+
+// MARK: - DispatchTime扩展，构造函数
 extension DispatchTime: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
 
     public init(integerLiteral value: Int) {

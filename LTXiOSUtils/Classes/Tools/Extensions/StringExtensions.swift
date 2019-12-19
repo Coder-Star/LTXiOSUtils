@@ -61,6 +61,7 @@ public extension String {
         let selfLowercased = self.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().replacingOccurrences(of: "T", with: " ")
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
+        formatter.locale = Locale.current
         formatter.dateFormat = dateType.rawValue
         return formatter.date(from: selfLowercased)
     }
