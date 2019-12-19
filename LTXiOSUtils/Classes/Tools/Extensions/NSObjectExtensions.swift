@@ -71,7 +71,7 @@ public extension NSObject {
     }
 }
 
-// MARK: - 获取NSObject子类的所有属性值
+// MARK: - 获取NSObject子类的所有属性值，使用这个需要类是NSObject的子类，且前面加上@objcMembers，否则为空数组
 public extension NSObject {
     /// 获取指定属性的值
     ///
@@ -111,7 +111,7 @@ public extension NSObject {
 
     /// 静态方法，获取对象的所有属性名称
     /// 获取对象的所有属性
-    /// 注意:必须在获取类的class前添加 @objcMembers，不然获取为空数组
+    /// 注意:必须在获取类的class前添加 ，不然获取为空数组
     /// - Returns: 属性列表
     class func getAllPropertys(ignoredProperties: [String] = [String]()) -> [String] {
         var count: UInt32 = 0

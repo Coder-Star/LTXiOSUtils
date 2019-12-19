@@ -62,7 +62,7 @@ public extension Date {
 
 }
 
-// MARK: - 时间戳相关
+// MARK: - 当前时间等相关
 public extension Date {
 
     /// 秒级时间戳 - 10位
@@ -91,6 +91,16 @@ public extension Date {
         let timeInterval: TimeInterval = self.timeIntervalSince1970
         let millisecond = CLongLong(round(timeInterval*1000))
         return "\(millisecond)"
+    }
+
+    /// 获取当前时间
+    static func getCurrentTime() -> String {
+        return Date().formatDate(format: .YMDHMS)
+    }
+
+    /// 获取当前日期
+    static func getCurrentDate() -> String {
+        return Date().formatDate(format: .YMD)
     }
 
 }
