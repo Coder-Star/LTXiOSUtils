@@ -83,7 +83,6 @@ public class NetworkManager {
         )
     }
 
-
     /// 网络请求，最基本的
     /// - Parameters:
     ///   - requestParam: 请求参数
@@ -151,48 +150,49 @@ public class NetworkManager {
     public class func mergeError(statusCode: Int?, moyaError: MoyaError?) -> RequestError {
         var code:Int = -1
         var description = ""
-        if let error = moyaError  {
+        if let error = moyaError {
+            description = error.localizedDescription
+
             print("HTTP请求状态码：\(String(describing: error.response?.statusCode))")
             print("错误原因：\(error.errorDescription ?? "")")
             print(error.errorCode)
             print(error.failureReason as Any)
             print(error.localizedDescription)
-            switch error {
-            case .imageMapping(let response):
-                print(response)
-            case .jsonMapping(let response):
-                print(response)
-            case .stringMapping(let response):
-                print(response)
-            case .objectMapping(let error, let response):
-                print(error)
-                print(response)
-            case .encodableMapping(let error):
-                print(error)
-            case .statusCode(let response):
-                print(response)
-            case .underlying(let error, let response): //没有网络时 、 服务器不存在
-                print(error.localizedDescription)
-                print(response as Any)
-            case .requestMapping(let str):
-                print(str)
-            case .parameterEncoding(let error):
-                print(error)
-            }
-        } else {
-
+//            switch error {
+//            //下面四个错误是转换失败
+//            case .imageMapping(let response):
+//                print(response)
+//            case .jsonMapping(let response):
+//                print(response)
+//            case .stringMapping(let response):
+//                print(response)
+//            case .objectMapping(let error, let response):
+//                print(error)
+//                print(response)
+//            case .encodableMapping(let error):
+//                print(error)
+//            case .statusCode(let response): //状态码不在范围内
+//                print(response)
+//            case .underlying(let error, let response): //没有网络时 、 服务器不存在
+//                print(error.localizedDescription)
+//                print(response as Any)
+//            case .requestMapping(let str): //请求操作
+//                print(str)
+//            case .parameterEncoding(let error): // 参数错误
+//                print(error)
+//            }
+        } else if let statusCode = statusCode {
+            code = statusCode
+            description = ""
         }
         return RequestError(statusCode: code, description: description)
     }
-
 
     /// 处理错误
     /// - Parameter error: 错误
     public class func manageError(error: RequestError) {
 
-
     }
-
 
 }
 
@@ -203,8 +203,4 @@ public struct RequestError {
     /// 错误描述
     public var description:String
 
-    public init(statusCode: Int, description: String) {
-        self.statusCode = statusCode
-        self.description = description
-    }
 }
