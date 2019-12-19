@@ -21,6 +21,7 @@ target 'LTXiOSUtilsDemo' do
   pod 'SwifterSwift' # Swift相关扩展
   pod 'IQKeyboardManagerSwift' # 键盘控制
   pod 'QorumLogs','0.9' #日志
+  pod 'SwiftDate','6.1.0' #时间工具
 
 
   #UI控件及处理等

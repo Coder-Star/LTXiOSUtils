@@ -53,19 +53,6 @@ public extension String {
         return String(self[startStr..<endStr])
     }
 
-    /// 时间转日期
-    ///
-    /// - Parameter dateType: 日期类型
-    /// - Returns: 日期
-    func toDate(dateType: DateFormateType = .YMD) -> Date? {
-        let selfLowercased = self.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().replacingOccurrences(of: "T", with: " ")
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.current
-        formatter.locale = Locale.current
-        formatter.dateFormat = dateType.rawValue
-        return formatter.date(from: selfLowercased)
-    }
-
     /// 字符串是否不为空
     var isNotEmpty: Bool {
         return !self.isEmpty
@@ -79,6 +66,55 @@ public extension String {
     /// 字符串是否不为空(去除空格符以及换行符)
     var isNotContentEmpty: Bool {
         return !self.isContentEmpty
+    }
+}
+
+// MARK: - 日期时间相关
+public extension String {
+    /// 时间转日期
+    ///
+    /// - Parameter dateType: 日期类型
+    /// - Returns: 日期
+    func toDate(dateType: DateFormateType) -> Date? {
+        return self.toDate(dateTypeStr: dateType.rawValue)
+    }
+
+    /// 时间转日期
+    ///
+    /// - Parameter dateType: 日期类型格式
+    /// - Returns: 日期
+    func toDate(dateTypeStr: String) -> Date? {
+        let selfLowercased = self.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().replacingOccurrences(of: "T", with: " ")
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale.current
+        formatter.dateFormat = dateTypeStr
+        return formatter.date(from: selfLowercased)
+    }
+
+    /// 截取时间字符串中的某一部分
+    /// - Parameter dateType: 日期类型
+    func getDateStr(dateType: DateFormateType) -> String {
+        switch dateType {
+        case .YMDHMS:
+            return self.getPrefix(count: 11) + self.getSubString(start: 11, end: 19)
+        case .YMDHM:
+            return self.getPrefix(count: 11) + self.getSubString(start: 11, end: 16)
+        case .MDHM:
+            return self.getSubString(start: 5, end: 11) + self.getSubString(start: 11, end: 16)
+        case .YMD:
+            return self.getPrefix(count: 10)
+        case .HMS:
+            return self.getSubString(start: 11, end: 19)
+        case .YM:
+            return self.getPrefix(count: 7)
+        case .MD:
+            return self.getSubString(start: 5, end: 10)
+        case .HM:
+            return self.getSubString(start: 11, end: 16)
+        default:
+            return ""
+        }
     }
 }
 

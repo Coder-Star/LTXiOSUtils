@@ -20,9 +20,10 @@
 		DC5E25DF238578EC00B18F51 /* AppdelegateConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E25DE238578EC00B18F51 /* AppdelegateConfig.swift */; };
 		DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */; };
 		DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC62A7C72384084A00DE7800 /* Localizable.strings */; };
+		DCB22AB923AB6908004C63EF /* PickViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */; };
 		DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC76E4B23A783550029590C /* HUDDemoViewController.swift */; };
 		DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */; };
-		DCF41B6223AA464100AEF70E /* NetworkDemoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B6123AA464100AEF70E /* NetworkDemoMenuViewController.swift */; };
+		DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +69,10 @@
 		DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Extension.swift"; sourceTree = "<group>"; };
 		DC62A7C62384084A00DE7800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewDemoViewController.swift; sourceTree = "<group>"; };
 		DCC76E4B23A783550029590C /* HUDDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDDemoViewController.swift; sourceTree = "<group>"; };
 		DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
-		DCF41B6123AA464100AEF70E /* NetworkDemoMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDemoMenuViewController.swift; sourceTree = "<group>"; };
+		DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDemoViewController.swift; sourceTree = "<group>"; };
 		FEA6FDCDB130B877B872D978 /* Pods-LTXiOSUtilsDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,8 +204,9 @@
 			children = (
 				DCF41B5F23AA45A400AEF70E /* Constants */,
 				DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */,
-				DCF41B6123AA464100AEF70E /* NetworkDemoMenuViewController.swift */,
+				DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */,
 				DCC76E4B23A783550029590C /* HUDDemoViewController.swift */,
+				DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -493,8 +496,9 @@
 				DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */,
 				DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */,
 				DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */,
+				DCB22AB923AB6908004C63EF /* PickViewDemoViewController.swift in Sources */,
 				DC5E25DF238578EC00B18F51 /* AppdelegateConfig.swift in Sources */,
-				DCF41B6223AA464100AEF70E /* NetworkDemoMenuViewController.swift in Sources */,
+				DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */,
 				DC32F1A823841359008D3D67 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
