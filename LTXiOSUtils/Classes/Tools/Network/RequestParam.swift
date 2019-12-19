@@ -30,6 +30,12 @@ public class RequestParam {
     /// 上传文件数组
     public var fileList: [FileInfo]?
 
+
+    /// 构造函数
+    public init() {
+
+    }
+
     /// 构造函数
     public init(baseUrl: String, path: String) {
         self.baseUrl = baseUrl
@@ -61,7 +67,7 @@ public class RequestParam {
 }
 
 ///文件信息
-public class FileInfo {
+public struct FileInfo {
     /// 数据
     public var data: Data = Data()
     /// 文件名称
@@ -70,18 +76,62 @@ public class FileInfo {
     public var size: String = ""
     /// 文件类型
     public var type: String = ""
-}
 
-/// 菊花框相关配置
-public class HudConfig {
+
     /// 构造函数
     public init() {
 
     }
-    /// 是否显示
+
+    /// 构造函数
+    /// - Parameters:
+    ///   - name: 文件名称
+    ///   - size: 文件尺寸
+    ///   - type: 文件类型
+    ///   - data: 文件数据
+    public init(name: String, size: String, type: String, data: Data) {
+        self.name = name
+        self.size = size
+        self.type = type
+        self.data = data
+    }
+}
+
+/// 菊花框相关配置
+public struct HudConfig {
+    /// 是否显示，默认显示
     public var isShow: Bool = true
-    /// 是否可以点击停止
+    /// 是否可以点击停止，默认不可以
     public var clickCancel: Bool = false
-    /// 显示title
+    /// 显示title，默认为空
     public var title = ""
+
+    /// 构造函数
+    public init() {
+
+    }
+
+    /// 构造函数
+    /// - Parameter isShow: 是否显示
+    public init(isShow: Bool) {
+        self.isShow = isShow
+    }
+
+    /// 构造函数
+    /// - Parameter title: 标题内容
+    public init(title: String) {
+        self.title = title
+    }
+
+    /// 构造函数
+    /// - Parameters:
+    ///   - isShow: 是否显示
+    ///   - clickCancel: 是否可以点击停止
+    ///   - title: 标题内容
+    public init(isShow: Bool, clickCancel: Bool, title: String) {
+        self.isShow = isShow
+        self.clickCancel = clickCancel
+        self.title = title
+    }
+
 }
