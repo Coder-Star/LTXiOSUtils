@@ -21,17 +21,17 @@ class HUDDemoViewController: BaseGroupTableMenuViewController {
 
     override func setMenu() {
         let fisrtMenu = [
-            [ConstantsEnum.title:"文本",ConstantsEnum.image:"",ConstantsEnum.code:"text"],
-            [ConstantsEnum.title:"菊花框",ConstantsEnum.image:"",ConstantsEnum.code:"wait"],
-            [ConstantsEnum.title:"横向进度条",ConstantsEnum.image:"",ConstantsEnum.code:"progress"]
+            BaseGroupTableMenuModel(code: "text", title: "文本"),
+            BaseGroupTableMenuModel(code: "wait", title: "菊花框"),
+            BaseGroupTableMenuModel(code: "progress", title: "横向进度条")
         ]
         menu.append(fisrtMenu)
     }
 
-    override func click(code: String, title: String) {
-        switch code {
+    override func click(menuModel: BaseGroupTableMenuModel) {
+        switch menuModel.code {
         case "text":
-            HUD.showText(title)
+            HUD.showText(menuModel.title)
         case "wait":
             HUD.showWait(title: "一秒后自动消失")
             DispatchQueue.main.delay(1) {

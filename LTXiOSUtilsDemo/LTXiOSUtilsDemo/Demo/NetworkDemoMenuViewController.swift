@@ -17,15 +17,15 @@ class NetworkDemoMenuViewController: BaseGroupTableMenuViewController {
 
     override func setMenu() {
         let fisrtMenu = [
-            [ConstantsEnum.title:"请求",ConstantsEnum.image:"",ConstantsEnum.code:"request"],
-            [ConstantsEnum.title:"上传",ConstantsEnum.image:"",ConstantsEnum.code:"upload"],
-            [ConstantsEnum.title:"下载",ConstantsEnum.image:"",ConstantsEnum.code:"download"]
+            BaseGroupTableMenuModel(code: "request", title: "请求"),
+            BaseGroupTableMenuModel(code: "upload", title: "上传"),
+            BaseGroupTableMenuModel(code: "download", title: "下载")
         ]
         menu.append(fisrtMenu)
     }
 
-    override func click(code: String, title: String) {
-        switch code {
+    override func click(menuModel: BaseGroupTableMenuModel) {
+        switch menuModel.code {
         case "request":
             request()
         case "upload":
@@ -36,7 +36,6 @@ class NetworkDemoMenuViewController: BaseGroupTableMenuViewController {
             HUD.showText("暂无此模块")
         }
     }
-
 }
 
 extension NetworkDemoMenuViewController {
