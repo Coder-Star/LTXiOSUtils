@@ -19,7 +19,7 @@ public class RequestParam {
     public var parameters: [String: Any] = [String: Any]()
     /// 等待框相关配置
     public var hud: HudConfig = HudConfig()
-    ///  当token不为空，此次请求会使用该token
+    /// 当token不为空，此次请求会使用该token
     public var token: String = ""
     /// 超时时间
     public var timeOut: Double = NetworkConfig.requestTimeOut
