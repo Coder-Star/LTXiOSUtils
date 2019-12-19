@@ -6,28 +6,19 @@
 //
 
 import Foundation
+import UIKit
 
 open class BaseGroupTableMenuViewController: BaseUIViewController {
 
-    lazy var groupTableView: UITableView = {
+    public lazy var groupTableView: UITableView = {
         let groupTableView = UITableView(frame: baseView.frame, style: .grouped)
         groupTableView.delegate = self
         groupTableView.dataSource = self
         return groupTableView
     }()
 
-    /// 需要设置为这样的形式
-    ///    menu = [
-    ///     [
-    ///         [ConstantsEnum.code:"code",ConstantsEnum.title:"title",ConstantsEnum.image:"image"],
-    ///         [ConstantsEnum.code:"code1",ConstantsEnum.title:"title1",ConstantsEnum.image:"image1"]
-    ///     ],
-    ///     [
-    ///         [ConstantsEnum.code:"code2",ConstantsEnum.title:"title2",ConstantsEnum.image:"image2"],
-    ///         [ConstantsEnum.code:"code3",ConstantsEnum.title:"title3",ConstantsEnum.image:"image3"]
-    ///     ],
-    // /   ]
-    public var menu = [[[String: String]]]()
+    /// 菜单
+    public var menu = [[BaseGroupTableMenuModel]]()
 
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -89,15 +80,8 @@ extension BaseGroupTableMenuViewController: UITableViewDataSource {
         if tableCell == nil {
             tableCell = UITableViewCell(style: .default, reuseIdentifier: ConstantsEnum.tableCell)
         }
-
-        if let title = menu[indexPath.section][indexPath.row][ConstantsEnum.title] {
-            tableCell?.textLabel?.text = title
-        }
-
-        if let image = menu[indexPath.section][indexPath.row][ConstantsEnum.image] {
-            tableCell?.imageView?.image = UIImage(named: image)
-        }
-
+        tableCell?.textLabel?.text = menu[indexPath.section][indexPath.row].title
+        tableCell?.imageView?.image = menu[indexPath.section][indexPath.row].image
         tableCell?.accessoryType = .disclosureIndicator
         return tableCell!
     }
@@ -109,17 +93,42 @@ extension BaseGroupTableMenuViewController: UITableViewDelegate {
 
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if let code = menu[indexPath.section][indexPath.row][ConstantsEnum.code] {
-            guard let title = menu[indexPath.section][indexPath.row][ConstantsEnum.title] else {
-                click(code: code, title: "")
-                return
-            }
-            click(code: code, title: title)
-        }
+        click(menuModel: menu[indexPath.section][indexPath.row])
     }
 
-    @objc open func click(code: String, title: String) {
+    @objc open func click(menuModel: BaseGroupTableMenuModel) {
 
+    }
+
+}
+
+public class BaseGroupTableMenuModel: NSObject {
+    /// 编码
+    public var code: String
+    /// 标题
+    public var title: String
+    /// 图片
+    public var image: UIImage?
+
+    /// 构造函数
+    /// - Parameters:
+    ///   - code: 编码
+    ///   - title: 标题
+    ///   - image: 图标
+    public init(code: String, title: String, image: UIImage?) {
+        self.code = code
+        self.title = title
+        self.image = image
+    }
+
+    /// 构造函数
+    /// - Parameters:
+    ///   - code: 编码
+    ///   - title: 标题
+    public init(code: String, title: String) {
+        self.code = code
+        self.title = title
+        self.image = nil
     }
 
 }

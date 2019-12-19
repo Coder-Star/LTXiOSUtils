@@ -9,17 +9,14 @@ import Foundation
 
 /// 常量类
 public enum ConstantsEnum {
-    /// 图片
-    public static let image = "image"
-    /// 标题
-    public static let title = "title"
-    /// 编码
-    public static let code = "code"
     /// tableCell
     public static let tableCell = "tableCell"
+}
 
+// MARK: - 尺寸相关
+public extension ConstantsEnum {
     /// 尺寸相关
-    public enum SizeEnum {
+    enum SizeEnum {
         /// 当前设备屏幕宽度
         public static let screenWith = UIScreen.main.bounds.width
         /// 当前设备屏幕的高度
@@ -33,11 +30,13 @@ public enum ConstantsEnum {
         /// 状态栏高度，其中iphone x为44，其他为20
         public static let statusBarFrameHeight = UIApplication.shared.statusBarFrame.size.height
     }
+}
 
+// MARK: - iOS内部关键key值
+public extension ConstantsEnum {
     /// iOS内部关键key值
-    public enum KeyEnum {
+    enum KeyEnum {
         /// webview进度条keypath
         public static let webViewProgressKeyPath = "estimatedProgress"
     }
-
 }

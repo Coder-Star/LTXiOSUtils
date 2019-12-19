@@ -148,7 +148,7 @@ public class NetworkManager {
     ///   - statusCode: 状态码
     ///   - moyaError: Moya的错误
     public class func mergeError(statusCode: Int?, moyaError: MoyaError?) -> RequestError {
-        var code:Int = -1
+        var code: Int = -1
         var description = ""
         if let error = moyaError {
             description = error.localizedDescription
@@ -199,8 +199,8 @@ public class NetworkManager {
 /// 请求错误
 public struct RequestError {
     /// Http请求状态码
-    public var statusCode:Int
+    public var statusCode: Int
     /// 错误描述
-    public var description:String
+    public var description: String
 
 }
