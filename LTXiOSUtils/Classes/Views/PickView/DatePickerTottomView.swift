@@ -8,17 +8,6 @@
 import Foundation
 import UIKit
 
-/// 起止时间弹出框代理
-@objc public protocol DurationDatePickViewDelegate {
-    /// 确定
-    /// - Parameters:
-    ///   - startDate: 开始时间
-    ///   - endDate: 结束时间
-    @objc optional func sure(startDate: String, endDate: String)
-    /// 结束
-    @objc optional func cancel()
-}
-
 /// 选择器样式
 public enum DurationDatePickViewDateType: String {
     /// 年月日时分 2019-01-01 12:00
@@ -32,22 +21,21 @@ open class DurationDatePickView: UIView {
     public typealias SureBlock = (_ startDate: String, _ endDate: String) -> Void
     public typealias CancelBlock = () -> Void
 
-    public var isDateCanGreatNow = false //选择日期是否可大于现在
-    public var isDateCanLessNow = true // 选择日期是否可小于现在
-
+    /// 选择日期是否可大于现在，默认true
+    public var canGreatNow = true
+    /// 选择日期是否可小于现在，默认true
+    public var canLessNow = true
+    /// 确定闭包
     public var sureBlock: SureBlock?
+    /// 取消闭包
     public var cancelBlock: CancelBlock?
 
+    /// 日期类型
     private var dateType: DurationDatePickViewDateType = .YMD
-    private var startDateDefaultYMDHM = Date.getCurrentTime()
-    private var endDateDefaultYMDHM = Date.getCurrentTime()
-    private var startDateDefault = Date.getCurrentDate()
-    private var endDateDefault = Date.getCurrentDate()
-
-    let minDate: Date = Date.init(timeIntervalSince1970: 60 * 60)
-    let nowDate: Date = Date.init(timeIntervalSinceNow: 60 * 60)
-    let maxDate: Date = Date.init(timeIntervalSinceNow: TimeInterval(60*60*24*365*5)) // 默认最大时间
-
+    /// 最小时间
+    private let minDate: Date = Date.init(timeIntervalSince1970: 0)
+    /// 最大时间
+    private let maxDate: Date = Date.init(timeIntervalSinceNow: TimeInterval(60*60*24*365*1000))
     /// 弹窗距离左右边距
     private let leftAndRightMargin: CGFloat = 35
     /// 弹窗距离上边距
@@ -56,10 +44,7 @@ open class DurationDatePickView: UIView {
     private let popupViewHeight: CGFloat = 220
     /// 时间选择器的高度
     private let datePickerHeight: CGFloat = 200
-
-    /// 代理属性
-    weak var delegate: DurationDatePickViewDelegate?
-
+    /// 时间选择器
     private var datePicker: UIDatePicker = UIDatePicker()
 
     // MARK: 内部控件，懒加载
@@ -100,10 +85,7 @@ open class DurationDatePickView: UIView {
         btn.titleLabel?.textAlignment = .right
         btn.addTarget(self, action: #selector(startBtnAction(btn:)), for: .touchUpInside)
 
-        let date = self.datePicker.date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateType.rawValue
-        let titleString = dateFormatter.string(from: date)
+        let titleString = self.datePicker.date.formatDate(formatStr: dateType.rawValue)
         btn.setTitle(titleString, for: .normal)
         if dateType == .YMDHM {
             let title = DurationDatePickView.appendTime(dateAndTime: titleString)
@@ -120,11 +102,6 @@ open class DurationDatePickView: UIView {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         btn.titleLabel?.textAlignment = .left
         btn.addTarget(self, action: #selector(endBtnAction(btn:)), for: .touchUpInside)
-        btn.setTitle(endDateDefault, for: .normal)
-        if dateType == .YMDHM {
-            let title = DurationDatePickView.appendTime(dateAndTime: endDateDefault)
-            btn.setTitle(title, for: .normal)
-        }
         return btn
     }()
 
@@ -165,30 +142,55 @@ open class DurationDatePickView: UIView {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    public class func shareTimePopupView() -> DurationDatePickView {
-        return DurationDatePickView.init(frame: UIScreen.main.bounds)
-    }
-
 }
 
 // MARK: - 暴露出去的方法，供外部调用
 public extension DurationDatePickView {
-    class func getPopupView(delegate: DurationDatePickViewDelegate,
-                           startDate: Date,
-                           endDate: Date,
-                           isDateCanGreatNow: Bool = false,
-                           isDateCanLessNow: Bool = true,
-                           dateType: DurationDatePickViewDateType = .YMD) -> DurationDatePickView {
+
+    /// 展示起止时间弹出框
+    /// - Parameters:
+    ///   - startDate: 开始时间
+    ///   - endDate: 结束时间
+    ///   - canGreatNow: 是否可大于当前时间，默认为true
+    ///   - canLessNow: 是否可以小于当前时间，默认为true
+    ///   - dateType: 时间类型
+    ///   - sureBlock: 确定闭包
+    ///   - cancelBlock: 取消闭包
+    class func showPopupView(startDate: Date,
+                             endDate: Date,
+                             canGreatNow: Bool = true,
+                             canLessNow: Bool = true,
+                             dateType: DurationDatePickViewDateType = .YMD,
+                             sureBlock: @escaping SureBlock,
+                             cancelBlock: CancelBlock? = nil) {
+        let popupView = getPopupView(startDate: startDate, endDate: endDate, canGreatNow: canGreatNow, canLessNow: canLessNow, dateType: dateType)
+        popupView.sureBlock = sureBlock
+        popupView.cancelBlock = cancelBlock
+        popupView.show()
+    }
+
+    /// 展示起止时间弹出框
+    /// - Parameters:
+    ///   - startDate: 开始时间
+    ///   - endDate: 结束时间
+    ///   - canGreatNow: 是否可大于当前时间，默认为true
+    ///   - canLessNow: 是否可以小于当前时间，默认为true
+    ///   - dateType: 时间类型
+    class func getPopupView(startDate: Date,
+                            endDate: Date,
+                            canGreatNow: Bool = true,
+                            canLessNow: Bool = true,
+                            dateType: DurationDatePickViewDateType = .YMD) -> DurationDatePickView {
 
         let window = UIApplication.shared.keyWindow
         window?.endEditing(true)
-        let popupView = DurationDatePickView.shareTimePopupView()
-        popupView.delegate = delegate
+        let popupView = DurationDatePickView.init(frame: UIScreen.main.bounds)
 
         popupView.datePicker.setDate(startDate, animated: false)
-        popupView.startBtn.setTitle(startDate.formatDate(formatStr: dateType.rawValue), for: .normal)
-        popupView.endBtn.setTitle(endDate.formatDate(formatStr: dateType.rawValue), for: .normal)
+
+        popupView.canGreatNow = canGreatNow
+        popupView.canLessNow = canLessNow
+        popupView.dateType = dateType
 
         if dateType == .YMDHM {
             let startTitle = appendTime(dateAndTime: startDate.formatDate(formatStr: dateType.rawValue))
@@ -196,32 +198,18 @@ public extension DurationDatePickView {
 
             let endTitle = appendTime(dateAndTime: endDate.formatDate(formatStr: dateType.rawValue))
             popupView.endBtn.setTitle(endTitle, for: .normal)
+        } else {
+            popupView.startBtn.setTitle(startDate.formatDate(formatStr: dateType.rawValue), for: .normal)
+            popupView.endBtn.setTitle(endDate.formatDate(formatStr: dateType.rawValue), for: .normal)
         }
 
-        popupView.isDateCanGreatNow = isDateCanGreatNow
-        popupView.isDateCanLessNow = isDateCanLessNow
-        popupView.dateType = dateType
-
-        if dateType == .YMDHM {
-            popupView.startDateDefault = popupView.startDateDefaultYMDHM
-            popupView.endDateDefault = popupView.endDateDefaultYMDHM
-        }
         popupView.setDatePickerStyle()
         popupView.setPopupView()
         popupView.startBtnAction(btn: popupView.startBtn)
         return popupView
     }
 
-    class func showPopupView(delegate: DurationDatePickViewDelegate,
-                            startDate: Date,
-                            endDate: Date,
-                            isDateCanGreatNow: Bool = false,
-                            isDateCanLessNow: Bool = true,
-                            dateType: DurationDatePickViewDateType = .YMD) {
-       let popupView = getPopupView(delegate: delegate, startDate: startDate, endDate: endDate, isDateCanGreatNow: isDateCanGreatNow, isDateCanLessNow: isDateCanLessNow, dateType: dateType)
-        popupView.show()
-    }
-
+    /// 弹出框显示
     func show() {
         UIView.animate(withDuration: 0.25, animations: { [weak self] in
             self?.coverView.alpha = 0.5
@@ -232,6 +220,7 @@ public extension DurationDatePickView {
         })
     }
 
+    /// 弹出框消失
     func dismiss() {
         UIView.animate(withDuration: 0.25, animations: { [weak self] in
             self?.coverView.alpha = 0
@@ -250,15 +239,15 @@ extension DurationDatePickView {
     @objc func startBtnAction(btn: UIButton) {
         btn.isSelected = true
         endBtn.isSelected = false
-        if isDateCanLessNow {
+        if canLessNow {
             datePicker.minimumDate = minDate
         } else {
-            datePicker.minimumDate = nowDate
+            datePicker.minimumDate = Date.init(timeIntervalSinceNow: 0)
         }
-        if isDateCanGreatNow {
+        if canGreatNow {
             datePicker.maximumDate = maxDate
         } else {
-            datePicker.maximumDate = nowDate
+            datePicker.maximumDate = Date.init(timeIntervalSinceNow: 0)
         }
         rollCurrentDate(btn: btn)
     }
@@ -271,24 +260,26 @@ extension DurationDatePickView {
         } else if dateType  == .YMDHM, let date = startBtn.currentTitle?.replacingOccurrences(of: "\n", with: " ").toDate(dateType: .YMDHM) {
             datePicker.minimumDate = date
         }
-        if isDateCanGreatNow {
+        if canGreatNow {
             datePicker.maximumDate = maxDate
         } else {
-            datePicker.maximumDate = nowDate
+            datePicker.maximumDate = Date.init(timeIntervalSinceNow: 0)
         }
         rollCurrentDate(btn: btn)
     }
 
     @objc func cancelBtnAction() {
-        if delegate != nil, delegate?.cancel != nil {
-            delegate?.cancel!()
+        if let block = cancelBlock {
+            block()
         }
         dismiss()
     }
 
     @objc func confirmBtnAction() {
-        if (delegate != nil) && ((delegate?.sure(startDate: endDate:)) != nil) {
-            delegate?.sure!(startDate: (startBtn.currentTitle ?? startDateDefault).replacingOccurrences(of: "\n", with: " "), endDate: (endBtn.currentTitle ?? endDateDefault).replacingOccurrences(of: "\n", with: " "))
+        if let block = sureBlock {
+            let startDate = startBtn.currentTitle?.replacingOccurrences(of: "\n", with: " ") ?? ""
+            let endDate = endBtn.currentTitle?.replacingOccurrences(of: "\n", with: " ") ?? ""
+            block(startDate, endDate)
         }
         dismiss()
     }
@@ -300,14 +291,14 @@ extension DurationDatePickView {
         if startBtn.isSelected {
             if dateType == .YMD {
                 startBtn.setTitle(titleString, for: .normal)
-                if titleString > endBtn.currentTitle ?? Date().formatDate(format: .YMD) {
+                if titleString > endBtn.currentTitle ?? ""{
                     endBtn.setTitle(titleString, for: .normal)
                 }
             } else if dateType == .YMDHM {
                 let title = DurationDatePickView.appendTime(dateAndTime: titleString)
                 startBtn.setTitle(title, for: .normal)
-                if titleString > endBtn.currentTitle ?? Date().formatDate(format: .YMDHM) {
-                    let tempDate =  titleString.toDate(dateTypeStr: dateType.rawValue)?.getDateByDays(days: 1).formatDate(format: .YMDHM) ?? ""
+                if titleString > endBtn.currentTitle ?? ""{
+                    let tempDate = titleString.toDate(dateTypeStr: dateType.rawValue)?.getDateByDays(days: 1).formatDate(format: .YMDHM) ?? ""
                     let tempString = DurationDatePickView.appendTime(dateAndTime: tempDate)
                     endBtn.setTitle(tempString, for: .normal)
                 }
@@ -344,16 +335,16 @@ extension DurationDatePickView {
             datePicker.datePickerMode = .date
         }
 
-        if isDateCanLessNow {
+        if canLessNow {
             datePicker.minimumDate = minDate
         } else {
-            datePicker.minimumDate = nowDate
+            datePicker.minimumDate = Date.init(timeIntervalSinceNow: 0)
         }
 
-        if isDateCanGreatNow {
+        if canGreatNow {
             datePicker.maximumDate = maxDate
         } else {
-            datePicker.maximumDate = nowDate
+            datePicker.maximumDate = Date.init(timeIntervalSinceNow: 0)
         }
 
         datePicker.addTarget(self, action: #selector(datePicekerValueChanged(picker:)), for: .valueChanged)
@@ -415,5 +406,4 @@ extension DurationDatePickView {
         let time = dateAndTime.getDateStr(dateType: .HM)
         return date + "\n" + time
     }
-
 }
