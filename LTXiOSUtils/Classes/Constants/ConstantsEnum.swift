@@ -16,7 +16,7 @@ public enum ConstantsEnum {
     /// 编码
     public static let code = "code"
     /// tableCell
-    public static let cell = "cell"
+    public static let tableCell = "tableCell"
 
     /// 尺寸相关
     public enum SizeEnum {

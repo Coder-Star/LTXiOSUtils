@@ -85,9 +85,9 @@ extension BaseGroupTableMenuViewController: UITableViewDataSource {
 
     /// 渲染每一个cell
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var tableCell = tableView.dequeueReusableCell(withIdentifier: ConstantsEnum.cell)
+        var tableCell = tableView.dequeueReusableCell(withIdentifier: ConstantsEnum.tableCell)
         if tableCell == nil {
-            tableCell = UITableViewCell(style: .default, reuseIdentifier: ConstantsEnum.cell)
+            tableCell = UITableViewCell(style: .default, reuseIdentifier: ConstantsEnum.tableCell)
         }
 
         if let title = menu[indexPath.section][indexPath.row][ConstantsEnum.title] {
