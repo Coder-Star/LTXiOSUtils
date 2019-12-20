@@ -14,7 +14,7 @@
     "CoderStar": "1340529758@qq.com"
   },
   "source": {
-    "git": "https://github.com/Coder-Star/LTXiOSUtils.git",
+    "git": "local",
     "tag": "1.0.0.1"
   },
   "requires_arc": true,
@@ -33,6 +33,9 @@
         {
           "name": "Utils",
           "dependencies": {
+            "LTXiOSUtils/Tools/Extensions": [
+
+            ],
             "MBProgressHUD": [
               "1.1.0"
             ]
@@ -67,16 +70,28 @@
       "source_files": "LTXiOSUtils/Classes/Constants/*.swift"
     },
     {
+      "name": "Resources",
+      "dependencies": {
+        "Localize-Swift": [
+          "3.1.0"
+        ]
+      },
+      "source_files": "LTXiOSUtils/Resources/*.swift",
+      "resource_bundles": {
+        "LTXiOSUtils": "LTXiOSUtils/Resources/Resource/*"
+      }
+    },
+    {
       "name": "Views",
       "dependencies": {
+        "LTXiOSUtils/Resources": [
+
+        ],
         "LTXiOSUtils/Constants": [
 
         ],
         "LTXiOSUtils/Tools/Extensions": [
 
-        ],
-        "SnapKit": [
-          "5.0.1"
         ]
       },
       "source_files": "LTXiOSUtils/Classes/Views/**/*.swift"

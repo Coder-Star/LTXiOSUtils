@@ -7,30 +7,30 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "CoderStar" => "1340529758@qq.com" }
 
-#  s.source       = { :git => "https://github.com/Coder-Star/LTXiOSUtils.git", :tag => s.version } #发布
+  #  s.source       = { :git => "https://github.com/Coder-Star/LTXiOSUtils.git", :tag => s.version } #发布
   s.source       = { :git => 'local', :tag => s.version} #本地开发
 
   s.requires_arc = true
   s.swift_version = ["5","4.2"]
 
-#  s.dependency 'MJRefresh','3.3.1'  # 下拉刷新、下拉加载，OC库
+  #  s.dependency 'MJRefresh','3.3.1'  # 下拉刷新、下拉加载，OC库
 
-  #    s.resources     = 'Source/Resource/**/*' # 资源路径
-
-
-
+  # 工具相关，算是核心类，其他很多子组件依赖该组件
   s.subspec 'Tools' do |tools|
 
+    # 扩展
     tools.subspec 'Extensions' do |extensions|
       extensions.source_files = 'LTXiOSUtils/Classes/Tools/Extensions/*.swift'
     end
 
+    # 工具
     tools.subspec 'Utils' do |utils|
       utils.dependency 'LTXiOSUtils/Tools/Extensions'
       utils.dependency 'MBProgressHUD','1.1.0' # 加载框，OC库
       utils.source_files = 'LTXiOSUtils/Classes/Tools/Utils/*.swift'
     end
 
+    # 网络请求
     tools.subspec 'Network' do |network|
       network.dependency 'LTXiOSUtils/Tools/Utils'
       network.dependency 'LTXiOSUtils/Tools/Extensions'
@@ -42,17 +42,28 @@ Pod::Spec.new do |s|
 
   end
 
+  # 静态常量
   s.subspec 'Constants' do |constants|
-     constants.source_files = 'LTXiOSUtils/Classes/Constants/*.swift'
-   end
+    constants.source_files = 'LTXiOSUtils/Classes/Constants/*.swift'
+  end
 
+  # 资源
+  s.subspec 'Resources' do |resources|
+    resources.dependency 'Localize-Swift','3.1.0'
+    resources.source_files = 'LTXiOSUtils/Resources/*.swift'
+    resources.resource_bundle = { "LTXiOSUtils" => "LTXiOSUtils/Resources/Resource/*" }
+  end
+
+  # 自定义View
   s.subspec 'Views' do |views|
+    views.dependency 'LTXiOSUtils/Resources'
     views.dependency 'LTXiOSUtils/Constants'
     views.dependency 'LTXiOSUtils/Tools/Extensions'
-    views.dependency 'SnapKit','5.0.1' # 自动布局
+#    views.dependency 'SnapKit','5.0.1' # 自动布局
     views.source_files = 'LTXiOSUtils/Classes/Views/**/*.swift'
   end
 
+  # 基础ViewController
   s.subspec 'ViewControllers' do |viewControllers|
     viewControllers.dependency 'LTXiOSUtils/Constants'
     viewControllers.dependency 'SnapKit','5.0.1' # 自动布局
