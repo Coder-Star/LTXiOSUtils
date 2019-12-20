@@ -59,7 +59,6 @@ Pod::Spec.new do |s|
     views.dependency 'LTXiOSUtils/Resources'
     views.dependency 'LTXiOSUtils/Constants'
     views.dependency 'LTXiOSUtils/Tools/Extensions'
-#    views.dependency 'SnapKit','5.0.1' # 自动布局
     views.source_files = 'LTXiOSUtils/Classes/Views/**/*.swift'
   end
 
