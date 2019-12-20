@@ -39,6 +39,7 @@ PODS:
     - LTXiOSUtils/Constants
     - SnapKit (= 5.0.1)
   - LTXiOSUtils/Views (1.0.0.1):
+    - LTXiOSUtils/Constants
     - LTXiOSUtils/Tools/Extensions
     - SnapKit (= 5.0.1)
   - MBProgressHUD (1.1.0)
@@ -128,7 +129,7 @@ SPEC CHECKSUMS:
   BRPickerView: 0bd32f1fc4e338ecf6643b5e82f7a7c77db68cbe
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
-  LTXiOSUtils: 6d32e1afdac4d6e85e3d26133480aafa4fae16c2
+  LTXiOSUtils: 8941de9e16c136b4468f9a90dc9a75e3e05640e0
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   QorumLogs: 9a484df6973a3697ac79fe2273140fde6b36dccc

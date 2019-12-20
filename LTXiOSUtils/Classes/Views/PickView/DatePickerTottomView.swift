@@ -36,11 +36,9 @@ open class DurationDatePickView: UIView {
     /// 最小时间
     private let minDate: Date = Date.init(timeIntervalSince1970: 0)
     /// 最大时间
-    private let maxDate: Date = Date.init(timeIntervalSinceNow: TimeInterval(60*60*24*365*1000))
+    private let maxDate: Date = Date.init(timeIntervalSinceNow: TimeInterval(60*60*24*365*20))
     /// 弹窗距离左右边距
     private let leftAndRightMargin: CGFloat = 35
-    /// 弹窗距离上边距
-    private let topMargin: CGFloat = 114
     /// 弹窗高度
     private let popupViewHeight: CGFloat = 220
     /// 时间选择器的高度
@@ -51,7 +49,7 @@ open class DurationDatePickView: UIView {
     // MARK: 内部控件，懒加载
     public lazy var coverView: UIView = {
         let coverView = UIView()
-        coverView.frame = CGRect.init(x: 0, y: 0, width: ConstantsEnum.SizeEnum.screenWith, height: ConstantsEnum.SizeEnum.screenHeight)
+        coverView.frame = CGRect.init(x: 0, y: 0, width: SizeEnum.screenWith, height: SizeEnum.screenHeight)
         coverView.backgroundColor = UIColor.black
         coverView.alpha = 0
         return coverView
@@ -59,7 +57,8 @@ open class DurationDatePickView: UIView {
 
     public lazy var popupView: UIView = {
         let popupView = UIView()
-        let width = ConstantsEnum.SizeEnum.screenWith - (leftAndRightMargin * 2)
+        let width = SizeEnum.screenWith - (leftAndRightMargin * 2)
+        let topMargin: CGFloat = (SizeEnum.screenHeight - popupViewHeight - datePickerHeight) / 2
         popupView.frame = CGRect.init(x: leftAndRightMargin, y: topMargin, width: width, height: popupViewHeight)
         popupView.backgroundColor = UIColor.white
         popupView.layer.masksToBounds = true
@@ -327,7 +326,7 @@ extension DurationDatePickView {
     /// 设置日期选择器相关属性
     private func setDatePickerStyle() {
         datePicker.alpha = 0
-        datePicker.frame = CGRect.init(x: 0, y: ConstantsEnum.SizeEnum.screenHeight - datePickerHeight + 20, width: ConstantsEnum.SizeEnum.screenWith, height: datePickerHeight)
+        datePicker.frame = CGRect.init(x: 0, y: SizeEnum.screenHeight - datePickerHeight, width: SizeEnum.screenWith, height: datePickerHeight)
         datePicker.backgroundColor = UIColor.white
         datePicker.calendar = Calendar.current
         datePicker.locale = Locale.current

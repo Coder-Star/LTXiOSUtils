@@ -13,9 +13,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.swift_version = ["5","4.2"]
 
-#  s.dependency 'QorumLogs','0.9' # 日志工具
 #  s.dependency 'MJRefresh','3.3.1'  # 下拉刷新、下拉加载，OC库
-#  s.dependency 'SwiftyJSON','5.0.0' # 处理JSON
 
   #    s.resources     = 'Source/Resource/**/*' # 资源路径
 
@@ -28,6 +26,7 @@ Pod::Spec.new do |s|
     end
 
     tools.subspec 'Utils' do |utils|
+      utils.dependency 'LTXiOSUtils/Tools/Extensions'
       utils.dependency 'MBProgressHUD','1.1.0' # 加载框，OC库
       utils.source_files = 'LTXiOSUtils/Classes/Tools/Utils/*.swift'
     end

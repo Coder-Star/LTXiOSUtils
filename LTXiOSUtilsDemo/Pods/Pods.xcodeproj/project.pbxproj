@@ -378,7 +378,7 @@
 		CAFC10AF76C5B2CEAEBDB79ADE24DB2C /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F91B8BDDC8CAA7E53E981C97497024 /* SwiftyJSON-dummy.m */; };
 		CB56413DD0DFAD3E5497FE3D84873FA1 /* UITableView+FDIndexPathHeightCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E68F0E6D296029A0968977CFDCF7CF2 /* UITableView+FDIndexPathHeightCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB909A85792FA839324CADB870038EFD /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050C04D0D060736CB4DADD95B6CFC31B /* HUD.swift */; };
-		CBDC9D6B812E993D0279E6586A8B8A0C /* DatePickerTottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6808C862B019855167D938C6DA7DBA /* DatePickerTottomView.swift */; };
+		CBDC9D6B812E993D0279E6586A8B8A0C /* DatePickerTottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51C46801D7F8A3514086D9214A6530C /* DatePickerTottomView.swift */; };
 		CC736B7DD8C04BD1A09F4C129DA7E826 /* TimePeriodChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F7E5EF1D534380587188F8C430239 /* TimePeriodChain.swift */; };
 		CD698D8D49A0DB3669D8D58B4571268E /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1389F76DF2827CFF9A701F3DFFD7DDE6 /* ImageProcessor.swift */; };
 		CDD42E25D201469CAFEA9E6181525FA8 /* RequestModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA1F3E9371D57A87BE7A00E8184BDD /* RequestModifier.swift */; };
@@ -412,6 +412,8 @@
 		DB178FA0C5EBC9F57E4F09177E63BE36 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49DBD7388D1E734CF67F04BC38F305 /* ConstraintMakerRelatable.swift */; };
 		DB2D6EBC95F3851690A78BB0C916DFDA /* SCNCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54088CA8CE6E8B6DB31B56FADBEF03F4 /* SCNCapsule.swift */; };
 		DB315D5698CFDF320D16D8F36996C142 /* UIActivityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8DEFAF1DBF7C938B99336A92B5BC46 /* UIActivityExtensions.swift */; };
+		DC884A9523AC4DF800A65E7A /* SizeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC884A9423AC4DF800A65E7A /* SizeEnum.swift */; };
+		DC884A9723AC4E4400A65E7A /* KeyEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC884A9623AC4E4400A65E7A /* KeyEnum.swift */; };
 		DCDC042F8DD1859C5682B8D7E49D40F0 /* UISwitchExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E66D1FDB020DEEAE98A9FF170F613CC /* UISwitchExtensions.swift */; };
 		DDCCDA0CC4F6901364FFA98C9D878CF0 /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3469DE6C537DB3C53AA130259C2161 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */; };
 		DE086886728A731AF3B4447DE41B902E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E87648ED24ED655367417CBD27310F4 /* Foundation.framework */; };
@@ -1118,6 +1120,7 @@
 		C2F50ECBD2D80C65213C66E61161323F /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Sources/Extensions/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
 		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4106513723CCBE65A7834C7C7294140 /* Runtime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Runtime.swift; path = Sources/Utility/Runtime.swift; sourceTree = "<group>"; };
+		C51C46801D7F8A3514086D9214A6530C /* DatePickerTottomView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DatePickerTottomView.swift; sourceTree = "<group>"; };
 		C62FE12BF1067123B90112B32ABC66F3 /* ComparableExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComparableExtensions.swift; path = Sources/SwifterSwift/SwiftStdlib/ComparableExtensions.swift; sourceTree = "<group>"; };
 		C72CCB6A0F80E669E1FD8DA350A4915E /* BRAddressModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BRAddressModel.m; path = BRPickerView/AddressPickerView/BRAddressModel.m; sourceTree = "<group>"; };
 		C7F62304F3764E949B3D783B0F8A12A2 /* ISOParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISOParser.swift; path = Sources/SwiftDate/Formatters/ISOParser.swift; sourceTree = "<group>"; };
@@ -1171,6 +1174,8 @@
 		DBAA3E4EA4BA7E899165EEABF5A13464 /* DateInRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateInRegion.swift; path = Sources/SwiftDate/DateInRegion/DateInRegion.swift; sourceTree = "<group>"; };
 		DC11F263EC09CCC242AC6ACB8EDC6771 /* Pods-LTXiOSUtilsDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LTXiOSUtilsDemoTests.modulemap"; sourceTree = "<group>"; };
 		DC746CC01DBF3AC80A39A9125568117A /* NSObjectExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSObjectExtensions.swift; path = LTXiOSUtils/Classes/Tools/Extensions/NSObjectExtensions.swift; sourceTree = "<group>"; };
+		DC884A9423AC4DF800A65E7A /* SizeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SizeEnum.swift; path = LTXiOSUtils/Classes/Constants/SizeEnum.swift; sourceTree = "<group>"; };
+		DC884A9623AC4E4400A65E7A /* KeyEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyEnum.swift; path = LTXiOSUtils/Classes/Constants/KeyEnum.swift; sourceTree = "<group>"; };
 		DCC584F8CD862AE7A0C2C1A0373262D1 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
 		DCD95101779144870B53DEC53172EA36 /* ZYCornerRadius.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZYCornerRadius.xcconfig; sourceTree = "<group>"; };
 		DDC931268F175B06E0C8BBD51D708566 /* SwiftyUserDefaults.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyUserDefaults.modulemap; sourceTree = "<group>"; };
@@ -1205,7 +1210,6 @@
 		EDB22B4C2FFAEB9C6665AD99BED8558D /* ZYCornerRadius-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZYCornerRadius-prefix.pch"; sourceTree = "<group>"; };
 		EDCA1F3E9371D57A87BE7A00E8184BDD /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/Networking/RequestModifier.swift; sourceTree = "<group>"; };
 		EDFC7DD2733201FFACD84773E9EA4C39 /* UITableView+FDTemplateLayoutCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell-umbrella.h"; sourceTree = "<group>"; };
-		EE6808C862B019855167D938C6DA7DBA /* DatePickerTottomView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DatePickerTottomView.swift; sourceTree = "<group>"; };
 		EECAD2E369C79A625A967F5F5E2761D2 /* UIStoryboard+StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardViewControllerResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardViewControllerResource.swift"; sourceTree = "<group>"; };
 		EED84BB7B51732D40676BAD1118ECA6B /* Storage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Sources/Cache/Storage.swift; sourceTree = "<group>"; };
 		EF239FA1BB9FC76229A6C0C47DA593D9 /* AccessTokenPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessTokenPlugin.swift; path = Sources/Moya/Plugins/AccessTokenPlugin.swift; sourceTree = "<group>"; };
@@ -1550,6 +1554,15 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/R.swift.Library";
+			sourceTree = "<group>";
+		};
+		1A67AC32E3BAE4B37A5856BAF5CD9251 /* PickView */ = {
+			isa = PBXGroup;
+			children = (
+				C51C46801D7F8A3514086D9214A6530C /* DatePickerTottomView.swift */,
+			);
+			name = PickView;
+			path = LTXiOSUtils/Classes/Views/PickView;
 			sourceTree = "<group>";
 		};
 		218E379FEA68A569B1ABC93BD786779F /* AddressPickerView */ = {
@@ -2103,15 +2116,6 @@
 			path = "../Target Support Files/MBProgressHUD";
 			sourceTree = "<group>";
 		};
-		953AEE3BFBE2F6B85E64CF9768363E1D /* PickView */ = {
-			isa = PBXGroup;
-			children = (
-				EE6808C862B019855167D938C6DA7DBA /* DatePickerTottomView.swift */,
-			);
-			name = PickView;
-			path = LTXiOSUtils/Classes/Views/PickView;
-			sourceTree = "<group>";
-		};
 		95B904069314CE876E252A729000BFBE /* CoreGraphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -2360,6 +2364,8 @@
 			isa = PBXGroup;
 			children = (
 				E3967C9BF204647A095E96236A8F9878 /* ConstantsEnum.swift */,
+				DC884A9423AC4DF800A65E7A /* SizeEnum.swift */,
+				DC884A9623AC4E4400A65E7A /* KeyEnum.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -2414,7 +2420,7 @@
 				729F8ABF2C3FE6D32B1CB3437D60D658 /* Checkbox.swift */,
 				A389386EF03586DAC131ADA4376AA2D6 /* MaskPopupView.swift */,
 				47451FE9386F140C3453D7F967838213 /* PageControl.swift */,
-				953AEE3BFBE2F6B85E64CF9768363E1D /* PickView */,
+				1A67AC32E3BAE4B37A5856BAF5CD9251 /* PickView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -3920,9 +3926,11 @@
 				4D2F9895495330E2FF3694B1F673AA02 /* NetworkConfig.swift in Sources */,
 				F7639719CF3EF13BE2EC21FF91C6511D /* NetworkManager.swift in Sources */,
 				4EEDDAD7BBB452F86EE6AEAEB4E41611 /* NSObjectExtensions.swift in Sources */,
+				DC884A9523AC4DF800A65E7A /* SizeEnum.swift in Sources */,
 				764CB5BA7F7834A3F0FAE45FCC0D6643 /* OptionalExtensions.swift in Sources */,
 				41915652EAA97D249EEDE21954E96A52 /* PageControl.swift in Sources */,
 				69FF633FE77C7672D896A4CA451BB9AA /* RequestParam.swift in Sources */,
+				DC884A9723AC4E4400A65E7A /* KeyEnum.swift in Sources */,
 				06ACEE2301076A49A567ED4BF1E8AA46 /* StringExtensions.swift in Sources */,
 				5E15AFA998598AF1A7294F848409133D /* UIButtonExtensions.swift in Sources */,
 				4AC92B44C139D4D0D6882611B124C51C /* UIColorExtensions.swift in Sources */,
