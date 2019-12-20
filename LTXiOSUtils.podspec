@@ -15,58 +15,44 @@ Pod::Spec.new do |s|
 
   #  s.dependency 'MJRefresh','3.3.1'  # 下拉刷新、下拉加载，OC库
 
-  # 工具相关，算是核心类，其他很多子组件依赖该组件
-  s.subspec 'Tools' do |tools|
-
+  # 核心类，其他子组件依赖该子组件
+  s.subspec 'Core' do |tools|
     # 扩展
-    tools.subspec 'Extensions' do |extensions|
-      extensions.source_files = 'LTXiOSUtils/Classes/Tools/Extensions/*.swift'
+    tools.subspec 'Extension' do |extensions|
+      extensions.source_files = 'LTXiOSUtils/Classes/Core/Extension/*.swift'
     end
-
-    # 工具
-    tools.subspec 'Utils' do |utils|
-      utils.dependency 'LTXiOSUtils/Tools/Extensions'
-      utils.dependency 'MBProgressHUD','1.1.0' # 加载框，OC库
-      utils.source_files = 'LTXiOSUtils/Classes/Tools/Utils/*.swift'
-    end
-
-    # 网络请求
-    tools.subspec 'Network' do |network|
-      network.dependency 'LTXiOSUtils/Tools/Utils'
-      network.dependency 'LTXiOSUtils/Tools/Extensions'
-      network.dependency 'Alamofire','4.9.1'  # 网络请求
-      network.dependency 'Moya','13.0.1' # 网络抽象层
-      network.dependency 'SwiftyJSON','5.0.0' # 处理JSON
-      network.source_files = 'LTXiOSUtils/Classes/Tools/Network/*.swift'
-    end
-
   end
 
-  # 静态常量
-  s.subspec 'Constants' do |constants|
-    constants.source_files = 'LTXiOSUtils/Classes/Constants/*.swift'
+  # 网络请求
+  s.subspec 'Network' do |network|
+    network.dependency 'LTXiOSUtils/Core'
+    network.dependency 'LTXiOSUtils/Component'
+    network.dependency 'Alamofire'  # 网络请求
+    network.dependency 'Moya' # 网络抽象层
+    network.dependency 'SwiftyJSON' # 处理JSON
+    network.source_files = 'LTXiOSUtils/Classes/Network/*.swift'
   end
 
   # 资源
-  s.subspec 'Resources' do |resources|
-    resources.dependency 'Localize-Swift','3.1.0' # 管理本地国际化文件
-    resources.source_files = 'LTXiOSUtils/Resources/*.swift'
-    resources.resource_bundle = { "LTXiOSUtils" => "LTXiOSUtils/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
+  s.subspec 'Resource' do |resource|
+    resource.dependency 'Localize-Swift' # 管理本地国际化文件
+    resource.source_files = 'LTXiOSUtils/Resources/*.swift'
+    resource.resource_bundle = { "LTXiOSUtils" => "LTXiOSUtils/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
   end
 
   # 自定义View
-  s.subspec 'Views' do |views|
-    views.dependency 'LTXiOSUtils/Resources'
-    views.dependency 'LTXiOSUtils/Constants'
-    views.dependency 'LTXiOSUtils/Tools/Extensions'
-    views.source_files = 'LTXiOSUtils/Classes/Views/**/*.swift'
+  s.subspec 'Component' do |component|
+    component.dependency 'LTXiOSUtils/Resource'
+    component.dependency 'LTXiOSUtils/Core'
+    component.dependency 'MBProgressHUD' # 加载框，OC库
+    component.source_files = 'LTXiOSUtils/Classes/Component/**/*.swift'
   end
 
   # 基础ViewController
-  s.subspec 'ViewControllers' do |viewControllers|
-    viewControllers.dependency 'LTXiOSUtils/Constants'
-    viewControllers.dependency 'SnapKit','5.0.1' # 自动布局
-    viewControllers.source_files = 'LTXiOSUtils/Classes/ViewControllers/*.swift'
+  s.subspec 'ViewController' do |viewController|
+    viewController.dependency 'LTXiOSUtils/Core'
+    viewController.dependency 'SnapKit' # 自动布局
+    viewController.source_files = 'LTXiOSUtils/Classes/ViewController/*.swift'
   end
 
 end
