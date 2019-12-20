@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Pods
+  英文语言资源
+  Created by 李天星 on 2019/12/20.
+*/
+
+// 通用
+sure = "Sure";
+confirm = "Confirm";
+cancel = "Cancel";
+
+// 起止时间选择
+DurationDatePickView.topTitle = "Please Select Start And End Time";
+DurationDatePickView.to = "To";
+
+

@@ -41,7 +41,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
             let start = Date()
             let end = Date().getDateByDays(days: 1)
             let popupView = DurationDatePickView.getPopupView(startDate: start, endDate: end, canGreatNow:true, dateType: .YMDHM)
-            popupView.titleLabel.text = "请选择查询时间(时间)"
+//            popupView.titleLabel.text = "请选择查询时间(时间)"
             popupView.sureBlock = { (start,end) in
                 self.showAlert(message: "起始时间\(start)\n结束时间\(end)")
             }
