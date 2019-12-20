@@ -12,6 +12,7 @@ PODS:
     - BRPickerView/Base
   - BRPickerView/StringPickerView (2.4.5):
     - BRPickerView/Base
+  - GDPerformanceView-Swift (2.0.3)
   - IQKeyboardManagerSwift (6.5.4)
   - Kingfisher (5.12.0):
     - Kingfisher/Core (= 5.12.0)
@@ -85,6 +86,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
   - BRPickerView
+  - GDPerformanceView-Swift (= 2.0.3)
   - IQKeyboardManagerSwift
   - Kingfisher
   - Localize-Swift (= 3.1.0)
@@ -107,6 +109,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - BRPickerView
+    - GDPerformanceView-Swift
     - IQKeyboardManagerSwift
     - Kingfisher
     - Localize-Swift
@@ -133,6 +136,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   BRPickerView: 0bd32f1fc4e338ecf6643b5e82f7a7c77db68cbe
+  GDPerformanceView-Swift: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
@@ -153,6 +157,6 @@ SPEC CHECKSUMS:
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 17fc4cece42e24bec2e5503756f0c1b67bd1cd30
+PODFILE CHECKSUM: ba0a56fcc5b848c72aa357e45b5b698ba4aeb4f1
 
 COCOAPODS: 1.8.4

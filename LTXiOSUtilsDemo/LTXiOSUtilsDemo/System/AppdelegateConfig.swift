@@ -8,6 +8,7 @@
 
 import Foundation
 import IQKeyboardManagerSwift
+import GDPerformanceView_Swift
 
 class AppdelegateConfig {
 
@@ -21,6 +22,8 @@ class AppdelegateConfig {
         initLogConfig()
 
         IQKeyboardManager.shared.enable = true
+
+        PerformanceMonitor.shared().start()
     }
 
     /// 日志设置
