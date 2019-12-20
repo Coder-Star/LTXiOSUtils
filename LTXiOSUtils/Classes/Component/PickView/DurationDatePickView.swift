@@ -46,10 +46,15 @@ open class DurationDatePickView: UIView {
     /// 时间选择器
     private var datePicker: UIDatePicker = UIDatePicker()
 
+    /// 屏幕高度
+    private let screenHeight = UIScreen.main.bounds.height
+    /// 屏幕宽度
+    private let screenWith = UIScreen.main.bounds.width
+
     // MARK: 内部控件，懒加载
     public lazy var coverView: UIView = {
         let coverView = UIView()
-        coverView.frame = CGRect.init(x: 0, y: 0, width: SizeEnum.screenWith, height: SizeEnum.screenHeight)
+        coverView.frame = CGRect.init(x: 0, y: 0, width: screenWith, height: screenHeight)
         coverView.backgroundColor = UIColor.black
         coverView.alpha = 0
         return coverView
@@ -57,8 +62,8 @@ open class DurationDatePickView: UIView {
 
     public lazy var popupView: UIView = {
         let popupView = UIView()
-        let width = SizeEnum.screenWith - (leftAndRightMargin * 2)
-        let topMargin: CGFloat = (SizeEnum.screenHeight - popupViewHeight - datePickerHeight) / 2
+        let width = screenWith - (leftAndRightMargin * 2)
+        let topMargin: CGFloat = (screenHeight - popupViewHeight - datePickerHeight) / 2
         popupView.frame = CGRect.init(x: leftAndRightMargin, y: topMargin, width: width, height: popupViewHeight)
         popupView.backgroundColor = UIColor.white
         popupView.layer.masksToBounds = true
@@ -326,7 +331,7 @@ extension DurationDatePickView {
     /// 设置日期选择器相关属性
     private func setDatePickerStyle() {
         datePicker.alpha = 0
-        datePicker.frame = CGRect.init(x: 0, y: SizeEnum.screenHeight - datePickerHeight, width: SizeEnum.screenWith, height: datePickerHeight)
+        datePicker.frame = CGRect.init(x: 0, y: screenHeight - datePickerHeight, width: screenWith, height: datePickerHeight)
         datePicker.backgroundColor = UIColor.white
         datePicker.calendar = Calendar.current
         datePicker.locale = Locale.current

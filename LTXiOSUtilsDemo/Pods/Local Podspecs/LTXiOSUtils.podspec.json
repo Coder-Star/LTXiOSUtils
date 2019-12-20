@@ -24,56 +24,40 @@
   ],
   "subspecs": [
     {
-      "name": "Tools",
+      "name": "Core",
       "subspecs": [
         {
-          "name": "Extensions",
-          "source_files": "LTXiOSUtils/Classes/Tools/Extensions/*.swift"
-        },
-        {
-          "name": "Utils",
-          "dependencies": {
-            "LTXiOSUtils/Tools/Extensions": [
-
-            ],
-            "MBProgressHUD": [
-              "1.1.0"
-            ]
-          },
-          "source_files": "LTXiOSUtils/Classes/Tools/Utils/*.swift"
-        },
-        {
-          "name": "Network",
-          "dependencies": {
-            "LTXiOSUtils/Tools/Utils": [
-
-            ],
-            "LTXiOSUtils/Tools/Extensions": [
-
-            ],
-            "Alamofire": [
-              "4.9.1"
-            ],
-            "Moya": [
-              "13.0.1"
-            ],
-            "SwiftyJSON": [
-              "5.0.0"
-            ]
-          },
-          "source_files": "LTXiOSUtils/Classes/Tools/Network/*.swift"
+          "name": "Extension",
+          "source_files": "LTXiOSUtils/Classes/Core/Extension/*.swift"
         }
       ]
     },
     {
-      "name": "Constants",
-      "source_files": "LTXiOSUtils/Classes/Constants/*.swift"
+      "name": "Network",
+      "dependencies": {
+        "LTXiOSUtils/Core": [
+
+        ],
+        "LTXiOSUtils/Component": [
+
+        ],
+        "Alamofire": [
+
+        ],
+        "Moya": [
+
+        ],
+        "SwiftyJSON": [
+
+        ]
+      },
+      "source_files": "LTXiOSUtils/Classes/Network/*.swift"
     },
     {
-      "name": "Resources",
+      "name": "Resource",
       "dependencies": {
         "Localize-Swift": [
-          "3.1.0"
+
         ]
       },
       "source_files": "LTXiOSUtils/Resources/*.swift",
@@ -82,31 +66,31 @@
       }
     },
     {
-      "name": "Views",
+      "name": "Component",
       "dependencies": {
-        "LTXiOSUtils/Resources": [
+        "LTXiOSUtils/Resource": [
 
         ],
-        "LTXiOSUtils/Constants": [
+        "LTXiOSUtils/Core": [
 
         ],
-        "LTXiOSUtils/Tools/Extensions": [
+        "MBProgressHUD": [
 
         ]
       },
-      "source_files": "LTXiOSUtils/Classes/Views/**/*.swift"
+      "source_files": "LTXiOSUtils/Classes/Component/**/*.swift"
     },
     {
-      "name": "ViewControllers",
+      "name": "ViewController",
       "dependencies": {
-        "LTXiOSUtils/Constants": [
+        "LTXiOSUtils/Core": [
 
         ],
         "SnapKit": [
-          "5.0.1"
+
         ]
       },
-      "source_files": "LTXiOSUtils/Classes/ViewControllers/*.swift"
+      "source_files": "LTXiOSUtils/Classes/ViewController/*.swift"
     }
   ],
   "swift_version": "5"
