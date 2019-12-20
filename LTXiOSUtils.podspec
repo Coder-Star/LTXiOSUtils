@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
     resource.resource_bundle = { "LTXiOSUtils" => "LTXiOSUtils/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
   end
 
-  # 自定义View
+  # 自定义Component组件，包含各种基础view
   s.subspec 'Component' do |component|
     component.dependency 'LTXiOSUtils/Resource'
     component.dependency 'LTXiOSUtils/Core'
