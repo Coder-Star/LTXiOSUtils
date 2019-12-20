@@ -38,6 +38,7 @@ target 'LTXiOSUtilsDemo' do
   pod 'IQKeyboardManagerSwift' # 键盘控制
   pod 'QorumLogs','0.9' #日志
   pod 'SwiftDate','6.1.0' #时间工具
+  pod 'GDPerformanceView-Swift','2.0.3' #显示屏幕FPS
 
 
   #UI控件及处理等
