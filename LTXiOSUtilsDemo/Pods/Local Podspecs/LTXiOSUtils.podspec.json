@@ -28,6 +28,10 @@
       "subspecs": [
         {
           "name": "Extension",
+          "frameworks": [
+            "UIKit",
+            "Foundation"
+          ],
           "source_files": "LTXiOSUtils/Classes/Core/Extension/*.swift"
         }
       ]

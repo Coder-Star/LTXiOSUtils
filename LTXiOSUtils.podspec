@@ -16,10 +16,11 @@ Pod::Spec.new do |s|
   #  s.dependency 'MJRefresh','3.3.1'  # 下拉刷新、下拉加载，OC库
 
   # 核心类，其他子组件依赖该子组件
-  s.subspec 'Core' do |tools|
+  s.subspec 'Core' do |core|
     # 扩展
-    tools.subspec 'Extension' do |extensions|
-      extensions.source_files = 'LTXiOSUtils/Classes/Core/Extension/*.swift'
+    core.subspec 'Extension' do |extension|
+      extension.frameworks = "UIKit","Foundation"
+      extension.source_files = 'LTXiOSUtils/Classes/Core/Extension/*.swift'
     end
   end
 
