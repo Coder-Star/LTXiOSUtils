@@ -97,8 +97,8 @@ public class MaskPopupView: UIView {
         didDismissCallback = nil
     }
 
-    /// 指定的s初始化器
-    ///
+    /// 指定的初始化器
+    /// 需要注意的是需要指定contentView的frame，动画需要
     /// - Parameters:
     ///   - containerView: 展示弹框的视图，可以是window、vc.view、自定义视图等
     ///   - contentView: 自定义的弹框视图
