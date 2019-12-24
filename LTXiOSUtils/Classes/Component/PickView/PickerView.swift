@@ -261,13 +261,13 @@ public class PickerView: UIView {
         let picker = UIPickerView()
         picker.delegate = self
         picker.dataSource = self
-        picker.backgroundColor = UIColor.white
+        picker.backgroundColor = UIColor.white.adapt()
         return picker
         }()
 
     fileprivate lazy var datePicker: UIDatePicker = {[unowned self] in
         let datePic = UIDatePicker()
-        datePic.backgroundColor = UIColor.white
+        datePic.backgroundColor = UIColor.white.adapt()
         datePic.timeZone = TimeZone.current //时区
         if let language = Locale.preferredLanguages.first {
             datePic.locale = Locale(identifier: language)
@@ -338,6 +338,8 @@ public class PickerView: UIView {
 fileprivate extension PickerView {
 
     func commonInit() {
+        let window = UIApplication.shared.keyWindow
+        window?.endEditing(true)
         addSubview(toolBar)
         if pickerStyle == PickerStyles.date {
             datePicker.addTarget(self, action: #selector(self.dateDidChange(_:)), for: UIControl.Event.valueChanged)
@@ -424,7 +426,7 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
         let label = UILabel()
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = UIColor.black
+        label.textColor = UIColor.black.adapt()
         label.font = UIFont.systemFont(ofSize: 18.0)
         label.backgroundColor = UIColor.clear
         label.text = titleForRow(row, forComponent: component)
@@ -526,7 +528,6 @@ public extension PickerView {
     /// - Parameter defaultSelectedValues: 默认选中值
     /// - Parameter cancelAction: 取消回调
     /// - Parameter doneAction: 完成回调
-    /// - Parameter selectTopLevel: 是否选中顶部
     class func citiesPicker(_ toolBarTitle: String, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
 
         guard let path = ResourceUtils.getAddress() else {

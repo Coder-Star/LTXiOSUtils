@@ -79,6 +79,18 @@ public extension UIColor {
         }
     }
 
+    /// 颜色的反色
+    var invertColor: UIColor {
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0
+        self.getRed(&r, green: &g, blue: &b, alpha: nil)
+        return UIColor(red:1.0 - r, green: 1.0 - g, blue: 1.0 - b, alpha: 1)
+    }
+
+}
+
+// MARK: - 颜色、图片
+public extension UIColor {
+
     /// 颜色生成指定大小的UIImage
     ///
     /// - Parameter size: 图片尺寸
@@ -92,5 +104,29 @@ public extension UIColor {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsGetCurrentContext()
         return image
+    }
+}
+
+public extension UIColor {
+    /// 适配暗黑模式
+    /// - Parameter colorWithDark: 暗黑模式下的颜色,默认为nil，取颜色反色
+    func adaptDark(_ colorWithDark: UIColor? = nil) -> UIColor {
+        if #available(iOS 13.0, *) {
+            if UITraitCollection.current.userInterfaceStyle == .dark {
+                guard let darkColor = colorWithDark else {
+                    return self.invertColor
+                }
+                return darkColor
+            }
+        } else {
+            return self
+        }
+        return self
+    }
+
+    /// 适配各种模式
+    /// - Parameter colorWithDark: 暗黑模式颜色
+    func adapt(colorWithDark: UIColor? = nil) -> UIColor {
+        return self.adaptDark(colorWithDark)
     }
 }

@@ -12,7 +12,7 @@ open class ToolBarView: UIView {
     typealias CustomClosures = (_ titleLabel: UILabel, _ cancleBtn: UIButton, _ doneBtn: UIButton) -> Void
     public typealias BtnAction = () -> Void
 
-    open var title = "请选择" {
+    open var title = "PickerViewManager.ToolBarView.title".localizedOfLTXiOSUtils() {
         didSet {
             titleLabel.text = title
         }
@@ -24,14 +24,14 @@ open class ToolBarView: UIView {
     // 用来产生上下分割线的效果
     fileprivate lazy var contentView: UIView = {
         let content = UIView()
-        content.backgroundColor = UIColor.white
+        content.backgroundColor = UIColor.white.adapt()
         return content
     }()
 
     // 文本框
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.black
+        label.textColor = UIColor.black.adapt()
         label.textAlignment = .center
         return label
     }()
@@ -39,16 +39,16 @@ open class ToolBarView: UIView {
     // 取消按钮
     fileprivate lazy var cancleBtn: UIButton = {
         let btn = UIButton()
-        btn.setTitle("取消", for: UIControl.State())
-        btn.setTitleColor(UIColor.black, for: UIControl.State())
+        btn.setTitle("cancel".localizedOfLTXiOSUtils(), for: UIControl.State())
+        btn.setTitleColor(UIColor.black.adapt(), for: UIControl.State())
         return btn
     }()
 
     // 完成按钮
     fileprivate lazy var doneBtn: UIButton = {
         let donebtn = UIButton()
-        donebtn.setTitle("完成", for: UIControl.State())
-        donebtn.setTitleColor(UIColor.black, for: UIControl.State())
+        donebtn.setTitle("complete".localizedOfLTXiOSUtils(), for: UIControl.State())
+        donebtn.setTitleColor(UIColor.black.adapt(), for: UIControl.State())
         return donebtn
     }()
 

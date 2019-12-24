@@ -51,7 +51,7 @@ open class DurationDatePickView: UIView {
         if let language = Locale.preferredLanguages.first {
             datePicker.locale = Locale(identifier: language)
         }
-        datePicker.backgroundColor = UIColor.white
+        datePicker.backgroundColor = UIColor.white.adapt()
         datePicker.alpha = 0
         return datePicker
     }()
@@ -65,7 +65,7 @@ open class DurationDatePickView: UIView {
     public lazy var coverView: UIView = {
         let coverView = UIView()
         coverView.frame = CGRect.init(x: 0, y: 0, width: screenWith, height: screenHeight)
-        coverView.backgroundColor = UIColor.black
+        coverView.backgroundColor = UIColor.black.adapt()
         coverView.alpha = 0
         return coverView
     }()
@@ -75,7 +75,7 @@ open class DurationDatePickView: UIView {
         let width = screenWith - (leftAndRightMargin * 2)
         let topMargin: CGFloat = (screenHeight - popupViewHeight - datePickerHeight) / 2
         popupView.frame = CGRect.init(x: leftAndRightMargin, y: topMargin, width: width, height: popupViewHeight)
-        popupView.backgroundColor = UIColor.white
+        popupView.backgroundColor = UIColor.white.adapt()
         popupView.layer.masksToBounds = true
         popupView.layer.cornerRadius = 10
         popupView.alpha = 0
@@ -87,14 +87,14 @@ open class DurationDatePickView: UIView {
         titleLabel.frame = CGRect.init(x: 0, y: 0, width: popupView.frame.width, height: 50)
         titleLabel.text = "DurationDatePickView.topTitle".localizedOfLTXiOSUtils()
         titleLabel.font = UIFont.systemFont(ofSize: 16)
-        titleLabel.textColor = .black
+        titleLabel.textColor = UIColor.black.adapt()
         titleLabel.textAlignment = .center
         return titleLabel
     }()
 
     public lazy var startBtn: UIButton = {
         let btn = UIButton.init(type: .custom)
-        btn.setTitleColor(UIColor(hexString: "#333333"), for: .normal)
+        btn.setTitleColor(UIColor(hexString: "#333333").adapt(), for: .normal)
         btn.setTitleColor(UIColor(hexString: "#0F9CFE"), for: .selected)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         btn.titleLabel?.textAlignment = .right
@@ -112,7 +112,7 @@ open class DurationDatePickView: UIView {
 
     public lazy var endBtn: UIButton = {
         let btn = UIButton.init(type: .custom)
-        btn.setTitleColor(UIColor(hexString: "#333333"), for: .normal)
+        btn.setTitleColor(UIColor(hexString: "#333333").adapt(), for: .normal)
         btn.setTitleColor(UIColor(hexString: "#0F9CFE"), for: .selected)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         btn.titleLabel?.textAlignment = .left

@@ -9,8 +9,12 @@
 sure = "确定";
 cancel = "取消";
 confirm = "确认";
+complete = "完成";
 
 // 起止时间选择
 
 DurationDatePickView.topTitle = "请选择起止时间";
 DurationDatePickView.to = "至";
+
+// 选择器
+PickerViewManager.ToolBarView.title = "请选择";
