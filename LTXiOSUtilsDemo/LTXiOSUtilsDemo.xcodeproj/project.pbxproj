@@ -21,6 +21,7 @@
 		DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */; };
 		DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC62A7C72384084A00DE7800 /* Localizable.strings */; };
 		DCB22AB923AB6908004C63EF /* PickViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */; };
+		DCBB1C3A23B1FCC000FF2925 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBB1C3923B1FCC000FF2925 /* Launch Screen.storyboard */; };
 		DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC76E4B23A783550029590C /* HUDDemoViewController.swift */; };
 		DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */; };
 		DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */; };
@@ -70,6 +71,7 @@
 		DC62A7C62384084A00DE7800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewDemoViewController.swift; sourceTree = "<group>"; };
+		DCBB1C3923B1FCC000FF2925 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DCC76E4B23A783550029590C /* HUDDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDDemoViewController.swift; sourceTree = "<group>"; };
 		DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 		DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDemoViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				DC4AB9C322F4606100A5F003 /* Assets.xcassets */,
 				DC62A7C72384084A00DE7800 /* Localizable.strings */,
+				DCBB1C3923B1FCC000FF2925 /* Launch Screen.storyboard */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */,
+				DCBB1C3A23B1FCC000FF2925 /* Launch Screen.storyboard in Resources */,
 				DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,7 +676,6 @@
 			baseConfigurationReference = 7E69F21B8737A1842F9552D7 /* Pods-LTXiOSUtilsDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6C67KJ54CD;
 				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
@@ -692,7 +695,6 @@
 			baseConfigurationReference = 58C69EFBC8200F3382DF3C87 /* Pods-LTXiOSUtilsDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6C67KJ54CD;
 				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
