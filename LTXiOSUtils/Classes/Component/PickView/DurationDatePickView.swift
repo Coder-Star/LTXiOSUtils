@@ -44,7 +44,17 @@ open class DurationDatePickView: UIView {
     /// 时间选择器的高度
     private let datePickerHeight: CGFloat = 200
     /// 时间选择器
-    private var datePicker: UIDatePicker = UIDatePicker()
+    private lazy var datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.calendar = Calendar.current
+        datePicker.timeZone = TimeZone.current
+        if let language = Locale.preferredLanguages.first {
+            datePicker.locale = Locale(identifier: language)
+        }
+        datePicker.backgroundColor = UIColor.white
+        datePicker.alpha = 0
+        return datePicker
+    }()
 
     /// 屏幕高度
     private let screenHeight = UIScreen.main.bounds.height
@@ -330,11 +340,7 @@ extension DurationDatePickView {
 
     /// 设置日期选择器相关属性
     private func setDatePickerStyle() {
-        datePicker.alpha = 0
         datePicker.frame = CGRect.init(x: 0, y: screenHeight - datePickerHeight, width: screenWith, height: datePickerHeight)
-        datePicker.backgroundColor = UIColor.white
-        datePicker.calendar = Calendar.current
-        datePicker.locale = Locale.current
         if dateType == .YMDHM {
             datePicker.datePickerMode = .dateAndTime
         } else if dateType == .YMD {
