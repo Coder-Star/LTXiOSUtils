@@ -1,24 +1,23 @@
 //
 //  ToolBarView.swift
-//  SwiftPickerView
-//
-//  Created by CoderDoraemon on 10/11/2019.
-//  Copyright (c) 2019 CoderDoraemon. All rights reserved.
+//  LTXiOSUtils
+//  弹出框顶部显示view
+//  Created by 李天星 on 2019/11/21.
 //
 
 import UIKit
 
 open class ToolBarView: UIView {
-    
+
     typealias CustomClosures = (_ titleLabel: UILabel, _ cancleBtn: UIButton, _ doneBtn: UIButton) -> Void
     public typealias BtnAction = () -> Void
-    
+
     open var title = "请选择" {
         didSet {
             titleLabel.text = title
         }
     }
-    
+
     open var doneAction: BtnAction?
     open var cancelAction: BtnAction?
 
@@ -28,7 +27,7 @@ open class ToolBarView: UIView {
         content.backgroundColor = UIColor.white
         return content
     }()
-    
+
     // 文本框
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -36,7 +35,7 @@ open class ToolBarView: UIView {
         label.textAlignment = .center
         return label
     }()
-    
+
     // 取消按钮
     fileprivate lazy var cancleBtn: UIButton = {
         let btn = UIButton()
@@ -44,7 +43,7 @@ open class ToolBarView: UIView {
         btn.setTitleColor(UIColor.black, for: UIControl.State())
         return btn
     }()
-    
+
     // 完成按钮
     fileprivate lazy var doneBtn: UIButton = {
         let donebtn = UIButton()
@@ -52,36 +51,36 @@ open class ToolBarView: UIView {
         donebtn.setTitleColor(UIColor.black, for: UIControl.State())
         return donebtn
     }()
-    
+
     override public init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-        
+
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     fileprivate func commonInit() {
         backgroundColor = UIColor.lightText
         addSubview(contentView)
         contentView.addSubview(cancleBtn)
         contentView.addSubview(doneBtn)
         contentView.addSubview(titleLabel)
-        
+
         doneBtn.addTarget(self, action: #selector(self.doneBtnOnClick(_:)), for: .touchUpInside)
         cancleBtn.addTarget(self, action: #selector(self.cancelBtnOnClick(_:)), for: .touchUpInside)
     }
-    
+
     @objc func doneBtnOnClick(_ sender: UIButton) {
         doneAction?()
     }
-    
+
     @objc func cancelBtnOnClick(_ sender: UIButton) {
         cancelAction?()
     }
-    
+
     override open func layoutSubviews() {
         super.layoutSubviews()
         let margin = 15.0
