@@ -47,7 +47,7 @@ public extension Date {
     /// - Returns: 格式化后的字符串
     func formatDate(formatStr: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
+        dateFormatter.calendar = Calendar.current
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = formatStr
         let dateString = dateFormatter.string(from: self)
