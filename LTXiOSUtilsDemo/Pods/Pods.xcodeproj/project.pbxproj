@@ -429,6 +429,10 @@
 		DAF15876E957344DFC2137B17F582483 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F59CB25E697C355CAFFD4E77039F11 /* MBProgressHUD.framework */; };
 		DB2D6EBC95F3851690A78BB0C916DFDA /* SCNCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B7867C7345C593DCA5B4142AAAADC /* SCNCapsule.swift */; };
 		DB315D5698CFDF320D16D8F36996C142 /* UIActivityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCFB9639C6436008657A1A0DBA3F47 /* UIActivityExtensions.swift */; };
+		DCBB1C3E23B1FFFB00FF2925 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCBB1C3D23B1FFFB00FF2925 /* Address.plist */; };
+		DCBB1C4223B2001A00FF2925 /* PickerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB1C3F23B2001A00FF2925 /* PickerViewManager.swift */; };
+		DCBB1C4323B2001A00FF2925 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB1C4023B2001A00FF2925 /* ToolBarView.swift */; };
+		DCBB1C4423B2001A00FF2925 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB1C4123B2001A00FF2925 /* PickerView.swift */; };
 		DCDC042F8DD1859C5682B8D7E49D40F0 /* UISwitchExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743D8B9915AC8C77FCF05C6C8CE77BEE /* UISwitchExtensions.swift */; };
 		DDCCDA0CC4F6901364FFA98C9D878CF0 /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E006F0CAD6ED24793538E32EA63CE3 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */; };
 		DE086886728A731AF3B4447DE41B902E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784E263006B9F14D244466336B79061 /* Foundation.framework */; };
@@ -1256,6 +1260,10 @@
 		DACCEDF95913B8082FB990281B606DB4 /* SignedNumericExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SignedNumericExtensions.swift; path = Sources/SwifterSwift/SwiftStdlib/SignedNumericExtensions.swift; sourceTree = "<group>"; };
 		DC11F263EC09CCC242AC6ACB8EDC6771 /* Pods-LTXiOSUtilsDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LTXiOSUtilsDemoTests.modulemap"; sourceTree = "<group>"; };
 		DC21A85F094EC2585A8F89DFDF8D553D /* BoolExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BoolExtensions.swift; path = Sources/SwifterSwift/SwiftStdlib/BoolExtensions.swift; sourceTree = "<group>"; };
+		DCBB1C3D23B1FFFB00FF2925 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Address.plist; path = LTXiOSUtils/Resources/Resource/Address.plist; sourceTree = "<group>"; };
+		DCBB1C3F23B2001A00FF2925 /* PickerViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewManager.swift; sourceTree = "<group>"; };
+		DCBB1C4023B2001A00FF2925 /* ToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
+		DCBB1C4123B2001A00FF2925 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		DCD7A60FC136502BE27204C2238AF00A /* FileManagerExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileManagerExtensions.swift; path = Sources/SwifterSwift/Foundation/FileManagerExtensions.swift; sourceTree = "<group>"; };
 		DD1F7E7CE28B507CA2E79EBE7AF31086 /* UIStoryboard+StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardViewControllerResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardViewControllerResource.swift"; sourceTree = "<group>"; };
 		DD38520D2AA81ACE2591D2C8189F1FE5 /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = "zh-Hans.lproj"; path = "LTXiOSUtils/Resources/Resource/zh-Hans.lproj"; sourceTree = "<group>"; };
@@ -1605,6 +1613,7 @@
 		0C8EC407BA69E61517550CD517695E73 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DCBB1C3D23B1FFFB00FF2925 /* Address.plist */,
 				5C5ABB35717729423C5B487D8580E02E /* Assets.xcassets */,
 				FBE30BC0CFCEF187D985194D21244195 /* en.lproj */,
 				DD38520D2AA81ACE2591D2C8189F1FE5 /* zh-Hans.lproj */,
@@ -1974,6 +1983,9 @@
 		5392AC9094F064D7570B2528F21C1245 /* PickView */ = {
 			isa = PBXGroup;
 			children = (
+				DCBB1C4123B2001A00FF2925 /* PickerView.swift */,
+				DCBB1C3F23B2001A00FF2925 /* PickerViewManager.swift */,
+				DCBB1C4023B2001A00FF2925 /* ToolBarView.swift */,
 				C3AC4722D75359F781C8BF96CE0691A5 /* DurationDatePickView.swift */,
 			);
 			name = PickView;
@@ -3703,6 +3715,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4949AEE84403913FC818B650B44DF57D /* Assets.xcassets in Resources */,
+				DCBB1C3E23B1FFFB00FF2925 /* Address.plist in Resources */,
 				76FCAE70B089A3CBFE061BB3785F2459 /* en.lproj in Resources */,
 				743A5FFD0AB0F751E562FE7805EE782D /* zh-Hans.lproj in Resources */,
 			);
@@ -3754,6 +3767,7 @@
 				70579143D7C7A859D13BE3ACC864AAEE /* APIManager.swift in Sources */,
 				27903D1FD491DB10E0A2A248BD2B6D3E /* AuthPlugin.swift in Sources */,
 				05FE49EFAFAFA32A953F7F802F89456A /* BaseGroupTableMenuViewController.swift in Sources */,
+				DCBB1C4223B2001A00FF2925 /* PickerViewManager.swift in Sources */,
 				47AA6DF7F8365391A75A0DE3156D4801 /* BaseUIViewController.swift in Sources */,
 				4AC8123A5DA1AF6BF0AEEBE0AC965202 /* BaseViewController.swift in Sources */,
 				25A34668E56DD074B48EE0306E6C7E1B /* Checkbox.swift in Sources */,
@@ -3762,8 +3776,10 @@
 				CB00096CB1CF030B53B4937E6B4D11A1 /* DispatchQueueExtensions.swift in Sources */,
 				F29E25813CFE0645F01C09015A76B81F /* DurationDatePickView.swift in Sources */,
 				42132EFF6863F0C6A2A9BBAD188ADCFC /* HUD.swift in Sources */,
+				DCBB1C4323B2001A00FF2925 /* ToolBarView.swift in Sources */,
 				A689B4BA6C1DC7D6FB1A4375E5413AB4 /* LoadingPlugin.swift in Sources */,
 				77BACE9732288B25088583EBFCE3EDC0 /* LTXiOSUtils-dummy.m in Sources */,
+				DCBB1C4423B2001A00FF2925 /* PickerView.swift in Sources */,
 				7ACB705FCFC3F0702859FC096DDCEC60 /* MaskPopupView.swift in Sources */,
 				E8ED64366A5BABB117DF2979C20AF3F8 /* NetworkConfig.swift in Sources */,
 				531E281A0C120C598AABE079839F0759 /* NetworkManager.swift in Sources */,
