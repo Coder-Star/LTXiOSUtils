@@ -1,21 +1,21 @@
 //
 //  PickerView.swift
-//  SwiftPickerView
-//
-//  Created by CoderDoraemon on 10/11/2019.
-//  Copyright (c) 2019 CoderDoraemon. All rights reserved.
+//  LTXiOSUtils
+//  弹出框view
+//  Created by 李天星 on 2019/11/21.
 //
 
 import UIKit
 
-//MARK:- PickerViewDelegate 用于自动设置TextField的选中值
+// MARK: - PickerViewDelegate 用于自动设置TextField的选中值
 public protocol PickerViewDelegate: class {
     func singleColDidSelecte(_ selectedIndex: Int, selectedValue: String)
     func multipleColsDidSelecte(_ selectedIndexs: [Int], selectedValues: [String])
     func dateDidSelecte(_ selectedDate: Date)
 }
 
-//MARK:- 配置UIDatePicker的样式
+// MARK: - 配置UIDatePicker的样式
+/// 时间选择设置
 public struct DatePickerSetting {
     /// 默认选中时间
     public var date = Date()
@@ -25,9 +25,11 @@ public struct DatePickerSetting {
     public var minimumDate: Date?
     /// 最大时间
     public var maximumDate: Date?
+    /// 构造函数
     public init() {}
 }
 
+/// 选择器样式
 public enum PickerStyles {
     /// 单行
     case single
@@ -39,9 +41,9 @@ public enum PickerStyles {
     case date
 }
 
-//MARK:- PickerView
+// MARK: - PickerView
 public class PickerView: UIView {
-    
+
     /// 完成按钮回调
     public typealias BtnAction = () -> Void
     /// 单选完成按钮回调
@@ -52,7 +54,7 @@ public class PickerView: UIView {
     public typealias DateDoneAction = (_ selectedDate: Date) -> Void
     /// 多选联动完成按钮回调
     public typealias MultipleAssociatedDataType = [[[String: [String]?]]]
-    
+
     /// 屏幕宽度
     fileprivate let screenWidth = UIScreen.main.bounds.size.width
     /// pickerView高度
@@ -86,15 +88,15 @@ public class PickerView: UIView {
             toolBar.cancelAction = cancelAction
         }
     }
-    //MARK:- 只有一列的时候用到的属性
+    // MARK: - 只有一列的时候用到的属性
     fileprivate var singleDoneOnClick: SingleDoneAction? = nil {
         didSet {
-            toolBar.doneAction =  { [unowned self] in
+            toolBar.doneAction = { [unowned self] in
                 self.singleDoneOnClick?(self.selectedIndex, self.selectedValue)
             }
         }
     }
-    
+
     fileprivate var defalultSelectedIndex: Int? = nil {
         didSet {
             if let defaultIndex = defalultSelectedIndex, let singleData = singleColData {// 判断下标是否合法
@@ -114,7 +116,7 @@ public class PickerView: UIView {
         }
     }
 
-    fileprivate var singleColData: [String]? = nil
+    fileprivate var singleColData: [String]?
     fileprivate var selectedIndex: Int = 0
     fileprivate var selectedValue: String = "" {
         didSet {
@@ -122,15 +124,15 @@ public class PickerView: UIView {
         }
     }
 
-    //MARK:- 有多列不关联的时候用到的属性
+    // MARK: - 有多列不关联的时候用到的属性
     fileprivate var multipleDoneOnClick:MultipleDoneAction? = nil {
         didSet {
-            toolBar.doneAction =  {[unowned self] in
+            toolBar.doneAction = {[unowned self] in
                 self.multipleDoneOnClick?(self.selectedIndexs, self.selectedValues)
             }
         }
     }
-    
+
     fileprivate var multipleColsData: [[String]]? = nil {
         didSet {
             if let multipleData = multipleColsData {
@@ -141,7 +143,7 @@ public class PickerView: UIView {
             }
         }
     }
-    
+
     fileprivate var selectedIndexs: [Int] = []
     fileprivate var selectedValues: [String] = [] {
         didSet {
@@ -155,7 +157,7 @@ public class PickerView: UIView {
             if let defaultIndexs = defalultSelectedIndexs , defaultIndexs.count > 0 {
                 defaultIndexs.enumerated().forEach({ (component: Int, row: Int) in
                     assert(component < pickerView.numberOfComponents && row < pickerView.numberOfRows(inComponent: component), "设置的默认选中Indexs有不合法的")
-                    if component < pickerView.numberOfComponents && row < pickerView.numberOfRows(inComponent: component){
+                    if component < pickerView.numberOfComponents && row < pickerView.numberOfRows(inComponent: component) {
                         // 设置默认值
                         selectedIndexs[component] = row
                         selectedValues[component] = titleForRow(row, forComponent: component) ?? " "
@@ -175,8 +177,8 @@ public class PickerView: UIView {
             }
         }
     }
-    
-    //MARK:- 有多列关联的时候用到的属性
+
+    // MARK: - 有多列关联的时候用到的属性
     fileprivate var multipleAssociatedColsData: MultipleAssociatedDataType? = nil {
         didSet {
             if let multipleAssociatedData = multipleAssociatedColsData {
@@ -188,33 +190,29 @@ public class PickerView: UIView {
             }
         }
     }
-    
+
     // 多列关联数据的时候设置默认的values而没有使用默认的index
     fileprivate var defaultSelectedValues: [String]? = nil {
         didSet {
             if let defaultValues = defaultSelectedValues , defaultValues.count > 0 {
                 defaultValues.enumerated().forEach { (component: Int, element: String) in
-                    var row: Int? = nil
+                    var row: Int?
                     if component == 0 {
                         let firstData = multipleAssociatedColsData![0]
-                        for (index,associatedModel) in firstData.enumerated() {
-                            if associatedModel.first!.0 == element {
-                                row = index
-                                break
-                            }
+                        for (index,associatedModel) in firstData.enumerated() where associatedModel.first!.0 == element {
+                            row = index
+                            break
                         }
                     } else {
                         let associatedModels = multipleAssociatedColsData![component - 1]
                         var arr: [String]?
-                        for associatedModel in associatedModels {
-                            if associatedModel.first!.0 == defaultValues[component - 1] {
-                                arr = associatedModel.first!.1
-                                break
-                            }
+                        for associatedModel in associatedModels where associatedModel.first!.0 == defaultValues[component - 1] {
+                            arr = associatedModel.first!.1
+                            break
                         }
                         row = arr?.firstIndex(of: element)
                     }
-                    
+
                     assert(row != nil, "第\(component)列设置的默认值有误")
                     if row == nil {
                         row = 0
@@ -243,8 +241,8 @@ public class PickerView: UIView {
             }
         }
     }
-    
-    // MARK:- 日期选择器用到的属性
+
+    // MARK: - 日期选择器用到的属性
     fileprivate var selectedDate = Date() {
         didSet {
             delegate?.dateDidSelecte(selectedDate)
@@ -254,11 +252,11 @@ public class PickerView: UIView {
         didSet {
             toolBar.doneAction = {[unowned self] in
                 self.dateDoneAction?(self.selectedDate)
-                
+
             }
         }
     }
-    
+
     fileprivate lazy var pickerView: UIPickerView = { [unowned self] in
         let picker = UIPickerView()
         picker.delegate = self
@@ -266,7 +264,7 @@ public class PickerView: UIView {
         picker.backgroundColor = UIColor.white
         return picker
         }()
-    
+
     fileprivate lazy var datePicker: UIDatePicker = {[unowned self] in
         let datePic = UIDatePicker()
         datePic.backgroundColor = UIColor.white
@@ -277,25 +275,25 @@ public class PickerView: UIView {
         datePic.calendar = Calendar.current //显示时制，日历
         return datePic
         }()
-    
+
     fileprivate lazy var toolBar: ToolBarView = {
         let toolBar = ToolBarView()
         return toolBar
     }()
-    
-    //MARK:- 初始化
+
+    // MARK: - 初始化
     public init(pickerStyle: PickerStyles) {
         let frame = CGRect(x: 0.0, y: 0.0, width: Double(screenWidth), height: toolBarHeight + pickerViewHeight)
         self.pickerStyle = pickerStyle
         super.init(frame: frame)
         commonInit()
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
@@ -303,29 +301,29 @@ public class PickerView: UIView {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
-        
+
         let toolBarX = NSLayoutConstraint(item: toolBar, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
-        
+
         let toolBarY = NSLayoutConstraint(item: toolBar, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
         let toolBarW = NSLayoutConstraint(item: toolBar, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: 0.0)
         let toolBarH = NSLayoutConstraint(item: toolBar, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: CGFloat(toolBarHeight))
         toolBar.translatesAutoresizingMaskIntoConstraints = false
-        
+
         addConstraints([toolBarX, toolBarY, toolBarW, toolBarH])
 
         if pickerStyle == PickerStyles.date {
-            
+
             let pickerX = NSLayoutConstraint(item: datePicker, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
-            
+
             let pickerY = NSLayoutConstraint(item: datePicker, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: CGFloat(toolBarHeight))
             let pickerW = NSLayoutConstraint(item: datePicker, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: 0.0)
             let pickerH = NSLayoutConstraint(item: datePicker, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: CGFloat(pickerViewHeight))
             datePicker.translatesAutoresizingMaskIntoConstraints = false
             addConstraints([pickerX, pickerY, pickerW, pickerH])
         } else {
-            
+
             let pickerX = NSLayoutConstraint(item: pickerView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
-            
+
             let pickerY = NSLayoutConstraint(item: pickerView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: CGFloat(toolBarHeight))
             let pickerW = NSLayoutConstraint(item: pickerView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: 0.0)
             let pickerH = NSLayoutConstraint(item: pickerView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: CGFloat(pickerViewHeight))
@@ -334,12 +332,11 @@ public class PickerView: UIView {
             addConstraints([pickerX, pickerY, pickerW, pickerH])
         }
     }
-    
-    
+
 }
 
 fileprivate extension PickerView {
-    
+
     func commonInit() {
         addSubview(toolBar)
         if pickerStyle == PickerStyles.date {
@@ -349,15 +346,15 @@ fileprivate extension PickerView {
             addSubview(pickerView)
         }
     }
-    
+
     @objc func dateDidChange(_ datePic: UIDatePicker) {
         selectedDate = datePic.date
     }
 }
 
-//MARK: UIPickerViewDelegate, UIPickerViewDataSource
+// MARK: UIPickerViewDelegate, UIPickerViewDataSource
 extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
-    
+
     final public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch pickerStyle {
         case .single:
@@ -369,7 +366,7 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
         default: return 0
         }
     }
-    
+
     final public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerStyle {
         case .single:
@@ -379,14 +376,12 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
         case .multipleAssociated:
             if let multipleAssociatedData = multipleAssociatedColsData {
                 if component == 0 {
-                    return multipleAssociatedData[0].count
+                    return multipleAssociatedData.count > 0 ? multipleAssociatedData[0].count : 0
                 } else {
                     let associatedDataModels = multipleAssociatedData[component - 1]
                     var arr: [String]?
-                    for associatedDataModel in associatedDataModels {
-                        if associatedDataModel.first!.0 == selectedValues[component - 1] {
-                            arr = associatedDataModel.first!.1
-                        }
+                    for associatedDataModel in associatedDataModels where associatedDataModel.first!.0 == selectedValues[component - 1] {
+                        arr = associatedDataModel.first!.1
                     }
                     return arr?.count ?? 0
                 }
@@ -396,7 +391,7 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
             return 0
         }
     }
-    
+
     final public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerStyle {
         case .single:
@@ -424,7 +419,7 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
             return
         }
     }
-    
+
     final public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
         label.textAlignment = .center
@@ -445,15 +440,13 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
         case .multipleAssociated:
             if let multipleAssociatedData = multipleAssociatedColsData {
                 if component == 0 {
-                    return multipleAssociatedData[0][row].first!.0
+                    return multipleAssociatedData.count > 0 ? multipleAssociatedData[0][row].first!.0 : nil
                 } else {
                     let associatedDataModels = multipleAssociatedData[component - 1]
                     var arr: [String]?
-                    
-                    for associatedDataModel in associatedDataModels {
-                        if associatedDataModel.first!.0 == selectedValues[component - 1] {
-                            arr = associatedDataModel.first!.1
-                        }
+
+                    for associatedDataModel in associatedDataModels where associatedDataModel.first!.0 == selectedValues[component - 1] {
+                        arr = associatedDataModel.first!.1
                     }
                     if arr?.count == 0 {
                         return nil
@@ -470,9 +463,9 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
 
 }
 
-//MARK: 快速使用方法
+// MARK: 快速使用方法
 public extension PickerView {
-    
+
     /// 单列
     /// - Parameter toolBarTitle: 工具栏标题
     /// - Parameter singleColData: 数据源 ~> [String]
@@ -487,9 +480,9 @@ public extension PickerView {
         pic.singleDoneOnClick = doneAction
         pic.cancelAction = cancelAction
         return pic
-        
+
     }
-    
+
     /// 多列不关联
     /// - Parameter toolBarTitle: 工具栏标题
     /// - Parameter multipleColsData: 数据源 ~> [[String]]
@@ -506,9 +499,9 @@ public extension PickerView {
         pic.cancelAction = cancelAction
         pic.multipleDoneOnClick = doneAction
         return pic
-        
+
     }
-    
+
     /// 多列关联
     /// - Parameter toolBarTitle: 工具栏标题
     /// - Parameter multipleAssociatedColsData: 数据源 ~> [[[String: [String]?]]]
@@ -525,9 +518,9 @@ public extension PickerView {
         pic.cancelAction = cancelAction
         pic.multipleDoneOnClick = doneAction
         return pic
-        
+
     }
-    
+
     /// 城市选择器
     /// - Parameter toolBarTitle: 工具栏标题
     /// - Parameter defaultSelectedValues: 默认选中值
@@ -535,14 +528,20 @@ public extension PickerView {
     /// - Parameter doneAction: 完成回调
     /// - Parameter selectTopLevel: 是否选中顶部
     class func citiesPicker(_ toolBarTitle: String, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
-        
-        let path = Bundle(for: self.classForCoder()).path(forResource: "Address", ofType: "plist")
-        let info = NSArray(contentsOfFile: path!) as! [Dictionary<String, Dictionary<String, Dictionary<String,[String]>>>]
+
+        guard let path = ResourceUtils.getAddress() else {
+            return PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData:[[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
+        }
+
+        guard let info = NSArray(contentsOfFile: path) as? [[String:[String:[String:[String]]]]] else {
+            return PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData:[[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
+        }
+
         var areasArr = [[String: [String]?]]()
         var provincesArr = [[String: [String]?]]()
         for value in info {
             for (provinceKey,provinceValue) in value {
-                let sortProvince = provinceValue.sorted (by: { $0.key < $1.key }).compactMap{$0.value}
+                let sortProvince = provinceValue.sorted(by: { $0.key < $1.key }).compactMap {$0.value}
                 var arr = [String]()
                 for areaValue in sortProvince {
                     areasArr.append(areaValue)
@@ -552,15 +551,15 @@ public extension PickerView {
             }
         }
         let citiesArr = [provincesArr,areasArr]
-        var defaultSelectedValueArr:[String]? = nil
+        var defaultSelectedValueArr:[String]?
         if let selectedValues = defaultSelectedValues , selectedValues.count <= 3 {
             defaultSelectedValueArr = selectedValues
         }
         let pic = PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: citiesArr, defaultSelectedValues: defaultSelectedValueArr, cancelAction: cancelAction, doneAction: doneAction)
         return pic
-        
+
     }
-    
+
     /// 时间选择器
     /// - Parameter toolBarTitle: 工具栏标题
     /// - Parameter datePickerSetting: date配置
@@ -574,6 +573,5 @@ public extension PickerView {
         pic.dateDoneAction = doneAction
         return pic
     }
-    
-}
 
+}
