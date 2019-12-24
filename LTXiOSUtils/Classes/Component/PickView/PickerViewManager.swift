@@ -29,9 +29,6 @@ public class PickerViewManager: UIView {
         return CGRect(x: 0.0, y: screenHeight - pickerViewHeight, width: screenWidth, height: pickerViewHeight)
     }
 
-    ///  使用NSArray 可以存任何"东西", 如果使用 [Any], 那么当
-    /// let a = ["1", "2"] var b:[Any] = a 会报错
-
     // MARK: - 初始化
     // 单列
     convenience init(frame: CGRect, toolBarTitle: String, singleColData: [String], defaultSelectedIndex: Int?, doneAction: SingleDoneAction?) {
@@ -87,7 +84,7 @@ public class PickerViewManager: UIView {
 
     }
     // 城市选择器
-  convenience init(frame: CGRect, toolBarTitle: String, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?, selectTopLevel: Bool = false) {
+  convenience init(frame: CGRect, toolBarTitle: String, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
         self.init(frame: frame)
         pickerView = PickerView.citiesPicker(toolBarTitle, defaultSelectedValues: defaultSelectedValues,  cancelAction: {[unowned self] in
                 self.hidePicker()
@@ -247,7 +244,6 @@ extension PickerViewManager {
     /// 城市选择器
     /// - Parameter toolBarTitle:  标题
     /// - Parameter defaultSelectedValues: 默认选中的每一列的值, 注意不是行数
-    /// - Parameter selectTopLevel: 是否顶部
     /// - Parameter doneAction: 响应完成的Closure
     public class func showCitiesPicker(_ toolBarTitle: String, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
 

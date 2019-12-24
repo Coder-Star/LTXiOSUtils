@@ -34,9 +34,10 @@ type_body_length:
   - 400 # error
 
 # 或者也可以同时进行显式设置
+# 文件行数
 file_length:
-  warning: 500
-  error: 1200
+  warning: 1000
+  error: 5000
 
 function_body_length:
   warning: 200
