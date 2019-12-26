@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - 字符串扩展
+// MARK: - 字符串截取
 public extension String {
 
     /// 截取字符串前指定位，异常情况返回原字符串
@@ -51,21 +51,6 @@ public extension String {
         let startStr = self.index(self.startIndex, offsetBy: start)
         let endStr = self.index(self.startIndex, offsetBy: end)
         return String(self[startStr..<endStr])
-    }
-
-    /// 字符串是否不为空
-    var isNotEmpty: Bool {
-        return !self.isEmpty
-    }
-
-    /// 字符串是否为空(去除空格符以及换行符)
-    var isContentEmpty: Bool {
-        return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-    }
-
-    /// 字符串是否不为空(去除空格符以及换行符)
-    var isNotContentEmpty: Bool {
-        return !self.isContentEmpty
     }
 }
 
@@ -169,5 +154,27 @@ public extension String {
         CFStringTransform(mutableString, nil, kCFStringTransformStripDiacritics, false)
         let string = String(mutableString)
         return string.replacingOccurrences(of: " ", with: "")
+    }
+}
+
+public extension String {
+    /// 字符串是否不为空
+    var isNotEmpty: Bool {
+        return !self.isEmpty
+    }
+
+    /// 字符串是否为空(去除空格符以及换行符)
+    var isContentEmpty: Bool {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    /// 字符串是否不为空(去除空格符以及换行符)
+    var isNotContentEmpty: Bool {
+        return !self.isContentEmpty
+    }
+
+    /// url编码
+    var encode: String? {
+        return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
     }
 }
