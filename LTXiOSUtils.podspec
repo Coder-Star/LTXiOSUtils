@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
   s.name         = "LTXiOSUtils"
-  s.version      = "1.0.0.2"
+  s.version      = "0.0.1"
   s.platform     = :ios, "10.0" # iOS平台最低版本 10.0
   s.summary      = "通用工具类以及组件的整合、封装以及使用介绍"
   s.homepage     = "https://github.com/Coder-Star/LTXiOSUtils"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "CoderStar" => "1340529758@qq.com" }
 
-#  s.source       = { :git => "https://github.com/Coder-Star/LTXiOSUtils.git", :tag => s.version } # 发布
-  s.source       = { :git => 'local', :tag => s.version} # 本地开发，local是随便起的名字
+  s.source       = { :git => "https://github.com/Coder-Star/LTXiOSUtils.git", :tag => s.version } # 发布
+#  s.source       = { :git => 'local', :tag => s.version} # 本地开发，local是随便起的名字
 
   s.requires_arc = true
   s.swift_version = ["5","4.2"]
