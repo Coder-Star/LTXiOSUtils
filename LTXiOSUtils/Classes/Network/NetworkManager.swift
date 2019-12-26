@@ -10,19 +10,27 @@ import Foundation
 import Moya
 import SwiftyJSON
 
-var requestTimeoutClosure = { (endpoint: Endpoint, done: @escaping MoyaProvider<APIManager>.RequestResultClosure) in
+var requestTimeoutClosure = { (endpoint: Endpoint, closure: @escaping MoyaProvider<APIManager>.RequestResultClosure) in
     do {
-        var request = try endpoint.urlRequest()
-        request.timeoutInterval = NetworkConfig.requestTimeOut
-        done(.success(request))
+        var urlRequest = try endpoint.urlRequest()
+        urlRequest.timeoutInterval = NetworkConfig.requestTimeOut
+        closure(.success(urlRequest))
+    } catch MoyaError.requestMapping(let url) {
+        closure(.failure(MoyaError.requestMapping(url)))
+    } catch MoyaError.parameterEncoding(let error) {
+        closure(.failure(MoyaError.parameterEncoding(error)))
     } catch {
-        print("错误信息:\(error)")
-        return
+        closure(.failure(MoyaError.underlying(error, nil)))
     }
 }
 
+/*
+ Moya内置三个插件，分别为NetworkLoggerPlugin，NetworkActivityPlugin以及CredentialsPlugin
+ 第一个是日志、第二个是网络活动、第三个是身份验证
+ */
+
 /// 默认的MoyaProvider
-var provider = MoyaProvider<APIManager>(requestClosure: requestTimeoutClosure, plugins: [LoadingPlugin(), AuthPlugin()])
+var provider = MoyaProvider<APIManager>(requestClosure: requestTimeoutClosure, plugins: [LoadingPlugin(),AuthPlugin()])
 
 /// 网络请求工具类
 public class NetworkManager {
