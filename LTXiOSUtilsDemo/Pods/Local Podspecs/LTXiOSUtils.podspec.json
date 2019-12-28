@@ -1,6 +1,6 @@
 {
   "name": "LTXiOSUtils",
-  "version": "1.0.0.2",
+  "version": "0.0.1",
   "platforms": {
     "ios": "10.0"
   },
@@ -14,8 +14,8 @@
     "CoderStar": "1340529758@qq.com"
   },
   "source": {
-    "git": "local",
-    "tag": "1.0.0.2"
+    "git": "https://github.com/Coder-Star/LTXiOSUtils.git",
+    "tag": "0.0.1"
   },
   "requires_arc": true,
   "swift_versions": [

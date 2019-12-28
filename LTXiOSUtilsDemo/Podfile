@@ -41,13 +41,14 @@ target 'LTXiOSUtilsDemo' do
   pod 'SwiftDate','6.1.0' #时间工具
   pod 'GDPerformanceView-Swift','2.0.3' #显示屏幕FPS
 
-
   #UI控件及处理等
-  pod 'BRPickerView' # 选择器，OC库
   pod 'UITextView+Placeholder' # UITextView添加Placeholder属性，OC库
   pod 'ZYCornerRadius' #  UIImageView高性能设置圆角，OC库
   pod 'UITableView+FDTemplateLayoutCell' #  UITableView缓存高度，OC库
 
+  #Rx
+#  pod 'RxSwift'
+  pod 'RxCocoa' # RxSwift是通用RxAPI的实现，并不涉及任何任何 Cocoa 或 UIKit 类，RxCocoa依赖RxSwift
 
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths
