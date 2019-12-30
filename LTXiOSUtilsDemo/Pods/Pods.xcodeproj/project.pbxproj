@@ -676,6 +676,7 @@
 		DB9C2CF4AE6D71F14D0E543587F81058 /* UITabBar+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50756FE1E86931CB52A4413A121DEB0B /* UITabBar+Rx.swift */; };
 		DBF00EC1A2630779CA2265ECA5CAE5B7 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1752958D970A731DAC06D156E0012 /* DateExtensions.swift */; };
 		DC5AD2CF23B9D8B30095EF91 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5AD2CE23B9D8B30095EF91 /* IntExtensions.swift */; };
+		DC97CAC023BA3E8300BCD22E /* MultiSelectPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC97CABF23BA3E8300BCD22E /* MultiSelectPickView.swift */; };
 		DCA9221B3596DE7D98EDA14C538E6CC1 /* InvocableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E6697205C2E7F730EEF30B4C4EB25 /* InvocableType.swift */; };
 		DCACB093B0C0FECF0B45BE1F9221C2DE /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F72616EF12BE85494DCB673CF5B643C /* SnapKit-dummy.m */; };
 		DCBE950AABC61F4C3F2967FC067A040A /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4B5A858466922E6CD76F3F4B671BF /* Deprecated.swift */; };
@@ -1796,6 +1797,7 @@
 		DC11F263EC09CCC242AC6ACB8EDC6771 /* Pods-LTXiOSUtilsDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LTXiOSUtilsDemoTests.modulemap"; sourceTree = "<group>"; };
 		DC4AFE71421C095CA2A69B151323D8E8 /* ObserveOn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObserveOn.swift; path = RxSwift/Observables/ObserveOn.swift; sourceTree = "<group>"; };
 		DC5AD2CE23B9D8B30095EF91 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IntExtensions.swift; path = LTXiOSUtils/Classes/Core/Extension/IntExtensions.swift; sourceTree = "<group>"; };
+		DC97CABF23BA3E8300BCD22E /* MultiSelectPickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectPickView.swift; sourceTree = "<group>"; };
 		DCFD21CA9304152686999E08338FD94D /* RxSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwift.xcconfig; sourceTree = "<group>"; };
 		DD35ACA44EAD15805CF6EEE56C5044DC /* UIRefreshControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIRefreshControl+Rx.swift"; path = "RxCocoa/iOS/UIRefreshControl+Rx.swift"; sourceTree = "<group>"; };
 		DE7900109C070DDEEE45C559A287370A /* Date+Compare.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Compare.swift"; path = "Sources/SwiftDate/Date/Date+Compare.swift"; sourceTree = "<group>"; };
@@ -3042,6 +3044,7 @@
 		A7FD8D03C60B0757CA4BF2444D3EAEFC /* PickView */ = {
 			isa = PBXGroup;
 			children = (
+				DC97CABF23BA3E8300BCD22E /* MultiSelectPickView.swift */,
 				049314AF03CD16EBB26B93008C63D4ED /* DurationDatePickView.swift */,
 				D3F5FF0B1008504CB642F680CB3D3C79 /* PickerView.swift */,
 				F951B3B1EF7108AD65A5050E265CEDD0 /* PickerViewManager.swift */,
@@ -4927,6 +4930,7 @@
 				A073C95ABAEB7092F4B5E553EC25BB6A /* NSObjectExtensions.swift in Sources */,
 				50EC4BD5E8F32321A2FD3111921EA8D4 /* OptionalExtensions.swift in Sources */,
 				47324D7969756BB9C87CFE70B769602D /* PageControl.swift in Sources */,
+				DC97CAC023BA3E8300BCD22E /* MultiSelectPickView.swift in Sources */,
 				1AC352881C4DCE702931D911B134B801 /* PickerView.swift in Sources */,
 				6E8B6E670EB621F0BD3C3E325262764A /* PickerViewManager.swift in Sources */,
 				3BB31E0F16355A42331939FFBCCFA390 /* RequestParam.swift in Sources */,
