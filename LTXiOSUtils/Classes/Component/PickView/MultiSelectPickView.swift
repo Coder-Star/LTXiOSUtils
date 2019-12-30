@@ -110,6 +110,7 @@ public class MultiSelectPickView: UIView {
                     valueArr.append(self.titleArr[item])
                 }
                 self.sureBlock?(indexArr, valueArr)
+                self.dismiss()
             }
         }
     }
