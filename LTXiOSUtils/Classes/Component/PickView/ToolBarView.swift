@@ -33,6 +33,7 @@ open class ToolBarView: UIView {
         let label = UILabel()
         label.textColor = UIColor.black.adapt()
         label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
 
@@ -83,17 +84,17 @@ open class ToolBarView: UIView {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
-        let margin = 15.0
-        let contentHeight = Double(bounds.size.height) - 2.0
-        contentView.frame = CGRect(x: 0.0, y: 1.0, width: Double(bounds.size.width), height: contentHeight)
-        let btnWidth = contentHeight
+        let margin:CGFloat = 15
+        let contentHeight = bounds.size.height - 2
+        contentView.frame = CGRect(x: 0, y: 1, width: bounds.size.width, height: contentHeight)
+        let cancleBtnSize = cancleBtn.sizeThatFits(CGSize(width: 0, height: contentHeight))
+        let doneBtnSize = doneBtn.sizeThatFits(CGSize(width: 0, height: contentHeight))
+        cancleBtn.frame = CGRect(x: margin, y: 0, width: cancleBtnSize.width, height: contentHeight)
+        doneBtn.frame = CGRect(x: bounds.size.width - doneBtnSize.width - margin, y: 0, width: doneBtnSize.width, height: contentHeight)
+        let titleX = cancleBtn.frame.maxX + margin
+        let titleW = bounds.size.width - titleX - doneBtnSize.width - margin
 
-        cancleBtn.frame = CGRect(x: margin, y: 0.0, width: btnWidth, height: btnWidth)
-        doneBtn.frame = CGRect(x: Double(bounds.size.width) - btnWidth - margin, y: 0.0, width: btnWidth, height: btnWidth)
-        let titleX = Double(cancleBtn.frame.maxX) + margin
-        let titleW = Double(bounds.size.width) - titleX - btnWidth - margin
-
-        titleLabel.frame = CGRect(x: titleX, y: 0.0, width: titleW, height: btnWidth)
+        titleLabel.frame = CGRect(x: titleX, y: 0.0, width: titleW, height: contentHeight)
     }
 
 }
