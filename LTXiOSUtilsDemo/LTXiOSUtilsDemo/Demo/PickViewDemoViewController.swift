@@ -69,6 +69,12 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
 
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        cell.accessoryType = .none
+        return cell
+    }
+
     override func click(menuModel: BaseGroupTableMenuModel) {
         switch menuModel.code {
         case "startAndEndDate":

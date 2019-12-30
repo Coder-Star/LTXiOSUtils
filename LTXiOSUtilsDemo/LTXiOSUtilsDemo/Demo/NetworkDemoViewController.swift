@@ -36,6 +36,12 @@ class NetworkDemoViewController: BaseGroupTableMenuViewController {
             HUD.showText("暂无此模块")
         }
     }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        cell.accessoryType = .none
+        return cell
+    }
 }
 
 extension NetworkDemoViewController {
