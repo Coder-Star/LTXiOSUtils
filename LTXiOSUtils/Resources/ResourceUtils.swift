@@ -35,4 +35,12 @@ public extension String {
         }
         return localized(in: Bundle(path: bundlePath))
     }
+
+    /// 获取LTXiOSUtils库中的图片
+    func imageOfLTXiOSUtils() -> UIImage? {
+        guard let bundlePath = ResourceUtils.getBundle() else {
+            return nil
+        }
+        return UIImage.init(named: self, in: Bundle(path: bundlePath), compatibleWith: nil)
+    }
 }

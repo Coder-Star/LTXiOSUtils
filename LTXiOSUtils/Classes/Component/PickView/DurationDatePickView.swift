@@ -59,20 +59,20 @@ open class DurationDatePickView: UIView {
     /// 屏幕高度
     private let screenHeight = UIScreen.main.bounds.height
     /// 屏幕宽度
-    private let screenWith = UIScreen.main.bounds.width
+    private let screenWidth = UIScreen.main.bounds.width
 
     // MARK: 内部控件，懒加载
-    public lazy var coverView: UIView = {
+    private lazy var coverView: UIView = {
         let coverView = UIView()
-        coverView.frame = CGRect.init(x: 0, y: 0, width: screenWith, height: screenHeight)
+        coverView.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight)
         coverView.backgroundColor = UIColor.black.adapt()
         coverView.alpha = 0
         return coverView
     }()
 
-    public lazy var popupView: UIView = {
+    private lazy var popupView: UIView = {
         let popupView = UIView()
-        let width = screenWith - (leftAndRightMargin * 2)
+        let width = screenWidth - (leftAndRightMargin * 2)
         let topMargin: CGFloat = (screenHeight - popupViewHeight - datePickerHeight) / 2
         popupView.frame = CGRect.init(x: leftAndRightMargin, y: topMargin, width: width, height: popupViewHeight)
         popupView.backgroundColor = UIColor.white.adapt()
@@ -164,6 +164,7 @@ public extension DurationDatePickView {
 
     /// 展示起止时间弹出框
     /// - Parameters:
+    ///   - title: 标题
     ///   - startDate: 开始时间
     ///   - endDate: 结束时间
     ///   - canGreatNow: 是否可大于当前时间，默认为true
@@ -171,7 +172,9 @@ public extension DurationDatePickView {
     ///   - dateType: 时间类型
     ///   - sureBlock: 确定闭包
     ///   - cancelBlock: 取消闭包
-    class func showPopupView(startDate: Date,
+
+    class func showPopupView(title: String = "DurationDatePickView.topTitle".localizedOfLTXiOSUtils(),
+                             startDate: Date,
                              endDate: Date,
                              canGreatNow: Bool = true,
                              canLessNow: Bool = true,
@@ -181,6 +184,7 @@ public extension DurationDatePickView {
         let popupView = getPopupView(startDate: startDate, endDate: endDate, canGreatNow: canGreatNow, canLessNow: canLessNow, dateType: dateType)
         popupView.sureBlock = sureBlock
         popupView.cancelBlock = cancelBlock
+        popupView.titleLabel.text = title
         popupView.show()
     }
 
@@ -197,8 +201,7 @@ public extension DurationDatePickView {
                             canLessNow: Bool = true,
                             dateType: DurationDatePickViewDateType = .YMD) -> DurationDatePickView {
 
-        let window = UIApplication.shared.keyWindow
-        window?.endEditing(true)
+        UIApplication.shared.keyWindow?.endEditing(true)
         let popupView = DurationDatePickView.init(frame: UIScreen.main.bounds)
 
         popupView.datePicker.setDate(startDate, animated: false)
@@ -249,7 +252,7 @@ public extension DurationDatePickView {
 }
 
 // MARK: - 事件处理
-extension DurationDatePickView {
+private extension DurationDatePickView {
 
     @objc func startBtnAction(btn: UIButton) {
         btn.isSelected = true
@@ -342,7 +345,7 @@ extension DurationDatePickView {
 
     /// 设置日期选择器相关属性
     private func setDatePickerStyle() {
-        datePicker.frame = CGRect.init(x: 0, y: screenHeight - datePickerHeight, width: screenWith, height: datePickerHeight)
+        datePicker.frame = CGRect.init(x: 0, y: screenHeight - datePickerHeight, width: screenWidth, height: datePickerHeight)
         if dateType == .YMDHM {
             datePicker.datePickerMode = .dateAndTime
         } else if dateType == .YMD {
@@ -413,16 +416,15 @@ extension DurationDatePickView {
 }
 
 // MARK: - 方法
-extension DurationDatePickView {
-
-    private static func appendTime(dateAndTime: String) -> String {
+private extension DurationDatePickView {
+    static func appendTime(dateAndTime: String) -> String {
         let date = dateAndTime.getDateStr(dateType: .YMD)
         let time = dateAndTime.getDateStr(dateType: .HM)
         return date + "\n" + time
     }
 }
 
-extension String {
+private extension String {
     /// 使用空格替换字符串中的换行
     func replaceNewlineWithWhitespace() -> String {
         return self.replacingOccurrences(of: "\n", with: " ")

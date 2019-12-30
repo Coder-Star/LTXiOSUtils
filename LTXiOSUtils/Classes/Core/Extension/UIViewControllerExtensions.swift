@@ -29,7 +29,7 @@ public extension UIViewController {
     ///   - message: 显示内容
     ///   - time: 延时时间
     func showToast(_ message: String, delayTime: Double = 1.0) {
-        let alertController = UIAlertController(title: "",message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
         self.present(alertController, animated: true, completion: nil)
         DispatchQueue.main.delay(delayTime) {
             self.presentedViewController?.dismiss(animated: false, completion: nil)
@@ -41,8 +41,8 @@ public extension UIViewController {
     ///   - title: 标题
     ///   - message: 内容
     ///   - cancel: 按钮
-    func showAlert(title:String = "",message: String, cancel: String = "好的") {
-        let alertController = UIAlertController(title: title,message: message, preferredStyle: .alert)
+    func showAlert(title: String = "", message: String, cancel: String = "好的") {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: cancel, style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -56,9 +56,9 @@ public extension UIViewController {
     ///   - sureTitle: 确定按钮标题
     ///   - cancelTitle: 取消按钮标题，如为空则不显示
     ///   - sureBlock: 确定按钮闭包回调
-    func showAlertWithCallBack(style: UIAlertController.Style = .alert,title: String = "", message: String, sureTitle: String = "确定", cancelTitle: String = "取消", sureBlock: @escaping () -> Void) {
-        let alertController = UIAlertController(title:title,message:message,preferredStyle: style)
-        let okAciton = UIAlertAction(title:sureTitle,style:.default,handler: {_ in
+    func showAlertWithCallBack(style: UIAlertController.Style = .alert, title: String = "", message: String, sureTitle: String = "确定", cancelTitle: String = "取消", sureBlock: @escaping () -> Void) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        let okAciton = UIAlertAction(title: sureTitle, style: .default, handler: {_ in
             sureBlock()
         })
         if !cancelTitle.isEmpty {

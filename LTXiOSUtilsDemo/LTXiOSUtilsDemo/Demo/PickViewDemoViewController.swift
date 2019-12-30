@@ -67,6 +67,10 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
         ]
         menu.append(fourthMenu)
 
+        let fifthMenu = [
+            BaseGroupTableMenuModel(code: "multipleSelect", title: "多选")
+        ]
+        menu.append(fifthMenu)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -132,6 +136,11 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
         case "city":
             PickerViewManager.showCitiesPicker("省市区选择", defaultSelectedValues: ["北京市"]) { (selectedIndexs, selectedValues) in
                 self.showAlert(message:"\(selectedIndexs)   \(selectedValues)")
+            }
+        case "multipleSelect":
+            MultiSelectPickView.showView(title: "选择", data: singleData) { index,value in
+                QL1(index)
+                QL1(value)
             }
         default:
             HUD.showText("暂无此模块")

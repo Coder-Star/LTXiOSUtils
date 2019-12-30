@@ -18,7 +18,7 @@ public class PickerViewManager: UIView {
 
     fileprivate var pickerView: PickerView!
     // MARK: - 常量
-    fileprivate let pickerViewHeight:CGFloat = 260.0
+    fileprivate let pickerViewHeight: CGFloat = 260.0
 
     fileprivate let screenWidth = UIScreen.main.bounds.size.width
     fileprivate let screenHeight = UIScreen.main.bounds.size.height
@@ -86,7 +86,7 @@ public class PickerViewManager: UIView {
     // 城市选择器
   convenience init(frame: CGRect, toolBarTitle: String, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
         self.init(frame: frame)
-        pickerView = PickerView.citiesPicker(toolBarTitle, defaultSelectedValues: defaultSelectedValues,  cancelAction: {[unowned self] in
+        pickerView = PickerView.citiesPicker(toolBarTitle, defaultSelectedValues: defaultSelectedValues, cancelAction: {[unowned self] in
                 self.hidePicker()
             }, doneAction: {[unowned self] (selectedIndexs, selectedValues) in
                 doneAction?(selectedIndexs, selectedValues)
@@ -201,11 +201,11 @@ extension PickerViewManager {
     ///  - parameter doneAction:                 响应完成的Closure
     ///
     ///  - returns:
-    public class func showSingleColPicker(_ toolBarTitle: String, data: [String], defaultSelectedIndex: Int?,  doneAction: SingleDoneAction?) {
+    public class func showSingleColPicker(_ toolBarTitle: String, data: [String], defaultSelectedIndex: Int?, doneAction: SingleDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
 
-        let testView = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, singleColData: data,defaultSelectedIndex: defaultSelectedIndex ,doneAction: doneAction)
+        let testView = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, singleColData: data, defaultSelectedIndex: defaultSelectedIndex, doneAction: doneAction)
 
         testView.showPicker()
 
@@ -216,7 +216,7 @@ extension PickerViewManager {
     /// - Parameter data: 数据
     /// - Parameter defaultSelectedIndexs: 默认选中的每一列的行数
     /// - Parameter doneAction: 响应完成的Closure
-    public class func showMultipleColsPicker(_ toolBarTitle: String, data: [[String]], defaultSelectedIndexs: [Int]?,doneAction: MultipleDoneAction?) {
+    public class func showMultipleColsPicker(_ toolBarTitle: String, data: [[String]], defaultSelectedIndexs: [Int]?, doneAction: MultipleDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
 
