@@ -17,5 +17,5 @@ DurationDatePickView.to = "To";
 
 
 // 选择器
-PickerViewManager.ToolBarView.title = "Please Select"
+PickerViewManager.ToolBarView.title = "Please Select";
 

@@ -270,9 +270,9 @@ extension DurationDatePickView {
     @objc func endBtnAction(btn: UIButton) {
         btn.isSelected = true
         startBtn.isSelected = false
-        if dateType == .YMD, let date = startBtn.currentTitle?.replacingOccurrences(of: "\n", with: " ").toDate(dateTypeStr: dateType.rawValue) {
+        if dateType == .YMD, let date = startBtn.currentTitle?.toDate(dateTypeStr: dateType.rawValue) {
             datePicker.minimumDate = date
-        } else if dateType  == .YMDHM, let date = startBtn.currentTitle?.replacingOccurrences(of: "\n", with: " ").toDate(dateType: .YMDHM) {
+        } else if dateType  == .YMDHM, let date = startBtn.currentTitle?.replaceNewlineWithWhitespace().toDate(dateType: .YMDHM) {
             datePicker.minimumDate = date
         }
         if canGreatNow {
@@ -292,8 +292,8 @@ extension DurationDatePickView {
 
     @objc func confirmBtnAction() {
         if let block = sureBlock {
-            let startDate = startBtn.currentTitle?.replacingOccurrences(of: "\n", with: " ") ?? ""
-            let endDate = endBtn.currentTitle?.replacingOccurrences(of: "\n", with: " ") ?? ""
+            let startDate = startBtn.currentTitle?.replaceNewlineWithWhitespace() ?? ""
+            let endDate = endBtn.currentTitle?.replaceNewlineWithWhitespace() ?? ""
             block(startDate, endDate)
         }
         dismiss()
@@ -307,16 +307,18 @@ extension DurationDatePickView {
             if dateType == .YMD {
                 startBtn.setTitle(titleString, for: .normal)
                 if titleString > endBtn.currentTitle ?? ""{
-                    let tempDate = titleString.toDate(dateTypeStr: dateType.rawValue)?.getDateByDays(days: 1).formatDate(format: .YMD) ?? ""
-                    endBtn.setTitle(tempDate, for: .normal)
+                    if let tempDate = titleString.toDate(dateTypeStr: dateType.rawValue)?.getDateByDays(days: 1).formatDate(format: .YMD) {
+                        endBtn.setTitle(tempDate, for: .normal)
+                    }
                 }
             } else if dateType == .YMDHM {
                 let title = DurationDatePickView.appendTime(dateAndTime: titleString)
                 startBtn.setTitle(title, for: .normal)
-                if titleString > endBtn.currentTitle ?? ""{
-                    let tempDate = titleString.toDate(dateTypeStr: dateType.rawValue)?.getDateByDays(days: 1).formatDate(format: .YMDHM) ?? ""
-                    let tempString = DurationDatePickView.appendTime(dateAndTime: tempDate)
-                    endBtn.setTitle(tempString, for: .normal)
+                if titleString > endBtn.currentTitle?.replaceNewlineWithWhitespace() ?? ""{
+                    if let tempDate = titleString.toDate(dateTypeStr: dateType.rawValue)?.getDateByDays(days: 1).formatDate(format: .YMDHM) {
+                        let tempString = DurationDatePickView.appendTime(dateAndTime: tempDate)
+                        endBtn.setTitle(tempString, for: .normal)
+                    }
                 }
             }
         } else {
@@ -333,7 +335,7 @@ extension DurationDatePickView {
 extension DurationDatePickView {
 
     private func rollCurrentDate(btn: UIButton) {
-        if let dateStr = btn.currentTitle, let date = dateStr.toDate(dateTypeStr: dateType.rawValue) {
+        if let dateStr = btn.currentTitle?.replaceNewlineWithWhitespace(), let date = dateStr.toDate(dateTypeStr: dateType.rawValue) {
             datePicker.setDate(date, animated: true)
         }
     }
@@ -417,5 +419,12 @@ extension DurationDatePickView {
         let date = dateAndTime.getDateStr(dateType: .YMD)
         let time = dateAndTime.getDateStr(dateType: .HM)
         return date + "\n" + time
+    }
+}
+
+extension String {
+    /// 使用空格替换字符串中的换行
+    func replaceNewlineWithWhitespace() -> String {
+        return self.replacingOccurrences(of: "\n", with: " ")
     }
 }
