@@ -84,7 +84,7 @@ open class ToolBarView: UIView {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
-        let margin:CGFloat = 15
+        let margin: CGFloat = 15
         let contentHeight = bounds.size.height - 2
         contentView.frame = CGRect(x: 0, y: 1, width: bounds.size.width, height: contentHeight)
         let cancleBtnSize = cancleBtn.sizeThatFits(CGSize(width: 0, height: contentHeight))

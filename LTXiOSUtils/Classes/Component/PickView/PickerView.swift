@@ -125,7 +125,7 @@ public class PickerView: UIView {
     }
 
     // MARK: - 有多列不关联的时候用到的属性
-    fileprivate var multipleDoneOnClick:MultipleDoneAction? = nil {
+    fileprivate var multipleDoneOnClick: MultipleDoneAction? = nil {
         didSet {
             toolBar.doneAction = {[unowned self] in
                 self.multipleDoneOnClick?(self.selectedIndexs, self.selectedValues)
@@ -154,7 +154,7 @@ public class PickerView: UIView {
     // 不关联的数据时直接设置默认的下标
     fileprivate var defalultSelectedIndexs: [Int]? = nil {
         didSet {
-            if let defaultIndexs = defalultSelectedIndexs , defaultIndexs.count > 0 {
+            if let defaultIndexs = defalultSelectedIndexs, defaultIndexs.count > 0 {
                 defaultIndexs.enumerated().forEach({ (component: Int, row: Int) in
                     assert(component < pickerView.numberOfComponents && row < pickerView.numberOfRows(inComponent: component), "设置的默认选中Indexs有不合法的")
                     if component < pickerView.numberOfComponents && row < pickerView.numberOfRows(inComponent: component) {
@@ -194,12 +194,12 @@ public class PickerView: UIView {
     // 多列关联数据的时候设置默认的values而没有使用默认的index
     fileprivate var defaultSelectedValues: [String]? = nil {
         didSet {
-            if let defaultValues = defaultSelectedValues , defaultValues.count > 0 {
+            if let defaultValues = defaultSelectedValues, defaultValues.count > 0 {
                 defaultValues.enumerated().forEach { (component: Int, element: String) in
                     var row: Int?
                     if component == 0 {
                         let firstData = multipleAssociatedColsData![0]
-                        for (index,associatedModel) in firstData.enumerated() where associatedModel.first!.0 == element {
+                        for (index, associatedModel) in firstData.enumerated() where associatedModel.first!.0 == element {
                             row = index
                             break
                         }
@@ -299,7 +299,7 @@ public class PickerView: UIView {
         commonInit()
     }
 
-    override open func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
 
         let toolBarX = NSLayoutConstraint(item: toolBar, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
@@ -474,7 +474,7 @@ public extension PickerView {
     /// - Parameter defaultIndex: 默认选中索引
     /// - Parameter cancelAction: 取消回调
     /// - Parameter doneAction: 完成回调
-    class func singleColPicker(_ toolBarTitle: String, singleColData: [String], defaultIndex: Int?,cancelAction: BtnAction?, doneAction: SingleDoneAction?) -> PickerView {
+    class func singleColPicker(_ toolBarTitle: String, singleColData: [String], defaultIndex: Int?, cancelAction: BtnAction?, doneAction: SingleDoneAction?) -> PickerView {
         let pic = PickerView(pickerStyle: .single)
         pic.toolBarTitle = toolBarTitle
         pic.singleColData = singleColData
@@ -491,11 +491,11 @@ public extension PickerView {
     /// - Parameter defaultSelectedIndexs: 默认选中索引
     /// - Parameter cancelAction: 取消回调
     /// - Parameter doneAction: 完成回调
-    class func multipleCosPicker(_ toolBarTitle: String, multipleColsData: [[String]], defaultSelectedIndexs: [Int]?,cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
+    class func multipleCosPicker(_ toolBarTitle: String, multipleColsData: [[String]], defaultSelectedIndexs: [Int]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
         let pic = PickerView(pickerStyle: .multiple)
         pic.toolBarTitle = toolBarTitle
         pic.multipleColsData = multipleColsData
-        if let selectedIndexs = defaultSelectedIndexs , selectedIndexs.count <= multipleColsData.count {
+        if let selectedIndexs = defaultSelectedIndexs, selectedIndexs.count <= multipleColsData.count {
             pic.defalultSelectedIndexs = selectedIndexs
         }
         pic.cancelAction = cancelAction
@@ -510,11 +510,11 @@ public extension PickerView {
     /// - Parameter defaultSelectedValues: 默认选中值 ~> [String]？
     /// - Parameter cancelAction: 取消回调
     /// - Parameter doneAction: 完成回调
-    class func multipleAssociatedCosPicker(_ toolBarTitle: String, multipleAssociatedColsData: MultipleAssociatedDataType, defaultSelectedValues: [String]?,cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
+    class func multipleAssociatedCosPicker(_ toolBarTitle: String, multipleAssociatedColsData: MultipleAssociatedDataType, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
         let pic = PickerView(pickerStyle: .multipleAssociated)
         pic.toolBarTitle = toolBarTitle
         pic.multipleAssociatedColsData = multipleAssociatedColsData
-        if let selectedValues = defaultSelectedValues , selectedValues.count <= multipleAssociatedColsData.count + 1 {
+        if let selectedValues = defaultSelectedValues, selectedValues.count <= multipleAssociatedColsData.count + 1 {
             pic.defaultSelectedValues = defaultSelectedValues
         }
         pic.cancelAction = cancelAction
@@ -531,29 +531,29 @@ public extension PickerView {
     class func citiesPicker(_ toolBarTitle: String, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
 
         guard let path = ResourceUtils.getAddress() else {
-            return PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData:[[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
+            return PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: [[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
         }
 
-        guard let info = NSArray(contentsOfFile: path) as? [[String:[String:[String:[String]]]]] else {
-            return PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData:[[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
+        guard let info = NSArray(contentsOfFile: path) as? [[String: [String: [String: [String]]]]] else {
+            return PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: [[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
         }
 
         var areasArr = [[String: [String]?]]()
         var provincesArr = [[String: [String]?]]()
         for value in info {
-            for (provinceKey,provinceValue) in value {
+            for (provinceKey, provinceValue) in value {
                 let sortProvince = provinceValue.sorted(by: { $0.key < $1.key }).compactMap {$0.value}
                 var arr = [String]()
                 for areaValue in sortProvince {
                     areasArr.append(areaValue)
                     arr.append(Array(areaValue.keys)[0])
                 }
-                provincesArr.append([provinceKey:arr])
+                provincesArr.append([provinceKey: arr])
             }
         }
-        let citiesArr = [provincesArr,areasArr]
-        var defaultSelectedValueArr:[String]?
-        if let selectedValues = defaultSelectedValues , selectedValues.count <= 3 {
+        let citiesArr = [provincesArr, areasArr]
+        var defaultSelectedValueArr: [String]?
+        if let selectedValues = defaultSelectedValues, selectedValues.count <= 3 {
             defaultSelectedValueArr = selectedValues
         }
         let pic = PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: citiesArr, defaultSelectedValues: defaultSelectedValueArr, cancelAction: cancelAction, doneAction: doneAction)

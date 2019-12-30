@@ -30,7 +30,7 @@ var requestTimeoutClosure = { (endpoint: Endpoint, closure: @escaping MoyaProvid
  */
 
 /// 默认的MoyaProvider
-var provider = MoyaProvider<APIManager>(requestClosure: requestTimeoutClosure, plugins: [LoadingPlugin(),AuthPlugin()])
+var provider = MoyaProvider<APIManager>(requestClosure: requestTimeoutClosure, plugins: [LoadingPlugin(), AuthPlugin()])
 
 /// 网络请求工具类
 public class NetworkManager {
