@@ -22,9 +22,7 @@ public class MultiSelectPickView: UIView {
     /// 选中的索引
     private var selectIndexArr = [Int]()
 
-    /// 默认选中的索引
-    private var defaultSelectIndexArr = [Int]()
-
+    /// 确定按钮闭包
     public var sureBlock: SureBlock?
 
     /// toobar高度
@@ -125,6 +123,16 @@ public class MultiSelectPickView: UIView {
         super.layoutSubviews()
         toolBarView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: toolBarHeight)
         tableView.frame = CGRect(x: 0, y: toolBarHeight, width: screenWidth, height: tableViewHeight)
+
+        /// 为tableView加上header,使内容垂直居中
+        let margin = tableViewHeight - rowHeight * titleArr.count.cgFloatValue
+        if margin > 0 {
+            let headerView = UIView(frame: CGRect(x: 0.cgFloatValue, y: 0, width: screenWidth, height: margin/2))
+            let lineView = UIView(frame: CGRect(x: 0.cgFloatValue, y: headerView.frame.height - 0.05, width: screenWidth, height: 0.05))
+            lineView.backgroundColor = UIColor(hexString: "#bbbbbb")
+            headerView.addSubview(lineView)
+            tableView.tableHeaderView = headerView
+        }
     }
 
     required init?(coder: NSCoder) {
@@ -163,7 +171,11 @@ public extension MultiSelectPickView {
         let view = MultiSelectPickView()
         view.titleArr = data
         if let indexArr = defaultSelectedIndexs {
-            view.defaultSelectIndexArr = indexArr
+            for item in indexArr {
+                if item >= 0 , item < data.count {
+                    view.selectIndexArr.append(item)
+                }
+            }
         }
         view.toolBarView.title = title
         return view
@@ -204,9 +216,8 @@ extension MultiSelectPickView: UITableViewDataSource {
         cell?.textLabel?.adjustsFontSizeToFitWidth = true
         cell?.textLabel?.text = titleArr[indexPath.row]
         cell?.separatorInset = .zero
-        if defaultSelectIndexArr.contains(indexPath.row) {
+        if selectIndexArr.contains(indexPath.row) {
             cell?.accessoryView = UIImageView(image: selectdImage)
-            selectIndexArr.append(indexPath.row)
         } else {
             cell?.accessoryView = UIImageView(image: normalImage)
         }
