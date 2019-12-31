@@ -17,12 +17,17 @@ class ViewController: BaseGroupTableMenuViewController {
     }
 
     override func setMenu() {
-        let fisrtMenu = [
+        let componetMenu = [
             BaseGroupTableMenuModel(code: "HUD", title: "HUD加载框"),
-            BaseGroupTableMenuModel(code: "Network", title: "网络请求相关"),
             BaseGroupTableMenuModel(code: "Pick", title: "选择器")
         ]
-        menu.append(fisrtMenu)
+        menu.append(componetMenu)
+
+        let networkMenu = [
+            BaseGroupTableMenuModel(code: "Network", title: "网络请求相关")
+        ]
+        menu.append(networkMenu)
+
     }
 
     override func click(menuModel: BaseGroupTableMenuModel) {

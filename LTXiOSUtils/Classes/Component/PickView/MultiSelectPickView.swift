@@ -171,10 +171,8 @@ public extension MultiSelectPickView {
         let view = MultiSelectPickView()
         view.titleArr = data
         if let indexArr = defaultSelectedIndexs {
-            for item in indexArr {
-                if item >= 0 , item < data.count {
-                    view.selectIndexArr.append(item)
-                }
+            for item in indexArr where (item >= 0 && item < data.count) {
+                view.selectIndexArr.append(item)
             }
         }
         view.toolBarView.title = title
