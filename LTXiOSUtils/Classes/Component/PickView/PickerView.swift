@@ -99,16 +99,15 @@ public class PickerView: UIView {
 
     fileprivate var defalultSelectedIndex: Int? = nil {
         didSet {
-            if let defaultIndex = defalultSelectedIndex, let singleData = singleColData {// 判断下标是否合法
+            // 判断下标是否合法
+            if let defaultIndex = defalultSelectedIndex, let singleData = singleColData {
                 assert(defaultIndex >= 0 && defaultIndex < singleData.count, "设置的默认选中Index不合法")
                 if defaultIndex >= 0 && defaultIndex < singleData.count {
-                    // 设置默认值
                     selectedIndex = defaultIndex
                     selectedValue = singleData[defaultIndex]
-                    // 滚动到默认位置
                     pickerView.selectRow(defaultIndex, inComponent: 0, animated: false)
                 }
-            } else {// 没有默认值设置0行为默认值
+            } else {
                 selectedIndex = 0
                 selectedValue = singleColData![0]
                 pickerView.selectRow(0, inComponent: 0, animated: false)
@@ -158,7 +157,6 @@ public class PickerView: UIView {
                 defaultIndexs.enumerated().forEach({ (component: Int, row: Int) in
                     assert(component < pickerView.numberOfComponents && row < pickerView.numberOfRows(inComponent: component), "设置的默认选中Indexs有不合法的")
                     if component < pickerView.numberOfComponents && row < pickerView.numberOfRows(inComponent: component) {
-                        // 设置默认值
                         selectedIndexs[component] = row
                         selectedValues[component] = titleForRow(row, forComponent: component) ?? " "
                         DispatchQueue.main.async(execute: {
@@ -168,9 +166,7 @@ public class PickerView: UIView {
                 })
             } else {
                 multipleColsData?.indices.forEach({ (index) in
-                    // 滚动到默认位置
                     pickerView.selectRow(0, inComponent: index, animated: false)
-                    // 设置默认选中值
                     selectedIndexs[index] = 0
                     selectedValues[index] = titleForRow(0, forComponent: index) ?? " "
                 })
@@ -196,37 +192,38 @@ public class PickerView: UIView {
         didSet {
             if let defaultValues = defaultSelectedValues, defaultValues.count > 0 {
                 defaultValues.enumerated().forEach { (component: Int, element: String) in
-                    var row: Int?
-                    if component == 0 {
-                        let firstData = multipleAssociatedColsData![0]
-                        for (index, associatedModel) in firstData.enumerated() where associatedModel.first!.0 == element {
-                            row = index
-                            break
+                    if component < multipleAssociatedColsData!.count + 1 {
+                        var row: Int?
+                        if component == 0 {
+                            let firstData = multipleAssociatedColsData![0]
+                            for (index, associatedModel) in firstData.enumerated() where associatedModel.first!.0 == element {
+                                row = index
+                                break
+                            }
+                        } else {
+                            let associatedModels = multipleAssociatedColsData![component - 1]
+                            var arr: [String]?
+                            for associatedModel in associatedModels where associatedModel.first!.0 == defaultValues[component - 1] {
+                                arr = associatedModel.first!.1
+                                break
+                            }
+                            row = arr?.firstIndex(of: element)
                         }
-                    } else {
-                        let associatedModels = multipleAssociatedColsData![component - 1]
-                        var arr: [String]?
-                        for associatedModel in associatedModels where associatedModel.first!.0 == defaultValues[component - 1] {
-                            arr = associatedModel.first!.1
-                            break
+                        assert(row != nil, "第\(component)列设置的默认值有误")
+                        if row == nil {
+                            row = 0
                         }
-                        row = arr?.firstIndex(of: element)
-                    }
-
-                    assert(row != nil, "第\(component)列设置的默认值有误")
-                    if row == nil {
-                        row = 0
-                    }
-                    if component < pickerView.numberOfComponents {
-                        selectedIndexs[component] = row!
-                        selectedValues[component] = titleForRow(row!, forComponent: component) ?? " "
-                        DispatchQueue.main.async( execute: {
-                            self.pickerView.selectRow(row!, inComponent: component, animated: false)
-                        })
+                        if component < pickerView.numberOfComponents {
+                            selectedIndexs[component] = row!
+                            selectedValues[component] = titleForRow(row!, forComponent: component) ?? " "
+                            DispatchQueue.main.async( execute: {
+                                self.pickerView.selectRow(row!, inComponent: component, animated: false)
+                            })
+                        }
                     }
                 }
                 if defaultValues.count < multipleAssociatedColsData!.count + 1 {
-                    for index in defaultValues.count-1...multipleAssociatedColsData!.count {
+                    for index in defaultValues.count...multipleAssociatedColsData!.count {
                         pickerView.selectRow(0, inComponent: index, animated: false)
                         selectedValues[index] = titleForRow(0, forComponent: index) ?? " "
                         selectedIndexs[index] = 0
@@ -493,9 +490,7 @@ public extension PickerView {
         let pic = PickerView(pickerStyle: .multiple)
         pic.toolBarTitle = toolBarTitle
         pic.multipleColsData = multipleColsData
-        if let selectedIndexs = defaultSelectedIndexs, selectedIndexs.count <= multipleColsData.count {
-            pic.defalultSelectedIndexs = selectedIndexs
-        }
+        pic.defalultSelectedIndexs = defaultSelectedIndexs
         pic.cancelAction = cancelAction
         pic.multipleDoneOnClick = doneAction
         return pic
@@ -512,9 +507,7 @@ public extension PickerView {
         let pic = PickerView(pickerStyle: .multipleAssociated)
         pic.toolBarTitle = toolBarTitle
         pic.multipleAssociatedColsData = multipleAssociatedColsData
-        if let selectedValues = defaultSelectedValues, selectedValues.count <= multipleAssociatedColsData.count + 1 {
-            pic.defaultSelectedValues = defaultSelectedValues
-        }
+        pic.defaultSelectedValues = defaultSelectedValues
         pic.cancelAction = cancelAction
         pic.multipleDoneOnClick = doneAction
         return pic

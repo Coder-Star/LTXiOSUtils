@@ -153,7 +153,7 @@ public extension MultiSelectPickView {
     /// - Parameters:
     ///   - title: 标题
     ///   - data: 数据
-    ///   - defaultSelectedIndexs: 默认选中索引
+    ///   - defaultSelectedIndexs: 默认选中索引,如果为nil，表示都不选中
     class func getView(title: String, data: [String], defaultSelectedIndexs: [Int]?) -> MultiSelectPickView? {
         if data.isEmpty {
             HUD.showText("MultiSelectPickView.emptyData".localizedOfLTXiOSUtils())
@@ -162,6 +162,9 @@ public extension MultiSelectPickView {
         UIApplication.shared.keyWindow?.endEditing(true)
         let view = MultiSelectPickView()
         view.titleArr = data
+        if let indexArr = defaultSelectedIndexs {
+            view.defaultSelectIndexArr = indexArr
+        }
         view.toolBarView.title = title
         return view
     }
@@ -201,7 +204,12 @@ extension MultiSelectPickView: UITableViewDataSource {
         cell?.textLabel?.adjustsFontSizeToFitWidth = true
         cell?.textLabel?.text = titleArr[indexPath.row]
         cell?.separatorInset = .zero
-        cell?.accessoryView = UIImageView(image: normalImage)
+        if defaultSelectIndexArr.contains(indexPath.row) {
+            cell?.accessoryView = UIImageView(image: selectdImage)
+            selectIndexArr.append(indexPath.row)
+        } else {
+            cell?.accessoryView = UIImageView(image: normalImage)
+        }
         return cell!
     }
 }

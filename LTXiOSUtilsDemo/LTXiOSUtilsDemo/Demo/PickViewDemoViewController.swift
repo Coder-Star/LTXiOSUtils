@@ -11,9 +11,9 @@ import Foundation
 class PickViewDemoViewController: BaseGroupTableMenuViewController {
 
     /// 单列
-    private let singleData = [String]()
+//    private let singleData = [String]()
 
-//    ["swiftswiftswiftswiftswiftswiftswiftswiftswiftswiftswiftswiftswiftswift", "ObjecTive-C", "C", "C++", "java", "php", "python", "ruby", "js"]
+    private let singleData = ["swift", "ObjecTive-C", "C", "C++", "java", "php", "python", "ruby", "js"]
 
     /// 多列不关联
     private let multipleData = [
@@ -132,11 +132,11 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
                 self.showAlert(message:"\(selectedIndexs)\(selectedValues)")
             }
         case "multipleAssociated":
-            PickerViewManager.showMultipleAssociatedColsPicker("多列关联", data: multipleAssociatedData, defaultSelectedValues: ["食品"]) { (selectedIndexs, selectedValues) in
+            PickerViewManager.showMultipleAssociatedColsPicker("多列关联", data: multipleAssociatedData, defaultSelectedValues: ["食品","垃圾食品","不健康小吃"]) { (selectedIndexs, selectedValues) in
                 self.showAlert(message:"\(selectedIndexs)\(selectedValues)")
             }
         case "city":
-            PickerViewManager.showCitiesPicker("省市区选择", defaultSelectedValues: ["北京市"]) { (selectedIndexs, selectedValues) in
+            PickerViewManager.showCitiesPicker("省市区选择", defaultSelectedValues: ["天津市"]) { (selectedIndexs, selectedValues) in
                 self.showAlert(message:"\(selectedIndexs)   \(selectedValues)")
             }
         case "multipleSelect":
