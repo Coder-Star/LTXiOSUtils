@@ -22,6 +22,9 @@ public class MultiSelectPickView: UIView {
     /// 选中的索引
     private var selectIndexArr = [Int]()
 
+    /// 默认选中的索引
+    private var defaultSelectIndexArr = [Int]()
+
     public var sureBlock: SureBlock?
 
     /// toobar高度
@@ -54,6 +57,9 @@ public class MultiSelectPickView: UIView {
         coverView.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight)
         coverView.backgroundColor = UIColor.black.adapt()
         coverView.alpha = 0
+        coverView.addTapGesture { [weak self] _ in
+            self?.dismiss()
+        }
         return coverView
     }()
 
@@ -102,7 +108,7 @@ public class MultiSelectPickView: UIView {
         }
         toolBarView.doneAction = {
             if self.selectIndexArr.isEmpty {
-                HUD.showText("请至少选择一项")
+                HUD.showText("MultiSelectPickView.selectAtSelectOne".localizedOfLTXiOSUtils())
             } else {
                 let indexArr = self.selectIndexArr.sorted()
                 var valueArr = [String]()
@@ -133,9 +139,12 @@ public extension MultiSelectPickView {
     /// - Parameters:
     ///   - title: 标题
     ///   - data: 数据
+    ///   - defaultSelectedIndex: 默认选中索引
     ///   - sureBlock: 确定闭包
-    class func showView(title: String, data: [String], sureBlock: @escaping SureBlock) {
-        let view = getView(title: title, data: data)
+    class func showView(title: String, data: [String], defaultSelectedIndexs: [Int]?, sureBlock: @escaping SureBlock) {
+        guard let view = getView(title: title, data: data, defaultSelectedIndexs: defaultSelectedIndexs) else {
+            return
+        }
         view.sureBlock = sureBlock
         view.show()
     }
@@ -144,7 +153,12 @@ public extension MultiSelectPickView {
     /// - Parameters:
     ///   - title: 标题
     ///   - data: 数据
-    class func getView(title: String, data: [String]) -> MultiSelectPickView {
+    ///   - defaultSelectedIndexs: 默认选中索引
+    class func getView(title: String, data: [String], defaultSelectedIndexs: [Int]?) -> MultiSelectPickView? {
+        if data.isEmpty {
+            HUD.showText("MultiSelectPickView.emptyData".localizedOfLTXiOSUtils())
+            return nil
+        }
         UIApplication.shared.keyWindow?.endEditing(true)
         let view = MultiSelectPickView()
         view.titleArr = data
@@ -184,6 +198,7 @@ extension MultiSelectPickView: UITableViewDataSource {
             cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
         cell?.selectionStyle = .none
+        cell?.textLabel?.adjustsFontSizeToFitWidth = true
         cell?.textLabel?.text = titleArr[indexPath.row]
         cell?.separatorInset = .zero
         cell?.accessoryView = UIImageView(image: normalImage)

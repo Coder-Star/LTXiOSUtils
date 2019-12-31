@@ -12,9 +12,11 @@ confirm = "确认";
 complete = "完成";
 
 // 起止时间选择
-
 DurationDatePickView.topTitle = "请选择起止时间";
 DurationDatePickView.to = "至";
 
-// 选择器
-PickerViewManager.ToolBarView.title = "请选择";
+//选择器
+PickerViewManager.emptyData = "数据为空";
+
+MultiSelectPickView.emptyData = "数据为空";
+MultiSelectPickView.selectAtSelectOne = "请至少选择一项";

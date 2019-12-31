@@ -11,7 +11,9 @@ import Foundation
 class PickViewDemoViewController: BaseGroupTableMenuViewController {
 
     /// 单列
-    private let singleData = ["swift", "ObjecTive-C", "C", "C++", "java", "php", "python", "ruby", "js"]
+    private let singleData = [String]()
+
+//    ["swiftswiftswiftswiftswiftswiftswiftswiftswiftswiftswiftswiftswiftswift", "ObjecTive-C", "C", "C++", "java", "php", "python", "ruby", "js"]
 
     /// 多列不关联
     private let multipleData = [
@@ -138,7 +140,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
                 self.showAlert(message:"\(selectedIndexs)   \(selectedValues)")
             }
         case "multipleSelect":
-            MultiSelectPickView.showView(title: "选择", data: singleData) { index,value in
+            MultiSelectPickView.showView(title: "选择", data: singleData, defaultSelectedIndexs: [1]) { index,value in
                 QL1(index)
                 QL1(value)
             }

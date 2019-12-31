@@ -64,7 +64,7 @@ public class PickerView: UIView {
     /// pickerView代理
     weak var delegate: PickerViewDelegate?
     /// 工具栏标题
-    fileprivate var toolBarTitle = "请选择" {
+    fileprivate var toolBarTitle = "" {
         didSet {
             toolBar.title = toolBarTitle
         }
@@ -338,8 +338,6 @@ public class PickerView: UIView {
 fileprivate extension PickerView {
 
     func commonInit() {
-        let window = UIApplication.shared.keyWindow
-        window?.endEditing(true)
         addSubview(toolBar)
         if pickerStyle == PickerStyles.date {
             datePicker.addTarget(self, action: #selector(self.dateDidChange(_:)), for: UIControl.Event.valueChanged)
