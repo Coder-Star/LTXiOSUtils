@@ -141,8 +141,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
             }
         case "multipleSelect":
             MultiSelectPickView.showView(title: "选择", data: singleData, defaultSelectedIndexs: [1]) { index,value in
-                QL1(index)
-                QL1(value)
+                self.showAlert(message:"\(index)   \(value)")
             }
         default:
             HUD.showText("暂无此模块")
