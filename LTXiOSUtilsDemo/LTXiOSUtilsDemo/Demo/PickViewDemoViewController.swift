@@ -11,8 +11,6 @@ import Foundation
 class PickViewDemoViewController: BaseGroupTableMenuViewController {
 
     /// 单列
-//    private let singleData = [String]()
-
     private let singleData = ["swift", "ObjecTive-C", "C", "C++", "java", "php", "python", "ruby", "js"]
 
     /// 多列不关联
