@@ -16,16 +16,16 @@ public class PickerViewManager: UIView {
 
     public typealias MultipleAssociatedDataType = [[[String: [String]?]]]
 
-    fileprivate var pickerView: PickerView!
+    private var pickerView: PickerView!
     // MARK: - 常量
-    fileprivate let pickerViewHeight: CGFloat = 260.0
+    private let pickerViewHeight: CGFloat = 260.0
 
-    fileprivate let screenWidth = UIScreen.main.bounds.size.width
-    fileprivate let screenHeight = UIScreen.main.bounds.size.height
-    fileprivate var hideFrame: CGRect {
+    private let screenWidth = UIScreen.main.bounds.size.width
+    private let screenHeight = UIScreen.main.bounds.size.height
+    private var hideFrame: CGRect {
         return CGRect(x: 0.0, y: screenHeight, width: screenWidth, height: pickerViewHeight)
     }
-    fileprivate var showFrame: CGRect {
+    private var showFrame: CGRect {
         return CGRect(x: 0.0, y: screenHeight - pickerViewHeight, width: screenWidth, height: pickerViewHeight)
     }
 
@@ -142,7 +142,7 @@ public class PickerViewManager: UIView {
 // MARK: - selector
 extension PickerViewManager {
 
-    fileprivate func addOrentationObserver() {
+    private func addOrentationObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.statusBarOrientationChange), name: UIApplication.didChangeStatusBarOrientationNotification, object: nil)
     }
 
@@ -153,7 +153,6 @@ extension PickerViewManager {
 
     @objc func tapAction(_ tap: UITapGestureRecognizer) {
         let location = tap.location(in: self)
-        // 点击空白背景移除self
         if location.y <= screenHeight - pickerViewHeight {
             self.hidePicker()
         }
@@ -164,7 +163,7 @@ extension PickerViewManager {
 extension PickerViewManager {
 
     /// 通过window 弹出view
-    fileprivate func showPicker() {
+    private func showPicker() {
 
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
@@ -191,7 +190,7 @@ extension PickerViewManager {
 }
 
 // MARK: - 快速使用方法
-extension PickerViewManager {
+public extension PickerViewManager {
 
     /// 单列选择器
     ///
@@ -201,14 +200,12 @@ extension PickerViewManager {
     ///  - parameter doneAction:                 响应完成的Closure
     ///
     ///  - returns:
-    public class func showSingleColPicker(_ toolBarTitle: String, data: [String], defaultSelectedIndex: Int?, doneAction: SingleDoneAction?) {
+    class func showSingleColPicker(_ toolBarTitle: String, data: [String], defaultSelectedIndex: Int?, doneAction: SingleDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
-
-        let testView = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, singleColData: data, defaultSelectedIndex: defaultSelectedIndex, doneAction: doneAction)
-
-        testView.showPicker()
-
+        currentWindow.endEditing(true)
+        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, singleColData: data, defaultSelectedIndex: defaultSelectedIndex, doneAction: doneAction)
+        pickViewManager.showPicker()
     }
 
     /// 多列不关联选择器
@@ -216,14 +213,12 @@ extension PickerViewManager {
     /// - Parameter data: 数据
     /// - Parameter defaultSelectedIndexs: 默认选中的每一列的行数
     /// - Parameter doneAction: 响应完成的Closure
-    public class func showMultipleColsPicker(_ toolBarTitle: String, data: [[String]], defaultSelectedIndexs: [Int]?, doneAction: MultipleDoneAction?) {
+    class func showMultipleColsPicker(_ toolBarTitle: String, data: [[String]], defaultSelectedIndexs: [Int]?, doneAction: MultipleDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
-
-        let testView = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, multipleColsData: data, defaultSelectedIndexs: defaultSelectedIndexs, doneAction: doneAction)
-
-        testView.showPicker()
-
+        currentWindow.endEditing(true)
+        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, multipleColsData: data, defaultSelectedIndexs: defaultSelectedIndexs, doneAction: doneAction)
+        pickViewManager.showPicker()
     }
 
     /// 多列关联选择器
@@ -231,44 +226,36 @@ extension PickerViewManager {
     /// - Parameter data: 数据
     /// - Parameter defaultSelectedValues: 默认选中的每一列的行数
     /// - Parameter doneAction: 响应完成的Closure
-    public class func showMultipleAssociatedColsPicker(_ toolBarTitle: String, data: MultipleAssociatedDataType, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
+    class func showMultipleAssociatedColsPicker(_ toolBarTitle: String, data: MultipleAssociatedDataType, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
-
-        let testView = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, multipleAssociatedColsData: data, defaultSelectedValues: defaultSelectedValues, doneAction: doneAction)
-
-        testView.showPicker()
-
+        currentWindow.endEditing(true)
+        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, multipleAssociatedColsData: data, defaultSelectedValues: defaultSelectedValues, doneAction: doneAction)
+        pickViewManager.showPicker()
     }
 
     /// 城市选择器
     /// - Parameter toolBarTitle:  标题
     /// - Parameter defaultSelectedValues: 默认选中的每一列的值, 注意不是行数
     /// - Parameter doneAction: 响应完成的Closure
-    public class func showCitiesPicker(_ toolBarTitle: String, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
-
+    class func showCitiesPicker(_ toolBarTitle: String, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
-
-        let testView = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, defaultSelectedValues: defaultSelectedValues, doneAction: doneAction)
-
-        testView.showPicker()
-
+        currentWindow.endEditing(true)
+        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, defaultSelectedValues: defaultSelectedValues, doneAction: doneAction)
+        pickViewManager.showPicker()
     }
 
     /// 日期选择器
     /// - Parameter toolBarTitle: 标题
     /// - Parameter datePickerSetting: 可配置UIDatePicker的样式
     /// - Parameter doneAction: 响应完成的Closure
-    public class func showDatePicker(_ toolBarTitle: String, datePickerSetting: DatePickerSetting = DatePickerSetting(), doneAction: DateDoneAction?) {
-
+    class func showDatePicker(_ toolBarTitle: String, datePickerSetting: DatePickerSetting = DatePickerSetting(), doneAction: DateDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
-
-        let testView = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, datePickerSetting: datePickerSetting, doneAction: doneAction)
-
-        testView.showPicker()
-
+        currentWindow.endEditing(true)
+        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, datePickerSetting: datePickerSetting, doneAction: doneAction)
+        pickViewManager.showPicker()
     }
 
 }

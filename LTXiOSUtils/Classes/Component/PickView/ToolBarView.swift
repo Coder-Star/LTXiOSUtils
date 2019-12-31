@@ -12,7 +12,7 @@ open class ToolBarView: UIView {
     typealias CustomClosures = (_ titleLabel: UILabel, _ cancleBtn: UIButton, _ doneBtn: UIButton) -> Void
     public typealias BtnAction = () -> Void
 
-    open var title = "PickerViewManager.ToolBarView.title".localizedOfLTXiOSUtils() {
+    open var title = "" {
         didSet {
             titleLabel.text = title
         }

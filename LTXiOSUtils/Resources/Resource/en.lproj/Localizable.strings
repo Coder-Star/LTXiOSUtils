@@ -15,7 +15,11 @@ complete = "Complete";
 DurationDatePickView.topTitle = "Please Select Start And End Time";
 DurationDatePickView.to = "To";
 
+//多选选择器
+MultiSelectPickView.emptyData = "Data Is Empty";
 
-// 选择器
-PickerViewManager.ToolBarView.title = "Please Select";
+//选择器
+PickerViewManager.emptyData = "Data Is Empty";
 
+MultiSelectPickView.emptyData = "Data Is Empty";
+MultiSelectPickView.selectAtSelectOne = "Please Select At Least One";
