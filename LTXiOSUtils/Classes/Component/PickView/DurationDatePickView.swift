@@ -65,7 +65,7 @@ open class DurationDatePickView: UIView {
     private lazy var coverView: UIView = {
         let coverView = UIView()
         coverView.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        coverView.backgroundColor = UIColor.black.adapt()
+        coverView.backgroundColor = UIColor.black
         coverView.alpha = 0
         return coverView
     }()
@@ -230,7 +230,7 @@ public extension DurationDatePickView {
     /// 弹出框显示
     func show() {
         UIView.animate(withDuration: 0.25, animations: { [weak self] in
-            self?.coverView.alpha = 0.5
+            self?.coverView.alpha = 0.1
             self?.popupView.alpha = 1
             self?.datePicker.alpha = 1
             }, completion: { _ in
