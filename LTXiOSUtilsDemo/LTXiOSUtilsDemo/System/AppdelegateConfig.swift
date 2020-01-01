@@ -24,6 +24,8 @@ class AppdelegateConfig {
         IQKeyboardManager.shared.enable = true
 
         PerformanceMonitor.shared().start()
+
+        UIButton.initRepeatClickMethod()
     }
 
     /// 日志设置

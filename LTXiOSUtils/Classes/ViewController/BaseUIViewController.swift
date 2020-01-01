@@ -20,7 +20,7 @@ open class BaseUIViewController: BaseViewController {
         initBaseView()
     }
 
-    /// 设置基础view颜色以及约束
+    /// 设置view颜色以及约束
     open func initBaseView() {
         view.backgroundColor = .white
         view.addSubview(baseView)

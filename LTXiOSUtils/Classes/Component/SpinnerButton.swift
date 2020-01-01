@@ -10,10 +10,10 @@ import UIKit
 /// 动画类型
 public enum AnimationType {
 
+    /// 默认状态
+       case `default`
     /// 加载状态
-    case collapse
-    /// 加载状态之后返回到默认状态
-    case expand
+    case load
     /// 按钮抖动
     case shake
 }
@@ -26,11 +26,12 @@ extension CAGradientLayer {
 }
 
 @IBDesignable
-open class EMSpinnerButton: UIButton {
+open class SpinnerButton: UIButton {
 
     // MARK: - 公开属性
-    /// 圆角
-    @IBInspectable public var cornerRadius: CGFloat = 0 {
+    /// 默认状态下的圆角
+    /// 不要直接使用layer.cornerRadius，否则会造成从加载状态到默认状态下圆角丢失
+    @IBInspectable public var defaultCornerRadius: CGFloat = 0 {
         willSet {
             layer.cornerRadius = newValue
         }
@@ -74,8 +75,8 @@ open class EMSpinnerButton: UIButton {
     }
 
     // MARK: - 私有属性
-    private lazy var spinner: EMSpinnerLayer = {
-         let spiner = EMSpinnerLayer(frame: self.frame)
+    private lazy var spinner: SpinnerLayer = {
+         let spiner = SpinnerLayer(frame: self.frame)
          self.layer.addSublayer(spiner)
          return spiner
      }()
@@ -119,20 +120,20 @@ open class EMSpinnerButton: UIButton {
 }
 
 // MARK: - Public Methods
-public extension EMSpinnerButton {
+public extension SpinnerButton {
     /// 状态切换
     /// - Parameter animation: 动画样式
     func animate(animation: AnimationType) {
         switch animation {
-        case .collapse:
+        case .load:
             UIView.animate(withDuration: 0.1, animations: {
                 self.layer.cornerRadius = self.frame.height/2
             }, completion: { _ in
                 self.collapseAnimation()
             })
-        case .expand:
+        case .default:
             UIView.animate(withDuration: 0.1, animations: {
-                self.layer.cornerRadius = self.cornerRadius
+                self.layer.cornerRadius = self.defaultCornerRadius
             }, completion: { _ in
                 self.backToDefaults()
             })
@@ -143,7 +144,7 @@ public extension EMSpinnerButton {
 }
 
 // MARK: - 动画相关方法
-private extension EMSpinnerButton {
+private extension SpinnerButton {
 
     /// 加载状态
     func collapseAnimation() {
@@ -210,7 +211,7 @@ private extension EMSpinnerButton {
 }
 
 // MARK: - EMSpinnerLayer
-private class EMSpinnerLayer: CAShapeLayer {
+private class SpinnerLayer: CAShapeLayer {
 
     var color: CGColor? = UIColor.white.cgColor {
         willSet {
