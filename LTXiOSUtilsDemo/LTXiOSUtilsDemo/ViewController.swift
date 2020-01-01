@@ -19,7 +19,8 @@ class ViewController: BaseGroupTableMenuViewController {
     override func setMenu() {
         let componetMenu = [
             BaseGroupTableMenuModel(code: "HUD", title: "HUD加载框"),
-            BaseGroupTableMenuModel(code: "Pick", title: "选择器")
+            BaseGroupTableMenuModel(code: "Pick", title: "选择器"),
+            BaseGroupTableMenuModel(code: "Component", title: "控件集锦")
         ]
         menu.append(componetMenu)
 
@@ -37,6 +38,8 @@ class ViewController: BaseGroupTableMenuViewController {
         case "Network":
             navigationController?.pushViewController(NetworkDemoViewController(), animated: true)
         case "Pick":
+            navigationController?.pushViewController(PickViewDemoViewController(), animated: true)
+        case "Component":
             navigationController?.pushViewController(PickViewDemoViewController(), animated: true)
         default:
             HUD.showText("暂无此模块")
