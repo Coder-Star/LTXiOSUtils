@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 // MARK: - 按钮防重复点击处理
-// app启动时需要调用一下UIButton.initializeMethod()
+// app启动时需要调用一下UIButton.initRepeatClickMethod()
 // 分为两种模式，一种是时间等候模式，一种事件完成模式，事件完成之后需要重新将isFinishEvent赋值为false才可以让按钮再进行响应
 public extension UIButton {
     /// 时间等待模式默认的等待时间 0.5s
@@ -23,7 +23,7 @@ public extension UIButton {
         case eventDone
     }
 
-    private struct AssociatedKeysWithUIButtonMultiClick {
+    private struct AssociatedKeysWithUIButtonRepeatClick {
         static var clickDurationTime: Void?
         static var isIgnoreEvent: Void?
         static var isFinish: Void?
@@ -33,10 +33,10 @@ public extension UIButton {
     /// 使用模式
     var repeatButtonClickType: RepeatButtonClickType {
         set {
-            objc_setAssociatedObject(self, &AssociatedKeysWithUIButtonMultiClick.repeatButtonClickType, newValue as RepeatButtonClickType, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeysWithUIButtonRepeatClick.repeatButtonClickType, newValue as RepeatButtonClickType, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
-            if let clickDurationTime = objc_getAssociatedObject(self, &AssociatedKeysWithUIButtonMultiClick.repeatButtonClickType) as? RepeatButtonClickType {
+            if let clickDurationTime = objc_getAssociatedObject(self, &AssociatedKeysWithUIButtonRepeatClick.repeatButtonClickType) as? RepeatButtonClickType {
                 return clickDurationTime
             }
             return .durationTime
@@ -46,10 +46,10 @@ public extension UIButton {
     /// 点击间隔时间
     var clickDurationTime: TimeInterval {
         set {
-            objc_setAssociatedObject(self, &AssociatedKeysWithUIButtonMultiClick.clickDurationTime, newValue as TimeInterval, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeysWithUIButtonRepeatClick.clickDurationTime, newValue as TimeInterval, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
-            if let clickDurationTime = objc_getAssociatedObject(self, &AssociatedKeysWithUIButtonMultiClick.clickDurationTime) as? TimeInterval {
+            if let clickDurationTime = objc_getAssociatedObject(self, &AssociatedKeysWithUIButtonRepeatClick.clickDurationTime) as? TimeInterval {
                 return clickDurationTime
             }
             return UIButton.defaultDuration
@@ -59,10 +59,10 @@ public extension UIButton {
     /// 是否完成点击事件
     var isFinishEvent: Bool {
            set {
-               objc_setAssociatedObject(self, &AssociatedKeysWithUIButtonMultiClick.isFinish, newValue as Bool, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+               objc_setAssociatedObject(self, &AssociatedKeysWithUIButtonRepeatClick.isFinish, newValue as Bool, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
            }
            get {
-               if let isFinishEvent = objc_getAssociatedObject(self, &AssociatedKeysWithUIButtonMultiClick.isFinish) as? Bool {
+               if let isFinishEvent = objc_getAssociatedObject(self, &AssociatedKeysWithUIButtonRepeatClick.isFinish) as? Bool {
                    return isFinishEvent
                }
                return false
@@ -72,10 +72,10 @@ public extension UIButton {
     /// 是否忽视点击事件
     private var isIgnoreEvent: Bool {
         set {
-            objc_setAssociatedObject(self, &AssociatedKeysWithUIButtonMultiClick.isIgnoreEvent, newValue as Bool, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeysWithUIButtonRepeatClick.isIgnoreEvent, newValue as Bool, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
-            if let isIgnoreEvent = objc_getAssociatedObject(self, &AssociatedKeysWithUIButtonMultiClick.isIgnoreEvent) as? Bool {
+            if let isIgnoreEvent = objc_getAssociatedObject(self, &AssociatedKeysWithUIButtonRepeatClick.isIgnoreEvent) as? Bool {
                 return isIgnoreEvent
             }
             return false
@@ -116,11 +116,11 @@ public extension UIButton {
     }
 
     /// 初始化，需手动调用一下
-    class func initializeMethod() {
+    class func initRepeatClickMethod() {
         if self !== UIButton.self {
             return
         }
-        DispatchQueue.once(token: "AssociatedKeysWithUIButtonMultiClick") {
+        DispatchQueue.once(token: "AssociatedKeysWithUIButtonRepeatClick") {
             let originalSelector = #selector(UIButton.sendAction)
             let swizzledSelector = #selector(UIButton.my_sendAction(action:to:forEvent:))
 

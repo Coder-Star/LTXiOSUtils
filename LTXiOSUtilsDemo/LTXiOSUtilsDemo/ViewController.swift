@@ -40,7 +40,7 @@ class ViewController: BaseGroupTableMenuViewController {
         case "Pick":
             navigationController?.pushViewController(PickViewDemoViewController(), animated: true)
         case "Component":
-            navigationController?.pushViewController(PickViewDemoViewController(), animated: true)
+            navigationController?.pushViewController(ComponentCollectionsViewController(), animated: true)
         default:
             HUD.showText("暂无此模块")
         }
