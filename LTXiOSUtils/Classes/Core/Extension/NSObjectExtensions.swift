@@ -20,7 +20,7 @@ public extension NSObject {
     }
 }
 
-// MARK: - 闭包链式调用
+// MARK: - 通知闭包链式调用
 public extension NSObject {
 
     /// 存储key值
