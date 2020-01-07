@@ -69,7 +69,7 @@ public extension Date {
     }
 
     /// 获取相对指定时间之前几天或者之后几天的日期，之前的填入负数
-    /// - Parameter days: 日期
+    /// - Parameter days: 日期，单位为天
     func getDateByDays(days: Int) -> Date {
         let date = Date(timeInterval: TimeInterval(days * 24 * 60 * 60), since: self)
         return date
@@ -89,23 +89,19 @@ public extension Date {
 
     /// 获取秒级时间戳 - 10位
     var timeStampStr: String {
-        let timeInterval: TimeInterval = self.timeIntervalSince1970
-        let timeStamp = Int(timeInterval)
         return "\(timeStamp)"
     }
 
     /// 获取毫秒级时间戳 - 13位
-       var milliStamp: CLongLong {
-           let timeInterval: TimeInterval = self.timeIntervalSince1970
-           let millisecond = CLongLong(round(timeInterval*1000))
-           return millisecond
-       }
+    var milliStamp: CLongLong {
+        let timeInterval: TimeInterval = self.timeIntervalSince1970
+        let millisecond = CLongLong(round(timeInterval*1000))
+        return millisecond
+    }
 
     /// 获取毫秒级时间戳 - 13位
     var milliStampStr: String {
-        let timeInterval: TimeInterval = self.timeIntervalSince1970
-        let millisecond = CLongLong(round(timeInterval*1000))
-        return "\(millisecond)"
+        return "\(milliStamp)"
     }
 
     /// 获取当前时间
@@ -118,6 +114,34 @@ public extension Date {
         return Date().formatDate(format: .YMD)
     }
 
+}
+
+// MARK: - 时间戳转时间
+extension TimeInterval {
+    /// 时间戳(毫秒)转时间
+    var dateAsMilliStamp: Date {
+        let timeInterval = self/1000
+        return Date.init(timeIntervalSince1970: timeInterval)
+    }
+
+    /// 时间戳转时间字符串
+    /// - Parameters:
+    ///   - format: 时间格式化格式
+    func toDateStrAsMilliStamp(format: DateFormateType) -> String {
+        return dateAsMilliStamp.formatDate(format: format)
+    }
+
+    /// 时间戳(秒)转时间
+    var dateAsTimeStamp: Date {
+        return Date.init(timeIntervalSince1970: self)
+    }
+
+    /// 时间戳(秒)转时间字符串
+    /// - Parameters:
+    ///   - format: 时间格式化格式
+    func toDateStrAsTimeStamp(format: DateFormateType) -> String {
+        return dateAsTimeStamp.formatDate(format: format)
+    }
 }
 
 // MARK: - DispatchTime扩展，构造函数
