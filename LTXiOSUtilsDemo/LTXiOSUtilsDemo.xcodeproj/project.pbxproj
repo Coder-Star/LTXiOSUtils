@@ -20,6 +20,8 @@
 		DC5E25DF238578EC00B18F51 /* AppdelegateConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E25DE238578EC00B18F51 /* AppdelegateConfig.swift */; };
 		DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */; };
 		DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC62A7C72384084A00DE7800 /* Localizable.strings */; };
+		DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */; };
+		DCB1C04723C4B41500D735BD /* ExtensionExampleMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04623C4B41500D735BD /* ExtensionExampleMenuViewController.swift */; };
 		DCB22AB923AB6908004C63EF /* PickViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */; };
 		DCBB1C3A23B1FCC000FF2925 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBB1C3923B1FCC000FF2925 /* Launch Screen.storyboard */; };
 		DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */; };
@@ -72,6 +74,8 @@
 		DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Extension.swift"; sourceTree = "<group>"; };
 		DC62A7C62384084A00DE7800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensionExampleViewController.swift; sourceTree = "<group>"; };
+		DCB1C04623C4B41500D735BD /* ExtensionExampleMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionExampleMenuViewController.swift; sourceTree = "<group>"; };
 		DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewDemoViewController.swift; sourceTree = "<group>"; };
 		DCBB1C3923B1FCC000FF2925 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentCollectionsViewController.swift; sourceTree = "<group>"; };
@@ -207,9 +211,19 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		DCB1C04223C4B1FB00D735BD /* ExtensionsExample */ = {
+			isa = PBXGroup;
+			children = (
+				DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */,
+				DCB1C04623C4B41500D735BD /* ExtensionExampleMenuViewController.swift */,
+			);
+			path = ExtensionsExample;
+			sourceTree = "<group>";
+		};
 		DCC76E4823A782C40029590C /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				DCB1C04223C4B1FB00D735BD /* ExtensionsExample */,
 				DCF41B5F23AA45A400AEF70E /* Constants */,
 				DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */,
 				DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */,
@@ -506,9 +520,11 @@
 				DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */,
 				DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */,
 				DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */,
+				DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */,
 				DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */,
 				DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */,
 				DCB22AB923AB6908004C63EF /* PickViewDemoViewController.swift in Sources */,
+				DCB1C04723C4B41500D735BD /* ExtensionExampleMenuViewController.swift in Sources */,
 				DC5E25DF238578EC00B18F51 /* AppdelegateConfig.swift in Sources */,
 				DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */,
 				DC32F1A823841359008D3D67 /* Constants.swift in Sources */,

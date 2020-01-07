@@ -29,6 +29,11 @@ class ViewController: BaseGroupTableMenuViewController {
         ]
         menu.append(networkMenu)
 
+        let extensionMenu = [
+            BaseGroupTableMenuModel(code: "Extension", title: "扩展")
+        ]
+        menu.append(extensionMenu)
+
     }
 
     override func click(menuModel: BaseGroupTableMenuModel) {
@@ -41,6 +46,8 @@ class ViewController: BaseGroupTableMenuViewController {
             navigationController?.pushViewController(PickViewDemoViewController(), animated: true)
         case "Component":
             navigationController?.pushViewController(ComponentCollectionsViewController(), animated: true)
+        case "Extension":
+            navigationController?.pushViewController(ExtensionExampleMenuViewController(), animated: true)
         default:
             HUD.showText("暂无此模块")
         }

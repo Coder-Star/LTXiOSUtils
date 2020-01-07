@@ -87,7 +87,7 @@ public extension UIButton {
     ///   - action: 执行函数
     ///   - target: 执行者
     ///   - event: 事件
-    @objc private func my_sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+    @objc private func sendActionWithRepeatClick(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
         if (self.isKind(of: UIButton.self)) {
             switch self.repeatButtonClickType {
             case .durationTime:
@@ -102,16 +102,16 @@ public extension UIButton {
                     DispatchQueue.main.delay(clickDurationTime) {
                         self.isIgnoreEvent = false
                     }
-                    my_sendAction(action: action, to: target, forEvent: event)
+                    sendActionWithRepeatClick(action: action, to: target, forEvent: event)
                 }
             case .eventDone:
                 if !isFinishEvent {
-                    my_sendAction(action: action, to: target, forEvent: event)
+                    sendActionWithRepeatClick(action: action, to: target, forEvent: event)
                     isFinishEvent = true
                 }
             }
         } else {
-            my_sendAction(action: action, to: target, forEvent: event)
+            sendActionWithRepeatClick(action: action, to: target, forEvent: event)
         }
     }
 
@@ -122,7 +122,7 @@ public extension UIButton {
         }
         DispatchQueue.once(token: "AssociatedKeysWithUIButtonRepeatClick") {
             let originalSelector = #selector(UIButton.sendAction)
-            let swizzledSelector = #selector(UIButton.my_sendAction(action:to:forEvent:))
+            let swizzledSelector = #selector(UIButton.sendActionWithRepeatClick(action:to:forEvent:))
 
             let originalMethod = class_getInstanceMethod(self, originalSelector)
             let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
@@ -137,4 +137,70 @@ public extension UIButton {
         }
     }
 
+}
+
+// MARK: - Button所有事件的链式调用
+public extension UIButton {
+    private struct ActionDictKey {
+        static var key: Void?
+    }
+
+    /// 闭包
+    typealias ButtonAction = (UIButton) -> Void
+
+    // MARK: - 属性
+    // 用于保存所有事件对应的闭包
+    private var actionDict: [String: ButtonAction]? {
+        get {
+            return objc_getAssociatedObject(self, &ActionDictKey.key) as? [String: ButtonAction]
+        }
+        set {
+            objc_setAssociatedObject(self, &ActionDictKey.key, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+
+    // MARK: - 公开函数
+
+    /// 按钮点击事件
+    /// - Parameter action: 回调
+    @discardableResult
+    func addTouchUpInsideAction(_ action: @escaping ButtonAction) -> UIButton {
+        self.addAction(action: action, for: .touchUpInside)
+        return self
+    }
+    /// 按钮事件
+    /// - Parameters:
+    ///   - event: 事件类型
+    ///   - action: 回调
+    @discardableResult
+    func addAction(event: UIControl.Event, _ action: @escaping ButtonAction) -> UIButton {
+        self.addAction(action: action, for: event)
+        return self
+    }
+
+    // MARK: - 私有方法
+    private func addAction(action: @escaping ButtonAction, for controlEvents: UIControl.Event) {
+        let eventKey = String(controlEvents.rawValue)
+        if var actionDict = self.actionDict {
+            actionDict.updateValue(action, forKey: eventKey)
+            self.actionDict = actionDict
+        } else {
+            self.actionDict = [eventKey: action]
+        }
+        self.dataStr = "\(controlEvents.rawValue)"
+        addTarget(self, action: #selector(respondControlEvent(button:)), for: controlEvents)
+    }
+    // 响应事件
+    @objc private func respondControlEvent(button:UIButton) {
+        if let eventRawValue = UInt(button.dataStr) {
+            executeControlEvent( UIControl.Event(rawValue: eventRawValue) )
+        }
+    }
+
+    private func executeControlEvent(_ event: UIControl.Event) {
+        let eventKey = String(event.rawValue)
+        if let actionDict = self.actionDict, let action = actionDict[eventKey] {
+            action(self)
+        }
+    }
 }
