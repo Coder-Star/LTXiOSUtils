@@ -193,13 +193,10 @@ extension PickerViewManager {
 public extension PickerViewManager {
 
     /// 单列选择器
-    ///
     ///  - parameter title:                      标题
-    ///  - parameter data:                       数据
-    ///  - parameter defaultSeletedIndex:        默认选中的行数
+    ///  - parameter data:                       数据；数据为空时，会弹出提示框提示数据为空
+    ///  - parameter defaultSeletedIndex:        默认选中的行数；传入当默认索引不在合理范围内,会默认显示第一个
     ///  - parameter doneAction:                 响应完成的Closure
-    ///
-    ///  - returns:
     class func showSingleColPicker(_ toolBarTitle: String, data: [String], defaultSelectedIndex: Int?, doneAction: SingleDoneAction?) {
         if data.isEmpty {
             HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtils())
@@ -214,8 +211,8 @@ public extension PickerViewManager {
 
     /// 多列不关联选择器
     /// - Parameter toolBarTitle: 标题
-    /// - Parameter data: 数据
-    /// - Parameter defaultSelectedIndexs: 默认选中的每一列的行数
+    /// - Parameter data: 数据；为空时，会弹出提示框提示数据为空
+    /// - Parameter defaultSelectedIndexs: 默认选中的每一列的行数；当默认索引不在合理范围内,会默认显示第一个，默认索引数组数量不做限制，已兼容
     /// - Parameter doneAction: 响应完成的Closure
     class func showMultipleColsPicker(_ toolBarTitle: String, data: [[String]], defaultSelectedIndexs: [Int]?, doneAction: MultipleDoneAction?) {
         if data.isEmpty {
@@ -231,8 +228,8 @@ public extension PickerViewManager {
 
     /// 多列关联选择器
     /// - Parameter toolBarTitle: 标题
-    /// - Parameter data: 数据
-    /// - Parameter defaultSelectedValues: 默认选中的每一列的行数
+    /// - Parameter data: 数据；为空时，会弹出提示框提示数据为空
+    /// - Parameter defaultSelectedValues: 默认选中的每一列的数值；当默认值不存在时,会默认显示第一个，默认数据数组数量不做限制，已兼容
     /// - Parameter doneAction: 响应完成的Closure
     class func showMultipleAssociatedColsPicker(_ toolBarTitle: String, data: MultipleAssociatedDataType, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
         if data.isEmpty {
@@ -248,7 +245,7 @@ public extension PickerViewManager {
 
     /// 城市选择器
     /// - Parameter toolBarTitle:  标题
-    /// - Parameter defaultSelectedValues: 默认选中的每一列的值, 注意不是行数
+    /// - Parameter defaultSelectedValues: 默认选中的每一列的值, 注意不是行数；当默认值不存在时,会默认显示第一个，默认数据数组数量不做限制，已兼容
     /// - Parameter doneAction: 响应完成的Closure
     class func showCitiesPicker(_ toolBarTitle: String, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
         let window = UIApplication.shared.keyWindow
