@@ -683,6 +683,7 @@
 		DCBF290A23BCA37A00EF365C /* SpinnerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF290923BCA37A00EF365C /* SpinnerButton.swift */; };
 		DCBF290E23BCA78C00EF365C /* BaseUIScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF290D23BCA78C00EF365C /* BaseUIScrollViewController.swift */; };
 		DCDC042F8DD1859C5682B8D7E49D40F0 /* UISwitchExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72545BED8C386E6D5FAAC1E76EC76542 /* UISwitchExtensions.swift */; };
+		DCF6F54923BD80D600AC4850 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF6F54823BD80D600AC4850 /* UILabelExtensions.swift */; };
 		DDCCDA0CC4F6901364FFA98C9D878CF0 /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7E414EB1DEBC35B719ADFA5AC8B71 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */; };
 		DDD7A173A9EF096E43E681E66C93128E /* NotificationCenter+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A52FD4ABB2746F780D9D756F275E8BD /* NotificationCenter+Rx.swift */; };
 		DE07DAA4BBEF2D34B55D0ABD0C042D80 /* AddRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F33A364659D940237F9D938C849338 /* AddRef.swift */; };
@@ -1802,6 +1803,7 @@
 		DC97CABF23BA3E8300BCD22E /* MultiSelectPickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectPickView.swift; sourceTree = "<group>"; };
 		DCBF290923BCA37A00EF365C /* SpinnerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpinnerButton.swift; path = LTXiOSUtils/Classes/Component/SpinnerButton.swift; sourceTree = "<group>"; };
 		DCBF290D23BCA78C00EF365C /* BaseUIScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseUIScrollViewController.swift; path = LTXiOSUtils/Classes/ViewController/BaseUIScrollViewController.swift; sourceTree = "<group>"; };
+		DCF6F54823BD80D600AC4850 /* UILabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UILabelExtensions.swift; path = LTXiOSUtils/Classes/Core/Extension/UILabelExtensions.swift; sourceTree = "<group>"; };
 		DCFD21CA9304152686999E08338FD94D /* RxSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwift.xcconfig; sourceTree = "<group>"; };
 		DD35ACA44EAD15805CF6EEE56C5044DC /* UIRefreshControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIRefreshControl+Rx.swift"; path = "RxCocoa/iOS/UIRefreshControl+Rx.swift"; sourceTree = "<group>"; };
 		DE7900109C070DDEEE45C559A287370A /* Date+Compare.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Compare.swift"; path = "Sources/SwiftDate/Date/Date+Compare.swift"; sourceTree = "<group>"; };
@@ -2517,6 +2519,7 @@
 				2322806C8B6935281DFCEACB43A6141A /* UIViewControllerExtensions.swift */,
 				E59A3A2DEE0F9954EA2FE5C5C61F2BE1 /* UIViewExtensions.swift */,
 				DC5AD2CE23B9D8B30095EF91 /* IntExtensions.swift */,
+				DCF6F54823BD80D600AC4850 /* UILabelExtensions.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -4948,6 +4951,7 @@
 				1871A6FEC858CDA436980B7412722A82 /* UIButtonExtensions.swift in Sources */,
 				68384F981B4D49B1CFDC5488947AFEA5 /* UIColorExtensions.swift in Sources */,
 				7C10D573A2A28A8F5249F3BBBCBDB3B0 /* UIImageExtensions.swift in Sources */,
+				DCF6F54923BD80D600AC4850 /* UILabelExtensions.swift in Sources */,
 				66CEC17979031261FF3760A05F2F91DE /* UIImageViewExtensions.swift in Sources */,
 				ABF7E370869C4B40F0D23B183295E54D /* UIViewControllerExtensions.swift in Sources */,
 				EC6837647085F90947791A63152AC449 /* UIViewExtensions.swift in Sources */,
