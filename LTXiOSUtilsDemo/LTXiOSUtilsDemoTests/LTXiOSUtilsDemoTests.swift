@@ -22,7 +22,7 @@ class LTXiOSUtilsDemoTests: XCTestCase {
 
     }
 
-    func testExample() {
+    func testDateExtension() {
         QL1("2019-01-01 10:00:00".getDateStr(dateType: .YMDHMS))
         QL1("2019-01-01 10:00:00".getDateStr(dateType: .YMDHM))
         QL1("2019-01-01 10:00:00".getDateStr(dateType: .MDHM))
@@ -33,10 +33,15 @@ class LTXiOSUtilsDemoTests: XCTestCase {
         QL1("2019-01-01 10:00:00".getDateStr(dateType: .HM))
     }
 
+    func testArrayExtension() {
+        let arr = [1,1,2,3,4,4,5,5]
+        let list = [["1":"张三"],["1":"张三"],["1":"李四"]]
+        QL1(arr.removeDuplicate{$0})
+        QL1(list.removeDuplicate{$0["1"]})
+    }
+
     func testPerformanceExample() {
-
         self.measure {
-
         }
     }
 

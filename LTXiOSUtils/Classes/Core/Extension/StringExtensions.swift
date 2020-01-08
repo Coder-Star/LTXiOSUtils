@@ -157,6 +157,7 @@ public extension String {
     }
 }
 
+// MARK: - 判断是否为空
 public extension String {
     /// 字符串是否不为空
     var isNotEmpty: Bool {
@@ -172,9 +173,28 @@ public extension String {
     var isNotContentEmpty: Bool {
         return !self.isContentEmpty
     }
+}
 
+// MARK: - 编码
+public extension String {
     /// url编码
-    var encode: String? {
+    var urlEncode: String? {
         return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    }
+
+    /// base64编码
+    var base64Encode:String? {
+        let data = self.data(using:.utf8)
+        let base64 = data?.base64EncodedString()
+        return base64
+    }
+
+    /// base64解码
+    var base64Decode:String? {
+        guard let data = Data(base64Encoded: self) else {
+            return nil
+        }
+        let str = String(data: data , encoding: .utf8)
+        return str
     }
 }
