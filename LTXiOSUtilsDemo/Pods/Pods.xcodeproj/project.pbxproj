@@ -679,6 +679,7 @@
 		DC97CAC023BA3E8300BCD22E /* MultiSelectPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC97CABF23BA3E8300BCD22E /* MultiSelectPickView.swift */; };
 		DCA9221B3596DE7D98EDA14C538E6CC1 /* InvocableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E6697205C2E7F730EEF30B4C4EB25 /* InvocableType.swift */; };
 		DCACB093B0C0FECF0B45BE1F9221C2DE /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F72616EF12BE85494DCB673CF5B643C /* SnapKit-dummy.m */; };
+		DCB1C04D23C57B6E00D735BD /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04C23C57B6E00D735BD /* ArrayExtensions.swift */; };
 		DCBE950AABC61F4C3F2967FC067A040A /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4B5A858466922E6CD76F3F4B671BF /* Deprecated.swift */; };
 		DCBF290A23BCA37A00EF365C /* SpinnerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF290923BCA37A00EF365C /* SpinnerButton.swift */; };
 		DCBF290E23BCA78C00EF365C /* BaseUIScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF290D23BCA78C00EF365C /* BaseUIScrollViewController.swift */; };
@@ -1801,6 +1802,7 @@
 		DC4AFE71421C095CA2A69B151323D8E8 /* ObserveOn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObserveOn.swift; path = RxSwift/Observables/ObserveOn.swift; sourceTree = "<group>"; };
 		DC5AD2CE23B9D8B30095EF91 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IntExtensions.swift; path = LTXiOSUtils/Classes/Core/Extension/IntExtensions.swift; sourceTree = "<group>"; };
 		DC97CABF23BA3E8300BCD22E /* MultiSelectPickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectPickView.swift; sourceTree = "<group>"; };
+		DCB1C04C23C57B6E00D735BD /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = LTXiOSUtils/Classes/Core/Extension/ArrayExtensions.swift; sourceTree = "<group>"; };
 		DCBF290923BCA37A00EF365C /* SpinnerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpinnerButton.swift; path = LTXiOSUtils/Classes/Component/SpinnerButton.swift; sourceTree = "<group>"; };
 		DCBF290D23BCA78C00EF365C /* BaseUIScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseUIScrollViewController.swift; path = LTXiOSUtils/Classes/ViewController/BaseUIScrollViewController.swift; sourceTree = "<group>"; };
 		DCF6F54823BD80D600AC4850 /* UILabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UILabelExtensions.swift; path = LTXiOSUtils/Classes/Core/Extension/UILabelExtensions.swift; sourceTree = "<group>"; };
@@ -2507,6 +2509,7 @@
 		40DE99E0073C48AD8DDCDF9D7FE124BC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				DCB1C04C23C57B6E00D735BD /* ArrayExtensions.swift */,
 				1EA1752958D970A731DAC06D156E0012 /* DateExtensions.swift */,
 				D347ECE4EAB9DDA507176468C794AA8D /* DispatchQueueExtensions.swift */,
 				D7C3FCE4239997237FE40CCB48C19F07 /* NSObjectExtensions.swift */,
@@ -4949,6 +4952,7 @@
 				6AF05DB71671A038D35B231AA15E8CE2 /* ToolBarView.swift in Sources */,
 				DCBF290E23BCA78C00EF365C /* BaseUIScrollViewController.swift in Sources */,
 				1871A6FEC858CDA436980B7412722A82 /* UIButtonExtensions.swift in Sources */,
+				DCB1C04D23C57B6E00D735BD /* ArrayExtensions.swift in Sources */,
 				68384F981B4D49B1CFDC5488947AFEA5 /* UIColorExtensions.swift in Sources */,
 				7C10D573A2A28A8F5249F3BBBCBDB3B0 /* UIImageExtensions.swift in Sources */,
 				DCF6F54923BD80D600AC4850 /* UILabelExtensions.swift in Sources */,
