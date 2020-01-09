@@ -226,4 +226,3 @@ public extension UserDefaultsProtocol {
         UserDefaults.standard.removeObject(forKey: key)
     }
 }
-
