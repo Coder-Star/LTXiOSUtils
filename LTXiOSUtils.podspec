@@ -22,6 +22,11 @@ Pod::Spec.new do |s|
       extension.frameworks = "UIKit","Foundation"
       extension.source_files = 'LTXiOSUtils/Classes/Core/Extension/*.swift'
     end
+    # 协议
+    core.subspec 'Protocol' do |protocol|
+      protocol.frameworks = "Foundation"
+      protocol.source_files = 'LTXiOSUtils/Classes/Core/Protocol/*.swift'
+    end
   end
 
   # 网络请求

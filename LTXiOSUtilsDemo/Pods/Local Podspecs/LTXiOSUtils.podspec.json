@@ -14,7 +14,7 @@
     "CoderStar": "1340529758@qq.com"
   },
   "source": {
-    "git": "https://github.com/Coder-Star/LTXiOSUtils.git",
+    "git": "local",
     "tag": "0.0.1"
   },
   "requires_arc": true,
@@ -33,6 +33,11 @@
             "Foundation"
           ],
           "source_files": "LTXiOSUtils/Classes/Core/Extension/*.swift"
+        },
+        {
+          "name": "Protocol",
+          "frameworks": "Foundation",
+          "source_files": "LTXiOSUtils/Classes/Core/Protocol/*.swift"
         }
       ]
     },

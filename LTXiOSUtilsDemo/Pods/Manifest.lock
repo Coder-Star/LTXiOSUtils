@@ -18,7 +18,9 @@ PODS:
     - MBProgressHUD
   - LTXiOSUtils/Core (0.0.1):
     - LTXiOSUtils/Core/Extension (= 0.0.1)
+    - LTXiOSUtils/Core/Protocol (= 0.0.1)
   - LTXiOSUtils/Core/Extension (0.0.1)
+  - LTXiOSUtils/Core/Protocol (0.0.1)
   - LTXiOSUtils/Network (0.0.1):
     - Alamofire
     - LTXiOSUtils/Component
@@ -136,7 +138,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
-  LTXiOSUtils: af225a1657f5f96eb5e7eca811886b73f6f5f62f
+  LTXiOSUtils: 8caa05b8f82e76b7eb92f929361a93383d745900
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   QorumLogs: 9a484df6973a3697ac79fe2273140fde6b36dccc
@@ -156,6 +158,6 @@ SPEC CHECKSUMS:
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 69c4aaa40846e103ccaa83b8d13cac491701573d
+PODFILE CHECKSUM: c8fac466ec207719dacd0ce6c9beca31e79a2dac
 
 COCOAPODS: 1.8.4
