@@ -7,6 +7,7 @@ ${BUILT_PRODUCTS_DIR}/LTXiOSUtils/LTXiOSUtils.framework
 ${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
+${BUILT_PRODUCTS_DIR}/PluggableAppDelegate/PluggableAppDelegate.framework
 ${BUILT_PRODUCTS_DIR}/QorumLogs/QorumLogs.framework
 ${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework
 ${BUILT_PRODUCTS_DIR}/Result/Result.framework

@@ -7,41 +7,20 @@
 //
 
 import UIKit
+import PluggableAppDelegate
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: PluggableApplicationDelegate {
 
-    var window: UIWindow?
+    override var services: [ApplicationService] {
+        return [RootVCApplicationService(),
+                ThirdLibApplicationService()]
+    }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    override init() {
+        super.init()
         if window == nil {
             window = UIWindow()
         }
-        let rootViewController = UINavigationController(rootViewController: ViewController())
-        window?.rootViewController = rootViewController
-        window?.makeKeyAndVisible()
-        AppdelegateConfig.initConfig()
-        return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-
-    }
-
 }
