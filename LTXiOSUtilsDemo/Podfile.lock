@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.9.1)
   - GDPerformanceView-Swift (2.0.3)
   - IQKeyboardManagerSwift (6.5.4)
+  - KeychainAccess (4.1.0)
   - Kingfisher (5.12.0):
     - Kingfisher/Core (= 5.12.0)
   - Kingfisher/Core (5.12.0)
@@ -84,6 +85,7 @@ DEPENDENCIES:
   - Alamofire (= 4.9.1)
   - GDPerformanceView-Swift (= 2.0.3)
   - IQKeyboardManagerSwift
+  - KeychainAccess (= 4.1.0)
   - Kingfisher
   - Localize-Swift (= 3.1.0)
   - LTXiOSUtils (from `../`)
@@ -126,6 +128,7 @@ SPEC REPOS:
     - "UITextView+Placeholder"
     - ZYCornerRadius
   trunk:
+    - KeychainAccess
     - PluggableAppDelegate
     - RxCocoa
     - RxRelay
@@ -139,6 +142,7 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   GDPerformanceView-Swift: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
   LTXiOSUtils: 8caa05b8f82e76b7eb92f929361a93383d745900
@@ -162,6 +166,6 @@ SPEC CHECKSUMS:
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 8ee6ab7e787d24fd53b26ab73ebe26dcee9963b9
+PODFILE CHECKSUM: 564e54821451b818a79324a0b07cfd36f9e81051
 
 COCOAPODS: 1.8.4

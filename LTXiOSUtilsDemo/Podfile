@@ -41,6 +41,7 @@ target 'LTXiOSUtilsDemo' do
   pod 'SwiftDate','6.1.0' #时间工具
   pod 'GDPerformanceView-Swift','2.0.3' #显示屏幕FPS
   pod 'PluggableAppDelegate' #AppDelegate瘦身、解耦
+  pod 'KeychainAccess','4.1.0'
 
   #UI控件及处理等
   pod 'UITextView+Placeholder' # UITextView添加Placeholder属性，OC库
