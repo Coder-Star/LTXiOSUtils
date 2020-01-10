@@ -37,4 +37,3 @@ extension ThirdLibApplicationService {
         QorumLogs.minimumLogLevelShown = 1
     }
 }
-
