@@ -12,19 +12,27 @@ import QorumLogs
 
 @testable import LTXiOSUtils
 
+extension Notification.Name {
+    static let name = Notification.Name("name")
+    static let age = Notification.Name("age")
+}
+
 class NSObjectExtensionTest: XCTestCase {
 
     func testNotificationCenter() {
         initNotification()
-        self.postNotification("name", userInfo: nil)
-        self.postNotification("age", userInfo: nil)
+        self.postNotification(.name)
+        self.postNotification(.age, userInfo: ["age":24])
     }
 
     func initNotification() {
-        self.observerNotification("name") { _ in
+        self.observerNotification(.name) {
             QL1("收到name通知")
         }
-        self.observerNotification("age") { _ in
+        self.observerNotification(.age) { notification in
+            if let age = notification.userInfo?["age"] as? Int {
+                QL1(age)
+            }
             QL1("收到age通知")
         }
     }
