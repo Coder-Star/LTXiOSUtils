@@ -25,48 +25,95 @@ public extension NSObject {
 
     /// 存储key值
     private struct NotificationAction {
-        static var key: Void?
+        static var notificationClosures: Void?
+        static var notificationVoidClosures: Void?
     }
 
     /// 闭包
     typealias NotificationClosures = (Notification) -> Void
+    /// 闭包
+    typealias NotificationVoidClosures = () -> Void
 
     private var notificationClosuresDict: [NSNotification.Name: NotificationClosures]? {
         get {
-            return objc_getAssociatedObject(self, &NotificationAction.key) as? [NSNotification.Name: NotificationClosures]
+            return objc_getAssociatedObject(self, &NotificationAction.notificationClosures) as? [NSNotification.Name: NotificationClosures]
         }
         set {
-            objc_setAssociatedObject(self, &NotificationAction.key, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+            objc_setAssociatedObject(self, &NotificationAction.notificationClosures, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
+
+    private var notificationVoidClosuresDict: [NSNotification.Name: NotificationVoidClosures]? {
+        get {
+            return objc_getAssociatedObject(self, &NotificationAction.notificationVoidClosures) as? [NSNotification.Name: NotificationVoidClosures]
+        }
+        set {
+            objc_setAssociatedObject(self, &NotificationAction.notificationVoidClosures, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+
     /// 发出通知
-    func postNotification(_ name: String, userInfo: [AnyHashable: Any]?) {
-        NotificationCenter.default.post(name: NSNotification.Name(name), object: self, userInfo: userInfo)
+    /// - Parameters:
+    ///   - name: 名称
+    ///   - userInfo: 携带信息
+    func postNotification(_ name: NSNotification.Name, userInfo: [AnyHashable: Any]? = nil) {
+        NotificationCenter.default.post(name: name, object: self, userInfo: userInfo)
     }
 
     /// 通知监听
-    func observerNotification(_ name: String, action: @escaping NotificationClosures) {
+    /// - Parameters:
+    ///   - name: 名称
+    ///   - object: 发送对象
+    ///   - action: 动作，回调Notification
+    func observerNotification(_ name: NSNotification.Name, object: Any? = nil, action: @escaping NotificationClosures) {
         if var dict = notificationClosuresDict {
-            guard dict[NSNotification.Name(name)] == nil else {
+            guard dict[name] == nil else {
                 return
             }
-            dict.updateValue(action, forKey: NSNotification.Name(name))
+            dict.updateValue(action, forKey: name)
             self.notificationClosuresDict = dict
         } else {
-            self.notificationClosuresDict = [NSNotification.Name(name): action]
+            self.notificationClosuresDict = [name: action]
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(notificationAction), name: NSNotification.Name(name), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationAction), name: name, object: object)
+    }
+
+    /// 通知监听
+    /// - Parameters:
+    ///   - name: 名称
+    ///   - object: 发送对象
+    ///   - action: 动作，回调Void
+    func observerNotification(_ name: NSNotification.Name, object: Any? = nil, action: @escaping NotificationVoidClosures) {
+        if var dict = notificationVoidClosuresDict {
+            guard dict[name] == nil else {
+                return
+            }
+            dict.updateValue(action, forKey: name)
+            self.notificationVoidClosuresDict = dict
+        } else {
+            self.notificationVoidClosuresDict = [name: action]
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationAction), name: name, object: object)
     }
 
     /// 移除监听
-    func removeNotification(_ name: String) {
+    /// - Parameter name: 名称
+    func removeNotification(_ name: NSNotification.Name, object:Any? = nil) {
+        NotificationCenter.default.removeObserver(self, name: name, object: object)
+        notificationClosuresDict?.removeValue(forKey: name)
+    }
+
+    /// 移除监听
+    func removeNotification() {
         NotificationCenter.default.removeObserver(self)
-        notificationClosuresDict?.removeValue(forKey: NSNotification.Name(name))
+        notificationClosuresDict?.removeAll()
     }
 
     @objc private func notificationAction(notify: Notification) {
         if let notificationClosures = notificationClosuresDict, let closures = notificationClosures[notify.name] {
             closures(notify)
+        } else if let notificationClosures = notificationVoidClosuresDict, let closures = notificationClosures[notify.name] {
+            closures()
         }
     }
 }
