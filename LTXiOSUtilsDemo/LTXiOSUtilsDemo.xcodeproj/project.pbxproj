@@ -30,6 +30,8 @@
 		DCBB1C3A23B1FCC000FF2925 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBB1C3923B1FCC000FF2925 /* Launch Screen.storyboard */; };
 		DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */; };
 		DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC76E4B23A783550029590C /* HUDDemoViewController.swift */; };
+		DCCF3E4F23C8ABD1000E65E1 /* KeychainAccessTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */; };
+		DCCF3E5123C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3E5023C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift */; };
 		DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */; };
 		DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */; };
 		DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF6F54623BCC87500AC4850 /* ViewFactory.swift */; };
@@ -88,6 +90,8 @@
 		DCBB1C3923B1FCC000FF2925 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentCollectionsViewController.swift; sourceTree = "<group>"; };
 		DCC76E4B23A783550029590C /* HUDDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDDemoViewController.swift; sourceTree = "<group>"; };
+		DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccessTest.swift; sourceTree = "<group>"; };
+		DCCF3E5023C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaultsTest.swift; sourceTree = "<group>"; };
 		DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 		DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDemoViewController.swift; sourceTree = "<group>"; };
 		DCF6F54623BCC87500AC4850 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 		DC4AB9D022F4606100A5F003 /* LTXiOSUtilsDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				DCCF3E4D23C8AB8B000E65E1 /* ThirdLibTest */,
 				DCB1C05C23C7FF5E00D735BD /* ProtocolTest */,
 				DCB1C04E23C581F800D735BD /* ExtensionTest */,
 				DC4AB9D322F4606100A5F003 /* Info.plist */,
@@ -267,6 +272,15 @@
 			children = (
 			);
 			path = ThirdLibDemo;
+			sourceTree = "<group>";
+		};
+		DCCF3E4D23C8AB8B000E65E1 /* ThirdLibTest */ = {
+			isa = PBXGroup;
+			children = (
+				DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */,
+				DCCF3E5023C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift */,
+			);
+			path = ThirdLibTest;
 			sourceTree = "<group>";
 		};
 		DCF41B5F23AA45A400AEF70E /* Constants */ = {
@@ -567,6 +581,8 @@
 				DC4AB9D222F4606100A5F003 /* DateExtensionTest.swift in Sources */,
 				DCB1C05023C5821F00D735BD /* ArrayExtensionTest.swift in Sources */,
 				DCB1C05E23C7FF8400D735BD /* UserDefaultsProtocolTest.swift in Sources */,
+				DCCF3E4F23C8ABD1000E65E1 /* KeychainAccessTest.swift in Sources */,
+				DCCF3E5123C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift in Sources */,
 				DCB1C06023C8006500D735BD /* NSObjectExtensionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
