@@ -14,7 +14,9 @@ class AppDelegate: PluggableApplicationDelegate {
 
     override var services: [ApplicationService] {
         return [RootVCApplicationService(),
-                ThirdLibApplicationService()]
+                ThirdLibApplicationService(),
+                NetworkStateApplicationService()
+        ]
     }
 
     override init() {

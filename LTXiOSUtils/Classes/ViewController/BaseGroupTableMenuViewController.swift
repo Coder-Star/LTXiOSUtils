@@ -88,7 +88,7 @@ extension BaseGroupTableMenuViewController: UITableViewDataSource {
 
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDelegate
 extension BaseGroupTableMenuViewController: UITableViewDelegate {
 
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
