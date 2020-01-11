@@ -44,6 +44,7 @@ PODS:
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
+  - ReachabilitySwift (5.0.0)
   - Result (4.1.0)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
@@ -84,26 +85,27 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
   - GDPerformanceView-Swift (= 2.0.3)
-  - IQKeyboardManagerSwift
+  - IQKeyboardManagerSwift (= 6.5.4)
   - KeychainAccess (= 4.1.0)
-  - Kingfisher
+  - Kingfisher (= 5.12.0)
   - Localize-Swift (= 3.1.0)
   - LTXiOSUtils (from `../`)
   - MBProgressHUD (= 1.1.0)
   - Moya (= 13.0.1)
-  - PluggableAppDelegate
+  - PluggableAppDelegate (= 1.3.0)
   - QorumLogs (= 0.9)
-  - R.swift
-  - RxCocoa
+  - R.swift (= 5.1.0)
+  - ReachabilitySwift (= 5.0.0)
+  - RxCocoa (= 5.0.1)
   - SnapKit (= 5.0.1)
   - SwiftDate (= 6.1.0)
-  - SwifterSwift
-  - SwiftLint
+  - SwifterSwift (= 5.1.0)
+  - SwiftLint (= 0.38.0)
   - SwiftyJSON (= 5.0.0)
-  - SwiftyUserDefaults
-  - "UITableView+FDTemplateLayoutCell"
-  - "UITextView+Placeholder"
-  - ZYCornerRadius
+  - SwiftyUserDefaults (= 4.0.0)
+  - "UITableView+FDTemplateLayoutCell (= 1.6)"
+  - "UITextView+Placeholder (= 1.3.3)"
+  - ZYCornerRadius (= 1.0.2)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -130,6 +132,7 @@ SPEC REPOS:
   trunk:
     - KeychainAccess
     - PluggableAppDelegate
+    - ReachabilitySwift
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -152,6 +155,7 @@ SPEC CHECKSUMS:
   QorumLogs: 9a484df6973a3697ac79fe2273140fde6b36dccc
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
@@ -166,6 +170,6 @@ SPEC CHECKSUMS:
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 564e54821451b818a79324a0b07cfd36f9e81051
+PODFILE CHECKSUM: 9f0c13b4cc0c92a95e662a41c645f01bfbd68cdc
 
 COCOAPODS: 1.8.4
