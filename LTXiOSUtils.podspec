@@ -51,6 +51,7 @@ Pod::Spec.new do |s|
     component.dependency 'LTXiOSUtils/Resource'
     component.dependency 'LTXiOSUtils/Core'
     component.dependency 'MBProgressHUD' # 加载框，OC库
+    component.dependency 'JSBadgeView' # 角标，OC库
     component.source_files = 'LTXiOSUtils/Classes/Component/**/*.swift'
   end
 

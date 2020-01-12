@@ -10,6 +10,7 @@
 		1DE6BC8F899BF5D1B26891B2 /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7E3B9A1FE6E5138DABE297 /* Pods_LTXiOSUtilsDemoTests.framework */; };
 		C5F09030FAB02C728C249770 /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B5530C402C1946D40DE090 /* Pods_LTXiOSUtilsDemoUITests.framework */; };
 		C66D5214375B1A7AA2E778A9 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD79B9B14BDB14BB8C00E0 /* Pods_LTXiOSUtilsDemo.framework */; };
+		DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */; };
 		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
 		DC32F1A823841359008D3D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A723841359008D3D67 /* Constants.swift */; };
 		DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */; };
@@ -64,6 +65,7 @@
 		7B7E3B9A1FE6E5138DABE297 /* Pods_LTXiOSUtilsDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E69F21B8737A1842F9552D7 /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B94D39D73C90A84C93A55928 /* Pods-LTXiOSUtilsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMenuViewExampleViewController.swift; sourceTree = "<group>"; };
 		DC32F1A323840A3E008D3D67 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DC32F1A723841359008D3D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DC4AB9B922F4606000A5F003 /* LTXiOSUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTXiOSUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +151,14 @@
 				FEA6FDCDB130B877B872D978 /* Pods-LTXiOSUtilsDemoUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DC0567DA23CAF545008E7C02 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		DC4AB9B022F4606000A5F003 = {
@@ -259,6 +269,7 @@
 		DCC76E4823A782C40029590C /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				DC0567DA23CAF545008E7C02 /* Menu */,
 				DCB1C04223C4B1FB00D735BD /* ExtensionsExample */,
 				DCF41B5F23AA45A400AEF70E /* Constants */,
 				DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */,
@@ -563,6 +574,7 @@
 				DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
 				DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */,
+				DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */,
 				DCB1C05B23C75C5A00D735BD /* ThirdLibApplicationService.swift in Sources */,
 				DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */,
 				DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */,

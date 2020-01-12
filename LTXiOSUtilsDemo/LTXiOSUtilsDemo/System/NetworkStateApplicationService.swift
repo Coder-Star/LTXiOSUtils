@@ -16,8 +16,6 @@ final class NetworkStateApplicationService: NSObject,ApplicationService {
         guard let reachability = try? Reachability() else {
             return true
         }
-        QL1(reachability.connection)
-        HUD.showText(reachability.connection.description)
 
         reachability.whenReachable = { reachability in
             if reachability.connection == .wifi {

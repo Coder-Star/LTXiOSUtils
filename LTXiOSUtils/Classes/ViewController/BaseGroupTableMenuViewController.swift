@@ -40,6 +40,12 @@ open class BaseGroupTableMenuViewController: BaseUIViewController {
             make.edges.equalToSuperview()
         }
     }
+
+    /// 子类继承
+    /// - Parameter menuModel: 子项实体
+    open func click(menuModel: BaseGroupTableMenuModel) {
+
+    }
 }
 // MARK: - UITableViewDataSource
 extension BaseGroupTableMenuViewController: UITableViewDataSource {
@@ -96,13 +102,10 @@ extension BaseGroupTableMenuViewController: UITableViewDelegate {
         click(menuModel: menu[indexPath.section][indexPath.row])
     }
 
-    @objc open func click(menuModel: BaseGroupTableMenuModel) {
-
-    }
-
 }
 
-public class BaseGroupTableMenuModel: NSObject {
+/// BaseGroupTableMenu子项实体
+public struct BaseGroupTableMenuModel {
     /// 编码
     public var code: String
     /// 标题

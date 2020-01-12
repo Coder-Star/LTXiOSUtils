@@ -7,17 +7,23 @@
 
 import UIKit
 
-enum PageControlStyle {
-    case original      // 类似苹果原生效果
-    case square        // 方块样式
-    case bigSmall      // 大小切换样式
-    case ring          // 环形样式
-    case number        // 数字样式
+/// PageControl样式
+public enum PageControlStyle {
+    /// 类似苹果原生效果
+    case original
+    /// 方块样式
+    case square
+    /// 大小切换样式
+    case bigSmall
+    /// 环形样式
+    case ring
+    /// 数字样式
+    case number
 }
 
 private let curLabelTag = 100
 
-class PageControl: UIView {
+open class PageControl: UIView {
 
     // 总共有多少页(默认0页)
     open var numberOfPages = 0
@@ -37,13 +43,12 @@ class PageControl: UIView {
     open var currentSize: CGSize = CGSize(width: 10, height: 10)
     // 当前页字体(number 样式专用)
     open var currentFont: CGFloat = 17
-    // 普通页字体(number 样式专业)
+    // 普通页字体(number 样式专用)
     open var normalFont: CGFloat = 14
-
+    // pageControl的样式
+    open var style: PageControlStyle = .original
     // 间距
     fileprivate var margin: CGFloat = 0
-    // pageControl的样式
-    var style: PageControlStyle = .original
 
     // 初始化方法
     convenience init(frame: CGRect, style: PageControlStyle) {
@@ -162,7 +167,7 @@ class PageControl: UIView {
         }
     }
 
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         self.backgroundColor = UIColor.clear
         // 避免重复创建子控件
