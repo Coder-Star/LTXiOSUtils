@@ -39,7 +39,7 @@ open class PageControl: UIView {
     open var currentColor: UIColor = UIColor.white
     // 普通状态的尺寸
     open var normalSize: CGSize = CGSize(width: 10, height: 10)
-    // 当前状态的尺寸(适用于bigSmall样式)
+    // 当前状态的尺寸(适用于bigSmall样式，其他样式无效果)
     open var currentSize: CGSize = CGSize(width: 10, height: 10)
     // 当前页字体(number 样式专用)
     open var currentFont: CGFloat = 17
@@ -50,12 +50,13 @@ open class PageControl: UIView {
     // 间距
     fileprivate var margin: CGFloat = 0
 
-    // 初始化方法
-    convenience init(frame: CGRect, style: PageControlStyle) {
-        self.init(frame: frame)
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
         self.tag = -999     // 避免后面遍历tag混乱
         backgroundColor = UIColor.clear
-        self.style = style
+    }
+    required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     fileprivate func layoutPages() {
