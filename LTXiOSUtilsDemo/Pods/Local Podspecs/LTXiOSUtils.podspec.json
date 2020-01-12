@@ -27,6 +27,11 @@
       "name": "Core",
       "subspecs": [
         {
+          "name": "Scope",
+          "frameworks": "Foundation",
+          "source_files": "LTXiOSUtils/Classes/Core/Scope/*.swift"
+        },
+        {
           "name": "Extension",
           "frameworks": [
             "UIKit",
