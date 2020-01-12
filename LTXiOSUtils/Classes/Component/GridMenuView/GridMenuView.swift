@@ -20,6 +20,9 @@ import UIKit
 public class GridMenuView: UIView {
     // MARK: - 公开属性
     public weak var delegate:GridMenuViewItemDelegate?
+    public var heightInfo: CGFloat {
+        return viewHeight
+    }
 
     // MARK: - 私有属性
     private lazy var layout: UICollectionViewFlowLayout = {
@@ -30,14 +33,13 @@ public class GridMenuView: UIView {
         return layout
     }()
 
-    private var collectionView: UICollectionView!
+    private var collectionView: UICollectionView?
     private lazy var pageControl: PageControl = {
-        let pageControl = PageControl()
-        pageControl.currentPage = 0
+        let pageControl = PageControl(frame: CGRect.zero)
+        pageControl.style = .ring
         pageControl.currentColor = .blue
         pageControl.normorlColor = .lightGray
-        pageControl.currentSize = CGSize(width: 15, height: 5)
-        pageControl.normalSize = pageControl.currentSize
+        pageControl.normalSize = CGSize(width: 15, height: 5)
         return pageControl
     }()
 
@@ -47,6 +49,7 @@ public class GridMenuView: UIView {
     private var colCount: Int = 0
     private var menu: [GridMenuItem] = [GridMenuItem]()
     private var viewWidth: CGFloat = 0
+    private var viewHeight: CGFloat = 0
 
     private override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,7 +59,7 @@ public class GridMenuView: UIView {
         self.init()
         self.viewWidth = width
         self.colCount = col
-        self.rowCount = row
+        self.rowCount = min(row,Int(ceil(Float(menu.count)/Float((colCount)))))
         self.menu = menu
         initView()
     }
@@ -65,24 +68,25 @@ public class GridMenuView: UIView {
         let itemWidth = viewWidth / colCount.cgFloatValue
         let itemHeight = itemWidth
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: itemHeight * rowCount.cgFloatValue), collectionViewLayout: layout)
-        collectionView.register(DefaultGridMenuCell.self, forCellWithReuseIdentifier: DefaultGridMenuCell.reuseID)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "emptyCell")
-        collectionView.isPagingEnabled = true
-        collectionView.backgroundColor = UIColor.white.adapt()
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        self.addSubview(collectionView)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: itemHeight * rowCount.cgFloatValue), collectionViewLayout: layout)
+        collectionView?.register(DefaultGridMenuCell.self, forCellWithReuseIdentifier: DefaultGridMenuCell.reuseID)
+        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "emptyCell")
+        collectionView?.isPagingEnabled = true
+        collectionView?.backgroundColor = UIColor.white.adapt()
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
+        collectionView?.showsVerticalScrollIndicator = false
+        collectionView?.showsHorizontalScrollIndicator = false
+        self.addSubview(collectionView!)
         let pageControlCount = Int(ceil(Float(menu.count)/Float((rowCount*colCount))))
         if pageControlCount <= 1 {
-            self.frame.size = collectionView.frame.size
+            viewHeight = collectionView!.frame.height
         } else {
             pageControl.numberOfPages = pageControlCount
-            let pageControlWidth = pageControl.currentSize.width * pageControlCount.cgFloatValue + ((pageControlCount - 1) * 5).cgFloatValue
-            pageControl.frame = CGRect(x: (viewWidth - pageControlWidth) / 2, y: collectionView.frame.height + 5, width: pageControlWidth, height: 10)
+            let pageControlWidth = pageControl.normalSize.width * pageControlCount.cgFloatValue + ((pageControlCount - 1) * 5).cgFloatValue
+            pageControl.frame = CGRect(x: (viewWidth - pageControlWidth) / 2, y: collectionView!.frame.height + 5, width: pageControlWidth, height: 10)
             self.addSubview(pageControl)
+            viewHeight = collectionView!.frame.height + 20
         }
     }
 
@@ -95,7 +99,7 @@ public class GridMenuView: UIView {
 public extension GridMenuView {
     /// 刷新
     func reloadData() {
-        collectionView.reloadData()
+        collectionView?.reloadData()
     }
 
     /// 更新角标
@@ -104,7 +108,29 @@ public extension GridMenuView {
     ///   - code: 模块编码
     ///   - number: 数字
     func updateMark(code: String, number: Int) {
+        if let index = menu.compactMap({$0.code}).firstIndex(of: code) {
+            switch menu[index].markType {
+            case .point:
+                menu[index].markType = .point(isShow: number > 0)
+            case .number:
+                menu[index].markType = .number(number:number)
+            default:
+                break
+            }
+            reloadData()
+        }
+    }
 
+    /// 更新角标
+    /// 适用于红点样式
+    /// - Parameters:
+    ///   - code: 模块编码
+    ///   - number: 数字
+    func updateMark(code: String, isShow: Bool) {
+        if let index = menu.compactMap({$0.code}).firstIndex(of: code) {
+            menu[index].markType = .point(isShow: isShow)
+            reloadData()
+        }
     }
 
     /// 更新角标
@@ -113,7 +139,10 @@ public extension GridMenuView {
     ///   - code: 模块编码
     ///   - text: 文本内容
     func updateMark(code: String, text: String) {
-
+        if let index = menu.compactMap({$0.code}).firstIndex(of: code) {
+            menu[index].markType = .text(text: text)
+            reloadData()
+        }
     }
 
 }
@@ -147,13 +176,18 @@ extension GridMenuView: UICollectionViewDataSource {
 
 extension GridMenuView: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.gridMenuView?(self, selectedItemAt: convertDirectionCount(index: indexPath.item))
+        let index = convertDirectionCount(index: indexPath.item)
+        if index < menu.count {
+            delegate?.gridMenuView?(self, selectedItemAt: index)
+        }
     }
 
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let index = Int(collectionView.contentOffset.x / self.bounds.width)
-        pageControl.currentPage = index
-        print(index)
+        if let view = collectionView {
+            let index = Int(view.contentOffset.x / self.bounds.width)
+            pageControl.currentPage = index
+        }
+
     }
 }
 

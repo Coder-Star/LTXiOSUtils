@@ -22,7 +22,8 @@ public enum CornerMarkType {
 
 open class DefaultGridMenuCell: UICollectionViewCell {
     static let reuseID = "DefaultGridMenuCell"
-
+    /// 角标显示数字最大值，如果再比这个大，就显示99+的形式,为nil值不限制
+    public static let maxNumber:Int? = 99
     public var imageView: UIImageView = UIImageView()
     public var text = "" {
         didSet {
@@ -41,7 +42,6 @@ open class DefaultGridMenuCell: UICollectionViewCell {
     }
     public var markType: CornerMarkType = .number(number: 0) {
         didSet {
-            setBadgeView()
             setBadge()
         }
     }
@@ -57,30 +57,20 @@ open class DefaultGridMenuCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame:frame)
-        let imageWidth = frame.width - 30
-        let imageHeight = imageWidth
-        imageView.frame = CGRect(x: 5, y: 5, width: imageWidth, height: imageHeight)
-        imageView.layer.cornerRadius = 10
+        let labelHeight = 20.cgFloatValue
+        let imageHeight = frame.height - labelHeight - 20.cgFloatValue
+        let imageWidth = imageHeight
+        imageView.frame = CGRect(x: (frame.width - imageWidth)/2, y: 10, width: imageWidth, height: imageHeight)
+        imageView.layer.cornerRadius = 20
+        imageView.layer.masksToBounds = true
         self.addSubview(imageView)
-        label.frame = CGRect(x: 5, y: imageHeight + 10, width: imageWidth, height: 20)
+        label.frame = CGRect(x: 5, y: imageHeight + 15, width: frame.width - 10.cgFloatValue, height: labelHeight)
         self.addSubview(label)
-    }
 
-    private func setBadgeView() {
-        switch markType {
-        case .none:
-            if let view = badgeView {
-                view.removeFromSuperview()
-            }
-        default:
-            if badgeView == nil {
-                badgeView = JSBadgeView(parentView: imageView, alignment: .topRight)
-                badgeView?.badgePositionAdjustment = CGPoint(x: -5, y: 5)
-                badgeView?.badgeBackgroundColor = .red
-                badgeView?.badgeTextColor = .white
-                imageView.addSubview(badgeView!)
-            }
-        }
+        badgeView = JSBadgeView(parentView: self, alignment: .topRight)
+        badgeView?.badgePositionAdjustment = CGPoint(x: -25, y: 15)
+        badgeView?.badgeBackgroundColor = .red
+        badgeView?.badgeTextColor = .white
     }
 
     private func setBadge() {
@@ -88,8 +78,8 @@ open class DefaultGridMenuCell: UICollectionViewCell {
         case .none:
             badgeView?.badgeText = ""
         case .number(let number):
-            if number > 99 {
-                badgeView?.badgeText = "99+"
+            if let maxNumber = DefaultGridMenuCell.maxNumber , number > maxNumber {
+                badgeView?.badgeText = "\(maxNumber)+"
             } else if number <= 0 {
                 badgeView?.badgeText = ""
             } else {
