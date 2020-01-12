@@ -14,6 +14,7 @@ target 'LTXiOSUtilsDemo' do
 
   #'LTXiOSUtils/Component'
   pod 'MBProgressHUD','1.1.0'
+  pod 'JSBadgeView','2.0.0'
 
   #'LTXiOSUtils/Network'
   pod 'SwiftyJSON','5.0.0'

@@ -20,7 +20,8 @@ class ViewController: BaseGroupTableMenuViewController {
         let componetMenu = [
             BaseGroupTableMenuModel(code: "HUD", title: "HUD加载框"),
             BaseGroupTableMenuModel(code: "Pick", title: "选择器"),
-            BaseGroupTableMenuModel(code: "Component", title: "控件集锦")
+            BaseGroupTableMenuModel(code: "Component", title: "控件集锦"),
+            BaseGroupTableMenuModel(code: "Menu", title: "菜单")
         ]
         menu.append(componetMenu)
 
@@ -48,6 +49,8 @@ class ViewController: BaseGroupTableMenuViewController {
             navigationController?.pushViewController(ComponentCollectionsViewController(), animated: true)
         case "Extension":
             navigationController?.pushViewController(ExtensionExampleMenuViewController(), animated: true)
+        case "Menu":
+            navigationController?.pushViewController(GridMenuViewExampleViewController(), animated: true)
         default:
             HUD.showText("暂无此模块")
         }

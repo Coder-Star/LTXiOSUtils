@@ -85,6 +85,9 @@
         ],
         "MBProgressHUD": [
 
+        ],
+        "JSBadgeView": [
+
         ]
       },
       "source_files": "LTXiOSUtils/Classes/Component/**/*.swift"

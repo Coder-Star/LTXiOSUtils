@@ -105,6 +105,21 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.image` struct is generated, and contains static references to 1 images.
+  struct image {
+    /// Image `menuItem`.
+    static let menuItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "menuItem")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "menuItem", bundle: ..., traitCollection: ...)`
+    static func menuItem(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.menuItem, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
     /// This `R.string.localizable` struct is generated, and contains static references to 1 localization keys.
