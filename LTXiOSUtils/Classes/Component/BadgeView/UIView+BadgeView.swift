@@ -16,7 +16,7 @@ public extension Core where Base: UIView {
     }
 
     /// 添加带文本内容的Badge, 默认右上角, 红色, 18pts 
-    ///
+    /// 传入nil时显示红色背景
     /// Add Badge with text content, the default upper right corner, red backgroundColor, 18pts
     ///
     /// - Parameter text: 文本字符串
@@ -38,7 +38,7 @@ public extension Core where Base: UIView {
     }
 
     /// 添加带数字的Badge, 默认右上角,红色,18pts 
-    ///
+    /// 小于0时不显示
     /// Add the Badge with numbers, the default upper right corner, red backgroundColor, 18pts
     ///
     /// - Parameter number: 整形数字
