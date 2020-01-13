@@ -61,7 +61,7 @@ open class BadgeControl: UIControl {
     open var backgroundImage: UIImage? {
         didSet {
             imageView.image = backgroundImage
-            if let _ = backgroundImage {
+            if  backgroundImage != nil {
                 if let constraint = heightConstraint() {
                     badgeViewHeightConstraint = constraint
                     removeConstraint(constraint)

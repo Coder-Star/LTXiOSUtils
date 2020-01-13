@@ -12,6 +12,7 @@ private var kBadgeView = "kBadgeView"
 // MARK: - add Badge
 public extension Core where Base: UIView {
 
+    /// 角标view
     var badgeView: BadgeControl {
         return base.badgeView
     }
@@ -198,6 +199,7 @@ extension UIView {
 // MARK: - getter/setter
 extension UIView {
 
+    /// 角标view
     public var badgeView: BadgeControl {
         get {
             if let aValue = objc_getAssociatedObject(self, &kBadgeView) as? BadgeControl {
