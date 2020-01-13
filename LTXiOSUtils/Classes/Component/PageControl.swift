@@ -10,61 +10,63 @@ import UIKit
 /// PageControl样式
 public enum PageControlStyle {
     /// 类似苹果原生效果
-    case original
+    case original(circleSize: CGFloat)
     /// 方块样式
-    case square
+    case square(size: CGSize)
     /// 大小切换样式
-    case bigSmall
+    case bigSmall(bigSize: CGSize, smallSize: CGSize)
     /// 环形样式
-    case ring
+    case ring(circleSize: CGFloat)
     /// 数字样式
-    case number
+    case number(font: UIFont)
 }
 
 private let curLabelTag = 100
 
 open class PageControl: UIView {
 
-    // 总共有多少页(默认0页)
+    /// 总共有多少页(默认0页)
     open var numberOfPages = 0
-    // 当前是第几页
+    /// 当前是第几页
     open var currentPage = 0 {
         didSet {
             setPage()
         }
     }
-    // 普通状态的颜色
+    /// 普通状态的颜色
     open var normorlColor: UIColor = UIColor.lightGray
-    // 当前页的颜色
+    /// 当前页的颜色
     open var currentColor: UIColor = UIColor.white
-    // 普通状态的尺寸
-    open var normalSize: CGSize = CGSize(width: 10, height: 10)
-    // 当前状态的尺寸(适用于bigSmall样式，其他样式无效果)
-    open var currentSize: CGSize = CGSize(width: 10, height: 10)
-    // 当前页字体(number 样式专用)
-    open var currentFont: CGFloat = 17
-    // 普通页字体(number 样式专用)
-    open var normalFont: CGFloat = 14
-    // pageControl的样式
-    open var style: PageControlStyle = .original
-    // 间距
-    fileprivate var margin: CGFloat = 0
+    /// 样式
+    open var style: PageControlStyle = .square(size: CGSize(width: 15, height: 5)) {
+        didSet {
+            setCurrentAndNormalSize()
+        }
+    }
+    /// 间距
+    open var margin: CGFloat = 5
+
+    /// 普通状态的尺寸
+    private var normalSize = CGSize.zero
+    /// 当前状态的尺寸
+    private var currentSize = CGSize.zero
+    /// 数字样式字体
+    private var numberFont = UIFont.systemFont(ofSize: 16)
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        self.tag = -999     // 避免后面遍历tag混乱
+        setCurrentAndNormalSize()
+        self.tag = -999
         backgroundColor = UIColor.clear
     }
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    fileprivate func layoutPages() {
+    private func layoutPages() {
         if numberOfPages <= 0 { return }
-        // 计算出间距(number样式无用)
-        margin = (self.frame.width - normalSize.width * CGFloat(numberOfPages))/(CGFloat(numberOfPages) + 1)
         switch style {
-        case .original, .square, .ring:
+        case .original , .square , .ring:
             layoutOrgPages()
         case .bigSmall:
             layoutBigSmallPages()
@@ -73,37 +75,66 @@ open class PageControl: UIView {
         }
     }
 
+    private func setCurrentAndNormalSize() {
+        switch style {
+        case .original(let circleSize):
+            normalSize = CGSize(width: circleSize, height: circleSize)
+            currentSize = CGSize(width: circleSize, height: circleSize)
+        case .square(let size):
+            normalSize = size
+            currentSize = size
+        case .ring(let circleSize):
+            normalSize = CGSize(width: circleSize, height: circleSize)
+            currentSize = CGSize(width: circleSize, height: circleSize)
+        case .bigSmall(let bigSize , let smallSize):
+            currentSize = bigSize
+            normalSize = smallSize
+        case .number(let font):
+            numberFont = font
+        }
+    }
+
     // 布局默认样式 ring样式 square样式
-    fileprivate func layoutOrgPages() {
+    private func layoutOrgPages() {
         let y: CGFloat = (self.frame.height - normalSize.height)*0.5
         for i in 0..<numberOfPages {
             let point = UIView(frame: CGRect(x: CGFloat(i) * (margin + normalSize.width) + margin, y: y, width: normalSize.width, height: normalSize.height))
             point.tag = i
             point.backgroundColor = i == currentPage ? currentColor : normorlColor
-            if style == .original {
-                point.layer.cornerRadius = normalSize.height * 0.5
+            switch style {
+            case .original(let circleSize):
+                point.layer.cornerRadius = circleSize * 0.5
                 point.layer.masksToBounds = true
-            }
-            if style == .ring {
+            case .square:
                 if i != currentPage {
                     point.backgroundColor = UIColor.clear
+                    point.layer.borderWidth = 1.0
+                    point.layer.borderColor = normorlColor.cgColor
+                } else {
+                    point.backgroundColor = currentColor
+                }
+                point.layer.cornerRadius = 2
+                point.layer.masksToBounds = true
+
+            case .ring:
+                if i != currentPage {
+                    point.backgroundColor = UIColor.clear
+                    point.layer.borderWidth = 1.0
+                    point.layer.borderColor = normorlColor.cgColor
                 } else {
                     point.backgroundColor = currentColor
                 }
                 point.layer.cornerRadius = normalSize.height * 0.5
-                point.layer.borderWidth = 1.0
-                point.layer.borderColor = normorlColor.cgColor
                 point.layer.masksToBounds = true
-            }
-            if style == .square {
-                point.layer.cornerRadius = 2
+            default:
+                break
             }
             self.addSubview(point)
         }
     }
 
     // 布局bigSmall样式
-    fileprivate func layoutBigSmallPages() {
+    private func layoutBigSmallPages() {
         let y1: CGFloat = (self.frame.height - normalSize.height)*0.5
         let y2: CGFloat = (self.frame.height - currentSize.height)*0.5
         for i in 0..<numberOfPages {
@@ -117,50 +148,68 @@ open class PageControl: UIView {
     }
 
     // 布局number样式
-    fileprivate func layoutNumberPages() {
-        let curLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width*0.5, height: self.frame.height))
+    private func layoutNumberPages() {
+        let curLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width*0.4, height: self.frame.height))
         curLabel.tag = curLabelTag
         curLabel.text = "\(currentPage + 1) "
         curLabel.textColor = currentColor
         curLabel.textAlignment = .right
-        curLabel.font = UIFont.systemFont(ofSize: currentFont)
-        let totalLabel = UILabel(frame: CGRect(x: self.frame.width*0.5, y: 0, width: self.frame.width*0.5, height: self.frame.height))
+        curLabel.adjustsFontSizeToFitWidth = true
+        curLabel.font = UIFont.systemFont(ofSize: 16)
+        let totalLabel = UILabel(frame: CGRect(x: self.frame.width*0.4, y: 0, width: self.frame.width*0.6, height: self.frame.height))
         totalLabel.textColor = normorlColor
         totalLabel.textAlignment = .left
+        totalLabel.adjustsFontSizeToFitWidth = true
         totalLabel.text = " / \(numberOfPages)"
-        totalLabel.font = UIFont.systemFont(ofSize: normalFont)
+        totalLabel.font = UIFont.systemFont(ofSize: 16)
         self.addSubview(curLabel)
         self.addSubview(totalLabel)
     }
 
     // 页码切换
-    fileprivate func setPage() {
+    private func setPage() {
         if self.subviews.isEmpty { return }
-        // 索引容错
         if currentPage > numberOfPages, currentPage < 0 { return }
         switch style {
         case .original, .bigSmall, .square :
             for view in self.subviews {
                 view.backgroundColor = normorlColor
-                if style == .bigSmall {
+                switch style {
+                case .bigSmall:
                     view.bounds = CGRect(x: 0, y: 0, width: normalSize.width, height: normalSize.height)
                     view.layer.cornerRadius = normalSize.width * 0.5
                     view.layer.masksToBounds = true
+                case .square:
+                    view.layer.cornerRadius = 2
+                    view.layer.masksToBounds = true
+                    view.layer.borderWidth = 1.0
+                    view.layer.borderColor = normorlColor.cgColor
+                    view.backgroundColor = UIColor.clear
+                default:
+                    break
                 }
             }
             let curView = self.viewWithTag(currentPage)!
             curView.backgroundColor = currentColor
-            if style == .bigSmall {
+            switch style {
+            case .bigSmall:
                 curView.bounds = CGRect(x: 0, y: 0, width: currentSize.width, height: currentSize.height)
                 curView.layer.cornerRadius = currentSize.width * 0.5
                 curView.layer.masksToBounds = true
+            case .square:
+                curView.layer.borderWidth = 0
+            default:
+                break
             }
         case .ring:
             for view in self.subviews {
                 view.backgroundColor = UIColor.clear
+                view.layer.borderWidth = 1.0
+                view.layer.borderColor = normorlColor.cgColor
             }
             let curView = self.viewWithTag(currentPage)!
             curView.backgroundColor = currentColor
+            curView.layer.borderWidth = 0
         case .number:
             if let label = self.viewWithTag(curLabelTag) as? UILabel {
                 label.text = "\(currentPage + 1) "
@@ -171,9 +220,16 @@ open class PageControl: UIView {
     override open func layoutSubviews() {
         super.layoutSubviews()
         self.backgroundColor = UIColor.clear
-        // 避免重复创建子控件
         if self.subviews.isEmpty {
             layoutPages()
         }
+    }
+}
+
+extension PageControl {
+    var frameSize: CGSize {
+        let frameWidth = currentSize.width + (numberOfPages - 1).cgFloatValue * normalSize.width + (numberOfPages + 1).cgFloatValue * margin
+        let frameHeight = max(currentSize.height , normalSize.height) + 5
+        return CGSize(width: frameWidth, height: frameHeight)
     }
 }

@@ -28,9 +28,9 @@ Pod::Spec.new do |s|
       extension.source_files = 'LTXiOSUtils/Classes/Core/Extension/*.swift'
     end
     # 协议
-    core.subspec 'Protocol' do |protocol|
-      protocol.frameworks = "Foundation"
-      protocol.source_files = 'LTXiOSUtils/Classes/Core/Protocol/*.swift'
+    core.subspec 'Util' do |util|
+      util.frameworks = "Foundation"
+      util.source_files = 'LTXiOSUtils/Classes/Core/Util/*.swift'
     end
   end
 

@@ -19,11 +19,11 @@ PODS:
     - MBProgressHUD
   - LTXiOSUtils/Core (0.0.1):
     - LTXiOSUtils/Core/Extension (= 0.0.1)
-    - LTXiOSUtils/Core/Protocol (= 0.0.1)
     - LTXiOSUtils/Core/Scope (= 0.0.1)
+    - LTXiOSUtils/Core/Util (= 0.0.1)
   - LTXiOSUtils/Core/Extension (0.0.1)
-  - LTXiOSUtils/Core/Protocol (0.0.1)
   - LTXiOSUtils/Core/Scope (0.0.1)
+  - LTXiOSUtils/Core/Util (0.0.1)
   - LTXiOSUtils/Network (0.0.1):
     - Alamofire
     - LTXiOSUtils/Component
@@ -150,7 +150,7 @@ SPEC CHECKSUMS:
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
-  LTXiOSUtils: 0be536e914366fa1515e770a2c8aa67b352ef06d
+  LTXiOSUtils: 586a02db3fe66e96a8c57f38c3e6e02f290da1ac
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   PluggableAppDelegate: 94c85bf821d85661c843a86e1aafe0cc12a62634

@@ -8,6 +8,14 @@
 import Foundation
 import UIKit
 
+/// 显示模式
+public enum GridMenuViewMode {
+    /// 横向分页
+    case horizontalPage
+    /// 横向滚动
+    case horizontalScroll
+}
+
 /// GridMenuView代理
 @objc public protocol GridMenuViewItemDelegate {
     /// 点击事件
@@ -19,7 +27,9 @@ import UIKit
 
 public class GridMenuView: UIView {
     // MARK: - 公开属性
+    /// 代理
     public weak var delegate:GridMenuViewItemDelegate?
+    /// 布局后GridMenuView高度
     public var heightInfo: CGFloat {
         return viewHeight
     }
@@ -36,10 +46,8 @@ public class GridMenuView: UIView {
     private var collectionView: UICollectionView?
     private lazy var pageControl: PageControl = {
         let pageControl = PageControl(frame: CGRect.zero)
-        pageControl.style = .ring
         pageControl.currentColor = .blue
         pageControl.normorlColor = .lightGray
-        pageControl.normalSize = CGSize(width: 15, height: 5)
         return pageControl
     }()
 
@@ -47,15 +55,25 @@ public class GridMenuView: UIView {
     private var rowCount: Int = 0
     /// 列
     private var colCount: Int = 0
+    /// 菜单
     private var menu: [GridMenuItem] = [GridMenuItem]()
+    /// 页面宽度
     private var viewWidth: CGFloat = 0
+    /// 页面高度
     private var viewHeight: CGFloat = 0
+    /// 模式
+    private var mode:GridMenuViewMode = .horizontalPage
 
     private override init(frame: CGRect) {
         super.init(frame: frame)
     }
 
-    public init(width: CGFloat, row: Int, col: Int, menu: [GridMenuItem]) {
+    convenience public init(width: CGFloat, row: Int, col: Int, menu: [GridMenuItem]) {
+        let pageStyle: PageControlStyle = .square(size: CGSize(width: 15, height: 5))
+        self.init(width: width, row: row, col: col, menu: menu, mode: .horizontalPage, pageStyle: pageStyle)
+    }
+
+    convenience private init(width: CGFloat, row: Int, col: Int, menu: [GridMenuItem], mode: GridMenuViewMode, pageStyle: PageControlStyle) {
         self.init()
         self.viewWidth = width
         self.colCount = col
@@ -83,10 +101,9 @@ public class GridMenuView: UIView {
             viewHeight = collectionView!.frame.height
         } else {
             pageControl.numberOfPages = pageControlCount
-            let pageControlWidth = pageControl.normalSize.width * pageControlCount.cgFloatValue + ((pageControlCount - 1) * 5).cgFloatValue
-            pageControl.frame = CGRect(x: (viewWidth - pageControlWidth) / 2, y: collectionView!.frame.height + 5, width: pageControlWidth, height: 10)
+            pageControl.frame = CGRect(x: (viewWidth - pageControl.frameSize.width) / 2, y: collectionView!.frame.height + 5, width: pageControl.frameSize.width, height: pageControl.frameSize.height)
             self.addSubview(pageControl)
-            viewHeight = collectionView!.frame.height + 20
+            viewHeight = collectionView!.frame.height + pageControl.frameSize.height + 10
         }
     }
 
@@ -97,6 +114,7 @@ public class GridMenuView: UIView {
 
 // MARK: - 公开方法
 public extension GridMenuView {
+
     /// 刷新
     func reloadData() {
         collectionView?.reloadData()

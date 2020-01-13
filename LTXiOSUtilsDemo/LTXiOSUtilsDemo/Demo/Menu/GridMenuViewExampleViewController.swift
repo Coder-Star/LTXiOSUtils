@@ -27,7 +27,7 @@ class GridMenuViewExampleViewController: BaseUIViewController {
         super.viewDidLoad()
         title = "格子式菜单"
         view.layoutIfNeeded()
-        let menuView = GridMenuView(width: baseView.width, row: 2, col: 4, menu: menu)
+        let menuView = GridMenuView(width: baseView.width, row: 1, col: 4, menu: menu)
         menuView.delegate = self
         baseView.addSubview(menuView)
         menuView.clipsToBounds = true
