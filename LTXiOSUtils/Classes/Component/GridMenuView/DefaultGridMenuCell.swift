@@ -23,7 +23,7 @@ public enum CornerMarkType {
 open class DefaultGridMenuCell: UICollectionViewCell {
     static let reuseID = "DefaultGridMenuCell"
     /// 角标显示数字最大值，如果再比这个大，就显示99+的形式,为nil值不限制
-    public static let maxNumber:Int? = 99
+    public static let maxNumber: Int? = 99
     public var imageView: UIImageView = UIImageView()
     public var text = "" {
         didSet {
@@ -45,7 +45,7 @@ open class DefaultGridMenuCell: UICollectionViewCell {
             setBadge()
         }
     }
-    private var badgeView: JSBadgeView?
+    private var itemBadgeView: JSBadgeView?
     private lazy var label: UILabel = {
         let label = UILabel()
         label.adjustsFontSizeToFitWidth = true
@@ -56,7 +56,7 @@ open class DefaultGridMenuCell: UICollectionViewCell {
     }()
 
     override init(frame: CGRect) {
-        super.init(frame:frame)
+        super.init(frame: frame)
         let labelHeight = 20.cgFloatValue
         let imageHeight = frame.height - labelHeight - 20.cgFloatValue
         let imageWidth = imageHeight
@@ -67,32 +67,32 @@ open class DefaultGridMenuCell: UICollectionViewCell {
         label.frame = CGRect(x: 5, y: imageHeight + 15, width: frame.width - 10.cgFloatValue, height: labelHeight)
         self.addSubview(label)
 
-        badgeView = JSBadgeView(parentView: self, alignment: .topRight)
-        badgeView?.badgePositionAdjustment = CGPoint(x: -25, y: 15)
-        badgeView?.badgeBackgroundColor = .red
-        badgeView?.badgeTextColor = .white
+        itemBadgeView = JSBadgeView(parentView: self, alignment: .topRight)
+        itemBadgeView?.badgePositionAdjustment = CGPoint(x: -25, y: 15)
+        itemBadgeView?.badgeBackgroundColor = .red
+        itemBadgeView?.badgeTextColor = .white
     }
 
     private func setBadge() {
         switch markType {
         case .none:
-            badgeView?.badgeText = ""
+            itemBadgeView?.badgeText = ""
         case .number(let number):
-            if let maxNumber = DefaultGridMenuCell.maxNumber , number > maxNumber {
-                badgeView?.badgeText = "\(maxNumber)+"
+            if let maxNumber = DefaultGridMenuCell.maxNumber, number > maxNumber {
+                itemBadgeView?.badgeText = "\(maxNumber)+"
             } else if number <= 0 {
-                badgeView?.badgeText = ""
+                itemBadgeView?.badgeText = ""
             } else {
-                badgeView?.badgeText = "\(number)"
+                itemBadgeView?.badgeText = "\(number)"
             }
         case .point(let isShow):
             if isShow {
-                badgeView?.badgeText = " "
+                itemBadgeView?.badgeText = " "
             } else {
-                badgeView?.badgeText = ""
+                itemBadgeView?.badgeText = ""
             }
         case .text(let text):
-            badgeView?.badgeText = text
+            itemBadgeView?.badgeText = text
         }
     }
 
