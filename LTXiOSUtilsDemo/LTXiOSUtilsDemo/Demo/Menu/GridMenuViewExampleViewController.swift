@@ -26,11 +26,13 @@ class GridMenuViewExampleViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "格子式菜单"
-        view.layoutIfNeeded()
-        var pageStyle: PageControlStyle = .ring(circleSize: 5)
-        pageStyle = .original(circleSize: 5)
-        pageStyle = .bigSmall(bigSize: CGSize(width: 10, height: 10), smallSize: CGSize(width: 5, height: 5))
-        pageStyle = .number(font: UIFont.systemFont(ofSize: 16), color: .black)
+        baseView.layoutIfNeeded()
+
+        let pageStyle: PageControlStyle = .square(size: CGSize(width: 15, height: 5))
+//        pageStyle = .ring(circleSize: 5)
+//        pageStyle = .original(circleSize: 5)
+//        pageStyle = .number(font: UIFont.systemFont(ofSize: 16), color: .black)
+
         let menuView = GridMenuView(width: baseView.width, row: 2, col: 4, menu: menu, pageStyle: pageStyle)
         menuView.delegate = self
         baseView.addSubview(menuView)
