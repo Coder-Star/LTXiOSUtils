@@ -40,9 +40,9 @@
           "source_files": "LTXiOSUtils/Classes/Core/Extension/*.swift"
         },
         {
-          "name": "Protocol",
+          "name": "Util",
           "frameworks": "Foundation",
-          "source_files": "LTXiOSUtils/Classes/Core/Protocol/*.swift"
+          "source_files": "LTXiOSUtils/Classes/Core/Util/*.swift"
         }
       ]
     },
