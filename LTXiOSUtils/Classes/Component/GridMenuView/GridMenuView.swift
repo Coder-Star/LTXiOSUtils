@@ -68,13 +68,39 @@ public class GridMenuView: UIView {
         super.init(frame: frame)
     }
 
+    /// 便利构造函数
+    /// - Parameters:
+    ///   - width: 页面宽度
+    ///   - row: 行数
+    ///   - col: 列数
+    ///   - menu: 菜单
     convenience public init(width: CGFloat, row: Int, col: Int, menu: [GridMenuItem]) {
         let pageStyle: PageControlStyle = .square(size: CGSize(width: 15, height: 5))
         self.init(width: width, row: row, col: col, menu: menu, mode: .horizontalPage, pageStyle: pageStyle)
     }
 
+    /// 便利构造函数
+    /// - Parameters:
+    ///   - width: 页面宽度
+    ///   - row: 行数
+    ///   - col: 列数
+    ///   - menu: 菜单
+    ///   - pageStyle: 分页样式
+    convenience public init(width: CGFloat, row: Int, col: Int, menu: [GridMenuItem], pageStyle: PageControlStyle) {
+        self.init(width: width, row: row, col: col, menu: menu, mode: .horizontalPage, pageStyle: pageStyle)
+    }
+
+    /// 便利构造函数
+    /// - Parameters:
+    ///   - width: 页面宽度
+    ///   - row: 行数
+    ///   - col: 列数
+    ///   - menu: 菜单
+    ///   - mode: 模式
+    ///   - pageStyle: 分页样式
     convenience private init(width: CGFloat, row: Int, col: Int, menu: [GridMenuItem], mode: GridMenuViewMode, pageStyle: PageControlStyle) {
         self.init()
+        pageControl.style = pageStyle
         self.viewWidth = width
         self.colCount = col
         self.rowCount = min(row,Int(ceil(Float(menu.count)/Float((colCount)))))
