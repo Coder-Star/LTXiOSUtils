@@ -9,6 +9,7 @@ import UIKit
 
 public extension Core where Base: UITabBarItem {
 
+    /// 角标view
     var badgeView: BadgeControl {
         return _bottomView.core.badgeView
     }

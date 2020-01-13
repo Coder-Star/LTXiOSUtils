@@ -7,8 +7,12 @@
 
 import UIKit
 
+/// 角标伸缩模式
 public enum BadgeViewFlexMode {
-    case head    // 左伸缩 Head Flex    : <==●
-    case tail    // 右伸缩 Tail Flex    : ●==>
-    case middle  // 左右伸缩 Middle Flex : <=●=>
+    /// 左伸缩 Head Flex    : <==●
+    case head
+    /// 右伸缩 Tail Flex    : ●==>
+    case tail
+    /// 左右伸缩 Middle Flex : <=●=>
+    case middle
 }
