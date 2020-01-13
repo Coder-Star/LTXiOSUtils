@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import JSBadgeView
 
 /// 角标显示样式
 public enum CornerMarkType {
@@ -45,7 +44,6 @@ open class DefaultGridMenuCell: UICollectionViewCell {
             setBadge()
         }
     }
-    private var itemBadgeView: JSBadgeView?
     private lazy var label: UILabel = {
         let label = UILabel()
         label.adjustsFontSizeToFitWidth = true
@@ -66,33 +64,33 @@ open class DefaultGridMenuCell: UICollectionViewCell {
         self.addSubview(imageView)
         label.frame = CGRect(x: 5, y: imageHeight + 15, width: frame.width - 10.cgFloatValue, height: labelHeight)
         self.addSubview(label)
-
-        itemBadgeView = JSBadgeView(parentView: self, alignment: .topRight)
-        itemBadgeView?.badgePositionAdjustment = CGPoint(x: -25, y: 15)
-        itemBadgeView?.badgeBackgroundColor = .red
-        itemBadgeView?.badgeTextColor = .white
+        self.core.setBadge(flexMode: .middle)
+        self.core.moveBadge(x: -25, y: 15)
     }
 
     private func setBadge() {
         switch markType {
         case .none:
-            itemBadgeView?.badgeText = ""
+            self.core.hiddenBadge()
         case .number(let number):
             if let maxNumber = DefaultGridMenuCell.maxNumber, number > maxNumber {
-                itemBadgeView?.badgeText = "\(maxNumber)+"
+                self.core.setBadge(height: 18)
+                self.core.addBadge(text: "\(maxNumber)+")
             } else if number <= 0 {
-                itemBadgeView?.badgeText = ""
+                self.core.hiddenBadge()
             } else {
-                itemBadgeView?.badgeText = "\(number)"
+                self.core.setBadge(height: 18)
+                self.core.addBadge(number: number)
             }
         case .point(let isShow):
             if isShow {
-                itemBadgeView?.badgeText = " "
+                self.core.addDot(color: .red)
             } else {
-                itemBadgeView?.badgeText = ""
+                self.core.hiddenBadge()
             }
         case .text(let text):
-            itemBadgeView?.badgeText = text
+             self.core.setBadge(height: 18)
+             self.core.addBadge(text: text)
         }
     }
 

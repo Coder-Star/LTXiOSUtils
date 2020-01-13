@@ -2,7 +2,6 @@ PODS:
   - Alamofire (4.9.1)
   - GDPerformanceView-Swift (2.0.3)
   - IQKeyboardManagerSwift (6.5.4)
-  - JSBadgeView (2.0.0)
   - KeychainAccess (4.1.0)
   - Kingfisher (5.12.0):
     - Kingfisher/Core (= 5.12.0)
@@ -15,7 +14,6 @@ PODS:
     - LTXiOSUtils/Resource (= 0.0.1)
     - LTXiOSUtils/ViewController (= 0.0.1)
   - LTXiOSUtils/Component (0.0.1):
-    - JSBadgeView
     - LTXiOSUtils/Core
     - LTXiOSUtils/Resource
     - MBProgressHUD
@@ -90,7 +88,6 @@ DEPENDENCIES:
   - Alamofire (= 4.9.1)
   - GDPerformanceView-Swift (= 2.0.3)
   - IQKeyboardManagerSwift (= 6.5.4)
-  - JSBadgeView (= 2.0.0)
   - KeychainAccess (= 4.1.0)
   - Kingfisher (= 5.12.0)
   - Localize-Swift (= 3.1.0)
@@ -135,7 +132,6 @@ SPEC REPOS:
     - "UITextView+Placeholder"
     - ZYCornerRadius
   trunk:
-    - JSBadgeView
     - KeychainAccess
     - PluggableAppDelegate
     - ReachabilitySwift
@@ -151,11 +147,10 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   GDPerformanceView-Swift: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
-  JSBadgeView: 3f5691b7d1bfacfb0237d0eb3b8b1f9a10ecb3f7
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
-  LTXiOSUtils: 5a9f9bd3c1b99f95e197ed1b9936f0d6baee74cd
+  LTXiOSUtils: 0be536e914366fa1515e770a2c8aa67b352ef06d
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   PluggableAppDelegate: 94c85bf821d85661c843a86e1aafe0cc12a62634
@@ -177,6 +172,6 @@ SPEC CHECKSUMS:
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 340fd775ba57172a9d4c697363c0423f281e3f85
+PODFILE CHECKSUM: 9f0c13b4cc0c92a95e662a41c645f01bfbd68cdc
 
 COCOAPODS: 1.8.4
