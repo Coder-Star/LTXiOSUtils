@@ -13,8 +13,6 @@ public enum PageControlStyle {
     case original(circleSize: CGFloat)
     /// 方块样式
     case square(size: CGSize)
-    /// 大小切换样式
-    case bigSmall(bigSize: CGSize, smallSize: CGSize)
     /// 环形样式
     case ring(circleSize: CGFloat)
     /// 数字样式
@@ -72,8 +70,6 @@ open class PageControl: UIView {
         switch style {
         case .original, .square, .ring:
             layoutOrgPages()
-        case .bigSmall:
-            layoutBigSmallPages()
         case .number:
             layoutNumberPages()
         }
@@ -90,9 +86,6 @@ open class PageControl: UIView {
         case .ring(let circleSize):
             normalSize = CGSize(width: circleSize, height: circleSize)
             currentSize = CGSize(width: circleSize, height: circleSize)
-        case .bigSmall(let bigSize, let smallSize):
-            currentSize = bigSize
-            normalSize = smallSize
         case .number(let font, let color):
             numberLabel.font = font
             numberLabel.textColor = color
@@ -155,7 +148,6 @@ open class PageControl: UIView {
             let pointW = i == currentPage ? currentSize.width : normalSize.width
             let pointH = i == currentPage ? currentSize.height : normalSize.height
             let point = UIView(frame: CGRect(x: pointX, y: pointY, width: pointW, height: pointH))
-            print(point)
             point.tag = i
             point.backgroundColor = i == currentPage ? currentColor : normorlColor
             point.layer.cornerRadius = i == currentPage ? currentSize.height * 0.5 : normalSize.height * 0.5
@@ -175,14 +167,10 @@ open class PageControl: UIView {
         if self.subviews.isEmpty { return }
         if currentPage > numberOfPages, currentPage < 0 { return }
         switch style {
-        case .original, .bigSmall, .square :
+        case .original, .square :
             for view in self.subviews {
                 view.backgroundColor = normorlColor
                 switch style {
-                case .bigSmall:
-                    view.bounds = CGRect(x: 0, y: 0, width: normalSize.width, height: normalSize.height)
-                    view.layer.cornerRadius = normalSize.width * 0.5
-                    view.layer.masksToBounds = true
                 case .square:
                     view.layer.cornerRadius = 2
                     view.layer.masksToBounds = true
@@ -196,10 +184,6 @@ open class PageControl: UIView {
             let curView = self.viewWithTag(currentPage)!
             curView.backgroundColor = currentColor
             switch style {
-            case .bigSmall:
-                curView.bounds = CGRect(x: 0, y: 0, width: currentSize.width, height: currentSize.height)
-                curView.layer.cornerRadius = currentSize.width * 0.5
-                curView.layer.masksToBounds = true
             case .square:
                 curView.layer.borderWidth = 0
             default:
