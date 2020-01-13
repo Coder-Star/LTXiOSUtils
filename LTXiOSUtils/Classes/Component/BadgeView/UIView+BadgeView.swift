@@ -7,8 +7,6 @@
 
 import UIKit
 
-private var kBadgeView = "kBadgeView"
-
 // MARK: - add Badge
 public extension Core where Base: UIView {
 
@@ -199,10 +197,14 @@ extension UIView {
 // MARK: - getter/setter
 extension UIView {
 
+    private struct UIViewAssociatedKeyBadgeView {
+        static var key: Void?
+    }
+
     /// 角标view
     public var badgeView: BadgeControl {
         get {
-            if let aValue = objc_getAssociatedObject(self, &kBadgeView) as? BadgeControl {
+            if let aValue = objc_getAssociatedObject(self, &UIViewAssociatedKeyBadgeView.key) as? BadgeControl {
                 return aValue
             } else {
                 let badgeControl = BadgeControl.default()
@@ -214,7 +216,7 @@ extension UIView {
             }
         }
         set {
-            objc_setAssociatedObject(self, &kBadgeView, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &UIViewAssociatedKeyBadgeView.key, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 
