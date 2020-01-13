@@ -5,14 +5,28 @@
 //  Created by 李天星 on 2020/1/12.
 //
 
+//示例Demo
+//view = UIView, UITabBarItem, UIBarButtonItem及其子类
+//view.core.addBadge(text: text)
+
 import UIKit
+
+/// 角标伸缩模式
+public enum BadgeViewFlexMode {
+    /// 左伸缩 Head Flex    : <==●
+    case head
+    /// 右伸缩 Tail Flex    : ●==>
+    case tail
+    /// 左右伸缩 Middle Flex : <=●=>
+    case middle
+}
 
 open class BadgeControl: UIControl {
 
     /// 记录Badge的偏移量 Record the offset of Badge
     public var offset: CGPoint = CGPoint(x: 0, y: 0)
 
-    /// Badge伸缩的方向, Default is PPBadgeViewFlexModeTail
+    /// Badge伸缩的方向, Default is BadgeViewFlexModeTail
     public var flexMode: BadgeViewFlexMode = .tail
 
     private lazy var textLabel: UILabel = UILabel()
