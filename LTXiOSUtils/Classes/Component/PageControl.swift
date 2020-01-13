@@ -18,10 +18,8 @@ public enum PageControlStyle {
     /// 环形样式
     case ring(circleSize: CGFloat)
     /// 数字样式
-    case number(font: UIFont)
+    case number(font: UIFont, color: UIColor)
 }
-
-private let curLabelTag = 100
 
 open class PageControl: UIView {
 
@@ -50,8 +48,14 @@ open class PageControl: UIView {
     private var normalSize = CGSize.zero
     /// 当前状态的尺寸
     private var currentSize = CGSize.zero
-    /// 数字样式字体
-    private var numberFont = UIFont.systemFont(ofSize: 16)
+    /// 数字样式tag
+    private let curLabelTag = -100000
+
+    private lazy var numberLabel: UILabel = {
+        let numberLabel = UILabel(frame: CGRect.zero)
+        numberLabel.textAlignment = .center
+        return numberLabel
+    }()
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,7 +70,7 @@ open class PageControl: UIView {
     private func layoutPages() {
         if numberOfPages <= 0 { return }
         switch style {
-        case .original , .square , .ring:
+        case .original, .square, .ring:
             layoutOrgPages()
         case .bigSmall:
             layoutBigSmallPages()
@@ -86,11 +90,14 @@ open class PageControl: UIView {
         case .ring(let circleSize):
             normalSize = CGSize(width: circleSize, height: circleSize)
             currentSize = CGSize(width: circleSize, height: circleSize)
-        case .bigSmall(let bigSize , let smallSize):
+        case .bigSmall(let bigSize, let smallSize):
             currentSize = bigSize
             normalSize = smallSize
-        case .number(let font):
-            numberFont = font
+        case .number(let font, let color):
+            numberLabel.font = font
+            numberLabel.textColor = color
+            numberLabel.tag = curLabelTag
+            numberLabel.frame = CGRect(x: 0.cgFloatValue, y: 0.cgFloatValue, width: 100, height: 25)
         }
     }
 
@@ -138,7 +145,17 @@ open class PageControl: UIView {
         let y1: CGFloat = (self.frame.height - normalSize.height)*0.5
         let y2: CGFloat = (self.frame.height - currentSize.height)*0.5
         for i in 0..<numberOfPages {
-            let point = UIView(frame: CGRect(x: CGFloat(i) * (margin + normalSize.width) + margin, y: i == currentPage ? y2 : y1, width: i == currentPage ? currentSize.width : normalSize.width, height: i == currentPage ? currentSize.height : normalSize.height))
+            var pointX = 0.cgFloatValue
+            if i <= currentPage {
+                pointX = i.cgFloatValue * (margin + normalSize.width) + margin
+            } else {
+                pointX = i.cgFloatValue * margin + (i - 1).cgFloatValue * normalSize.width + currentSize.width + margin
+            }
+            let pointY = i == currentPage ? y2 : y1
+            let pointW = i == currentPage ? currentSize.width : normalSize.width
+            let pointH = i == currentPage ? currentSize.height : normalSize.height
+            let point = UIView(frame: CGRect(x: pointX, y: pointY, width: pointW, height: pointH))
+            print(point)
             point.tag = i
             point.backgroundColor = i == currentPage ? currentColor : normorlColor
             point.layer.cornerRadius = i == currentPage ? currentSize.height * 0.5 : normalSize.height * 0.5
@@ -149,21 +166,8 @@ open class PageControl: UIView {
 
     // 布局number样式
     private func layoutNumberPages() {
-        let curLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width*0.4, height: self.frame.height))
-        curLabel.tag = curLabelTag
-        curLabel.text = "\(currentPage + 1) "
-        curLabel.textColor = currentColor
-        curLabel.textAlignment = .right
-        curLabel.adjustsFontSizeToFitWidth = true
-        curLabel.font = UIFont.systemFont(ofSize: 16)
-        let totalLabel = UILabel(frame: CGRect(x: self.frame.width*0.4, y: 0, width: self.frame.width*0.6, height: self.frame.height))
-        totalLabel.textColor = normorlColor
-        totalLabel.textAlignment = .left
-        totalLabel.adjustsFontSizeToFitWidth = true
-        totalLabel.text = " / \(numberOfPages)"
-        totalLabel.font = UIFont.systemFont(ofSize: 16)
-        self.addSubview(curLabel)
-        self.addSubview(totalLabel)
+        numberLabel.text = "\(currentPage + 1) / \(numberOfPages)"
+        self.addSubview(numberLabel)
     }
 
     // 页码切换
@@ -212,7 +216,7 @@ open class PageControl: UIView {
             curView.layer.borderWidth = 0
         case .number:
             if let label = self.viewWithTag(curLabelTag) as? UILabel {
-                label.text = "\(currentPage + 1) "
+                label.text = "\(currentPage + 1) / \(numberOfPages)"
             }
         }
     }
@@ -228,6 +232,9 @@ open class PageControl: UIView {
 
 extension PageControl {
     var frameSize: CGSize {
+        if numberLabel.frame != .zero {
+            return numberLabel.frame.size
+        }
         let frameWidth = currentSize.width + (numberOfPages - 1).cgFloatValue * normalSize.width + (numberOfPages + 1).cgFloatValue * margin
         let frameHeight = max(currentSize.height , normalSize.height) + 5
         return CGSize(width: frameWidth, height: frameHeight)
