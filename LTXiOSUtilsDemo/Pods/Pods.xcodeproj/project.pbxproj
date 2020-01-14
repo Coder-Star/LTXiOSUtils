@@ -716,7 +716,6 @@
 		DB9C2CF4AE6D71F14D0E543587F81058 /* UITabBar+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8E51E1DCDC16856F6F36BB808F19AD /* UITabBar+Rx.swift */; };
 		DC5D9B8C8E750103214D97146F34A9B9 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D99DCF44B3AD2E1D0A0B18701C87CB /* UIImageExtensions.swift */; };
 		DCA9221B3596DE7D98EDA14C538E6CC1 /* InvocableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303ADF43472B6ABC308BCB20C6263768 /* InvocableType.swift */; };
-		DCABE5FA23CE092600C42F48 /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCABE5F923CE092600C42F48 /* UIImage+GIF.swift */; };
 		DCABE5FC23CE093D00C42F48 /* UIImageView+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCABE5FB23CE093D00C42F48 /* UIImageView+GIF.swift */; };
 		DCBE950AABC61F4C3F2967FC067A040A /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81164059115A09CFBB9404A230AFDF2 /* Deprecated.swift */; };
 		DCDC042F8DD1859C5682B8D7E49D40F0 /* UISwitchExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D185ED2BEE46F3A23DA2C313B3B63B1 /* UISwitchExtensions.swift */; };
@@ -1912,7 +1911,6 @@
 		DBE4BA89BF377E06F82C39C7107B54ED /* _RXDelegateProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _RXDelegateProxy.m; path = RxCocoa/Runtime/_RXDelegateProxy.m; sourceTree = "<group>"; };
 		DC11F263EC09CCC242AC6ACB8EDC6771 /* Pods-LTXiOSUtilsDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LTXiOSUtilsDemoTests.modulemap"; sourceTree = "<group>"; };
 		DC2A8AFACA29AD6F1B520291EE4CD91C /* UITextView+Placeholder-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder-prefix.pch"; sourceTree = "<group>"; };
-		DCABE5F923CE092600C42F48 /* UIImage+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+GIF.swift"; sourceTree = "<group>"; };
 		DCABE5FB23CE093D00C42F48 /* UIImageView+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+GIF.swift"; sourceTree = "<group>"; };
 		DCCE91C05D332357D4763BF9BF449F70 /* RelativeFormatterLanguage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RelativeFormatterLanguage.swift; path = Sources/SwiftDate/Formatters/RelativeFormatter/RelativeFormatterLanguage.swift; sourceTree = "<group>"; };
 		DCE39B81FEE884A7A4447B85BE0D853A /* String+LocalizeBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+LocalizeBundle.swift"; path = "Sources/String+LocalizeBundle.swift"; sourceTree = "<group>"; };
@@ -3774,16 +3772,6 @@
 			name = CoreGraphics;
 			sourceTree = "<group>";
 		};
-		DCABE5F823CE090500C42F48 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				DCABE5F923CE092600C42F48 /* UIImage+GIF.swift */,
-				DCABE5FB23CE093D00C42F48 /* UIImageView+GIF.swift */,
-			);
-			name = Image;
-			path = LTXiOSUtils/Classes/Core/Util/Image;
-			sourceTree = "<group>";
-		};
 		DEAD7CBE3E42D43E195738EEC933C7DE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -3984,7 +3972,7 @@
 		FFDE0D9A69A2C7643FE8018F6FB205CB /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				DCABE5F823CE090500C42F48 /* Image */,
+				DCABE5FB23CE093D00C42F48 /* UIImageView+GIF.swift */,
 				62148C84D54E64F3E14FA079904F4C75 /* UserDefaultsProtocol.swift */,
 			);
 			name = Util;
@@ -5566,7 +5554,6 @@
 				D3F3DAF66AADA1DBC008204D442B94D5 /* RequestParam.swift in Sources */,
 				0387291C9A01BA34202403AB7D0867ED /* ResourceUtils.swift in Sources */,
 				3B77ED19632D1DD8EDE06FA5C8CC8A93 /* SpinnerButton.swift in Sources */,
-				DCABE5FA23CE092600C42F48 /* UIImage+GIF.swift in Sources */,
 				FE464CC79B21E469D2E3DA257FC53612 /* StringExtensions.swift in Sources */,
 				BDF48EC5774BD9D70B421DF3AB3DD08D /* ToolBarView.swift in Sources */,
 				9306F68C5E708E7F98487C60CBBE2CB5 /* UIBarButtonItem+BadgeView.swift in Sources */,

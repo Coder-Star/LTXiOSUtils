@@ -37,11 +37,19 @@
             "UIKit",
             "Foundation"
           ],
+          "dependencies": {
+            "LTXiOSUtils/Core/Scope": [
+
+            ]
+          },
           "source_files": "LTXiOSUtils/Classes/Core/Extension/*.swift"
         },
         {
           "name": "Util",
-          "frameworks": "Foundation",
+          "frameworks": [
+            "UIKit",
+            "Foundation"
+          ],
           "source_files": "LTXiOSUtils/Classes/Core/Util/*.swift"
         }
       ]
@@ -49,7 +57,7 @@
     {
       "name": "Network",
       "dependencies": {
-        "LTXiOSUtils/Core": [
+        "LTXiOSUtils/Core/Extension": [
 
         ],
         "LTXiOSUtils/Component": [
@@ -85,7 +93,7 @@
         "LTXiOSUtils/Resource": [
 
         ],
-        "LTXiOSUtils/Core": [
+        "LTXiOSUtils/Core/Extension": [
 
         ],
         "MBProgressHUD": [
@@ -97,7 +105,7 @@
     {
       "name": "ViewController",
       "dependencies": {
-        "LTXiOSUtils/Core": [
+        "LTXiOSUtils/Core/Extension": [
 
         ],
         "SnapKit": [
