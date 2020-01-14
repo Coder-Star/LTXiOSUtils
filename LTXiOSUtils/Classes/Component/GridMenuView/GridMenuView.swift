@@ -235,11 +235,7 @@ extension GridMenuView: UICollectionViewDataSource {
             let model = menu[convertDirectionCount(index: indexPath.item)]
             cell?.markType = model.markType
             cell?.text = model.title
-            if let imageView = model.imageView {
-                cell?.imageView = imageView
-            } else {
-                cell?.imageView.image = model.image
-            }
+            cell?.imageView.image = model.image
             return cell!
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath)
