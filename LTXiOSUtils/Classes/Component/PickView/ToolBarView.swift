@@ -9,6 +9,13 @@ import UIKit
 
 open class ToolBarView: UIView {
 
+    /// 取消按钮颜色
+    public static var cancelButtonColor: UIColor = UIColor.black.adapt()
+    /// 完成按钮颜色
+    public static var doneButtonColor: UIColor = UIColor.black.adapt()
+    /// 中间title颜色
+    public static var centerLabelColor: UIColor = UIColor.black.adapt()
+
     typealias CustomClosures = (_ titleLabel: UILabel, _ cancleBtn: UIButton, _ doneBtn: UIButton) -> Void
     public typealias BtnAction = () -> Void
 
@@ -31,7 +38,7 @@ open class ToolBarView: UIView {
     // 文本框
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.black.adapt()
+        label.textColor = ToolBarView.centerLabelColor
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         return label
@@ -41,7 +48,7 @@ open class ToolBarView: UIView {
     fileprivate lazy var cancleBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle("cancel".localizedOfLTXiOSUtils(), for: UIControl.State())
-        btn.setTitleColor(UIColor.black.adapt(), for: UIControl.State())
+        btn.setTitleColor(ToolBarView.cancelButtonColor, for: UIControl.State())
         return btn
     }()
 
@@ -49,7 +56,7 @@ open class ToolBarView: UIView {
     fileprivate lazy var doneBtn: UIButton = {
         let donebtn = UIButton()
         donebtn.setTitle("complete".localizedOfLTXiOSUtils(), for: UIControl.State())
-        donebtn.setTitleColor(UIColor.black.adapt(), for: UIControl.State())
+        donebtn.setTitleColor(ToolBarView.doneButtonColor, for: UIControl.State())
         return donebtn
     }()
 

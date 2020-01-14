@@ -20,10 +20,17 @@ public enum CornerMarkType {
 }
 
 open class DefaultGridMenuCell: UICollectionViewCell {
-    static let reuseID = "DefaultGridMenuCell"
     /// 角标显示数字最大值，如果再比这个大，就显示99+的形式,为nil值不限制
     public static let maxNumber: Int? = 99
-    public var imageView: UIImageView = UIImageView()
+    public var imageView: UIImageView = UIImageView() {
+        didSet {
+            oldValue.removeFromSuperview()
+            imageView.frame = oldValue.frame
+            imageView.layer.cornerRadius = oldValue.layer.cornerRadius
+            imageView.layer.masksToBounds = oldValue.layer.masksToBounds
+            self.addSubview(imageView)
+        }
+    }
     public var text = "" {
         didSet {
             label.text = text
@@ -59,13 +66,13 @@ open class DefaultGridMenuCell: UICollectionViewCell {
         let imageHeight = frame.height - labelHeight - 20.cgFloatValue
         let imageWidth = imageHeight
         imageView.frame = CGRect(x: (frame.width - imageWidth)/2, y: 10, width: imageWidth, height: imageHeight)
-        imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         self.addSubview(imageView)
         label.frame = CGRect(x: 5, y: imageHeight + 15, width: frame.width - 10.cgFloatValue, height: labelHeight)
         self.addSubview(label)
         self.core.setBadge(flexMode: .middle)
-        self.core.moveBadge(x: -25, y: 15)
+        self.core.moveBadge(x: -1 * imageView.frame.origin.x, y: imageView.frame.origin.y)
     }
 
     private func setBadge() {
@@ -85,6 +92,7 @@ open class DefaultGridMenuCell: UICollectionViewCell {
         case .point(let isShow):
             if isShow {
                 self.core.addDot(color: .red)
+                self.core.setBadge(height: 12)
             } else {
                 self.core.hiddenBadge()
             }
