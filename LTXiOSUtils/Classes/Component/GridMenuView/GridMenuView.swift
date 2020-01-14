@@ -87,7 +87,7 @@ public class GridMenuView: UIView {
     ///   - menu: 菜单
     ///   - pageStyle: 分页样式
     convenience public init(width: CGFloat, row: Int, col: Int, menu: [GridMenuItem], pageStyle: PageControlStyle) {
-        self.init(width: width, row: row, col: col, menu: menu, mode: .horizontalPage, pageStyle: pageStyle)
+        self.init(width: width, row: row, col: col, menu: menu, mode: .horizontalScroll, pageStyle: pageStyle)
     }
 
     /// 便利构造函数
@@ -100,11 +100,12 @@ public class GridMenuView: UIView {
     ///   - pageStyle: 分页样式
     convenience private init(width: CGFloat, row: Int, col: Int, menu: [GridMenuItem], mode: GridMenuViewMode, pageStyle: PageControlStyle) {
         self.init()
-        pageControl.style = pageStyle
-        self.viewWidth = width
-        self.colCount = col
-        self.rowCount = min(row,Int(ceil(Float(menu.count)/Float((colCount)))))
         self.menu = menu
+        self.mode = mode
+        pageControl.style = pageStyle
+        viewWidth = width
+        colCount = col
+        rowCount = min(row,Int(ceil(Float(menu.count)/Float((colCount)))))
         initView()
     }
 
@@ -113,23 +114,49 @@ public class GridMenuView: UIView {
         let itemHeight = itemWidth
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: itemHeight * rowCount.cgFloatValue), collectionViewLayout: layout)
-        collectionView?.register(DefaultGridMenuCell.self, forCellWithReuseIdentifier: DefaultGridMenuCell.reuseID)
+        collectionView?.register(DefaultGridMenuCell.self, forCellWithReuseIdentifier: DefaultGridMenuCell.description())
         collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "emptyCell")
-        collectionView?.isPagingEnabled = true
         collectionView?.backgroundColor = UIColor.white.adapt()
         collectionView?.dataSource = self
         collectionView?.delegate = self
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.showsHorizontalScrollIndicator = false
         self.addSubview(collectionView!)
-        let pageControlCount = Int(ceil(Float(menu.count)/Float((rowCount*colCount))))
-        if pageControlCount <= 1 {
+        setModeStyle()
+    }
+
+    private func setModeStyle() {
+        switch mode {
+        case .horizontalPage:
+            collectionView?.isPagingEnabled = true
+            let pageControlCount = Int(ceil(Float(menu.count)/Float((rowCount*colCount))))
+            if pageControlCount <= 1 {
+                viewHeight = collectionView!.frame.height
+            } else {
+                pageControl.numberOfPages = pageControlCount
+                pageControl.frame = CGRect(x: (viewWidth - pageControl.frameSize.width) / 2, y: collectionView!.frame.height + 5, width: pageControl.frameSize.width, height: pageControl.frameSize.height)
+                self.addSubview(pageControl)
+                viewHeight = collectionView!.frame.height + pageControl.frameSize.height + 10
+            }
+        case .horizontalScroll:
+            collectionView?.isPagingEnabled = false
             viewHeight = collectionView!.frame.height
-        } else {
-            pageControl.numberOfPages = pageControlCount
-            pageControl.frame = CGRect(x: (viewWidth - pageControl.frameSize.width) / 2, y: collectionView!.frame.height + 5, width: pageControl.frameSize.width, height: pageControl.frameSize.height)
-            self.addSubview(pageControl)
-            viewHeight = collectionView!.frame.height + pageControl.frameSize.height + 10
+        }
+    }
+
+    private func convertDirectionCount(index: Int) -> Int {
+        switch mode {
+        case .horizontalPage:
+            let tempH = index / (colCount * rowCount)
+            let tempL = index % (colCount * rowCount)
+            let result = tempL - (tempL / rowCount) * (rowCount - 1) + tempL % rowCount * (colCount - 1) + tempH * (colCount * rowCount)
+            return result
+        case .horizontalScroll:
+            let scrollColCount = menu.count % rowCount == 0 ? menu.count / rowCount : (menu.count / rowCount) + 1
+            let tempH = index / (scrollColCount * rowCount)
+            let tempL = index % (scrollColCount * rowCount)
+            let result = tempL - (tempL / rowCount) * (rowCount - 1) + tempL % rowCount * (scrollColCount - 1) + tempH * (scrollColCount * rowCount)
+            return result
         }
     }
 
@@ -193,13 +220,18 @@ public extension GridMenuView {
 
 extension GridMenuView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int(ceil(Float(menu.count)/Float((rowCount*colCount)))) * (rowCount*colCount)
+        switch mode {
+        case .horizontalPage:
+            return Int(ceil(Float(menu.count)/Float((rowCount*colCount)))) * (rowCount*colCount)
+        case .horizontalScroll:
+            return menu.count % rowCount == 0 ? menu.count : (menu.count / rowCount + 1) * rowCount
+        }
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let index = convertDirectionCount(index: indexPath.item)
         if index < menu.count {
-            let cell: DefaultGridMenuCell? = collectionView.dequeueReusableCell(withReuseIdentifier: DefaultGridMenuCell.reuseID, for: indexPath) as? DefaultGridMenuCell
+            let cell: DefaultGridMenuCell? = collectionView.dequeueReusableCell(withReuseIdentifier: DefaultGridMenuCell.description(), for: indexPath) as? DefaultGridMenuCell
             let model = menu[convertDirectionCount(index: indexPath.item)]
             cell?.markType = model.markType
             cell?.text = model.title
@@ -232,14 +264,5 @@ extension GridMenuView: UICollectionViewDelegate {
             pageControl.currentPage = index
         }
 
-    }
-}
-
-extension GridMenuView {
-    func convertDirectionCount(index: Int) -> Int {
-        let tempH = index / (colCount * rowCount)
-        let tempL = index % (colCount * rowCount)
-        let result = tempL - (tempL / rowCount) * (rowCount - 1) + tempL % rowCount * (colCount - 1) + tempH * (colCount * rowCount)
-        return result
     }
 }

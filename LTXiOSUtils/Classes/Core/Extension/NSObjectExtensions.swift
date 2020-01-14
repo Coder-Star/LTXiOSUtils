@@ -9,7 +9,7 @@ import Foundation
 // MARK: - 基础
 public extension NSObject {
 
-    /// 类名
+    /// 根据对象获取类名
     var className: String {
         let name = type(of: self).description()
         if name.contains(".") {
