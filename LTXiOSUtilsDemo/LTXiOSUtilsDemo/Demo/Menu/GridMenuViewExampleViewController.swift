@@ -11,8 +11,6 @@ import LTXiOSUtils
 import Kingfisher
 
 class GridMenuViewExampleViewController: BaseUIViewController {
-
-    let remoteImageView = UIImageView()
     private var menu = [
         GridMenuItem(code: "1", title: "第一菜单",image: R.image.menuItem(), markType: .none),
         GridMenuItem(code: "2", title: "第二菜单",image: R.image.menuItem(), markType: .point(isShow: true)),
@@ -29,7 +27,7 @@ class GridMenuViewExampleViewController: BaseUIViewController {
         super.viewDidLoad()
         title = "格子式菜单"
         baseView.layoutIfNeeded()
-
+        
         let pageStyle: PageControlStyle = .square(size: CGSize(width: 15, height: 5))
 //        pageStyle = .ring(circleSize: 5)
 //        pageStyle = .original(circleSize: 5)
