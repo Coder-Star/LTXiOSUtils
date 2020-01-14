@@ -25,18 +25,19 @@ Pod::Spec.new do |s|
     # 扩展
     core.subspec 'Extension' do |extension|
       extension.frameworks = "UIKit","Foundation"
+      extension.dependency 'LTXiOSUtils/Core/Scope'
       extension.source_files = 'LTXiOSUtils/Classes/Core/Extension/*.swift'
     end
     # 协议
     core.subspec 'Util' do |util|
-      util.frameworks = "Foundation"
+      util.frameworks = "UIKit","Foundation"
       util.source_files = 'LTXiOSUtils/Classes/Core/Util/*.swift'
     end
   end
 
   # 网络请求
   s.subspec 'Network' do |network|
-    network.dependency 'LTXiOSUtils/Core'
+    network.dependency 'LTXiOSUtils/Core/Extension'
     network.dependency 'LTXiOSUtils/Component'
     network.dependency 'Alamofire'  # 网络请求
     network.dependency 'Moya' # 网络抽象层
@@ -54,14 +55,14 @@ Pod::Spec.new do |s|
   # 自定义Component组件，包含各种基础view
   s.subspec 'Component' do |component|
     component.dependency 'LTXiOSUtils/Resource'
-    component.dependency 'LTXiOSUtils/Core'
+    component.dependency 'LTXiOSUtils/Core/Extension'
     component.dependency 'MBProgressHUD' # 加载框，OC库
     component.source_files = 'LTXiOSUtils/Classes/Component/**/*.swift'
   end
 
   # 基础ViewController
   s.subspec 'ViewController' do |viewController|
-    viewController.dependency 'LTXiOSUtils/Core'
+    viewController.dependency 'LTXiOSUtils/Core/Extension'
     viewController.dependency 'SnapKit' # 自动布局
     viewController.source_files = 'LTXiOSUtils/Classes/ViewController/*.swift'
   end

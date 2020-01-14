@@ -22,15 +22,9 @@ public enum CornerMarkType {
 open class DefaultGridMenuCell: UICollectionViewCell {
     /// 角标显示数字最大值，如果再比这个大，就显示99+的形式,为nil值不限制
     public static let maxNumber: Int? = 99
-    public var imageView: UIImageView = UIImageView() {
-        didSet {
-            oldValue.removeFromSuperview()
-            imageView.frame = oldValue.frame
-            imageView.layer.cornerRadius = oldValue.layer.cornerRadius
-            imageView.layer.masksToBounds = oldValue.layer.masksToBounds
-            self.addSubview(imageView)
-        }
-    }
+
+    public var imageView = UIImageView()
+    
     public var text = "" {
         didSet {
             label.text = text

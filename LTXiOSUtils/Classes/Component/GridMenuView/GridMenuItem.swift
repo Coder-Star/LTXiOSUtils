@@ -15,8 +15,6 @@ public struct GridMenuItem {
     public var title: String
     /// 图片
     public var image: UIImage?
-    /// 图片View，方便使用远程图片，如果不为nil，优先使用这个
-    public var imageView: UIImageView?
     /// 角标类型，默认为无
     public var markType: CornerMarkType = .none
 
@@ -52,27 +50,14 @@ public struct GridMenuItem {
         self.markType = markType
     }
 
-    /// 构造函数
-    /// - Parameters:
-    ///   - code: 编码
-    ///   - title: 标题
-    ///   - imageView: 图标View
-    public init(code: String, title: String, imageView: UIImageView) {
-        self.code = code
-        self.title = title
-        self.imageView = imageView
-    }
-
     /// /// 构造函数
     ///  - Parameters:
     ///    - code: 编码
     ///    - title: 标题
-    ///    - imageView: 图标View
     ///    - markType: 角标类型
-    public init(code: String, title: String, imageView: UIImageView, markType: CornerMarkType) {
+    public init(code: String, title: String, markType: CornerMarkType) {
         self.code = code
         self.title = title
-        self.imageView = imageView
         self.markType = markType
     }
 }
