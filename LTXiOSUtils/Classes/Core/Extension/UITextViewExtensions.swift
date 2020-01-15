@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-// MARK: 如果你想对textView.text直接赋值。请在设置属性之前进行，否则影响计算。
+// MARK: - 如果对textView.text直接赋值。请在设置属性之前进行，否则影响计算
+// MARK: - 取消对UITextView的监听无法在扩展中进行，需要在业务中进行处理
+
 extension UITextView {
 
     private struct RuntimeKey {
@@ -21,103 +23,82 @@ extension UITextView {
         static let placeholdColor = UnsafeRawPointer.init(bitPattern: "PLACEHOLDCOLOR".hashValue)
         static let limitLabelFont = UnsafeRawPointer.init(bitPattern: "LIMITLABELFONT".hashValue)
         static let limitLabelColor = UnsafeRawPointer.init(bitPattern: "LIMITLABLECOLOR".hashValue)
-        static let autoHeight = UnsafeRawPointer.init(bitPattern: "AUTOHEIGHT".hashValue)
-        static let oldFrame = UnsafeRawPointer.init(bitPattern: "LODFRAME".hashValue)
     }
 
     /// 占位符
-    public var placeholder: String? {
+    public var placeholder: String {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.placeholder!, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
-            initPlaceholder(placeholder!)
+            initPlaceholder(placeholder)
         }
         get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholder!) as? String
+            return objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholder!) as? String ?? ""
         }
     }
 
-    /// 字体
-    public var placeholdFont: UIFont? {
+    /// 占位符字体
+    public var placeholdFont: UIFont {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.placeholdFont!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            if self.placeholderLabel != nil {
-                self.placeholderLabel?.font = placeholdFont
-            }
+            self.placeholderLabel?.font = placeholdFont
         }
         get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholdFont!) as? UIFont == nil ? UIFont.systemFont(ofSize: 17) : objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholdFont!) as? UIFont
+            return objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholdFont!) as? UIFont ?? UIFont.systemFont(ofSize: 17)
         }
     }
 
-    /// 字体颜色
-    public var placeholdColor: UIColor? {
+    /// 占位符字体颜色
+    public var placeholdColor: UIColor {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.placeholdColor!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            if self.placeholderLabel != nil {
-                self.placeholderLabel?.textColor = placeholdColor
-            }
+            self.placeholderLabel?.textColor = placeholdColor
         }
         get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholdColor!) as? UIColor == nil ? UIColor.lightGray : objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholdColor!) as? UIColor
+            return objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholdColor!) as? UIColor ?? UIColor.lightGray
         }
     }
 
     /// 限制字数长度
-    public var limitLength: NSNumber? {
+    public var limitLength: Int {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.limitLength!, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
-            initWordCountLabel(limitLength!)
+            initWordCountLabel(limitLength)
         }
         get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLength!) as? NSNumber
+            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLength!) as? Int ?? 0
         }
     }
 
     /// 限制字数Label字体
-    public var limitLabelFont: UIFont? {
+    public var limitLabelFont: UIFont {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.limitLabelFont!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            if self.wordCountLabel != nil {
                 self.wordCountLabel?.font = limitLabelFont
-            }
         }
         get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLabelFont!) as? UIFont == nil ? UIFont.systemFont(ofSize: 13) : objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLabelFont!) as? UIFont
+            return objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLabelFont!) as? UIFont ?? UIFont.systemFont(ofSize: 13)
         }
     }
 
-    /// 限制字数Label字体
-    public var limitLabelColor: UIColor? {
+    /// 限制字数Label字体颜色
+    public var limitLabelColor: UIColor {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.limitLabelColor!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            if self.wordCountLabel != nil {
-                self.wordCountLabel?.textColor = limitLabelColor
-            }
+            self.wordCountLabel?.textColor = limitLabelColor
         }
         get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLabelColor!) as? UIColor == nil ? UIColor.lightGray : objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLabelColor!) as? UIColor
+            return objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLabelColor!) as? UIColor ?? UIColor.lightGray
         }
     }
 
-    /// 限制的行数
-    public var limitLines: NSNumber? {
+    /// 限制的行数,优先级比限制字数低
+    public var limitLines: Int {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.limitLines!, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
-            NotificationCenter.default.addObserver(self, selector: #selector(limitLengthEvent), name: UITextView.textDidChangeNotification, object: self)
-
+            NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
         }
         get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLines!) as? NSNumber
-        }
-    }
-
-    ///是否自动高度
-    public var autoHeight: Bool? {
-        set {
-            objc_setAssociatedObject(self, UITextView.RuntimeKey.autoHeight!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-        get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.autoHeight!) as? Bool
+            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLines!) as? Int ?? 0
         }
     }
 
@@ -139,15 +120,6 @@ extension UITextView {
         }
     }
 
-    private var oldFrame: CGRect? {
-        set {
-            objc_setAssociatedObject(self, UITextView.RuntimeKey.oldFrame!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-        get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.oldFrame!) as? CGRect
-        }
-    }
-
     private static let placeholderLabelLeftAndRightMargin:CGFloat = 7
 
     private func initPlaceholder(_ placeholder: String) {
@@ -156,25 +128,22 @@ extension UITextView {
         placeholderLabel?.font = self.placeholdFont
         placeholderLabel?.text = placeholder
         placeholderLabel?.numberOfLines = 0
-        placeholderLabel?.lineBreakMode = .byWordWrapping
+        placeholderLabel?.lineBreakMode = .byCharWrapping
         placeholderLabel?.textColor = self.placeholdColor
-        let rect = placeholder.boundingRect(with: CGSize(width: self.frame.size.width - UITextView.placeholderLabelLeftAndRightMargin * 2, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : self.placeholdFont!], context: nil)
-        placeholderLabel?.frame = CGRect(x: UITextView.placeholderLabelLeftAndRightMargin, y: 10, width: rect.size.width, height: rect.size.height)
         addSubview(self.placeholderLabel!)
         placeholderLabel?.isHidden = self.text.count > 0 ? true : false
     }
 
-    private func initWordCountLabel(_ limitLength : NSNumber) {
-        NotificationCenter.default.addObserver(self, selector: #selector(limitLengthEvent), name: UITextView.textDidChangeNotification, object: self)
-        if wordCountLabel != nil {
-            wordCountLabel?.removeFromSuperview()
-        }
-        wordCountLabel = UILabel(frame: CGRect(x: 0, y: self.frame.size.height - 20, width: self.frame.size.width - 10, height: 20))
+    private func initWordCountLabel(_ limitLength : Int) {
+        NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
+        wordCountLabel?.removeFromSuperview()
+        wordCountLabel = UILabel()
         wordCountLabel?.textAlignment = .right
+        wordCountLabel?.adjustsFontSizeToFitWidth = true
         wordCountLabel?.textColor = self.limitLabelColor
         wordCountLabel?.font = self.limitLabelFont
-        if self.text.count > limitLength.intValue {
-            self.text = (self.text as NSString).substring(to: limitLength.intValue)
+        if self.text.count > limitLength {
+            self.text = (self.text as NSString).substring(to: limitLength)
         }
         wordCountLabel?.text = "\(self.text.count)/\(limitLength)"
         addSubview(wordCountLabel!)
@@ -186,50 +155,36 @@ extension UITextView {
             return
         }
         self.text = textView.text
-        if placeholder != nil {
-            placeholderLabel?.isHidden = true
+        if placeholder.isNotEmpty {
             if self.text.count ==  0 {
                 self.placeholderLabel?.isHidden = false
+            } else {
+                placeholderLabel?.isHidden = true
             }
         }
-        if limitLength != nil {
+        if limitLength > 0 {
             var wordCount = self.text.count
-            if wordCount > (limitLength?.intValue)! {
-                wordCount = (limitLength?.intValue)!
+            if wordCount > limitLength {
+                wordCount = limitLength
             }
-            let limit = limitLength!.stringValue
-            wordCountLabel?.text = "\(wordCount)/\(limit)"
-        }
-        if autoHeight == true && self.oldFrame != nil {
-            let size = getStringPlaceSize(self.text, textFont: self.font!)
-            UIView.animate(withDuration: 0.15) {
-                self.frame = CGRect.init(x: (self.oldFrame?.origin.x)!, y: (self.oldFrame?.origin.y)!, width: (self.oldFrame?.size.width)!, height: size.height + 25 <= (self.oldFrame?.size.height)! ? (self.oldFrame?.size.height)! : size.height + 25)
+            if self.text.count > limitLength {
+                self.text = (self.text as NSString).substring(to: limitLength)
             }
-        }
-
-    }
-
-    @objc private func limitLengthEvent() {
-        if limitLength != nil {
-            if self.text.count > (limitLength?.intValue)! && limitLength != nil {
-                self.text = (self.text as NSString).substring(to: (limitLength?.intValue)!)
-            }
-        } else {
-            if (limitLines != nil) {
-                var size = getStringPlaceSize(self.text, textFont: self.font!)
-                let height = self.font!.lineHeight * CGFloat(limitLines!.floatValue)
-                if size.height > height {
-                    while size.height > height {
-                        self.text = (self.text as NSString).substring(to: self.text.count - 1)
-                        size = getStringPlaceSize(self.text, textFont: self.font!)
-                    }
+            wordCountLabel?.text = "\(wordCount)/\(limitLength)"
+        } else if limitLines > 0 {
+            var size = getStringPlaceSize(self.text, textFont: self.font!)
+            let height = self.font!.lineHeight * CGFloat(limitLines)
+            if size.height > height {
+                while size.height > height {
+                    self.text = (self.text as NSString).substring(to: self.text.count - 1)
+                    size = getStringPlaceSize(self.text, textFont: self.font!)
                 }
             }
         }
     }
 
     @objc private func getStringPlaceSize(_ string: String, textFont: UIFont) -> CGSize {
-        let attribute = [NSAttributedString.Key.font : textFont]
+        let attribute = [NSAttributedString.Key.font: textFont]
         let options = NSStringDrawingOptions.usesLineFragmentOrigin
         let size = string.boundingRect(with: CGSize(width: self.contentSize.width-10, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: attribute, context: nil).size
         return size
@@ -237,25 +192,13 @@ extension UITextView {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
-        if limitLength != nil && wordCountLabel != nil {
-            //避免外部使用了约束 这里再次更新frame
+        if limitLength > 0 && wordCountLabel != nil {
             wordCountLabel!.frame = CGRect(x: 0, y: frame.height - 20 + contentOffset.y, width: frame.width - 10, height: 20)
         }
-        if placeholder != nil && placeholderLabel != nil {
-            let rect: CGRect = placeholder!.boundingRect(with: CGSize(width: frame.width - UITextView.placeholderLabelLeftAndRightMargin * 2, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: placeholdFont!], context: nil)
-            placeholderLabel!.frame = CGRect(x: UITextView.placeholderLabelLeftAndRightMargin, y: 8, width: rect.size.width, height: rect.size.height)
-        }
-        if autoHeight == true {
-            self.oldFrame = self.frame
-            self.isScrollEnabled = false
+        if placeholder.isNotEmpty && placeholderLabel != nil {
+            let width = frame.width - UITextView.placeholderLabelLeftAndRightMargin * 2
+            let size = placeholderLabel!.sizeThatFits(CGSize(width: width, height: .zero))
+            placeholderLabel!.frame = CGRect(x: UITextView.placeholderLabelLeftAndRightMargin, y: 8, width: size.width, height: size.height)
         }
     }
-
-    // MARK: - Swift分类不支持，在class业务里面使用
-    //    deinit {
-    //        NotificationCenter.default.removeObserver(self, name: .UITextViewTextDidChange, object: self)
-    //
-    //    }
-    //
-
 }
