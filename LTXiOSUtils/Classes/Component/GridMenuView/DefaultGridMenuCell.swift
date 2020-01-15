@@ -24,7 +24,7 @@ open class DefaultGridMenuCell: UICollectionViewCell {
     public static let maxNumber: Int? = 99
 
     public var imageView = UIImageView()
-    
+
     public var text = "" {
         didSet {
             label.text = text
