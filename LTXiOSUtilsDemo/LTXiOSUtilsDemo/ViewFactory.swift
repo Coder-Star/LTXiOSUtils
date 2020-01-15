@@ -28,14 +28,30 @@ public extension ViewFactory {
         normalUIButton.titleLabel?.textAlignment = .center
         normalUIButton.titleLabel?.adjustsFontSizeToFitWidth = true
         normalUIButton.setTitleColor(.black, for: .normal)
-        normalUIButton.layer.borderColor = UIColor.gray.cgColor
+        normalUIButton.layer.borderColor = UIColor(hexString: "#cdcdcd").cgColor
         normalUIButton.layer.borderWidth = 0.5
         normalUIButton.layer.cornerRadius = 5
-        normalUIButton.layer.backgroundColor = UIColor.lightGray.cgColor
+        normalUIButton.layer.backgroundColor = UIColor(hexString: "#eeeeee").cgColor
         normalUIButton.snp.makeConstraints { make in
             make.height.equalTo(35)
         }
         return normalUIButton
+    }
+
+    /// 获取UITextView
+    class func getTextView() -> UITextView {
+        let textView = UITextView()
+        textView.font = UIFont.systemFont(ofSize: 17)
+        textView.layer.borderColor = UIColor(hexString: "#cdcdcd").cgColor
+        textView.returnKeyType = .done
+        textView.layer.borderWidth = 0.5
+        textView.layer.cornerRadius = 5
+        textView.textColor = UIColor.black
+        textView.backgroundColor = .white
+        textView.snp.makeConstraints { (make) in
+            make.height.equalTo(60)
+        }
+        return textView
     }
 
 }

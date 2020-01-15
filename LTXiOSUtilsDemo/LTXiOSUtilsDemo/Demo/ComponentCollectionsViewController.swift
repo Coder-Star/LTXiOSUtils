@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import LTXiOSUtils
 
 class ComponentCollectionsViewController: BaseUIScrollViewController {
 
@@ -27,7 +28,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
     }
 
     override func setScrollSubViews(contentView: UIView) {
-        let titleLabel = UILabel()
+        var titleLabel = UILabel()
         titleLabel.textAlignment = .center
         titleLabel.text = "加载按钮"
         contentView.addSubview(titleLabel)
@@ -44,6 +45,30 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
             make.left.equalTo(titleLabel.snp.right).offset(5)
             make.right.equalToSuperview().offset(-10)
             make.centerY.equalTo(titleLabel)
+        }
+
+        titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.text = "TextView"
+        contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.top.equalTo(spinnerBtn.snp.bottom).offset(10)
+            make.width.equalTo(leftWidth)
+        }
+
+        let textView = ViewFactory.getTextView()
+        textView.placeholder = "请输入信息，这是UITextView的扩展"
+        textView.limitLength = 10
+//        textView.limitLines = 1
+        contentView.addSubview(textView)
+        textView.snp.makeConstraints { make in
+            make.left.equalTo(titleLabel.snp.right).offset(5)
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalTo(titleLabel)
+        }
+
+        textView.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
         }
     }
