@@ -49,7 +49,7 @@ public extension ViewFactory {
         textView.textColor = UIColor.black
         textView.backgroundColor = .white
         textView.snp.makeConstraints { (make) in
-            make.height.equalTo(60)
+            make.height.equalTo(70)
         }
         return textView
     }
