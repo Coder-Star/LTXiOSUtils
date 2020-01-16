@@ -11,6 +11,7 @@ import UIKit
 // MARK: - 如果对textView.text直接赋值。请在设置属性之前进行，否则影响计算
 // MARK: - 取消对UITextView的监听无法在扩展中进行，需要在业务中进行处理
 
+// MARK: - UITextView占位符以及最大字数等
 extension UITextView {
 
     private struct RuntimeKey {
