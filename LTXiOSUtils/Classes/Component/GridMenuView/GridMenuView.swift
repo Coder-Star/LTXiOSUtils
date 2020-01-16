@@ -51,6 +51,11 @@ public class GridMenuView: UIView {
         return pageControl
     }()
 
+    private lazy var scrollPageControlView: ScrollPageControlView = {
+        let scrollPageControlView = ScrollPageControlView()
+        return scrollPageControlView
+    }()
+
     /// 行
     private var rowCount: Int = 0
     /// 列
@@ -140,7 +145,15 @@ public class GridMenuView: UIView {
             }
         case .horizontalScroll:
             collectionView?.isPagingEnabled = false
-            viewHeight = collectionView!.frame.height
+            let realColCount = Int(ceil(Float(menu.count) / Float(rowCount)))
+            if realColCount <= colCount {
+                viewHeight = collectionView!.frame.height
+            } else {
+                let scrollPageControlViewWidth:CGFloat = 60
+                scrollPageControlView.frame = CGRect(x: (viewWidth - scrollPageControlViewWidth)/2, y: collectionView!.frame.height + 5, width: scrollPageControlViewWidth, height: 6)
+                self.addSubview(scrollPageControlView)
+                viewHeight = collectionView!.frame.height +  scrollPageControlView.frame.height + 10
+            }
         }
     }
 
@@ -259,6 +272,12 @@ extension GridMenuView: UICollectionViewDelegate {
             let index = Int(view.contentOffset.x / self.bounds.width)
             pageControl.currentPage = index
         }
+    }
 
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let view = collectionView {
+            let offsetX  = view.contentOffset.x
+            self.scrollPageControlView.progrss = offsetX * self.scrollPageControlView.offsetWidth / ( view.contentSize.width - view.frame.width )
+        }
     }
 }
