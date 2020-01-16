@@ -46,7 +46,7 @@ public class GridMenuView: UIView {
     private var collectionView: UICollectionView?
     private lazy var pageControl: PageControl = {
         let pageControl = PageControl(frame: CGRect.zero)
-        pageControl.currentColor = .blue
+        pageControl.currentColor = UIColor(hexString: "#4296d5")
         pageControl.normorlColor = .lightGray
         return pageControl
     }()
@@ -92,7 +92,7 @@ public class GridMenuView: UIView {
     ///   - menu: 菜单
     ///   - pageStyle: 分页样式
     convenience public init(width: CGFloat, row: Int, col: Int, menu: [GridMenuItem], pageStyle: PageControlStyle) {
-        self.init(width: width, row: row, col: col, menu: menu, mode: .horizontalScroll, pageStyle: pageStyle)
+        self.init(width: width, row: row, col: col, menu: menu, mode: .horizontalPage, pageStyle: pageStyle)
     }
 
     /// 便利构造函数
@@ -103,7 +103,7 @@ public class GridMenuView: UIView {
     ///   - menu: 菜单
     ///   - mode: 模式
     ///   - pageStyle: 分页样式
-    convenience private init(width: CGFloat, row: Int, col: Int, menu: [GridMenuItem], mode: GridMenuViewMode, pageStyle: PageControlStyle) {
+    convenience public init(width: CGFloat, row: Int, col: Int, menu: [GridMenuItem], mode: GridMenuViewMode, pageStyle: PageControlStyle) {
         self.init()
         self.menu = menu
         self.mode = mode
@@ -149,9 +149,10 @@ public class GridMenuView: UIView {
             if realColCount <= colCount {
                 viewHeight = collectionView!.frame.height
             } else {
-                let scrollPageControlViewWidth:CGFloat = 60
+                let scrollPageControlViewWidth:CGFloat = 50
                 scrollPageControlView.frame = CGRect(x: (viewWidth - scrollPageControlViewWidth)/2, y: collectionView!.frame.height + 5, width: scrollPageControlViewWidth, height: 6)
                 self.addSubview(scrollPageControlView)
+                scrollPageControlView.currentIndicatorWidth = colCount.cgFloatValue / realColCount.cgFloatValue * scrollPageControlViewWidth
                 viewHeight = collectionView!.frame.height +  scrollPageControlView.frame.height + 10
             }
         }
@@ -178,8 +179,47 @@ public class GridMenuView: UIView {
     }
 }
 
-// MARK: - 公开方法
+// MARK: - 公开属性、方法
 public extension GridMenuView {
+    /// 分页控件当前颜色
+    var pageControlCurrentColor: UIColor {
+        set {
+            switch mode {
+            case .horizontalPage:
+                pageControl.currentColor = newValue
+            case .horizontalScroll:
+                scrollPageControlView.currentIndicatorColor = newValue
+            }
+        }
+        get {
+            switch mode {
+            case .horizontalPage:
+                return pageControl.currentColor
+            case .horizontalScroll:
+                return scrollPageControlView.currentIndicatorColor
+            }
+        }
+    }
+
+    /// 分页控件正常颜色
+    var pageControlNormorlColor: UIColor {
+        set {
+            switch mode {
+            case .horizontalPage:
+                pageControl.normorlColor = newValue
+            case .horizontalScroll:
+                scrollPageControlView.backgroundColor = newValue
+            }
+        }
+        get {
+            switch mode {
+            case .horizontalPage:
+                return pageControl.normorlColor
+            case .horizontalScroll:
+                return scrollPageControlView.backgroundColor ?? UIColor(hexString: "#eeeeee")
+            }
+        }
+    }
 
     /// 刷新
     func reloadData() {
@@ -269,15 +309,19 @@ extension GridMenuView: UICollectionViewDelegate {
 
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if let view = collectionView {
-            let index = Int(view.contentOffset.x / self.bounds.width)
-            pageControl.currentPage = index
+            if mode == .horizontalPage {
+                let index = Int(view.contentOffset.x / self.bounds.width)
+                pageControl.currentPage = index
+            }
         }
     }
 
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let view = collectionView {
-            let offsetX  = view.contentOffset.x
-            self.scrollPageControlView.progrss = offsetX * self.scrollPageControlView.offsetWidth / ( view.contentSize.width - view.frame.width )
+            if mode == .horizontalScroll {
+                let offsetX  = view.contentOffset.x
+                self.scrollPageControlView.progrss = offsetX * self.scrollPageControlView.offsetWidth / ( view.contentSize.width - view.frame.width )
+            }
         }
     }
 }
