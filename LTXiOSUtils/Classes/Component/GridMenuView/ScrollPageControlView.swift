@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 open class ScrollPageControlView: UIView {
 
@@ -21,12 +22,14 @@ open class ScrollPageControlView: UIView {
     /// 滑块宽度
     public var currentIndicatorWidth: CGFloat = 20 {
         didSet {
-
+            var frame = self.currentIndicatorView.frame
+            frame.size.width = currentIndicatorWidth
+            self.currentIndicatorView.frame = frame
         }
     }
 
     /// 滑块颜色
-    public var currentIndicatorColor: UIColor = .blue {
+    public var currentIndicatorColor: UIColor = UIColor(hexString: "#4296d5") {
         didSet {
             self.currentIndicatorView.backgroundColor = currentIndicatorColor
         }
@@ -44,14 +47,11 @@ open class ScrollPageControlView: UIView {
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        print(frame)
         self.addSubview(currentIndicatorView)
-        self.backgroundColor = .lightGray
+        self.backgroundColor = UIColor(hexString: "#eeeeee")
     }
 
     override open func layoutSubviews() {
-        print("layoutSubviews")
-        print(frame)
         self.layer.masksToBounds = true
         self.layer.cornerRadius = self.frame.height / 2
         self.currentIndicatorView.frame = CGRect(x: 0, y: 0, width: currentIndicatorWidth, height: self.frame.height)

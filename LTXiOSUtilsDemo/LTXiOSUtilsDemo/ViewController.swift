@@ -14,16 +14,6 @@ class ViewController: BaseGroupTableMenuViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = R.string.localizable.menu()
-
-        let infoView = ScrollPageControlView()
-        baseView.add(infoView)
-        infoView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.left.right.equalToSuperview()
-            make.height.equalTo(20)
-        }
-//        infoView.layoutIfNeeded()
-
     }
 
     override func setMenu() {
