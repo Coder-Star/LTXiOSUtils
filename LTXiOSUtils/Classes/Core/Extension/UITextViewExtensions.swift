@@ -99,7 +99,7 @@ extension UITextView {
             NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
         }
         get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLines!) as? Int ?? 0
+            return objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLines!) as? Int ?? 0
         }
     }
 
@@ -108,7 +108,7 @@ extension UITextView {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.placeholderLabel!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholderLabel!) as? UILabel
+            return objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholderLabel!) as? UILabel
         }
     }
 
@@ -117,15 +117,15 @@ extension UITextView {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.wordCountLabel!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
-            return  objc_getAssociatedObject(self, UITextView.RuntimeKey.wordCountLabel!) as? UILabel
+            return objc_getAssociatedObject(self, UITextView.RuntimeKey.wordCountLabel!) as? UILabel
         }
     }
 
     private static let placeholderLabelLeftAndRightMargin:CGFloat = 7
 
     private func initPlaceholder(_ placeholder: String) {
-        NotificationCenter.default.addObserver(self, selector: #selector(textChange(_:)), name: UITextView.textDidChangeNotification, object: self)
-        self.placeholderLabel = UILabel()
+        NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
+        placeholderLabel = UILabel()
         placeholderLabel?.font = self.placeholdFont
         placeholderLabel?.text = placeholder
         placeholderLabel?.numberOfLines = 0
@@ -151,27 +151,19 @@ extension UITextView {
         self.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
     }
 
-    @objc private func textChange(_ notification : Notification) {
-        guard let textView = notification.object as? UITextView else {
-            return
-        }
-        self.text = textView.text
+    @objc private func textChange() {
         if placeholder.isNotEmpty {
             if self.text.count ==  0 {
-                self.placeholderLabel?.isHidden = false
+                placeholderLabel?.isHidden = false
             } else {
                 placeholderLabel?.isHidden = true
             }
         }
         if limitLength > 0 {
-            var wordCount = self.text.count
-            if wordCount > limitLength {
-                wordCount = limitLength
-            }
             if self.text.count > limitLength {
                 self.text = (self.text as NSString).substring(to: limitLength)
             }
-            wordCountLabel?.text = "\(wordCount)/\(limitLength)"
+            wordCountLabel?.text = "\(self.text.count)/\(limitLength)"
         } else if limitLines > 0 {
             var size = getStringPlaceSize(self.text, textFont: self.font!)
             let height = self.font!.lineHeight * CGFloat(limitLines)
