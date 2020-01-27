@@ -34,9 +34,9 @@ open class DurationDatePickView: UIView {
     /// 日期类型
     private var dateType: DurationDatePickViewDateType = .YMD
     /// 最小时间
-    private let minDate: Date = Date.init(timeIntervalSince1970: 0)
+    private let minDate: Date? = nil
     /// 最大时间
-    private let maxDate: Date = Date.init(timeIntervalSinceNow: TimeInterval(60*60*24*365*20))
+    private let maxDate: Date? = nil
     /// 弹窗距离左右边距
     private let leftAndRightMargin: CGFloat = 35
     /// 弹窗高度
