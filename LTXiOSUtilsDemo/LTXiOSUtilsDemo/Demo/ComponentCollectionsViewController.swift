@@ -68,7 +68,27 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
             make.top.equalTo(titleLabel)
         }
 
-        textView.snp.makeConstraints { make in
+        titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.text = "多样式Label"
+        contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.top.equalTo(textView.snp.bottom).offset(10)
+            make.width.equalTo(leftWidth)
+        }
+
+        let label = CommonLabel()
+        label.text = "文字，长按进入菜单"
+        contentView.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.left.equalTo(titleLabel.snp.right).offset(5)
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalTo(titleLabel)
+        }
+
+
+        label.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
         }
     }
