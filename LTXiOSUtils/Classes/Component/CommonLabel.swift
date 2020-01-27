@@ -26,13 +26,14 @@ public class CommonLabel: UILabel {
     }
 
     public override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        if action == #selector(self.copy(_:)) {
+        if action == #selector(self.customCopy(_:)) {
             return true
         } else {
             return false
         }
     }
-    public override func copy(_ sender: Any?) {
+
+    @objc private func customCopy(_ sender: Any?) {
         let pBoard = UIPasteboard.general
         pBoard.string = self.text
     }
@@ -45,13 +46,15 @@ public class CommonLabel: UILabel {
         if canCopy {
             self.addLongPressGesture { _ in
                 self.becomeFirstResponder()
-                let copyItem = UIMenuItem(title: "复制", action: #selector(self.copy(_:)))
+                let copyItem = UIMenuItem(title: "复制", action: #selector(self.customCopy(_:)))
                 let menu = UIMenuController.shared
                 menu.menuItems = [copyItem]
                 if menu.isMenuVisible {
                     return
                 }
-                menu.setTargetRect(self.bounds, in: self)
+                if let superV = self.superview {
+                   menu.setTargetRect(self.frame, in: superV)
+                }
                 menu.setMenuVisible(true, animated: true)
             }
         }
