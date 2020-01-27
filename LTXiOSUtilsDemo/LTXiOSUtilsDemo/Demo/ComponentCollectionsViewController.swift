@@ -79,7 +79,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         }
 
         let label = CommonLabel()
-        label.text = "文字，长按进入菜单"
+        label.text = "文字，长按"
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
             make.left.equalTo(titleLabel.snp.right).offset(5)
