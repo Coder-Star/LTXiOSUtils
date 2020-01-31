@@ -711,6 +711,7 @@
 		DB315D5698CFDF320D16D8F36996C142 /* UIActivityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7683C4DF71E4328A288A063D512F53 /* UIActivityExtensions.swift */; };
 		DB8AECA84203EC0A2E019052F1685611 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A119FBC8833BB4EFEDED780569D0567 /* StringExtensions.swift */; };
 		DB9C2CF4AE6D71F14D0E543587F81058 /* UITabBar+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BDDE08F37138103ECF30E5B3D1E1D9 /* UITabBar+Rx.swift */; };
+		DC14810723E3E0BD00D85FD4 /* RollingNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14810623E3E0BD00D85FD4 /* RollingNoticeView.swift */; };
 		DC32801C23D4046A0060E6A2 /* CommonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32801B23D4046A0060E6A2 /* CommonLabel.swift */; };
 		DCA9221B3596DE7D98EDA14C538E6CC1 /* InvocableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830CBA1A50F069464CAE6A3D4BA14969 /* InvocableType.swift */; };
 		DCABE61823CF522200C42F48 /* ScrollPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCABE61723CF522100C42F48 /* ScrollPageControlView.swift */; };
@@ -1889,6 +1890,7 @@
 		DAEE8358293EFF4F8C221BE2773702A4 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Sources/Networking/RedirectHandler.swift; sourceTree = "<group>"; };
 		DBCA81DD332AD49A11B4699D634BBF7D /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC11F263EC09CCC242AC6ACB8EDC6771 /* Pods-LTXiOSUtilsDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LTXiOSUtilsDemoTests.modulemap"; sourceTree = "<group>"; };
+		DC14810623E3E0BD00D85FD4 /* RollingNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RollingNoticeView.swift; path = LTXiOSUtils/Classes/Component/RollingNoticeView.swift; sourceTree = "<group>"; };
 		DC32801B23D4046A0060E6A2 /* CommonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonLabel.swift; path = LTXiOSUtils/Classes/Component/CommonLabel.swift; sourceTree = "<group>"; };
 		DCABE61723CF522100C42F48 /* ScrollPageControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPageControlView.swift; sourceTree = "<group>"; };
 		DD417566A17575808F035E0F647A9098 /* CompactMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompactMap.swift; path = RxSwift/Observables/CompactMap.swift; sourceTree = "<group>"; };
@@ -2716,6 +2718,7 @@
 				C7076953B5F60D423534A97285E3FFE7 /* GridMenuView */,
 				2C8D16CFAF5C94BAD221E017B19053BB /* PickView */,
 				DC32801B23D4046A0060E6A2 /* CommonLabel.swift */,
+				DC14810623E3E0BD00D85FD4 /* RollingNoticeView.swift */,
 			);
 			name = Component;
 			sourceTree = "<group>";
@@ -5493,6 +5496,7 @@
 				6EA64BE033DEA433DD4B9B658B691DC8 /* UIView+BadgeView.swift in Sources */,
 				90F6C71E8369C3AEA84D62C90FB79841 /* UIViewControllerExtensions.swift in Sources */,
 				84ECC8D0581172D24EE0DE4BC4A327BC /* UIViewExtensions.swift in Sources */,
+				DC14810723E3E0BD00D85FD4 /* RollingNoticeView.swift in Sources */,
 				C5798B981BD92B9E52A9CFA9AC18ECAE /* UserDefaultsProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
