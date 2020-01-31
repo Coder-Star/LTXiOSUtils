@@ -1,7 +1,7 @@
 //
 //  RollingNoticeView.swift
 //  LTXiOSUtils
-//
+//  上下滚动view
 //  Created by 李天星 on 2020/1/31.
 //
 
@@ -9,7 +9,7 @@ import UIKit
 
 @objc public protocol RollingNoticeViewDataSource : NSObjectProtocol {
     func numberOfRowsFor(roolingView: RollingNoticeView) -> Int
-    func rollingNoticeView(roolingView: RollingNoticeView, cellAtIndex index: Int) -> GYNoticeViewCell
+    func rollingNoticeView(roolingView: RollingNoticeView, cellAtIndex index: Int) -> RollingNoticeCell
 }
 
 @objc public protocol RollingNoticeViewDelegate: NSObjectProtocol {
@@ -17,36 +17,42 @@ import UIKit
 }
 
 open class RollingNoticeView: UIView {
+    /// 数据
     weak open var dataSource: RollingNoticeViewDataSource?
+    /// 代理
     weak open var delegate: RollingNoticeViewDelegate?
-    open var stayInterval = 2.0
+    /// 滚动间隔
+    open var rollInterval = 2.0
     open private(set) var currentIndex = 0
 
-    // MARK: private properties
-    private lazy var cellClsDict: Dictionary = { () -> [String : Any] in
-        var tempDict = [String:Any]()
+    private lazy var cellClsDict: [String : Any] = {
+        let tempDict = [String:Any]()
         return tempDict
     }()
-    private lazy var reuseCells: Array = { () -> [GYNoticeViewCell] in
-        var tempArr = [GYNoticeViewCell]()
+    private lazy var reuseCells: [RollingNoticeCell] = {
+        let tempArr = [RollingNoticeCell]()
         return tempArr
     }()
 
     private var timer: Timer?
-    private var currentCell: GYNoticeViewCell?
-    private var willShowCell: GYNoticeViewCell?
+    private var currentCell: RollingNoticeCell?
+    private var willShowCell: RollingNoticeCell?
     private var isAnimating = false
 
-    // MARK: -
-    open func register(_ cellClass: Swift.AnyClass?, forCellReuseIdentifier identifier: String) {
-        self.cellClsDict[identifier] = cellClass
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setupNoticeViews()
     }
 
     open func register(_ nib: UINib?, forCellReuseIdentifier identifier: String) {
         self.cellClsDict[identifier] = nib
     }
 
-    open func dequeueReusableCell(withIdentifier identifier: String) -> GYNoticeViewCell? {
+    open func register(_ cellClass: Swift.AnyClass?, forCellReuseIdentifier identifier: String) {
+        self.cellClsDict[identifier] = cellClass
+    }
+
+    open func dequeueReusableCell(withIdentifier identifier: String) -> RollingNoticeCell? {
         for cell in self.reuseCells {
             guard let reuseIdentifier = cell.reuseIdentifier else { return nil }
             if reuseIdentifier.elementsEqual(identifier) {
@@ -57,14 +63,14 @@ open class RollingNoticeView: UIView {
         if let cellCls = self.cellClsDict[identifier] {
             if let nib = cellCls as? UINib {
                 let arr = nib.instantiate(withOwner: nil, options: nil)
-                if let cell = arr.first as? GYNoticeViewCell {
+                if let cell = arr.first as? RollingNoticeCell {
                     cell.setValue(identifier, forKeyPath: "reuseIdentifier")
                     return cell
                 }
                 return nil
             }
 
-            if let noticeCellCls = cellCls as? GYNoticeViewCell.Type {
+            if let noticeCellCls = cellCls as? RollingNoticeCell.Type {
                 let cell = noticeCellCls.self.init(reuseIdentifier: identifier)
                 return cell
             }
@@ -81,13 +87,13 @@ open class RollingNoticeView: UIView {
         guard count >= 2 else {
             return
         }
-        timer = Timer.scheduledTimer(timeInterval: stayInterval, target: self, selector: #selector(RollingNoticeView.timerHandle), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: rollInterval, target: self, selector: #selector(RollingNoticeView.timerHandle), userInfo: nil, repeats: true)
         if let notNilTimer = timer {
             RunLoop.current.add(notNilTimer, forMode: .common)
         }
     }
 
-    // 如果想要释放，请在合适的地方停止timer
+    // 停止滚动
     open func stopRoll() {
         if let rollTimer = timer {
             rollTimer.invalidate()
@@ -102,19 +108,14 @@ open class RollingNoticeView: UIView {
         self.reuseCells.removeAll()
     }
 
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setupNoticeViews()
-    }
-
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setupNoticeViews()
     }
 
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    deinit {
+        stopRoll()
     }
-
 }
 
 // MARK: private funcs
@@ -200,13 +201,20 @@ extension RollingNoticeView {
     }
 }
 
-open class GYNoticeViewCell: UIView {
+open class RollingNoticeCell: UIView {
 
     @objc open private(set) var reuseIdentifier: String?
+
+    /// 标题
+    public lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        return titleLabel
+    }()
 
     public required init(reuseIdentifier: String?) {
         self.reuseIdentifier = reuseIdentifier
         super.init(frame: .zero)
+        self.addSubview(titleLabel)
     }
 
     public required init?(coder aDecoder: NSCoder) {
