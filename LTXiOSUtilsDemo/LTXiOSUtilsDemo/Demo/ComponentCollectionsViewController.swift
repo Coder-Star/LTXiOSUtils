@@ -88,7 +88,33 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
             make.top.equalTo(titleLabel)
         }
 
-        label.snp.makeConstraints { make in
+        titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.text = "滚动view"
+        contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.top.equalTo(label.snp.bottom).offset(10)
+            make.width.equalTo(leftWidth)
+        }
+
+        let rollView = RollingNoticeView()
+        rollView.delegate = self
+        rollView.dataSource = self
+        contentView.addSubview(rollView)
+        rollView.snp.makeConstraints { make in
+            make.left.equalTo(titleLabel.snp.right).offset(5)
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalTo(titleLabel)
+            make.height.equalTo(40)
+        }
+        titleLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(rollView)
+        }
+        rollView.layoutIfNeeded()
+        rollView.reloadDataAndStartRoll()
+
+        rollView.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
         }
     }
@@ -113,5 +139,33 @@ extension ComponentCollectionsViewController {
         default:
             QL1("未知点击事件")
         }
+    }
+}
+
+extension ComponentCollectionsViewController: RollingNoticeViewDataSource, RollingNoticeViewDelegate {
+
+    private var rollList: [String] {
+        return ["这是第一条公告",
+                "第二条公告开始了"]
+    }
+
+    func numberOfRowsFor(roolingView: RollingNoticeView) -> Int {
+        return rollList.count
+    }
+
+    func rollingNoticeView(roolingView: RollingNoticeView, cellAtIndex index: Int) -> RollingNoticeCell {
+        var itemCell = roolingView.dequeueReusableCell(withIdentifier: RollingNoticeCell.description())
+        if itemCell == nil {
+            itemCell = RollingNoticeCell(reuseIdentifier:RollingNoticeCell.description())
+        }
+        itemCell?.titleLabel.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        itemCell!.titleLabel.text = rollList[index]
+        return itemCell!
+    }
+
+    func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int) {
+        QL1(index)
     }
 }
