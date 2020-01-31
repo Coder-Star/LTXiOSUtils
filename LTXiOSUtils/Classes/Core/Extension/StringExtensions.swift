@@ -112,7 +112,7 @@ public extension String {
     }
 
     /// 是否手机号
-    var isMobiel: Bool {
+    var isMobile: Bool {
         let pattern = "^1[0-9]{10}$"
         let regex = NSPredicate(format: "SELF MATCHES %@", pattern)
         return regex.evaluate(with: self)

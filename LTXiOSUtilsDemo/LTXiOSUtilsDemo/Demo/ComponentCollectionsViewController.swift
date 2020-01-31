@@ -58,6 +58,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         }
 
         let textView = ViewFactory.getTextView()
+        textView.text = "这是内容"
         textView.placeholder = "请输入信息，这是UITextView的扩展"
         textView.limitLength = 10
 //        textView.limitLines = 1
@@ -79,7 +80,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         }
 
         let label = CommonLabel()
-        label.text = "文字，长按"
+        label.text = "17854262835"
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
             make.left.equalTo(titleLabel.snp.right).offset(5)
@@ -87,10 +88,13 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
             make.top.equalTo(titleLabel)
         }
 
-
         label.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
         }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 

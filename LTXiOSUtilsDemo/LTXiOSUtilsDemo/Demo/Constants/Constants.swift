@@ -14,3 +14,37 @@
 @_exported import QorumLogs
 
 @_exported import UITableView_FDTemplateLayoutCell
+
+/// 常量
+public struct Constants {
+    /// 关键key
+    public struct Keys {
+        static let estimatedProgress = "estimatedProgress"
+    }
+
+    /// 第三方url
+    public struct OpenUrl {
+
+        public enum OpenType: String {
+            case tel = "tel://"
+            case email = "mailto:"
+        }
+
+        /// 将字符串作为第三方url打开
+        /// - Parameters:
+        ///   - url: url
+        ///   - type: 类型
+        public static func open(url: String, type: OpenType) {
+            guard let url = URL(string: type.rawValue + url), UIApplication.shared.canOpenURL(url) else {
+                QL1("该url暂不支持打开")
+                return
+            }
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+
+    }
+}

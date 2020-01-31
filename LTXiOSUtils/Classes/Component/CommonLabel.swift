@@ -9,7 +9,7 @@ import Foundation
 
 public class CommonLabel: UILabel {
 
-    var canCopy: Bool = true {
+    public var canCopy: Bool = true {
         didSet {
             setCopy()
         }
@@ -19,6 +19,7 @@ public class CommonLabel: UILabel {
         super.init(frame: frame)
         setupView()
         setCopy()
+        addObserver()
     }
 
     private func setupView() {
@@ -53,7 +54,7 @@ public class CommonLabel: UILabel {
                     return
                 }
                 if let superV = self.superview {
-                   menu.setTargetRect(self.frame, in: superV)
+                    menu.setTargetRect(self.frame, in: superV)
                 }
                 menu.setMenuVisible(true, animated: true)
             }
@@ -62,5 +63,31 @@ public class CommonLabel: UILabel {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension CommonLabel {
+
+    private func addObserver() {
+        let observingKeys = ["attributedText","text"]
+        for key in observingKeys {
+            self.addObserver(self, forKeyPath: key, options: .new, context: nil)
+        }
+    }
+
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        setEvent()
+    }
+
+    @objc private func setEvent() {
+        guard let str = self.text else {
+            return
+        }
+        if str.isMobile || str.isEmail {
+            self.textColor = .blue
+            self.addTapGesture { _ in
+                
+            }
+        }
     }
 }

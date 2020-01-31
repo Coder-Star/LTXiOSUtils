@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-// MARK: - 如果对textView.text直接赋值。请在设置属性之前进行，否则影响计算
 // MARK: - 取消对UITextView的监听无法在扩展中进行，需要在业务中进行处理
 
 // MARK: - UITextView占位符以及最大字数等
@@ -31,6 +30,7 @@ extension UITextView {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.placeholder!, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
             initPlaceholder(placeholder)
+            addObserver()
         }
         get {
             return objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholder!) as? String ?? ""
@@ -64,6 +64,7 @@ extension UITextView {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.limitLength!, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
             initWordCountLabel(limitLength)
+            addObserver()
         }
         get {
             return  objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLength!) as? Int ?? 0
@@ -96,7 +97,7 @@ extension UITextView {
     public var limitLines: Int {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.limitLines!, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
-            NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
+            addObserver()
         }
         get {
             return objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLines!) as? Int ?? 0
@@ -121,10 +122,19 @@ extension UITextView {
         }
     }
 
-    private static let placeholderLabelLeftAndRightMargin:CGFloat = 7
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
+        let observingKeys = ["attributedText","text"]
+        for key in observingKeys {
+            self.addObserver(self, forKeyPath: key, options: .new, context: nil)
+        }
+    }
+
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        textChange()
+    }
 
     private func initPlaceholder(_ placeholder: String) {
-        NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
         placeholderLabel = UILabel()
         placeholderLabel?.font = self.placeholdFont
         placeholderLabel?.text = placeholder
@@ -136,7 +146,6 @@ extension UITextView {
     }
 
     private func initWordCountLabel(_ limitLength : Int) {
-        NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
         wordCountLabel?.removeFromSuperview()
         wordCountLabel = UILabel()
         wordCountLabel?.textAlignment = .right
@@ -185,13 +194,14 @@ extension UITextView {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
+        let placeholderLabelLeftAndRightMargin: CGFloat = 7
         if limitLength > 0 && wordCountLabel != nil {
             wordCountLabel!.frame = CGRect(x: 0, y: frame.height - 20 + contentOffset.y, width: frame.width - 10, height: 20)
         }
         if placeholder.isNotEmpty && placeholderLabel != nil {
-            let width = frame.width - UITextView.placeholderLabelLeftAndRightMargin * 2
+            let width = frame.width - placeholderLabelLeftAndRightMargin * 2
             let size = placeholderLabel!.sizeThatFits(CGSize(width: width, height: .zero))
-            placeholderLabel!.frame = CGRect(x: UITextView.placeholderLabelLeftAndRightMargin, y: 8, width: size.width, height: size.height)
+            placeholderLabel!.frame = CGRect(x: placeholderLabelLeftAndRightMargin, y: 8, width: size.width, height: size.height)
         }
     }
 }
