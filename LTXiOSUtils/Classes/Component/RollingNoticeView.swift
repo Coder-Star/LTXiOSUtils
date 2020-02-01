@@ -155,6 +155,7 @@ extension RollingNoticeView {
         if willShowIndex > count - 1 {
             willShowIndex = 0
         }
+        self.layoutIfNeeded()
         let w = self.frame.size.width
         let h = self.frame.size.height
         if currentCell == nil {
