@@ -111,7 +111,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalTo(rollView)
         }
-        rollView.layoutIfNeeded()
+//        rollView.layoutIfNeeded() //防止子view显示不出来
         rollView.reloadDataAndStartRoll()
 
         rollView.snp.makeConstraints { make in
