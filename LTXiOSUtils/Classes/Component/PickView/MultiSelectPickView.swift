@@ -83,12 +83,12 @@ public class MultiSelectPickView: UIView {
     }()
 
     private lazy var normalImage:UIImage? = {
-        let normalImage = "multi_select_normal".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
+        let normalImage = "MultiSelectPickView_select_normal".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
         return normalImage
     }()
 
     private lazy var selectdImage:UIImage? = {
-        let selectdImage = "multi_select_selected".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
+        let selectdImage = "MultiSelectPickView_select_selected".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
         return selectdImage
     }()
 

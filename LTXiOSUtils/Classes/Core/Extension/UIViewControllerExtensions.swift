@@ -69,3 +69,14 @@ public extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 }
+
+public extension UIViewController {
+
+    /// 点击空白处取消键盘
+    func hideKeyboardWhenTappedAround() {
+        self.view.addTapGesture { tap in
+            tap.cancelsTouchesInView = false
+            self.view.endEditing(true)
+        }
+    }
+}

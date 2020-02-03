@@ -78,6 +78,7 @@ open class RollingNoticeView: UIView {
         return nil
     }
 
+    /// 刷新数据并开始滚动
     open func reloadDataAndStartRoll() {
         stopRoll()
         guard let count = self.dataSource?.numberOfRowsFor(roolingView: self), count > 0 else {
@@ -118,7 +119,6 @@ open class RollingNoticeView: UIView {
     }
 }
 
-// MARK: private funcs
 extension RollingNoticeView {
 
     @objc private func timerHandle() {
