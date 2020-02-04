@@ -521,7 +521,7 @@ public extension PickerView {
     /// - Parameter doneAction: 完成回调
     class func citiesPicker(_ toolBarTitle: String, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
 
-        guard let path = ResourceUtils.getAddress() else {
+        guard let path = LTXiOSUtilsResource.getAddress() else {
             return PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: [[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
         }
 

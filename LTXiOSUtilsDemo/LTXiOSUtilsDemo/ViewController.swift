@@ -21,7 +21,8 @@ class ViewController: BaseGroupTableMenuViewController {
             BaseGroupTableMenuModel(code: "HUD", title: "HUD加载框"),
             BaseGroupTableMenuModel(code: "Pick", title: "选择器"),
             BaseGroupTableMenuModel(code: "Component", title: "控件集锦"),
-            BaseGroupTableMenuModel(code: "Menu", title: "菜单")
+            BaseGroupTableMenuModel(code: "Menu", title: "菜单"),
+            BaseGroupTableMenuModel(code: "TreeView", title: "无限级树形View")
         ]
         menu.append(componetMenu)
 
@@ -51,6 +52,8 @@ class ViewController: BaseGroupTableMenuViewController {
             navigationController?.pushViewController(ExtensionExampleMenuViewController(), animated: true)
         case "Menu":
             navigationController?.pushViewController(GridMenuViewExampleViewController(), animated: true)
+        case "TreeView":
+            navigationController?.pushViewController(TreeViewDemoViewController(), animated: true)
         default:
             HUD.showText("暂无此模块")
         }
