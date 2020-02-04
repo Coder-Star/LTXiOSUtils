@@ -11,6 +11,9 @@
 		C5F09030FAB02C728C249770 /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B5530C402C1946D40DE090 /* Pods_LTXiOSUtilsDemoUITests.framework */; };
 		C66D5214375B1A7AA2E778A9 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD79B9B14BDB14BB8C00E0 /* Pods_LTXiOSUtilsDemo.framework */; };
 		DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */; };
+		DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */; };
+		DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */ = {isa = PBXBuildFile; fileRef = DC1AD82D23E83F2F0073CB97 /* TreeResource.json */; };
+		DC1AD83723E84D520073CB97 /* ResourceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD83623E84D520073CB97 /* ResourceUtils.swift */; };
 		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
 		DC32F1A823841359008D3D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A723841359008D3D67 /* Constants.swift */; };
 		DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */; };
@@ -66,6 +69,9 @@
 		7E69F21B8737A1842F9552D7 /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B94D39D73C90A84C93A55928 /* Pods-LTXiOSUtilsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMenuViewExampleViewController.swift; sourceTree = "<group>"; };
+		DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewDemoViewController.swift; sourceTree = "<group>"; };
+		DC1AD82D23E83F2F0073CB97 /* TreeResource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TreeResource.json; sourceTree = "<group>"; };
+		DC1AD83623E84D520073CB97 /* ResourceUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceUtils.swift; sourceTree = "<group>"; };
 		DC32F1A323840A3E008D3D67 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DC32F1A723841359008D3D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DC4AB9B922F4606000A5F003 /* LTXiOSUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTXiOSUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +167,14 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		DC1AD83523E84D400073CB97 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				DC1AD83623E84D520073CB97 /* ResourceUtils.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		DC4AB9B022F4606000A5F003 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +200,7 @@
 		DC4AB9BB22F4606000A5F003 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC1AD83523E84D400073CB97 /* Util */,
 				DC4AB9EC22F461A700A5F003 /* Resource */,
 				DC4AB9EB22F4618400A5F003 /* System */,
 				DCC76E4823A782C40029590C /* Demo */,
@@ -232,6 +247,7 @@
 		DC4AB9EC22F461A700A5F003 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DC1AD82D23E83F2F0073CB97 /* TreeResource.json */,
 				DC4AB9C322F4606100A5F003 /* Assets.xcassets */,
 				DC62A7C72384084A00DE7800 /* Localizable.strings */,
 				DCBB1C3923B1FCC000FF2925 /* Launch Screen.storyboard */,
@@ -277,6 +293,7 @@
 				DCC76E4B23A783550029590C /* HUDDemoViewController.swift */,
 				DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */,
 				DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */,
+				DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -419,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */,
 				DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */,
 				DCBB1C3A23B1FCC000FF2925 /* Launch Screen.storyboard in Resources */,
 				DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */,
@@ -573,6 +591,8 @@
 				DC4AB9BF22F4606000A5F003 /* ViewController.swift in Sources */,
 				DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
+				DC1AD83723E84D520073CB97 /* ResourceUtils.swift in Sources */,
+				DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */,
 				DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */,
 				DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */,
 				DCB1C05B23C75C5A00D735BD /* ThirdLibApplicationService.swift in Sources */,

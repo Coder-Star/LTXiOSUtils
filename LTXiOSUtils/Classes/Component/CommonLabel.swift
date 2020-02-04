@@ -86,7 +86,6 @@ extension CommonLabel {
         if str.isMobile || str.isEmail {
             self.textColor = .blue
             self.addTapGesture { _ in
-                
             }
         }
     }
