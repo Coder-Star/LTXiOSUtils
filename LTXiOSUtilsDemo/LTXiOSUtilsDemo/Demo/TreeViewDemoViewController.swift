@@ -48,7 +48,7 @@ class TreeViewDemoViewController: BaseUIViewController {
         treeView = TreeTableView(frame: baseView.frame) //注意：这里的Frame不可以设置为.zero，否则TreeTableView里面的tableview不会走cellForRowAt代理
         treeView.delegate = self
         treeView.treeData = treeData
-        treeView.isSingleCheck = false
+        treeView.checkNodesID = ["13043525276202030000"]
         baseView.addSubview(treeView)
         treeView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -58,6 +58,10 @@ class TreeViewDemoViewController: BaseUIViewController {
 }
 extension TreeViewDemoViewController: TreeTableViewDelegate {
     func checkNodes(nodes: [TreeNode]) {
-        QL1(nodes.count)
+        if treeView.isSingleCheck {
+            QL1(nodes[0].data)
+        } else {
+            QL1(nodes.count)
+        }
     }
 }

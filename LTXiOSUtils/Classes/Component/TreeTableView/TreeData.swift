@@ -382,18 +382,27 @@ extension TreeData {
         var isContain = false
         for node in nodes {
             if type.isEmpty {
-                if node.filterName.contains(filed) {
+                if isFilterNameContain(filterName: node.filterName, filed: filed) {
                     isContain = true
                     break
                 }
             } else {
-                if node.filterName.contains(filed), node.type == type {
+                if isFilterNameContain(filterName: node.filterName, filed: filed), node.type == type {
                     isContain = true
                     break
                 }
             }
         }
         return isContain
+    }
+
+    private func isFilterNameContain(filterName: [String], filed:String) -> Bool {
+        var result = false
+        for item in filterName where item.contains(filed) {
+            result = true
+            break
+        }
+        return result
     }
 }
 

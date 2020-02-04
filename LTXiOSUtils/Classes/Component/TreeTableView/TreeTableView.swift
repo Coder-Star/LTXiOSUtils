@@ -28,7 +28,7 @@ public class TreeTableView: UIView {
     /// 是否实时搜索
     public var isSearchRealTime: Bool = true
     /// 多选时选择父节点时，子节点也被选择
-    public var isChildCheck: Bool = true
+    public var isChildCheck: Bool = false
 
     /// 树形数据
     public var treeData: TreeData? {
@@ -37,14 +37,23 @@ public class TreeTableView: UIView {
         }
     }
 
+    /// 默认勾选的节点
+    public var checkNodesID: [String] = [String]() {
+        didSet {
+            if !isSingleCheck {
+                initCheckNodesID()
+                if treeData != nil {
+                    tableView.reloadData()
+                }
+            }
+        }
+    }
+
     /// 代理
     public weak var delegate: TreeTableViewDelegate?
 
     /// 搜索框
-    public lazy var searchBar: TreeTableViewSearchBar = {
-        let searchBar = TreeTableViewSearchBar()
-        return searchBar
-    }()
+    public var searchBar: TreeTableViewSearchBar?
 
     public lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -69,9 +78,23 @@ public class TreeTableView: UIView {
         initView(frame: frame)
     }
 
+    public override func layoutSubviews() {
+        searchBar = TreeTableViewSearchBar(frame: CGRect(x: 0, y: 0, width: frame.width, height: 40))
+        searchBar?.delegate = self
+        tableView.tableHeaderView = isShowSearchBar ? searchBar : nil
+        tableView.frame = CGRect(x: 0, y: 0, width: frame.width, height:frame.height)
+    }
+
+    private func initView(frame: CGRect) {
+        self.addSubview(tableView)
+        if isNeedRefresh {
+            tableView.addSubview(refreshControl)
+        }
+    }
+
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if isShowSearchBar {
-            searchBar.searchTextField.resignFirstResponder()
+            searchBar?.searchTextField.resignFirstResponder()
         }
     }
 
@@ -120,14 +143,27 @@ public extension TreeTableView {
 }
 
 extension TreeTableView {
-    private func initView(frame: CGRect) {
-        searchBar = TreeTableViewSearchBar(frame: CGRect(x: 0, y: 0, width: frame.width, height: 40))
-        searchBar.delegate = self
-
-        self.addSubview(tableView)
-        tableView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-        if isNeedRefresh {
-            tableView.addSubview(refreshControl)
+    ///勾选传入的节点ID
+    private func initCheckNodesID() {
+        guard let data = treeData else {
+            return
+        }
+        if checkNodesID.count <= 0 {
+            return
+        }
+        for ID in checkNodesID {
+            if let node = data.getNodeByID(ID: ID) {
+                data.checkNode(node: node, isCheck: true, isChildNodesCheck: !isSingleCheck)
+                var expandParentNodes = [TreeNode]()
+                var parentNode = node.parentNode
+                while parentNode != nil {
+                    expandParentNodes.append(parentNode!)
+                    parentNode = parentNode?.parentNode
+                }
+                for expandParentNode in expandParentNodes {
+                    _ = data.expandNode(node: expandParentNode, isExpand: true)
+                }
+            }
         }
     }
 
@@ -173,11 +209,6 @@ extension TreeTableView {
 }
 
 extension TreeTableView: UITableViewDataSource, UITableViewDelegate {
-
-    public func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return treeData?.showNodes.count ?? 0
     }
@@ -199,14 +230,6 @@ extension TreeTableView: UITableViewDataSource, UITableViewDelegate {
             }
         }
         return cell!
-    }
-
-    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return self.isShowSearchBar ? self.searchBar : UIView()
-    }
-
-    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return self.isShowSearchBar ? self.searchBar.bounds.size.height : 0
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
