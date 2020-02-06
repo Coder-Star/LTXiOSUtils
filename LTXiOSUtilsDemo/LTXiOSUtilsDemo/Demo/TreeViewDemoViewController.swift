@@ -58,10 +58,12 @@ class TreeViewDemoViewController: BaseUIViewController {
 }
 extension TreeViewDemoViewController: TreeTableViewDelegate {
     func checkNodes(nodes: [TreeNode]) {
-        if treeView.isSingleCheck {
-            QL1(nodes[0].data)
-        } else {
-            QL1(nodes.count)
+        if nodes.count > 0 {
+            if treeView.isSingleCheck {
+                QL1(nodes[0].data)
+            } else {
+                QL1(nodes.count)
+            }
         }
     }
 }

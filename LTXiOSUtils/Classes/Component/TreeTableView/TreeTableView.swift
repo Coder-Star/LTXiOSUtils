@@ -37,7 +37,7 @@ public class TreeTableView: UIView {
         }
     }
 
-    /// 默认勾选的节点
+    /// 默认勾选的节点,在单选模式下没有意义
     public var checkNodesID: [String] = [String]() {
         didSet {
             if !isSingleCheck {
@@ -81,7 +81,6 @@ public class TreeTableView: UIView {
     public override func layoutSubviews() {
         searchBar = TreeTableViewSearchBar(frame: CGRect(x: 0, y: 0, width: frame.width, height: 40))
         searchBar?.delegate = self
-        tableView.tableHeaderView = isShowSearchBar ? searchBar : nil
         tableView.frame = CGRect(x: 0, y: 0, width: frame.width, height:frame.height)
     }
 
@@ -93,9 +92,7 @@ public class TreeTableView: UIView {
     }
 
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if isShowSearchBar {
-            searchBar?.searchTextField.resignFirstResponder()
-        }
+        scrollView.endEditing(true)
     }
 
     required init?(coder: NSCoder) {
@@ -232,6 +229,14 @@ extension TreeTableView: UITableViewDataSource, UITableViewDelegate {
         return cell!
     }
 
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return isShowSearchBar ? searchBar : nil
+    }
+
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return isShowSearchBar ? searchBar?.bounds.height ?? 0 : 0
+    }
+
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let node = treeData?.showNodes[indexPath.row]
         selectNodes(nodes: [node!], isExpand: !node!.isExpand)
@@ -246,17 +251,12 @@ extension TreeTableView: TreeTableViewSearchBarDelegate {
     }
 
     public func treeTableViewSearchBarShouldReturn(searchBar: TreeTableViewSearchBar) {
-        if !isSearchRealTime {
-            if searchBar.searchTextField.markedTextRange == nil {
-                treeData?.filterFieldAndType(filed: searchBar.searchTextField.text!, type: "", isChildNodeCheck: !isSingleCheck)
-                tableView.reloadData()
-                searchBar.searchTextField.resignFirstResponder()
-            }
-        }
+        treeData?.filterFieldAndType(filed: searchBar.searchTextField.text!, type: "", isChildNodeCheck: !isSingleCheck)
+        tableView.reloadData()
     }
 
     public func treeTableViewSearchBarSearhing(searchBar: TreeTableViewSearchBar) {
-        if isSearchRealTime {
+        if isSearchRealTime, searchBar.searchTextField.markedTextRange == nil {
             treeData?.filterFieldAndType(filed: searchBar.searchTextField.text!, type: "", isChildNodeCheck: !isSingleCheck)
             tableView.reloadData()
         }
