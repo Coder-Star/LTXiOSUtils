@@ -134,7 +134,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
                 self.showAlert(message:"\(selectedIndexs)\(selectedValues)")
             }
         case "city":
-            PickerViewManager.showCitiesPicker("省市区选择", defaultSelectedValues: ["天津市"]) { (selectedIndexs, selectedValues) in
+            PickerViewManager.showCitiesPicker("省市区选择", type: .province, defaultSelectedValues: ["天津市","天津市","河东区"]) { (selectedIndexs, selectedValues) in
                 self.showAlert(message:"\(selectedIndexs)   \(selectedValues)")
             }
         case "multipleSelect":
