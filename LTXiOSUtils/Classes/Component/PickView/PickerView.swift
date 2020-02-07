@@ -41,6 +41,16 @@ public enum PickerStyles {
     case date
 }
 
+/// 城市选择样式
+public enum CityPickStyle {
+    /// 省
+    case province
+    /// 市
+    case city
+    /// 区
+    case area
+}
+
 // MARK: - PickerView
 public class PickerView: UIView {
 
@@ -519,37 +529,55 @@ public extension PickerView {
     /// - Parameter defaultSelectedValues: 默认选中值
     /// - Parameter cancelAction: 取消回调
     /// - Parameter doneAction: 完成回调
-    class func citiesPicker(_ toolBarTitle: String, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
-
+    /// - Parameter type: 显示样式类型
+    class func citiesPicker(_ toolBarTitle: String, type: CityPickStyle, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
+        var pic = PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: [[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
         guard let path = LTXiOSUtilsResource.getAddress() else {
-            return PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: [[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
+            return pic
         }
 
         guard let info = NSArray(contentsOfFile: path) as? [[String: [String: [String: [String]]]]] else {
-            return PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: [[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
+            return pic
         }
 
-        var areasArr = [[String: [String]?]]()
-        var provincesArr = [[String: [String]?]]()
+        var provincesArr = [String]()
+        var provincesAndCitiesArr = [[String: [String]?]]()
+        var citiesAndAreasArr = [[String: [String]?]]()
         for value in info {
             for (provinceKey, provinceValue) in value {
                 let sortProvince = provinceValue.sorted(by: { $0.key < $1.key }).compactMap {$0.value}
                 var arr = [String]()
                 for areaValue in sortProvince {
-                    areasArr.append(areaValue)
+                    citiesAndAreasArr.append(areaValue)
                     arr.append(Array(areaValue.keys)[0])
                 }
-                provincesArr.append([provinceKey: arr])
+                provincesAndCitiesArr.append([provinceKey: arr])
+                provincesArr.append(provinceKey)
             }
         }
-        let citiesArr = [provincesArr, areasArr]
         var defaultSelectedValueArr: [String]?
-        if let selectedValues = defaultSelectedValues, selectedValues.count <= 3 {
+        if let selectedValues = defaultSelectedValues {
             defaultSelectedValueArr = selectedValues
         }
-        let pic = PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: citiesArr, defaultSelectedValues: defaultSelectedValueArr, cancelAction: cancelAction, doneAction: doneAction)
+        switch type {
+        case .province:
+            print(provincesArr)
+            var defaultIndex: Int?
+            if let tempDefaultSelectedValues = defaultSelectedValues {
+                if tempDefaultSelectedValues.count > 0 {
+                    defaultIndex = provincesArr.firstIndex(of: tempDefaultSelectedValues[0])
+                }
+            }
+            pic = PickerView.singleColPicker(toolBarTitle, singleColData: provincesArr, defaultIndex: defaultIndex, cancelAction: cancelAction) { (index,value) in
+                doneAction?([index], [value])
+            }
+        case .city:
+            pic = PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: [provincesAndCitiesArr], defaultSelectedValues: defaultSelectedValueArr, cancelAction: cancelAction, doneAction: doneAction)
+        case .area:
+            let provincesAndCitiesAndAreasArr = [provincesAndCitiesArr, citiesAndAreasArr]
+            pic = PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: provincesAndCitiesAndAreasArr, defaultSelectedValues: defaultSelectedValueArr, cancelAction: cancelAction, doneAction: doneAction)
+        }
         return pic
-
     }
 
     /// 时间选择器

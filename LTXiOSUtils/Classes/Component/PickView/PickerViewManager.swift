@@ -84,9 +84,9 @@ public class PickerViewManager: UIView {
 
     }
     // 城市选择器
-  convenience init(frame: CGRect, toolBarTitle: String, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
+  convenience init(frame: CGRect, toolBarTitle: String, type: CityPickStyle, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
         self.init(frame: frame)
-        pickerView = PickerView.citiesPicker(toolBarTitle, defaultSelectedValues: defaultSelectedValues, cancelAction: {[unowned self] in
+        pickerView = PickerView.citiesPicker(toolBarTitle, type: type, defaultSelectedValues: defaultSelectedValues, cancelAction: {[unowned self] in
                 self.hidePicker()
             }, doneAction: {[unowned self] (selectedIndexs, selectedValues) in
                 doneAction?(selectedIndexs, selectedValues)
@@ -245,13 +245,14 @@ public extension PickerViewManager {
 
     /// 城市选择器
     /// - Parameter toolBarTitle:  标题
+    /// - Parameter type: 显示样式类型
     /// - Parameter defaultSelectedValues: 默认选中的每一列的值, 注意不是行数；当默认值不存在时,会默认显示第一个，默认数据数组数量不做限制，已兼容
     /// - Parameter doneAction: 响应完成的Closure
-    class func showCitiesPicker(_ toolBarTitle: String, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
+    class func showCitiesPicker(_ toolBarTitle: String, type: CityPickStyle = .province, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
         currentWindow.endEditing(true)
-        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, defaultSelectedValues: defaultSelectedValues, doneAction: doneAction)
+        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, type: type, defaultSelectedValues: defaultSelectedValues, doneAction: doneAction)
         pickViewManager.showPicker()
     }
 
