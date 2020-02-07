@@ -561,7 +561,6 @@ public extension PickerView {
         }
         switch type {
         case .province:
-            print(provincesArr)
             var defaultIndex: Int?
             if let tempDefaultSelectedValues = defaultSelectedValues {
                 if tempDefaultSelectedValues.count > 0 {
