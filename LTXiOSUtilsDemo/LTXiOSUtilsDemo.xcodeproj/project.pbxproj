@@ -204,7 +204,6 @@
 				DC4AB9EC22F461A700A5F003 /* Resource */,
 				DC4AB9EB22F4618400A5F003 /* System */,
 				DCC76E4823A782C40029590C /* Demo */,
-				DCC76E4923A782E70029590C /* ThirdLibDemo */,
 				DC4AB9BE22F4606000A5F003 /* ViewController.swift */,
 				DC4AB9C822F4606100A5F003 /* Info.plist */,
 				DC32F1A323840A3E008D3D67 /* R.generated.swift */,
@@ -296,13 +295,6 @@
 				DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */,
 			);
 			path = Demo;
-			sourceTree = "<group>";
-		};
-		DCC76E4923A782E70029590C /* ThirdLibDemo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ThirdLibDemo;
 			sourceTree = "<group>";
 		};
 		DCCF3E4D23C8AB8B000E65E1 /* ThirdLibTest */ = {
