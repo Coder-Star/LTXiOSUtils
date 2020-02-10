@@ -319,7 +319,10 @@ extension GridMenuView: UICollectionViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let view = collectionView {
             if mode == .horizontalScroll {
-                let offsetX  = view.contentOffset.x
+                let offsetX = view.contentOffset.x
+                if offsetX < 0 || offsetX > view.frame.width {
+                    return
+                }
                 self.scrollPageControlView.progrss = offsetX * self.scrollPageControlView.offsetWidth / ( view.contentSize.width - view.frame.width )
             }
         }
