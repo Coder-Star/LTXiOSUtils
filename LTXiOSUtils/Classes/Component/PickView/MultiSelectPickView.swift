@@ -10,6 +10,7 @@ import Foundation
 // MARK: - 属性
 public class MultiSelectPickView: UIView {
 
+    public typealias ClearBlock = () -> Void
     public typealias SureBlock = (_ indexArr: [Int], _ valueArr: [String]) -> Void
 
     /// 数据
@@ -22,6 +23,8 @@ public class MultiSelectPickView: UIView {
     /// 选中的索引
     private var selectIndexArr = [Int]()
 
+    /// 清空按钮闭包
+    public var clearBlock: ClearBlock?
     /// 确定按钮闭包
     public var sureBlock: SureBlock?
 
@@ -101,8 +104,9 @@ public class MultiSelectPickView: UIView {
         pickView.addSubview(toolBarView)
         pickView.addSubview(tableView)
 
-        toolBarView.cancelAction = {
-            self.dismiss()
+        toolBarView.clearAction = { [weak self] in
+            self?.clearBlock?()
+            self?.dismiss()
         }
         toolBarView.doneAction = {
             if self.selectIndexArr.isEmpty {
@@ -149,10 +153,11 @@ public extension MultiSelectPickView {
     ///   - data: 数据
     ///   - defaultSelectedIndex: 默认选中索引
     ///   - sureBlock: 确定闭包
-    class func showView(title: String, data: [String], defaultSelectedIndexs: [Int]?, sureBlock: @escaping SureBlock) {
+    class func showView(title: String, data: [String], defaultSelectedIndexs: [Int]?, clearBlock: @escaping ClearBlock, sureBlock: @escaping SureBlock) {
         guard let view = getView(title: title, data: data, defaultSelectedIndexs: defaultSelectedIndexs) else {
             return
         }
+        view.clearBlock = clearBlock
         view.sureBlock = sureBlock
         view.show()
     }

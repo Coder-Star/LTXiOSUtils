@@ -16,7 +16,7 @@ public struct Core<Base> {
     public init(_ base: Base) {
         self.base = base
     }
-    /// 生成
+    /// 生成核心域
     public var build: Base {
         return base
     }

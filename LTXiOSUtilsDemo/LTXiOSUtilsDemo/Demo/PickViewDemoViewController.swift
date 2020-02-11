@@ -106,41 +106,57 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
             }
             popupView.show()
         case "date":
-            PickerViewManager.showDatePicker("日期选择") { selectedDate in
+            PickerViewManager.showDatePicker("日期选择", clearAction: {
+                self.showAlert(message: "清空")
+            }, doneAction: { selectedDate in
                 self.showAlert(message: selectedDate.formatDate(format: .YMD))
-            }
+            })
         case "time":
             var dateStyle = DatePickerSetting()
             dateStyle.dateMode = .time
-            PickerViewManager.showDatePicker("时间选择",datePickerSetting: dateStyle) { selectedDate in
+            PickerViewManager.showDatePicker("时间选择",datePickerSetting: dateStyle, clearAction: {
+                self.showAlert(message: "清空")
+            }, doneAction: { selectedDate in
                 self.showAlert(message: selectedDate.formatDate(format: .HMS))
-            }
+            })
         case "dateAndTime":
             var dateStyle = DatePickerSetting()
             dateStyle.dateMode = .dateAndTime
-            PickerViewManager.showDatePicker("日期与时间选择",datePickerSetting: dateStyle) { selectedDate in
+            PickerViewManager.showDatePicker("日期与时间选择",datePickerSetting: dateStyle, clearAction: {
+                self.showAlert(message: "清空")
+            }, doneAction: { selectedDate in
                 self.showAlert(message: selectedDate.formatDate(format: .YMDHMS))
-            }
+            })
         case "single":
-            PickerViewManager.showSingleColPicker("单列", data: singleData, defaultSelectedIndex: 2) { (selectedIndex, selectedValue) in
+            PickerViewManager.showSingleColPicker("单列", data: singleData, defaultSelectedIndex: 2, clearAction: {
+                self.showAlert(message: "清空")
+            }, doneAction: { (selectedIndex, selectedValue) in
                 self.showAlert(message:"\(selectedIndex)\(selectedValue)")
-            }
+            })
         case "multiple":
-            PickerViewManager.showMultipleColsPicker("多列不关联", data: multipleData, defaultSelectedIndexs: [0,1,1]) { (selectedIndexs, selectedValues) in
+            PickerViewManager.showMultipleColsPicker("多列不关联", data: multipleData, defaultSelectedIndexs: [0,1,1], clearAction: {
+                self.showAlert(message: "清空")
+            }, doneAction: { (selectedIndexs, selectedValues) in
                 self.showAlert(message:"\(selectedIndexs)\(selectedValues)")
-            }
+            })
         case "multipleAssociated":
-            PickerViewManager.showMultipleAssociatedColsPicker("多列关联", data: multipleAssociatedData, defaultSelectedValues: ["食品","垃圾食品","不健康小吃"]) { (selectedIndexs, selectedValues) in
+            PickerViewManager.showMultipleAssociatedColsPicker("多列关联", data: multipleAssociatedData, defaultSelectedValues: ["食品","垃圾食品","不健康小吃"], clearAction: {
+                self.showAlert(message: "清空")
+            }, doneAction: { (selectedIndexs, selectedValues) in
                 self.showAlert(message:"\(selectedIndexs)\(selectedValues)")
-            }
+            })
         case "city":
-            PickerViewManager.showCitiesPicker("省市区选择", type: .province, defaultSelectedValues: ["天津市","天津市","河东区"]) { (selectedIndexs, selectedValues) in
+            PickerViewManager.showCitiesPicker("省市区选择", type: .province, defaultSelectedValues: ["天津市","天津市","河东区"], clearAction: {
+                self.showAlert(message: "清空")
+            }, doneAction: { (selectedIndexs, selectedValues) in
                 self.showAlert(message:"\(selectedIndexs)   \(selectedValues)")
-            }
+            })
         case "multipleSelect":
-            MultiSelectPickView.showView(title: "选择", data: singleData, defaultSelectedIndexs: [1]) { index,value in
+            MultiSelectPickView.showView(title: "多项选择", data: singleData, defaultSelectedIndexs: [1], clearBlock: {
+                self.showAlert(message: "清空")
+            }, sureBlock: { index,value in
                 self.showAlert(message:"\(index)   \(value)")
-            }
+            })
         default:
             HUD.showText("暂无此模块")
         }

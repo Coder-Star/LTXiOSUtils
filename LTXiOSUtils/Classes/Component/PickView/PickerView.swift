@@ -95,7 +95,7 @@ public class PickerView: UIView {
     /// 取消按钮回调
     fileprivate var cancelAction: BtnAction? = nil {
         didSet {
-            toolBar.cancelAction = cancelAction
+            toolBar.clearAction = cancelAction
         }
     }
     // MARK: - 只有一列的时候用到的属性

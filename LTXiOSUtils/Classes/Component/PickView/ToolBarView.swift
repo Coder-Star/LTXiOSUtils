@@ -10,13 +10,13 @@ import UIKit
 open class ToolBarView: UIView {
 
     /// 取消按钮颜色
-    public static var cancelButtonColor: UIColor = UIColor.black.adapt()
+    public static var clearButtonColor: UIColor = UIColor.black.adapt()
     /// 完成按钮颜色
     public static var doneButtonColor: UIColor = UIColor.black.adapt()
     /// 中间title颜色
     public static var centerLabelColor: UIColor = UIColor.black.adapt()
 
-    typealias CustomClosures = (_ titleLabel: UILabel, _ cancleBtn: UIButton, _ doneBtn: UIButton) -> Void
+    typealias CustomClosures = (_ titleLabel: UILabel, _ clearBtn: UIButton, _ doneBtn: UIButton) -> Void
     public typealias BtnAction = () -> Void
 
     open var title = "" {
@@ -26,7 +26,7 @@ open class ToolBarView: UIView {
     }
 
     open var doneAction: BtnAction?
-    open var cancelAction: BtnAction?
+    open var clearAction: BtnAction?
 
     // 用来产生上下分割线的效果
     fileprivate lazy var contentView: UIView = {
@@ -45,10 +45,10 @@ open class ToolBarView: UIView {
     }()
 
     // 取消按钮
-    fileprivate lazy var cancleBtn: UIButton = {
+    fileprivate lazy var clearBtn: UIButton = {
         let btn = UIButton()
-        btn.setTitle("cancel".localizedOfLTXiOSUtils(), for: UIControl.State())
-        btn.setTitleColor(ToolBarView.cancelButtonColor, for: UIControl.State())
+        btn.setTitle("clear".localizedOfLTXiOSUtils(), for: UIControl.State())
+        btn.setTitleColor(ToolBarView.clearButtonColor, for: UIControl.State())
         return btn
     }()
 
@@ -73,20 +73,20 @@ open class ToolBarView: UIView {
     fileprivate func commonInit() {
         backgroundColor = UIColor.lightText
         addSubview(contentView)
-        contentView.addSubview(cancleBtn)
+        contentView.addSubview(clearBtn)
         contentView.addSubview(doneBtn)
         contentView.addSubview(titleLabel)
 
         doneBtn.addTarget(self, action: #selector(self.doneBtnOnClick(_:)), for: .touchUpInside)
-        cancleBtn.addTarget(self, action: #selector(self.cancelBtnOnClick(_:)), for: .touchUpInside)
+        clearBtn.addTarget(self, action: #selector(self.clearBtnOnClick(_:)), for: .touchUpInside)
     }
 
     @objc func doneBtnOnClick(_ sender: UIButton) {
         doneAction?()
     }
 
-    @objc func cancelBtnOnClick(_ sender: UIButton) {
-        cancelAction?()
+    @objc func clearBtnOnClick(_ sender: UIButton) {
+        clearAction?()
     }
 
     override open func layoutSubviews() {
@@ -94,11 +94,11 @@ open class ToolBarView: UIView {
         let margin: CGFloat = 15
         let contentHeight = bounds.size.height - 2
         contentView.frame = CGRect(x: 0, y: 1, width: bounds.size.width, height: contentHeight)
-        let cancleBtnSize = cancleBtn.sizeThatFits(CGSize(width: 0, height: contentHeight))
+        let clearBtnSize = clearBtn.sizeThatFits(CGSize(width: 0, height: contentHeight))
         let doneBtnSize = doneBtn.sizeThatFits(CGSize(width: 0, height: contentHeight))
-        cancleBtn.frame = CGRect(x: margin, y: 0, width: cancleBtnSize.width, height: contentHeight)
+        clearBtn.frame = CGRect(x: margin, y: 0, width: clearBtnSize.width, height: contentHeight)
         doneBtn.frame = CGRect(x: bounds.size.width - doneBtnSize.width - margin, y: 0, width: doneBtnSize.width, height: contentHeight)
-        let titleX = cancleBtn.frame.maxX + margin
+        let titleX = clearBtn.frame.maxX + margin
         let titleW = bounds.size.width - titleX - doneBtnSize.width - margin
 
         titleLabel.frame = CGRect(x: titleX, y: 0.0, width: titleW, height: contentHeight)
