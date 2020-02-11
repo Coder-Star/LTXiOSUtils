@@ -31,9 +31,10 @@ public class PickerViewManager: UIView {
 
     // MARK: - 初始化
     // 单列
-    convenience init(frame: CGRect, toolBarTitle: String, singleColData: [String], defaultSelectedIndex: Int?, doneAction: SingleDoneAction?) {
+    convenience init(frame: CGRect, toolBarTitle: String, singleColData: [String], defaultSelectedIndex: Int?, clearAction: BtnAction?, doneAction: SingleDoneAction?) {
         self.init(frame: frame)
         pickerView = PickerView.singleColPicker(toolBarTitle, singleColData: singleColData, defaultIndex: defaultSelectedIndex, cancelAction: { [unowned self] in
+            clearAction?()
             self.hidePicker()
             }, doneAction: {[unowned self] (selectedIndex, selectedValue) in
                 doneAction?(selectedIndex, selectedValue)
@@ -41,16 +42,16 @@ public class PickerViewManager: UIView {
         })
         pickerView.frame = hideFrame
         addSubview(pickerView)
-
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapAction(_:)))
         addGestureRecognizer(tap)
 
     }
 
     // 多列不关联
-    convenience init(frame: CGRect, toolBarTitle: String, multipleColsData: [[String]], defaultSelectedIndexs: [Int]?, doneAction: MultipleDoneAction?) {
+    convenience init(frame: CGRect, toolBarTitle: String, multipleColsData: [[String]], defaultSelectedIndexs: [Int]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
         self.init(frame: frame)
         pickerView = PickerView.multipleCosPicker(toolBarTitle, multipleColsData: multipleColsData, defaultSelectedIndexs: defaultSelectedIndexs, cancelAction: {[unowned self] in
+            clearAction?()
             self.hidePicker()
             }, doneAction: {[unowned self] (selectedIndexs, selectedValues) in
                 doneAction?(selectedIndexs, selectedValues)
@@ -58,70 +59,55 @@ public class PickerViewManager: UIView {
         })
         pickerView.frame = hideFrame
         addSubview(pickerView)
-
-        // 点击背景移除self
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapAction(_:)))
         addGestureRecognizer(tap)
     }
 
     // 多列关联
-    convenience init(frame: CGRect, toolBarTitle: String, multipleAssociatedColsData: MultipleAssociatedDataType, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
+    convenience init(frame: CGRect, toolBarTitle: String, multipleAssociatedColsData: MultipleAssociatedDataType, defaultSelectedValues: [String]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
         self.init(frame: frame)
         pickerView = PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: multipleAssociatedColsData, defaultSelectedValues: defaultSelectedValues, cancelAction: {[unowned self] in
-            // 点击取消的时候移除
-                self.hidePicker()
+            clearAction?()
+            self.hidePicker()
             }, doneAction: {[unowned self] (selectedIndexs, selectedValues) in
                 doneAction?(selectedIndexs, selectedValues)
                 self.hidePicker()
         })
-
         pickerView.frame = hideFrame
         addSubview(pickerView)
-
-        // 点击背景移除self
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapAction(_:)))
         addGestureRecognizer(tap)
 
     }
     // 城市选择器
-  convenience init(frame: CGRect, toolBarTitle: String, type: CityPickStyle, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
+    convenience init(frame: CGRect, toolBarTitle: String, type: CityPickStyle, defaultSelectedValues: [String]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
         self.init(frame: frame)
         pickerView = PickerView.citiesPicker(toolBarTitle, type: type, defaultSelectedValues: defaultSelectedValues, cancelAction: {[unowned self] in
-                self.hidePicker()
+            clearAction?()
+            self.hidePicker()
             }, doneAction: {[unowned self] (selectedIndexs, selectedValues) in
                 doneAction?(selectedIndexs, selectedValues)
                 self.hidePicker()
         })
-
         pickerView.frame = hideFrame
         addSubview(pickerView)
-
-        // 点击背景移除self
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapAction(_:)))
         addGestureRecognizer(tap)
-
     }
     // 日期选择器
-    convenience init(frame: CGRect, toolBarTitle: String, datePickerSetting: DatePickerSetting, doneAction: DateDoneAction?) {
-
+    convenience init(frame: CGRect, toolBarTitle: String, datePickerSetting: DatePickerSetting, clearAction: BtnAction?, doneAction: DateDoneAction?) {
         self.init(frame: frame)
-
         pickerView = PickerView.datePicker(toolBarTitle, datePickerSetting: datePickerSetting, cancelAction: {[unowned self] in
-            // 点击取消的时候移除
+            clearAction?()
             self.hidePicker()
-
             }, doneAction: {[unowned self] (selectedDate) in
                 doneAction?(selectedDate)
                 self.hidePicker()
         })
-
         pickerView.frame = hideFrame
         addSubview(pickerView)
-
-        // 点击背景移除self
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapAction(_:)))
         addGestureRecognizer(tap)
-
     }
 
     override init(frame: CGRect) {
@@ -197,7 +183,7 @@ public extension PickerViewManager {
     ///  - parameter data:                       数据；数据为空时，会弹出提示框提示数据为空
     ///  - parameter defaultSeletedIndex:        默认选中的行数；传入当默认索引不在合理范围内,会默认显示第一个
     ///  - parameter doneAction:                 响应完成的Closure
-    class func showSingleColPicker(_ toolBarTitle: String, data: [String], defaultSelectedIndex: Int?, doneAction: SingleDoneAction?) {
+    class func showSingleColPicker(_ toolBarTitle: String, data: [String], defaultSelectedIndex: Int?, clearAction: BtnAction?, doneAction: SingleDoneAction?) {
         if data.isEmpty {
             HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtils())
             return
@@ -205,7 +191,7 @@ public extension PickerViewManager {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
         currentWindow.endEditing(true)
-        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, singleColData: data, defaultSelectedIndex: defaultSelectedIndex, doneAction: doneAction)
+        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, singleColData: data, defaultSelectedIndex: defaultSelectedIndex, clearAction: clearAction, doneAction: doneAction)
         pickViewManager.showPicker()
     }
 
@@ -214,7 +200,7 @@ public extension PickerViewManager {
     /// - Parameter data: 数据；为空时，会弹出提示框提示数据为空
     /// - Parameter defaultSelectedIndexs: 默认选中的每一列的行数；当默认索引不在合理范围内,会默认显示第一个，默认索引数组数量不做限制，已兼容
     /// - Parameter doneAction: 响应完成的Closure
-    class func showMultipleColsPicker(_ toolBarTitle: String, data: [[String]], defaultSelectedIndexs: [Int]?, doneAction: MultipleDoneAction?) {
+    class func showMultipleColsPicker(_ toolBarTitle: String, data: [[String]], defaultSelectedIndexs: [Int]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
         if data.isEmpty {
             HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtils())
             return
@@ -222,7 +208,7 @@ public extension PickerViewManager {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
         currentWindow.endEditing(true)
-        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, multipleColsData: data, defaultSelectedIndexs: defaultSelectedIndexs, doneAction: doneAction)
+        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, multipleColsData: data, defaultSelectedIndexs: defaultSelectedIndexs, clearAction: clearAction, doneAction: doneAction)
         pickViewManager.showPicker()
     }
 
@@ -231,7 +217,7 @@ public extension PickerViewManager {
     /// - Parameter data: 数据；为空时，会弹出提示框提示数据为空
     /// - Parameter defaultSelectedValues: 默认选中的每一列的数值；当默认值不存在时,会默认显示第一个，默认数据数组数量不做限制，已兼容
     /// - Parameter doneAction: 响应完成的Closure
-    class func showMultipleAssociatedColsPicker(_ toolBarTitle: String, data: MultipleAssociatedDataType, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
+    class func showMultipleAssociatedColsPicker(_ toolBarTitle: String, data: MultipleAssociatedDataType, defaultSelectedValues: [String]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
         if data.isEmpty {
             HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtils())
             return
@@ -239,7 +225,7 @@ public extension PickerViewManager {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
         currentWindow.endEditing(true)
-        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, multipleAssociatedColsData: data, defaultSelectedValues: defaultSelectedValues, doneAction: doneAction)
+        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, multipleAssociatedColsData: data, defaultSelectedValues: defaultSelectedValues, clearAction: clearAction, doneAction: doneAction)
         pickViewManager.showPicker()
     }
 
@@ -248,11 +234,11 @@ public extension PickerViewManager {
     /// - Parameter type: 显示样式类型
     /// - Parameter defaultSelectedValues: 默认选中的每一列的值, 注意不是行数；当默认值不存在时,会默认显示第一个，默认数据数组数量不做限制，已兼容
     /// - Parameter doneAction: 响应完成的Closure
-    class func showCitiesPicker(_ toolBarTitle: String, type: CityPickStyle = .province, defaultSelectedValues: [String]?, doneAction: MultipleDoneAction?) {
+    class func showCitiesPicker(_ toolBarTitle: String, type: CityPickStyle = .province, defaultSelectedValues: [String]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
         currentWindow.endEditing(true)
-        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, type: type, defaultSelectedValues: defaultSelectedValues, doneAction: doneAction)
+        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, type: type, defaultSelectedValues: defaultSelectedValues, clearAction: clearAction, doneAction: doneAction)
         pickViewManager.showPicker()
     }
 
@@ -260,11 +246,11 @@ public extension PickerViewManager {
     /// - Parameter toolBarTitle: 标题
     /// - Parameter datePickerSetting: 可配置UIDatePicker的样式
     /// - Parameter doneAction: 响应完成的Closure
-    class func showDatePicker(_ toolBarTitle: String, datePickerSetting: DatePickerSetting = DatePickerSetting(), doneAction: DateDoneAction?) {
+    class func showDatePicker(_ toolBarTitle: String, datePickerSetting: DatePickerSetting = DatePickerSetting(), clearAction: BtnAction?, doneAction: DateDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
         currentWindow.endEditing(true)
-        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, datePickerSetting: datePickerSetting, doneAction: doneAction)
+        let pickViewManager = PickerViewManager(frame: currentWindow.bounds, toolBarTitle: toolBarTitle, datePickerSetting: datePickerSetting, clearAction: clearAction, doneAction: doneAction)
         pickViewManager.showPicker()
     }
 

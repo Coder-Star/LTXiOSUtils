@@ -10,6 +10,7 @@ sure = "Sure";
 confirm = "Confirm";
 cancel = "Cancel";
 complete = "Complete";
+clear = "Clear";
 
 // 起止时间选择
 DurationDatePickView.topTitle = "Please Select Start And End Time";
