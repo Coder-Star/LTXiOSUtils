@@ -15,6 +15,11 @@
 
 @_exported import UITableView_FDTemplateLayoutCell
 
+public enum OpenType: String {
+    case tel = "tel://"
+    case email = "mailto:"
+}
+
 /// 常量
 public struct Constants {
     /// 关键key
@@ -24,12 +29,6 @@ public struct Constants {
 
     /// 第三方url
     public struct OpenUrl {
-
-        public enum OpenType: String {
-            case tel = "tel://"
-            case email = "mailto:"
-        }
-
         /// 将字符串作为第三方url打开
         /// - Parameters:
         ///   - url: url
