@@ -37,7 +37,7 @@ public extension Core where Base: UIBarButtonItem {
     /// Add small dots with color, the default ucoreer right corner, red backgroundColor, 8pts
     ///
     /// - Parameter color: 颜色
-    func addDot(color: UIColor?) {
+    func addDot(color: UIColor? = .red) {
         _bottomView.core.addDot(color: color)
     }
 
@@ -113,7 +113,7 @@ public extension Core where Base: UIBarButtonItem {
     private var _bottomView: UIView {
         let navigationButton = (self.base.value(forKey: "_view") as? UIView) ?? UIView()
         let systemVersion = (UIDevice.current.systemVersion as NSString).doubleValue
-        let controlName = (systemVersion < 11.0 ? "UIImageView" : "UIButton" )
+        let controlName = systemVersion < 11.0 ? "UIImageView" : "UIButton"
         for subView in navigationButton.subviews {
             if subView.isKind(of: NSClassFromString(controlName)!) {
                 subView.layer.masksToBounds = false
