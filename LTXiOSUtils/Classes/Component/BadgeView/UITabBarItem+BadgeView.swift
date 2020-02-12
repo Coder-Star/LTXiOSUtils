@@ -39,7 +39,7 @@ public extension Core where Base: UITabBarItem {
     /// Add small dots with color, the default ucoreer right corner, red backgroundColor, 8pts
     ///
     /// - Parameter color: 颜色
-    func addDot(color: UIColor?) {
+    func addDot(color: UIColor? = .red) {
         _bottomView.core.addDot(color: color)
     }
 

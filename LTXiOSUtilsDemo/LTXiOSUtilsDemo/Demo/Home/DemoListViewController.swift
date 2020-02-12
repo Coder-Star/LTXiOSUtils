@@ -13,8 +13,12 @@ class DemoListViewController: BaseGroupTableMenuViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let addBarButton = UIBarButtonItem(image: R.image.add(), style: .plain, target: self, action: #selector(add))
+        let addBarButton = UIBarButtonItem(image: R.image.add(), style: .plain, target: self, action: #selector(self.add))
         self.navigationItem.rightBarButtonItem = addBarButton
+        // 在viewDidLoad中没法直接获取到UIBarButtonItem的实例，延长一段时间进行获取,不过一般角标都是根据后台返回的，会有一定的时间缓冲
+        DispatchQueue.main.delay(0.001) {
+            addBarButton.core.addDot(color: .red)
+        }
     }
 
     @objc private func add() {

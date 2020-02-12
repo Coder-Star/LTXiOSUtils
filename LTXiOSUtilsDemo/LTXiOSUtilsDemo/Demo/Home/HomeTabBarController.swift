@@ -19,6 +19,8 @@ class HomeTabBarController: UITabBarController {
     private func initChildViewControllers() {
         let homeViewController = HomeViewController()
         homeViewController.tabBarItem.title = "首页"
+        homeViewController.tabBarItem.badgeValue = "10"
+        homeViewController.tabBarItem.badgeColor = .black
         homeViewController.tabBarItem.image = R.image.home_tab()?.withRenderingMode(.alwaysOriginal)
         homeViewController.tabBarItem.selectedImage = R.image.home_tab_selected()?.withRenderingMode(.alwaysOriginal)
 
@@ -27,6 +29,7 @@ class HomeTabBarController: UITabBarController {
         demoListViewController.titleInfo = demoListViewControllerTitle //该值不仅影响顶部导航栏标题，还影响底部标题
         let demoListViewControllerWithNavigation = UINavigationController(rootViewController: demoListViewController)
         demoListViewControllerWithNavigation.tabBarItem.title = demoListViewControllerTitle
+        demoListViewControllerWithNavigation.tabBarItem.core.addDot(color: .red)
         demoListViewControllerWithNavigation.tabBarItem.image = R.image.demoList_tab()?.withRenderingMode(.alwaysOriginal)
         demoListViewControllerWithNavigation.tabBarItem.selectedImage = R.image.demoList_tab_selected()?.withRenderingMode(.alwaysOriginal)
 
@@ -34,6 +37,9 @@ class HomeTabBarController: UITabBarController {
         mineViewController.tabBarItem.title = "我"
         mineViewController.tabBarItem.image = R.image.mine_tab()?.withRenderingMode(.alwaysOriginal)
         mineViewController.tabBarItem.selectedImage = R.image.mine_tab_selected()?.withRenderingMode(.alwaysOriginal)
+        DispatchQueue.main.delay(0.001) {
+            mineViewController.tabBarItem.core.addDot()
+        }
 
         self.viewControllers = [homeViewController,
                                 demoListViewControllerWithNavigation,
