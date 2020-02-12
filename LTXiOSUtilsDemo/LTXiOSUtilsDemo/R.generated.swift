@@ -119,15 +119,78 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 8 images.
   struct image {
+    /// Image `add`.
+    static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "add")
+    /// Image `demoList_tab_selected`.
+    static let demoList_tab_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "demoList_tab_selected")
+    /// Image `demoList_tab`.
+    static let demoList_tab = Rswift.ImageResource(bundle: R.hostingBundle, name: "demoList_tab")
+    /// Image `home_tab_selected`.
+    static let home_tab_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_tab_selected")
+    /// Image `home_tab`.
+    static let home_tab = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_tab")
     /// Image `menuItem`.
     static let menuItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "menuItem")
+    /// Image `mine_tab_selected`.
+    static let mine_tab_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "mine_tab_selected")
+    /// Image `mine_tab`.
+    static let mine_tab = Rswift.ImageResource(bundle: R.hostingBundle, name: "mine_tab")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "add", bundle: ..., traitCollection: ...)`
+    static func add(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.add, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "demoList_tab", bundle: ..., traitCollection: ...)`
+    static func demoList_tab(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.demoList_tab, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "demoList_tab_selected", bundle: ..., traitCollection: ...)`
+    static func demoList_tab_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.demoList_tab_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_tab", bundle: ..., traitCollection: ...)`
+    static func home_tab(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_tab, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_tab_selected", bundle: ..., traitCollection: ...)`
+    static func home_tab_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_tab_selected, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "menuItem", bundle: ..., traitCollection: ...)`
     static func menuItem(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.menuItem, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mine_tab", bundle: ..., traitCollection: ...)`
+    static func mine_tab(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mine_tab, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mine_tab_selected", bundle: ..., traitCollection: ...)`
+    static func mine_tab_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mine_tab_selected, compatibleWith: traitCollection)
     }
     #endif
 

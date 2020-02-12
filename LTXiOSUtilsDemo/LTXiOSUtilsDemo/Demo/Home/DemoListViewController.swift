@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DemoListViewController.swift
 //  LTXiOSUtilsDemo
 //
 //  Created by 李天星 on 2019/8/2.
@@ -9,11 +9,16 @@
 import UIKit
 import LTXiOSUtils
 
-class ViewController: BaseGroupTableMenuViewController {
+class DemoListViewController: BaseGroupTableMenuViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = R.string.localizable.menu()
+        let addBarButton = UIBarButtonItem(image: R.image.add(), style: .plain, target: self, action: #selector(add))
+        self.navigationItem.rightBarButtonItem = addBarButton
+    }
+
+    @objc private func add() {
+        QL1("添加")
     }
 
     override func setMenu() {

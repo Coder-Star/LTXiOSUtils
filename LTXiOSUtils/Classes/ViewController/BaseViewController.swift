@@ -9,10 +9,23 @@
 import Foundation
 open class BaseViewController: UIViewController {
 
-    var statusBarHeight: CGFloat?
+    /// 状态栏高度
+    public private(set) var statusBarHeight: CGFloat?
+    /// 标题
+    public var titleInfo = ""
+
+    /// 计算属性 子类用于重写
+    open var currentTitleInfo: String {
+        return titleInfo
+    }
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        if let tempTitle = title, tempTitle.isNotEmpty {
+            
+        } else if currentTitleInfo.isNotEmpty {
+            title = currentTitleInfo
+        }
         setupData()
         hideKeyboardWhenTappedAround()
     }
