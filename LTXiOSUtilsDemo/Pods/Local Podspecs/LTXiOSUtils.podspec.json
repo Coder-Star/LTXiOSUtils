@@ -50,7 +50,12 @@
             "UIKit",
             "Foundation"
           ],
-          "source_files": "LTXiOSUtils/Classes/Core/Util/*.swift"
+          "dependencies": {
+            "LTXiOSUtils/Core/Extension": [
+
+            ]
+          },
+          "source_files": "LTXiOSUtils/Classes/Core/Util/**/*.swift"
         }
       ]
     },

@@ -22,7 +22,7 @@ open class BaseViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         if let tempTitle = title, tempTitle.isNotEmpty {
-            
+
         } else if currentTitleInfo.isNotEmpty {
             title = currentTitleInfo
         }

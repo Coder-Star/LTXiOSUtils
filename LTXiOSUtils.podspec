@@ -28,11 +28,11 @@ Pod::Spec.new do |s|
       extension.dependency 'LTXiOSUtils/Core/Scope'
       extension.source_files = 'LTXiOSUtils/Classes/Core/Extension/*.swift'
     end
-    # 协议
+    # 工具
     core.subspec 'Util' do |util|
       util.frameworks = "UIKit","Foundation"
       util.dependency 'LTXiOSUtils/Core/Extension'
-      util.source_files = 'LTXiOSUtils/Classes/Core/Util/*.swift'
+      util.source_files = 'LTXiOSUtils/Classes/Core/Util/**/*.swift'
     end
   end
 
