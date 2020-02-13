@@ -105,6 +105,7 @@ class HomeViewController: BaseUIScrollViewController {
         contentView.layoutIfNeeded()
         let scrollMenView = GridMenuView(width: contentView.width, row: 2, col: 5, menu: menu, mode: .horizontalScroll, pageStyle: PageControlStyle.ring(circleSize: 5))
         scrollMenView.backgroundColor = UIColor(hexString: "#eeeeee")
+        scrollMenView.pageControlNormorlColor = .lightGray
         scrollMenView.delegate = self
         contentView.addSubview(scrollMenView)
         scrollMenView.snp.makeConstraints { make in
