@@ -21,7 +21,11 @@ public enum CornerMarkType {
 
 open class DefaultGridMenuCell: UICollectionViewCell {
     /// 角标显示数字最大值，如果再比这个大，就显示99+的形式,为nil值不限制
-    public static let maxNumber: Int? = 99
+    public static var maxNumber: Int? = 99
+    /// 标题颜色
+    public static var labelColor = UIColor.black
+    /// 标题字体
+    public static var labelFont = UIFont.systemFont(ofSize: 14)
 
     public var imageView = UIImageView()
 
@@ -30,12 +34,12 @@ open class DefaultGridMenuCell: UICollectionViewCell {
             label.text = text
         }
     }
-    public var font: UIFont = UIFont.systemFont(ofSize: 14) {
+    public var font: UIFont = DefaultGridMenuCell.labelFont {
         didSet {
             label.font = font
         }
     }
-    public var textColor: UIColor = .black {
+    public var textColor: UIColor = DefaultGridMenuCell.labelColor {
         didSet {
             label.textColor = textColor
         }

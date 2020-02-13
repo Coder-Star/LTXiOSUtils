@@ -150,7 +150,7 @@ public class GridMenuView: UIView {
                 viewHeight = collectionView!.frame.height
             } else {
                 let scrollPageControlViewWidth:CGFloat = 50
-                scrollPageControlView.frame = CGRect(x: (viewWidth - scrollPageControlViewWidth)/2, y: collectionView!.frame.height + 5, width: scrollPageControlViewWidth, height: 6)
+                scrollPageControlView.frame = CGRect(x: (viewWidth - scrollPageControlViewWidth)/2, y: collectionView!.frame.height + 5, width: scrollPageControlViewWidth, height: 3)
                 self.addSubview(scrollPageControlView)
                 scrollPageControlView.currentIndicatorWidth = colCount.cgFloatValue / realColCount.cgFloatValue * scrollPageControlViewWidth
                 viewHeight = collectionView!.frame.height +  scrollPageControlView.frame.height + 10
