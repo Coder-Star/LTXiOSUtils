@@ -121,9 +121,9 @@ public class GridMenuView: UIView {
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: itemHeight * rowCount.cgFloatValue), collectionViewLayout: layout)
         collectionView?.register(DefaultGridMenuCell.self, forCellWithReuseIdentifier: DefaultGridMenuCell.description())
         collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "emptyCell")
-        collectionView?.backgroundColor = UIColor.white.adapt()
         collectionView?.dataSource = self
         collectionView?.delegate = self
+        collectionView?.backgroundColor = .clear
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.showsHorizontalScrollIndicator = false
         self.addSubview(collectionView!)
@@ -152,7 +152,6 @@ public class GridMenuView: UIView {
                 let scrollPageControlViewWidth:CGFloat = 50
                 scrollPageControlView.frame = CGRect(x: (viewWidth - scrollPageControlViewWidth)/2, y: collectionView!.frame.height + 5, width: scrollPageControlViewWidth, height: 3)
                 self.addSubview(scrollPageControlView)
-                scrollPageControlView.currentIndicatorWidth = colCount.cgFloatValue / realColCount.cgFloatValue * scrollPageControlViewWidth
                 viewHeight = collectionView!.frame.height +  scrollPageControlView.frame.height + 10
             }
         }
@@ -218,6 +217,16 @@ public extension GridMenuView {
             case .horizontalScroll:
                 return scrollPageControlView.backgroundColor ?? UIColor(hexString: "#eeeeee")
             }
+        }
+    }
+
+    /// 横向滚动滑动宽度
+    var currentIndicatorWidth: CGFloat {
+        set {
+            scrollPageControlView.currentIndicatorWidth = newValue
+        }
+        get {
+            return scrollPageControlView.currentIndicatorWidth
         }
     }
 
