@@ -41,6 +41,20 @@ class HomeViewController: BaseUIScrollViewController {
         return pageControl
     }()
 
+    private var menu = [
+        GridMenuItem(code: "1", title: "小金库",image: R.image.home_button_bmfw(), markType: .none),
+        GridMenuItem(code: "2", title: "集贸",image: R.image.home_button_jmsc(), markType: .point(isShow: true)),
+        GridMenuItem(code: "3", title: "旅游",image: R.image.home_button_mlxc(), markType: .text(text: "角标")),
+        GridMenuItem(code: "4", title: "名优",image: R.image.home_button_myzq(), markType: .number(number: 4)),
+        GridMenuItem(code: "5", title: "农场",image: R.image.home_button_nczg(), markType: .number(number: 5)),
+        GridMenuItem(code: "6", title: "分类",image: R.image.home_button_nyjs(), markType: .number(number: 6)),
+        GridMenuItem(code: "7", title: "热点",image: R.image.home_button_nyq(), markType: .number(number: 7)),
+        GridMenuItem(code: "8", title: "行情",image: R.image.home_button_schq(), markType: .number(number: 8)),
+        GridMenuItem(code: "9", title: "商城",image: R.image.home_button_shop(), markType: .number(number: 9)),
+        GridMenuItem(code: "10", title: "视频",image: R.image.home_button_xsp(), markType: .number(number: 10)),
+        GridMenuItem(code: "11", title: "阅读",image: R.image.home_button_xwzc(), markType: .number(number: 11))
+    ]
+
     private var pagerViewImageListData = JSON()
 
     override func viewDidLoad() {
@@ -81,12 +95,23 @@ class HomeViewController: BaseUIScrollViewController {
         pagerView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(150)
-            make.bottom.equalToSuperview()
         }
         contentView.addSubview(pageControl)
         pageControl.snp.makeConstraints { (make) in
             make.left.right.equalTo(pagerView)
             make.top.equalTo(pagerView.snp.bottom).offset(-20)
+        }
+
+        contentView.layoutIfNeeded()
+        let scrollMenView = GridMenuView(width: contentView.width, row: 2, col: 5, menu: menu, mode: .horizontalScroll, pageStyle: PageControlStyle.ring(circleSize: 5))
+        scrollMenView.backgroundColor = UIColor(hexString: "#eeeeee")
+        scrollMenView.delegate = self
+        contentView.addSubview(scrollMenView)
+        scrollMenView.snp.makeConstraints { make in
+            make.top.equalTo(pagerView.snp.bottom).offset(2)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(scrollMenView.heightInfo)
+            make.bottom.equalToSuperview()
         }
     }
 }
@@ -143,4 +168,8 @@ extension HomeViewController: FSPagerViewDataSource, FSPagerViewDelegate {
        func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
            self.pageControl.currentPage = pagerView.currentIndex
        }
+}
+
+extension HomeViewController: GridMenuViewItemDelegate {
+
 }

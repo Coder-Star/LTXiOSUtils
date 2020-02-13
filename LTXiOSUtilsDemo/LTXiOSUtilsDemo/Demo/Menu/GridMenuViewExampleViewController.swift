@@ -56,7 +56,7 @@ class GridMenuViewExampleViewController: BaseUIViewController {
         scrollMenView.snp.makeConstraints { make in
             make.top.equalTo(menuView.snp.bottom).offset(20)
             make.left.right.equalToSuperview()
-            make.height.equalTo(menuView.heightInfo)
+            make.height.equalTo(scrollMenView.heightInfo)
         }
 
         let firstButtton = ViewFactory.getButton("第二个图标角标消失")

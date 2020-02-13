@@ -119,7 +119,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 11 images.
+  /// This `R.image` struct is generated, and contains static references to 22 images.
   struct image {
     /// Image `add`.
     static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "add")
@@ -127,6 +127,28 @@ struct R: Rswift.Validatable {
     static let demoList_tab_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "demoList_tab_selected")
     /// Image `demoList_tab`.
     static let demoList_tab = Rswift.ImageResource(bundle: R.hostingBundle, name: "demoList_tab")
+    /// Image `home_button_bmfw`.
+    static let home_button_bmfw = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_bmfw")
+    /// Image `home_button_jmsc`.
+    static let home_button_jmsc = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_jmsc")
+    /// Image `home_button_mlxc`.
+    static let home_button_mlxc = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_mlxc")
+    /// Image `home_button_myzq`.
+    static let home_button_myzq = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_myzq")
+    /// Image `home_button_nczg`.
+    static let home_button_nczg = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_nczg")
+    /// Image `home_button_nyjs`.
+    static let home_button_nyjs = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_nyjs")
+    /// Image `home_button_nyq`.
+    static let home_button_nyq = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_nyq")
+    /// Image `home_button_schq`.
+    static let home_button_schq = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_schq")
+    /// Image `home_button_shop`.
+    static let home_button_shop = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_shop")
+    /// Image `home_button_xsp`.
+    static let home_button_xsp = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_xsp")
+    /// Image `home_button_xwzc`.
+    static let home_button_xwzc = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_xwzc")
     /// Image `home_tab_selected`.
     static let home_tab_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_tab_selected")
     /// Image `home_tab`.
@@ -162,6 +184,83 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "demoList_tab_selected", bundle: ..., traitCollection: ...)`
     static func demoList_tab_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.demoList_tab_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_button_bmfw", bundle: ..., traitCollection: ...)`
+    static func home_button_bmfw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_button_bmfw, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_button_jmsc", bundle: ..., traitCollection: ...)`
+    static func home_button_jmsc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_button_jmsc, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_button_mlxc", bundle: ..., traitCollection: ...)`
+    static func home_button_mlxc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_button_mlxc, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_button_myzq", bundle: ..., traitCollection: ...)`
+    static func home_button_myzq(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_button_myzq, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_button_nczg", bundle: ..., traitCollection: ...)`
+    static func home_button_nczg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_button_nczg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_button_nyjs", bundle: ..., traitCollection: ...)`
+    static func home_button_nyjs(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_button_nyjs, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_button_nyq", bundle: ..., traitCollection: ...)`
+    static func home_button_nyq(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_button_nyq, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_button_schq", bundle: ..., traitCollection: ...)`
+    static func home_button_schq(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_button_schq, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_button_shop", bundle: ..., traitCollection: ...)`
+    static func home_button_shop(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_button_shop, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_button_xsp", bundle: ..., traitCollection: ...)`
+    static func home_button_xsp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_button_xsp, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "home_button_xwzc", bundle: ..., traitCollection: ...)`
+    static func home_button_xwzc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home_button_xwzc, compatibleWith: traitCollection)
     }
     #endif
 
