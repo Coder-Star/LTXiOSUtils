@@ -34,13 +34,16 @@ open class HUD: MBProgressHUD {
     /// - Parameters:
     ///   - title: 标题
     ///   - delayTime: 延迟时间，默认为1.5s
+    ///   - style: 显示样式
     @discardableResult
-    public class func showText(_ title: String, _ delayTime: Double = 1.5) -> HUD {
+    public class func showText(_ title: String, _ delayTime: Double = 1.5, style: HUDStyle = .black) -> HUD? {
         let hud = getBaseHUD()
-        hud.detailsLabel.text = title
-        hud.detailsLabel.font = UIFont.systemFont(ofSize: 14)
-        hud.mode = .text
-        hud.hide(animated: true, afterDelay: delayTime)
+        hud?.detailsLabel.text = title
+        hud?.detailsLabel.font = UIFont.systemFont(ofSize: 14)
+        hud?.mode = .text
+        hud?.margin = 10
+        hud?.setStyle(style: style)
+        hud?.hide(animated: true, afterDelay: delayTime)
         return hud
     }
 
@@ -48,23 +51,27 @@ open class HUD: MBProgressHUD {
     /// - Parameters:
     ///   - title: 标题
     ///   - isClickHidden: 是否可点击消失，默认不可点击消失
+    ///   - style: 显示样式
     @discardableResult
-    open class func showWait(title: String = "", isClickHidden: Bool = false) -> HUD {
+    open class func showWait(title: String = "", style: HUDStyle = .black, isClickHidden: Bool = false) -> HUD? {
         let hud = getBaseHUD()
-        hud.detailsLabel.text = title
-        hud.detailsLabel.font = UIFont.systemFont(ofSize: 14)
-        hud.isClickHidden = isClickHidden
+        hud?.detailsLabel.text = title
+        hud?.detailsLabel.font = UIFont.systemFont(ofSize: 14)
+        hud?.isClickHidden = isClickHidden
+        hud?.setStyle(style: style)
         return hud
     }
 
     /// 显示进度框,与updateProgress搭配使用
     /// - Parameter title: 标题
+    /// - Parameter style: 显示样式
     @discardableResult
-    open class func showProgress(title: String) -> HUD {
+    open class func showProgress(title: String, style: HUDStyle = .default) -> HUD? {
         let hud = getBaseHUD()
-        hud.detailsLabel.text = title
-        hud.detailsLabel.font = UIFont.systemFont(ofSize: 14)
-        hud.mode = .determinateHorizontalBar
+        hud?.setStyle(style: style)
+        hud?.detailsLabel.text = title
+        hud?.detailsLabel.font = UIFont.systemFont(ofSize: 14)
+        hud?.mode = .determinateHorizontalBar
         return hud
     }
 
@@ -86,32 +93,37 @@ open class HUD: MBProgressHUD {
 
     /// 隐藏消息
     open class func hide() {
-        HUD.hide(for: viewToShow(), animated: true)
+        if let view = viewToShow() {
+            HUD.hide(for: view, animated: true)
+        }
     }
 
     /// 获取基础HUD
-    open class func getBaseHUD() -> HUD {
-        let view = viewToShow()
-        let hud = HUD.showAdded(to: view, animated: true)
-        return hud
+    open class func getBaseHUD() -> HUD? {
+        if let view = viewToShow() {
+            let hud = HUD.showAdded(to: view, animated: true)
+            hud.removeFromSuperViewOnHide = true
+            return hud
+        }
+        return nil
     }
 
-    /// 设置显示样式，暂不支持
+    /// 设置显示样式
     /// - Parameters:
-    ///   - hud: HUD
     ///   - style: 样式
-    private class func setStyle(hud: HUD, style: HUDStyle) {
+    private func setStyle(style: HUDStyle) {
         if style == .black {
-            hud.bezelView.style = .solidColor
-            hud.bezelView.backgroundColor = .black
-            UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [HUD.self]).color = .white
-            hud.label.textColor = .white
-            hud.detailsLabel.textColor = .white
+            self.bezelView.style = .solidColor
+            self.bezelView.backgroundColor = .black
+            UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [MBProgressHUD.self]).color = .white
+            self.label.textColor = .white
+            self.contentColor = .white
+            self.detailsLabel.textColor = .white
         }
     }
 
     /// 获取用于显示提示框的view
-    private class func viewToShow() -> UIView {
+    private class func viewToShow() -> UIView? {
         var window = UIApplication.shared.keyWindow
         DispatchQueue.main.async {
             if window?.windowLevel != UIWindow.Level.normal {
@@ -122,7 +134,7 @@ open class HUD: MBProgressHUD {
                 }
             }
         }
-        return window!
+        return window
     }
 
     /// 点击事件，控制HUD是否可以点击消失

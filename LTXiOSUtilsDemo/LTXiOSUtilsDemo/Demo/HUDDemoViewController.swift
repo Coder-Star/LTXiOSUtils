@@ -39,7 +39,7 @@ class HUDDemoViewController: BaseGroupTableMenuViewController {
         case "text":
             HUD.showText(menuModel.title)
         case "wait":
-            HUD.showWait(title: "一秒后自动消失")
+            HUD.showWait()
             DispatchQueue.main.delay(1) {
                 HUD.hide()
             }
