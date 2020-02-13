@@ -23,7 +23,7 @@ final class ThirdLibApplicationService: NSObject,ApplicationService {
 
         IQKeyboardManager.shared.enable = true
 
-        PerformanceMonitor.shared().start()
+//        PerformanceMonitor.shared().start()
 
         UIButton.initRepeatClickMethod()
     }

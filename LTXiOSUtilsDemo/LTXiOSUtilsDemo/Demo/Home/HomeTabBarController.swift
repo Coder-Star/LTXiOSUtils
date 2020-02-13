@@ -18,11 +18,14 @@ class HomeTabBarController: UITabBarController {
 
     private func initChildViewControllers() {
         let homeViewController = HomeViewController()
-        homeViewController.tabBarItem.title = "首页"
-        homeViewController.tabBarItem.badgeValue = "10"
-        homeViewController.tabBarItem.badgeColor = .black
-        homeViewController.tabBarItem.image = R.image.home_tab()?.withRenderingMode(.alwaysOriginal)
-        homeViewController.tabBarItem.selectedImage = R.image.home_tab_selected()?.withRenderingMode(.alwaysOriginal)
+        let homeViewControllerTitle = "首页"
+        homeViewController.titleInfo = homeViewControllerTitle
+        let homeViewControllerWithNavigation = HomeNavigationController(rootViewController: homeViewController)
+        homeViewControllerWithNavigation.tabBarItem.title = homeViewControllerTitle
+        homeViewControllerWithNavigation.tabBarItem.badgeValue = "10"
+        homeViewControllerWithNavigation.tabBarItem.badgeColor = .black
+        homeViewControllerWithNavigation.tabBarItem.image = R.image.home_tab()?.withRenderingMode(.alwaysOriginal)
+        homeViewControllerWithNavigation.tabBarItem.selectedImage = R.image.home_tab_selected()?.withRenderingMode(.alwaysOriginal)
 
         let demoListViewControllerTitle = "Demo列表"
         let demoListViewController = DemoListViewController()
@@ -41,7 +44,7 @@ class HomeTabBarController: UITabBarController {
             mineViewController.tabBarItem.core.addDot()
         }
 
-        self.viewControllers = [homeViewController,
+        self.viewControllers = [homeViewControllerWithNavigation,
                                 demoListViewControllerWithNavigation,
                                 mineViewController]
     }

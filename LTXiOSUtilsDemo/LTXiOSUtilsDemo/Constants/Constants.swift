@@ -22,6 +22,13 @@ public enum OpenType: String {
 
 /// 常量
 public struct Constants {
+
+    /// 尺寸
+    public struct Size {
+        static let WIDTH = UIScreen.main.bounds.size.width
+        static let HEIGHT = UIScreen.main.bounds.size.height
+    }
+
     /// 关键key
     public struct Keys {
         static let estimatedProgress = "estimatedProgress"

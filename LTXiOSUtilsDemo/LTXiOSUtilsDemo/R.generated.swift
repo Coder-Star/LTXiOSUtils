@@ -119,7 +119,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 8 images.
+  /// This `R.image` struct is generated, and contains static references to 11 images.
   struct image {
     /// Image `add`.
     static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "add")
@@ -133,10 +133,16 @@ struct R: Rswift.Validatable {
     static let home_tab = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_tab")
     /// Image `menuItem`.
     static let menuItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "menuItem")
+    /// Image `message`.
+    static let message = Rswift.ImageResource(bundle: R.hostingBundle, name: "message")
     /// Image `mine_tab_selected`.
     static let mine_tab_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "mine_tab_selected")
     /// Image `mine_tab`.
     static let mine_tab = Rswift.ImageResource(bundle: R.hostingBundle, name: "mine_tab")
+    /// Image `scan`.
+    static let scan = Rswift.ImageResource(bundle: R.hostingBundle, name: "scan")
+    /// Image `search`.
+    static let search = Rswift.ImageResource(bundle: R.hostingBundle, name: "search")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "add", bundle: ..., traitCollection: ...)`
@@ -181,6 +187,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "message", bundle: ..., traitCollection: ...)`
+    static func message(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.message, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "mine_tab", bundle: ..., traitCollection: ...)`
     static func mine_tab(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.mine_tab, compatibleWith: traitCollection)
@@ -191,6 +204,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "mine_tab_selected", bundle: ..., traitCollection: ...)`
     static func mine_tab_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.mine_tab_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "scan", bundle: ..., traitCollection: ...)`
+    static func scan(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.scan, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "search", bundle: ..., traitCollection: ...)`
+    static func search(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.search, compatibleWith: traitCollection)
     }
     #endif
 

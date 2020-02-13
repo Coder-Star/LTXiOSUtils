@@ -39,4 +39,5 @@ public class NetworkConstant {
 
     static let appUrl = "http://121.36.20.56:8080/LTXiOSUtils/"
     static let launchAdData = "LaunchAd/data.json"
+    static let bannerUrl = "PagerView/data.json"
 }
