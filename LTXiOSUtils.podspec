@@ -31,6 +31,7 @@ Pod::Spec.new do |s|
     # 协议
     core.subspec 'Util' do |util|
       util.frameworks = "UIKit","Foundation"
+      util.dependency 'LTXiOSUtils/Core/Extension'
       util.source_files = 'LTXiOSUtils/Classes/Core/Util/*.swift'
     end
   end
