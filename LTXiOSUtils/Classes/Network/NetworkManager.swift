@@ -125,8 +125,7 @@ public class NetworkManager {
         }, completion: { result in
             switch result {
             case let .success(response):
-                print(response.statusCode)
-                print(response.data.description)
+                print("状态码: \(response.statusCode)")
                 do {
                     let successResponse = try response.filterSuccessfulStatusCodes()
                     let data = JSON(successResponse.data)

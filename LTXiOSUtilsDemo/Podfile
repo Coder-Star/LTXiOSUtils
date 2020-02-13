@@ -43,14 +43,16 @@ target 'LTXiOSUtilsDemo' do
   pod 'PluggableAppDelegate','1.3.0' #AppDelegate瘦身、解耦
   pod 'KeychainAccess','4.1.0' #钥匙串存储
   pod 'ReachabilitySwift','5.0.0' #网络状态监听
-
-  #UI控件及处理等
-#  pod 'UITextView+Placeholder','1.3.3' # UITextView添加Placeholder属性，OC库
   pod 'ZYCornerRadius','1.0.2' #  UIImageView高性能设置圆角，OC库
   pod 'UITableView+FDTemplateLayoutCell','1.6' #  UITableView缓存高度，OC库
 
+
+  #UI组件等
+  pod 'FSPagerView','0.8.3' #轮播组件
+  pod 'ObjectMapper', '3.5.1' #model与json互转
+  pod 'XHLaunchAd', '3.9.11' #广告页
+
   #Rx
-#  pod 'RxSwift'
   pod 'RxCocoa','5.0.1' # RxSwift是通用RxAPI的实现，并不涉及任何任何 Cocoa 或 UIKit 类，RxCocoa依赖RxSwift
 
   target 'LTXiOSUtilsDemoTests' do

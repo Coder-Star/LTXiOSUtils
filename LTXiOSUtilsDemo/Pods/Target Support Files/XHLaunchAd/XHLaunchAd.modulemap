@@ -1,0 +1,6 @@
+framework module XHLaunchAd {
+  umbrella header "XHLaunchAd-umbrella.h"
+
+  export *
+  module * { export * }
+}

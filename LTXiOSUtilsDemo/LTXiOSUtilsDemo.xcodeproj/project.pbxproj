@@ -14,6 +14,7 @@
 		DC03AE2823F3AD96007739DD /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2723F3AD96007739DD /* MineViewController.swift */; };
 		DC03AE2A23F3CA6A007739DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2923F3CA6A007739DD /* HomeViewController.swift */; };
 		DC03AE2C23F3D736007739DD /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2B23F3D736007739DD /* AppTheme.swift */; };
+		DC03AE5223F433A3007739DD /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE5123F433A3007739DD /* AdModel.swift */; };
 		DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */; };
 		DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */; };
 		DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */ = {isa = PBXBuildFile; fileRef = DC1AD82D23E83F2F0073CB97 /* TreeResource.json */; };
@@ -76,6 +77,7 @@
 		DC03AE2723F3AD96007739DD /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		DC03AE2923F3CA6A007739DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DC03AE2B23F3D736007739DD /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		DC03AE5123F433A3007739DD /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
 		DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMenuViewExampleViewController.swift; sourceTree = "<group>"; };
 		DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewDemoViewController.swift; sourceTree = "<group>"; };
 		DC1AD82D23E83F2F0073CB97 /* TreeResource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TreeResource.json; sourceTree = "<group>"; };
@@ -178,6 +180,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		DC03AE5023F43381007739DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC03AE5123F433A3007739DD /* AdModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DC0567DA23CAF545008E7C02 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +229,7 @@
 		DC4AB9BB22F4606000A5F003 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC03AE5023F43381007739DD /* Model */,
 				DC1AD83523E84D400073CB97 /* Util */,
 				DC4AB9EC22F461A700A5F003 /* Resource */,
 				DC4AB9EB22F4618400A5F003 /* System */,
@@ -614,6 +625,7 @@
 				DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */,
 				DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */,
 				DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */,
+				DC03AE5223F433A3007739DD /* AdModel.swift in Sources */,
 				DCB22AB923AB6908004C63EF /* PickViewDemoViewController.swift in Sources */,
 				DC03AE2C23F3D736007739DD /* AppTheme.swift in Sources */,
 				DCB1C04723C4B41500D735BD /* ExtensionExampleMenuViewController.swift in Sources */,

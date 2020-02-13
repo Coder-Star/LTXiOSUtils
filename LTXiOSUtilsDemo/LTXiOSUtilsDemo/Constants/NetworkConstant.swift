@@ -36,4 +36,7 @@ public class NetworkConstant {
     struct ER {
         static let loginUrl =  "toa/toaMobileLogin_login.json"
     }
+
+    static let appUrl = "http://121.36.20.56:8080/LTXiOSUtils/"
+    static let launchAdData = "LaunchAd/data.json"
 }
