@@ -16,7 +16,7 @@ final class RootVCApplicationService: NSObject,ApplicationService {
         let rootViewController = HomeTabBarController()
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
-        setLaunchAd()
+//        setLaunchAd()
         return true
     }
 }
@@ -26,7 +26,7 @@ extension RootVCApplicationService: XHLaunchAdDelegate {
     private func setLaunchAd() {
         XHLaunchAd.setLaunch(.launchScreen)
         XHLaunchAd.setWaitDataDuration(1)
-        let requestParam = RequestParam(baseUrl: NetworkConstant.appUrl + "1", path: NetworkConstant.launchAdData)
+        let requestParam = RequestParam(baseUrl: NetworkConstant.appUrl, path: NetworkConstant.launchAdData)
         requestParam.method = .get
         NetworkManager.sendRequest(requestParam: requestParam, success: { data in
             QL1(data)
@@ -37,7 +37,6 @@ extension RootVCApplicationService: XHLaunchAdDelegate {
                 config.imageNameOrURLString = adModel.imgUrl!
                 config.imageOption = .cacheInBackground
                 config.showFinishAnimate = adModel.animationType!
-                config.showEnterForeground = true
                 config.openModel = adModel.actionUrl!
                 XHLaunchAd.imageAd(with: config, delegate: self)
             }
@@ -51,7 +50,6 @@ extension RootVCApplicationService: XHLaunchAdDelegate {
                 config.imageNameOrURLString = url
                 config.imageOption = .cacheInBackground
                 config.showFinishAnimate = .fadein
-                config.showEnterForeground = true
                 XHLaunchAd.imageAd(with: config)
             }
         })

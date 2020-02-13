@@ -27,7 +27,7 @@ class HomeTabBarController: UITabBarController {
         let demoListViewControllerTitle = "Demo列表"
         let demoListViewController = DemoListViewController()
         demoListViewController.titleInfo = demoListViewControllerTitle //该值不仅影响顶部导航栏标题，还影响底部标题
-        let demoListViewControllerWithNavigation = UINavigationController(rootViewController: demoListViewController)
+        let demoListViewControllerWithNavigation = HomeNavigationController(rootViewController: demoListViewController)
         demoListViewControllerWithNavigation.tabBarItem.title = demoListViewControllerTitle
         demoListViewControllerWithNavigation.tabBarItem.core.addDot(color: .red)
         demoListViewControllerWithNavigation.tabBarItem.image = R.image.demoList_tab()?.withRenderingMode(.alwaysOriginal)
@@ -51,5 +51,15 @@ class HomeTabBarController: UITabBarController {
 extension HomeTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         QL1(viewController)
+    }
+}
+
+class HomeNavigationController: UINavigationController {
+
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if viewControllers.count > 0 {
+            viewController.hidesBottomBarWhenPushed = true
+        }
+        super.pushViewController(viewController, animated: animated)
     }
 }
