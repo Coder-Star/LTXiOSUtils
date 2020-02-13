@@ -28,6 +28,7 @@
 		DC4AB9DD22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9DC22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift */; };
 		DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */; };
 		DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC62A7C72384084A00DE7800 /* Localizable.strings */; };
+		DC83E7A423F550290030A9B4 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7A323F550290030A9B4 /* HomeNavigationController.swift */; };
 		DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */; };
 		DCB1C04723C4B41500D735BD /* ExtensionExampleMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04623C4B41500D735BD /* ExtensionExampleMenuViewController.swift */; };
 		DCB1C05023C5821F00D735BD /* ArrayExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04F23C5821F00D735BD /* ArrayExtensionTest.swift */; };
@@ -98,6 +99,7 @@
 		DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Extension.swift"; sourceTree = "<group>"; };
 		DC62A7C62384084A00DE7800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DC83E7A323F550290030A9B4 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensionExampleViewController.swift; sourceTree = "<group>"; };
 		DCB1C04623C4B41500D735BD /* ExtensionExampleMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionExampleMenuViewController.swift; sourceTree = "<group>"; };
 		DCB1C04F23C5821F00D735BD /* ArrayExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTest.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				DC03AE2723F3AD96007739DD /* MineViewController.swift */,
 				DC03AE2923F3CA6A007739DD /* HomeViewController.swift */,
 				DC4AB9BE22F4606000A5F003 /* DemoListViewController.swift */,
+				DC83E7A323F550290030A9B4 /* HomeNavigationController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */,
 				DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */,
 				DC03AE5223F433A3007739DD /* AdModel.swift in Sources */,
+				DC83E7A423F550290030A9B4 /* HomeNavigationController.swift in Sources */,
 				DCB22AB923AB6908004C63EF /* PickViewDemoViewController.swift in Sources */,
 				DC03AE2C23F3D736007739DD /* AppTheme.swift in Sources */,
 				DCB1C04723C4B41500D735BD /* ExtensionExampleMenuViewController.swift in Sources */,
