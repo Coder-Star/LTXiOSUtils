@@ -381,6 +381,9 @@ extension FWMenuView: UITableViewDelegate, UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath), cell.selectionStyle != .none {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
         self.hide()
         if self.popupItemClickedBlock != nil {
             self.popupItemClickedBlock!(self, indexPath.row, (self.itemTitleArray != nil) ? self.itemTitleArray![indexPath.row] : nil)

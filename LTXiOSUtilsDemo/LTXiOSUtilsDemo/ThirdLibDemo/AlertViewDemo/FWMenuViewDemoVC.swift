@@ -35,12 +35,14 @@ class FWMenuViewDemoVC: BaseUIViewController {
     lazy var menuView1: FWMenuView = {
         let vProperty = FWMenuViewProperty()
         vProperty.popupCustomAlignment = .topCenter
-        vProperty.popupAnimationType = .scale
-        vProperty.popupArrowStyle = .round
-        vProperty.touchWildToHide = "1"
-        vProperty.topBottomMargin = 0
+        vProperty.popupViewMinWidth = Constants.Size.WIDTH
+        vProperty.popupAnimationType = .frame
+        vProperty.popupArrowStyle = .none
+        vProperty.topBottomMargin = 10
+        vProperty.cornerRadius = 0
+        vProperty.selectionStyle = .gray
         vProperty.maskViewColor = UIColor(white: 0, alpha: 0.3)
-        let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images as? [UIImage], property: vProperty, itemBlock: { (_, index, _) in
+        let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: vProperty, itemBlock: { (_, index, _) in
             QL1("Menu：点击了第\(index)个按钮")
         })
         menuView.attachedView = self.baseView
@@ -143,7 +145,6 @@ extension FWMenuViewDemoVC {
             property.popupCustomAlignment = .topCenter
             property.popupAnimationType = .scale
             property.maskViewColor = UIColor.clear
-            property.touchWildToHide = "1"
             property.popupViewEdgeInsets = UIEdgeInsets(top: self.centerBtn.frame.maxY + kStatusBarHeight + kNavBarHeight, left: 0, bottom: 0, right: 0)
             property.topBottomMargin = 10
             property.animationDuration = 0.3
@@ -159,12 +160,12 @@ extension FWMenuViewDemoVC {
             property.popupCustomAlignment = .bottomLeft
             property.popupAnimationType = .frame
             property.maskViewColor = UIColor(white: 0, alpha: 0.4)
-            property.touchWildToHide = "1"
             property.popupViewEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: UIScreen.main.bounds.height - self.leftBottomBtn.frame.minY - kStatusBarHeight - kNavBarHeight, right: 0)
             property.topBottomMargin = 10
             property.animationDuration = 0.3
             property.popupArrowStyle = .none
             property.cornerRadius = 0
+            property.popupViewMinWidth = 200
             property.popupViewMaxHeightRate = 0.7
             let titles = ["Menu011111", "Menu1", "Menu2", "Menu3", "Menu4", "Menu5", "Menu6", "Menu7", "Menu8", "Menu9", "Menu10", "Menu11", "Menu12", "Menu13", "Menu14", "Menu15", "Menu16"]
             let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: property, itemBlock: { (_, index, _) in
@@ -177,7 +178,6 @@ extension FWMenuViewDemoVC {
             property.popupCustomAlignment = .bottomRight
             property.popupAnimationType = .scale
             property.maskViewColor = UIColor.clear
-            property.touchWildToHide = "1"
             property.popupViewEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: UIScreen.main.bounds.height - self.leftBottomBtn.frame.minY - kStatusBarHeight - kNavBarHeight, right: 10)
             property.topBottomMargin = 0
             property.animationDuration = 0.3

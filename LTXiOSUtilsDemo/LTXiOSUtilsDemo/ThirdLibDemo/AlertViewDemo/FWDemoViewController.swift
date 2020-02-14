@@ -68,7 +68,7 @@ class FWDemoViewController: UITableViewController {
         let customImageView = UIImageView(image: UIImage(named: "audio_bgm_4"))
 
         let vProperty = FWAlertViewProperty()
-        vProperty.touchWildToHide = "1"
+        
 
         let alertImage = FWAlertView.alert(title: "标题", detail: "带自定义视图", inputPlaceholder: nil, keyboardType: .default, isSecureTextEntry: false, customView: customImageView, items: items, vProperty: vProperty)
         return alertImage
@@ -79,7 +79,7 @@ class FWDemoViewController: UITableViewController {
         let items = ["确定"]
 
         let vProperty = FWSheetViewProperty()
-        vProperty.touchWildToHide = "1"
+        
         vProperty.titleColor = UIColor.lightGray
         vProperty.titleFontSize = 15.0
 
@@ -182,7 +182,7 @@ extension FWDemoViewController {
             vProperty.detailColor = kPV_RGBA(r: 141, g: 151, b: 163, a: 1.0)
             vProperty.buttonFontSize = 14.0
             vProperty.maskViewColor = UIColor(white: 0, alpha: 0.5)
-            vProperty.touchWildToHide = "1"
+            
             // 还有很多参数可设置...
 
             let alertView = FWAlertView.alert(title: "标题", detail: "描述描述描述描述描述描述描述描述描述描述", inputPlaceholder: nil, keyboardType: .default, isSecureTextEntry: false, customView: nil, items: items, vProperty: vProperty)
@@ -218,7 +218,7 @@ extension FWDemoViewController {
             let items = ["Sheet0", "Sheet1", "Sheet2", "Sheet3"]
 
             let vProperty = FWSheetViewProperty()
-            vProperty.touchWildToHide = "1"
+            
             vProperty.cancelItemTitleColor = UIColor.red
 
             let sheetView = FWSheetView.sheet(title: "", itemTitles: items, itemBlock: { (_, index, _) in
@@ -256,7 +256,7 @@ extension FWDemoViewController {
 
             let items = ["Sheet0", "Sheet1", "Sheet2", "Sheet3"]
             let vProperty = FWSheetViewProperty()
-            vProperty.touchWildToHide = "1"
+            
             let sheetView = FWSheetView.sheet(title: "", itemTitles: items, itemBlock: { (_, index, _) in
                 print("Sheet：点击了第\(index)个按钮")
             }, cancenlBlock: {
