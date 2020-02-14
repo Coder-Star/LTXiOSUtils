@@ -57,6 +57,7 @@ Pod::Spec.new do |s|
   s.subspec 'Component' do |component|
     component.dependency 'LTXiOSUtils/Resource'
     component.dependency 'LTXiOSUtils/Core/Extension'
+    component.dependency 'SnapKit' # 自动布局
     component.dependency 'MBProgressHUD' # 加载框，OC库
     component.source_files = 'LTXiOSUtils/Classes/Component/**/*.swift'
   end

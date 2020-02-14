@@ -68,7 +68,7 @@ class FWMenuViewTableViewCell: UITableViewCell {
     }
 }
 
-open class FWMenuView: FWPopupView, UITableViewDelegate, UITableViewDataSource {
+open class FWMenuView: FWPopupView {
 
     /// 外部传入的标题数组
     @objc public var itemTitleArray: [String]? {
@@ -88,20 +88,16 @@ open class FWMenuView: FWPopupView, UITableViewDelegate, UITableViewDataSource {
 
     /// 当前选中下标
     private var selectedIndex: Int = 0
-
     /// 最大的那一项的size
     private var maxItemSize: CGSize = CGSize.zero
-
     /// 保存点击回调
     private var popupItemClickedBlock: FWPopupItemClickedBlock?
-
     /// 有箭头时：当前layer的mask
     private var maskLayer: CAShapeLayer?
     /// 有箭头时：当前layer的border
     private var borderLayer: CAShapeLayer?
 
     private lazy var tableView: UITableView = {
-
         let tableView = UITableView()
         tableView.register(FWMenuViewTableViewCell.self, forCellReuseIdentifier: "cellId")
         tableView.delegate = self
@@ -119,7 +115,7 @@ open class FWMenuView: FWPopupView, UITableViewDelegate, UITableViewDataSource {
     /// - Returns: self
     @objc open class func menu(itemTitles: [String], itemBlock: FWPopupItemClickedBlock? = nil) -> FWMenuView {
 
-        return self.menu(itemTitles: itemTitles, itemImageNames: nil, itemBlock: itemBlock, property: nil)
+        return self.menu(itemTitles: itemTitles, itemImageNames: nil, property: nil, itemBlock: itemBlock)
     }
 
     /// 类初始化方法2
@@ -129,9 +125,9 @@ open class FWMenuView: FWPopupView, UITableViewDelegate, UITableViewDataSource {
     ///   - itemBlock: 点击回调
     ///   - property: 可设置参数
     /// - Returns: self
-    @objc open class func menu(itemTitles: [String], itemBlock: FWPopupItemClickedBlock? = nil, property: FWMenuViewProperty?) -> FWMenuView {
+    @objc open class func menu(itemTitles: [String], property: FWMenuViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWMenuView {
 
-        return self.menu(itemTitles: itemTitles, itemImageNames: nil, itemBlock: itemBlock, property: property)
+        return self.menu(itemTitles: itemTitles, itemImageNames: nil, property: property, itemBlock: itemBlock)
     }
 
     /// 类初始化方法3
@@ -142,16 +138,14 @@ open class FWMenuView: FWPopupView, UITableViewDelegate, UITableViewDataSource {
     ///   - itemBlock: 点击回调
     ///   - property: 可设置参数
     /// - Returns: self
-    @objc open class func menu(itemTitles: [String]?, itemImageNames: [UIImage]?, itemBlock: FWPopupItemClickedBlock? = nil, property: FWMenuViewProperty?) -> FWMenuView {
-
+    @objc open class func menu(itemTitles: [String]?, itemImageNames: [UIImage]?, property: FWMenuViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWMenuView {
         let popupMenu = FWMenuView()
-        popupMenu.setupUI(itemTitles: itemTitles, itemImageNames: itemImageNames, itemBlock: itemBlock, property: property)
+        popupMenu.setupUI(itemTitles: itemTitles, itemImageNames: itemImageNames, property: property, itemBlock: itemBlock)
         return popupMenu
     }
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
-
         self.vProperty = FWMenuViewProperty()
     }
 
@@ -168,7 +162,7 @@ open class FWMenuView: FWPopupView, UITableViewDelegate, UITableViewDataSource {
 
 extension FWMenuView {
 
-    private func setupUI(itemTitles: [String]?, itemImageNames: [UIImage]?, itemBlock: FWPopupItemClickedBlock? = nil, property: FWMenuViewProperty?) {
+    private func setupUI(itemTitles: [String]?, itemImageNames: [UIImage]?, property: FWMenuViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) {
 
         if itemTitles == nil && itemImageNames == nil {
             return
@@ -211,10 +205,8 @@ extension FWMenuView {
         switch property.popupCustomAlignment {
         case .bottomLeft, .bottomRight, .bottomCenter:
             isUpArrow = false
-            break
         default:
             isUpArrow = true
-            break
         }
 
         // 用来隐藏多余的线条，不想自定义线条
@@ -235,10 +227,8 @@ extension FWMenuView {
         switch property.popupArrowStyle {
         case .none:
             tableViewY = 0
-            break
         case .round, .triangle:
             tableViewY = property.popupArrowSize.height
-            break
         }
 
         var tmpMaxHeight: CGFloat = 0.0
@@ -293,10 +283,8 @@ extension FWMenuView {
             switch property.popupCustomAlignment {
             case .bottomLeft, .bottomRight, .bottomCenter:
                 isUpArrow = false
-                break
             default:
                 isUpArrow = true
-                break
             }
 
             // 弹窗箭头顶点坐标
@@ -376,7 +364,7 @@ extension FWMenuView {
     }
 }
 
-extension FWMenuView {
+extension FWMenuView: UITableViewDelegate, UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.itemsCount()
@@ -393,9 +381,7 @@ extension FWMenuView {
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         self.hide()
-
         if self.popupItemClickedBlock != nil {
             self.popupItemClickedBlock!(self, indexPath.row, (self.itemTitleArray != nil) ? self.itemTitleArray![indexPath.row] : nil)
         }
@@ -523,11 +509,8 @@ open class FWMenuViewProperty: FWPopupViewProperty {
 
     public override func reSetParams() {
         super.reSetParams()
-
         self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: self.itemNormalColor, NSAttributedString.Key.backgroundColor: UIColor.clear, NSAttributedString.Key.font: UIFont.systemFont(ofSize: self.buttonFontSize)]
-
         self.letfRigthMargin = 20
-
         self.popupViewMaxHeightRate = 0.7
     }
 }
