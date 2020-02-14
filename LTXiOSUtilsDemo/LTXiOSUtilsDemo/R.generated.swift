@@ -119,14 +119,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 22 images.
+  /// This `R.image` struct is generated, and contains static references to 38 images.
   struct image {
     /// Image `add`.
     static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "add")
+    /// Image `audio_bgm_4`.
+    static let audio_bgm_4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "audio_bgm_4")
+    /// Image `com_arrow_vc_back`.
+    static let com_arrow_vc_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "com_arrow_vc_back")
     /// Image `demoList_tab_selected`.
     static let demoList_tab_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "demoList_tab_selected")
     /// Image `demoList_tab`.
     static let demoList_tab = Rswift.ImageResource(bundle: R.hostingBundle, name: "demoList_tab")
+    /// Image `header_bg_message`.
+    static let header_bg_message = Rswift.ImageResource(bundle: R.hostingBundle, name: "header_bg_message")
     /// Image `home_button_bmfw`.
     static let home_button_bmfw = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_button_bmfw")
     /// Image `home_button_jmsc`.
@@ -161,6 +167,32 @@ struct R: Rswift.Validatable {
     static let mine_tab_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "mine_tab_selected")
     /// Image `mine_tab`.
     static let mine_tab = Rswift.ImageResource(bundle: R.hostingBundle, name: "mine_tab")
+    /// Image `mqz_nav_add`.
+    static let mqz_nav_add = Rswift.ImageResource(bundle: R.hostingBundle, name: "mqz_nav_add")
+    /// Image `right_menu_QR_white`.
+    static let right_menu_QR_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_QR_white")
+    /// Image `right_menu_QR`.
+    static let right_menu_QR = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_QR")
+    /// Image `right_menu_addFri_white`.
+    static let right_menu_addFri_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_addFri_white")
+    /// Image `right_menu_addFri`.
+    static let right_menu_addFri = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_addFri")
+    /// Image `right_menu_facetoface_white`.
+    static let right_menu_facetoface_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_facetoface_white")
+    /// Image `right_menu_facetoface`.
+    static let right_menu_facetoface = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_facetoface")
+    /// Image `right_menu_multichat_white`.
+    static let right_menu_multichat_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_multichat_white")
+    /// Image `right_menu_multichat`.
+    static let right_menu_multichat = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_multichat")
+    /// Image `right_menu_payMoney_white`.
+    static let right_menu_payMoney_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_payMoney_white")
+    /// Image `right_menu_payMoney`.
+    static let right_menu_payMoney = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_payMoney")
+    /// Image `right_menu_sendvideo_white`.
+    static let right_menu_sendvideo_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_sendvideo_white")
+    /// Image `right_menu_sendvideo`.
+    static let right_menu_sendvideo = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_sendvideo")
     /// Image `scan`.
     static let scan = Rswift.ImageResource(bundle: R.hostingBundle, name: "scan")
     /// Image `search`.
@@ -170,6 +202,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "add", bundle: ..., traitCollection: ...)`
     static func add(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.add, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "audio_bgm_4", bundle: ..., traitCollection: ...)`
+    static func audio_bgm_4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.audio_bgm_4, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "com_arrow_vc_back", bundle: ..., traitCollection: ...)`
+    static func com_arrow_vc_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.com_arrow_vc_back, compatibleWith: traitCollection)
     }
     #endif
 
@@ -184,6 +230,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "demoList_tab_selected", bundle: ..., traitCollection: ...)`
     static func demoList_tab_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.demoList_tab_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "header_bg_message", bundle: ..., traitCollection: ...)`
+    static func header_bg_message(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.header_bg_message, compatibleWith: traitCollection)
     }
     #endif
 
@@ -303,6 +356,97 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "mine_tab_selected", bundle: ..., traitCollection: ...)`
     static func mine_tab_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.mine_tab_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mqz_nav_add", bundle: ..., traitCollection: ...)`
+    static func mqz_nav_add(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mqz_nav_add, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_QR", bundle: ..., traitCollection: ...)`
+    static func right_menu_QR(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_QR, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_QR_white", bundle: ..., traitCollection: ...)`
+    static func right_menu_QR_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_QR_white, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_addFri", bundle: ..., traitCollection: ...)`
+    static func right_menu_addFri(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_addFri, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_addFri_white", bundle: ..., traitCollection: ...)`
+    static func right_menu_addFri_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_addFri_white, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_facetoface", bundle: ..., traitCollection: ...)`
+    static func right_menu_facetoface(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_facetoface, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_facetoface_white", bundle: ..., traitCollection: ...)`
+    static func right_menu_facetoface_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_facetoface_white, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_multichat", bundle: ..., traitCollection: ...)`
+    static func right_menu_multichat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_multichat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_multichat_white", bundle: ..., traitCollection: ...)`
+    static func right_menu_multichat_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_multichat_white, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_payMoney", bundle: ..., traitCollection: ...)`
+    static func right_menu_payMoney(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_payMoney, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_payMoney_white", bundle: ..., traitCollection: ...)`
+    static func right_menu_payMoney_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_payMoney_white, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_sendvideo", bundle: ..., traitCollection: ...)`
+    static func right_menu_sendvideo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_sendvideo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "right_menu_sendvideo_white", bundle: ..., traitCollection: ...)`
+    static func right_menu_sendvideo_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.right_menu_sendvideo_white, compatibleWith: traitCollection)
     }
     #endif
 
