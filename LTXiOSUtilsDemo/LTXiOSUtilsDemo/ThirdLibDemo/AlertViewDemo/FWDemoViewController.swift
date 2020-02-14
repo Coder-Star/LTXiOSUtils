@@ -120,6 +120,12 @@ class FWDemoViewController: UITableViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
         FWPopupWindow.sharedInstance.touchWildToHide = true
+
+        // MARK: - 导航栏样式
+        navBarBackgroundImage = R.image.header_bg_message()
+//        navBarTitleColor = .black
+//        navBarTintColor = .yellow
+//        navBarBarTintColor = .red
     }
 }
 
