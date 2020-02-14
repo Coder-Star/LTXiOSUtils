@@ -11,7 +11,6 @@ import UIKit
 import SnapKit
 
 let fwReferenceCountKey: UnsafeRawPointer! = UnsafeRawPointer.init(bitPattern: "fwReferenceCountKey".hashValue)
-
 let fwBackgroundViewKey: UnsafeRawPointer! = UnsafeRawPointer.init(bitPattern: "fwBackgroundViewKey".hashValue)
 let fwBackgroundViewColorKey: UnsafeRawPointer! = UnsafeRawPointer.init(bitPattern: "fwBackgroundViewColorKey".hashValue)
 let fwBackgroundAnimatingKey: UnsafeRawPointer! = UnsafeRawPointer.init(bitPattern: "fwBackgroundAnimatingKey".hashValue)
@@ -106,21 +105,17 @@ extension UIView {
         if self == FWPopupWindow.sharedInstance.attachView() {
             FWPopupWindow.sharedInstance.isHidden = false
             FWPopupWindow.sharedInstance.makeKeyAndVisible()
-        } else if self.isKind(of: UIWindow.self) {
+        } else if let window = self as? UIWindow {
             self.isHidden = false
-            let aa = self as! UIWindow
-            aa.makeKeyAndVisible()
+            window.makeKeyAndVisible()
         } else {
             self.bringSubviewToFront(self.fwMaskView)
         }
 
         UIView.animate(withDuration: self.fwAnimationDuration, delay: 0, options: [.curveEaseOut, .beginFromCurrentState], animations: {
-
             self.fwMaskView.alpha = 1.0
-
-        }) { (_) in
-
-        }
+        }, completion: { _ in
+        })
     }
 
     /// 隐藏遮罩层
@@ -131,18 +126,14 @@ extension UIView {
         }
 
         UIView.animate(withDuration: self.fwAnimationDuration, delay: 0, options: [.curveEaseIn, .beginFromCurrentState], animations: {
-
             self.fwMaskView.alpha = 0.0
-
-        }) { (_) in
-
+        }, completion: { _ in
             if self == FWPopupWindow.sharedInstance.attachView() {
                 FWPopupWindow.sharedInstance.isHidden = true
             } else if self.isKind(of: UIWindow.self) {
                 self.isHidden = true
             }
-
             self.fwReferenceCount -= 1
-        }
+        })
     }
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2018年 xfg. All rights reserved.
 //
 
-
 import Foundation
 import UIKit
 
@@ -225,23 +224,23 @@ extension FWAlertView {
         if inputPlaceholder != nil {
             self.inputTF = UITextField()
             self.addSubview(self.inputTF!)
-            self.inputTF?.snp.makeConstraints({ (make) in
+            self.inputTF?.snp.makeConstraints { make in
                 make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (lastTopBottomMargin+property.commponentMargin) : singleCommponenetMargin)
                 make.left.equalToSuperview().offset(self.vProperty.letfRigthMargin)
                 make.right.equalToSuperview().offset(-self.vProperty.letfRigthMargin)
                 make.height.equalTo(40)
-            })
+            }
             self.inputTF?.attributedPlaceholder = NSAttributedString(string: inputPlaceholder!, attributes: [NSAttributedString.Key.foregroundColor : property.inputPlaceholderColor])
             self.inputTF?.textColor = property.inputTextColor
-            self.inputTF?.textAlignment = .center
+            self.inputTF?.textAlignment = .left
             self.inputTF?.clearButtonMode = .whileEditing
             self.inputTF?.leftViewMode = .always
+            self.inputTF?.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 40))
             self.inputTF?.layer.borderColor = self.vProperty.splitColor.cgColor
             self.inputTF?.layer.borderWidth = self.vProperty.splitWidth
             self.inputTF?.layer.cornerRadius = self.vProperty.cornerRadius
             self.inputTF?.keyboardType = keyboardType
             self.inputTF?.isSecureTextEntry = isSecureTextEntry
-
             lastTopBottomMargin = 0.0
             lastConstraintItem = self.inputTF!.snp.bottom
         }
