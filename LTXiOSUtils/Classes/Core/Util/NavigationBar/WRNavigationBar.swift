@@ -653,6 +653,7 @@ extension UIViewController: WRAwakeProtocol {
     }
 }
 
+/// 导航栏设置
 public class WRNavigationBar {
     fileprivate struct AssociatedKeys {
         static var defNavBarBarTintColor: UIColor = UIColor.white
@@ -663,6 +664,7 @@ public class WRNavigationBar {
         static var defShadowImageHidden: Bool = false
     }
 
+    /// 导航栏默认背景颜色
     public class var defaultNavBarBarTintColor: UIColor {
         get {
             guard let def = objc_getAssociatedObject(self, &AssociatedKeys.defNavBarBarTintColor) as? UIColor else {
@@ -675,6 +677,7 @@ public class WRNavigationBar {
         }
     }
 
+    /// 导航栏默认背景图片
     public class var defaultNavBarBackgroundImage: UIImage? {
         get {
             guard let def = objc_getAssociatedObject(self, &AssociatedKeys.defNavBarBackgroundImage) as? UIImage else {
@@ -687,6 +690,7 @@ public class WRNavigationBar {
         }
     }
 
+    /// 导航栏默认按钮颜色
     public class var defaultNavBarTintColor: UIColor {
         get {
             guard let def = objc_getAssociatedObject(self, &AssociatedKeys.defNavBarTintColor) as? UIColor else {
@@ -699,6 +703,7 @@ public class WRNavigationBar {
         }
     }
 
+    /// 导航栏默认标题颜色
     public class var defaultNavBarTitleColor: UIColor {
         get {
             guard let def = objc_getAssociatedObject(self, &AssociatedKeys.defNavBarTitleColor) as? UIColor else {
@@ -711,6 +716,7 @@ public class WRNavigationBar {
         }
     }
 
+    /// 状态栏默认样式
     public class var defaultStatusBarStyle: UIStatusBarStyle {
         get {
             guard let def = objc_getAssociatedObject(self, &AssociatedKeys.defStatusBarStyle) as? UIStatusBarStyle else {
@@ -723,6 +729,7 @@ public class WRNavigationBar {
         }
     }
 
+    /// 默认是否隐藏导航栏底部黑线
     public class var defaultShadowImageHidden: Bool {
         get {
             guard let def = objc_getAssociatedObject(self, &AssociatedKeys.defShadowImageHidden) as? Bool else {
@@ -735,6 +742,7 @@ public class WRNavigationBar {
         }
     }
 
+    /// 导航栏默认背景透明度
     public class var defaultBackgroundAlpha: CGFloat {
         return 1.0
     }
