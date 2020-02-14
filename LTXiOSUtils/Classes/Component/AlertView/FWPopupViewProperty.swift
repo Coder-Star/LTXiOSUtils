@@ -77,8 +77,9 @@ open class FWPopupViewProperty: NSObject {
     @objc open var popupViewEdgeInsets = UIEdgeInsets.zero
     /// 遮罩层的背景色（也可以使用fwMaskViewColor），注意：该参数在弹窗隐藏后，还原为弹窗弹起时的值
     @objc open var maskViewColor: UIColor?
-    /// 为了兼容OC，0表示false，1表示true，为true时：用户点击外部遮罩层页面可以消失，注意：该参数在弹窗隐藏后，还原为弹窗弹起时的值
-    @objc open var touchWildToHide: String?
+    /// 为了兼容OC，0表示false，1表示true，
+    /// 为true时：用户点击外部遮罩层页面可以消失，注意：该参数在弹窗隐藏后，还原为弹窗弹起时的值
+    @objc open var touchWildToHide: String? = "1"
 
     /// 显示、隐藏动画所需的时间
     @objc open var animationDuration: TimeInterval = 0.2
@@ -97,6 +98,7 @@ open class FWPopupViewProperty: NSObject {
         self.reSetParams()
     }
 
+    /// 属性初始化，子类重写
     /// 如果发现部分属性设置后没有生效，可执行该方法
     @objc public func reSetParams() {
     }

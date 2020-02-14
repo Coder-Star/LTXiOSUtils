@@ -57,12 +57,10 @@ class FWNavigationController: UINavigationController {
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        get {
-            if self.topViewController != nil {
-                return self.topViewController!.preferredStatusBarStyle
-            } else {
-                return .default
-            }
+        if self.topViewController != nil {
+            return self.topViewController!.preferredStatusBarStyle
+        } else {
+            return .default
         }
     }
 }
