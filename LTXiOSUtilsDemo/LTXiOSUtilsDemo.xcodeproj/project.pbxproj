@@ -31,7 +31,6 @@
 		DC83E7A423F550290030A9B4 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7A323F550290030A9B4 /* HomeNavigationController.swift */; };
 		DC83E7CC23F645E10030A9B4 /* FWCustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7C723F645E00030A9B4 /* FWCustomPopupView.swift */; };
 		DC83E7CD23F645E10030A9B4 /* FWMenuViewDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7C823F645E00030A9B4 /* FWMenuViewDemoVC.swift */; };
-		DC83E7CE23F645E10030A9B4 /* FWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7C923F645E00030A9B4 /* FWNavigationController.swift */; };
 		DC83E7CF23F645E10030A9B4 /* FWCustomPopupDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7CA23F645E00030A9B4 /* FWCustomPopupDemoVC.swift */; };
 		DC83E7D023F645E10030A9B4 /* FWDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7CB23F645E00030A9B4 /* FWDemoViewController.swift */; };
 		DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */; };
@@ -107,7 +106,6 @@
 		DC83E7A323F550290030A9B4 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		DC83E7C723F645E00030A9B4 /* FWCustomPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWCustomPopupView.swift; sourceTree = "<group>"; };
 		DC83E7C823F645E00030A9B4 /* FWMenuViewDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWMenuViewDemoVC.swift; sourceTree = "<group>"; };
-		DC83E7C923F645E00030A9B4 /* FWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWNavigationController.swift; sourceTree = "<group>"; };
 		DC83E7CA23F645E00030A9B4 /* FWCustomPopupDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWCustomPopupDemoVC.swift; sourceTree = "<group>"; };
 		DC83E7CB23F645E00030A9B4 /* FWDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWDemoViewController.swift; sourceTree = "<group>"; };
 		DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensionExampleViewController.swift; sourceTree = "<group>"; };
@@ -313,7 +311,6 @@
 				DC83E7C723F645E00030A9B4 /* FWCustomPopupView.swift */,
 				DC83E7CB23F645E00030A9B4 /* FWDemoViewController.swift */,
 				DC83E7C823F645E00030A9B4 /* FWMenuViewDemoVC.swift */,
-				DC83E7C923F645E00030A9B4 /* FWNavigationController.swift */,
 			);
 			path = AlertViewDemo;
 			sourceTree = "<group>";
@@ -645,7 +642,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC83E7CE23F645E10030A9B4 /* FWNavigationController.swift in Sources */,
 				DC4AB9BF22F4606000A5F003 /* DemoListViewController.swift in Sources */,
 				DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
