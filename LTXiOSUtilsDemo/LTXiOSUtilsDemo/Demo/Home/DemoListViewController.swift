@@ -27,7 +27,8 @@ class DemoListViewController: BaseGroupTableMenuViewController {
             BaseGroupTableMenuModel(code: "Pick", title: "选择器"),
             BaseGroupTableMenuModel(code: "Component", title: "控件集锦"),
             BaseGroupTableMenuModel(code: "Menu", title: "菜单"),
-            BaseGroupTableMenuModel(code: "TreeView", title: "无限级树形View")
+            BaseGroupTableMenuModel(code: "TreeView", title: "无限级树形View"),
+            BaseGroupTableMenuModel(code: "AlertView", title: "弹出框")
         ]
         menu.append(componetMenu)
 
@@ -59,6 +60,8 @@ class DemoListViewController: BaseGroupTableMenuViewController {
             navigationController?.pushViewController(GridMenuViewExampleViewController(), animated: true)
         case "TreeView":
             navigationController?.pushViewController(TreeViewDemoViewController(), animated: true)
+        case "AlertView":
+            navigationController?.pushViewController(FWDemoViewController(), animated: true)
         default:
             HUD.showText("暂无此模块")
         }

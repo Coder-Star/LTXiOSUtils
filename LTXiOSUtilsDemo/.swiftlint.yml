@@ -43,7 +43,8 @@ function_body_length:
   warning: 200
 
 cyclomatic_complexity:
-  error: 40
+  warning: 100
+  error: 200
 
 # 命名规则可以设置最小长度和最大程度的警告/错误
 # 此外它们也可以设置排除在外的名字
