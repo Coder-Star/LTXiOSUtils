@@ -118,10 +118,10 @@ open class FWCustomSheetView: FWPopupView, UITableViewDelegate, UITableViewDataS
     ///   - itemBlock: 点击回调
     ///   - property: 可设置参数
     /// - Returns: self
-    @objc open class func sheet(headerTitle: String?, itemTitles: [String]?, itemSecondaryTitles: [String]?, itemImages: [UIImage]?, itemBlock: FWPopupItemClickedBlock? = nil, property: FWCustomSheetViewProperty?) -> FWCustomSheetView {
+    @objc open class func sheet(headerTitle: String?, itemTitles: [String]?, itemSecondaryTitles: [String]?, itemImages: [UIImage]?, property: FWCustomSheetViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWCustomSheetView {
 
         let customSheet = FWCustomSheetView()
-        customSheet.setupUI(headerTitle: headerTitle, itemTitles: itemTitles, itemSecondaryTitles: itemSecondaryTitles, itemImages: itemImages, itemBlock: itemBlock, property: property)
+        customSheet.setupUI(headerTitle: headerTitle, itemTitles: itemTitles, itemSecondaryTitles: itemSecondaryTitles, itemImages: itemImages, property: property, itemBlock: itemBlock)
         return customSheet
     }
 
@@ -138,7 +138,7 @@ open class FWCustomSheetView: FWPopupView, UITableViewDelegate, UITableViewDataS
 
 extension FWCustomSheetView {
 
-    private func setupUI(headerTitle: String?, itemTitles: [String]?, itemSecondaryTitles: [String]?, itemImages: [UIImage]?, itemBlock: FWPopupItemClickedBlock? = nil, property: FWCustomSheetViewProperty?) {
+    private func setupUI(headerTitle: String?, itemTitles: [String]?, itemSecondaryTitles: [String]?, itemImages: [UIImage]?, property: FWCustomSheetViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) {
 
         if itemTitles == nil && itemImages == nil {
             return

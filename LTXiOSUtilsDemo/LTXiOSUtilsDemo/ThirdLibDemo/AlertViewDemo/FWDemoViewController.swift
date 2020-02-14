@@ -13,24 +13,34 @@ import IQKeyboardManagerSwift
 class FWDemoViewController: UITableViewController {
 
     /// 注意：这边不同的示例可能还附加演示了一些特性（比如：遮罩层是否能够点击、遮罩层的背景颜色等等），有用到时可以参考
-    var titleArray = ["0、Alert - 单个按钮", "1、Alert - 两个按钮", "2、Alert - 两个按钮（修改参数）", "3、Alert - 多个按钮", "4、Alert - 带输入框", "5、Alert - 带自定义视图", "6、Sheet - 少量Item", "7、Sheet - 标题+少量Item", "8、Sheet - 大量Item", "9、Date - 自定义日期选择", "10、Menu - 自定义菜单", "11、Custom - 自定义弹窗", "12、CustomSheet - 类似Sheet效果", "13、CustomSheet - 类似Sheet效果2", "14、同时显示两个弹窗（展示可以同时调用多个弹窗的显示方法，但是显示过程按“后来者先显示”的原则，因此过程则反之）", "15、RadioButton", "16、含RadioButton的Alert"]
+    var titleArray = ["0、Alert - 单个按钮",
+                      "1、Alert - 两个按钮",
+                      "2、Alert - 两个按钮（修改参数）",
+                      "3、Alert - 多个按钮",
+                      "4、Alert - 带输入框",
+                      "5、Alert - 带自定义视图",
+                      "6、Sheet - 少量Item",
+                      "7、Sheet - 标题+少量Item",
+                      "8、Sheet - 大量Item",
+                      "9、Menu - 自定义菜单",
+                      "10、Custom - 自定义弹窗",
+                      "11、CustomSheet - 类似Sheet效果",
+                      "12、CustomSheet - 类似Sheet效果2", "13、同时显示两个弹窗（展示可以同时调用多个弹窗的显示方法，但是显示过程按“后来者先显示”的原则，因此过程则反之）",
+                      "14、RadioButton",
+                      "15、含RadioButton的Alert"]
 
     let block: FWPopupItemClickedBlock = { (popupView, index, title) in
         print("AlertView：点击了第\(index)个按钮")
     }
 
     lazy var customSheetView: FWCustomSheetView = {
-
         let property = FWCustomSheetViewProperty()
         property.popupViewItemHeight = 40
         property.selectedIndex = 1
-
         let titles = ["EOS", "DICE", "ZKS"]
-
-        let customSheetView = FWCustomSheetView.sheet(headerTitle: "选择代币", itemTitles: titles, itemSecondaryTitles: nil, itemImages: nil, itemBlock: { (_, index, _) in
+        let customSheetView = FWCustomSheetView.sheet(headerTitle: "选择代币", itemTitles: titles, itemSecondaryTitles: nil, itemImages: nil, property: property, itemBlock: { (_, index, _) in
             print("customSheet：点击了第\(index)个按钮")
-        }, property: property)
-
+        })
         return customSheetView
     }()
 
@@ -47,9 +57,9 @@ class FWDemoViewController: UITableViewController {
                       UIImage(named: "right_menu_addFri"),
                       UIImage(named: "right_menu_multichat")]
 
-        let customSheetView = FWCustomSheetView.sheet(headerTitle: "选择一个钱包", itemTitles: titles, itemSecondaryTitles: secondaryTitles, itemImages: images as? [UIImage], itemBlock: { (_, index, _) in
+        let customSheetView = FWCustomSheetView.sheet(headerTitle: "选择一个钱包", itemTitles: titles, itemSecondaryTitles: secondaryTitles, itemImages: images as? [UIImage], property: property, itemBlock: { (_, index, _) in
             print("customSheet：点击了第\(index)个按钮")
-        }, property: property)
+        })
 
         return customSheetView
     }()
@@ -66,20 +76,14 @@ class FWDemoViewController: UITableViewController {
                      FWPopupItem(title: "确定", itemType: .normal, isCancel: false, canAutoHide: false, itemClickedBlock: block2)]
         // 注意：添加自定义的视图，需要设置确定的Frame值
         let customImageView = UIImageView(image: UIImage(named: "audio_bgm_4"))
-
         let vProperty = FWAlertViewProperty()
-        
-
         let alertImage = FWAlertView.alert(title: "标题", detail: "带自定义视图", inputPlaceholder: nil, keyboardType: .default, isSecureTextEntry: false, customView: customImageView, items: items, vProperty: vProperty)
         return alertImage
     }()
 
     lazy var sheetView: FWSheetView = {
-
         let items = ["确定"]
-
         let vProperty = FWSheetViewProperty()
-        
         vProperty.titleColor = UIColor.lightGray
         vProperty.titleFontSize = 15.0
 
@@ -111,28 +115,17 @@ class FWDemoViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.title = "FWPopupView"
-
+        self.navigationItem.title = "弹出框列表"
         self.tableView.estimatedRowHeight = 44.0
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
-
-        // 设置弹窗外部可点击
-         FWPopupWindow.sharedInstance.touchWildToHide = true
-
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = true
-        IQKeyboardManager.shared.keyboardDistanceFromTextField = 60
+        FWPopupWindow.sharedInstance.touchWildToHide = true
     }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {get { return .lightContent}}
 }
 
 extension FWDemoViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return titleArray.count
     }
 
@@ -173,8 +166,6 @@ extension FWDemoViewController {
                 FWPopupItem(title: "取消", itemType: .normal, isCancel: true, canAutoHide: true, itemTitleColor: kPV_RGBA(r: 141, g: 151, b: 163, a: 1.0), itemBackgroundColor: nil, itemClickedBlock: block),
                 FWPopupItem(title: "确定", itemType: .normal, isCancel: false, canAutoHide: true, itemTitleColor: kPV_RGBA(r: 29, g: 150, b: 227, a: 1.0), itemTitleFont: UIFont.systemFont(ofSize: 20.0), itemBackgroundColor: nil, itemClickedBlock: block)
             ]
-
-            // 演示：修改参数
             let vProperty = FWAlertViewProperty()
             vProperty.alertViewWidth = max(UIScreen.main.bounds.width * 0.65, 275)
             vProperty.titleFont = UIFont.systemFont(ofSize: 17.0)
@@ -182,9 +173,6 @@ extension FWDemoViewController {
             vProperty.detailColor = kPV_RGBA(r: 141, g: 151, b: 163, a: 1.0)
             vProperty.buttonFontSize = 14.0
             vProperty.maskViewColor = UIColor(white: 0, alpha: 0.5)
-            
-            // 还有很多参数可设置...
-
             let alertView = FWAlertView.alert(title: "标题", detail: "描述描述描述描述描述描述描述描述描述描述", inputPlaceholder: nil, keyboardType: .default, isSecureTextEntry: false, customView: nil, items: items, vProperty: vProperty)
             alertView.show { (_, popupViewState) in
                 print("当前弹窗状态：\(popupViewState.rawValue)")
@@ -218,7 +206,6 @@ extension FWDemoViewController {
             let items = ["Sheet0", "Sheet1", "Sheet2", "Sheet3"]
 
             let vProperty = FWSheetViewProperty()
-            
             vProperty.cancelItemTitleColor = UIColor.red
 
             let sheetView = FWSheetView.sheet(title: "", itemTitles: items, itemBlock: { (_, index, _) in
@@ -238,15 +225,15 @@ extension FWDemoViewController {
                 print("点击了取消")
             })
             sheetView.show()
-        case 10:
+        case 9:
             self.navigationController?.pushViewController(FWMenuViewDemoVC(), animated: true)
-        case 11:
+        case 10:
             self.navigationController?.pushViewController(FWCustomPopupDemoVC(), animated: true)
-        case 12:
+        case 11:
             self.customSheetView.show()
-        case 13:
+        case 12:
             self.customSheetView2.show()
-        case 14:
+        case 13:
             let alertView = FWAlertView.alert(title: "标题", detail: "描述描述描述描述") { (_, _, _) in
                 print("点击了确定")
             }
@@ -256,16 +243,15 @@ extension FWDemoViewController {
 
             let items = ["Sheet0", "Sheet1", "Sheet2", "Sheet3"]
             let vProperty = FWSheetViewProperty()
-            
             let sheetView = FWSheetView.sheet(title: "", itemTitles: items, itemBlock: { (_, index, _) in
                 print("Sheet：点击了第\(index)个按钮")
             }, cancenlBlock: {
                 print("点击了取消")
             }, property: vProperty)
             sheetView.show()
-        case 15:
+        case 14:
             self.radioButton.isSelected = !self.radioButton.isSelected
-        case 16:
+        case 15:
             let property = FWRadioButtonProperty()
             property.animationDuration = 0.2
             property.isAnimated = true
