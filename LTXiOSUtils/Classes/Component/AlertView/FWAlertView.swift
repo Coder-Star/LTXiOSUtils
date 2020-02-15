@@ -19,7 +19,6 @@ open class FWAlertView: FWPopupView {
 
     private var actionItemArray: [FWPopupItem] = []
     private var commponenetCount: Int = 0
-
     private var titleLabel: UILabel?
     private var detailLabel: UILabel?
     private var inputTF: UITextField?
@@ -33,8 +32,8 @@ open class FWAlertView: FWPopupView {
     ///   - confirmBlock: 确定按钮回调
     /// - Returns: self
     @objc open class func alert(title: String, detail: String, confirmBlock: FWPopupItemClickedBlock? = nil) -> FWAlertView {
-
-        let items = [FWPopupItem(title: FWAlertViewProperty().defaultTextOK, itemType: .normal, isCancel: false, canAutoHide: true, itemClickedBlock: confirmBlock)]
+        let items = [FWPopupItem(title: FWAlertViewProperty().defaultTextOK, itemType: .normal,
+                                 isCancel: false, canAutoHide: true, itemClickedBlock: confirmBlock)]
         return self.alert(title: title, detail: detail, inputPlaceholder: nil, keyboardType: .default, isSecureTextEntry: false, customView: nil, items: items, vProperty: nil)
     }
 
@@ -46,7 +45,8 @@ open class FWAlertView: FWPopupView {
     ///   - confirmBlock: 确定按钮回调
     ///   - cancelBlock: 取消按钮回调
     /// - Returns: self
-    @objc open class func alert(title: String, detail: String, confirmBlock: FWPopupItemClickedBlock? = nil, cancelBlock: FWPopupItemClickedBlock? = nil) -> FWAlertView {
+    @objc open class func alert(title: String, detail: String, confirmBlock: FWPopupItemClickedBlock? = nil,
+                                cancelBlock: FWPopupItemClickedBlock? = nil) -> FWAlertView {
 
         let property = FWAlertViewProperty()
         let items = [FWPopupItem(title: property.defaultTextCancel, itemType: .normal, isCancel: true, canAutoHide: true, itemClickedBlock: cancelBlock),
@@ -62,7 +62,8 @@ open class FWAlertView: FWPopupView {
     ///   - inputPlaceholder: 输入框提示文字。注意：没有输入框时该参数必须要为nil，反之为空或者字符串即可
     ///   - items: 点击按钮项
     /// - Returns: self
-    @objc open class func alert(title: String, detail: String, inputPlaceholder: String?, keyboardType: UIKeyboardType, isSecureTextEntry: Bool, items: [FWPopupItem]) -> FWAlertView {
+    @objc open class func alert(title: String, detail: String, inputPlaceholder: String?,
+                                keyboardType: UIKeyboardType, isSecureTextEntry: Bool, items: [FWPopupItem]) -> FWAlertView {
 
         return self.alert(title: title, detail: detail, inputPlaceholder: inputPlaceholder, keyboardType: keyboardType, isSecureTextEntry: isSecureTextEntry, customView: nil, items: items, vProperty: nil)
     }
@@ -76,7 +77,9 @@ open class FWAlertView: FWPopupView {
     ///   - items: 点击按钮项
     ///   - customView: 自定义UI
     /// - Returns: self
-    @objc open class func alert(title: String?, detail: String?, inputPlaceholder: String?, keyboardType: UIKeyboardType, isSecureTextEntry: Bool, customView: UIView?, items: [FWPopupItem]) -> FWAlertView {
+    @objc open class func alert(title: String?, detail: String?, inputPlaceholder: String?,
+                                keyboardType: UIKeyboardType, isSecureTextEntry: Bool, customView: UIView?,
+                                items: [FWPopupItem]) -> FWAlertView {
 
         return self.alert(title: title, detail: detail, inputPlaceholder: inputPlaceholder, keyboardType: keyboardType, isSecureTextEntry: isSecureTextEntry, customView: customView, items: items, vProperty: nil)
     }
@@ -91,8 +94,9 @@ open class FWAlertView: FWPopupView {
     ///   - customView: 自定义UI
     ///   - vProperty: FWAlertView的相关属性
     /// - Returns: self
-    @objc open class func alert(title: String?, detail: String?, inputPlaceholder: String?, keyboardType: UIKeyboardType, isSecureTextEntry: Bool, customView: UIView?, items: [FWPopupItem], vProperty: FWAlertViewProperty?) -> FWAlertView {
-
+    @objc open class func alert(title: String?, detail: String?, inputPlaceholder: String?,
+                                keyboardType: UIKeyboardType, isSecureTextEntry: Bool, customView: UIView?,
+                                items: [FWPopupItem], vProperty: FWAlertViewProperty?) -> FWAlertView {
         let alertView = FWAlertView()
         alertView.setupUI(title: title, detail: detail, inputPlaceholder: inputPlaceholder, keyboardType: keyboardType, isSecureTextEntry: isSecureTextEntry, customView: customView, items: items, vProperty: vProperty)
         return alertView
@@ -108,7 +112,6 @@ open class FWAlertView: FWPopupView {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
-
         self.vProperty = FWAlertViewProperty()
     }
 
@@ -123,7 +126,9 @@ open class FWAlertView: FWPopupView {
 
 extension FWAlertView {
 
-    private func setupUI(title: String?, detail: String?, inputPlaceholder: String?, keyboardType: UIKeyboardType, isSecureTextEntry: Bool, customView: UIView?, items: [FWPopupItem], vProperty: FWAlertViewProperty?) {
+    private func setupUI(title: String?, detail: String?, inputPlaceholder: String?,
+                         keyboardType: UIKeyboardType, isSecureTextEntry: Bool, customView: UIView?,
+                         items: [FWPopupItem], vProperty: FWAlertViewProperty?) {
 
         if items.count == 0 {
             return
@@ -133,7 +138,7 @@ extension FWAlertView {
             self.vProperty = vProperty!
         }
 
-        let property = self.vProperty as! FWAlertViewProperty
+        let property = self.vProperty as? FWAlertViewProperty ?? FWAlertViewProperty()
 
         self.clipsToBounds = true
         self.layer.cornerRadius = self.vProperty.cornerRadius
@@ -344,9 +349,6 @@ extension FWAlertView {
             make.bottom.equalTo(btnContrainerView.snp.bottom)
         }
     }
-}
-
-extension FWAlertView {
 
     @objc private func btnAction(_ sender: UIButton) {
         let btn = sender
