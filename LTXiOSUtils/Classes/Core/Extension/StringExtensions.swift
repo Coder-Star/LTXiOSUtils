@@ -198,3 +198,28 @@ public extension String {
         return str
     }
 }
+
+// MARK: - 尺寸相关
+public extension String {
+    /// 获取指定宽度、字体的字符串高度
+    /// - Parameters:
+    ///   - font: 字体
+    ///   - width: 宽度
+    func heightWithStr(font: UIFont, width: CGFloat) -> CGFloat {
+        let attribute = [NSAttributedString.Key.font: font]
+        let options = NSStringDrawingOptions.usesLineFragmentOrigin
+        let size = self.boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: attribute, context: nil).size
+        return size.height
+    }
+
+    /// 获取指定高度、字体的字符串宽度
+    /// - Parameters:
+    ///   - font: 字体
+    ///   - height: 高度
+    func widthWithStr(font: UIFont, height: CGFloat) -> CGFloat {
+        let attribute = [NSAttributedString.Key.font: font]
+        let options = NSStringDrawingOptions.usesLineFragmentOrigin
+        let size = self.boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: height), options: options, attributes: attribute, context: nil).size
+        return size.width
+    }
+}

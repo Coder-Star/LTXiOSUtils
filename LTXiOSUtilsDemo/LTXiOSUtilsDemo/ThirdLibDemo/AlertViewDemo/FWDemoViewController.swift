@@ -36,9 +36,11 @@ class FWDemoViewController: UITableViewController {
     lazy var customSheetView: FWCustomSheetView = {
         let property = FWCustomSheetViewProperty()
         property.popupViewItemHeight = 40
+        property.letfRigthMargin = 0
         property.selectedIndex = 1
-        let titles = ["EOS", "DICE", "ZKS"]
-        let customSheetView = FWCustomSheetView.sheet(headerTitle: "选择代币", itemTitles: titles, itemSecondaryTitles: nil, itemImages: nil, property: property, itemBlock: { (_, index, _) in
+        property.popupViewMaxHeightRate = 0.3
+        let titles = ["菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1", "菜单2", "菜单3", "菜单4", "菜单5", "菜单6", "菜单7"]
+        let customSheetView = FWCustomSheetView.sheet(headerTitle: "选择代币", itemTitles: titles, property: property, itemBlock: { (_, index, _) in
             print("customSheet：点击了第\(index)个按钮")
         })
         return customSheetView
@@ -48,6 +50,7 @@ class FWDemoViewController: UITableViewController {
 
         let property = FWCustomSheetViewProperty()
         property.lastNeedAccessoryView = true
+        property.letfRigthMargin = 0
         // 设置默认不选中
         property.selectedIndex = -1
 
@@ -140,9 +143,9 @@ extension FWDemoViewController {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cellId")
         cell.textLabel?.text = titleArray[indexPath.row]
         cell.textLabel?.numberOfLines = 0
-        if indexPath.row == 10 || indexPath.row == 11 {
+        if indexPath.row == 9 || indexPath.row == 10 {
             cell.accessoryType = .disclosureIndicator
-        } else if indexPath.row == 15 {
+        } else if indexPath.row == 14 {
             cell.accessoryView = self.radioButton
         } else {
             cell.accessoryType = .none
