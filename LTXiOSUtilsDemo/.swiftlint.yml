@@ -54,6 +54,8 @@ cyclomatic_complexity:
 
 # 命名规则可以设置最小长度和最大程度的警告/错误
 # 此外它们也可以设置排除在外的名字
+
+#类名
 type_name:
   min_length: 2 # 只是警告
   max_length: # 警告和错误
