@@ -94,7 +94,7 @@ class FWCustomSheetViewTableViewCell: UITableViewCell {
     }
 }
 
-open class FWCustomSheetView: FWPopupView, UITableViewDelegate, UITableViewDataSource {
+open class FWCustomSheetView: FWPopupView {
 
     /// 当前选中下标
     @objc open var currentSelectedIndex: Int = 0
@@ -187,7 +187,7 @@ extension FWCustomSheetView {
         self.itemImageNameArray = itemImages
         self.popupItemClickedBlock = itemBlock
 
-        let property = self.vProperty as! FWCustomSheetViewProperty
+        let property = getProperty()
         var selfSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 0)
         self.currentSelectedIndex = property.selectedIndex
         self.lastTimeSelectedIndex = property.selectedIndex
@@ -252,7 +252,7 @@ extension FWCustomSheetView {
     /// 获取子项高度
     /// - Parameter str: 字符串
     private func getItemHeight(str: String) -> CGFloat {
-        let property = self.vProperty as! FWCustomSheetViewProperty
+        let property = getProperty()
         let width = UIScreen.main.bounds.width - property.letfRigthMargin * 2 + FWCustomSheetView.accessoryViewWidth
         let options = NSStringDrawingOptions.usesLineFragmentOrigin
         let size = str.boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: property.titleTextAttributes, context: nil).size
@@ -270,9 +270,18 @@ extension FWCustomSheetView {
         }
         return totalHeight
     }
+
+    /// 获取属性
+    private func getProperty() -> FWCustomSheetViewProperty {
+        if let property = self.vProperty as? FWCustomSheetViewProperty {
+            return property
+        } else {
+            return FWCustomSheetViewProperty()
+        }
+    }
 }
 
-extension FWCustomSheetView {
+extension FWCustomSheetView: UITableViewDelegate, UITableViewDataSource {
 
     /// 行数
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -281,7 +290,7 @@ extension FWCustomSheetView {
 
     /// 高度
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let property = self.vProperty as! FWCustomSheetViewProperty
+        let property = getProperty()
         if isItemTitleAutoHeight, let titleArr = itemTitleArray {
             let str = titleArr[indexPath.row]
             return getItemHeight(str: str)
@@ -296,11 +305,11 @@ extension FWCustomSheetView {
         cell.setupContent(title: (self.itemTitleArray != nil) ? self.itemTitleArray![indexPath.row] : nil,
                           secondaryTitle: (self.itemSecondaryTitleArray != nil) ? self.itemSecondaryTitleArray![indexPath.row] : nil,
                           image: (self.itemImageNameArray != nil) ? self.itemImageNameArray![indexPath.row] : nil,
-                          property: self.vProperty as! FWCustomSheetViewProperty,
+                          property: getProperty(),
                           isItemTitleAutoHeight: self.isItemTitleAutoHeight)
         cell.backgroundColor = self.vProperty.backgroundColor
 
-        let property = self.vProperty as! FWCustomSheetViewProperty
+        let property = getProperty()
         if property.lastNeedAccessoryView == true && indexPath.row == (self.itemsCount()-1) {
             cell.accessoryType = .disclosureIndicator
         } else if indexPath.row == self.currentSelectedIndex {
@@ -326,7 +335,7 @@ extension FWCustomSheetView {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         self.hide()
-        let property = self.vProperty as! FWCustomSheetViewProperty
+        let property = getProperty()
         if !(property.lastNeedAccessoryView == true && indexPath.row == (self.itemsCount()-1)) {
             self.lastTimeSelectedIndex = self.currentSelectedIndex
             self.currentSelectedIndex = indexPath.row
