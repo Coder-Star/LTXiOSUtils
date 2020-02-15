@@ -154,7 +154,7 @@ open class FWMenuView: FWPopupView {
 
     /// 刷新当前视图及数据
     @objc open func refreshData() {
-        self.setupFrame(property: self.vProperty as! FWMenuViewProperty)
+        self.setupFrame(property: getProperty())
         self.tableView.reloadData()
     }
 }
@@ -180,7 +180,7 @@ extension FWMenuView {
 
         self.popupItemClickedBlock = itemBlock
 
-        let property = self.vProperty as! FWMenuViewProperty
+        let property = getProperty()
 
         self.tableView.separatorInset = property.separatorInset
         self.tableView.layoutMargins = property.separatorInset
@@ -325,7 +325,7 @@ extension FWMenuView {
 
             // 箭头向下时的箭头位置
             if !isUpArrow {
-                maskPath.addLine(to: CGPoint(x: arrowPoint.x + arrowSize.width/2, y:self.frame.height - arrowSize.height))
+                maskPath.addLine(to: CGPoint(x: arrowPoint.x + arrowSize.width/2, y: self.frame.height - arrowSize.height))
 
                 if property.popupArrowStyle == .triangle { // 菱角箭头
                     maskPath.addLine(to: arrowPoint)
@@ -361,6 +361,15 @@ extension FWMenuView {
             self.layer.addSublayer(self.borderLayer!)
         }
     }
+
+    /// 获取属性
+    private func getProperty() -> FWMenuViewProperty {
+        if let property = self.vProperty as? FWMenuViewProperty {
+            return property
+        } else {
+            return FWMenuViewProperty()
+        }
+    }
 }
 
 extension FWMenuView: UITableViewDelegate, UITableViewDataSource {
@@ -375,7 +384,9 @@ extension FWMenuView: UITableViewDelegate, UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! FWMenuViewTableViewCell
-        cell.setupContent(title: (self.itemTitleArray != nil) ? self.itemTitleArray![indexPath.row] : nil , image: (self.itemImageArray != nil) ? self.itemImageArray![indexPath.row] : nil, property: self.vProperty as! FWMenuViewProperty)
+        cell.setupContent(title: (self.itemTitleArray != nil) ? self.itemTitleArray![indexPath.row] : nil,
+                          image: (self.itemImageArray != nil) ? self.itemImageArray![indexPath.row] : nil,
+                          property: getProperty())
         return cell
     }
 
@@ -401,7 +412,7 @@ extension FWMenuView {
             return CGSize.zero
         }
 
-        let property = self.vProperty as! FWMenuViewProperty
+        let property = getProperty()
 
         var titleSize = CGSize.zero
         var imageSize = CGSize.zero
@@ -489,7 +500,7 @@ open class FWMenuViewProperty: FWPopupViewProperty {
     /// 未选中时按钮字体属性
     @objc public var titleTextAttributes: [NSAttributedString.Key: Any]!
     /// 文字位置
-    @objc public var textAlignment : NSTextAlignment = .left
+    @objc public var textAlignment: NSTextAlignment = .left
 
     /// 内容位置
     @objc public var contentHorizontalAlignment: UIControl.ContentHorizontalAlignment = .left
