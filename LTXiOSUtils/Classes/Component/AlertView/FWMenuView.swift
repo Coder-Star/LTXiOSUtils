@@ -383,7 +383,9 @@ extension FWMenuView: UITableViewDelegate, UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! FWMenuViewTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as? FWMenuViewTableViewCell else {
+            return UITableViewCell()
+        }
         cell.setupContent(title: (self.itemTitleArray != nil) ? self.itemTitleArray![indexPath.row] : nil,
                           image: (self.itemImageArray != nil) ? self.itemImageArray![indexPath.row] : nil,
                           property: getProperty())

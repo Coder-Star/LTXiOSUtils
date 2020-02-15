@@ -301,7 +301,9 @@ extension FWCustomSheetView: UITableViewDelegate, UITableViewDataSource {
 
     /// cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! FWCustomSheetViewTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as? FWCustomSheetViewTableViewCell else {
+            return UITableViewCell()
+        }
         cell.setupContent(title: (self.itemTitleArray != nil) ? self.itemTitleArray![indexPath.row] : nil,
                           secondaryTitle: (self.itemSecondaryTitleArray != nil) ? self.itemSecondaryTitleArray![indexPath.row] : nil,
                           image: (self.itemImageNameArray != nil) ? self.itemImageNameArray![indexPath.row] : nil,

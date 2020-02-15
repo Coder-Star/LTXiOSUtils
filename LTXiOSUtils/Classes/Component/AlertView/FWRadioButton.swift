@@ -35,7 +35,6 @@ open class FWRadioButton: UIView {
     }
 
     lazy var borderLayer: CAShapeLayer = {
-
         let borderLayer = CAShapeLayer()
         self.layer.addSublayer(borderLayer)
         borderLayer.lineWidth = self.vProperty.lineWidth
@@ -44,7 +43,6 @@ open class FWRadioButton: UIView {
     }()
 
     lazy var insideLayer: CAShapeLayer = {
-
         let insideLayer = CAShapeLayer()
         self.layer.addSublayer(insideLayer)
         insideLayer.lineWidth = 0
@@ -54,14 +52,12 @@ open class FWRadioButton: UIView {
     }()
 
     lazy var radioImageView: UIImageView = {
-
         let imageView = UIImageView()
         self.addSubview(imageView)
         return imageView
     }()
 
     lazy var titleLabel: UILabel = {
-
         let titleLabel = UILabel()
         self.addSubview(titleLabel)
         return titleLabel

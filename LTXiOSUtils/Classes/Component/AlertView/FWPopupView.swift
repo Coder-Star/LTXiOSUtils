@@ -93,12 +93,10 @@ public typealias FWPopupDidAppearBlock = (_ popupView: FWPopupView) -> Void
 public typealias FWPopupDidDisappearBlock = (_ popupView: FWPopupView) -> Void
 /// 弹窗状态回调，注意：该回调会走N次
 public typealias FWPopupStateBlock = (_ popupView: FWPopupView, _ popupViewState: FWPopupViewState) -> Void
-
 /// 弹窗显示、隐藏回调，内部回调，该回调不对外
 public typealias FWPopupShowBlock = (_ popupView: FWPopupView) -> Void
 /// 弹窗显示、隐藏回调，内部回调，该回调不对外
 public typealias FWPopupHideBlock = (_ popupView: FWPopupView, _ hideWithRemove: Bool) -> Void
-
 /// 普通无参数回调
 public typealias FWPopupVoidBlock = () -> Void
 
@@ -106,7 +104,6 @@ public typealias FWPopupVoidBlock = () -> Void
 let FWPopupViewHideAllNotification = "FWPopupViewHideAllNotification"
 
 open class FWPopupView: UIView, UIGestureRecognizerDelegate {
-
     /// 单击隐藏
     private var tapGest: UITapGestureRecognizer?
 
@@ -116,8 +113,8 @@ open class FWPopupView: UIView, UIGestureRecognizerDelegate {
     @objc public var attachedView = FWPopupWindow.sharedInstance.attachView() {
         willSet {
             newValue?.fwMaskView.addSubview(self)
-            if newValue!.isKind(of: UIScrollView.self) {
-                self.originScrollEnabled = (newValue! as! UIScrollView).isScrollEnabled
+            if let isScrollEnabled = (newValue as? UIScrollView)?.isScrollEnabled {
+                self.originScrollEnabled = isScrollEnabled
             }
         }
     }
@@ -152,27 +149,24 @@ open class FWPopupView: UIView, UIGestureRecognizerDelegate {
     private var popupDidAppearBlock: FWPopupDidAppearBlock?
     private var popupDidDisappearBlock: FWPopupDidDisappearBlock?
     private var popupStateBlock: FWPopupStateBlock?
-
     private var showAnimation: FWPopupShowBlock?
-
     private var hideAnimation: FWPopupHideBlock?
 
     /// 记录遮罩层设置前的颜色
-    internal var originMaskViewColor: UIColor!
+    var originMaskViewColor: UIColor!
     /// 记录遮罩层设置前的是否可点击
-    internal var originTouchWildToHide: Bool!
+    var originTouchWildToHide: Bool!
     /// 遮罩层为UIScrollView或其子类时，记录是否可以滚动
-    internal var originScrollEnabled: Bool?
+    var originScrollEnabled: Bool?
     /// 记录弹窗弹起前keywindow
-    internal var originKeyWindow: UIWindow?
+    var originKeyWindow: UIWindow?
     /// 是否不需要设置Size（当前基类使用SnapKit，如果子类不希望该父类重置他的size，可以传入true）
-    internal var isNotMakeSize: Bool = false
-
+    var isNotMakeSize: Bool = false
     /// 弹窗真正的Size
-    internal var finalSize = CGSize.zero
+    var finalSize = CGSize.zero
+
     /// 当前Constraints是否被设置过了
     private var haveSetConstraints: Bool = false
-
     /// 是否重新设置了父视图
     private var isResetSuperView: Bool = false
 
@@ -198,29 +192,23 @@ open class FWPopupView: UIView, UIGestureRecognizerDelegate {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
-
         self.setupParams()
     }
 
     open override func awakeFromNib() {
         super.awakeFromNib()
-
         self.setupParams()
     }
 
     private func setupParams() {
         self.backgroundColor = UIColor.white
-
         FWPopupWindow.sharedInstance.backgroundColor = UIColor.clear
-
         self.originMaskViewColor = self.attachedView?.fwMaskViewColor
         self.originTouchWildToHide = FWPopupWindow.sharedInstance.touchWildToHide
         self.attachedView?.fwMaskView.addSubview(self)
         self.isHidden = true
-
         self.showAnimation = self.customShowAnimation()
         self.hideAnimation = self.customHideAnimation()
-
         NotificationCenter.default.addObserver(self, selector: #selector(notifyHideAll(notification:)), name: NSNotification.Name(rawValue: FWPopupViewHideAllNotification), object: nil)
     }
 
@@ -230,9 +218,8 @@ open class FWPopupView: UIView, UIGestureRecognizerDelegate {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
-
-        if self.attachedView!.isKind(of: UIScrollView.self) && self.originScrollEnabled != nil {
-            (self.attachedView! as! UIScrollView).isScrollEnabled = self.originScrollEnabled!
+        if let tempView = self.attachedView as? UIScrollView, let tempEnabled = self.originScrollEnabled {
+            tempView.isScrollEnabled = tempEnabled
         }
     }
 
@@ -264,7 +251,6 @@ extension FWPopupView {
     ///
     /// - Parameter popupDidAppearBlock: 弹窗已经显示回调
     @objc open func show(popupDidAppearBlock: FWPopupDidAppearBlock? = nil) {
-
         self.popupDidAppearBlock = popupDidAppearBlock
         self.show(popupStateBlock: nil)
     }
@@ -273,7 +259,6 @@ extension FWPopupView {
     ///
     /// - Parameter completionBlock: 显示、隐藏回调
     @objc open func show(popupStateBlock: FWPopupStateBlock? = nil) {
-
         if self.superview == nil {
             self.attachedView?.fwMaskView.addSubview(self)
             self.isResetSuperView = true
@@ -289,8 +274,10 @@ extension FWPopupView {
     }
 
     private func showNow() {
-
-        if self.currentPopupViewState == .willAppear || self.currentPopupViewState == .didAppear || self.currentPopupViewState == .didAppearButCovered || self.currentPopupViewState == .didAppearAgain {
+        if self.currentPopupViewState == .willAppear ||
+            self.currentPopupViewState == .didAppear ||
+            self.currentPopupViewState == .didAppearButCovered ||
+            self.currentPopupViewState == .didAppearAgain {
             return
         }
         self.currentPopupViewState = .willAppear
@@ -307,17 +294,16 @@ extension FWPopupView {
         }
         self.attachedView?.fwAnimationDuration = self.vProperty.animationDuration
 
-        if self.attachedView != nil && self.attachedView != FWPopupWindow.sharedInstance.attachView() {
+        if self.attachedView != nil, self.attachedView != FWPopupWindow.sharedInstance.attachView() {
             if tapGest == nil {
                 tapGest = UITapGestureRecognizer(target: self, action: #selector(tapGesClick(tap:)))
-                //                tapGest?.cancelsTouchesInView = false
                 tapGest?.delegate = self
                 self.attachedView?.addGestureRecognizer(tapGest!)
             } else {
                 self.tapGest?.isEnabled = true
             }
-            if self.attachedView!.isKind(of: UIScrollView.self) {
-                (self.attachedView! as! UIScrollView).isScrollEnabled = false
+            if let tempView = self.attachedView as? UIScrollView {
+                tempView.isScrollEnabled = false
             }
         }
 
@@ -337,7 +323,6 @@ extension FWPopupView {
 
     /// 隐藏，从父视图中移除
     @objc open func hide() {
-
         self.hide(popupDidDisappearBlock: nil)
     }
 
@@ -345,20 +330,18 @@ extension FWPopupView {
     ///
     /// - Parameter completionBlock: 显示、隐藏回调
     @objc open func hide(popupDidDisappearBlock: FWPopupDidDisappearBlock? = nil) {
-
         self.popupDidDisappearBlock = popupDidDisappearBlock
         self.hideNow(isRemove: true)
     }
 
     /// 隐藏，父视图中不移除当前视图（如果使用这个隐藏方法，不需要使用的时候可以手动把该弹窗从父视图中移除，否则可能会造成内存泄漏）
     @objc open func hideWithNotRemove() {
-
         self.hideNow(isRemove: false)
     }
 
     private func hideNow(isRemove: Bool) {
-
-        if self.currentPopupViewState == .willDisappear || self.currentPopupViewState == .didDisappear {
+        if self.currentPopupViewState == .willDisappear ||
+            self.currentPopupViewState == .didDisappear {
             return
         }
         self.currentPopupViewState = .willDisappear
@@ -395,8 +378,8 @@ extension FWPopupView {
         // 还原弹窗弹起时的相关参数
         self.attachedView?.fwMaskViewColor = self.originMaskViewColor
         FWPopupWindow.sharedInstance.touchWildToHide = self.originTouchWildToHide
-        if self.attachedView!.isKind(of: UIScrollView.self) && self.originScrollEnabled != nil {
-            (self.attachedView! as! UIScrollView).isScrollEnabled = self.originScrollEnabled!
+        if let tempView = self.attachedView as? UIScrollView, let tempEnabled = self.originScrollEnabled {
+            tempView.isScrollEnabled = tempEnabled
         }
         if self.originKeyWindow != nil {
             self.originKeyWindow!.makeKey()
@@ -411,7 +394,7 @@ extension FWPopupView {
     /// 通知
     /// - Parameter notification: 通知
     @objc open func notifyHideAll(notification: Notification) {
-        if self.isKind(of: notification.object as! AnyClass) {
+        if let object = notification.object as? AnyClass, self.isKind(of: object) {
             self.hide()
         }
     }
@@ -431,22 +414,19 @@ extension FWPopupView {
     ///
     /// - Returns: FWPopupShowBlock
     private func customShowAnimation() -> FWPopupShowBlock {
-
         let popupBlock = { [weak self] (popupView: FWPopupView) in
-
             guard let strongSelf = self else {
                 return
             }
-
             // 保证前一次弹窗销毁完毕
             var tmpHiddenViews: [UIView] = []
             for view in strongSelf.attachedView!.fwMaskView.subviews {
                 if view.isKind(of: FWPopupView.self) {
                     if view == strongSelf {
                         view.isHidden = false
-                    } else if (view as! FWPopupView).currentPopupViewState != .unKnow {
+                    } else if (view as? FWPopupView)?.currentPopupViewState != .unKnow {
                         view.isHidden = true
-                        (view as! FWPopupView).currentPopupViewState = .didAppearButCovered
+                        (view as? FWPopupView)?.currentPopupViewState = .didAppearButCovered
                         tmpHiddenViews.append(view)
                     }
                 }
@@ -459,28 +439,19 @@ extension FWPopupView {
             }
 
             strongSelf.setupConstraints(constraintsState: .constraintsShownAnimation)
-
             strongSelf.attachedView?.fwBackgroundAnimating = true
 
             if strongSelf.vProperty.usingSpringWithDamping >= 0 && strongSelf.vProperty.usingSpringWithDamping <= 1 {
                 UIView.animate(withDuration: strongSelf.vProperty.animationDuration, delay: 0.0, usingSpringWithDamping: strongSelf.vProperty.usingSpringWithDamping, initialSpringVelocity: strongSelf.vProperty.initialSpringVelocity, options: [.curveEaseOut, .beginFromCurrentState], animations: {
-
                     strongSelf.showAnimationDuration()
-
-                }, completion: { (_) in
-
+                }, completion: { _ in
                     strongSelf.showAnimationFinished()
-
                 })
             } else {
                 UIView.animate(withDuration: strongSelf.vProperty.animationDuration, delay: 0.0, options: [.curveEaseOut, .beginFromCurrentState], animations: {
-
                     strongSelf.showAnimationDuration()
-
-                }, completion: { (_) in
-
+                }, completion: { _ in
                     strongSelf.showAnimationFinished()
-
                 })
             }
         }
@@ -490,7 +461,6 @@ extension FWPopupView {
 
     /// 显示动画的操作
     private func showAnimationDuration() {
-
         if self.vProperty.popupAnimationType == .position {
             self.superview?.layoutIfNeeded()
         } else if self.vProperty.popupAnimationType == .frame {
@@ -505,14 +475,14 @@ extension FWPopupView {
 
     /// 显示动画完成后的操作
     private func showAnimationFinished() {
-
         if self.popupDidAppearBlock != nil {
             self.popupDidAppearBlock!(self)
         }
         self.currentPopupViewState = .didAppear
-
         if FWPopupWindow.sharedInstance.willShowingViews.count > 0 {
-            let willShowingView: FWPopupView = FWPopupWindow.sharedInstance.willShowingViews.first as! FWPopupView
+            guard let willShowingView = FWPopupWindow.sharedInstance.willShowingViews.first as? FWPopupView else {
+                return
+            }
             willShowingView.showNow()
             FWPopupWindow.sharedInstance.willShowingViews.removeFirst()
         } else {
@@ -524,19 +494,13 @@ extension FWPopupView {
     ///
     /// - Returns: FWPopupHideBlock
     private func customHideAnimation() -> FWPopupHideBlock {
-
         let popupBlock: FWPopupHideBlock = { [weak self] popupView, isRemove in
-
             guard let strongSelf = self else {
                 return
             }
-
             strongSelf.setupConstraints(constraintsState: .constraintsHiddenAnimation)
-
             strongSelf.attachedView?.fwBackgroundAnimating = true
-
             UIView.animate(withDuration: strongSelf.vProperty.animationDuration, animations: {
-
                 if strongSelf.vProperty.popupAnimationType == .position {
                     strongSelf.superview?.layoutIfNeeded()
                 } else if strongSelf.vProperty.popupAnimationType == .frame {
@@ -545,24 +509,25 @@ extension FWPopupView {
                 } else if strongSelf.vProperty.popupAnimationType == .scale || strongSelf.vProperty.popupAnimationType == .scale3D {
                     strongSelf.transform = strongSelf.vProperty.transform
                 }
-
-            }, completion: { (_) in
-
-                if isRemove == true {
+            }, completion: { _ in
+                if isRemove {
                     strongSelf.removeFromSuperview()
                     if let index = FWPopupWindow.sharedInstance.hiddenViews.firstIndex(of: strongSelf) {
                         FWPopupWindow.sharedInstance.hiddenViews.remove(at: index)
                     }
                 }
                 strongSelf.isHidden = true
-
-                DispatchQueue.main.asyncAfter(deadline: .now()+0.0001, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0001, execute: {
                     if FWPopupWindow.sharedInstance.willShowingViews.count > 0 {
-                        let willShowingView: FWPopupView = FWPopupWindow.sharedInstance.willShowingViews.last as! FWPopupView
+                        guard let willShowingView: FWPopupView = FWPopupWindow.sharedInstance.willShowingViews.last as? FWPopupView else {
+                            return
+                        }
                         willShowingView.showNow()
                         FWPopupWindow.sharedInstance.willShowingViews.removeLast()
                     } else if !FWPopupWindow.sharedInstance.hiddenViews.isEmpty {
-                        let showView: FWPopupView = FWPopupWindow.sharedInstance.hiddenViews.last as! FWPopupView
+                        guard let showView: FWPopupView = FWPopupWindow.sharedInstance.hiddenViews.last as? FWPopupView else {
+                            return
+                        }
                         showView.isHidden = false
                         showView.currentPopupViewState = .didAppearAgain
                         FWPopupWindow.sharedInstance.hiddenViews.removeLast()
@@ -572,13 +537,11 @@ extension FWPopupView {
                             FWPopupWindow.sharedInstance.touchWildToHide = false
                         }
                     }
-
                     strongSelf.currentPopupViewState = .didDisappear
                     if strongSelf.popupDidDisappearBlock != nil {
                         strongSelf.popupDidDisappearBlock!(strongSelf)
                     }
                 })
-
                 strongSelf.attachedView?.fwBackgroundAnimating = false
 
             })
@@ -591,10 +554,8 @@ extension FWPopupView {
     ///
     /// - Parameter constraintsState: FWConstraintsState
     private func setupConstraints(constraintsState: FWConstraintsState) {
-
         let myAlignment: FWPopupCustomAlignment = self.vProperty.popupCustomAlignment
         let edgeInsets = self.vProperty.popupViewEdgeInsets
-
         if constraintsState == .constraintsBeforeAnimation {
             self.layoutIfNeeded()
             if self.finalSize.equalTo(CGSize.zero) {
@@ -789,9 +750,7 @@ extension FWPopupView {
     ///   - make: ConstraintMaker
     ///   - myAlignment: 自定义弹窗校准位置
     private func constraintsBeforeAnimationFrame(make: ConstraintMaker, myAlignment: FWPopupCustomAlignment) {
-
         let edgeInsets = self.vProperty.popupViewEdgeInsets
-
         if myAlignment == .center {
             make.top.equalToSuperview().offset((self.superview!.frame.size.height-self.finalSize.height)/2 + edgeInsets.top - edgeInsets.bottom)
             make.centerX.equalToSuperview().offset(edgeInsets.left - edgeInsets.right)
@@ -846,42 +805,33 @@ extension FWPopupView {
     ///   - make: ConstraintMaker
     ///   - myAlignment: 自定义弹窗校准位置
     private func constraintsBeforeAnimationScale(make: ConstraintMaker, myAlignment: FWPopupCustomAlignment) {
-
         let edgeInsets = self.vProperty.popupViewEdgeInsets
         let anchorPoint = self.obtainAnchorPoint()
         self.layer.anchorPoint = anchorPoint
         if myAlignment == .center {
             make.center.equalToSuperview().inset(edgeInsets)
         } else if myAlignment == .topCenter {
-            // 设置锚点后会导致约束偏移，因此这边特意做了一个反向偏移
             make.centerX.equalToSuperview().offset(-self.finalSize.width*(0.5-anchorPoint.x) + edgeInsets.left - edgeInsets.right)
             make.top.equalToSuperview().offset(-self.finalSize.height*(1-anchorPoint.y)/2 + edgeInsets.top - edgeInsets.bottom)
         } else if myAlignment == .leftCenter {
-            // 设置锚点后会导致约束偏移，因此这边特意做了一个反向偏移
             make.centerY.equalToSuperview().offset(-self.finalSize.height*(0.5-anchorPoint.y) + edgeInsets.top - edgeInsets.bottom)
             make.left.equalToSuperview().offset(-self.finalSize.width/2 + self.finalSize.width*anchorPoint.x + edgeInsets.left - edgeInsets.right)
         } else if myAlignment == .bottomCenter {
-            // 设置锚点后会导致约束偏移，因此这边特意做了一个反向偏移
             make.centerX.equalToSuperview().offset(edgeInsets.left - edgeInsets.right)
             make.bottom.equalToSuperview().offset(self.finalSize.height*(anchorPoint.y-0.5) + edgeInsets.top - edgeInsets.bottom)
         } else if myAlignment == .rightCenter {
-            // 设置锚点后会导致约束偏移，因此这边特意做了一个反向偏移
             make.centerY.equalToSuperview().offset(-self.finalSize.height*(0.5-anchorPoint.y) + edgeInsets.top - edgeInsets.bottom)
             make.right.equalToSuperview().offset(self.finalSize.width/2 - self.finalSize.width*(1-anchorPoint.x) + edgeInsets.left - edgeInsets.right)
         } else if myAlignment == .topLeft {
-            // 设置锚点后会导致约束偏移，因此这边特意做了一个反向偏移
             make.left.equalToSuperview().offset(-self.finalSize.width/2 + self.finalSize.width*anchorPoint.x + edgeInsets.left - edgeInsets.right)
             make.top.equalToSuperview().offset(-self.finalSize.height*(1-anchorPoint.y)/2 + edgeInsets.top - edgeInsets.bottom)
         } else if myAlignment == .topRight {
-            // 设置锚点后会导致约束偏移，因此这边特意做了一个反向偏移
             make.right.equalToSuperview().offset(self.finalSize.width/2 - self.finalSize.width*(1-anchorPoint.x) + edgeInsets.left - edgeInsets.right)
             make.top.equalToSuperview().offset(-self.finalSize.height*(1-anchorPoint.y)/2 + edgeInsets.top - edgeInsets.bottom)
         } else if myAlignment == .bottomLeft {
-            // 设置锚点后会导致约束偏移，因此这边特意做了一个反向偏移
             make.left.equalToSuperview().offset(-self.finalSize.width/2 + self.finalSize.width*anchorPoint.x + edgeInsets.left - edgeInsets.right)
             make.bottom.equalToSuperview().offset(self.finalSize.height*(anchorPoint.y-0.5) + edgeInsets.top - edgeInsets.bottom)
         } else if myAlignment == .bottomRight {
-            // 设置锚点后会导致约束偏移，因此这边特意做了一个反向偏移
             make.right.equalToSuperview().offset(self.finalSize.width/2 - self.finalSize.width*(1-anchorPoint.x) + edgeInsets.left - edgeInsets.right)
             make.bottom.equalToSuperview().offset(self.finalSize.height*(anchorPoint.y-0.5) + edgeInsets.top - edgeInsets.bottom)
         }
@@ -940,7 +890,6 @@ extension FWPopupView {
     ///   - size: 新的size
     ///   - isImmediateEffect: 是否立即生效，当 currentPopupState==FWPopupStateDidAppear 时有效，此时弹窗会重新显示，此时相应的回调也会重新走
     @objc open func resetSize(size: CGSize, isImmediateEffect: Bool) {
-
         self.finalSize = size
         if isImmediateEffect && (self.currentPopupViewState == .didAppear || self.currentPopupViewState == .didAppearAgain) {
             self.hide { [weak self] (_) in
@@ -962,7 +911,6 @@ extension FWPopupView {
     ///
     /// - Parameter tap: 手势
     @objc func tapGesClick(tap: UITapGestureRecognizer) {
-
         if FWPopupWindow.sharedInstance.touchWildToHide && !self.fwBackgroundAnimating {
             for view: UIView in (self.attachedView?.fwMaskView.subviews)! {
                 if view.isKind(of: FWPopupView.self) {

@@ -12,10 +12,8 @@ import UIKit
 open class FWSheetView: FWPopupView {
 
     private var actionItemArray: [FWPopupItem] = []
-
     private var titleLabel: UILabel?
     private var titleContainerView: UIView?
-
     private var commponenetArray: [UIView] = []
 
     /// 类初始化方法1
@@ -237,9 +235,6 @@ extension FWSheetView {
             return FWSheetViewProperty()
         }
     }
-}
-
-extension FWSheetView {
 
     @objc private func btnAction(_ sender: UIButton) {
         let btn = sender
