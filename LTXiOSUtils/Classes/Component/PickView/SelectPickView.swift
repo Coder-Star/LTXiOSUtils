@@ -37,8 +37,6 @@ public class SelectPickView: UIView {
     private let toolBarHeight: CGFloat = 44
     /// tableview高度
     private let tableViewHeight: CGFloat = 216
-    /// cell高度
-    private let rowHeight: CGFloat = 35
     /// 总高度
     private var pickHeight:CGFloat {
         return toolBarHeight + tableViewHeight
@@ -83,7 +81,7 @@ public class SelectPickView: UIView {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = rowHeight
+        tableView.estimatedRowHeight = 35
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
         return tableView
@@ -145,16 +143,6 @@ public class SelectPickView: UIView {
         super.layoutSubviews()
         toolBarView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: toolBarHeight)
         tableView.frame = CGRect(x: 0, y: toolBarHeight, width: screenWidth, height: tableViewHeight)
-
-        /// 为tableView加上header,使内容垂直居中
-        let margin = tableViewHeight - rowHeight * titleArr.count.cgFloatValue
-        if margin > 0 {
-            let headerView = UIView(frame: CGRect(x: 0.cgFloatValue, y: 0, width: screenWidth, height: margin/2))
-            let lineView = UIView(frame: CGRect(x: 0.cgFloatValue, y: headerView.frame.height - 0.05, width: screenWidth, height: 0.05))
-            lineView.backgroundColor = UIColor(hexString: "#bbbbbb")
-            headerView.addSubview(lineView)
-            tableView.tableHeaderView = headerView
-        }
     }
 
     required init?(coder: NSCoder) {
@@ -299,6 +287,22 @@ extension SelectPickView: UITableViewDelegate {
             }
         }
         tableView.reloadData()
+    }
+
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == titleArr.count - 1 {
+            tableView.layoutIfNeeded()
+            print(tableView.contentSize.height)
+            /// 为tableView加上header,使内容垂直居中
+            let margin = tableViewHeight - tableView.contentSize.height
+            if margin > 0 {
+                let headerView = UIView(frame: CGRect(x: 0.cgFloatValue, y: 0, width: screenWidth, height: margin/2))
+                let lineView = UIView(frame: CGRect(x: 0.cgFloatValue, y: headerView.frame.height - 0.05, width: screenWidth, height: 0.05))
+                lineView.backgroundColor = UIColor(hexString: "#bbbbbb")
+                headerView.addSubview(lineView)
+                tableView.tableHeaderView = headerView
+            }
+        }
     }
 }
 

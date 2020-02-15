@@ -11,7 +11,7 @@ import Foundation
 class PickViewDemoViewController: BaseGroupTableMenuViewController {
 
     /// 单列
-    private let singleData = ["swift", "ObjecTive-C(主要是用来测试数据很长时候选择的样式哦)", "C", "C++", "java", "php", "python", "ruby", "js"]
+    private let singleData = ["swift", "ObjecTive-C(主要是用来测试数据很长时候选择的样式哦)"]
 
     /// 多列不关联
     private let multipleData = [
