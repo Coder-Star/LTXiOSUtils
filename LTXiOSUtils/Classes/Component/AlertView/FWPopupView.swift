@@ -257,7 +257,6 @@ extension FWPopupView {
 
     /// 显示
     @objc open func show() {
-
         self.show(popupDidAppearBlock: nil)
     }
 
