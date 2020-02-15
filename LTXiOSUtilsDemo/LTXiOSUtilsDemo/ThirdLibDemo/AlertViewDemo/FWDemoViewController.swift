@@ -36,7 +36,7 @@ class FWDemoViewController: UITableViewController {
     lazy var customSheetView: FWCustomSheetView = {
         let property = FWCustomSheetViewProperty()
         property.popupViewItemHeight = 40
-        property.letfRigthMargin = 0
+        property.letfRigthMargin = 10
         property.selectedIndex = 1
         property.popupViewMaxHeightRate = 0.3
         let titles = ["菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1", "菜单2", "菜单3", "菜单4", "菜单5", "菜单6", "菜单7"]
@@ -50,8 +50,7 @@ class FWDemoViewController: UITableViewController {
 
         let property = FWCustomSheetViewProperty()
         property.lastNeedAccessoryView = true
-        property.letfRigthMargin = 0
-        // 设置默认不选中
+        property.letfRigthMargin = 5
         property.selectedIndex = -1
 
         let titles = ["fdksds123123", "fdksds112233", "导入钱包"]
