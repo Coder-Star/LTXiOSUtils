@@ -614,7 +614,7 @@
 		A8009EC68E67C7D40D467478BE019F5D /* CombineLatest+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C2EC52DBB25613CD6737B1A50138CD /* CombineLatest+Collection.swift */; };
 		A8E17C2DF1B30810F3F897AB873199AF /* RxPickerViewDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEF3BFF736A77FAD5C6C6FD1CEC67E7 /* RxPickerViewDataSourceType.swift */; };
 		A8F75BDF7E15EEBA559915F29940929F /* URLRequestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7531194ADB275D4BF41203B54352C982 /* URLRequestExtensions.swift */; };
-		A916BA234119DB9BC91F85958FE45BF0 /* MultiSelectPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6AA79AC65A8FD680F3F5C42C5ED521 /* MultiSelectPickView.swift */; };
+		A916BA234119DB9BC91F85958FE45BF0 /* SelectPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6AA79AC65A8FD680F3F5C42C5ED521 /* SelectPickView.swift */; };
 		A944FEB8695BFE43F58AA40727A336B4 /* UILabel+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6906AFD074E3F8DAB45C6FD29E242 /* UILabel+Rx.swift */; };
 		A9760FA09C49A48875F586371C9D009A /* CommonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D919DC98E84B4864BEFFD9B787556774 /* CommonLabel.swift */; };
 		A9817E170C4FDCFD23BB30A289CD9ED7 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EC26DA8B9466A83D98B110BCB94B43 /* Reactive.swift */; };
@@ -1725,7 +1725,7 @@
 		7DACDDE99AEE12B918E8DBB62720AF37 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		7DD1DB4AA0E71B40C9799B689811CDB9 /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = RxSwift/Observables/Map.swift; sourceTree = "<group>"; };
 		7E01A2EB1E3DFF1D49B3AA8B2C318731 /* SCNSphereExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCNSphereExtensions.swift; path = Sources/SwifterSwift/SceneKit/SCNSphereExtensions.swift; sourceTree = "<group>"; };
-		7E6AA79AC65A8FD680F3F5C42C5ED521 /* MultiSelectPickView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MultiSelectPickView.swift; sourceTree = "<group>"; };
+		7E6AA79AC65A8FD680F3F5C42C5ED521 /* SelectPickView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectPickView.swift; sourceTree = "<group>"; };
 		7EA7266BEE4466D0F688FC3B2C6AAA27 /* AppServicesManager+HealthKitInteracting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AppServicesManager+HealthKitInteracting.swift"; path = "Sources/AppServicesManager+HealthKitInteracting.swift"; sourceTree = "<group>"; };
 		7EAD3F00E341DA4CE3100DF8DB8AC4CF /* PluggableAppDelegate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PluggableAppDelegate.xcconfig; sourceTree = "<group>"; };
 		7EDA2994ECA5276A3E3451AE37D1A40A /* OptionalExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionalExtensions.swift; path = Sources/SwifterSwift/SwiftStdlib/OptionalExtensions.swift; sourceTree = "<group>"; };
@@ -2662,7 +2662,7 @@
 			isa = PBXGroup;
 			children = (
 				DA051A6938D5F4C051C2DBCE95CCFB46 /* DurationDatePickView.swift */,
-				7E6AA79AC65A8FD680F3F5C42C5ED521 /* MultiSelectPickView.swift */,
+				7E6AA79AC65A8FD680F3F5C42C5ED521 /* SelectPickView.swift */,
 				71E324D24CB2A492B8D4D14887637BB5 /* PickerView.swift */,
 				44ECE3BD3B84530EE28ACDA5A4B4A8D3 /* PickerViewManager.swift */,
 				7EE96351F84EDCEFF2EDED381426F99A /* ToolBarView.swift */,
@@ -5690,7 +5690,7 @@
 				146E1BC96ED56266F6F8EAA6E62E53CC /* LTXiOSUtils-dummy.m in Sources */,
 				4620E42C7394B1E38E1893296D5B1408 /* LTXiOSUtilsResource.swift in Sources */,
 				DD148C0E79571B67653A663C053EE391 /* MaskPopupView.swift in Sources */,
-				A916BA234119DB9BC91F85958FE45BF0 /* MultiSelectPickView.swift in Sources */,
+				A916BA234119DB9BC91F85958FE45BF0 /* SelectPickView.swift in Sources */,
 				F5943531534D41C348521D9FB494B704 /* NetworkConfig.swift in Sources */,
 				02FDD2F05C624278C18D6110DAC8E695 /* NetworkManager.swift in Sources */,
 				A6CF4F050B1CB50F980FBE61158372B3 /* NSObjectExtensions.swift in Sources */,
