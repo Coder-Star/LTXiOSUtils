@@ -19,5 +19,8 @@ DurationDatePickView.to = "至";
 //选择器
 PickerViewManager.emptyData = "数据为空";
 
-MultiSelectPickView.emptyData = "数据为空";
-MultiSelectPickView.selectAtSelectOne = "请至少选择一项";
+//多选选择器
+SelectPickView.emptyData = "数据为空";
+SelectPickView.selectAtLeastOne = "请至少选择一项";
+SelectPickView.selectOne = "请选择一项";
+

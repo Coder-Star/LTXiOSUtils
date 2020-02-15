@@ -11,7 +11,7 @@ import Foundation
 class PickViewDemoViewController: BaseGroupTableMenuViewController {
 
     /// 单列
-    private let singleData = ["swift", "ObjecTive-C", "C", "C++", "java", "php", "python", "ruby", "js"]
+    private let singleData = ["swift", "ObjecTive-C(主要是用来测试数据很长时候选择的样式哦)", "C", "C++", "java", "php", "python", "ruby", "js"]
 
     /// 多列不关联
     private let multipleData = [
@@ -68,6 +68,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
         menu.append(fourthMenu)
 
         let fifthMenu = [
+            BaseGroupTableMenuModel(code: "singleSelect", title: "单选"),
             BaseGroupTableMenuModel(code: "multipleSelect", title: "多选")
         ]
         menu.append(fifthMenu)
@@ -151,8 +152,14 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
             }, doneAction: { (selectedIndexs, selectedValues) in
                 self.showAlert(message:"\(selectedIndexs)   \(selectedValues)")
             })
+        case "singleSelect":
+            SelectPickView.showSingleView(title: "单项选择", data: singleData, defaultSelectedIndex: 1, clearBlock: {
+                self.showAlert(message: "清空")
+            }, sureBlock: { index,value in
+                self.showAlert(message:"\(index)   \(value)")
+            })
         case "multipleSelect":
-            MultiSelectPickView.showView(title: "多项选择", data: singleData, defaultSelectedIndexs: [1], clearBlock: {
+            SelectPickView.showView(title: "多项选择", data: singleData, defaultSelectedIndexs: [1], clearBlock: {
                 self.showAlert(message: "清空")
             }, sureBlock: { index,value in
                 self.showAlert(message:"\(index)   \(value)")

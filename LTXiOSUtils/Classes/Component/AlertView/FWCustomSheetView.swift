@@ -313,12 +313,12 @@ extension FWCustomSheetView: UITableViewDelegate, UITableViewDataSource {
         if property.lastNeedAccessoryView == true && indexPath.row == (self.itemsCount()-1) {
             cell.accessoryType = .disclosureIndicator
         } else if indexPath.row == self.currentSelectedIndex {
-            if cell.accessoryView == nil {
-                if property.choiceImage != nil {
-                    cell.accessoryView = UIImageView(image: property.choiceImage!)
-                } else {
-                    cell.accessoryView = UIImageView(image: "AlertView_choice".imageOfLTXiOSUtils())
-                }
+            if property.choiceImage != nil {
+                cell.accessoryView = UIImageView(image: property.choiceImage!)
+                cell.accessoryType = .none
+            } else {
+                cell.accessoryView = nil
+                cell.accessoryType = .checkmark
             }
         } else {
             cell.accessoryView = nil

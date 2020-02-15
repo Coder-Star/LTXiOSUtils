@@ -1,5 +1,5 @@
 //
-//  MultiSelectPickView.swift
+//  SelectPickView.swift
 //  LTXiOSUtils
 //  选择器(多选)
 //  Created by 李天星 on 2019/12/30.
@@ -8,10 +8,11 @@
 import Foundation
 
 // MARK: - 属性
-public class MultiSelectPickView: UIView {
+public class SelectPickView: UIView {
 
     public typealias ClearBlock = () -> Void
     public typealias SureBlock = (_ indexArr: [Int], _ valueArr: [String]) -> Void
+    public typealias SingleSureBlock = (_ index: Int, _ value: String) -> Void
 
     /// 数据
     public var titleArr = [String]() {
@@ -20,13 +21,17 @@ public class MultiSelectPickView: UIView {
         }
     }
 
-    /// 选中的索引
+    /// 选中的索引数组，多选
     private var selectIndexArr = [Int]()
+    /// 选中的索引，单选
+    private var selectIndex: Int?
 
     /// 清空按钮闭包
     public var clearBlock: ClearBlock?
-    /// 确定按钮闭包
+    /// 确定按钮闭包,多选
     public var sureBlock: SureBlock?
+    /// 确定按钮闭包,单选
+    public var singleSureBlock: SingleSureBlock?
 
     /// toobar高度
     private let toolBarHeight: CGFloat = 44
@@ -38,6 +43,9 @@ public class MultiSelectPickView: UIView {
     private var pickHeight:CGFloat {
         return toolBarHeight + tableViewHeight
     }
+
+    /// 是否单项选择
+    private var isSingle = false
 
     /// 屏幕高度
     private let screenHeight = UIScreen.main.bounds.height
@@ -74,7 +82,8 @@ public class MultiSelectPickView: UIView {
         let tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = rowHeight
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = rowHeight
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
         return tableView
@@ -86,12 +95,12 @@ public class MultiSelectPickView: UIView {
     }()
 
     private lazy var normalImage:UIImage? = {
-        let normalImage = "MultiSelectPickView_select_normal".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
+        let normalImage = "SelectPickView_select_normal".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
         return normalImage
     }()
 
     private lazy var selectdImage:UIImage? = {
-        let selectdImage = "MultiSelectPickView_select_selected".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
+        let selectdImage = "SelectPickView_select_selected".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
         return selectdImage
     }()
 
@@ -109,16 +118,25 @@ public class MultiSelectPickView: UIView {
             self?.dismiss()
         }
         toolBarView.doneAction = {
-            if self.selectIndexArr.isEmpty {
-                HUD.showText("MultiSelectPickView.selectAtSelectOne".localizedOfLTXiOSUtils())
-            } else {
-                let indexArr = self.selectIndexArr.sorted()
-                var valueArr = [String]()
-                for item in indexArr {
-                    valueArr.append(self.titleArr[item])
+            if self.isSingle {
+                if let tempIndex = self.selectIndex {
+                    self.singleSureBlock?(tempIndex, self.titleArr[tempIndex])
+                    self.dismiss()
+                } else {
+                    HUD.showText("SelectPickView.selectOne".localizedOfLTXiOSUtils())
                 }
-                self.sureBlock?(indexArr, valueArr)
-                self.dismiss()
+            } else {
+                if self.selectIndexArr.isEmpty {
+                    HUD.showText("SelectPickView.selectAtLeastOne".localizedOfLTXiOSUtils())
+                } else {
+                    let indexArr = self.selectIndexArr.sorted()
+                    var valueArr = [String]()
+                    for item in indexArr {
+                        valueArr.append(self.titleArr[item])
+                    }
+                    self.sureBlock?(indexArr, valueArr)
+                    self.dismiss()
+                }
             }
         }
     }
@@ -145,9 +163,9 @@ public class MultiSelectPickView: UIView {
 }
 
 // MARK: - 对外暴露方法
-public extension MultiSelectPickView {
+public extension SelectPickView {
 
-    /// 展示view
+    /// 展示多选view
     /// - Parameters:
     ///   - title: 标题
     ///   - data: 数据
@@ -167,19 +185,55 @@ public extension MultiSelectPickView {
     ///   - title: 标题
     ///   - data: 数据
     ///   - defaultSelectedIndexs: 默认选中索引,如果为nil，表示都不选中
-    class func getView(title: String, data: [String], defaultSelectedIndexs: [Int]?) -> MultiSelectPickView? {
+    class func getView(title: String, data: [String], defaultSelectedIndexs: [Int]?) -> SelectPickView? {
         if data.isEmpty {
-            HUD.showText("MultiSelectPickView.emptyData".localizedOfLTXiOSUtils())
+            HUD.showText("SelectPickView.emptyData".localizedOfLTXiOSUtils())
             return nil
         }
         UIApplication.shared.keyWindow?.endEditing(true)
-        let view = MultiSelectPickView()
+        let view = SelectPickView()
         view.titleArr = data
         if let indexArr = defaultSelectedIndexs {
             for item in indexArr where (item >= 0 && item < data.count) {
                 view.selectIndexArr.append(item)
             }
         }
+        view.toolBarView.title = title
+        return view
+    }
+
+    /// 展示单选view
+    /// - Parameters:
+    ///   - title: 标题
+    ///   - data: 数据
+    ///   - defaultSelectedIndex: 默认选中索引
+    ///   - sureBlock: 确定闭包
+    class func showSingleView(title: String, data: [String], defaultSelectedIndex: Int?, clearBlock: @escaping ClearBlock, sureBlock: @escaping SingleSureBlock) {
+        guard let view = getSingleView(title: title, data: data, defaultSelectedIndex: defaultSelectedIndex) else {
+            return
+        }
+        view.clearBlock = clearBlock
+        view.singleSureBlock = sureBlock
+        view.show()
+    }
+
+    /// 获取单选view
+    /// - Parameters:
+    ///   - title: 标题
+    ///   - data: 数据
+    ///   - defaultSelectedIndexs: 默认选中索引,如果为nil，表示都不选中
+    class func getSingleView(title: String, data: [String], defaultSelectedIndex: Int?) -> SelectPickView? {
+        if data.isEmpty {
+            HUD.showText("SelectPickView.emptyData".localizedOfLTXiOSUtils())
+            return nil
+        }
+        UIApplication.shared.keyWindow?.endEditing(true)
+        let view = SelectPickView()
+        view.titleArr = data
+        if let index = defaultSelectedIndex, index >= 0, index < data.count {
+            view.selectIndex = index
+        }
+        view.isSingle = true
         view.toolBarView.title = title
         return view
     }
@@ -205,43 +259,69 @@ public extension MultiSelectPickView {
 }
 
 // MARK: - UITableView相关代理
-extension MultiSelectPickView: UITableViewDataSource {
+extension SelectPickView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titleArr.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        var cell = tableView.dequeueReusableCell(withIdentifier: SelectPickViewTableCell.description()) as? SelectPickViewTableCell
         if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+            cell = SelectPickViewTableCell(style: .default, reuseIdentifier: SelectPickViewTableCell.description())
         }
-        cell?.selectionStyle = .none
-        cell?.textLabel?.adjustsFontSizeToFitWidth = true
-        cell?.textLabel?.text = titleArr[indexPath.row]
-        cell?.separatorInset = .zero
-        if selectIndexArr.contains(indexPath.row) {
-            cell?.accessoryView = UIImageView(image: selectdImage)
+        cell?.titleLabel.text = titleArr[indexPath.row]
+        if isSingle {
+            if selectIndex == indexPath.row {
+                cell?.accessoryType = .checkmark
+            } else {
+                cell?.accessoryType = .none
+            }
         } else {
-            cell?.accessoryView = UIImageView(image: normalImage)
+            if selectIndexArr.contains(indexPath.row) {
+                cell?.accessoryView = UIImageView(image: selectdImage)
+            } else {
+                cell?.accessoryView = UIImageView(image: normalImage)
+            }
         }
         return cell!
     }
 }
 
-extension MultiSelectPickView: UITableViewDelegate {
+extension SelectPickView: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) , let accessoryView = cell.accessoryView as? UIImageView else {
-            return
-        }
-
-        if accessoryView.image == normalImage {
-            accessoryView.image = selectdImage
-            selectIndexArr.append(indexPath.row)
-        } else if accessoryView.image == selectdImage {
-            accessoryView.image = normalImage
+        if isSingle {
+            selectIndex = indexPath.row
+        } else {
             if let index = selectIndexArr.firstIndex(of: indexPath.row) {
                 selectIndexArr.remove(at: index)
+            } else {
+                selectIndexArr.append(indexPath.row)
             }
         }
+        tableView.reloadData()
+    }
+}
+
+class SelectPickViewTableCell: UITableViewCell {
+
+    lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.numberOfLines = 0
+        titleLabel.lineBreakMode = .byCharWrapping
+        return titleLabel
+    }()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        separatorInset = .zero
+        selectionStyle = .none
+        self.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 50))
+        }
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
