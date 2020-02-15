@@ -136,8 +136,12 @@ open class FWCustomSheetView: FWPopupView {
     ///   - property: 可设置参数
     /// - Returns: self
     @objc
-    open class func sheet(headerTitle: String?, itemTitles: [String]?, itemSecondaryTitles: [String]?, itemImages: [UIImage]?,
-                                property: FWCustomSheetViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWCustomSheetView {
+    open class func sheet(headerTitle: String?,
+                          itemTitles: [String]?,
+                          itemSecondaryTitles: [String]?,
+                          itemImages: [UIImage]?,
+                          property: FWCustomSheetViewProperty?,
+                          itemBlock: FWPopupItemClickedBlock? = nil) -> FWCustomSheetView {
         let customSheet = FWCustomSheetView()
         customSheet.setupUI(headerTitle: headerTitle, itemTitles: itemTitles, itemSecondaryTitles: itemSecondaryTitles,
                             itemImages: itemImages, property: property, itemBlock: itemBlock)
@@ -151,8 +155,10 @@ open class FWCustomSheetView: FWPopupView {
     ///   - property: 参数
     ///   - itemBlock: 点击回调
     @objc
-    open class func sheet(headerTitle: String?, itemTitles: [String]?,
-                                property: FWCustomSheetViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWCustomSheetView {
+    open class func sheet(headerTitle: String?,
+                          itemTitles: [String]?,
+                          property: FWCustomSheetViewProperty?,
+                          itemBlock: FWPopupItemClickedBlock? = nil) -> FWCustomSheetView {
         let customSheet = FWCustomSheetView()
         customSheet.isItemTitleAutoHeight = true
         customSheet.setupUI(headerTitle: headerTitle, itemTitles: itemTitles, itemSecondaryTitles: nil, itemImages: nil, property: property, itemBlock: itemBlock)
