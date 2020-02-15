@@ -232,7 +232,8 @@ extension WRCustomNavigationBar {
 
 // MARK: - 导航栏左右按钮事件
 extension WRCustomNavigationBar {
-    @objc func clickBack() {
+    @objc
+    func clickBack() {
         if let onClickBack = onClickLeftButton {
             onClickBack()
         } else {
@@ -240,7 +241,8 @@ extension WRCustomNavigationBar {
             currentVC.wr_toLastViewController(animated: true)
         }
     }
-    @objc func clickRight() {
+    @objc
+    func clickRight() {
         if let onClickRight = onClickRightButton {
             onClickRight()
         }

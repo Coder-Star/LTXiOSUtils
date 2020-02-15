@@ -87,7 +87,8 @@ public extension UIButton {
     ///   - action: 执行函数
     ///   - target: 执行者
     ///   - event: 事件
-    @objc private func sendActionWithRepeatClick(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+    @objc
+    private func sendActionWithRepeatClick(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
         if (self.isKind(of: UIButton.self)) {
             switch self.repeatButtonClickType {
             case .durationTime:
@@ -191,7 +192,8 @@ public extension UIButton {
         addTarget(self, action: #selector(respondControlEvent(button:)), for: controlEvents)
     }
     // 响应事件
-    @objc private func respondControlEvent(button:UIButton) {
+    @objc
+    private func respondControlEvent(button:UIButton) {
         if let eventRawValue = UInt(button.dataStr) {
             executeControlEvent( UIControl.Event(rawValue: eventRawValue) )
         }

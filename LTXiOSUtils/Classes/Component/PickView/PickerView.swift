@@ -354,7 +354,8 @@ fileprivate extension PickerView {
         }
     }
 
-    @objc func dateDidChange(_ datePic: UIDatePicker) {
+    @objc
+    func dateDidChange(_ datePic: UIDatePicker) {
         selectedDate = datePic.date
     }
 }

@@ -176,7 +176,8 @@ public class MaskPopupView: UIView {
         })
     }
 
-    @objc func backgroundViewClicked() {
+    @objc
+    func backgroundViewClicked() {
         dismiss(animated: true, completion: nil)
     }
 }

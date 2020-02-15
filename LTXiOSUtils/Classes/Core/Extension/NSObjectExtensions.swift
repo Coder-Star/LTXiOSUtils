@@ -109,7 +109,8 @@ public extension NSObject {
         notificationClosuresDict?.removeAll()
     }
 
-    @objc private func notificationAction(notify: Notification) {
+    @objc
+    private func notificationAction(notify: Notification) {
         if let notificationClosures = notificationClosuresDict, let closures = notificationClosures[notify.name] {
             closures(notify)
         } else if let notificationClosures = notificationVoidClosuresDict, let closures = notificationClosures[notify.name] {

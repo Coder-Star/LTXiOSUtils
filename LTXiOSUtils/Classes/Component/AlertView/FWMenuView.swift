@@ -70,7 +70,8 @@ class FWMenuViewTableViewCell: UITableViewCell {
 open class FWMenuView: FWPopupView {
 
     /// 外部传入的标题数组
-    @objc public var itemTitleArray: [String]? {
+    @objc
+    public var itemTitleArray: [String]? {
         didSet {
             self.setNeedsLayout()
             self.setNeedsDisplay()
@@ -78,7 +79,8 @@ open class FWMenuView: FWPopupView {
     }
 
     /// 外部传入的图片数组
-    @objc public var itemImageArray: [UIImage]? {
+    @objc
+    public var itemImageArray: [UIImage]? {
         didSet {
             self.setNeedsLayout()
             self.setNeedsDisplay()
@@ -112,7 +114,8 @@ open class FWMenuView: FWPopupView {
     ///   - itemTitles: 标题
     ///   - itemBlock: 点击回调
     /// - Returns: self
-    @objc open class func menu(itemTitles: [String], itemBlock: FWPopupItemClickedBlock? = nil) -> FWMenuView {
+    @objc
+    open class func menu(itemTitles: [String], itemBlock: FWPopupItemClickedBlock? = nil) -> FWMenuView {
 
         return self.menu(itemTitles: itemTitles, itemImageNames: nil, property: nil, itemBlock: itemBlock)
     }
@@ -124,7 +127,8 @@ open class FWMenuView: FWPopupView {
     ///   - itemBlock: 点击回调
     ///   - property: 可设置参数
     /// - Returns: self
-    @objc open class func menu(itemTitles: [String], property: FWMenuViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWMenuView {
+    @objc
+    open class func menu(itemTitles: [String], property: FWMenuViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWMenuView {
 
         return self.menu(itemTitles: itemTitles, itemImageNames: nil, property: property, itemBlock: itemBlock)
     }
@@ -137,7 +141,8 @@ open class FWMenuView: FWPopupView {
     ///   - itemBlock: 点击回调
     ///   - property: 可设置参数
     /// - Returns: self
-    @objc open class func menu(itemTitles: [String]?, itemImageNames: [UIImage]?, property: FWMenuViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWMenuView {
+    @objc
+    open class func menu(itemTitles: [String]?, itemImageNames: [UIImage]?, property: FWMenuViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWMenuView {
         let popupMenu = FWMenuView()
         popupMenu.setupUI(itemTitles: itemTitles, itemImageNames: itemImageNames, property: property, itemBlock: itemBlock)
         return popupMenu
@@ -153,7 +158,8 @@ open class FWMenuView: FWPopupView {
     }
 
     /// 刷新当前视图及数据
-    @objc open func refreshData() {
+    @objc
+    open func refreshData() {
         self.setupFrame(property: getProperty())
         self.tableView.reloadData()
     }
@@ -495,32 +501,43 @@ extension FWMenuView {
 open class FWMenuViewProperty: FWPopupViewProperty {
 
     /// 弹窗大小，如果没有设置，将按照统一的计算方式
-    @objc public var popupViewSize = CGSize.zero
+    @objc
+    public var popupViewSize = CGSize.zero
     /// 指定行高优先级 > 自动计算的优先级
-    @objc public var popupViewItemHeight: CGFloat = 0
+    @objc
+    public var popupViewItemHeight: CGFloat = 0
 
     /// 未选中时按钮字体属性
-    @objc public var titleTextAttributes: [NSAttributedString.Key: Any]!
+    @objc
+    public var titleTextAttributes: [NSAttributedString.Key: Any]!
     /// 文字位置
-    @objc public var textAlignment: NSTextAlignment = .left
+    @objc
+    public var textAlignment: NSTextAlignment = .left
 
     /// 内容位置
-    @objc public var contentHorizontalAlignment: UIControl.ContentHorizontalAlignment = .left
+    @objc
+    public var contentHorizontalAlignment: UIControl.ContentHorizontalAlignment = .left
     /// 选中风格
-    @objc public var selectionStyle: UITableViewCell.SelectionStyle = .none
+    @objc
+    public var selectionStyle: UITableViewCell.SelectionStyle = .none
 
     /// 分割线颜色
-    @objc public var separatorColor: UIColor = kPV_RGBA(r: 231, g: 231, b: 231, a: 1)
+    @objc
+    public var separatorColor: UIColor = kPV_RGBA(r: 231, g: 231, b: 231, a: 1)
     /// 分割线偏移量
-    @objc public var separatorInset: UIEdgeInsets = UIEdgeInsets.zero
+    @objc
+    public var separatorInset: UIEdgeInsets = UIEdgeInsets.zero
 
     /// 是否开启tableview回弹效果
-    @objc public var bounces: Bool = false
+    @objc
+    public var bounces: Bool = false
 
     /// 弹窗的最大宽度
-    @objc open var popupViewMaxWidth: CGFloat  = UIScreen.main.bounds.width * 0.6
+    @objc
+    open var popupViewMaxWidth: CGFloat  = UIScreen.main.bounds.width * 0.6
     /// 弹窗的最小宽度
-    @objc open var popupViewMinWidth: CGFloat  = 20
+    @objc
+    open var popupViewMinWidth: CGFloat  = 20
 
     public override func reSetParams() {
         super.reSetParams()

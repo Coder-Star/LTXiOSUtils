@@ -24,7 +24,8 @@ open class FWSheetView: FWPopupView {
     ///   - itemBlock: 点击回调
     ///   - cancelBlock: 取消按钮回调
     /// - Returns: self
-    @objc open class func sheet(title: String?, itemTitles: [String], itemBlock: FWPopupItemClickedBlock? = nil, cancelBlock: FWPopupVoidBlock? = nil) -> FWSheetView {
+    @objc
+    open class func sheet(title: String?, itemTitles: [String], itemBlock: FWPopupItemClickedBlock? = nil, cancelBlock: FWPopupVoidBlock? = nil) -> FWSheetView {
 
         return self.sheet(title: title, itemTitles: itemTitles, itemBlock: itemBlock, cancenlBlock: cancelBlock, property: nil)
     }
@@ -38,7 +39,8 @@ open class FWSheetView: FWPopupView {
     ///   - cancenlBlock: 取消按钮回调
     ///   - property: FWSheetView的相关属性
     /// - Returns: self
-    @objc open class func sheet(title: String?, itemTitles: [String], itemBlock: FWPopupItemClickedBlock? = nil, cancenlBlock: FWPopupVoidBlock? = nil, property: FWSheetViewProperty?) -> FWSheetView {
+    @objc
+    open class func sheet(title: String?, itemTitles: [String], itemBlock: FWPopupItemClickedBlock? = nil, cancenlBlock: FWPopupVoidBlock? = nil, property: FWSheetViewProperty?) -> FWSheetView {
 
         return self.sheet(title: title, itemTitles: itemTitles, itemBlock: itemBlock, cancelItemTitle: nil, cancenlBlock: cancenlBlock, property: property)
     }
@@ -53,7 +55,8 @@ open class FWSheetView: FWPopupView {
     ///   - cancenlBlock: 取消按钮回调
     ///   - property: FWSheetView的相关属性
     /// - Returns: self
-    @objc open class func sheet(title: String?, itemTitles: [String], itemBlock: FWPopupItemClickedBlock? = nil, cancelItemTitle: String?, cancenlBlock: FWPopupVoidBlock? = nil, property: FWSheetViewProperty?) -> FWSheetView {
+    @objc
+    open class func sheet(title: String?, itemTitles: [String], itemBlock: FWPopupItemClickedBlock? = nil, cancelItemTitle: String?, cancenlBlock: FWPopupVoidBlock? = nil, property: FWSheetViewProperty?) -> FWSheetView {
 
         let sheetView = FWSheetView()
         sheetView.setupUI(title: title, itemTitles: itemTitles, itemBlock: itemBlock, cancelItemTitle: cancelItemTitle, cancenlBlock: cancenlBlock, property: property)
@@ -236,7 +239,8 @@ extension FWSheetView {
         }
     }
 
-    @objc private func btnAction(_ sender: UIButton) {
+    @objc
+    private func btnAction(_ sender: UIButton) {
         let btn = sender
         let item = self.actionItemArray[btn.tag]
         if item.disabled {

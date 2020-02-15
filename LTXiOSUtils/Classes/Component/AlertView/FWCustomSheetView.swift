@@ -97,7 +97,8 @@ class FWCustomSheetViewTableViewCell: UITableViewCell {
 open class FWCustomSheetView: FWPopupView {
 
     /// 当前选中下标
-    @objc open var currentSelectedIndex: Int = 0
+    @objc
+    open var currentSelectedIndex: Int = 0
 
     /// 上一次选中的下标
     private var lastTimeSelectedIndex: Int = 0
@@ -134,7 +135,8 @@ open class FWCustomSheetView: FWPopupView {
     ///   - itemBlock: 点击回调
     ///   - property: 可设置参数
     /// - Returns: self
-    @objc open class func sheet(headerTitle: String?, itemTitles: [String]?, itemSecondaryTitles: [String]?, itemImages: [UIImage]?,
+    @objc
+    open class func sheet(headerTitle: String?, itemTitles: [String]?, itemSecondaryTitles: [String]?, itemImages: [UIImage]?,
                                 property: FWCustomSheetViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWCustomSheetView {
         let customSheet = FWCustomSheetView()
         customSheet.setupUI(headerTitle: headerTitle, itemTitles: itemTitles, itemSecondaryTitles: itemSecondaryTitles,
@@ -148,7 +150,8 @@ open class FWCustomSheetView: FWPopupView {
     ///   - itemTitles: 标题
     ///   - property: 参数
     ///   - itemBlock: 点击回调
-    @objc open class func sheet(headerTitle: String?, itemTitles: [String]?,
+    @objc
+    open class func sheet(headerTitle: String?, itemTitles: [String]?,
                                 property: FWCustomSheetViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWCustomSheetView {
         let customSheet = FWCustomSheetView()
         customSheet.isItemTitleAutoHeight = true
@@ -356,7 +359,8 @@ extension FWCustomSheetView {
     /// 更改当前选中的下标
     ///
     /// - Parameter backToLastChoice: true：回到上一次选择的下标 false：-1，表示没有选中的了
-    @objc open func changeSelectedIndex(backToLastChoice: Bool) {
+    @objc
+    open func changeSelectedIndex(backToLastChoice: Bool) {
         if backToLastChoice {
             self.currentSelectedIndex = self.lastTimeSelectedIndex
         } else {
@@ -388,7 +392,8 @@ extension FWCustomSheetView {
         return angle * CGFloat(Double.pi) / 180
     }
 
-    @objc private func closeAction() {
+    @objc
+    private func closeAction() {
         self.hide()
     }
 }
@@ -397,42 +402,56 @@ extension FWCustomSheetView {
 open class FWCustomSheetViewProperty: FWPopupViewProperty {
 
     /// 弹窗的最小高度，0：表示不限制
-    @objc open var popupViewMinHeight: CGFloat = 200
+    @objc
+    open var popupViewMinHeight: CGFloat = 200
 
     /// 指定行高
-    @objc public var popupViewItemHeight: CGFloat = 60
+    @objc
+    public var popupViewItemHeight: CGFloat = 60
 
     /// 头部视图高度
-    @objc public var headerViewHeight: CGFloat = 40
+    @objc
+    public var headerViewHeight: CGFloat = 40
 
     /// 默认选中下标，如果传入小于0或者大于当前数据源的数值，则不会有对应的行选中，如：传入-1则表示当前表格中没有默认选中的
-    @objc public var selectedIndex: NSInteger = 0
+    @objc
+    public var selectedIndex: NSInteger = 0
 
     /// 最后一项是否需要AccessoryView
-    @objc public var lastNeedAccessoryView: Bool = false
+    @objc
+    public var lastNeedAccessoryView: Bool = false
 
     /// 关闭按钮图标
-    @objc public var closeImage: UIImage?
+    @objc
+    public var closeImage: UIImage?
     /// 选中项对应的图标
-    @objc public var choiceImage: UIImage?
+    @objc
+    public var choiceImage: UIImage?
 
     /// 标题字体属性
-    @objc public var titleTextAttributes: [NSAttributedString.Key: Any]!
+    @objc
+    public var titleTextAttributes: [NSAttributedString.Key: Any]!
     /// 副标题字体属性
-    @objc public var secondaryTitleTextAttributes: [NSAttributedString.Key: Any]!
+    @objc
+    public var secondaryTitleTextAttributes: [NSAttributedString.Key: Any]!
 
     /// 内容位置
-    @objc public var contentHorizontalAlignment: UIControl.ContentHorizontalAlignment = .left
+    @objc
+    public var contentHorizontalAlignment: UIControl.ContentHorizontalAlignment = .left
     /// 选中风格
-    @objc public var selectionStyle: UITableViewCell.SelectionStyle = .none
+    @objc
+    public var selectionStyle: UITableViewCell.SelectionStyle = .none
 
     /// 分割线颜色
-    @objc public var separatorColor: UIColor = kPV_RGBA(r: 231, g: 231, b: 231, a: 1)
+    @objc
+    public var separatorColor: UIColor = kPV_RGBA(r: 231, g: 231, b: 231, a: 1)
     /// 分割线偏移量
-    @objc public var separatorInset: UIEdgeInsets = UIEdgeInsets.zero
+    @objc
+    public var separatorInset: UIEdgeInsets = UIEdgeInsets.zero
 
     /// 是否开启tableview回弹效果
-    @objc public var bounces: Bool = true
+    @objc
+    public var bounces: Bool = true
 
     public override func reSetParams() {
         super.reSetParams()

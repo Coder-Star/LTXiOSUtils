@@ -34,7 +34,8 @@ public class CommonLabel: UILabel {
         }
     }
 
-    @objc private func customCopy(_ sender: Any?) {
+    @objc
+    private func customCopy(_ sender: Any?) {
         let pBoard = UIPasteboard.general
         pBoard.string = self.text
     }
@@ -79,7 +80,8 @@ extension CommonLabel {
         setEvent()
     }
 
-    @objc private func setEvent() {
+    @objc
+    private func setEvent() {
         guard let str = self.text else {
             return
         }

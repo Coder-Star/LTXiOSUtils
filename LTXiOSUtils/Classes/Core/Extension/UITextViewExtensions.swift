@@ -160,7 +160,8 @@ extension UITextView {
         self.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
     }
 
-    @objc private func textChange() {
+    @objc
+    private func textChange() {
         if placeholder.isNotEmpty {
             if self.text.count ==  0 {
                 placeholderLabel?.isHidden = false
@@ -185,7 +186,8 @@ extension UITextView {
         }
     }
 
-    @objc private func getStringPlaceSize(_ string: String, textFont: UIFont) -> CGSize {
+    @objc
+    private func getStringPlaceSize(_ string: String, textFont: UIFont) -> CGSize {
         let attribute = [NSAttributedString.Key.font: textFont]
         let options = NSStringDrawingOptions.usesLineFragmentOrigin
         let size = string.boundingRect(with: CGSize(width: self.contentSize.width-10, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: attribute, context: nil).size
