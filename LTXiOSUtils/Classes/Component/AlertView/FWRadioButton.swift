@@ -342,11 +342,9 @@ open class FWRadioButtonProperty: NSObject {
 
     public override init() {
         super.init()
-
         self.reSetParams()
     }
 
-    /// 如果发现部分属性设置后没有生效，可执行该方法
     @objc public func reSetParams() {
 
     }

@@ -9,9 +9,15 @@ import Foundation
 
 /// 协议
 @objc public protocol TreeTableViewDelegate: NSObjectProtocol {
+    /// 获取勾选的数据
+    /// - Parameter nodes: 节点数组
     func checkNodes(nodes: [TreeNode])
+
+    /// 数据刷新
     /// 如果isNeedRefresh = true，请实现该方法
     @objc optional func refreshData()
+
+    @objc optional func beforeSearch(filed: String) -> String
 }
 
 public class TreeTableView: UIView {
@@ -29,6 +35,8 @@ public class TreeTableView: UIView {
     public var isSearchRealTime: Bool = true
     /// 多选时选择父节点时，子节点也被选择
     public var isChildCheck: Bool = false
+    /// 指定搜索类型，为空时表示不指定搜索类型
+    public var typeForSearch = ""
 
     /// 树形数据
     public var treeData: TreeData? {
@@ -166,6 +174,9 @@ extension TreeTableView {
 
     @objc private func refreshData() {
         delegate?.refreshData?()
+        if isNeedRefresh, let tempSearchBar = searchBar {
+            search(searchBar: tempSearchBar)
+        }
         tableView.reloadData()
         refreshControl.endRefreshing()
     }
@@ -251,15 +262,21 @@ extension TreeTableView: TreeTableViewSearchBarDelegate {
     }
 
     public func treeTableViewSearchBarShouldReturn(searchBar: TreeTableViewSearchBar) {
-        treeData?.filterFieldAndType(filed: searchBar.searchTextField.text!, type: "", isChildNodeCheck: !isSingleCheck)
-        tableView.reloadData()
+        search(searchBar: searchBar)
     }
 
     public func treeTableViewSearchBarSearhing(searchBar: TreeTableViewSearchBar) {
         if isSearchRealTime, searchBar.searchTextField.markedTextRange == nil {
-            treeData?.filterFieldAndType(filed: searchBar.searchTextField.text!, type: "", isChildNodeCheck: !isSingleCheck)
-            tableView.reloadData()
+            search(searchBar: searchBar)
         }
     }
 
+    @objc open func search(searchBar: TreeTableViewSearchBar) {
+        var filed = searchBar.searchTextField.text!
+        if let tempFiled = delegate?.beforeSearch?(filed: filed) {
+            filed = tempFiled
+        }
+        treeData?.filterFieldAndType(filed: filed, type: typeForSearch, isChildNodeCheck: !isSingleCheck)
+        tableView.reloadData()
+    }
 }

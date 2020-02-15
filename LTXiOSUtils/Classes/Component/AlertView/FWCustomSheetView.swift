@@ -38,42 +38,57 @@ class FWCustomSheetViewTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupContent(title: String?, secondaryTitle: String?, image: UIImage?, property: FWCustomSheetViewProperty) {
+    func setupContent(title: String?, secondaryTitle: String?, image: UIImage?, property: FWCustomSheetViewProperty, isItemTitleAutoHeight: Bool) {
+        if isItemTitleAutoHeight {
+            self.titleLabel.numberOfLines = 0
+            self.titleLabel.lineBreakMode = .byCharWrapping
+        }
         self.selectionStyle = property.selectionStyle
-
-        self.line.frame = CGRect(x: property.separatorInset.left, y: ceil(self.frame.height-property.splitWidth), width: self.frame.width-property.separatorInset.left-property.separatorInset.right, height: property.splitWidth)
+        self.line.frame = CGRect(x: property.separatorInset.left,
+                                 y: ceil(self.frame.height-property.splitWidth),
+                                 width: self.frame.width-property.separatorInset.left-property.separatorInset.right,
+                                 height: property.splitWidth)
         self.line.backgroundColor = property.splitColor.cgColor
-
         var leftMargin = property.letfRigthMargin
-
         if image != nil {
-            self.imgView.frame = CGRect(x: leftMargin, y: (self.frame.height-image!.size.height)/2, width: image!.size.width, height: image!.size.height)
+            self.imgView.frame = CGRect(x: leftMargin,
+                                        y: (self.frame.height-image!.size.height)/2,
+                                        width: image!.size.width,
+                                        height: image!.size.height)
             self.imgView.image = image
-
             leftMargin += self.imgView.frame.width + property.commponentMargin
         }
 
         if title != nil && secondaryTitle != nil && !secondaryTitle!.isEmpty {
             let attributedString = NSAttributedString(string: title!, attributes: property.titleTextAttributes)
             let secondaryAttributedString = NSAttributedString(string: secondaryTitle!, attributes: property.secondaryTitleTextAttributes)
-
             let titleSize = (title! as NSString).size(withAttributes: property.titleTextAttributes)
             let secondaryTitleSize = (title! as NSString).size(withAttributes: property.secondaryTitleTextAttributes)
-
-            self.titleLabel.frame = CGRect(x: leftMargin, y: (self.frame.height-property.commponentMargin/2-titleSize.height-secondaryTitleSize.height)/2, width: self.frame.width-leftMargin-property.letfRigthMargin*2, height: titleSize.height)
+            self.titleLabel.frame = CGRect(x: leftMargin,
+                                           y: (self.frame.height-property.commponentMargin/2-titleSize.height-secondaryTitleSize.height)/2,
+                                           width: self.frame.width-leftMargin-property.letfRigthMargin - FWCustomSheetView.accessoryViewWidth,
+                                           height: titleSize.height)
             self.titleLabel.attributedText = attributedString
-
-            self.secondaryTitleLabel.frame = CGRect(x: leftMargin, y: self.titleLabel.frame.maxY+property.commponentMargin/2, width: self.frame.width-leftMargin-property.letfRigthMargin*2, height: secondaryTitleSize.height)
+            self.secondaryTitleLabel.frame = CGRect(x: leftMargin,
+                                                    y: self.titleLabel.frame.maxY+property.commponentMargin/2,
+                                                    width: self.frame.width-leftMargin-property.letfRigthMargin - FWCustomSheetView.accessoryViewWidth,
+                                                    height: secondaryTitleSize.height)
             self.secondaryTitleLabel.attributedText = secondaryAttributedString
         } else if title != nil && (secondaryTitle == nil || secondaryTitle!.isEmpty) {
             let attributedString = NSAttributedString(string: title!, attributes: property.titleTextAttributes)
-
-            let titleSize = (title! as NSString).size(withAttributes: property.titleTextAttributes)
-
-            self.titleLabel.frame = CGRect(x: leftMargin, y: (self.frame.height-titleSize.height)/2, width: self.frame.width-leftMargin-property.letfRigthMargin*2, height: titleSize.height)
+            if isItemTitleAutoHeight {
+                self.titleLabel.frame = CGRect(x: leftMargin,
+                                               y: property.topBottomMargin,
+                                               width: self.frame.width - property.letfRigthMargin * 2 - FWCustomSheetView.accessoryViewWidth,
+                                               height: self.frame.height - property.topBottomMargin * 2)
+            } else {
+                let titleSize = (title! as NSString).size(withAttributes: property.titleTextAttributes)
+                self.titleLabel.frame = CGRect(x: leftMargin,
+                                               y: (self.frame.height-titleSize.height)/2,
+                                               width: self.frame.width-leftMargin-property.letfRigthMargin - FWCustomSheetView.accessoryViewWidth,
+                                               height: titleSize.height)
+            }
             self.titleLabel.attributedText = attributedString
-
-            // 防止复用产生问题
             self.secondaryTitleLabel.text = nil
         }
     }
@@ -83,24 +98,25 @@ open class FWCustomSheetView: FWPopupView, UITableViewDelegate, UITableViewDataS
 
     /// 当前选中下标
     @objc open var currentSelectedIndex: Int = 0
+
     /// 上一次选中的下标
     private var lastTimeSelectedIndex: Int = 0
-
     /// 外部传入的标题数组
     private var itemTitleArray: [String]?
     /// 外部传入的副标题数组
     private var itemSecondaryTitleArray: [String]?
     /// 外部传入的图片数组
     private var itemImageNameArray: [UIImage]?
-
     /// 头部视图
     private var headerView: UIView?
-
     /// 保存点击回调
     private var popupItemClickedBlock: FWPopupItemClickedBlock?
+    /// 是否子项高度自动
+    private var isItemTitleAutoHeight = false
+    /// cell的accessoryView宽度
+    static let accessoryViewWidth: CGFloat = 40
 
     private lazy var tableView: UITableView = {
-
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
@@ -118,16 +134,30 @@ open class FWCustomSheetView: FWPopupView, UITableViewDelegate, UITableViewDataS
     ///   - itemBlock: 点击回调
     ///   - property: 可设置参数
     /// - Returns: self
-    @objc open class func sheet(headerTitle: String?, itemTitles: [String]?, itemSecondaryTitles: [String]?, itemImages: [UIImage]?, property: FWCustomSheetViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWCustomSheetView {
-
+    @objc open class func sheet(headerTitle: String?, itemTitles: [String]?, itemSecondaryTitles: [String]?, itemImages: [UIImage]?,
+                                property: FWCustomSheetViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWCustomSheetView {
         let customSheet = FWCustomSheetView()
-        customSheet.setupUI(headerTitle: headerTitle, itemTitles: itemTitles, itemSecondaryTitles: itemSecondaryTitles, itemImages: itemImages, property: property, itemBlock: itemBlock)
+        customSheet.setupUI(headerTitle: headerTitle, itemTitles: itemTitles, itemSecondaryTitles: itemSecondaryTitles,
+                            itemImages: itemImages, property: property, itemBlock: itemBlock)
+        return customSheet
+    }
+
+    /// 自动高度的类初始化高度
+    /// - Parameters:
+    ///   - headerTitle: 头部标题
+    ///   - itemTitles: 标题
+    ///   - property: 参数
+    ///   - itemBlock: 点击回调
+    @objc open class func sheet(headerTitle: String?, itemTitles: [String]?,
+                                property: FWCustomSheetViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) -> FWCustomSheetView {
+        let customSheet = FWCustomSheetView()
+        customSheet.isItemTitleAutoHeight = true
+        customSheet.setupUI(headerTitle: headerTitle, itemTitles: itemTitles, itemSecondaryTitles: nil, itemImages: nil, property: property, itemBlock: itemBlock)
         return customSheet
     }
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
-
         self.vProperty = FWCustomSheetViewProperty()
     }
 
@@ -138,7 +168,8 @@ open class FWCustomSheetView: FWPopupView, UITableViewDelegate, UITableViewDataS
 
 extension FWCustomSheetView {
 
-    private func setupUI(headerTitle: String?, itemTitles: [String]?, itemSecondaryTitles: [String]?, itemImages: [UIImage]?, property: FWCustomSheetViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) {
+    private func setupUI(headerTitle: String?, itemTitles: [String]?, itemSecondaryTitles: [String]?, itemImages: [UIImage]?,
+                         property: FWCustomSheetViewProperty?, itemBlock: FWPopupItemClickedBlock? = nil) {
 
         if itemTitles == nil && itemImages == nil {
             return
@@ -151,11 +182,9 @@ extension FWCustomSheetView {
         }
 
         self.clipsToBounds = true
-
         self.itemTitleArray = itemTitles
         self.itemSecondaryTitleArray = itemSecondaryTitles
         self.itemImageNameArray = itemImages
-
         self.popupItemClickedBlock = itemBlock
 
         let property = self.vProperty as! FWCustomSheetViewProperty
@@ -199,12 +228,16 @@ extension FWCustomSheetView {
         self.tableView.backgroundColor = self.backgroundColor
         self.tableView.bounces = property.bounces
 
-        if property.popupViewMaxHeightRate > 0 && property.popupViewItemHeight * CGFloat(self.itemsCount()) > property.popupViewMaxHeightRate*self.superview!.frame.size.height {
+        var tableViewHeight = property.popupViewItemHeight * CGFloat(self.itemsCount())
+        if isItemTitleAutoHeight {
+            tableViewHeight = getTableHeight()
+        }
+        if property.popupViewMaxHeightRate > 0 && tableViewHeight > property.popupViewMaxHeightRate*self.superview!.frame.size.height {
             selfSize.height = property.popupViewMaxHeightRate*self.superview!.frame.size.height
-        } else if property.popupViewMinHeight > 0 && property.popupViewItemHeight * CGFloat(self.itemsCount()) < property.popupViewMinHeight {
+        } else if property.popupViewMinHeight > 0 && tableViewHeight < property.popupViewMinHeight {
             selfSize.height = property.popupViewMinHeight
         } else {
-            selfSize.height = property.popupViewItemHeight * CGFloat(self.itemsCount())
+            selfSize.height = tableViewHeight
         }
         selfSize.height += property.headerViewHeight
         self.frame = CGRect(x: 0, y: 0, width: selfSize.width, height: selfSize.height)
@@ -215,22 +248,56 @@ extension FWCustomSheetView {
         footerView.backgroundColor = UIColor.clear
         self.tableView.tableFooterView = footerView
     }
+
+    /// 获取子项高度
+    /// - Parameter str: 字符串
+    private func getItemHeight(str: String) -> CGFloat {
+        let property = self.vProperty as! FWCustomSheetViewProperty
+        let width = UIScreen.main.bounds.width - property.letfRigthMargin * 2 + FWCustomSheetView.accessoryViewWidth
+        let options = NSStringDrawingOptions.usesLineFragmentOrigin
+        let size = str.boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: property.titleTextAttributes, context: nil).size
+        return size.height + property.topBottomMargin * 2
+    }
+
+    /// 获取列表高度
+    private func getTableHeight() -> CGFloat {
+        var totalHeight: CGFloat = 0
+        if let array = itemTitleArray {
+            for item in array {
+                let itemHeight = getItemHeight(str: item)
+                totalHeight += itemHeight
+            }
+        }
+        return totalHeight
+    }
 }
 
 extension FWCustomSheetView {
 
+    /// 行数
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.itemsCount()
     }
 
+    /// 高度
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let property = self.vProperty as! FWCustomSheetViewProperty
-        return property.popupViewItemHeight
+        if isItemTitleAutoHeight, let titleArr = itemTitleArray {
+            let str = titleArr[indexPath.row]
+            return getItemHeight(str: str)
+        } else {
+            return property.popupViewItemHeight
+        }
     }
 
+    /// cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! FWCustomSheetViewTableViewCell
-        cell.setupContent(title: (self.itemTitleArray != nil) ? self.itemTitleArray![indexPath.row] : nil, secondaryTitle: (self.itemSecondaryTitleArray != nil) ? self.itemSecondaryTitleArray![indexPath.row] : nil,  image: (self.itemImageNameArray != nil) ? self.itemImageNameArray![indexPath.row] : nil, property: self.vProperty as! FWCustomSheetViewProperty)
+        cell.setupContent(title: (self.itemTitleArray != nil) ? self.itemTitleArray![indexPath.row] : nil,
+                          secondaryTitle: (self.itemSecondaryTitleArray != nil) ? self.itemSecondaryTitleArray![indexPath.row] : nil,
+                          image: (self.itemImageNameArray != nil) ? self.itemImageNameArray![indexPath.row] : nil,
+                          property: self.vProperty as! FWCustomSheetViewProperty,
+                          isItemTitleAutoHeight: self.isItemTitleAutoHeight)
         cell.backgroundColor = self.vProperty.backgroundColor
 
         let property = self.vProperty as! FWCustomSheetViewProperty
@@ -252,7 +319,12 @@ extension FWCustomSheetView {
         return cell
     }
 
+    /// 点击
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        if cell?.selectionStyle != UITableViewCell.SelectionStyle.none {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
         self.hide()
         let property = self.vProperty as! FWCustomSheetViewProperty
         if !(property.lastNeedAccessoryView == true && indexPath.row == (self.itemsCount()-1)) {
@@ -285,8 +357,7 @@ extension FWCustomSheetView {
     /// 计算总计行数
     ///
     /// - Returns: 行数
-    fileprivate func itemsCount() -> Int {
-
+    private func itemsCount() -> Int {
         if self.itemTitleArray != nil {
             return self.itemTitleArray!.count
         } else if self.itemSecondaryTitleArray != nil {
@@ -302,7 +373,7 @@ extension FWCustomSheetView {
     ///
     /// - Parameter angle: 传入的角度值
     /// - Returns: CGFloat
-    fileprivate func degreesToRadians(angle: CGFloat) -> CGFloat {
+    private func degreesToRadians(angle: CGFloat) -> CGFloat {
         return angle * CGFloat(Double.pi) / 180
     }
 
@@ -354,18 +425,15 @@ open class FWCustomSheetViewProperty: FWPopupViewProperty {
 
     public override func reSetParams() {
         super.reSetParams()
-
         self.buttonFontSize = 15
-
-        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: self.itemNormalColor, NSAttributedString.Key.backgroundColor: UIColor.clear, NSAttributedString.Key.font: UIFont.systemFont(ofSize: self.buttonFontSize)]
-
+        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: self.itemNormalColor,
+                                    NSAttributedString.Key.backgroundColor: UIColor.clear,
+                                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: self.buttonFontSize)]
         let tmpColor = kPV_RGBA(r: 138, g: 146, b: 165, a: 1)
-        self.secondaryTitleTextAttributes = [NSAttributedString.Key.foregroundColor: tmpColor, NSAttributedString.Key.backgroundColor: UIColor.clear, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
-
+        self.secondaryTitleTextAttributes = [NSAttributedString.Key.foregroundColor: tmpColor,
+                                             NSAttributedString.Key.backgroundColor: UIColor.clear,
+                                             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
         self.letfRigthMargin = 20
-
         self.popupViewMaxHeightRate = 0.7
-
-        self.touchWildToHide = "1"
     }
 }
