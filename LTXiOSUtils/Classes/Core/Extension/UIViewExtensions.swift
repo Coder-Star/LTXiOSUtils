@@ -196,22 +196,28 @@ public extension UIView {
             addGestureRecognizer(longPress)
         }
     }
-    @objc private func tapGestureAction (_ tap: UITapGestureRecognizer) {
+    @objc
+    private func tapGestureAction (_ tap: UITapGestureRecognizer) {
         executeGestureAction(.tapGesture, gesture: tap)
     }
-    @objc private func pinchGestureAction (_ pinch: UIPinchGestureRecognizer) {
+    @objc
+    private func pinchGestureAction (_ pinch: UIPinchGestureRecognizer) {
         executeGestureAction(.pinchGesture, gesture: pinch)
     }
-    @objc private func rotationGestureAction (_ rotation: UIRotationGestureRecognizer) {
+    @objc
+    private func rotationGestureAction (_ rotation: UIRotationGestureRecognizer) {
         executeGestureAction(.rotationGesture, gesture: rotation)
     }
-    @objc private func swipeGestureAction (_ swipe: UISwipeGestureRecognizer) {
+    @objc
+    private func swipeGestureAction (_ swipe: UISwipeGestureRecognizer) {
         executeGestureAction(.swipeGesture, gesture: swipe)
     }
-    @objc private func panGestureAction (_ pan: UIPanGestureRecognizer) {
+    @objc
+    private func panGestureAction (_ pan: UIPanGestureRecognizer) {
         executeGestureAction(.panGesture, gesture: pan)
     }
-    @objc private func longPressGestureAction (_ longPress: UILongPressGestureRecognizer) {
+    @objc
+    private func longPressGestureAction (_ longPress: UILongPressGestureRecognizer) {
         if longPress.state != .began {
             return
         }

@@ -22,7 +22,8 @@ public func kPV_RGBA (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) -> UIColor
 open class FWPopupWindow: UIWindow, UIGestureRecognizerDelegate {
 
     /// 单例模式
-    @objc public class var sharedInstance: FWPopupWindow {
+    @objc
+    public class var sharedInstance: FWPopupWindow {
         struct Static {
             static let kbManager = FWPopupWindow(frame: UIScreen.main.bounds)
         }
@@ -30,9 +31,11 @@ open class FWPopupWindow: UIWindow, UIGestureRecognizerDelegate {
     }
 
     /// 默认false，当为true时：用户点击外部遮罩层页面可以消失
-    @objc open var touchWildToHide: Bool = false
+    @objc
+    open var touchWildToHide: Bool = false
     /// 默认false，当为true时：用户拖动外部遮罩层页面可以消失
-    @objc open var panWildToHide: Bool = false
+    @objc
+    open var panWildToHide: Bool = false
 
     /// 被隐藏的视图队列（A视图正在显示，接着B视图显示，此时就把A视图隐藏同时放入该队列）
     open var hiddenViews: [UIView] = []
@@ -64,7 +67,8 @@ open class FWPopupWindow: UIWindow, UIGestureRecognizerDelegate {
 
 extension FWPopupWindow {
 
-    @objc func tapGesClick(tap: UIGestureRecognizer) {
+    @objc
+    func tapGesClick(tap: UIGestureRecognizer) {
         if self.touchWildToHide && !self.attachView()!.fwBackgroundAnimating {
             for view in (self.attachView()?.fwMaskView.subviews)! {
                 if view.isKind(of: FWPopupView.self) && !self.hiddenViews.contains(view) {
@@ -78,7 +82,8 @@ extension FWPopupWindow {
         }
     }
 
-    @objc func panGesClick(pan: UIGestureRecognizer) {
+    @objc
+    func panGesClick(pan: UIGestureRecognizer) {
         if self.panWildToHide {
             self.tapGesClick(tap: pan)
         }

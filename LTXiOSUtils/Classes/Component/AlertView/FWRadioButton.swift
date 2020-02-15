@@ -14,7 +14,8 @@ import UIKit
 /// - circular: 圆形，默认。注意：相同大小的视图，正方形看起来会比圆形大
 /// - rectangle: 正方形，可设置圆角值。注意：相同大小的视图，正方形看起来会比圆形大
 /// - image: 图片类型
-@objc public enum FWRadioButtonType: Int {
+@objc
+public enum FWRadioButtonType: Int {
     case circular
     case rectangle
     case image
@@ -26,9 +27,11 @@ public typealias FWRadioButtonClickedBlock = (_ isSelected: Bool) -> Void
 open class FWRadioButton: UIView {
 
     /// 可设置参数
-    @objc public var vProperty: FWRadioButtonProperty!
+    @objc
+    public var vProperty: FWRadioButtonProperty!
     /// true：选中 false：未选中
-    @objc public var isSelected: Bool = false {
+    @objc
+    public var isSelected: Bool = false {
         willSet {
             self.changeSelection(selected: newValue)
         }
@@ -84,7 +87,8 @@ open class FWRadioButton: UIView {
     ///   - property: 单选按钮的相关配置属性
     ///   - clickedBlock: 单击回调
     /// - Returns: self
-    @objc open class func radio(frame: CGRect, buttonType: FWRadioButtonType, property: FWRadioButtonProperty?, clickedBlock: FWRadioButtonClickedBlock? = nil) -> FWRadioButton {
+    @objc
+    open class func radio(frame: CGRect, buttonType: FWRadioButtonType, property: FWRadioButtonProperty?, clickedBlock: FWRadioButtonClickedBlock? = nil) -> FWRadioButton {
 
         let radio = FWRadioButton()
         radio.setupUI(frame: frame, buttonType: buttonType, title: nil, selectedImage: nil, unSelectedImage: nil, property: property, clickedBlock: clickedBlock)
@@ -102,7 +106,8 @@ open class FWRadioButton: UIView {
     ///   - property: 单选按钮的相关配置属性
     ///   - clickedBlock: 单击回调
     /// - Returns: self
-    @objc open class func radio(frame: CGRect, buttonType: FWRadioButtonType, title: String?, selectedImage: UIImage?, unSelectedImage: UIImage?, property: FWRadioButtonProperty?, clickedBlock: FWRadioButtonClickedBlock? = nil) -> FWRadioButton {
+    @objc
+    open class func radio(frame: CGRect, buttonType: FWRadioButtonType, title: String?, selectedImage: UIImage?, unSelectedImage: UIImage?, property: FWRadioButtonProperty?, clickedBlock: FWRadioButtonClickedBlock? = nil) -> FWRadioButton {
 
         let radio = FWRadioButton()
         radio.setupUI(frame: frame, buttonType: buttonType, title: title, selectedImage: selectedImage, unSelectedImage: unSelectedImage, property: property, clickedBlock: clickedBlock)
@@ -187,7 +192,8 @@ extension FWRadioButton {
     /// 点击手势
     ///
     /// - Parameter tap: 手势
-    @objc private func tapGesClick(tap: UITapGestureRecognizer) {
+    @objc
+    private func tapGesClick(tap: UITapGestureRecognizer) {
 
         if self.isAnimating == false {
             self.isSelected = !self.isSelected
@@ -305,43 +311,57 @@ extension FWRadioButton {
 open class FWRadioButtonProperty: NSObject {
 
     /// 是否默认选中
-    @objc public var isSelected: Bool = false
+    @objc
+    public var isSelected: Bool = false
     /// 是否需要动画
-    @objc public var isAnimated: Bool = true
+    @objc
+    public var isAnimated: Bool = true
     /// 动画所需的时间
-    @objc open var animationDuration: TimeInterval = 0.2
+    @objc
+    open var animationDuration: TimeInterval = 0.2
     /// 偏移量。当视图比较小时会出现不好点击的问题，此时可以把视图frame值设置大一些，同时配合该属性，既可以达到想要的效果，也可以增大点击的接触面积
-    @objc open var radioViewEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    @objc
+    open var radioViewEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
     /// 标题字体大小
-    @objc open var titleFont: UIFont = UIFont.systemFont(ofSize: 15.0)
+    @objc
+    open var titleFont: UIFont = UIFont.systemFont(ofSize: 15.0)
     /// 标题文字颜色
-    @objc open var titleColor: UIColor = kPV_RGBA(r: 51, g: 51, b: 51, a: 1)
+    @objc
+    open var titleColor: UIColor = kPV_RGBA(r: 51, g: 51, b: 51, a: 1)
 
     // ------------ 以下属性为：buttonType == .circular | .rectangle 时有效 ------------
     /// 未选中时的颜色
-    @objc open var normalStateColor: UIColor = kPV_RGBA(r: 51, g: 51, b: 51, a: 1)
+    @objc
+    open var normalStateColor: UIColor = kPV_RGBA(r: 51, g: 51, b: 51, a: 1)
     /// 选中时的颜色
-    @objc open var selectedStateColor: UIColor = kPV_RGBA(r: 51, g: 51, b: 51, a: 1)
+    @objc
+    open var selectedStateColor: UIColor = kPV_RGBA(r: 51, g: 51, b: 51, a: 1)
     /// 边框颜色是否需要跟随选中颜色
-    @objc public var isBorderColorNeedChanged: Bool = true
+    @objc
+    public var isBorderColorNeedChanged: Bool = true
     /// 边的宽度
-    @objc public var lineWidth: CGFloat = 2
+    @objc
+    public var lineWidth: CGFloat = 2
     /// 内部选中状态的宽度与内边框的比例
-    @objc public var insideMarginRate: CGFloat = 0.6
+    @objc
+    public var insideMarginRate: CGFloat = 0.6
 
     // ------------ 以下属性为：buttonType == .image 时有效 ------------
     /// 选中图片
-    @objc public var selectedImage: UIImage?
+    @objc
+    public var selectedImage: UIImage?
     /// 未选中图片
-    @objc public var unSelectedImage: UIImage?
+    @objc
+    public var unSelectedImage: UIImage?
 
     public override init() {
         super.init()
         self.reSetParams()
     }
 
-    @objc public func reSetParams() {
+    @objc
+    public func reSetParams() {
 
     }
 }

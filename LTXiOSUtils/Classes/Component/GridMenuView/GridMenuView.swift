@@ -17,12 +17,14 @@ public enum GridMenuViewMode {
 }
 
 /// GridMenuView代理
-@objc public protocol GridMenuViewItemDelegate {
+@objc
+public protocol GridMenuViewItemDelegate {
     /// 点击事件
     /// - Parameters:
     ///   - gridMenuView: GridMenuViewItemDelegate
     ///   - index: 点击索引
-    @objc optional func gridMenuView(_ gridMenuView: GridMenuView, selectedItemAt index: Int)
+    @objc
+    optional func gridMenuView(_ gridMenuView: GridMenuView, selectedItemAt index: Int)
 }
 
 public class GridMenuView: UIView {

@@ -254,7 +254,8 @@ public extension DurationDatePickView {
 // MARK: - 事件处理
 private extension DurationDatePickView {
 
-    @objc func startBtnAction(btn: UIButton) {
+    @objc
+    func startBtnAction(btn: UIButton) {
         btn.isSelected = true
         endBtn.isSelected = false
         if canLessNow {
@@ -270,7 +271,8 @@ private extension DurationDatePickView {
         rollCurrentDate(btn: btn)
     }
 
-    @objc func endBtnAction(btn: UIButton) {
+    @objc
+    func endBtnAction(btn: UIButton) {
         btn.isSelected = true
         startBtn.isSelected = false
         if dateType == .YMD, let date = startBtn.currentTitle?.toDate(dateTypeStr: dateType.rawValue) {
@@ -286,14 +288,16 @@ private extension DurationDatePickView {
         rollCurrentDate(btn: btn)
     }
 
-    @objc func cancelBtnAction() {
+    @objc
+    func cancelBtnAction() {
         if let block = cancelBlock {
             block()
         }
         dismiss()
     }
 
-    @objc func confirmBtnAction() {
+    @objc
+    func confirmBtnAction() {
         if let block = sureBlock {
             let startDate = startBtn.currentTitle?.replaceNewlineWithWhitespace() ?? ""
             let endDate = endBtn.currentTitle?.replaceNewlineWithWhitespace() ?? ""
@@ -302,7 +306,8 @@ private extension DurationDatePickView {
         dismiss()
     }
 
-    @objc func datePicekerValueChanged(picker: UIDatePicker) {
+    @objc
+    func datePicekerValueChanged(picker: UIDatePicker) {
         let date = picker.date
         let titleString = date.formatDate(formatStr: dateType.rawValue)
 

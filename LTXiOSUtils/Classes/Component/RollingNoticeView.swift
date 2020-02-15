@@ -7,13 +7,16 @@
 
 import UIKit
 
-@objc public protocol RollingNoticeViewDataSource : NSObjectProtocol {
+@objc
+public protocol RollingNoticeViewDataSource : NSObjectProtocol {
     func numberOfRowsFor(roolingView: RollingNoticeView) -> Int
     func rollingNoticeView(roolingView: RollingNoticeView, cellAtIndex index: Int) -> RollingNoticeCell
 }
 
-@objc public protocol RollingNoticeViewDelegate: NSObjectProtocol {
-    @objc optional func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int)
+@objc
+public protocol RollingNoticeViewDelegate: NSObjectProtocol {
+    @objc
+    optional func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int)
 }
 
 open class RollingNoticeView: UIView {
@@ -204,7 +207,8 @@ extension RollingNoticeView {
 
 open class RollingNoticeCell: UIView {
 
-    @objc open private(set) var reuseIdentifier: String?
+    @objc
+    open private(set) var reuseIdentifier: String?
 
     /// 标题
     public lazy var titleLabel: UILabel = {

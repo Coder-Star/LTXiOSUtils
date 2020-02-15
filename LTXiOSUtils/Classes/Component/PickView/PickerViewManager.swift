@@ -133,11 +133,13 @@ extension PickerViewManager {
     }
 
     // 屏幕旋转时移除pickerView
-    @objc func statusBarOrientationChange() {
+    @objc
+    func statusBarOrientationChange() {
         removeFromSuperview()
     }
 
-    @objc func tapAction(_ tap: UITapGestureRecognizer) {
+    @objc
+    func tapAction(_ tap: UITapGestureRecognizer) {
         let location = tap.location(in: self)
         if location.y <= screenHeight - pickerViewHeight {
             self.hidePicker()

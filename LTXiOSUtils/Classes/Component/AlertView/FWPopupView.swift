@@ -21,7 +21,8 @@ import SnapKit
 /// - topRight: 上右
 /// - bottomLeft: 下左
 /// - bottomRight: 下右
-@objc public enum FWPopupCustomAlignment: Int {
+@objc
+public enum FWPopupCustomAlignment: Int {
     case center
     case topCenter
     case leftCenter
@@ -39,7 +40,8 @@ import SnapKit
 /// - scale: 缩放动画
 /// - scale3D: 3D缩放动画（注意：这边隐藏时用的还是scale动画）
 /// - frame: 修改frame值的动画，视图未靠边的时候建议使用
-@objc public enum FWPopupAnimationType: Int {
+@objc
+public enum FWPopupAnimationType: Int {
     case position
     case scale
     case scale3D
@@ -51,7 +53,8 @@ import SnapKit
 /// - none: 无箭头
 /// - round: 圆角
 /// - triangle: 菱角
-@objc public enum FWMenuArrowStyle: Int {
+@objc
+public enum FWMenuArrowStyle: Int {
     case none
     case round
     case triangle
@@ -66,7 +69,8 @@ import SnapKit
 /// - didDisappear: 已经隐藏
 /// - didAppearButCovered: 已经显示，但是被其他弹窗遮盖住了（实际上当前状态下弹窗是不可见）
 /// - didAppearAgain: 已经显示，其上面遮盖的弹窗消失了（实际上当前状态与FWPopupStateDidAppear状态相同）
-@objc public enum FWPopupViewState: Int {
+@objc
+public enum FWPopupViewState: Int {
     case unKnow
     case willAppear
     case didAppear
@@ -110,7 +114,8 @@ open class FWPopupView: UIView, UIGestureRecognizerDelegate {
     /// 1、当外部没有传入该参数时，默认为UIWindow的根控制器的视图，即表示弹窗放在FWPopupWindow上，
     /// 此时若FWPopupWindow.sharedInstance.touchWildToHide = true表示弹窗视图外部可点击；
     /// 2、当外部传入该参数时，该视图为传入的UIView，即表示弹窗放在传入的UIView上；
-    @objc public var attachedView = FWPopupWindow.sharedInstance.attachView() {
+    @objc
+    public var attachedView = FWPopupWindow.sharedInstance.attachView() {
         willSet {
             newValue?.fwMaskView.addSubview(self)
             if let isScrollEnabled = (newValue as? UIScrollView)?.isScrollEnabled {
@@ -120,7 +125,8 @@ open class FWPopupView: UIView, UIGestureRecognizerDelegate {
     }
 
     /// FWPopupType = custom 的可设置参数
-    @objc public var vProperty = FWPopupViewProperty() {
+    @objc
+    public var vProperty = FWPopupViewProperty() {
         willSet {
             self.attachedView?.fwAnimationDuration = newValue.animationDuration
             if newValue.backgroundColor != nil {
@@ -136,7 +142,8 @@ open class FWPopupView: UIView, UIGestureRecognizerDelegate {
     }
 
     /// 当前弹窗是否可见
-    @objc public var visible: Bool {
+    @objc
+    public var visible: Bool {
         if self.attachedView != nil {
             return !(self.attachedView!.fwMaskView.alpha == 0)
         }
@@ -144,7 +151,8 @@ open class FWPopupView: UIView, UIGestureRecognizerDelegate {
     }
 
     /// 是否有用到键盘
-    @objc public var withKeyboard = false
+    @objc
+    public var withKeyboard = false
 
     private var popupDidAppearBlock: FWPopupDidAppearBlock?
     private var popupDidDisappearBlock: FWPopupDidDisappearBlock?
@@ -230,11 +238,13 @@ open class FWPopupView: UIView, UIGestureRecognizerDelegate {
         }
     }
 
-    @objc open func showKeyboard() {
+    @objc
+    open func showKeyboard() {
         // 供子类重写
     }
 
-    @objc open func hideKeyboard() {
+    @objc
+    open func hideKeyboard() {
         // 供子类重写
     }
 }
@@ -243,14 +253,16 @@ open class FWPopupView: UIView, UIGestureRecognizerDelegate {
 extension FWPopupView {
 
     /// 显示
-    @objc open func show() {
+    @objc
+    open func show() {
         self.show(popupDidAppearBlock: nil)
     }
 
     /// 显示
     ///
     /// - Parameter popupDidAppearBlock: 弹窗已经显示回调
-    @objc open func show(popupDidAppearBlock: FWPopupDidAppearBlock? = nil) {
+    @objc
+    open func show(popupDidAppearBlock: FWPopupDidAppearBlock? = nil) {
         self.popupDidAppearBlock = popupDidAppearBlock
         self.show(popupStateBlock: nil)
     }
@@ -258,7 +270,8 @@ extension FWPopupView {
     /// 显示
     ///
     /// - Parameter completionBlock: 显示、隐藏回调
-    @objc open func show(popupStateBlock: FWPopupStateBlock? = nil) {
+    @objc
+    open func show(popupStateBlock: FWPopupStateBlock? = nil) {
         if self.superview == nil {
             self.attachedView?.fwMaskView.addSubview(self)
             self.isResetSuperView = true
@@ -329,13 +342,15 @@ extension FWPopupView {
     /// 隐藏，从父视图中移除同时回调
     ///
     /// - Parameter completionBlock: 显示、隐藏回调
-    @objc open func hide(popupDidDisappearBlock: FWPopupDidDisappearBlock? = nil) {
+    @objc
+    open func hide(popupDidDisappearBlock: FWPopupDidDisappearBlock? = nil) {
         self.popupDidDisappearBlock = popupDidDisappearBlock
         self.hideNow(isRemove: true)
     }
 
     /// 隐藏，父视图中不移除当前视图（如果使用这个隐藏方法，不需要使用的时候可以手动把该弹窗从父视图中移除，否则可能会造成内存泄漏）
-    @objc open func hideWithNotRemove() {
+    @objc
+    open func hideWithNotRemove() {
         self.hideNow(isRemove: false)
     }
 
@@ -387,13 +402,15 @@ extension FWPopupView {
     }
 
     /// 隐藏所有的弹窗
-    @objc open class func hideAll() {
+    @objc
+    open class func hideAll() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: FWPopupViewHideAllNotification), object: FWPopupView.self)
     }
 
     /// 通知
     /// - Parameter notification: 通知
-    @objc open func notifyHideAll(notification: Notification) {
+    @objc
+    open func notifyHideAll(notification: Notification) {
         if let object = notification.object as? AnyClass, self.isKind(of: object) {
             self.hide()
         }
@@ -402,7 +419,8 @@ extension FWPopupView {
     /// 弹窗是否隐藏
     ///
     /// - Returns: 是否隐藏
-    @objc open class func isPopupViewHiden() -> Bool {
+    @objc
+    open class func isPopupViewHiden() -> Bool {
         return FWPopupWindow.sharedInstance.isHidden
     }
 }
@@ -889,7 +907,8 @@ extension FWPopupView {
     /// - Parameters:
     ///   - size: 新的size
     ///   - isImmediateEffect: 是否立即生效，当 currentPopupState==FWPopupStateDidAppear 时有效，此时弹窗会重新显示，此时相应的回调也会重新走
-    @objc open func resetSize(size: CGSize, isImmediateEffect: Bool) {
+    @objc
+    open func resetSize(size: CGSize, isImmediateEffect: Bool) {
         self.finalSize = size
         if isImmediateEffect && (self.currentPopupViewState == .didAppear || self.currentPopupViewState == .didAppearAgain) {
             self.hide { [weak self] (_) in
@@ -910,7 +929,8 @@ extension FWPopupView {
     /// 点击隐藏
     ///
     /// - Parameter tap: 手势
-    @objc func tapGesClick(tap: UITapGestureRecognizer) {
+    @objc
+    func tapGesClick(tap: UITapGestureRecognizer) {
         if FWPopupWindow.sharedInstance.touchWildToHide && !self.fwBackgroundAnimating {
             for view: UIView in (self.attachedView?.fwMaskView.subviews)! {
                 if view.isKind(of: FWPopupView.self) {

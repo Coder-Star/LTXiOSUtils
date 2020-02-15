@@ -135,7 +135,8 @@ extension UINavigationBar:WRAwakeProtocol {
     }
 
     // MARK: swizzling pop
-    @objc func wr_setTitleTextAttributes(_ newTitleTextAttributes:[String : Any]?) {
+    @objc
+    func wr_setTitleTextAttributes(_ newTitleTextAttributes:[String : Any]?) {
         guard var attributes = newTitleTextAttributes else {
             return
         }
@@ -248,7 +249,8 @@ extension UINavigationController: WRFatherAwakeProtocol {
         }
     }
 
-    @objc func wr_popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
+    @objc
+    func wr_popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
         setNeedsNavigationBarUpdate(titleColor: viewController.navBarTitleColor)
         var displayLink:CADisplayLink? = CADisplayLink(target: self, selector: #selector(popNeedDisplay))
         displayLink?.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
@@ -264,7 +266,8 @@ extension UINavigationController: WRFatherAwakeProtocol {
         return vcs
     }
 
-    @objc func wr_popToRootViewControllerAnimated(_ animated: Bool) -> [UIViewController]? {
+    @objc
+    func wr_popToRootViewControllerAnimated(_ animated: Bool) -> [UIViewController]? {
         var displayLink:CADisplayLink? = CADisplayLink(target: self, selector: #selector(popNeedDisplay))
         displayLink?.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         CATransaction.setCompletionBlock {
@@ -279,7 +282,8 @@ extension UINavigationController: WRFatherAwakeProtocol {
         return vcs
     }
 
-    @objc fileprivate func popNeedDisplay() {
+    @objc
+    fileprivate func popNeedDisplay() {
         guard let topViewController = topViewController,
             let coordinator       = topViewController.transitionCoordinator else {
                 return
@@ -302,7 +306,8 @@ extension UINavigationController: WRFatherAwakeProtocol {
         }
     }
 
-    @objc func wr_pushViewController(_ viewController: UIViewController, animated: Bool) {
+    @objc
+    func wr_pushViewController(_ viewController: UIViewController, animated: Bool) {
         var displayLink:CADisplayLink? = CADisplayLink(target: self, selector: #selector(pushNeedDisplay))
         displayLink?.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         CATransaction.setCompletionBlock {
@@ -317,7 +322,8 @@ extension UINavigationController: WRFatherAwakeProtocol {
         CATransaction.commit()
     }
 
-    @objc fileprivate func pushNeedDisplay() {
+    @objc
+    fileprivate func pushNeedDisplay() {
         guard let topViewController = topViewController,
               let coordinator       = topViewController.transitionCoordinator else {
                 return
@@ -384,7 +390,8 @@ extension UINavigationController: UINavigationBarDelegate {
     }
 
     // swizzling system method: _updateInteractiveTransition
-    @objc func wr_updateInteractiveTransition(_ percentComplete: CGFloat) {
+    @objc
+    func wr_updateInteractiveTransition(_ percentComplete: CGFloat) {
         guard let topViewController = topViewController,
             let coordinator       = topViewController.transitionCoordinator else {
                 wr_updateInteractiveTransition(percentComplete)
@@ -580,7 +587,8 @@ extension UIViewController: WRAwakeProtocol {
     }
 
     private static let onceToken = UUID().uuidString
-    @objc public static func wrAwake() {
+    @objc
+    public static func wrAwake() {
         DispatchQueue.once(token: onceToken) {
             let needSwizzleSelectors = [
                 #selector(viewWillAppear(_:)),
@@ -598,7 +606,8 @@ extension UIViewController: WRAwakeProtocol {
         }
     }
 
-    @objc func wr_viewWillAppear(_ animated: Bool) {
+    @objc
+    func wr_viewWillAppear(_ animated: Bool) {
         if canUpdateNavigationBar() {
             pushToNextVCFinished = false
             navigationController?.setNeedsNavigationBarUpdate(tintColor: navBarTintColor)
@@ -607,14 +616,16 @@ extension UIViewController: WRAwakeProtocol {
         wr_viewWillAppear(animated)
     }
 
-    @objc func wr_viewWillDisappear(_ animated: Bool) {
+    @objc
+    func wr_viewWillDisappear(_ animated: Bool) {
         if canUpdateNavigationBar() {
             pushToNextVCFinished = true
         }
         wr_viewWillDisappear(animated)
     }
 
-    @objc func wr_viewDidAppear(_ animated: Bool) {
+    @objc
+    func wr_viewDidAppear(_ animated: Bool) {
 
         if self.navigationController?.viewControllers.first != self {
             self.pushToCurrentVCFinished = true

@@ -8,16 +8,19 @@
 import Foundation
 
 /// 协议
-@objc public protocol TreeTableViewDelegate: NSObjectProtocol {
+@objc
+public protocol TreeTableViewDelegate: NSObjectProtocol {
     /// 获取勾选的数据
     /// - Parameter nodes: 节点数组
     func checkNodes(nodes: [TreeNode])
 
     /// 数据刷新
     /// 如果isNeedRefresh = true，请实现该方法
-    @objc optional func refreshData()
+    @objc
+    optional func refreshData()
 
-    @objc optional func beforeSearch(filed: String) -> String
+    @objc
+    optional func beforeSearch(filed: String) -> String
 }
 
 public class TreeTableView: UIView {
@@ -172,7 +175,8 @@ extension TreeTableView {
         }
     }
 
-    @objc private func refreshData() {
+    @objc
+    private func refreshData() {
         delegate?.refreshData?()
         if isNeedRefresh, let tempSearchBar = searchBar {
             search(searchBar: tempSearchBar)
@@ -271,7 +275,8 @@ extension TreeTableView: TreeTableViewSearchBarDelegate {
         }
     }
 
-    @objc open func search(searchBar: TreeTableViewSearchBar) {
+    @objc
+    open func search(searchBar: TreeTableViewSearchBar) {
         var filed = searchBar.searchTextField.text!
         if let tempFiled = delegate?.beforeSearch?(filed: filed) {
             filed = tempFiled

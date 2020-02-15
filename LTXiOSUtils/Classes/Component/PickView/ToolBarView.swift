@@ -81,11 +81,13 @@ open class ToolBarView: UIView {
         clearBtn.addTarget(self, action: #selector(self.clearBtnOnClick(_:)), for: .touchUpInside)
     }
 
-    @objc func doneBtnOnClick(_ sender: UIButton) {
+    @objc
+    func doneBtnOnClick(_ sender: UIButton) {
         doneAction?()
     }
 
-    @objc func clearBtnOnClick(_ sender: UIButton) {
+    @objc
+    func clearBtnOnClick(_ sender: UIButton) {
         clearAction?()
     }
 

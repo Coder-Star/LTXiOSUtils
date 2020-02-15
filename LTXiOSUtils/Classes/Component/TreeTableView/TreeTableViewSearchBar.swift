@@ -74,7 +74,8 @@ extension TreeTableViewSearchBar: UITextFieldDelegate {
         return true
     }
 
-    @objc private func search() {
+    @objc
+    private func search() {
         delegate?.treeTableViewSearchBarSearhing(searchBar: self)
     }
 

@@ -281,7 +281,8 @@ public class Checkbox: UIControl {
 
     // MARK: - Touch
 
-    @objc private func handleTapGesture(recognizer: UITapGestureRecognizer) {
+    @objc
+    private func handleTapGesture(recognizer: UITapGestureRecognizer) {
         isChecked = !isChecked
         valueChanged?(isChecked)
         sendActions(for: .valueChanged)
