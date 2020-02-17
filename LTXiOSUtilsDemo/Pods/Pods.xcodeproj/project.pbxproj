@@ -792,6 +792,7 @@
 		DC55E57B23FA7BB9008C6941 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC55E57823FA7BB9008C6941 /* Media.xcassets */; };
 		DC55E57C23FA7BB9008C6941 /* ProgressWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55E57923FA7BB9008C6941 /* ProgressWebViewController.swift */; };
 		DC55E57D23FA7BB9008C6941 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55E57A23FA7BB9008C6941 /* Enums.swift */; };
+		DC55E57F23FA7D66008C6941 /* UIImageView+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55E57E23FA7D66008C6941 /* UIImageView+GIF.swift */; };
 		DC83E7C423F644160030A9B4 /* FWPopupViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7C323F644160030A9B4 /* FWPopupViewProperty.swift */; };
 		DCA9221B3596DE7D98EDA14C538E6CC1 /* InvocableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC5B835B7693CE33806896AF6184207 /* InvocableType.swift */; };
 		DCBE950AABC61F4C3F2967FC067A040A /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EAB1722FE24DF113A1FC21B32FB2B /* Deprecated.swift */; };
@@ -2124,6 +2125,7 @@
 		DC55E57823FA7BB9008C6941 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		DC55E57923FA7BB9008C6941 /* ProgressWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressWebViewController.swift; sourceTree = "<group>"; };
 		DC55E57A23FA7BB9008C6941 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		DC55E57E23FA7D66008C6941 /* UIImageView+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+GIF.swift"; path = "LTXiOSUtils/Classes/Core/Util/UIImageView+GIF.swift"; sourceTree = "<group>"; };
 		DC7356F042E29C8A254F54A9E3E6829A /* URLRequest+Encoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Encoding.swift"; path = "Sources/Moya/URLRequest+Encoding.swift"; sourceTree = "<group>"; };
 		DC83E7C323F644160030A9B4 /* FWPopupViewProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWPopupViewProperty.swift; sourceTree = "<group>"; };
 		DCDDBD3ACD94DD2025C781866687F3DC /* XHLaunchAdDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XHLaunchAdDownloader.m; path = XHLaunchAd/XHLaunchAd/XHLaunchAdDownloader.m; sourceTree = "<group>"; };
@@ -3641,6 +3643,7 @@
 		9CCC9748306D3F87C0E9D9A81329A247 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				DC55E57E23FA7D66008C6941 /* UIImageView+GIF.swift */,
 				10B6926CBEAA00243B83D8AC21E271D2 /* UserDefaultsProtocol.swift */,
 				9238ADEA280EDC845C4B5F008BF4CFD5 /* NavigationBar */,
 			);
@@ -5708,6 +5711,7 @@
 				C63B5B8EA40702FB7E69560BA70CFB2A /* IntExtensions.swift in Sources */,
 				6F3DF0335BD1A51664B4BE9E3AFCF73B /* LoadingPlugin.swift in Sources */,
 				DC55E57D23FA7BB9008C6941 /* Enums.swift in Sources */,
+				DC55E57F23FA7D66008C6941 /* UIImageView+GIF.swift in Sources */,
 				146E1BC96ED56266F6F8EAA6E62E53CC /* LTXiOSUtils-dummy.m in Sources */,
 				4620E42C7394B1E38E1893296D5B1408 /* LTXiOSUtilsResource.swift in Sources */,
 				DD148C0E79571B67653A663C053EE391 /* MaskPopupView.swift in Sources */,
