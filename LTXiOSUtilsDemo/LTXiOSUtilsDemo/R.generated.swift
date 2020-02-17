@@ -121,6 +121,8 @@ struct R: Rswift.Validatable {
 
   /// This `R.image` struct is generated, and contains static references to 38 images.
   struct image {
+    /// Image `add-white`.
+    static let addWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "add-white")
     /// Image `add`.
     static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "add")
     /// Image `audio_bgm_4`.
@@ -167,8 +169,6 @@ struct R: Rswift.Validatable {
     static let mine_tab_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "mine_tab_selected")
     /// Image `mine_tab`.
     static let mine_tab = Rswift.ImageResource(bundle: R.hostingBundle, name: "mine_tab")
-    /// Image `mqz_nav_add`.
-    static let mqz_nav_add = Rswift.ImageResource(bundle: R.hostingBundle, name: "mqz_nav_add")
     /// Image `right_menu_QR_white`.
     static let right_menu_QR_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "right_menu_QR_white")
     /// Image `right_menu_QR`.
@@ -202,6 +202,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "add", bundle: ..., traitCollection: ...)`
     static func add(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.add, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "add-white", bundle: ..., traitCollection: ...)`
+    static func addWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.addWhite, compatibleWith: traitCollection)
     }
     #endif
 
@@ -356,13 +363,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "mine_tab_selected", bundle: ..., traitCollection: ...)`
     static func mine_tab_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.mine_tab_selected, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "mqz_nav_add", bundle: ..., traitCollection: ...)`
-    static func mqz_nav_add(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.mqz_nav_add, compatibleWith: traitCollection)
     }
     #endif
 
