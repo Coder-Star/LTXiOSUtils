@@ -42,7 +42,7 @@
 		DCB1C05E23C7FF8400D735BD /* UserDefaultsProtocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C05D23C7FF8400D735BD /* UserDefaultsProtocolTest.swift */; };
 		DCB1C06023C8006500D735BD /* NSObjectExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C05F23C8006500D735BD /* NSObjectExtensionTest.swift */; };
 		DCB22AB923AB6908004C63EF /* PickViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */; };
-		DCBB1C3A23B1FCC000FF2925 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBB1C3923B1FCC000FF2925 /* Launch Screen.storyboard */; };
+		DCBB1C3A23B1FCC000FF2925 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBB1C3923B1FCC000FF2925 /* LaunchScreen.storyboard */; };
 		DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */; };
 		DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC76E4B23A783550029590C /* HUDDemoViewController.swift */; };
 		DCCF3E4F23C8ABD1000E65E1 /* KeychainAccessTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */; };
@@ -118,7 +118,7 @@
 		DCB1C05D23C7FF8400D735BD /* UserDefaultsProtocolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocolTest.swift; sourceTree = "<group>"; };
 		DCB1C05F23C8006500D735BD /* NSObjectExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionTest.swift; sourceTree = "<group>"; };
 		DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewDemoViewController.swift; sourceTree = "<group>"; };
-		DCBB1C3923B1FCC000FF2925 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DCBB1C3923B1FCC000FF2925 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentCollectionsViewController.swift; sourceTree = "<group>"; };
 		DCC76E4B23A783550029590C /* HUDDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDDemoViewController.swift; sourceTree = "<group>"; };
 		DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccessTest.swift; sourceTree = "<group>"; };
@@ -294,7 +294,7 @@
 				DC1AD82D23E83F2F0073CB97 /* TreeResource.json */,
 				DC4AB9C322F4606100A5F003 /* Assets.xcassets */,
 				DC62A7C72384084A00DE7800 /* Localizable.strings */,
-				DCBB1C3923B1FCC000FF2925 /* Launch Screen.storyboard */,
+				DCBB1C3923B1FCC000FF2925 /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -389,11 +389,12 @@
 			buildPhases = (
 				D726E9C0B3EDDC246A438589 /* [CP] Check Pods Manifest.lock */,
 				DC62A7C92384093900DE7800 /* R.swift */,
+				DC55E58923FBE7BB008C6941 /* Update App Version */,
+				DCF41C2D2382282D00D7B13D /* SwiftLint */,
 				DC4AB9B522F4606000A5F003 /* Sources */,
 				DC4AB9B622F4606000A5F003 /* Frameworks */,
 				DC4AB9B722F4606000A5F003 /* Resources */,
 				D6E79269D5711DF2301FF939 /* [CP] Embed Pods Frameworks */,
-				DCF41C2D2382282D00D7B13D /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -495,7 +496,7 @@
 			files = (
 				DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */,
 				DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */,
-				DCBB1C3A23B1FCC000FF2925 /* Launch Screen.storyboard in Resources */,
+				DCBB1C3A23B1FCC000FF2925 /* LaunchScreen.storyboard in Resources */,
 				DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,6 +600,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DC55E58923FBE7BB008C6941 /* Update App Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update App Version";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "version=${MARKETING_VERSION}\nsed -i bak -e \"/userLabel=\\\"AppVersion\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"版本号:$version\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Resource/LaunchScreen.storyboard\n";
 		};
 		DC62A7C92384093900DE7800 /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -859,6 +878,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -878,6 +898,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
