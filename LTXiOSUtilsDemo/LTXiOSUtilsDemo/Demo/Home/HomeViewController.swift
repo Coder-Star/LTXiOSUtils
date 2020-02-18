@@ -109,7 +109,7 @@ class HomeViewController: BaseUIScrollViewController {
         scrollMenView.delegate = self
         contentView.addSubview(scrollMenView)
         scrollMenView.snp.makeConstraints { make in
-            make.top.equalTo(pagerView.snp.bottom).offset(2)
+            make.top.equalTo(pagerView.snp.bottom)
             make.left.right.equalToSuperview()
             make.height.equalTo(scrollMenView.heightInfo)
             make.bottom.equalToSuperview()
@@ -153,22 +153,25 @@ extension HomeViewController: FSPagerViewDataSource, FSPagerViewDelegate {
         cell.imageView?.kf.setImage(with: URL(string: url))
         cell.imageView?.contentMode = .scaleAspectFill
         cell.imageView?.clipsToBounds = true
-//        cell.textLabel?.text = ""
-//        cell.textLabel?.textAlignment = .center
+        //        cell.textLabel?.text = ""
+        //        cell.textLabel?.textAlignment = .center
         cell.layer.masksToBounds = true
         return cell
     }
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         QL1(pagerViewImageListData[index]["actionUrl"])
+        let viewController = ProgressWebViewController()
+        viewController.url = URL(string: pagerViewImageListData[index]["actionUrl"].stringValue)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
-           self.pageControl.currentPage = targetIndex
-       }
+        self.pageControl.currentPage = targetIndex
+    }
 
-       func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
-           self.pageControl.currentPage = pagerView.currentIndex
-       }
+    func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
+        self.pageControl.currentPage = pagerView.currentIndex
+    }
 }
 
 extension HomeViewController: GridMenuViewItemDelegate {

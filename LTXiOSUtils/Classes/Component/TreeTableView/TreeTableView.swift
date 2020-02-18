@@ -19,6 +19,8 @@ public protocol TreeTableViewDelegate: NSObjectProtocol {
     @objc
     optional func refreshData()
 
+    /// 搜素之前，对搜索值进行处理，如去除空格等
+    /// - Parameter filed: 字段值
     @objc
     optional func beforeSearch(filed: String) -> String
 }

@@ -65,11 +65,15 @@ extension TreeData {
 
     /// 设置顶级父节点，建立层级关系
     private func setupTopNodes() {
+        treeNodes = Array(nodesMap.values)
         var tempTopNodes = [TreeNode]()
         for node in treeNodes {
+            node.isExpand = false
+            /// 获取顶级父节点
             if node.isTop {
                 tempTopNodes.append(node)
             }
+            /// 建立层级关系
             if let parentNode = nodesMap[node.parentID] {
                 node.parentNode = parentNode
                 if !parentNode.childNodes.contains(node) {
@@ -316,6 +320,7 @@ extension TreeData {
     func filterFieldAndType(filed: String, type: String, isChildNodeCheck:Bool) {
         setupTopNodes()
         if !filed.isEmpty {
+            /// 将不符合条件的节点去除
             for node in treeNodes {
                 let childNodes = getAllChildNodesByNode(node: node)
                 if isContain(nodes: childNodes, filed: filed, type: type) {
@@ -323,7 +328,7 @@ extension TreeData {
                     continue
                 }
 
-                if isContain(nodes: childNodes, filed: filed, type: type) {
+                if isContain(nodes: [node], filed: filed, type: type) {
                     continue
                 }
                 let parentNodes = getAllParentNodesByNode(node: node)
@@ -343,11 +348,13 @@ extension TreeData {
                 }
             }
 
+            /// 生成展示的节点数组
             var tempShowNodes = [TreeNode]()
             for node in topNodes {
                 tempShowNodes = addNode(node: node, filterNodes: tempShowNodes)
             }
             self.showNodes = tempShowNodes
+            print(tempShowNodes.count)
         } else {
             setupShowNodes()
         }
@@ -366,7 +373,7 @@ extension TreeData {
         tempNodes.append(node)
         if node.childNodes.count > 0 {
             node.childNodes = sortNode(nodes: node.childNodes)
-            for childNode in node.childNodes where childNode.isExpand {
+            for childNode in node.childNodes where node.isExpand {
                 tempNodes = addNode(node: childNode, filterNodes: tempNodes)
             }
         }
@@ -453,7 +460,7 @@ public extension TreeData {
         var tempNodes = childNodes
         node.childNodes = sortNode(nodes: node.childNodes)
         for childNode in node.childNodes {
-            tempNodes.append(node)
+            tempNodes.append(childNode)
             tempNodes = self.addNode(node: childNode, childNodes: tempNodes)
         }
         return tempNodes

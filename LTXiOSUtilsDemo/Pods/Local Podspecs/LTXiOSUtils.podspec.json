@@ -81,7 +81,7 @@
       "source_files": "LTXiOSUtils/Classes/Network/*.swift"
     },
     {
-      "name": "Resource",
+      "name": "Resources",
       "dependencies": {
         "Localize-Swift": [
 
@@ -95,10 +95,13 @@
     {
       "name": "Component",
       "dependencies": {
-        "LTXiOSUtils/Resource": [
+        "LTXiOSUtils/Resources": [
 
         ],
         "LTXiOSUtils/Core/Extension": [
+
+        ],
+        "SnapKit": [
 
         ],
         "MBProgressHUD": [
