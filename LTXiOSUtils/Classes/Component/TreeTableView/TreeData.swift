@@ -354,7 +354,6 @@ extension TreeData {
                 tempShowNodes = addNode(node: node, filterNodes: tempShowNodes)
             }
             self.showNodes = tempShowNodes
-            print(tempShowNodes.count)
         } else {
             setupShowNodes()
         }
