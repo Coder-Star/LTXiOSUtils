@@ -47,15 +47,15 @@ Pod::Spec.new do |s|
   end
 
   # 资源
-  s.subspec 'Resource' do |resource|
-    resource.dependency 'Localize-Swift' # 管理本地国际化文件
-    resource.source_files = 'LTXiOSUtils/Resources/*.swift'
-    resource.resource_bundle = { "LTXiOSUtils" => "LTXiOSUtils/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
+  s.subspec 'Resources' do |resources|
+    resources.dependency 'Localize-Swift' # 管理本地国际化文件
+    resources.source_files = 'LTXiOSUtils/Resources/*.swift'
+    resources.resource_bundle = { "LTXiOSUtils" => "LTXiOSUtils/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
   end
 
   # 自定义Component组件，包含各种基础view
   s.subspec 'Component' do |component|
-    component.dependency 'LTXiOSUtils/Resource'
+    component.dependency 'LTXiOSUtils/Resources'
     component.dependency 'LTXiOSUtils/Core/Extension'
     component.dependency 'SnapKit' # 自动布局
     component.dependency 'MBProgressHUD' # 加载框，OC库
