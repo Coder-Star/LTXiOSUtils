@@ -38,10 +38,12 @@ public class TreeTableView: UIView {
     public var isShowSearchBar: Bool = true
     /// 是否实时搜索
     public var isSearchRealTime: Bool = true
-    /// 多选时选择父节点时，子节点也被选择
+    /// 多选时选择父节点时，子节点也被选择，在单选模式下没有意义
     public var isChildCheck: Bool = false
     /// 指定搜索类型，为空时表示不指定搜索类型
     public var typeForSearch = ""
+    /// Cell文字显示样式,默认尾部省略号显示
+    public var cellTextStyle: TreeTableViewCellTextStyle = .truncatingTail
 
     /// 树形数据
     public var treeData: TreeData? {
@@ -82,7 +84,8 @@ public class TreeTableView: UIView {
         tableView.layoutMargins = .zero
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 44
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
 
@@ -235,6 +238,7 @@ extension TreeTableView: UITableViewDataSource, UITableViewDelegate {
         }
         cell?.isSingleCheck = isSingleCheck
         cell?.treeNode = node
+        cell?.cellTextStyle = cellTextStyle
         cell?.checkClick = { nodeModel in
             if self.isSingleCheck {
                 self.delegate?.checkNodes(nodes: [nodeModel])

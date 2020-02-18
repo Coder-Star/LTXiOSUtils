@@ -7,14 +7,29 @@
 
 import Foundation
 
+/// Cell文字显示样式
+public enum TreeTableViewCellTextStyle {
+    /// 全部显示
+    case all
+    /// 自适应字体
+    case adjustFont
+    /// 冒号显示，前面冒号
+    case truncatingHead
+    /// 冒号显示，后面冒号
+    case truncatingTail
+    /// 冒号显示，中间冒号
+    case truncatingMiddle
+
+}
+
 public class TreeTableViewCell: UITableViewCell {
 
+    /// 节点数据
     public var treeNode: TreeNode! {
         didSet {
             setCellView()
         }
     }
-
     /// 是否单选
     public var isSingleCheck: Bool = true {
         didSet {
@@ -23,8 +38,31 @@ public class TreeTableViewCell: UITableViewCell {
             }
         }
     }
-
+    /// 点击闭包
     public var checkClick: ((_ treeNode: TreeNode) -> Void)?
+
+    /// Cell文字显示样式
+    public var cellTextStyle: TreeTableViewCellTextStyle = .truncatingTail {
+        didSet {
+            switch cellTextStyle {
+            case .all:
+                textLabel?.numberOfLines = 0
+                textLabel?.lineBreakMode = .byCharWrapping
+            case .adjustFont:
+                textLabel?.numberOfLines = 1
+                textLabel?.adjustsFontSizeToFitWidth = true
+            case .truncatingHead:
+                textLabel?.numberOfLines = 1
+                textLabel?.lineBreakMode = .byTruncatingHead
+            case .truncatingTail:
+                textLabel?.numberOfLines = 1
+                textLabel?.lineBreakMode = .byTruncatingTail
+            case .truncatingMiddle:
+                textLabel?.numberOfLines = 1
+                textLabel?.lineBreakMode = .byTruncatingMiddle
+            }
+        }
+    }
 
     /// 左边间距
     private let leftMargin: CGFloat = 15
@@ -45,7 +83,9 @@ public class TreeTableViewCell: UITableViewCell {
         imageViewFrame?.origin.x = minX
         self.imageView?.frame = imageViewFrame!
         var textLabelFrame = textLabel?.frame
-        textLabelFrame?.origin.x = minX + max(self.imageView!.bounds.size.width, 15) + 2
+        textLabelFrame?.origin.x = minX + max(self.imageView!.bounds.size.width, leftMargin) + 2
+        let textLabelX = textLabelFrame?.origin.x
+        textLabelFrame?.size.width = (accessoryView?.frame.origin.x)! - textLabelX! - 5
         self.textLabel?.frame = textLabelFrame!
     }
 
@@ -55,6 +95,7 @@ public class TreeTableViewCell: UITableViewCell {
 
 }
 
+// MARK: - 公开属性
 public extension TreeTableViewCell {
     /// 刷新箭头
     func refreshArrow() {
@@ -64,10 +105,10 @@ public extension TreeTableViewCell {
     }
 }
 
+// MARK: - 私有方法
 extension TreeTableViewCell {
     private func setCellView() {
         self.indentationLevel = self.treeNode.level
-        self.textLabel?.adjustsFontSizeToFitWidth = true
         self.textLabel?.text = self.treeNode.name
         if treeNode.childNodes.count > 0 {
             self.imageView?.image = "TreeTableView_arrow".imageOfLTXiOSUtils()
