@@ -260,6 +260,11 @@ extension TreeData {
         checkNode(node: node, isCheck: node.checkState != .checked, isChildNodesCheck: isChildNodesCheck)
     }
 
+    /// 勾选节点
+    /// - Parameters:
+    ///   - node: 节点
+    ///   - isCheck: 是否勾选节点
+    ///   - isChildNodesCheck: 是否子节点也勾选
     func checkNode(node: TreeNode, isCheck:Bool, isChildNodesCheck: Bool) {
         if node.checkState == .checked && isCheck {
             return
@@ -423,6 +428,7 @@ public extension TreeData {
     /// 所有勾选的节点
     var allCheckNodes: [TreeNode] {
         var nodes = [TreeNode]()
+        /// 从顶级节点进行遍历，防止多次计算
         for node in showNodes where node.level == 0 {
             nodes = getCheckNode(node: node, nodes: nodes)
         }
@@ -431,9 +437,7 @@ public extension TreeData {
 
     private func getCheckNode(node: TreeNode, nodes: [TreeNode]) -> [TreeNode] {
         var tempNodes = nodes
-        if node.checkState == .uncheckd {
-            return tempNodes
-        } else if node.checkState == .checked {
+        if node.checkState == .checked {
             tempNodes.append(node)
         }
         for childNode in node.childNodes {

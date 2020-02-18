@@ -39,6 +39,7 @@ public class TreeTableView: UIView {
     /// 是否实时搜索
     public var isSearchRealTime: Bool = true
     /// 多选时选择父节点时，子节点也被选择，在单选模式下没有意义
+    /// 如果子节点被选择，其所有父节点也被勾选
     public var isChildCheck: Bool = false
     /// 指定搜索类型，为空时表示不指定搜索类型
     public var typeForSearch = ""
@@ -166,7 +167,7 @@ extension TreeTableView {
         }
         for ID in checkNodesID {
             if let node = data.getNodeByID(ID: ID) {
-                data.checkNode(node: node, isCheck: true, isChildNodesCheck: !isSingleCheck)
+                data.checkNode(node: node, isCheck: true, isChildNodesCheck: isChildCheck)
                 var expandParentNodes = [TreeNode]()
                 var parentNode = node.parentNode
                 while parentNode != nil {

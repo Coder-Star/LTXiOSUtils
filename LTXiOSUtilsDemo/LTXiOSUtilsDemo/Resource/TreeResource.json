@@ -714,7 +714,7 @@
     "craft_type" : "Craft",
     "id" : 9533513791987104000,
     "level_code" : "1.6.1.1.1",
-    "name" : "新建管控点",
+    "name" : "新建管控点(测试勾选的节点)",
     "order_no" : 1,
     "pid" : 12189760205432095000,
     "type" : "ControlPoint"
