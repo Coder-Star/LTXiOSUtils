@@ -91,11 +91,11 @@ struct R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
   struct storyboard {
-    /// Storyboard `Launch Screen`.
+    /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
 
     #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Launch Screen", bundle: ...)`
+    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
     }
@@ -530,7 +530,7 @@ struct _R: Rswift.Validatable {
       typealias InitialController = UIKit.UIViewController
 
       let bundle = R.hostingBundle
-      let name = "Launch Screen"
+      let name = "LaunchScreen"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {

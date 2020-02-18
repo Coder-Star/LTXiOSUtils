@@ -54,7 +54,7 @@ class HUDDemoViewController: BaseGroupTableMenuViewController {
 
     @objc func timerExecute() {
         progresss += 0.1
-        hud?.updateProgress(progress: progresss, title: "当前进度:\(progresss)", successTitle: "完成")
+        hud?.updateProgress(progress: progresss, title: "当前进度:\(String(format: "%.2f", progresss))", successTitle: "完成")
         if progresss > 1 {
             timer?.invalidate()
         }
