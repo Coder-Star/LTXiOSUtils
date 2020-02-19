@@ -96,8 +96,10 @@ public class TreeTableView: UIView {
     }
 
     public override func layoutSubviews() {
-        searchBar = TreeTableViewSearchBar(frame: CGRect(x: 0, y: 0, width: frame.width, height: 40))
-        searchBar?.delegate = self
+        if searchBar == nil {
+            searchBar = TreeTableViewSearchBar(frame: CGRect(x: 0, y: 0, width: frame.width, height: 40))
+            searchBar?.delegate = self
+        }
         tableView.frame = CGRect(x: 0, y: 0, width: frame.width, height:frame.height)
     }
 
