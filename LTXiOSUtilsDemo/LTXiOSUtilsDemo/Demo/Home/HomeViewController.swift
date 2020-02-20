@@ -136,9 +136,7 @@ extension HomeViewController: FSPagerViewDataSource, FSPagerViewDelegate {
             self.pagerViewImageListData = data["imageList"]
             self.pagerView.automaticSlidingInterval = CGFloat(data["interval"].floatValue)
             self.pagerView.reloadData()
-
             self.pageControl.numberOfPages = self.pagerViewImageListData.count
-            QL1(data)
         }
     }
 
