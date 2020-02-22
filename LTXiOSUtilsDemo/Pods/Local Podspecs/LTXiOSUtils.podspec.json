@@ -120,7 +120,7 @@
 
         ]
       },
-      "source_files": "LTXiOSUtils/Classes/ViewController/*.swift"
+      "source_files": "LTXiOSUtils/Classes/ViewController/**/*.swift"
     }
   ],
   "swift_version": "5"
