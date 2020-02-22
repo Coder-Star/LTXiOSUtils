@@ -66,7 +66,7 @@ Pod::Spec.new do |s|
   s.subspec 'ViewController' do |viewController|
     viewController.dependency 'LTXiOSUtils/Core/Extension'
     viewController.dependency 'SnapKit' # 自动布局
-    viewController.source_files = 'LTXiOSUtils/Classes/ViewController/*.swift'
+    viewController.source_files = 'LTXiOSUtils/Classes/ViewController/**/*.swift'
   end
 
 end

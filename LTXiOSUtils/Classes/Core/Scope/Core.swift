@@ -11,14 +11,11 @@ import Foundation
 public struct Core<Base> {
     /// 泛型
     public let base: Base
+
     /// 构造函数
     /// - Parameter base: 泛型
     public init(_ base: Base) {
         self.base = base
-    }
-    /// 生成核心域
-    public var build: Base {
-        return base
     }
 }
 

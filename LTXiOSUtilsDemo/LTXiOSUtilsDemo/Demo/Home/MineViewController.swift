@@ -10,6 +10,11 @@ import Foundation
 import LTXiOSUtils
 
 class MineViewController: BaseUIViewController {
+
+    private lazy var label = UILabel().then {
+        $0.textAlignment = .center
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

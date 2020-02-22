@@ -25,10 +25,24 @@ public enum HUDStyle {
     case black
 }
 
+/// HUD显示位置
+public enum HUDPosition {
+    /// 顶部
+    case top
+    /// 中心
+    case center
+    /// 底部
+    case bottom
+}
+
 open class HUD: MBProgressHUD {
 
     /// 是否允许点击隐藏
     private var isClickHidden: Bool = false
+    /// 显示text 顶部垂直margin
+    public static var topMargin:CGFloat = 92
+    /// 显示text 顶部底部margin
+    public static var bottomMargin:CGFloat = 92
 
     /// 文本内容
     /// - Parameters:
@@ -36,11 +50,20 @@ open class HUD: MBProgressHUD {
     ///   - delayTime: 延迟时间，默认为1.5s
     ///   - style: 显示样式
     @discardableResult
-    public class func showText(_ title: String, _ delayTime: Double = 1.5, style: HUDStyle = .black) -> HUD? {
+    public class func showText(_ title: String, _ delayTime: Double = 1.5, position: HUDPosition = .top, style: HUDStyle = .black) -> HUD? {
         let hud = getBaseHUD()
         hud?.detailsLabel.text = title
         hud?.detailsLabel.font = UIFont.systemFont(ofSize: 14)
         hud?.mode = .text
+        switch position {
+        case .top:
+            hud?.offset.y = (UIScreen.main.bounds.size.height / 2 - HUD.topMargin) * -1
+        case .center:
+            hud?.offset.y = 0
+        case .bottom:
+            hud?.offset.y = UIScreen.main.bounds.size.height / 2 - HUD.bottomMargin
+        }
+
         hud?.margin = 10
         hud?.setStyle(style: style)
         hud?.hide(animated: true, afterDelay: delayTime)

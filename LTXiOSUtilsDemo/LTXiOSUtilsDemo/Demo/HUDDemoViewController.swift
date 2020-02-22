@@ -37,7 +37,7 @@ class HUDDemoViewController: BaseGroupTableMenuViewController {
     override func click(menuModel: BaseGroupTableMenuModel) {
         switch menuModel.code {
         case "text":
-            HUD.showText(menuModel.title)
+            HUD.showText("这是一段很长很长很长很长很长很长很长很长很长很长很长很长的文本")
         case "wait":
             HUD.showWait()
             DispatchQueue.main.delay(1) {
