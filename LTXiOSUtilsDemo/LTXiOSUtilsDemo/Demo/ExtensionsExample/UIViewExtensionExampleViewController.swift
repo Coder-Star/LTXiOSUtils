@@ -38,7 +38,7 @@ class UIViewExtensionExampleViewController: BaseUIScrollViewController {
             make.height.equalTo(30)
         }
         redView.addTapGesture { _ in
-           QL1("点击")
+           Log.d("点击")
         }
 
         titleLabel = UILabel()
@@ -63,10 +63,10 @@ class UIViewExtensionExampleViewController: BaseUIScrollViewController {
             make.bottom.equalToSuperview()
         }
 //        button.addTouchUpInsideAction { _ in
-//            QL1("点击")
+//            Log.d("点击")
 //        }
         button.addAction(event: .touchUpInside) { _ in
-            QL1("点击")
+            Log.d("点击")
         }
 
     }

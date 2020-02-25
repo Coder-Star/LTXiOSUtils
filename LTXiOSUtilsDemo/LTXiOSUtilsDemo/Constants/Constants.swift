@@ -11,7 +11,6 @@
 @_exported import SnapKit
 @_exported import SwiftyJSON
 @_exported import SwifterSwift
-@_exported import QorumLogs
 
 @_exported import UITableView_FDTemplateLayoutCell
 
@@ -42,7 +41,7 @@ public struct Constants {
         ///   - type: 类型
         public static func open(url: String, type: OpenType) {
             guard let url = URL(string: type.rawValue + url), UIApplication.shared.canOpenURL(url) else {
-                QL1("该url暂不支持打开")
+                Log.d("该url暂不支持打开")
                 return
             }
             if #available(iOS 10.0, *) {

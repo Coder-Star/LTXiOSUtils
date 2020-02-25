@@ -61,12 +61,12 @@ extension TreeViewDemoViewController: TreeTableViewDelegate {
     func checkNodes(nodes: [TreeNode]) {
         if nodes.count > 0 {
             if treeView.isSingleCheck {
-                QL1(nodes[0].data)
+                Log.d(nodes[0].data)
             } else {
-                QL1(nodes.compactMap { $0.data })
+                Log.d(nodes.compactMap { $0.data })
             }
         } else {
-            QL1("未勾选")
+            Log.d("未勾选")
         }
     }
 }

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double QorumLogsVersionNumber;
-FOUNDATION_EXPORT const unsigned char QorumLogsVersionString[];
+FOUNDATION_EXPORT double URLNavigatorVersionNumber;
+FOUNDATION_EXPORT const unsigned char URLNavigatorVersionString[];
 

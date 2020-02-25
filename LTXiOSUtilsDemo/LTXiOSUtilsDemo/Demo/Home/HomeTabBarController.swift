@@ -53,6 +53,6 @@ class HomeTabBarController: UITabBarController {
 
 extension HomeTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        QL1(viewController)
+        Log.d(viewController)
     }
 }

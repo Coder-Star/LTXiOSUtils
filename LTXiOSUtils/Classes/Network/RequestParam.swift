@@ -45,17 +45,17 @@ public class RequestParam {
 
     /// 打印信息
     func printInfo() {
-        print("url: \(self.baseUrl + self.path)")
-        print("parameters: \(self.parameters)")
-        print("method: \(self.method)")
+        Log.d("url: \(self.baseUrl + self.path)")
+        Log.d("parameters: \(self.parameters)")
+        Log.d("method: \(self.method)")
         if self.token.isNotEmpty {
-            print("token: \(self.token)")
+            Log.d("token: \(self.token)")
         }
         if self.header.isNotNil {
-            print("header: \(String(describing: self.header?.description))")
+            Log.d("header: \(String(describing: self.header?.description))")
         }
         if self.fileList.isNotNil {
-            print("file: \(String(describing: self.fileList?.compactMap {$0.name}.description))")
+            Log.d("file: \(String(describing: self.fileList?.compactMap {$0.name}.description))")
         }
     }
 }

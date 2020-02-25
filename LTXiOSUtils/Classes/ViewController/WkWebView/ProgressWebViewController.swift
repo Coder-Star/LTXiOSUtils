@@ -171,7 +171,7 @@ open class ProgressWebViewController: BaseUIViewController {
         if let url = url {
             load(url)
         } else {
-            print("[ProgressWebViewController][Error] NULL URL")
+            Log.e("url错误")
         }
     }
 

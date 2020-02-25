@@ -27,13 +27,13 @@ class NSObjectExtensionTest: XCTestCase {
 
     func initNotification() {
         self.observerNotification(.name) {
-            QL1("收到name通知")
+            Log.d("收到name通知")
         }
         self.observerNotification(.age) { notification in
             if let age = notification.userInfo?["age"] as? Int {
-                QL1(age)
+                Log.d(age)
             }
-            QL1("收到age通知")
+            Log.d("收到age通知")
         }
     }
 }

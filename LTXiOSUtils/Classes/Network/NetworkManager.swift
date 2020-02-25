@@ -48,7 +48,7 @@ public class NetworkManager {
     ///   - success: 成功回调
     public class func sendRequest(requestParam: RequestParam, success:@escaping(_ data: JSON) -> Void) {
         sendRequest(requestParam: requestParam, progress: { _ in
-            //        print(progress)
+
         }, success: { data in
             success(data)
         }, failure: { error  in
@@ -82,7 +82,7 @@ public class NetworkManager {
     ///   - failure: 失败回调
     public class func sendRequest(requestParam: RequestParam, success: @escaping SuccessBlock, failure: @escaping FailureBlock) {
         sendRequest(requestParam: requestParam, progress: { _ in
-            //       print(resultProgress)
+
         }, success: { data in
             success(data)
         }, failure: { error in
@@ -98,7 +98,7 @@ public class NetworkManager {
     ///   - success: 成功回调
     ///   - failure: 失败回调
     public class func sendRequest(requestParam: RequestParam, progress: @escaping ProgressBlock, success: @escaping SuccessBlock, failure: @escaping FailureBlock) {
-        print("请求url详细信息")
+        Log.d("请求url详细信息")
         requestParam.printInfo()
 
         if requestParam.timeOut != NetworkConfig.requestTimeOut {
@@ -108,7 +108,7 @@ public class NetworkManager {
                     request.timeoutInterval = requestParam.timeOut
                     done(.success(request))
                 } catch {
-                    print("错误信息:\(error)")
+                    Log.e("错误信息:\(error)")
                     return
                 }
             }
@@ -125,7 +125,7 @@ public class NetworkManager {
         }, completion: { result in
             switch result {
             case let .success(response):
-                print("状态码: \(response.statusCode)")
+                Log.d("状态码: \(response.statusCode)")
                 do {
                     let successResponse = try response.filterSuccessfulStatusCodes()
                     let data = JSON(successResponse.data)
@@ -160,33 +160,33 @@ public class NetworkManager {
         if let error = moyaError {
             description = error.localizedDescription
 
-            print("HTTP请求状态码：\(String(describing: error.response?.statusCode))")
-            print("错误原因：\(error.errorDescription ?? "")")
-            print(error.errorCode)
-            print(error.failureReason as Any)
-            print(error.localizedDescription)
+            Log.d("HTTP请求状态码：\(String(describing: error.response?.statusCode))")
+            Log.d("错误原因：\(error.errorDescription ?? "")")
+            Log.d(error.errorCode)
+            Log.d(error.failureReason as Any)
+            Log.d(error.localizedDescription)
 //            switch error {
 //            //下面四个错误是转换失败
 //            case .imageMapping(let response):
-//                print(response)
+//                Log.d(response)
 //            case .jsonMapping(let response):
-//                print(response)
+//                Log.d(response)
 //            case .stringMapping(let response):
-//                print(response)
+//                Log.d(response)
 //            case .objectMapping(let error, let response):
-//                print(error)
-//                print(response)
+//                Log.d(error)
+//                Log.d(response)
 //            case .encodableMapping(let error):
-//                print(error)
+//                Log.d(error)
 //            case .statusCode(let response): //状态码不在范围内
-//                print(response)
+//                Log.d(response)
 //            case .underlying(let error, let response): //没有网络时 、 服务器不存在
-//                print(error.localizedDescription)
-//                print(response as Any)
+//                Log.d(error.localizedDescription)
+//                Log.d(response as Any)
 //            case .requestMapping(let str): //请求操作
-//                print(str)
+//                Log.d(str)
 //            case .parameterEncoding(let error): // 参数错误
-//                print(error)
+//                Log.d(error)
 //            }
         } else if let statusCode = statusCode {
             code = statusCode

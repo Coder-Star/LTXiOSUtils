@@ -19,26 +19,26 @@ final class NetworkStateApplicationService: NSObject,ApplicationService {
 
         reachability.whenReachable = { reachability in
             if reachability.connection == .wifi {
-                QL1("WiFi数据")
+                Log.d("WiFi数据")
             } else {
-                QL1("蜂窝网络")
+                Log.d("蜂窝网络")
             }
         }
 
         reachability.whenUnreachable = { _ in
-            QL1("没有网络")
+            Log.d("没有网络")
         }
         do {
             try reachability.startNotifier()
         } catch {
-            QL1("无法启动网络监听")
+            Log.d("无法启动网络监听")
         }
 
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do {
             try reachability.startNotifier()
         } catch {
-            QL1("could not start reachability notifier")
+            Log.d("could not start reachability notifier")
         }
         return true
     }
@@ -47,6 +47,6 @@ final class NetworkStateApplicationService: NSObject,ApplicationService {
         guard let reachability = try? Reachability() else {
             return
         }
-        QL1(reachability.connection.description)
+        Log.d(reachability.connection.description)
     }
 }

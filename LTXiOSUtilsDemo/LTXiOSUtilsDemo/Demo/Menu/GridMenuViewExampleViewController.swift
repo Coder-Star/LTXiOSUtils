@@ -106,6 +106,6 @@ class GridMenuViewExampleViewController: BaseUIViewController {
 
 extension GridMenuViewExampleViewController: GridMenuViewItemDelegate {
     func gridMenuView(_ gridMenuView: GridMenuView, selectedItemAt index: Int) {
-        QL1(index)
+        Log.d(index)
     }
 }

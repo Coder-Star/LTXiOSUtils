@@ -29,7 +29,7 @@ extension RootVCApplicationService: XHLaunchAdDelegate {
         let requestParam = RequestParam(baseUrl: NetworkConstant.appUrl, path: NetworkConstant.launchAdData)
         requestParam.method = .get
         NetworkManager.sendRequest(requestParam: requestParam, success: { data in
-            QL1(data)
+            Log.d(data)
             if let adModel = AdModel(JSONString: data.description) {
                 let config = XHLaunchImageAdConfiguration()
                 config.duration = adModel.duration!
@@ -41,7 +41,7 @@ extension RootVCApplicationService: XHLaunchAdDelegate {
                 XHLaunchAd.imageAd(with: config, delegate: self)
             }
         }, failure: { _ in
-            QL1(XHLaunchAd.cacheImageURLString())
+            Log.d(XHLaunchAd.cacheImageURLString())
             let url = XHLaunchAd.cacheImageURLString()
             if url.isNotEmpty {
                 let config = XHLaunchImageAdConfiguration()
@@ -56,7 +56,7 @@ extension RootVCApplicationService: XHLaunchAdDelegate {
     }
 
     func xhLaunchAd(_ launchAd: XHLaunchAd, clickAtOpenModel openModel: Any, click clickPoint: CGPoint) -> Bool {
-        QL1(openModel)
+        Log.d(openModel)
         return true
     }
 }

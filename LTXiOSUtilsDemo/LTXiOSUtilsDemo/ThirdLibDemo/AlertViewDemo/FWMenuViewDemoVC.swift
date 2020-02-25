@@ -43,7 +43,7 @@ class FWMenuViewDemoVC: BaseUIViewController {
         vProperty.selectionStyle = .gray
         vProperty.maskViewColor = UIColor(white: 0, alpha: 0.3)
         let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: vProperty, itemBlock: { (_, index, _) in
-            QL1("Menu：点击了第\(index)个按钮")
+            Log.d("Menu：点击了第\(index)个按钮")
         })
         menuView.attachedView = self.baseView
         return menuView
@@ -66,7 +66,7 @@ class FWMenuViewDemoVC: BaseUIViewController {
         vProperty.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 
         let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images2 as? [UIImage], property: vProperty, itemBlock: { (_, index, _) in
-            QL1("Menu：点击了第\(index)个按钮")
+            Log.d("Menu：点击了第\(index)个按钮")
         })
         menuView.attachedView = self.baseView
         return menuView
@@ -152,7 +152,7 @@ extension FWMenuViewDemoVC {
             property.popupArrowVertexScaleX = 0.5
             property.cornerRadius = 5
             let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: property, itemBlock: { (_, index, _) in
-                QL1("Menu：点击了第\(index)个按钮")
+                Log.d("Menu：点击了第\(index)个按钮")
             })
             menuView.show()
         case 2:
@@ -169,7 +169,7 @@ extension FWMenuViewDemoVC {
             property.popupViewMaxHeightRate = 0.7
             let titles = ["Menu011111", "Menu1", "Menu2", "Menu3", "Menu4", "Menu5", "Menu6", "Menu7", "Menu8", "Menu9", "Menu10", "Menu11", "Menu12", "Menu13", "Menu14", "Menu15", "Menu16"]
             let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: property, itemBlock: { (_, index, _) in
-                QL1("Menu：点击了第\(index)个按钮")
+                Log.d("Menu：点击了第\(index)个按钮")
             })
             menuView.attachedView = baseView
             menuView.show()
@@ -186,7 +186,7 @@ extension FWMenuViewDemoVC {
             property.cornerRadius = 5
 
             let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images as? [UIImage], property: property, itemBlock: { (_, index, _) in
-                QL1("Menu：点击了第\(index)个按钮")
+                Log.d("Menu：点击了第\(index)个按钮")
             })
             menuView.show()
         default:

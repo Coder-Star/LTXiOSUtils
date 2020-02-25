@@ -86,6 +86,27 @@ public extension UIColor {
         return UIColor(red: 1.0 - r, green: 1.0 - g, blue: 1.0 - b, alpha: 1)
     }
 
+    /// 红色值
+    var redColor: Int {
+        var red: CGFloat = 0
+        self.getRed(&red, green: nil, blue: nil, alpha: nil)
+        return Int(red * 255)
+    }
+
+    /// 绿色值
+    var greenColor: Int {
+        var green: CGFloat = 0
+        self.getRed(nil, green: &green, blue: nil, alpha: nil)
+        return Int(green * 255)
+    }
+
+    /// 蓝色值
+    var blueColor: Int {
+        var blue: CGFloat = 0
+        self.getRed(nil, green: nil, blue: &blue, alpha: nil)
+        return Int(blue * 255)
+    }
+
 }
 
 // MARK: - 颜色、图片

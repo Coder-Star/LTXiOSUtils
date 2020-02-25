@@ -292,7 +292,6 @@ extension SelectPickView: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == titleArr.count - 1 {
             tableView.layoutIfNeeded()
-            print(tableView.contentSize.height)
             /// 为tableView加上header,使内容垂直居中
             let margin = tableViewHeight - tableView.contentSize.height
             if margin > 0 {
