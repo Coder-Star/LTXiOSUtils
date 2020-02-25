@@ -23,7 +23,7 @@ final class ThirdLibApplicationService: NSObject,ApplicationService {
 
         IQKeyboardManager.shared.enable = true
 
-//        PerformanceMonitor.shared().start()
+        PerformanceMonitor.shared().start()
 
         UIButton.initRepeatClickMethod()
     }
@@ -32,8 +32,6 @@ final class ThirdLibApplicationService: NSObject,ApplicationService {
 extension ThirdLibApplicationService {
     /// 日志设置
     func initLogConfig() {
-        QorumLogs.enabled = true
-        // 日志最低显示级别
-        QorumLogs.minimumLogLevelShown = 1
+        Log.enabled = true
     }
 }

@@ -37,7 +37,7 @@ class DemoListViewController: BaseGroupTableMenuViewController {
         vProperty.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 
         let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images as? [UIImage], property: vProperty, itemBlock: { (_, index, _) in
-            QL1("Menu：点击了第\(index)个按钮")
+            Log.d("Menu：点击了第\(index)个按钮")
         })
 //        menuView.attachedView = self.baseView
         return menuView

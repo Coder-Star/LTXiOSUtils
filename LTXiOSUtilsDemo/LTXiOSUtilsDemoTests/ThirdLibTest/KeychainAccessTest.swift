@@ -27,8 +27,8 @@ class KeychainAccessTest: XCTestCase {
     }
 
     func get() {
-        QL1(keychain[string:"info"])
-        QL1(keychain[string:"info1"])
+        Log.d(keychain[string:"info"])
+        Log.d(keychain[string:"info1"])
     }
 
     func remove() {

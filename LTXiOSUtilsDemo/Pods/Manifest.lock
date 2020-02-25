@@ -48,7 +48,6 @@ PODS:
     - Result (~> 4.1)
   - ObjectMapper (3.5.1)
   - PluggableAppDelegate (1.3.0)
-  - QorumLogs (0.9)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
@@ -87,6 +86,7 @@ PODS:
   - SwiftyJSON (5.0.0)
   - SwiftyUserDefaults (4.0.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
+  - URLNavigator (2.3.0)
   - XHLaunchAd (3.9.11):
     - FLAnimatedImage (~> 1.0.12)
   - ZYCornerRadius (1.0.2)
@@ -104,7 +104,6 @@ DEPENDENCIES:
   - Moya (= 13.0.1)
   - ObjectMapper (= 3.5.1)
   - PluggableAppDelegate (= 1.3.0)
-  - QorumLogs (= 0.9)
   - R.swift (= 5.1.0)
   - ReachabilitySwift (= 5.0.0)
   - RxCocoa (= 5.0.1)
@@ -115,6 +114,7 @@ DEPENDENCIES:
   - SwiftyJSON (= 5.0.0)
   - SwiftyUserDefaults (= 4.0.0)
   - "UITableView+FDTemplateLayoutCell (= 1.6)"
+  - URLNavigator
   - XHLaunchAd (= 3.9.11)
   - ZYCornerRadius (= 1.0.2)
 
@@ -127,7 +127,6 @@ SPEC REPOS:
     - Localize-Swift
     - MBProgressHUD
     - Moya
-    - QorumLogs
     - R.swift
     - R.swift.Library
     - Result
@@ -149,6 +148,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - URLNavigator
     - XHLaunchAd
 
 EXTERNAL SOURCES:
@@ -169,7 +169,6 @@ SPEC CHECKSUMS:
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   PluggableAppDelegate: 94c85bf821d85661c843a86e1aafe0cc12a62634
-  QorumLogs: 9a484df6973a3697ac79fe2273140fde6b36dccc
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
@@ -184,9 +183,10 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 897f952cb485b97984cd4bb6590e1e7de58057e9
+PODFILE CHECKSUM: 241584533f4df0582c6a01b1431498e8a51c5aed
 
 COCOAPODS: 1.8.4

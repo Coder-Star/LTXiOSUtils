@@ -35,8 +35,8 @@ class SwiftyUserDefaultsTest: XCTestCase {
     }
 
     func get() {
-        QL1(defaults[.launchCount])
-        QL1(defaults[DefaultsKeys.Login.username])
+        Log.d(defaults[.launchCount])
+        Log.d(defaults[DefaultsKeys.Login.username])
     }
 
     func remove() {

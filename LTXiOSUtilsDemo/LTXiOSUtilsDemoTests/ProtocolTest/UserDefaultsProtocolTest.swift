@@ -25,7 +25,7 @@ extension UserInfoEnum: UserDefaultsProtocol {
 class UserDefaultsProtocolTest: XCTestCase {
     func test() {
         UserInfoEnum.name.save(int: 5)
-        QL1(UserInfoEnum.name.int)
+        Log.d(UserInfoEnum.name.int)
     }
 }
 

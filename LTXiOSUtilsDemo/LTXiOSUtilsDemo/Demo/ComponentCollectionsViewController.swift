@@ -137,7 +137,7 @@ extension ComponentCollectionsViewController {
             }
 
         default:
-            QL1("未知点击事件")
+            Log.d("未知点击事件")
         }
     }
 }
@@ -166,6 +166,6 @@ extension ComponentCollectionsViewController: RollingNoticeViewDataSource, Rolli
     }
 
     func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int) {
-        QL1(index)
+        Log.d(index)
     }
 }

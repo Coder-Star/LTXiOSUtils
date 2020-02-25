@@ -119,11 +119,11 @@ class HomeViewController: BaseUIScrollViewController {
 
 extension HomeViewController {
     @objc func scan() {
-        QL1("扫描")
+        Log.d("扫描")
     }
 
     @objc func showMessage() {
-        QL1("查看消息")
+        Log.d("查看消息")
     }
 }
 
@@ -157,7 +157,7 @@ extension HomeViewController: FSPagerViewDataSource, FSPagerViewDelegate {
         return cell
     }
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-        QL1(pagerViewImageListData[index]["actionUrl"])
+        Log.d(pagerViewImageListData[index]["actionUrl"])
         let viewController = ProgressWebViewController()
         viewController.url = URL(string: pagerViewImageListData[index]["actionUrl"].stringValue)
         navigationController?.pushViewController(viewController, animated: true)
@@ -174,6 +174,6 @@ extension HomeViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
 extension HomeViewController: GridMenuViewItemDelegate {
     func gridMenuView(_ gridMenuView: GridMenuView, selectedItemAt index: Int) {
-        QL1(index)
+        Log.d(index)
     }
 }

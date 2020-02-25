@@ -41,7 +41,7 @@ public class ResourceUtils {
                 let data = try Data(contentsOf:fileUrl)
                 resultData = JSON(data)
             } catch let error {
-                QL1(error)
+                Log.d(error)
             }
         }
         return resultData

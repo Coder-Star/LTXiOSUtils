@@ -15,13 +15,13 @@ import QorumLogs
 class DateExtensionTest: XCTestCase {
 
     func testDateExtension() {
-        QL1("2019-01-01 10:00:00".getDateStr(dateType: .YMDHMS))
-        QL1("2019-01-01 10:00:00".getDateStr(dateType: .YMDHM))
-        QL1("2019-01-01 10:00:00".getDateStr(dateType: .MDHM))
-        QL1("2019-01-01 10:00:00".getDateStr(dateType: .YMD))
-        QL1("2019-01-01 10:00:00".getDateStr(dateType: .HMS))
-        QL1("2019-01-01 10:00:00".getDateStr(dateType: .YM))
-        QL1("2019-01-01 10:00:00".getDateStr(dateType: .MD))
-        QL1("2019-01-01 10:00:00".getDateStr(dateType: .HM))
+        Log.d("2019-01-01 10:00:00".getDateStr(dateType: .YMDHMS))
+        Log.d("2019-01-01 10:00:00".getDateStr(dateType: .YMDHM))
+        Log.d("2019-01-01 10:00:00".getDateStr(dateType: .MDHM))
+        Log.d("2019-01-01 10:00:00".getDateStr(dateType: .YMD))
+        Log.d("2019-01-01 10:00:00".getDateStr(dateType: .HMS))
+        Log.d("2019-01-01 10:00:00".getDateStr(dateType: .YM))
+        Log.d("2019-01-01 10:00:00".getDateStr(dateType: .MD))
+        Log.d("2019-01-01 10:00:00".getDateStr(dateType: .HM))
     }
 }

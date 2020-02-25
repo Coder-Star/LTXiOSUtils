@@ -91,7 +91,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
                 self.showAlert(message: "起始时间\(start)\n结束时间\(end)")
             }
             popupView.cancelBlock = {
-                QL1("取消")
+                Log.d("取消")
             }
             popupView.show()
         case "startAndEndTime":
@@ -103,7 +103,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
                 self.showAlert(message: "起始时间\(start)\n结束时间\(end)")
             }
             popupView.cancelBlock = {
-                QL1("取消")
+                Log.d("取消")
             }
             popupView.show()
         case "date":
