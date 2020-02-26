@@ -11,42 +11,48 @@ import PluggableAppDelegate
 import Reachability
 
 final class NetworkStateApplicationService: NSObject,ApplicationService {
+
+    var reachability: Reachability? //需要定义成全局属性，因为这个属性需要在应用周期内存活
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
-        guard let reachability = try? Reachability() else {
-            return true
-        }
-
-        reachability.whenReachable = { reachability in
-            if reachability.connection == .wifi {
-                Log.d("WiFi数据")
-            } else {
-                Log.d("蜂窝网络")
-            }
-        }
-
-        reachability.whenUnreachable = { _ in
-            Log.d("没有网络")
-        }
         do {
-            try reachability.startNotifier()
+            reachability = try? Reachability()
+        }
+
+        // MARK: - 1、闭包监听
+//        reachability?.whenReachable = { reachability in
+//            if reachability.connection == .wifi {
+//                Log.d("WiFi数据")
+//            } else {
+//                Log.d("蜂窝网络")
+//            }
+//        }
+//
+//        reachability?.whenUnreachable = { _ in
+//            Log.d("没有网络")
+//        }
+
+        // MARK: - 2、通知监听
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+
+        do {
+            try reachability?.startNotifier()
         } catch {
             Log.d("无法启动网络监听")
         }
 
-        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
-        do {
-            try reachability.startNotifier()
-        } catch {
-            Log.d("could not start reachability notifier")
-        }
         return true
     }
 
     @objc func reachabilityChanged(note: Notification) {
-        guard let reachability = try? Reachability() else {
-            return
+        if let reachability = note.object as? Reachability {
+            Log.d(reachability.connection.description)
         }
-        Log.d(reachability.connection.description)
+    }
+
+    deinit {
+        reachability?.stopNotifier()
+        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
     }
 }

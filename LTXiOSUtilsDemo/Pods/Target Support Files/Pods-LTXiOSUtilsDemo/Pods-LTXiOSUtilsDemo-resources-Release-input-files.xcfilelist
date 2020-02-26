@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle
+${PODS_ROOT}/SwiftDate/Sources/SwiftDate/Formatters/RelativeFormatter/langs

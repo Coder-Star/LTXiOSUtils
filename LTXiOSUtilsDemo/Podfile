@@ -6,7 +6,11 @@ target 'LTXiOSUtilsDemo' do
   # source 'https://cdn.cocoapods.org/' #公有库地址,使用CDN，pod 1.7版本后
   source 'https://github.com/Coder-Star/LTXSpecs.git' #私有库地址
   platform :ios, '10.0'
+  
   use_frameworks!
+#  use_modular_headers!
+# 在ios 13.3.1系统真机上，苹果不再允许个人开发者是使用嵌入式frameworks，
+# 需要use_modular_headers，不再use_frameworks
 
   pod 'LTXiOSUtils',:path => '../' # 基础功能库
 
