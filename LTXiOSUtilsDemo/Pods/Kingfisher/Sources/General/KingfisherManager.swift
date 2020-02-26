@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+
 import Foundation
 
 /// The downloading progress block type.
@@ -62,6 +63,7 @@ public struct PropagationError {
     public let error: KingfisherError
 }
 
+
 /// The downloading task updated block type. The parameter `newTask` is the updated new task of image setting process.
 /// It is a `nil` if the image loading does not require an image downloading process. If an image downloading is issued,
 /// this value will contain the actual `DownloadTask` for you to keep and cancel it later if you need.
@@ -76,31 +78,31 @@ public class KingfisherManager {
     /// Use this instance for getting or storing images with Kingfisher.
     public static let shared = KingfisherManager()
 
-    // MARK: Public Properties
+    // Mark: Public Properties
     /// The `ImageCache` used by this manager. It is `ImageCache.default` by default.
     /// If a cache is specified in `KingfisherManager.defaultOptions`, the value in `defaultOptions` will be
     /// used instead.
     public var cache: ImageCache
-
+    
     /// The `ImageDownloader` used by this manager. It is `ImageDownloader.default` by default.
     /// If a downloader is specified in `KingfisherManager.defaultOptions`, the value in `defaultOptions` will be
     /// used instead.
     public var downloader: ImageDownloader
-
+    
     /// Default options used by the manager. This option will be used in
     /// Kingfisher manager related methods, as well as all view extension methods.
     /// You can also passing other options for each image task by sending an `options` parameter
     /// to Kingfisher's APIs. The per image options will overwrite the default ones,
     /// if the option exists in both.
     public var defaultOptions = KingfisherOptionsInfo.empty
-
+    
     // Use `defaultOptions` to overwrite the `downloader` and `cache`.
     private var currentDefaultOptions: KingfisherOptionsInfo {
         return [.downloader(downloader), .targetCache(cache)] + defaultOptions
     }
 
     private let processingQueue: CallbackQueue
-
+    
     private convenience init() {
         self.init(downloader: .default, cache: .default)
     }
@@ -146,7 +148,8 @@ public class KingfisherManager {
         options: KingfisherOptionsInfo? = nil,
         progressBlock: DownloadProgressBlock? = nil,
         downloadTaskUpdated: DownloadTaskUpdatedBlock? = nil,
-        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask? {
+        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask?
+    {
         let source = Source.network(resource)
         return retrieveImage(
             with: source,
@@ -184,7 +187,8 @@ public class KingfisherManager {
         options: KingfisherOptionsInfo? = nil,
         progressBlock: DownloadProgressBlock? = nil,
         downloadTaskUpdated: DownloadTaskUpdatedBlock? = nil,
-        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask? {
+        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask?
+    {
         let options = currentDefaultOptions + (options ?? .empty)
         var info = KingfisherParsedOptionsInfo(options)
         if let block = progressBlock {
@@ -201,10 +205,11 @@ public class KingfisherManager {
         with source: Source,
         options: KingfisherParsedOptionsInfo,
         downloadTaskUpdated: DownloadTaskUpdatedBlock? = nil,
-        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask? {
+        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask?
+    {
         var context = RetrievingContext(options: options, originalSource: source)
 
-        func handler(currentSource: Source, result: (Result<RetrieveImageResult, KingfisherError>)) {
+        func handler(currentSource: Source, result: (Result<RetrieveImageResult, KingfisherError>)) -> Void {
             switch result {
             case .success:
                 completionHandler?(result)
@@ -237,40 +242,42 @@ public class KingfisherManager {
 
         return retrieveImage(
             with: source,
-            context: context) {
+            context: context)
+        {
             result in
             handler(currentSource: source, result: result)
         }
 
     }
-
+    
     private func retrieveImage(
         with source: Source,
         context: RetrievingContext,
-        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask? {
+        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask?
+    {
         let options = context.options
         if options.forceRefresh {
             return loadAndCacheImage(
                 source: source,
                 context: context,
                 completionHandler: completionHandler)?.value
-
+            
         } else {
             let loadedFromCache = retrieveImageFromCache(
                 source: source,
                 context: context,
                 completionHandler: completionHandler)
-
+            
             if loadedFromCache {
                 return nil
             }
-
+            
             if options.onlyFromCache {
                 let error = KingfisherError.cacheError(reason: .imageNotExisting(key: source.cacheKey))
                 completionHandler?(.failure(error))
                 return nil
             }
-
+            
             return loadAndCacheImage(
                 source: source,
                 context: context,
@@ -281,7 +288,8 @@ public class KingfisherManager {
     func provideImage(
         provider: ImageDataProvider,
         options: KingfisherParsedOptionsInfo,
-        completionHandler: ((Result<ImageLoadingResult, KingfisherError>) -> Void)?) {
+        completionHandler: ((Result<ImageLoadingResult, KingfisherError>) -> Void)?)
+    {
         guard let  completionHandler = completionHandler else { return }
         provider.data { result in
             switch result {
@@ -320,7 +328,8 @@ public class KingfisherManager {
         context: RetrievingContext,
         result: Result<ImageLoadingResult, KingfisherError>,
         completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?
-    ) {
+    )
+    {
         switch result {
         case .success(let value):
             let needToCacheOriginalImage = options.cacheOriginalImage &&
@@ -334,7 +343,8 @@ public class KingfisherManager {
                 original: value.originalData,
                 forKey: source.cacheKey,
                 options: options,
-                toDisk: !options.cacheMemoryOnly) {
+                toDisk: !options.cacheMemoryOnly)
+            {
                 _ in
                 coordinator.apply(.cachingImage) {
                     let result = RetrieveImageResult(
@@ -355,7 +365,8 @@ public class KingfisherManager {
                     value.originalData,
                     forKey: source.cacheKey,
                     processorIdentifier: DefaultImageProcessor.default.identifier,
-                    expiration: options.diskCacheExpiration) {
+                    expiration: options.diskCacheExpiration)
+                {
                     _ in
                     coordinator.apply(.cachingOriginalImage) {
                         let result = RetrieveImageResult(
@@ -388,7 +399,8 @@ public class KingfisherManager {
     func loadAndCacheImage(
         source: Source,
         context: RetrievingContext,
-        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask.WrappedTask? {
+        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask.WrappedTask?
+    {
         let options = context.options
         func _cacheImage(_ result: Result<ImageLoadingResult, KingfisherError>) {
             cacheImage(
@@ -413,7 +425,7 @@ public class KingfisherManager {
             return .dataProviding
         }
     }
-
+    
     /// Retrieves image from memory or disk cache.
     ///
     /// - Parameters:
@@ -436,14 +448,15 @@ public class KingfisherManager {
     func retrieveImageFromCache(
         source: Source,
         context: RetrievingContext,
-        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> Bool {
+        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> Bool
+    {
         let options = context.options
         // 1. Check whether the image was already in target cache. If so, just get it.
         let targetCache = options.targetCache ?? cache
         let key = source.cacheKey
         let targetImageCached = targetCache.imageCachedType(
             forKey: key, processorIdentifier: options.processor.identifier)
-
+        
         let validCache = targetImageCached.cached &&
             (options.fromMemoryCacheOrRefresh == false || targetImageCached == .memory)
         if validCache {
@@ -487,11 +500,11 @@ public class KingfisherManager {
         let originalImageCacheType = originalCache.imageCachedType(
             forKey: key, processorIdentifier: DefaultImageProcessor.default.identifier)
         let canAcceptDiskCache = !options.fromMemoryCacheOrRefresh
-
+        
         let canUseOriginalImageCache =
             (canAcceptDiskCache && originalImageCacheType.cached) ||
             (!canAcceptDiskCache && originalImageCacheType == .memory)
-
+        
         if canUseOriginalImageCache {
             // Now we are ready to get found the original image from cache. We need the unprocessed image, so remove
             // any processor from options first.
@@ -526,7 +539,8 @@ public class KingfisherManager {
                                 processedImage,
                                 forKey: key,
                                 options: cacheOptions,
-                                toDisk: !options.cacheMemoryOnly) {
+                                toDisk: !options.cacheMemoryOnly)
+                            {
                                 _ in
                                 coordinator.apply(.cachingImage) {
                                     let value = RetrieveImageResult(

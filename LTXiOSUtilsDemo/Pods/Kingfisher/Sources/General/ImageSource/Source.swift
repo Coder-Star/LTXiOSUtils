@@ -53,7 +53,7 @@ public enum Source {
     /// The target image should be got from network remotely. The associated `Resource`
     /// value defines detail information like image URL and cache key.
     case network(Resource)
-
+    
     /// The target image should be provided in a data format. Normally, it can be an image
     /// from local storage or in any other encoding format (like Base64).
     case provider(ImageDataProvider)
@@ -76,7 +76,7 @@ public enum Source {
         switch self {
         case .network(let resource): return resource.downloadURL
         // `ImageDataProvider` does not provide a URL. All it cares is how to get the data back.
-        case .provider: return nil
+        case .provider(_): return nil
         }
     }
 }

@@ -17,7 +17,8 @@ extension TypedStoryboardSegueInfo {
    - returns: A newly initialized TypedStoryboardSegueInfo object or nil.
   */
   public init?<SegueIdentifier: StoryboardSegueIdentifierType>(segueIdentifier: SegueIdentifier, segue: UIStoryboardSegue)
-    where SegueIdentifier.SegueType == Segue, SegueIdentifier.SourceType == Source, SegueIdentifier.DestinationType == Destination {
+    where SegueIdentifier.SegueType == Segue, SegueIdentifier.SourceType == Source, SegueIdentifier.DestinationType == Destination
+  {
     guard let identifier = segue.identifier,
       let source = segue.source as? SegueIdentifier.SourceType,
       let destination = segue.destination as? SegueIdentifier.DestinationType,

@@ -7,7 +7,7 @@ public protocol ResultProtocol {
 
 	init(value: Value)
 	init(error: Error)
-
+	
 	var result: Result<Value, Error> { get }
 }
 
@@ -19,7 +19,7 @@ extension Result {
 		case .failure: return nil
 		}
 	}
-
+	
 	/// Returns the error if self represents a failure, `nil` otherwise.
 	public var error: Error? {
 		switch self {
@@ -99,7 +99,8 @@ extension Result where Result.Failure: ErrorConvertible {
 		return flatMap { value in
 			do {
 				return .success(try transform(value))
-			} catch {
+			}
+			catch {
 				let convertedError = Error.error(from: error)
 				// Revisit this in a future version of Swift. https://twitter.com/jckarter/status/672931114944696321
 				return .failure(convertedError)
