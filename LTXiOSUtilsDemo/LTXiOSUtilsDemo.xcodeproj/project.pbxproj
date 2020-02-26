@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DE6BC8F899BF5D1B26891B2 /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7E3B9A1FE6E5138DABE297 /* Pods_LTXiOSUtilsDemoTests.framework */; };
-		2754416F50C9704E2738B49A /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83069D57682C04AAD7B5479 /* Pods_LTXiOSUtilsDemoUITests.framework */; };
-		C66D5214375B1A7AA2E778A9 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD79B9B14BDB14BB8C00E0 /* Pods_LTXiOSUtilsDemo.framework */; };
+		27CED8DFBFC4F83ABBDA287F /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3215B952B57983DB44DD27D0 /* Pods_LTXiOSUtilsDemoTests.framework */; };
+		5E4D16E9F4C2AE2B349248DA /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60D97EB16E2AC595736336D /* Pods_LTXiOSUtilsDemoUITests.framework */; };
+		BE7796975DA66C3298F98825 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC74D8CD2247CD16F1A04A2 /* Pods_LTXiOSUtilsDemo.framework */; };
 		DC03AE2623F3AB1B007739DD /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2523F3AB1B007739DD /* HomeTabBarController.swift */; };
 		DC03AE2823F3AD96007739DD /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2723F3AD96007739DD /* MineViewController.swift */; };
 		DC03AE2A23F3CA6A007739DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2923F3CA6A007739DD /* HomeViewController.swift */; };
@@ -73,14 +73,14 @@
 /* Begin PBXFileReference section */
 		02379853095E1627530EB6BD /* Pods-LTXiOSUtilsDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F543AF20CACE9D49043770D /* Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		1DAD79B9B14BDB14BB8C00E0 /* Pods_LTXiOSUtilsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3215B952B57983DB44DD27D0 /* Pods_LTXiOSUtilsDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C4FD638EFAAAF61197BFC0 /* Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C69EFBC8200F3382DF3C87 /* Pods-LTXiOSUtilsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.release.xcconfig"; sourceTree = "<group>"; };
 		728D8E2235C330A124AF1910 /* Pods-LTXiOSUtilsDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		7B7E3B9A1FE6E5138DABE297 /* Pods_LTXiOSUtilsDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E69F21B8737A1842F9552D7 /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		9AC74D8CD2247CD16F1A04A2 /* Pods_LTXiOSUtilsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94D39D73C90A84C93A55928 /* Pods-LTXiOSUtilsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C83069D57682C04AAD7B5479 /* Pods_LTXiOSUtilsDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C60D97EB16E2AC595736336D /* Pods_LTXiOSUtilsDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC03AE2523F3AB1B007739DD /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		DC03AE2723F3AD96007739DD /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		DC03AE2923F3CA6A007739DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +113,9 @@
 		DC83E7CA23F645E00030A9B4 /* FWCustomPopupDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWCustomPopupDemoVC.swift; sourceTree = "<group>"; };
 		DC83E7CB23F645E00030A9B4 /* FWDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWDemoViewController.swift; sourceTree = "<group>"; };
 		DCA407722405405300F62769 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA4077624066BFB00F62769 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA4077A24066C3500F62769 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		DCA4077C24066CC300F62769 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensionExampleViewController.swift; sourceTree = "<group>"; };
 		DCB1C04623C4B41500D735BD /* ExtensionExampleMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionExampleMenuViewController.swift; sourceTree = "<group>"; };
 		DCB1C04F23C5821F00D735BD /* ArrayExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTest.swift; sourceTree = "<group>"; };
@@ -138,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C66D5214375B1A7AA2E778A9 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */,
+				BE7796975DA66C3298F98825 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DE6BC8F899BF5D1B26891B2 /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */,
+				27CED8DFBFC4F83ABBDA287F /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2754416F50C9704E2738B49A /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */,
+				5E4D16E9F4C2AE2B349248DA /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,10 +167,13 @@
 		B817270E2E0652B5231C8E27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCA4077C24066CC300F62769 /* Alamofire.framework */,
+				DCA4077A24066C3500F62769 /* libz.tbd */,
+				DCA4077624066BFB00F62769 /* Alamofire.framework */,
 				DCA407722405405300F62769 /* Alamofire.framework */,
-				1DAD79B9B14BDB14BB8C00E0 /* Pods_LTXiOSUtilsDemo.framework */,
-				7B7E3B9A1FE6E5138DABE297 /* Pods_LTXiOSUtilsDemoTests.framework */,
-				C83069D57682C04AAD7B5479 /* Pods_LTXiOSUtilsDemoUITests.framework */,
+				9AC74D8CD2247CD16F1A04A2 /* Pods_LTXiOSUtilsDemo.framework */,
+				3215B952B57983DB44DD27D0 /* Pods_LTXiOSUtilsDemoTests.framework */,
+				C60D97EB16E2AC595736336D /* Pods_LTXiOSUtilsDemoUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -400,7 +406,7 @@
 				DC4AB9B522F4606000A5F003 /* Sources */,
 				DC4AB9B622F4606000A5F003 /* Frameworks */,
 				DC4AB9B722F4606000A5F003 /* Resources */,
-				2B17C3E175B218F38C2B17C9 /* [CP] Embed Pods Frameworks */,
+				7B67F1AE89CE27D9006B4B69 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -524,7 +530,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2B17C3E175B218F38C2B17C9 /* [CP] Embed Pods Frameworks */ = {
+		7B67F1AE89CE27D9006B4B69 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

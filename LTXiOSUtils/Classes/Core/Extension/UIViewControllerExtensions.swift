@@ -23,7 +23,9 @@ public extension UIViewController {
         }
         return base
     }
+}
 
+public extension UIViewController {
     /// 显示提示框，可自动消失
     /// - Parameters:
     ///   - message: 显示内容
