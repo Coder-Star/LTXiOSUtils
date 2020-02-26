@@ -115,7 +115,7 @@ public enum Result<Value, Error: Swift.Error>: ResultProtocol, CustomStringConve
 		var userInfo: [String: Any] = [
 			functionKey: function,
 			fileKey: file,
-			lineKey: line
+			lineKey: line,
 		]
 
 		if let message = message {
@@ -125,6 +125,7 @@ public enum Result<Value, Error: Swift.Error>: ResultProtocol, CustomStringConve
 		return NSError(domain: errorDomain, code: 0, userInfo: userInfo)
 	}
 
+
 	// MARK: CustomStringConvertible
 
 	public var description: String {
@@ -133,6 +134,7 @@ public enum Result<Value, Error: Swift.Error>: ResultProtocol, CustomStringConve
 		case let .failure(error): return ".failure(\(error))"
 		}
 	}
+
 
 	// MARK: CustomDebugStringConvertible
 
@@ -175,7 +177,7 @@ public func materialize<T>(_ f: @autoclosure () throws -> T) -> Result<T, AnyErr
 }
 
 // MARK: - ErrorConvertible conformance
-
+	
 extension NSError: ErrorConvertible {
 	public static func error(from error: Swift.Error) -> Self {
 		func cast<T: NSError>(_ error: Swift.Error) -> T {

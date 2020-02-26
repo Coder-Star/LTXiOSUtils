@@ -2,8 +2,8 @@
 # platform :ios, '9.0'
 
 target 'LTXiOSUtilsDemo' do
-#  source 'https://github.com/CocoaPods/Specs.git' #公有库地址
-  source 'https://cdn.cocoapods.org/' #公有库地址,使用CDN，pod 1.7版本后
+  source 'https://github.com/CocoaPods/Specs.git' #公有库地址
+  # source 'https://cdn.cocoapods.org/' #公有库地址,使用CDN，pod 1.7版本后
   source 'https://github.com/Coder-Star/LTXSpecs.git' #私有库地址
   platform :ios, '10.0'
   use_frameworks!
@@ -19,7 +19,7 @@ target 'LTXiOSUtilsDemo' do
   pod 'SwiftyJSON','5.0.0'
   pod 'Moya','13.0.1'
   pod 'Alamofire','4.9.1'
-  
+
   #'LTXiOSUtils/Resource'
   pod 'Localize-Swift','3.1.0'
 

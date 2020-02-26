@@ -120,36 +120,36 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - Alamofire
-    - GDPerformanceView-Swift
-    - IQKeyboardManagerSwift
-    - Kingfisher
-    - Localize-Swift
-    - MBProgressHUD
-    - Moya
-    - R.swift
-    - R.swift.Library
-    - Result
-    - SnapKit
-    - SwiftDate
-    - SwifterSwift
-    - SwiftLint
-    - SwiftyJSON
-    - SwiftyUserDefaults
-    - "UITableView+FDTemplateLayoutCell"
-    - ZYCornerRadius
-  trunk:
     - FLAnimatedImage
     - FSPagerView
+    - GDPerformanceView-Swift
+    - IQKeyboardManagerSwift
     - KeychainAccess
+    - Kingfisher
     - ObjectMapper
     - PluggableAppDelegate
+    - R.swift
+    - R.swift.Library
     - ReachabilitySwift
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SwiftDate
+    - SwifterSwift
+    - SwiftLint
+    - SwiftyUserDefaults
+    - "UITableView+FDTemplateLayoutCell"
     - URLNavigator
     - XHLaunchAd
+    - ZYCornerRadius
+  trunk:
+    - Alamofire
+    - Localize-Swift
+    - MBProgressHUD
+    - Moya
+    - Result
+    - SnapKit
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   LTXiOSUtils:
@@ -187,6 +187,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 241584533f4df0582c6a01b1431498e8a51c5aed
+PODFILE CHECKSUM: b779c86b6d52ebca21af80dbf24559d0ec40270f
 
 COCOAPODS: 1.8.4

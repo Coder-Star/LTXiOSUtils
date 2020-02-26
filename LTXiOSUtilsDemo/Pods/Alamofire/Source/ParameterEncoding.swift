@@ -435,7 +435,8 @@ public struct PropertyListEncoding: ParameterEncoding {
     /// - returns: The new `PropertyListEncoding` instance.
     public init(
         format: PropertyListSerialization.PropertyListFormat = .xml,
-        options: PropertyListSerialization.WriteOptions = 0) {
+        options: PropertyListSerialization.WriteOptions = 0)
+    {
         self.format = format
         self.options = options
     }

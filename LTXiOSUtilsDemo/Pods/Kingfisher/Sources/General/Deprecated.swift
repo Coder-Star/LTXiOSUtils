@@ -38,7 +38,8 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
         data: Data,
         scale: CGFloat,
         preloadAllAnimationData: Bool,
-        onlyFirstFrame: Bool) -> KFCrossPlatformImage? {
+        onlyFirstFrame: Bool) -> KFCrossPlatformImage?
+    {
         let options = ImageCreatingOptions(
             scale: scale,
             duration: 0.0,
@@ -46,7 +47,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
             onlyFirstFrame: onlyFirstFrame)
         return KingfisherWrapper.image(data: data, options: options)
     }
-
+    
     @available(*, deprecated, message:
     "Will be removed soon. Pass parameters with `ImageCreatingOptions`, use `animatedImage(with:options:)` instead.")
     public static func animated(
@@ -54,7 +55,8 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
         scale: CGFloat = 1.0,
         duration: TimeInterval = 0.0,
         preloadAll: Bool,
-        onlyFirstFrame: Bool = false) -> KFCrossPlatformImage? {
+        onlyFirstFrame: Bool = false) -> KFCrossPlatformImage?
+    {
         let options = ImageCreatingOptions(
             scale: scale, duration: duration, preloadAll: preloadAll, onlyFirstFrame: onlyFirstFrame)
         return animatedImage(data: data, options: options)
@@ -94,7 +96,8 @@ extension KingfisherManager {
     public func retrieveImage(with resource: Resource,
                               options: KingfisherOptionsInfo?,
                               progressBlock: DownloadProgressBlock?,
-                              completionHandler: CompletionHandler?) -> DownloadTask? {
+                              completionHandler: CompletionHandler?) -> DownloadTask?
+    {
         return retrieveImage(with: resource, options: options, progressBlock: progressBlock) {
             result in
             switch result {
@@ -113,7 +116,8 @@ extension ImageDownloader {
                             retrieveImageTask: RetrieveImageTask? = nil,
                             options: KingfisherOptionsInfo? = nil,
                             progressBlock: ImageDownloaderProgressBlock? = nil,
-                            completionHandler: ImageDownloaderCompletionHandler?) -> DownloadTask? {
+                            completionHandler: ImageDownloaderCompletionHandler?) -> DownloadTask?
+    {
         return downloadImage(with: url, options: options, progressBlock: progressBlock) {
             result in
             switch result {
@@ -144,7 +148,8 @@ extension KingfisherWrapper where Base: KFCrossPlatformImageView {
                          placeholder: Placeholder? = nil,
                          options: KingfisherOptionsInfo? = nil,
                          progressBlock: DownloadProgressBlock? = nil,
-                         completionHandler: CompletionHandler?) -> DownloadTask? {
+                         completionHandler: CompletionHandler?) -> DownloadTask?
+    {
         return setImage(with: resource, placeholder: placeholder, options: options, progressBlock: progressBlock) {
             result in
             switch result {
@@ -169,13 +174,15 @@ extension KingfisherWrapper where Base: UIButton {
         placeholder: UIImage? = nil,
         options: KingfisherOptionsInfo? = nil,
         progressBlock: DownloadProgressBlock? = nil,
-        completionHandler: CompletionHandler?) -> DownloadTask? {
+        completionHandler: CompletionHandler?) -> DownloadTask?
+    {
         return setImage(
             with: resource,
             for: state,
             placeholder: placeholder,
             options: options,
-            progressBlock: progressBlock) {
+            progressBlock: progressBlock)
+        {
             result in
             switch result {
             case .success(let value):
@@ -185,7 +192,7 @@ extension KingfisherWrapper where Base: UIButton {
             }
         }
     }
-
+    
     @available(*, deprecated, message: "Use `Result` based callback instead.")
     @discardableResult
     public func setBackgroundImage(
@@ -194,13 +201,15 @@ extension KingfisherWrapper where Base: UIButton {
         placeholder: UIImage? = nil,
         options: KingfisherOptionsInfo? = nil,
         progressBlock: DownloadProgressBlock? = nil,
-        completionHandler: CompletionHandler?) -> DownloadTask? {
+        completionHandler: CompletionHandler?) -> DownloadTask?
+    {
         return setBackgroundImage(
             with: resource,
             for: state,
             placeholder: placeholder,
             options: options,
-            progressBlock: progressBlock) {
+            progressBlock: progressBlock)
+        {
             result in
             switch result {
             case .success(let value):
@@ -223,12 +232,14 @@ extension KingfisherWrapper where Base: WKInterfaceImage {
                          placeholder: KFCrossPlatformImage? = nil,
                          options: KingfisherOptionsInfo? = nil,
                          progressBlock: DownloadProgressBlock? = nil,
-                         completionHandler: CompletionHandler?) -> DownloadTask? {
+                         completionHandler: CompletionHandler?) -> DownloadTask?
+    {
         return setImage(
             with: resource,
             placeholder: placeholder,
             options: options,
-            progressBlock: progressBlock) {
+            progressBlock: progressBlock)
+        {
             result in
             switch result {
             case .success(let value):
@@ -250,12 +261,14 @@ extension KingfisherWrapper where Base: NSButton {
                          placeholder: KFCrossPlatformImage? = nil,
                          options: KingfisherOptionsInfo? = nil,
                          progressBlock: DownloadProgressBlock? = nil,
-                         completionHandler: CompletionHandler?) -> DownloadTask? {
+                         completionHandler: CompletionHandler?) -> DownloadTask?
+    {
         return setImage(
             with: resource,
             placeholder: placeholder,
             options: options,
-            progressBlock: progressBlock) {
+            progressBlock: progressBlock)
+        {
             result in
             switch result {
             case .success(let value):
@@ -265,19 +278,21 @@ extension KingfisherWrapper where Base: NSButton {
             }
         }
     }
-
+    
     @discardableResult
     @available(*, deprecated, message: "Use `Result` based callback instead.")
     public func setAlternateImage(with resource: Resource?,
                                   placeholder: KFCrossPlatformImage? = nil,
                                   options: KingfisherOptionsInfo? = nil,
                                   progressBlock: DownloadProgressBlock? = nil,
-                                  completionHandler: CompletionHandler?) -> DownloadTask? {
+                                  completionHandler: CompletionHandler?) -> DownloadTask?
+    {
         return setAlternateImage(
             with: resource,
             placeholder: placeholder,
             options: options,
-            progressBlock: progressBlock) {
+            progressBlock: progressBlock)
+        {
             result in
             switch result {
             case .success(let value):
@@ -317,14 +332,14 @@ extension ImageCache {
         get { return diskStorage.config.pathExtension }
         set { diskStorage.config.pathExtension = newValue }
     }
-
+    
     ///The disk cache location.
     @available(*, deprecated, message: "Use `diskStorage.directoryURL.absoluteString` instead.",
     renamed: "diskStorage.directoryURL.absoluteString")
     public var diskCachePath: String {
         return diskStorage.directoryURL.absoluteString
     }
-
+    
     /// The largest disk size can be taken for the cache. It is the total
     /// allocated size of cached files in bytes.
     /// Default is no limit.
@@ -334,13 +349,13 @@ extension ImageCache {
         get { return UInt(diskStorage.config.sizeLimit) }
         set { diskStorage.config.sizeLimit = newValue }
     }
-
+    
     @available(*, deprecated, message: "Use `diskStorage.cacheFileURL(forKey:).path` instead.",
     renamed: "diskStorage.cacheFileURL(forKey:)")
     open func cachePath(forComputedKey key: String) -> String {
         return diskStorage.cacheFileURL(forKey: key).path
     }
-
+    
     /**
      Get an image for a key from disk.
      
@@ -369,11 +384,13 @@ extension ImageCache {
     renamed: "retrieveImage(forKey:options:callbackQueue:completionHandler:)")
     open func retrieveImage(forKey key: String,
                             options: KingfisherOptionsInfo?,
-                            completionHandler: ((KFCrossPlatformImage?, CacheType) -> Void)?) {
+                            completionHandler: ((KFCrossPlatformImage?, CacheType) -> Void)?)
+    {
         retrieveImage(
             forKey: key,
             options: options,
-            callbackQueue: .dispatch((options ?? .empty).callbackDispatchQueue)) {
+            callbackQueue: .dispatch((options ?? .empty).callbackDispatchQueue))
+        {
             result in
             do {
                 let value = try result.get()
@@ -400,14 +417,16 @@ extension ImageCache {
                     processorIdentifier identifier: String = "",
                     cacheSerializer serializer: CacheSerializer = DefaultCacheSerializer.default,
                     toDisk: Bool = true,
-                    completionHandler: (() -> Void)?) {
+                    completionHandler: (() -> Void)?)
+    {
         store(
             image,
             original: original,
             forKey: key,
             processorIdentifier: identifier,
             cacheSerializer: serializer,
-            toDisk: toDisk) {
+            toDisk: toDisk)
+        {
             _ in
             completionHandler?()
         }
@@ -633,6 +652,7 @@ public struct DefaultImageModifier: ImageModifier {
     /// Modifies an input `Image`. See `ImageModifier` protocol for more.
     public func modify(_ image: KFCrossPlatformImage) -> KFCrossPlatformImage { return image }
 }
+
 
 #if os(macOS)
 @available(*, deprecated, message: "Use `KFCrossPlatformImage` instead.")

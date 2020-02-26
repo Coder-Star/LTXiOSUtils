@@ -206,7 +206,8 @@ extension Result where Failure: Error {
     /// - Returns: A single `Output` value.
     func match<Output>(
         onSuccess: (Success) -> Output,
-        onFailure: (Failure) -> Output) -> Output {
+        onFailure: (Failure) -> Output) -> Output
+    {
         switch self {
         case let .success(value):
             return onSuccess(value)

@@ -42,7 +42,7 @@ public struct ImageCreatingOptions {
     /// For an animated image, whether or not only the first image should be
     /// loaded as a static image. It is useful for preview purpose of an animated image.
     public let onlyFirstFrame: Bool
-
+    
     /// Creates an `ImageCreatingOptions` object.
     ///
     /// - Parameters:
@@ -59,7 +59,8 @@ public struct ImageCreatingOptions {
         scale: CGFloat = 1.0,
         duration: TimeInterval = 0.0,
         preloadAll: Bool = false,
-        onlyFirstFrame: Bool = false) {
+        onlyFirstFrame: Bool = false)
+    {
         self.scale = scale
         self.duration = duration
         self.preloadAll = preloadAll
@@ -72,17 +73,17 @@ public struct ImageCreatingOptions {
 class GIFAnimatedImage {
     let images: [KFCrossPlatformImage]
     let duration: TimeInterval
-
+    
     init?(from imageSource: CGImageSource, for info: [String: Any], options: ImageCreatingOptions) {
         let frameCount = CGImageSourceGetCount(imageSource)
         var images = [KFCrossPlatformImage]()
         var gifDuration = 0.0
-
+        
         for i in 0 ..< frameCount {
             guard let imageRef = CGImageSourceCreateImageAtIndex(imageSource, i, info as CFDictionary) else {
                 return nil
             }
-
+            
             if frameCount == 1 {
                 gifDuration = .infinity
             } else {
@@ -95,16 +96,16 @@ class GIFAnimatedImage {
         self.images = images
         self.duration = gifDuration
     }
-
+    
     // Calculates frame duration for a gif frame out of the kCGImagePropertyGIFDictionary dictionary.
     static func getFrameDuration(from gifInfo: [String: Any]?) -> TimeInterval {
         let defaultFrameDuration = 0.1
         guard let gifInfo = gifInfo else { return defaultFrameDuration }
-
+        
         let unclampedDelayTime = gifInfo[kCGImagePropertyGIFUnclampedDelayTime as String] as? NSNumber
         let delayTime = gifInfo[kCGImagePropertyGIFDelayTime as String] as? NSNumber
         let duration = unclampedDelayTime ?? delayTime
-
+        
         guard let frameDuration = duration else { return defaultFrameDuration }
         return frameDuration.doubleValue > 0.011 ? frameDuration.doubleValue : defaultFrameDuration
     }

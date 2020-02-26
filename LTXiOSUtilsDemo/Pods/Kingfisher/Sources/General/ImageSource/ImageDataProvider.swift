@@ -31,10 +31,10 @@ import Foundation
 /// to load some image data in your own way, as long as you can provide the data
 /// representation for the image.
 public protocol ImageDataProvider {
-
+    
     /// The key used in cache.
     var cacheKey: String { get }
-
+    
     /// Provides the data which represents image. Kingfisher uses the data you pass in the
     /// handler to process images and caches it for later use.
     ///
@@ -135,7 +135,7 @@ public struct RawImageDataProvider: ImageDataProvider {
     }
 
     // MARK: Protocol Conforming
-
+    
     /// The key used in cache.
     public var cacheKey: String
 

@@ -64,7 +64,8 @@ public struct Timeline {
         requestStartTime: CFAbsoluteTime = 0.0,
         initialResponseTime: CFAbsoluteTime = 0.0,
         requestCompletedTime: CFAbsoluteTime = 0.0,
-        serializationCompletedTime: CFAbsoluteTime = 0.0) {
+        serializationCompletedTime: CFAbsoluteTime = 0.0)
+    {
         self.requestStartTime = requestStartTime
         self.initialResponseTime = initialResponseTime
         self.requestCompletedTime = requestCompletedTime
