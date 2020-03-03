@@ -33,5 +33,10 @@ extension ThirdLibApplicationService {
     /// 日志设置
     func initLogConfig() {
         Log.enabled = true
+        #if DEBUG
+        Log.minShowLogLevel = .debug
+        #else
+        Log.minShowLogLevel = .info
+        #endif
     }
 }
