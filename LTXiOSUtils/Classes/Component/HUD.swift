@@ -50,7 +50,7 @@ open class HUD: MBProgressHUD {
     ///   - delayTime: 延迟时间，默认为1.5s
     ///   - style: 显示样式
     @discardableResult
-    public class func showText(_ title: String, _ delayTime: Double = 1.5, position: HUDPosition = .top, style: HUDStyle = .black) -> HUD? {
+    public class func showText(_ title: String, _ delayTime: Double = 1.5, position: HUDPosition = .center, style: HUDStyle = .black) -> HUD? {
         let hud = getBaseHUD()
         hud?.detailsLabel.text = title
         hud?.detailsLabel.font = UIFont.systemFont(ofSize: 14)

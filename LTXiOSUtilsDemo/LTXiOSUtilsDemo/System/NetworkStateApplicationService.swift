@@ -48,6 +48,18 @@ final class NetworkStateApplicationService: NSObject,ApplicationService {
     @objc func reachabilityChanged(note: Notification) {
         if let reachability = note.object as? Reachability {
             Log.d(reachability.connection.description)
+            DispatchQueue.main.delay(3) {
+                switch reachability.connection {
+                case .none:
+                    HUD.showText("无网络")
+                case .unavailable:
+                    HUD.showText("网络无法连接")
+                case .wifi:
+                    HUD.showText("您当前处于WiFi网络，请放心使用")
+                case .cellular:
+                    HUD.showText("您当前处于蜂窝网络，请注意使用")
+                }
+            }
         }
     }
 
