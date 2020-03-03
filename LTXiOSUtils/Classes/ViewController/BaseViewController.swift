@@ -11,6 +11,11 @@ open class BaseViewController: UIViewController {
 
     /// 状态栏高度
     public private(set) var statusBarHeight: CGFloat?
+    /// 导航栏高度
+    public private(set) var navigationBarHeight: CGFloat?
+    /// tabBar高度
+    public private(set) var tabBarHeight: CGFloat?
+
     /// 标题
     public var titleInfo = ""
 
@@ -26,12 +31,14 @@ open class BaseViewController: UIViewController {
         } else if currentTitleInfo.isNotEmpty {
             title = currentTitleInfo
         }
-        setupData()
+        setupBarHeightData()
         hideKeyboardWhenTappedAround()
     }
 
-    open func setupData() {
-        statusBarHeight = self.navigationController?.navigationBar.frame.height
+    open func setupBarHeightData() {
+        statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+        navigationBarHeight = navigationController?.navigationBar.frame.height
+        tabBarHeight = tabBarController?.tabBar.frame.size.height
     }
 
 }
