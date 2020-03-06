@@ -68,7 +68,7 @@
         "LTXiOSUtils/Component": [
 
         ],
-        "Alamofire": [
+        "ReachabilitySwift": [
 
         ],
         "Moya": [
@@ -117,6 +117,9 @@
 
         ],
         "SnapKit": [
+
+        ],
+        "MJRefresh": [
 
         ]
       },

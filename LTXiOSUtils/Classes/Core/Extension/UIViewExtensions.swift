@@ -72,7 +72,7 @@ public extension UIView {
 
     /// 移除所有子视图
     func removeAllChildView() {
-        _ = self.subviews.map {
+        self.subviews.forEach {
             $0.removeFromSuperview()
         }
     }

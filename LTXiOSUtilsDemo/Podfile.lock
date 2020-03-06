@@ -30,17 +30,19 @@ PODS:
   - LTXiOSUtils/Core/Util (0.0.1):
     - LTXiOSUtils/Core/Extension
   - LTXiOSUtils/Network (0.0.1):
-    - Alamofire
     - LTXiOSUtils/Component
     - LTXiOSUtils/Core/Extension
     - Moya
+    - ReachabilitySwift
     - SwiftyJSON
   - LTXiOSUtils/Resources (0.0.1):
     - Localize-Swift
   - LTXiOSUtils/ViewController (0.0.1):
     - LTXiOSUtils/Core/Extension
+    - MJRefresh
     - SnapKit
   - MBProgressHUD (1.1.0)
+  - MJRefresh (3.3.1)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -126,6 +128,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - KeychainAccess
     - Kingfisher
+    - MJRefresh
     - ObjectMapper
     - PluggableAppDelegate
     - R.swift
@@ -164,8 +167,9 @@ SPEC CHECKSUMS:
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
-  LTXiOSUtils: bafdbedf5e508781493d5f05ad9c76c3d803ce71
+  LTXiOSUtils: 7d7d028e952ef431834c5193aba77f5c312334ce
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   PluggableAppDelegate: 94c85bf821d85661c843a86e1aafe0cc12a62634
@@ -187,6 +191,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 6a3a7cdf03be34a2a44e9d33e287cc9bfcd2e66f
+PODFILE CHECKSUM: 28cd8009b0538b2d0a20ba89dcb66e4452500b36
 
 COCOAPODS: 1.8.4
