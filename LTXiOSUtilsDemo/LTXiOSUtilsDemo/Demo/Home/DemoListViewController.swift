@@ -23,7 +23,7 @@ class DemoListViewController: BaseGroupTableMenuViewController {
         vProperty.popupCustomAlignment = .topRight
         vProperty.popupAnimationType = .scale
         vProperty.maskViewColor = .clear
-        vProperty.popupViewEdgeInsets = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 8)
+        vProperty.popupViewEdgeInsets = UIEdgeInsets(top: self.statusBarHeight! + self.navigationBarHeight!, left: 0, bottom: 0, right: 6)
         vProperty.topBottomMargin = 0
         vProperty.animationDuration = 0.3
         vProperty.popupArrowStyle = .round
@@ -39,7 +39,6 @@ class DemoListViewController: BaseGroupTableMenuViewController {
         let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images as? [UIImage], property: vProperty, itemBlock: { (_, index, _) in
             Log.d("Menu：点击了第\(index)个按钮")
         })
-//        menuView.attachedView = self.baseView
         return menuView
     }()
 

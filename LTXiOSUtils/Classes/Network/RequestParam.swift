@@ -29,6 +29,11 @@ public class RequestParam {
     public var header: [String: String]?
     /// 上传文件数组
     public var fileList: [FileInfo]?
+    /// 是否忽略错误
+    /// 如果忽略错误，则retryCount重试机制不再生效
+    public var ignoreError: Bool = false
+    /// 重试次数，大于0时进行重试
+    public var retryCount: Int = 0
 
     /// 构造函数
     public init(baseUrl: String, path: String) {

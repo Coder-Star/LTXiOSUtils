@@ -51,7 +51,7 @@ final class NetworkStateApplicationService: NSObject,ApplicationService {
             DispatchQueue.main.delay(3) {
                 switch reachability.connection {
                 case .none:
-                    HUD.showText("无网络")
+                    HUD.showText("网络无法连接")
                 case .unavailable:
                     HUD.showText("网络无法连接")
                 case .wifi:

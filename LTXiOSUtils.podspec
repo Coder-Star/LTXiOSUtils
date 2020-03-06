@@ -13,8 +13,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.swift_version = ["5","4.2"]
 
-  #  s.dependency 'MJRefresh','3.3.1'  # 下拉刷新、下拉加载，OC库
-
   # 核心类，其他子组件依赖该子组件
   s.subspec 'Core' do |core|
     # 核心作用域
@@ -40,8 +38,8 @@ Pod::Spec.new do |s|
   s.subspec 'Network' do |network|
     network.dependency 'LTXiOSUtils/Core/Extension'
     network.dependency 'LTXiOSUtils/Component'
-    network.dependency 'Alamofire'  # 网络请求
-    network.dependency 'Moya' # 网络抽象层
+    network.dependency 'ReachabilitySwift'  # 网络监听
+    network.dependency 'Moya' # 网络抽象层，其依赖了Alamofire和Result
     network.dependency 'SwiftyJSON' # 处理JSON
     network.source_files = 'LTXiOSUtils/Classes/Network/*.swift'
   end
@@ -66,6 +64,7 @@ Pod::Spec.new do |s|
   s.subspec 'ViewController' do |viewController|
     viewController.dependency 'LTXiOSUtils/Core/Extension'
     viewController.dependency 'SnapKit' # 自动布局
+    viewController.dependency 'MJRefresh' # 下拉刷新、下拉加载，OC库
     viewController.source_files = 'LTXiOSUtils/Classes/ViewController/**/*.swift'
   end
 

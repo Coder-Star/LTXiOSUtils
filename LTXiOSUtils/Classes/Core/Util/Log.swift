@@ -82,9 +82,10 @@ public struct Log {
 private extension Log {
 
     private static func printLog<T>(_ log: T, file: String, function: String, line: Int, level: LogLevel) {
-        let fileExtension = file.ns.lastPathComponent.ns.pathExtension
-        let filename = file.ns.lastPathComponent.ns.deletingPathExtension
-        let informationPart = "\(filename).\(fileExtension):\(line) \(function):"
+        let fileExtension = file.ns.lastPathComponent.ns.pathExtension //文件名称
+        let filename = file.ns.lastPathComponent.ns.deletingPathExtension //文件扩展名
+        let time = Date().formatDate(format: .YMDHMS)
+        let informationPart = "\(time)-\(filename).\(fileExtension):\(line) \(function):"
         print("\(formatLog(informationPart, level: nil))", terminator: "") //文件、行号等信息
         print("\(formatLog(log, level: level))\n", terminator: "") // 具体日志
     }
