@@ -24,7 +24,6 @@ public extension UIViewController {
         return base
     }
 
-
     /// 删除所有子ViewController
     func removeAllChildren() {
         self.children.forEach {
