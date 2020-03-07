@@ -227,7 +227,6 @@ public class WRNavigationBar {
         static var defShadowImageHidden: Bool = false
     }
 
-
     // Calculate the middle Color with translation percent
     fileprivate class func middleColor(fromColor: UIColor, toColor: UIColor, percent: CGFloat) -> UIColor {
         // get current color RGBA
@@ -783,7 +782,6 @@ extension UINavigationController: UINavigationBarDelegate {
 }
 
 extension WRNavigationBar {
-    
     class func isIphoneX() -> Bool {
         return UIScreen.main.bounds.size.height >= 812 && UIScreen.main.bounds.size.width >= 375
     }

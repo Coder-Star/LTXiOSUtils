@@ -49,7 +49,7 @@ public class RequestParam {
     }
 
     /// 打印信息
-    func printInfo() {
+    public func printInfo() {
         Log.d("url: \(self.baseUrl + self.path)")
         Log.d("parameters: \(self.parameters)")
         Log.d("method: \(self.method)")

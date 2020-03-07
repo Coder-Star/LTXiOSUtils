@@ -140,6 +140,12 @@ public extension String {
         return regex.evaluate(with: self)
     }
 
+    /// 是否http链接(包含https)
+    var isNetworkUrl: Bool {
+        guard let url = URL(string: self) else { return false }
+        return url.scheme == "https" || url.scheme == "http"
+    }
+
 }
 
 // MARK: - 转为其他类型

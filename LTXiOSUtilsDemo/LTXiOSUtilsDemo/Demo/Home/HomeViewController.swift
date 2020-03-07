@@ -10,6 +10,7 @@ import Foundation
 import LTXiOSUtils
 import FSPagerView
 import Kingfisher
+import SafariServices
 
 class HomeViewController: BaseUIScrollViewController {
 
@@ -131,6 +132,8 @@ extension HomeViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
     private func getPagerViewData() {
         let requestParam = RequestParam(baseUrl: NetworkConstant.appUrl, path: NetworkConstant.bannerUrl)
+        requestParam.hud.isShow = false
+        requestParam.ignoreError = true
         requestParam.method = .get
         NetworkManager.sendRequest(requestParam: requestParam) { data in
             self.pagerViewImageListData = data["imageList"]
@@ -158,9 +161,11 @@ extension HomeViewController: FSPagerViewDataSource, FSPagerViewDelegate {
     }
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         Log.d(pagerViewImageListData[index]["actionUrl"])
-        let viewController = ProgressWebViewController()
-        viewController.url = URL(string: pagerViewImageListData[index]["actionUrl"].stringValue)
-        navigationController?.pushViewController(viewController, animated: true)
+        guard let url = URL(string: pagerViewImageListData[index]["actionUrl"].stringValue) else {
+            return
+        }
+        let viewController = SFSafariViewController(url: url)
+        present(viewController, animated: true, completion: nil)
     }
 
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
