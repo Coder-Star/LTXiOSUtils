@@ -31,6 +31,18 @@ public extension UIViewController {
         }
     }
 
+    /// dimiss所有的presentedViewController
+    /// - Parameters:
+    ///   - animated: 是否显示动画
+    ///   - completion: 完成dismiss闭包回调
+    func dismissToRootViewController(animated: Bool = true, completion: (() -> Void)? = nil) {
+        var tempPresentingViewController = self
+        while let viewController  = self.presentingViewController {
+            tempPresentingViewController = viewController
+        }
+        tempPresentingViewController.dismiss(animated: animated, completion: completion)
+    }
+
 }
 
 public extension UIViewController {
@@ -46,37 +58,106 @@ public extension UIViewController {
         }
     }
 
-    /// 提示框
+    /// 生成提示框，一个按钮回调
     /// - Parameters:
+    ///   - style: 样式
     ///   - title: 标题
-    ///   - message: 内容
-    ///   - cancel: 按钮
-    func showAlert(title: String = "", message: String, cancel: String = "好的") {
+    ///   - message: 消息
+    ///   - cancelTitle: 按钮标题
+    ///   - sureBlock: 按钮闭包
+    func getAlert(style: UIAlertController.Style = .alert,
+                  title: String = "",
+                  message: String,
+                  cancelTitle: String = "好的",
+                  sureBlock: (() -> Void)? = nil) -> UIAlertController? {
+
+        if title.isEmpty, message.isEmpty {
+            return nil
+        }
+        if cancelTitle.isEmpty {
+            return nil
+        }
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: cancel, style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { _ in
+            sureBlock?()
+        }
         alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
+        return alertController
     }
 
-    /// 带回调功能的提示框
+    /// 显示提示框，一个按钮回调
+    /// - Parameters:
+    ///   - style: 样式
+    ///   - title: 标题
+    ///   - message: 消息
+    ///   - cancelTitle: 按钮标题
+    ///   - sureBlock: 按钮闭包
+    func showAlert(style: UIAlertController.Style = .alert,
+                   title: String = "",
+                   message: String,
+                   cancelTitle: String = "好的",
+                   sureBlock: (() -> Void)? = nil) {
+
+        if let alertController = getAlert(style: style, title: title, message: message, cancelTitle: cancelTitle, sureBlock: sureBlock) {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+    /// 生成提示框，两个按钮回调
     /// - Parameters:
     ///   - style: 样式
     ///   - title: 标题
     ///   - message: 内容
     ///   - sureTitle: 确定按钮标题
-    ///   - cancelTitle: 取消按钮标题，如为空则不显示
+    ///   - cancelTitle: 取消按钮
     ///   - sureBlock: 确定按钮闭包回调
-    func showAlertWithCallBack(style: UIAlertController.Style = .alert, title: String = "", message: String, sureTitle: String = "确定", cancelTitle: String = "取消", sureBlock: @escaping () -> Void) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
-        let okAciton = UIAlertAction(title: sureTitle, style: .default, handler: {_ in
-            sureBlock()
-        })
-        if !cancelTitle.isEmpty {
-            let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel, handler: nil)
-            alertController.addAction(cancelAction)
+    ///   - cancelBlock: 取消按钮闭包回调
+    func getAlert(style: UIAlertController.Style = .alert,
+                  title: String = "",
+                  message: String,
+                  sureTitle: String = "确定",
+                  cancelTitle: String = "取消",
+                  cancelBlock: (() -> Void)? = nil,
+                  sureBlock: @escaping () -> Void) -> UIAlertController? {
+
+        if title.isEmpty, message.isEmpty {
+            return nil
         }
-        alertController.addAction(okAciton)
-        self.present(alertController, animated: true, completion: nil)
+        if sureTitle.isEmpty || cancelTitle.isEmpty {
+            return nil
+        }
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        let sureAciton = UIAlertAction(title: sureTitle, style: .destructive) { _ in
+            sureBlock()
+        }
+        let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { _ in
+            cancelBlock?()
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(sureAciton)
+        return alertController
+    }
+
+    /// 显示提示框，两个按钮回调
+    /// - Parameters:
+    ///   - style: 样式
+    ///   - title: 标题
+    ///   - message: 内容
+    ///   - sureTitle: 确定按钮标题
+    ///   - cancelTitle: 取消按钮
+    ///   - sureBlock: 确定按钮闭包回调
+    ///   - cancelBlock: 取消按钮闭包回调
+    func showAlert(style: UIAlertController.Style = .alert,
+                   title: String = "",
+                   message: String,
+                   sureTitle: String = "确定",
+                   cancelTitle: String = "取消",
+                   cancelBlock: (() -> Void)? = nil,
+                   sureBlock: @escaping () -> Void) {
+
+        if let alertController = getAlert(style: style, title: title, message: message, sureTitle: sureTitle, cancelTitle: cancelTitle, cancelBlock: cancelBlock, sureBlock: sureBlock) {
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }
 

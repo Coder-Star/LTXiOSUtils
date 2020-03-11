@@ -40,9 +40,9 @@ public protocol MaskPopupViewAnimationProtocol: AnyObject {
 
 /// 蒙板类型
 public enum MaskPopupViewBackgroundStyle {
-    /// - solidColor: 灰色
+    /// - solidColor: 纯色
     case solidColor
-    /// - blur: 叠加色
+    /// - blur: 毛玻璃
     case blur
 }
 
@@ -211,7 +211,7 @@ public class MaskBackgroundView: UIControl {
             backgroundColor = color
         }
     }
-    var effectView: UIVisualEffectView?
+    var effectView: UIVisualEffectView? //毛玻璃效果
 
     public override init(frame: CGRect) {
         super.init(frame: frame)

@@ -38,6 +38,7 @@ target 'LTXiOSUtilsDemo' do
   pod 'Kingfisher','5.12.0' # 图片预览
 
   #工具类
+  pod 'ObjectMapper', '3.5.1' #model与json互转
   pod 'SwiftyUserDefaults','4.0.0' # UserDefaults存储
   pod 'SwifterSwift','5.1.0' # Swift相关扩展
   pod 'IQKeyboardManagerSwift','6.5.4' # 键盘控制
@@ -54,8 +55,8 @@ target 'LTXiOSUtilsDemo' do
 
   #UI组件等
   pod 'FSPagerView','0.8.3' #轮播组件
-  pod 'ObjectMapper', '3.5.1' #model与json互转
   pod 'XHLaunchAd', '3.9.11' #广告页
+#  pod 'Onboard','2.3.3' #引导页
 
   #Rx
   pod 'RxCocoa','5.0.1' # RxSwift是通用RxAPI的实现，并不涉及任何任何 Cocoa 或 UIKit 类，RxCocoa依赖RxSwift
