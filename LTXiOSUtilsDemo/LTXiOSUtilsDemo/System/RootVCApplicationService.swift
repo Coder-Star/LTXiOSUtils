@@ -12,12 +12,30 @@ import XHLaunchAd
 import LTXiOSUtils
 
 final class RootVCApplicationService: NSObject,ApplicationService {
+
+    private let showAd = false //是否启用广告
+    let showGuide = false //是否启用引导页
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+
+        window?.makeKeyAndVisible()
+
+        if showAd {
+            setLaunchAd()
+        }
+
+        if !showGuide {
+            setNormalRootViewController()
+        } else {
+
+        }
+
+        return true
+    }
+
+    private func setNormalRootViewController() {
         let rootViewController = HomeTabBarController()
         window?.rootViewController = rootViewController
-        window?.makeKeyAndVisible()
-//        setLaunchAd()
-        return true
     }
 }
 
@@ -59,5 +77,12 @@ extension RootVCApplicationService: XHLaunchAdDelegate {
     func xhLaunchAd(_ launchAd: XHLaunchAd, clickAtOpenModel openModel: Any, click clickPoint: CGPoint) -> Bool {
         Log.d(openModel)
         return true
+    }
+}
+
+extension RootVCApplicationService {
+    func go() {
+        setNormalRootViewController()
+        Log.d(showAd)
     }
 }
