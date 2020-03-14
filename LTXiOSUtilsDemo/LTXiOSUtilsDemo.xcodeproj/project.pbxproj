@@ -35,6 +35,7 @@
 		DC83E7CF23F645E10030A9B4 /* FWCustomPopupDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7CA23F645E00030A9B4 /* FWCustomPopupDemoVC.swift */; };
 		DC83E7D023F645E10030A9B4 /* FWDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7CB23F645E00030A9B4 /* FWDemoViewController.swift */; };
 		DCA407882406AC0500F62769 /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA407872406AC0500F62769 /* WRCustomNavigationBar.swift */; };
+		DCAAD857241A51C8009622DD /* AutoLabelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAD856241A51C8009622DD /* AutoLabelsModel.swift */; };
 		DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */; };
 		DCB1C04723C4B41500D735BD /* ExtensionExampleMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04623C4B41500D735BD /* ExtensionExampleMenuViewController.swift */; };
 		DCB1C05023C5821F00D735BD /* ArrayExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04F23C5821F00D735BD /* ArrayExtensionTest.swift */; };
@@ -118,6 +119,7 @@
 		DCA4077A24066C3500F62769 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		DCA4077C24066CC300F62769 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA407872406AC0500F62769 /* WRCustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCustomNavigationBar.swift; sourceTree = "<group>"; };
+		DCAAD856241A51C8009622DD /* AutoLabelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLabelsModel.swift; sourceTree = "<group>"; };
 		DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensionExampleViewController.swift; sourceTree = "<group>"; };
 		DCB1C04623C4B41500D735BD /* ExtensionExampleMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionExampleMenuViewController.swift; sourceTree = "<group>"; };
 		DCB1C04F23C5821F00D735BD /* ArrayExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTest.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				DC03AE5123F433A3007739DD /* AdModel.swift */,
+				DCAAD856241A51C8009622DD /* AutoLabelsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 		DC1AD83523E84D400073CB97 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				DCF6F54623BCC87500AC4850 /* ViewFactory.swift */,
 				DCA407872406AC0500F62769 /* WRCustomNavigationBar.swift */,
 				DC1AD83623E84D520073CB97 /* ResourceUtils.swift */,
 			);
@@ -266,7 +270,6 @@
 				DCC76E4823A782C40029590C /* Demo */,
 				DC4AB9C822F4606100A5F003 /* Info.plist */,
 				DC32F1A323840A3E008D3D67 /* R.generated.swift */,
-				DCF6F54623BCC87500AC4850 /* ViewFactory.swift */,
 			);
 			path = LTXiOSUtilsDemo;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */,
 				DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */,
 				DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */,
+				DCAAD857241A51C8009622DD /* AutoLabelsModel.swift in Sources */,
 				DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */,
 				DCA407882406AC0500F62769 /* WRCustomNavigationBar.swift in Sources */,
 				DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */,

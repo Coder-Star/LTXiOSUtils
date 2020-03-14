@@ -158,6 +158,7 @@ extension RollingNoticeView {
         if willShowIndex > count - 1 {
             willShowIndex = 0
         }
+        // 及时刷新页面，避免不显示子view
         self.layoutIfNeeded()
         let w = self.frame.size.width
         let h = self.frame.size.height
