@@ -58,9 +58,9 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         }
 
         let textView = ViewFactory.getTextView()
-        textView.text = "这是内容"
+//        textView.text = "这是内容"
         textView.placeholder = "请输入信息，这是UITextView的扩展"
-        textView.limitLength = 10
+        textView.limitLength = 100
 //        textView.limitLines = 1
         contentView.addSubview(textView)
         textView.snp.makeConstraints { make in
@@ -130,7 +130,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         growingTextView.layer.cornerRadius = 5
         growingTextView.needLayoutView = contentView
         contentView.addSubview(growingTextView)
-        growingTextView.minHeight = 50
+        growingTextView.minHeight = 100
         growingTextView.maxHeight = 200
         growingTextView.placeholder = "请输入信息"
         growingTextView.limitLength = 20
