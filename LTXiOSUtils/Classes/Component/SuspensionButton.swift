@@ -27,7 +27,7 @@ open class SuspensionButton: UIView {
 
 public extension SuspensionButton {
     func show() {
-
+        
     }
 
     func hide() {

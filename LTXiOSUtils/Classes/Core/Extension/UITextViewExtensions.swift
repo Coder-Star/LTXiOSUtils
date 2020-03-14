@@ -196,6 +196,8 @@ extension UITextView {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
+        Log.d(self.textContainerInset)
+        Log.d(self.textContainer.lineFragmentPadding)
         let placeholderLabelLeftAndRightMargin: CGFloat = 7
         if limitLength > 0 && wordCountLabel != nil {
             wordCountLabel!.frame = CGRect(x: 0, y: frame.height - 20 + contentOffset.y, width: frame.width - 10, height: 20)

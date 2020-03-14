@@ -31,15 +31,21 @@ public class CommonLabel: UILabel {
         }
     }
 
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-        setCopy()
-        addTextObserver()
+    override public var attributedText: NSAttributedString? {
+        didSet {
+            setEvent()
+        }
     }
 
-    private func setupView() {
+    override public var text: String? {
+        didSet {
+            setEvent()
+        }
+    }
 
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setCopy()
     }
 
     public override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
@@ -61,20 +67,23 @@ public class CommonLabel: UILabel {
     }
 
     private func setCopy() {
+        let menu = UIMenuController.shared
         if canCopy {
             self.addLongPressGesture { _ in
                 self.becomeFirstResponder()
                 let copyItem = UIMenuItem(title: "复制", action: #selector(self.customCopy(_:)))
-                let menu = UIMenuController.shared
                 menu.menuItems = [copyItem]
                 if menu.isMenuVisible {
                     return
                 }
                 if let superV = self.superview {
-                    menu.setTargetRect(self.frame, in: superV)
+                    let size = self.sizeThatFits(.zero)
+                    menu.setTargetRect(CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: size.width, height: size.height), in: superV)
                 }
                 menu.setMenuVisible(true, animated: true)
             }
+        } else {
+            menu.setMenuVisible(false, animated: true)
         }
     }
 
@@ -89,17 +98,6 @@ public class CommonLabel: UILabel {
 
 extension CommonLabel {
 
-    private func addTextObserver() {
-        let observingKeys = ["attributedText","text"]
-        for key in observingKeys {
-            self.addObserver(self, forKeyPath: key, options: .new, context: nil)
-        }
-    }
-
-    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        setEvent()
-    }
-
     @objc
     private func setEvent() {
         guard let str = self.text else {
@@ -111,25 +109,31 @@ extension CommonLabel {
             case .mobile:
                 if str.isMobile {
                     self.textColor = checkType[type]
-                    self.addTapGesture { _ in
-                        self.click(type: type, str: str)
-                    }
+                    setTapGesture(type: type, str: str)
                 }
             case .email:
                 if str.isEmail {
                     self.textColor = checkType[type]
-                    self.addTapGesture { _ in
-                        self.click(type: type, str: str)
-                    }
+                    setTapGesture(type: type, str: str)
                 }
             case .networkUrl:
                 if str.isNetworkUrl {
                     self.textColor = checkType[type]
-                    self.addTapGesture { _ in
-                        self.click(type: type, str: str)
-                    }
+                    setTapGesture(type: type, str: str)
                 }
             }
+        }
+    }
+
+    private func setTapGesture(type: CommonLabelUrlType, str: String) {
+        /// 使点击手势只在点击文字时生效
+        self.addTapGesture { tap in
+            let size = self.sizeThatFits(.zero)
+            let tapPoint = tap.location(in: self)
+            if tapPoint.x > size.width || tapPoint.y > size.height {
+                return
+            }
+            self.click(type: type, str: str)
         }
     }
 
@@ -145,8 +149,6 @@ extension CommonLabel {
         }
         if let url = URL(string: result), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            HUD.showText("链接打开失败")
         }
     }
 }

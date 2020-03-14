@@ -111,10 +111,37 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalTo(rollView)
         }
-//        rollView.layoutIfNeeded() //防止子view显示不出来
+
         rollView.reloadDataAndStartRoll()
 
-        rollView.snp.makeConstraints { make in
+        titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.text = "变TextView"
+        contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.top.equalTo(rollView.snp.bottom).offset(10)
+            make.width.equalTo(leftWidth)
+        }
+
+        let growingTextView = GrowingTextView()
+        growingTextView.layer.borderColor = UIColor(hexString: "#cdcdcd").cgColor
+        growingTextView.layer.borderWidth = 0.5
+        growingTextView.layer.cornerRadius = 5
+        growingTextView.needLayoutView = contentView
+        contentView.addSubview(growingTextView)
+        growingTextView.minHeight = 50
+        growingTextView.maxHeight = 200
+        growingTextView.placeholder = "请输入信息"
+        growingTextView.limitLength = 20
+        growingTextView.font = UIFont.systemFont(ofSize: 17)
+        growingTextView.snp.makeConstraints { make in
+            make.left.equalTo(titleLabel.snp.right).offset(5)
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalTo(titleLabel)
+        }
+
+        growingTextView.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
         }
     }
