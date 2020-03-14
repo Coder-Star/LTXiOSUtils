@@ -122,6 +122,9 @@ extension UITextView {
         }
     }
 
+    /// 字数限制label高度
+    private static let wordCountLabelHeight: CGFloat = 20
+
     private func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
         let observingKeys = ["attributedText","text"]
@@ -155,9 +158,10 @@ extension UITextView {
         if self.text.count > limitLength {
             self.text = (self.text as NSString).substring(to: limitLength)
         }
+        wordCountLabel?.backgroundColor = self.backgroundColor
         wordCountLabel?.text = "\(self.text.count)/\(limitLength)"
         addSubview(wordCountLabel!)
-        self.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        self.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: UITextView.wordCountLabelHeight + self.textContainerInset.bottom, right: 0)
     }
 
     @objc
@@ -190,22 +194,27 @@ extension UITextView {
     private func getStringPlaceSize(_ string: String, textFont: UIFont) -> CGSize {
         let attribute = [NSAttributedString.Key.font: textFont]
         let options = NSStringDrawingOptions.usesLineFragmentOrigin
-        let size = string.boundingRect(with: CGSize(width: self.contentSize.width-10, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: attribute, context: nil).size
+        let size = string.boundingRect(with: CGSize(width: self.contentSize.width - self.textContainer.lineFragmentPadding * 2, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: attribute, context: nil).size
         return size
     }
 
     override open func layoutSubviews() {
         super.layoutSubviews()
-        Log.d(self.textContainerInset)
-        Log.d(self.textContainer.lineFragmentPadding)
-        let placeholderLabelLeftAndRightMargin: CGFloat = 7
-        if limitLength > 0 && wordCountLabel != nil {
-            wordCountLabel!.frame = CGRect(x: 0, y: frame.height - 20 + contentOffset.y, width: frame.width - 10, height: 20)
+
+        if limitLength > 0, wordCountLabel != nil {
+            wordCountLabel!.frame = CGRect(x: 0,
+                                           y: frame.height - UITextView.wordCountLabelHeight + contentOffset.y,
+                                           width: frame.width - self.textContainer.lineFragmentPadding,
+                                           height: UITextView.wordCountLabelHeight)
         }
+
         if placeholder.isNotEmpty && placeholderLabel != nil {
-            let width = frame.width - placeholderLabelLeftAndRightMargin * 2
+            let width = frame.width - self.textContainer.lineFragmentPadding * 2
             let size = placeholderLabel!.sizeThatFits(CGSize(width: width, height: .zero))
-            placeholderLabel!.frame = CGRect(x: placeholderLabelLeftAndRightMargin, y: 8, width: size.width, height: size.height)
+            placeholderLabel!.frame = CGRect(x: self.textContainer.lineFragmentPadding,
+                                             y: self.textContainerInset.top,
+                                             width: size.width,
+                                             height: size.height)
         }
     }
 }
