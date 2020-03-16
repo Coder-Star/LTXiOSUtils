@@ -10,9 +10,9 @@ import Foundation
 
 class HUDDemoViewController: BaseGroupTableMenuViewController {
 
-    var hud:HUD?
-    var timer:Timer?
-    var progresss:Float = 0
+    var hud: HUD?
+    var timer: Timer?
+    var progresss: Float = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()

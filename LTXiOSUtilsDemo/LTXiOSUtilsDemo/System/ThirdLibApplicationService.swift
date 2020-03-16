@@ -11,9 +11,9 @@ import PluggableAppDelegate
 import IQKeyboardManagerSwift
 import GDPerformanceView_Swift
 
-final class ThirdLibApplicationService: NSObject,ApplicationService {
+final class ThirdLibApplicationService: NSObject, ApplicationService {
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         initThirdLib()
         return true
     }

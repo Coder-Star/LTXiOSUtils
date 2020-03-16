@@ -10,11 +10,11 @@ import Foundation
 import PluggableAppDelegate
 import Reachability
 
-final class NetworkStateApplicationService: NSObject,ApplicationService {
+final class NetworkStateApplicationService: NSObject, ApplicationService {
 
     var reachability: Reachability? //需要定义成全局属性，因为这个属性需要在应用周期内存活
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
         do {
             reachability = try? Reachability()

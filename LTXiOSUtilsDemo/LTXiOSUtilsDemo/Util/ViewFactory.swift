@@ -22,7 +22,7 @@ public extension ViewFactory {
 
     /// 获取普通按钮
     /// - Parameter title: 标题
-    class func getButton(_ title :String) -> UIButton {
+    class func getButton(_ title: String) -> UIButton {
         let normalUIButton = UIButton()
         normalUIButton.setTitle(title, for: .normal)
         normalUIButton.titleLabel?.textAlignment = .center
@@ -57,5 +57,5 @@ public extension ViewFactory {
 }
 
 extension ViewFactory {
-    
+
 }

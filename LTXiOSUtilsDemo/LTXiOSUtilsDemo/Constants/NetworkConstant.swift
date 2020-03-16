@@ -26,8 +26,8 @@ public class NetworkConstant {
         }
     }
 
-    static let OaUrl:String = NetworkConstant.oaUrlInfo
-    static let ErUrl:String =  NetworkConstant.erUrlInfo
+    static let OaUrl: String = NetworkConstant.oaUrlInfo
+    static let ErUrl: String =  NetworkConstant.erUrlInfo
 
     struct OA {
         static let loginUrl =  "toa/toaMobileLogin_login.json"

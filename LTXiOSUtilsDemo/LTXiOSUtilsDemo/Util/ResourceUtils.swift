@@ -30,15 +30,15 @@ public class ResourceUtils {
         }
         switch type {
         case .plist:
-            if let list = NSArray(contentsOf:fileUrl) {
+            if let list = NSArray(contentsOf: fileUrl) {
                 resultData = JSON(list)
             }
-            if let dictionary = NSDictionary(contentsOf:fileUrl) {
+            if let dictionary = NSDictionary(contentsOf: fileUrl) {
                 resultData = JSON(dictionary)
             }
         case .json:
             do {
-                let data = try Data(contentsOf:fileUrl)
+                let data = try Data(contentsOf: fileUrl)
                 resultData = JSON(data)
             } catch let error {
                 Log.d(error)
