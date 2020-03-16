@@ -22,6 +22,7 @@ final class ThirdLibApplicationService: NSObject,ApplicationService {
         initLogConfig()
 
         IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
 
         PerformanceMonitor.shared().start()
 

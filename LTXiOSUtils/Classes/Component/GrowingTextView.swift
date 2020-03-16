@@ -1,20 +1,13 @@
 //
 //  GrowingTextView.swift
 //  LTXiOSUtils
-//  自动增长textView
+//  高度自适应textView
 //  Created by 李天星 on 2020/3/14.
 //
 
 import Foundation
 import UIKit
 
-@objc
-public protocol GrowingTextViewDelegate: UITextViewDelegate {
-    @objc
-    optional func textViewDidChangeHeight(_ textView: GrowingTextView, height: CGFloat)
-}
-
-@objc
 open class GrowingTextView: UITextView {
 
     override open var text: String! {
@@ -38,12 +31,8 @@ open class GrowingTextView: UITextView {
         didSet { forceLayoutSubviews() }
     }
 
-    /// 高度更新后，需要更新布局的view
-    /// 如果不传入，则需要实现代理去手动更新，代理优先级较高
-    open var needLayoutView: UIView?
-
-    /// 高度变化代理
-    open weak var growingDelegate: GrowingTextViewDelegate?
+    /// 高度变化闭包
+    open var heightChangeCallBack: ((_ height: CGFloat) -> Void)?
 
     private var heightConstraint: NSLayoutConstraint?
     private var oldText: String = ""
@@ -61,7 +50,6 @@ open class GrowingTextView: UITextView {
     }
 
     private func commonInit() {
-        Log.d(font)
         contentMode = .redraw
         associateConstraints()
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextView.textDidChangeNotification, object: self)
@@ -109,12 +97,9 @@ open class GrowingTextView: UITextView {
         if height != heightConstraint!.constant {
             shouldScrollAfterHeightChanged = true
             heightConstraint!.constant = height
-            if let delegate = growingDelegate {
-                delegate.textViewDidChangeHeight?(self, height: height)
-            } else {
-                setNeedsDisplay()
-                needLayoutView?.layoutIfNeeded()
-            }
+            heightChangeCallBack?(height)
+            setNeedsDisplay()
+            self.superview?.layoutIfNeeded()
         } else if shouldScrollAfterHeightChanged {
             shouldScrollAfterHeightChanged = false
             scrollToCorrectPosition()
