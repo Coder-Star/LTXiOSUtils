@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
     # 工具
     core.subspec 'Util' do |util|
       util.frameworks = "UIKit","Foundation"
-      util.dependency 'MBProgressHUD' # 加载框，OC库
+      util.dependency 'MBProgressHUD','1.1.0' # 加载框，OC库
       util.dependency 'LTXiOSUtils/Core/Extension'
       util.source_files = 'LTXiOSUtils/Classes/Core/Util/**/*.swift'
     end
@@ -38,15 +38,15 @@ Pod::Spec.new do |s|
   # 网络请求
   s.subspec 'Network' do |network|
     network.dependency 'LTXiOSUtils/Core'
-    network.dependency 'ReachabilitySwift'  # 网络监听
-    network.dependency 'Moya' # 网络抽象层，其依赖了Alamofire和Result
-    network.dependency 'SwiftyJSON' # 处理JSON
+    network.dependency 'ReachabilitySwift','5.0.0'  # 网络监听
+    network.dependency 'Moya','14.0.0' # 网络抽象层，其依赖了Alamofire和Result
+    network.dependency 'SwiftyJSON','5.0.0' # 处理JSON
     network.source_files = 'LTXiOSUtils/Classes/Network/*.swift'
   end
 
   # 资源
   s.subspec 'Resources' do |resources|
-    resources.dependency 'Localize-Swift' # 管理本地国际化文件
+    resources.dependency 'Localize-Swift','3.1.0' # 管理本地国际化文件
     resources.source_files = 'LTXiOSUtils/Resources/*.swift'
     resources.resource_bundle = { "LTXiOSUtils" => "LTXiOSUtils/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
   end
@@ -55,7 +55,7 @@ Pod::Spec.new do |s|
   s.subspec 'Component' do |component|
     component.dependency 'LTXiOSUtils/Resources'
     component.dependency 'LTXiOSUtils/Core'
-    component.dependency 'SnapKit' # 自动布局
+    component.dependency 'SnapKit','5.0.1' # 自动布局
     component.source_files = 'LTXiOSUtils/Classes/Component/**/*.swift'
   end
 

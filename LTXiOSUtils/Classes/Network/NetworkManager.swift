@@ -148,12 +148,8 @@ public class NetworkManager {
     }
 
     /// 取消所有网络请求
-    public class func cancelAllRequest() {
-        provider.manager.session.getTasksWithCompletionHandler { dataTasks, uploadTasks, downloadTasks in
-            dataTasks.forEach { $0.cancel() }
-            uploadTasks.forEach { $0.cancel() }
-            downloadTasks.forEach { $0.cancel() }
-        }
+    public class func cancelAllRequests() {
+        provider.session.cancelAllRequests()
     }
 
     /// 合并错误
