@@ -13,6 +13,7 @@ target 'LTXiOSUtilsDemo' do
 # 需要use_modular_headers，不再use_frameworks
 
   pod 'LTXiOSUtils',:path => '../' # 基础功能库
+#  pod 'LTXiOSUtils', :git => 'https://github.com/Coder-Star/LTXiOSUtils.git', :tag => '0.0.0' #直接从源代码托管仓库取
 
   # 本地配置
   pod 'R.swift','5.1.0' # 资源映射
