@@ -46,7 +46,7 @@ extension UIViewController {
     }
 
     /// 导航栏透明度
-    public var navBarBackgroundAlpha:CGFloat {
+    public var navBarBackgroundAlpha: CGFloat {
         get {
             guard let barBackgroundAlpha = objc_getAssociatedObject(self, &AssociatedKeys.navBarBackgroundAlpha) as? CGFloat else {
                 return 1.0
@@ -117,7 +117,7 @@ extension UIViewController {
     }
 
     /// 导航栏底部黑线是否隐藏
-    public var navBarShadowImageHidden:Bool {
+    public var navBarShadowImageHidden: Bool {
         get {
             guard let isHidden = objc_getAssociatedObject(self, &AssociatedKeys.navBarShadowImageHidden) as? Bool else {
                 return WRNavigationBar.defaultShadowImageHidden
@@ -260,10 +260,10 @@ public class WRNavigationBar {
 extension UIViewController: WRAwakeProtocol {
     fileprivate struct AssociatedKeys {
         static var pushToCurrentVCFinished: Bool = false
-        static var pushToNextVCFinished:Bool = false
+        static var pushToNextVCFinished: Bool = false
         static var navBarBackgroundImage: UIImage = UIImage()
         static var navBarBarTintColor: UIColor = WRNavigationBar.defaultNavBarBarTintColor
-        static var navBarBackgroundAlpha:CGFloat = 1.0
+        static var navBarBackgroundAlpha: CGFloat = 1.0
         static var navBarTintColor: UIColor = WRNavigationBar.defaultNavBarTintColor
         static var navBarTitleColor: UIColor = WRNavigationBar.defaultNavBarTitleColor
         static var statusBarStyle: UIStatusBarStyle = UIStatusBarStyle.default
@@ -271,7 +271,7 @@ extension UIViewController: WRAwakeProtocol {
         static var customNavBar: UINavigationBar = UINavigationBar()
     }
 
-    fileprivate var pushToCurrentVCFinished:Bool {
+    fileprivate var pushToCurrentVCFinished: Bool {
         get {
             guard let isFinished = objc_getAssociatedObject(self, &AssociatedKeys.pushToCurrentVCFinished) as? Bool else {
                 return false
@@ -283,7 +283,7 @@ extension UIViewController: WRAwakeProtocol {
         }
     }
 
-    private var pushToNextVCFinished:Bool {
+    private var pushToNextVCFinished: Bool {
         get {
             guard let isFinished = objc_getAssociatedObject(self, &AssociatedKeys.pushToNextVCFinished) as? Bool else {
                 return false
@@ -388,13 +388,13 @@ extension UIViewController: WRAwakeProtocol {
     }
 }
 
-extension UINavigationBar:WRAwakeProtocol {
+extension UINavigationBar: WRAwakeProtocol {
     fileprivate struct AssociatedKeys {
         static var backgroundView: UIView = UIView()
         static var backgroundImageView: UIImageView = UIImageView()
     }
 
-    fileprivate var backgroundView:UIView? {
+    fileprivate var backgroundView: UIView? {
         get {
             guard let bgView = objc_getAssociatedObject(self, &AssociatedKeys.backgroundView) as? UIView else {
                 return nil
@@ -406,7 +406,7 @@ extension UINavigationBar:WRAwakeProtocol {
         }
     }
 
-    fileprivate var backgroundImageView:UIImageView? {
+    fileprivate var backgroundImageView: UIImageView? {
         get {
             guard let bgImageView = objc_getAssociatedObject(self, &AssociatedKeys.backgroundImageView) as? UIImageView else {
                 return nil
@@ -418,7 +418,7 @@ extension UINavigationBar:WRAwakeProtocol {
         }
     }
 
-    fileprivate func wr_setBackgroundImage(image:UIImage) {
+    fileprivate func wr_setBackgroundImage(image: UIImage) {
         backgroundView?.removeFromSuperview()
         backgroundView = nil
         if (backgroundImageView == nil) {
@@ -430,7 +430,7 @@ extension UINavigationBar:WRAwakeProtocol {
         backgroundImageView?.image = image
     }
 
-    fileprivate func wr_setBackgroundColor(color:UIColor) {
+    fileprivate func wr_setBackgroundColor(color: UIColor) {
         backgroundImageView?.removeFromSuperview()
         backgroundImageView = nil
         if (backgroundView == nil) {
@@ -442,7 +442,7 @@ extension UINavigationBar:WRAwakeProtocol {
         backgroundView?.backgroundColor = color
     }
 
-    fileprivate func wr_setBackgroundAlpha(alpha:CGFloat) {
+    fileprivate func wr_setBackgroundAlpha(alpha: CGFloat) {
         if let barBackgroundView = subviews.first {
             if #available(iOS 11.0, *) {
                 for view in barBackgroundView.subviews {
@@ -454,7 +454,7 @@ extension UINavigationBar:WRAwakeProtocol {
         }
     }
 
-    func wr_setBarButtonItemsAlpha(alpha:CGFloat, hasSystemBackIndicator:Bool) {
+    func wr_setBarButtonItemsAlpha(alpha: CGFloat, hasSystemBackIndicator: Bool) {
         for view in subviews {
             if (hasSystemBackIndicator == true) {
                 if let UIBarBackgroundClass = NSClassFromString("_UIBarBackground") {
@@ -489,7 +489,7 @@ extension UINavigationBar:WRAwakeProtocol {
     }
 
     /// 设置导航栏在垂直方向上平移多少距离
-    func wr_setTranslationY(translationY:CGFloat) {
+    func wr_setTranslationY(translationY: CGFloat) {
         transform = CGAffineTransform.init(translationX: 0, y: translationY)
     }
 
@@ -516,7 +516,7 @@ extension UINavigationBar:WRAwakeProtocol {
 
     // MARK: swizzling pop
     @objc
-    func wr_setTitleTextAttributes(_ newTitleTextAttributes:[String : Any]?) {
+    func wr_setTitleTextAttributes(_ newTitleTextAttributes: [String: Any]?) {
         guard var attributes = newTitleTextAttributes else {
             return
         }
@@ -526,7 +526,7 @@ extension UINavigationBar:WRAwakeProtocol {
             return
         }
 
-        var titleColor:UIColor?
+        var titleColor: UIColor?
         for attribute in originTitleTextAttributes where attribute.key == NSAttributedString.Key.foregroundColor {
             titleColor = attribute.value as? UIColor
             break
@@ -572,7 +572,7 @@ extension UINavigationController: WRFatherAwakeProtocol {
 
     fileprivate func setNeedsNavigationBarUpdate(titleColor: UIColor) {
         guard let titleTextAttributes = navigationBar.titleTextAttributes else {
-            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:titleColor]
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: titleColor]
             return
         }
 
@@ -622,8 +622,8 @@ extension UINavigationController: WRFatherAwakeProtocol {
     struct PopProperties {
         fileprivate static let popDuration = 0.13
         fileprivate static var displayCount = 0
-        fileprivate static var popProgress:CGFloat {
-            let all:CGFloat = CGFloat(60.0 * popDuration)
+        fileprivate static var popProgress: CGFloat {
+            let all: CGFloat = CGFloat(60.0 * popDuration)
             let current = min(all, CGFloat(displayCount))
             return current / all
         }
@@ -632,7 +632,7 @@ extension UINavigationController: WRFatherAwakeProtocol {
     @objc
     func wr_popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
         setNeedsNavigationBarUpdate(titleColor: viewController.navBarTitleColor)
-        var displayLink:CADisplayLink? = CADisplayLink(target: self, selector: #selector(popNeedDisplay))
+        var displayLink: CADisplayLink? = CADisplayLink(target: self, selector: #selector(popNeedDisplay))
         displayLink?.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         CATransaction.setCompletionBlock {
             displayLink?.invalidate()
@@ -648,7 +648,7 @@ extension UINavigationController: WRFatherAwakeProtocol {
 
     @objc
     func wr_popToRootViewControllerAnimated(_ animated: Bool) -> [UIViewController]? {
-        var displayLink:CADisplayLink? = CADisplayLink(target: self, selector: #selector(popNeedDisplay))
+        var displayLink: CADisplayLink? = CADisplayLink(target: self, selector: #selector(popNeedDisplay))
         displayLink?.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         CATransaction.setCompletionBlock {
             displayLink?.invalidate()
@@ -679,8 +679,8 @@ extension UINavigationController: WRFatherAwakeProtocol {
     struct PushProperties {
         fileprivate static let pushDuration = 0.13
         fileprivate static var displayCount = 0
-        fileprivate static var pushProgress:CGFloat {
-            let all:CGFloat = CGFloat(60.0 * pushDuration)
+        fileprivate static var pushProgress: CGFloat {
+            let all: CGFloat = CGFloat(60.0 * pushDuration)
             let current = min(all, CGFloat(displayCount))
             return current / all
         }
@@ -688,7 +688,7 @@ extension UINavigationController: WRFatherAwakeProtocol {
 
     @objc
     func wr_pushViewController(_ viewController: UIViewController, animated: Bool) {
-        var displayLink:CADisplayLink? = CADisplayLink(target: self, selector: #selector(pushNeedDisplay))
+        var displayLink: CADisplayLink? = CADisplayLink(target: self, selector: #selector(pushNeedDisplay))
         displayLink?.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         CATransaction.setCompletionBlock {
             displayLink?.invalidate()
@@ -816,7 +816,7 @@ class NothingToSeeHere {
 }
 
 extension UIApplication {
-    private static let runOnce:Void = {
+    private static let runOnce: Void = {
         NothingToSeeHere.harmlessFunction()
     }()
 

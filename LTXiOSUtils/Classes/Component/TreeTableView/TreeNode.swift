@@ -52,7 +52,7 @@ public class TreeNode: NSObject {
     var parentNode: TreeNode?
     var childNodes: [TreeNode] = [TreeNode]()
 
-    public init(name: String, filterName: [String], ID: String, parentID: String, sordCode: Int, type: String, isTop: Bool, isLeaf: Bool, data:Any) {
+    public init(name: String, filterName: [String], ID: String, parentID: String, sordCode: Int, type: String, isTop: Bool, isLeaf: Bool, data: Any) {
         self.name = name
         self.filterName = filterName
         self.ID = ID

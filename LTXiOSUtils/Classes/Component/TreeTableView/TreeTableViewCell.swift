@@ -71,9 +71,12 @@ public class TreeTableViewCell: UITableViewCell {
 
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.textLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        self.selectionStyle = .none
-        self.indentationWidth = leftMargin
+        setupView()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
     }
 
     public override func layoutSubviews() {
@@ -89,8 +92,10 @@ public class TreeTableViewCell: UITableViewCell {
         self.textLabel?.frame = textLabelFrame!
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private func setupView() {
+        self.textLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        self.selectionStyle = .none
+        self.indentationWidth = leftMargin
     }
 
 }

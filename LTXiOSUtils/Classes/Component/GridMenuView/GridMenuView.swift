@@ -30,7 +30,7 @@ public protocol GridMenuViewItemDelegate {
 public class GridMenuView: UIView {
     // MARK: - 公开属性
     /// 代理
-    public weak var delegate:GridMenuViewItemDelegate?
+    public weak var delegate: GridMenuViewItemDelegate?
     /// 布局后GridMenuView高度
     public var heightInfo: CGFloat {
         return viewHeight
@@ -69,7 +69,7 @@ public class GridMenuView: UIView {
     /// 页面高度
     private var viewHeight: CGFloat = 0
     /// 模式
-    private var mode:GridMenuViewMode = .horizontalPage
+    private var mode: GridMenuViewMode = .horizontalPage
 
     private override init(frame: CGRect) {
         super.init(frame: frame)
@@ -112,7 +112,7 @@ public class GridMenuView: UIView {
         pageControl.style = pageStyle
         viewWidth = width
         colCount = col
-        rowCount = min(row,Int(ceil(Float(menu.count)/Float((colCount)))))
+        rowCount = min(row, Int(ceil(Float(menu.count)/Float((colCount)))))
         initView()
     }
 
@@ -151,7 +151,7 @@ public class GridMenuView: UIView {
             if realColCount <= colCount {
                 viewHeight = collectionView!.frame.height
             } else {
-                let scrollPageControlViewWidth:CGFloat = 50
+                let scrollPageControlViewWidth: CGFloat = 50
                 scrollPageControlView.frame = CGRect(x: (viewWidth - scrollPageControlViewWidth)/2, y: collectionView!.frame.height + 5, width: scrollPageControlViewWidth, height: 3)
                 self.addSubview(scrollPageControlView)
                 scrollPageControlView.currentIndicatorWidth = colCount.cgFloatValue / realColCount.cgFloatValue * scrollPageControlViewWidth

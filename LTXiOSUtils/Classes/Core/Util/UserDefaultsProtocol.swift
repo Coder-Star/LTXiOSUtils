@@ -41,9 +41,9 @@ public protocol UserDefaultsProtocol {
     var stringValue: String { get }
 
     /// 获取字典值
-    var dictionary: [String:Any]? { get }
+    var dictionary: [String: Any]? { get }
     /// 获取字典值,默认值为空
-    var dictionaryValue: [String:Any] { get }
+    var dictionaryValue: [String: Any] { get }
 
     /// 获取列表值
     var array: [Any]? { get }
@@ -107,12 +107,12 @@ public extension UserDefaultsProtocol {
 
 // MARK: - 存在nil
     /// 获取object
-    var object:Any? {
+    var object: Any? {
         return UserDefaults.standard.object(forKey: key)
     }
 
     /// 获取url
-    var url:URL? {
+    var url: URL? {
         return UserDefaults.standard.url(forKey: key)
     }
 
@@ -127,12 +127,12 @@ public extension UserDefaultsProtocol {
     }
 
     /// 获取字典值
-    var dictionary: [String:Any]? {
+    var dictionary: [String: Any]? {
         return UserDefaults.standard.dictionary(forKey: key)
     }
     /// 获取字典值,默认值为空
-    var dictionaryValue: [String:Any] {
-        return UserDefaults.standard.dictionary(forKey: key) ?? [String:Any]()
+    var dictionaryValue: [String: Any] {
+        return UserDefaults.standard.dictionary(forKey: key) ?? [String: Any]()
     }
 
     /// 获取列表值
@@ -164,22 +164,22 @@ public extension UserDefaultsProtocol {
 
 // MARK: - 不存在nil
     /// 获取Bool值
-    var bool:Bool {
+    var bool: Bool {
         return UserDefaults.standard.bool(forKey: key)
     }
 
     /// 获取Bool值
-    var int:Int {
+    var int: Int {
         return UserDefaults.standard.integer(forKey: key)
     }
 
     /// 获取Bool值
-    var float:Float {
+    var float: Float {
         return UserDefaults.standard.float(forKey: key)
     }
 
     /// 获取Bool值
-    var double:Double {
+    var double: Double {
         return UserDefaults.standard.double(forKey: key)
     }
 

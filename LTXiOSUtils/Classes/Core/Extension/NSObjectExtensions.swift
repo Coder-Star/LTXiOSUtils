@@ -98,7 +98,7 @@ public extension NSObject {
 
     /// 移除监听
     /// - Parameter name: 名称
-    func removeNotification(_ name: NSNotification.Name, object:Any? = nil) {
+    func removeNotification(_ name: NSNotification.Name, object: Any? = nil) {
         NotificationCenter.default.removeObserver(self, name: name, object: object)
         notificationClosuresDict?.removeValue(forKey: name)
     }

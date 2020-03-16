@@ -19,10 +19,10 @@ public enum CommonLabelUrlType {
 
 public class CommonLabel: UILabel {
 
-    public var checkType: [CommonLabelUrlType:UIColor] = [
-        CommonLabelUrlType.mobile:UIColor.blue,
-        CommonLabelUrlType.email:UIColor.blue,
-        CommonLabelUrlType.networkUrl:UIColor.blue
+    public var checkType: [CommonLabelUrlType: UIColor] = [
+        CommonLabelUrlType.mobile: UIColor.blue,
+        CommonLabelUrlType.email: UIColor.blue,
+        CommonLabelUrlType.networkUrl: UIColor.blue
     ]
 
     public var canCopy: Bool = true {
@@ -45,6 +45,11 @@ public class CommonLabel: UILabel {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        setCopy()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setCopy()
     }
 
@@ -85,10 +90,6 @@ public class CommonLabel: UILabel {
         } else {
             menu.setMenuVisible(false, animated: true)
         }
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     deinit {

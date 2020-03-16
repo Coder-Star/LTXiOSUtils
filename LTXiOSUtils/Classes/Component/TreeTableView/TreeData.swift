@@ -15,7 +15,7 @@ public class TreeData {
     /// 节点列表
     private var treeNodes = [TreeNode]()
     /// 节点字典
-    private var nodesMap = [String:TreeNode]()
+    private var nodesMap = [String: TreeNode]()
     /// 顶级父节点
     private var topNodes = [TreeNode]()
     /// 数据层次最大等级
@@ -138,7 +138,7 @@ extension TreeData {
 
     /// 对节点进行排序
     private func sortNode(nodes: [TreeNode]) -> [TreeNode] {
-        return nodes.sorted { (obj1,obj2) -> Bool in
+        return nodes.sorted { (obj1, obj2) -> Bool in
             switch sordType {
             case .asc:
                 return obj1.sordCode < obj2.sordCode
@@ -265,7 +265,7 @@ extension TreeData {
     ///   - node: 节点
     ///   - isCheck: 是否勾选节点
     ///   - isChildNodesCheck: 是否子节点也勾选
-    func checkNode(node: TreeNode, isCheck:Bool, isChildNodesCheck: Bool) {
+    func checkNode(node: TreeNode, isCheck: Bool, isChildNodesCheck: Bool) {
         if node.checkState == .checked && isCheck {
             return
         }
@@ -276,7 +276,7 @@ extension TreeData {
         refreshParentNode(node: node, isChildNodesCheck: isChildNodesCheck)
     }
 
-    func checkChildNodes(node: TreeNode, isCheck:Bool, isChildNodesCheck: Bool) {
+    func checkChildNodes(node: TreeNode, isCheck: Bool, isChildNodesCheck: Bool) {
         node.checkState = isCheck ? TreeNodeCheckState.checked : TreeNodeCheckState.uncheckd
         for childNode in node.childNodes {
             if isChildNodesCheck {
@@ -322,7 +322,7 @@ extension TreeData {
 // MARK: - 筛选,过滤
 extension TreeData {
 
-    func filterFieldAndType(filed: String, type: String, isChildNodeCheck:Bool) {
+    func filterFieldAndType(filed: String, type: String, isChildNodeCheck: Bool) {
         setupTopNodes()
         if !filed.isEmpty {
             /// 将不符合条件的节点去除
@@ -407,7 +407,7 @@ extension TreeData {
         return isContain
     }
 
-    private func isFilterNameContain(filterName: [String], filed:String) -> Bool {
+    private func isFilterNameContain(filterName: [String], filed: String) -> Bool {
         var result = false
         for item in filterName where item.contains(filed) {
             result = true

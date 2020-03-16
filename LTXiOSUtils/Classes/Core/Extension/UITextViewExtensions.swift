@@ -127,13 +127,13 @@ extension UITextView {
 
     private func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
-        let observingKeys = ["attributedText","text"]
+        let observingKeys = ["attributedText", "text"]
         for key in observingKeys {
             self.addObserver(self, forKeyPath: key, options: .new, context: nil)
         }
     }
 
-    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         textChange()
     }
 
@@ -148,7 +148,7 @@ extension UITextView {
         placeholderLabel?.isHidden = self.text.count > 0 ? true : false
     }
 
-    private func initWordCountLabel(_ limitLength : Int) {
+    private func initWordCountLabel(_ limitLength: Int) {
         wordCountLabel?.removeFromSuperview()
         wordCountLabel = UILabel()
         wordCountLabel?.textAlignment = .right

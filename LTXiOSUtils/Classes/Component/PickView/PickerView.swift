@@ -568,7 +568,7 @@ public extension PickerView {
                     defaultIndex = provincesArr.firstIndex(of: tempDefaultSelectedValues[0])
                 }
             }
-            pic = PickerView.singleColPicker(toolBarTitle, singleColData: provincesArr, defaultIndex: defaultIndex, cancelAction: cancelAction) { (index,value) in
+            pic = PickerView.singleColPicker(toolBarTitle, singleColData: provincesArr, defaultIndex: defaultIndex, cancelAction: cancelAction) { (index, value) in
                 doneAction?([index], [value])
             }
         case .city:

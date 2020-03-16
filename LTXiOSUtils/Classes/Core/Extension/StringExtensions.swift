@@ -189,18 +189,18 @@ public extension String {
     }
 
     /// base64编码
-    var base64Encode:String? {
-        let data = self.data(using:.utf8)
+    var base64Encode: String? {
+        let data = self.data(using: .utf8)
         let base64 = data?.base64EncodedString()
         return base64
     }
 
     /// base64解码
-    var base64Decode:String? {
+    var base64Decode: String? {
         guard let data = Data(base64Encoded: self) else {
             return nil
         }
-        let str = String(data: data , encoding: .utf8)
+        let str = String(data: data, encoding: .utf8)
         return str
     }
 }

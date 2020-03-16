@@ -92,7 +92,12 @@ public class TreeTableView: UIView {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        initView(frame: frame)
+        initView()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initView()
     }
 
     public override func layoutSubviews() {
@@ -100,10 +105,10 @@ public class TreeTableView: UIView {
             searchBar = TreeTableViewSearchBar(frame: CGRect(x: 0, y: 0, width: frame.width, height: 40))
             searchBar?.delegate = self
         }
-        tableView.frame = CGRect(x: 0, y: 0, width: frame.width, height:frame.height)
+        tableView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
     }
 
-    private func initView(frame: CGRect) {
+    private func initView() {
         self.addSubview(tableView)
         if isNeedRefresh {
             tableView.addSubview(refreshControl)
@@ -114,9 +119,6 @@ public class TreeTableView: UIView {
         scrollView.endEditing(true)
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
 
 public extension TreeTableView {
@@ -235,7 +237,7 @@ extension TreeTableView: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let node = treeData?.showNodes[indexPath.row]
-        var cell = tableView.dequeueReusableCell(withIdentifier:TreeTableViewCell.description()) as? TreeTableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: TreeTableViewCell.description()) as? TreeTableViewCell
         if cell == nil {
             cell = TreeTableViewCell(style: .default, reuseIdentifier: TreeTableViewCell.description())
         }

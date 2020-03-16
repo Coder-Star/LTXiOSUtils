@@ -8,7 +8,7 @@
 import UIKit
 
 @objc
-public protocol RollingNoticeViewDataSource : NSObjectProtocol {
+public protocol RollingNoticeViewDataSource: NSObjectProtocol {
     func numberOfRowsFor(roolingView: RollingNoticeView) -> Int
     func rollingNoticeView(roolingView: RollingNoticeView, cellAtIndex index: Int) -> RollingNoticeCell
 }
@@ -28,8 +28,8 @@ open class RollingNoticeView: UIView {
     open var rollInterval = 2.0
     open private(set) var currentIndex = 0
 
-    private lazy var cellClsDict: [String : Any] = {
-        let tempDict = [String:Any]()
+    private lazy var cellClsDict: [String: Any] = {
+        let tempDict = [String: Any]()
         return tempDict
     }()
     private lazy var reuseCells: [RollingNoticeCell] = {

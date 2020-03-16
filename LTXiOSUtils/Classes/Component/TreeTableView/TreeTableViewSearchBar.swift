@@ -41,6 +41,15 @@ public class TreeTableViewSearchBar: UIView {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+
+    private func setupView() {
         self.backgroundColor = UIColor(hexString: "#eeeeee")
         self.addSubview(searchTextField)
 
@@ -57,9 +66,6 @@ public class TreeTableViewSearchBar: UIView {
         return button
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
 
 extension TreeTableViewSearchBar: UITextFieldDelegate {

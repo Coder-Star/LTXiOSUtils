@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+open class ImagePickGridView: UIView {
+
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

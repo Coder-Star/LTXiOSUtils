@@ -13,7 +13,7 @@ public extension UILabel {
     /// 主要是为自动布局使用，避免设置值为空时，导致label高度较小
     var content: String? {
         set {
-            if let value = newValue , value.isNotEmpty {
+            if let value = newValue, value.isNotEmpty {
                 self.text = value
             } else {
                 self.text = " "
