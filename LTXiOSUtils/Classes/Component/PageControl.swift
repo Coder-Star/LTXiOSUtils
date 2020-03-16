@@ -57,12 +57,17 @@ open class PageControl: UIView {
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
+    }
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+
+    private func setupView() {
         setCurrentAndNormalSize()
         self.tag = -999
         backgroundColor = UIColor.clear
-    }
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     private func layoutPages() {
@@ -220,7 +225,7 @@ extension PageControl {
             return numberLabel.frame.size
         }
         let frameWidth = currentSize.width + (numberOfPages - 1).cgFloatValue * normalSize.width + (numberOfPages + 1).cgFloatValue * margin
-        let frameHeight = max(currentSize.height , normalSize.height) + 5
+        let frameHeight = max(currentSize.height, normalSize.height) + 5
         return CGSize(width: frameWidth, height: frameHeight)
     }
 }

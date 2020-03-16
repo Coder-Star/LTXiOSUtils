@@ -47,6 +47,15 @@ open class ScrollPageControlView: UIView {
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
+    }
+
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+
+    private func setupView() {
         self.addSubview(currentIndicatorView)
         self.backgroundColor = UIColor(hexString: "#eeeeee")
     }
@@ -60,7 +69,4 @@ open class ScrollPageControlView: UIView {
         self.currentIndicatorView.layer.cornerRadius = self.currentIndicatorView.frame.height / 2
     }
 
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }

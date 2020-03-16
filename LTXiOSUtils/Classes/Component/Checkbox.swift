@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 public class Checkbox: UIControl {
 
     /// 选择框内部选中样式
@@ -23,7 +22,6 @@ public class Checkbox: UIControl {
         case tick
     }
 
-
     /// 选择框边框样式
     public enum BorderStyle {
         /// ▢
@@ -31,7 +29,6 @@ public class Checkbox: UIControl {
         /// ◯
         case circle
     }
-
 
     /// 默认选中样式
     public var checkmarkStyle: CheckmarkStyle = .square
@@ -65,7 +62,6 @@ public class Checkbox: UIControl {
     public var useHapticFeedback: Bool = true
 
     private var feedbackGenerator: UIImpactFeedbackGenerator?
-
 
     public override init(frame: CGRect) {
         super.init(frame: frame)

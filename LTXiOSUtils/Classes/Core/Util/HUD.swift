@@ -40,9 +40,9 @@ open class HUD: MBProgressHUD {
     /// 是否允许点击隐藏
     private var isClickHidden: Bool = false
     /// 显示text 顶部垂直margin
-    public static var topMargin:CGFloat = 92
+    public static var topMargin: CGFloat = 92
     /// 显示text 顶部底部margin
-    public static var bottomMargin:CGFloat = 92
+    public static var bottomMargin: CGFloat = 92
 
     /// 文本内容
     /// - Parameters:

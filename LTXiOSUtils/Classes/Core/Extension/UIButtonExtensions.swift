@@ -193,7 +193,7 @@ public extension UIButton {
     }
     // 响应事件
     @objc
-    private func respondControlEvent(button:UIButton) {
+    private func respondControlEvent(button: UIButton) {
         if let eventRawValue = UInt(button.dataStr) {
             executeControlEvent( UIControl.Event(rawValue: eventRawValue) )
         }

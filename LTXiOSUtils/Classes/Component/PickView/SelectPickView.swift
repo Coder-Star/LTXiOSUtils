@@ -38,7 +38,7 @@ public class SelectPickView: UIView {
     /// tableview高度
     private let tableViewHeight: CGFloat = 216
     /// 总高度
-    private var pickHeight:CGFloat {
+    private var pickHeight: CGFloat {
         return toolBarHeight + tableViewHeight
     }
 
@@ -76,7 +76,7 @@ public class SelectPickView: UIView {
         return pickView
     }()
 
-    private lazy var tableView:UITableView = {
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
@@ -92,18 +92,27 @@ public class SelectPickView: UIView {
         return toolBarView
     }()
 
-    private lazy var normalImage:UIImage? = {
+    private lazy var normalImage: UIImage? = {
         let normalImage = "SelectPickView_select_normal".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
         return normalImage
     }()
 
-    private lazy var selectdImage:UIImage? = {
+    private lazy var selectdImage: UIImage? = {
         let selectdImage = "SelectPickView_select_selected".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
         return selectdImage
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+
+    private func setupView() {
         UIApplication.shared.keyWindow?.addSubview(self)
         self.frame = self.superview?.bounds ?? UIScreen.main.bounds
         self.addSubview(coverView)
@@ -145,9 +154,6 @@ public class SelectPickView: UIView {
         tableView.frame = CGRect(x: 0, y: toolBarHeight, width: screenWidth, height: tableViewHeight)
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
 
 // MARK: - 对外暴露方法
@@ -316,6 +322,10 @@ class SelectPickViewTableCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupView()
+    }
+
+    private func setupView() {
         separatorInset = .zero
         selectionStyle = .none
         self.addSubview(titleLabel)
@@ -325,6 +335,7 @@ class SelectPickViewTableCell: UITableViewCell {
     }
 
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        setupView()
     }
 }
