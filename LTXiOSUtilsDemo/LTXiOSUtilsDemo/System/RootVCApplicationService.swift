@@ -11,12 +11,12 @@ import PluggableAppDelegate
 import XHLaunchAd
 import LTXiOSUtils
 
-final class RootVCApplicationService: NSObject,ApplicationService {
+final class RootVCApplicationService: NSObject, ApplicationService {
 
     private let showAd = false //是否启用广告
     let showGuide = false //是否启用引导页
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
         window?.makeKeyAndVisible()
 

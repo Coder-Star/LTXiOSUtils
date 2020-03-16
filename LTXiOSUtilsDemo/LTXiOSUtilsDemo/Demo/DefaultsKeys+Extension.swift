@@ -10,7 +10,7 @@ import Foundation
 import SwiftyUserDefaults
 
 extension DefaultsKeys {
-    static let launchCount = DefaultsKey<Int>("launchCount",defaultValue: 0)
+    static let launchCount = DefaultsKey<Int>("launchCount", defaultValue: 0)
     //    struct Login {
     //        static let username = DefaultsKey<String>("username",defaultValue:"这是默认值")
     //    }

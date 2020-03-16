@@ -54,7 +54,7 @@ class FWDemoViewController: UITableViewController {
         property.selectedIndex = -1
 
         let titles = ["fdksds123123", "fdksds112233", "导入钱包"]
-        let secondaryTitles = ["EOS6sHTCXbm4Gz5WRhKxuuBgVZYttvM9tEdU6ThH6kseMWLYDTk9q", "EOS1sdksbm4Gz5WRhKxuuBgVZYttvM9tEdU6ThH6kseMWLYDTk9q",""]
+        let secondaryTitles = ["EOS6sHTCXbm4Gz5WRhKxuuBgVZYttvM9tEdU6ThH6kseMWLYDTk9q", "EOS1sdksbm4Gz5WRhKxuuBgVZYttvM9tEdU6ThH6kseMWLYDTk9q", ""]
         let images = [UIImage(named: "right_menu_addFri"),
                       UIImage(named: "right_menu_addFri"),
                       UIImage(named: "right_menu_multichat")]

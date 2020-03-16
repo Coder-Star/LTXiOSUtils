@@ -17,12 +17,12 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
     private let multipleData = [
         ["1天", "2天", "3天", "4天", "5天", "6天", "7天"],
         ["1小时", "2小时", "3小时", "4小时", "5小时"],
-        ["1分钟","2分钟","3分钟","4分钟","5分钟","6分钟","7分钟","8分钟","9分钟","10分钟"]
+        ["1分钟", "2分钟", "3分钟", "4分钟", "5分钟", "6分钟", "7分钟", "8分钟", "9分钟", "10分钟"]
     ]
 
     /// 多列关联
     private let multipleAssociatedData: [[[String: [String]?]]] = [
-        [   ["交通工具": ["陆地", "空中", "水上"]],//字典
+        [   ["交通工具": ["陆地", "空中", "水上"]], //字典
             ["食品": ["健康食品", "垃圾食品"]],
             ["游戏": ["益智游戏", "角色游戏"]]
         ],
@@ -85,9 +85,9 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
         case "startAndEndDate":
             let start = Date()
             let end = Date().getDateByDays(days: 1)
-            let popupView = DurationDatePickView.getPopupView(startDate: start, endDate: end, canGreatNow:true, dateType: .YMD)
+            let popupView = DurationDatePickView.getPopupView(startDate: start, endDate: end, canGreatNow: true, dateType: .YMD)
             popupView.titleLabel.text = "请选择查询时间(日期)"
-            popupView.sureBlock = { (start,end) in
+            popupView.sureBlock = { (start, end) in
                 self.showAlert(message: "起始时间\(start)\n结束时间\(end)")
             }
             popupView.cancelBlock = {
@@ -97,9 +97,9 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
         case "startAndEndTime":
             let start = Date()
             let end = Date().getDateByDays(days: 1)
-            let popupView = DurationDatePickView.getPopupView(startDate: start, endDate: end, canGreatNow:true, dateType: .YMDHM)
+            let popupView = DurationDatePickView.getPopupView(startDate: start, endDate: end, canGreatNow: true, dateType: .YMDHM)
             popupView.titleLabel.text = "请选择查询时间(时间)"
-            popupView.sureBlock = { (start,end) in
+            popupView.sureBlock = { (start, end) in
                 self.showAlert(message: "起始时间\(start)\n结束时间\(end)")
             }
             popupView.cancelBlock = {
@@ -115,7 +115,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
         case "time":
             var dateStyle = DatePickerSetting()
             dateStyle.dateMode = .time
-            PickerViewManager.showDatePicker("时间选择",datePickerSetting: dateStyle, clearAction: {
+            PickerViewManager.showDatePicker("时间选择", datePickerSetting: dateStyle, clearAction: {
                 self.showAlert(message: "清空")
             }, doneAction: { selectedDate in
                 self.showAlert(message: selectedDate.formatDate(format: .HMS))
@@ -123,7 +123,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
         case "dateAndTime":
             var dateStyle = DatePickerSetting()
             dateStyle.dateMode = .dateAndTime
-            PickerViewManager.showDatePicker("日期与时间选择",datePickerSetting: dateStyle, clearAction: {
+            PickerViewManager.showDatePicker("日期与时间选择", datePickerSetting: dateStyle, clearAction: {
                 self.showAlert(message: "清空")
             }, doneAction: { selectedDate in
                 self.showAlert(message: selectedDate.formatDate(format: .YMDHMS))
@@ -132,37 +132,37 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
             PickerViewManager.showSingleColPicker("单列", data: singleData, defaultSelectedIndex: 2, clearAction: {
                 self.showAlert(message: "清空")
             }, doneAction: { (selectedIndex, selectedValue) in
-                self.showAlert(message:"\(selectedIndex)\(selectedValue)")
+                self.showAlert(message: "\(selectedIndex)\(selectedValue)")
             })
         case "multiple":
-            PickerViewManager.showMultipleColsPicker("多列不关联", data: multipleData, defaultSelectedIndexs: [0,1,1], clearAction: {
+            PickerViewManager.showMultipleColsPicker("多列不关联", data: multipleData, defaultSelectedIndexs: [0, 1, 1], clearAction: {
                 self.showAlert(message: "清空")
             }, doneAction: { (selectedIndexs, selectedValues) in
-                self.showAlert(message:"\(selectedIndexs)\(selectedValues)")
+                self.showAlert(message: "\(selectedIndexs)\(selectedValues)")
             })
         case "multipleAssociated":
-            PickerViewManager.showMultipleAssociatedColsPicker("多列关联", data: multipleAssociatedData, defaultSelectedValues: ["食品","垃圾食品","不健康小吃"], clearAction: {
+            PickerViewManager.showMultipleAssociatedColsPicker("多列关联", data: multipleAssociatedData, defaultSelectedValues: ["食品", "垃圾食品", "不健康小吃"], clearAction: {
                 self.showAlert(message: "清空")
             }, doneAction: { (selectedIndexs, selectedValues) in
-                self.showAlert(message:"\(selectedIndexs)\(selectedValues)")
+                self.showAlert(message: "\(selectedIndexs)\(selectedValues)")
             })
         case "city":
-            PickerViewManager.showCitiesPicker("省市区选择", type: .province, defaultSelectedValues: ["天津市","天津市","河东区"], clearAction: {
+            PickerViewManager.showCitiesPicker("省市区选择", type: .province, defaultSelectedValues: ["天津市", "天津市", "河东区"], clearAction: {
                 self.showAlert(message: "清空")
             }, doneAction: { (selectedIndexs, selectedValues) in
-                self.showAlert(message:"\(selectedIndexs)   \(selectedValues)")
+                self.showAlert(message: "\(selectedIndexs)   \(selectedValues)")
             })
         case "singleSelect":
             SelectPickView.showSingleView(title: "单项选择", data: singleData, defaultSelectedIndex: 1, clearBlock: {
                 self.showAlert(message: "清空")
-            }, sureBlock: { index,value in
-                self.showAlert(message:"\(index)   \(value)")
+            }, sureBlock: { index, value in
+                self.showAlert(message: "\(index)   \(value)")
             })
         case "multipleSelect":
             SelectPickView.showView(title: "多项选择", data: singleData, defaultSelectedIndexs: [1], clearBlock: {
                 self.showAlert(message: "清空")
-            }, sureBlock: { index,value in
-                self.showAlert(message:"\(index)   \(value)")
+            }, sureBlock: { index, value in
+                self.showAlert(message: "\(index)   \(value)")
             })
         default:
             HUD.showText("暂无此模块")

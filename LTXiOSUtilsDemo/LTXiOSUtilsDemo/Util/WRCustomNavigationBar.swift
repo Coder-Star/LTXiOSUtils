@@ -8,14 +8,14 @@
 
 import UIKit
 
-private let WRDefaultTitleSize:CGFloat = 18
+private let WRDefaultTitleSize: CGFloat = 18
 private let WRDefaultTitleColor = UIColor.black
 private let WRDefaultBackgroundColor = UIColor.white
 private let WRScreenWidth = UIScreen.main.bounds.size.width
 
 // MARK: - Router
 extension UIViewController {
-    func wr_toLastViewController(animated:Bool) {
+    func wr_toLastViewController(animated: Bool) {
         if self.navigationController != nil {
             if self.navigationController?.viewControllers.count == 1 {
                 self.dismiss(animated: animated, completion: nil)
@@ -35,13 +35,13 @@ extension UIViewController {
         }
     }
 
-    class func wr_currentViewController(from fromVC:UIViewController) -> UIViewController {
+    class func wr_currentViewController(from fromVC: UIViewController) -> UIViewController {
         if let navigationController = fromVC as? UINavigationController {
             return wr_currentViewController(from: navigationController.viewControllers.last!)
         } else if let tabBarController = fromVC as? UITabBarController {
             return wr_currentViewController(from: tabBarController.selectedViewController!)
         } else if fromVC.presentedViewController != nil {
-            return wr_currentViewController(from:fromVC.presentingViewController!)
+            return wr_currentViewController(from: fromVC.presentingViewController!)
         } else {
             return fromVC
         }
@@ -52,30 +52,30 @@ extension UIViewController {
 class WRCustomNavigationBar: UIView {
     var onClickLeftButton: (() -> Void)?
     var onClickRightButton: (() -> Void)?
-    var title:String? {
+    var title: String? {
         willSet {
             titleLabel.isHidden = false
             titleLabel.text = newValue
         }
     }
-    var titleLabelColor:UIColor? {
+    var titleLabelColor: UIColor? {
         willSet {
             titleLabel.textColor = newValue
         }
     }
-    var titleLabelFont:UIFont? {
+    var titleLabelFont: UIFont? {
         willSet {
             titleLabel.font = newValue
         }
     }
-    var barBackgroundColor:UIColor? {
+    var barBackgroundColor: UIColor? {
         willSet {
             backgroundImageView.isHidden = true
             backgroundView.isHidden = false
             backgroundView.backgroundColor = newValue
         }
     }
-    var barBackgroundImage:UIImage? {
+    var barBackgroundImage: UIImage? {
         willSet {
             backgroundView.isHidden = true
             backgroundImageView.isHidden = false
@@ -84,7 +84,7 @@ class WRCustomNavigationBar: UIView {
     }
 
     // fileprivate UI variable
-    fileprivate lazy var titleLabel:UILabel = {
+    fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = WRDefaultTitleColor
         label.font = UIFont.systemFont(ofSize: WRDefaultTitleSize)
@@ -93,7 +93,7 @@ class WRCustomNavigationBar: UIView {
         return label
     }()
 
-    fileprivate lazy var leftButton:UIButton = {
+    fileprivate lazy var leftButton: UIButton = {
         let button = UIButton()
         button.imageView?.contentMode = .center
         button.isHidden = true
@@ -101,7 +101,7 @@ class WRCustomNavigationBar: UIView {
         return button
     }()
 
-    fileprivate lazy var rightButton:UIButton = {
+    fileprivate lazy var rightButton: UIButton = {
         let button = UIButton()
         button.imageView?.contentMode = .center
         button.isHidden = true
@@ -109,29 +109,29 @@ class WRCustomNavigationBar: UIView {
         return button
     }()
 
-    fileprivate lazy var bottomLine:UIView = {
+    fileprivate lazy var bottomLine: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: (218.0/255.0), green: (218.0/255.0), blue: (218.0/255.0), alpha: 1.0)
         return view
     }()
 
-    fileprivate lazy var backgroundView:UIView = {
+    fileprivate lazy var backgroundView: UIView = {
         let view = UIView()
         return view
     }()
 
-    fileprivate lazy var backgroundImageView:UIImageView = {
+    fileprivate lazy var backgroundImageView: UIImageView = {
         let imgView = UIImageView()
         imgView.isHidden = true
         return imgView
     }()
 
     // fileprivate other variable
-    fileprivate static var isIphoneX:Bool {
+    fileprivate static var isIphoneX: Bool {
         return UIScreen.main.bounds.equalTo(CGRect(x: 0, y: 0, width: 375, height: 812))
     }
 
-    fileprivate static var navBarBottom:Int {
+    fileprivate static var navBarBottom: Int {
         return isIphoneX ? 88 : 64
     }
 
@@ -161,12 +161,12 @@ class WRCustomNavigationBar: UIView {
         backgroundView.backgroundColor = WRDefaultBackgroundColor
     }
     func updateFrame() {
-        let top:CGFloat = WRCustomNavigationBar.isIphoneX ? 44 : 20
-        let margin:CGFloat = 0
-        let buttonHeight:CGFloat = 44
-        let buttonWidth:CGFloat = 44
-        let titleLabelHeight:CGFloat = 44
-        let titleLabelWidth:CGFloat = 180
+        let top: CGFloat = WRCustomNavigationBar.isIphoneX ? 44 : 20
+        let margin: CGFloat = 0
+        let buttonHeight: CGFloat = 44
+        let buttonWidth: CGFloat = 44
+        let titleLabelHeight: CGFloat = 44
+        let titleLabelWidth: CGFloat = 180
 
         backgroundView.frame = self.bounds
         backgroundImageView.frame = self.bounds
@@ -178,50 +178,50 @@ class WRCustomNavigationBar: UIView {
 }
 
 extension WRCustomNavigationBar {
-    func wr_setBottomLineHidden(hidden:Bool) {
+    func wr_setBottomLineHidden(hidden: Bool) {
         bottomLine.isHidden = hidden
     }
-    func wr_setBackgroundAlpha(alpha:CGFloat) {
+    func wr_setBackgroundAlpha(alpha: CGFloat) {
         backgroundView.alpha = alpha
         backgroundImageView.alpha = alpha
         bottomLine.alpha = alpha
     }
-    func wr_setTintColor(color:UIColor) {
+    func wr_setTintColor(color: UIColor) {
         leftButton.setTitleColor(color, for: .normal)
         rightButton.setTitleColor(color, for: .normal)
         titleLabel.textColor = color
     }
 
     // 左右按钮共有方法
-    func wr_setLeftButton(normal:UIImage, highlighted:UIImage) {
+    func wr_setLeftButton(normal: UIImage, highlighted: UIImage) {
         wr_setLeftButton(normal: normal, highlighted: highlighted, title: nil, titleColor: nil)
     }
-    func wr_setLeftButton(image:UIImage) {
+    func wr_setLeftButton(image: UIImage) {
         wr_setLeftButton(normal: image, highlighted: image, title: nil, titleColor: nil)
     }
-    func wr_setLeftButton(title:String, titleColor:UIColor) {
+    func wr_setLeftButton(title: String, titleColor: UIColor) {
         wr_setLeftButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
     }
 
-    func wr_setRightButton(normal:UIImage, highlighted:UIImage) {
+    func wr_setRightButton(normal: UIImage, highlighted: UIImage) {
         wr_setRightButton(normal: normal, highlighted: highlighted, title: nil, titleColor: nil)
     }
-    func wr_setRightButton(image:UIImage) {
+    func wr_setRightButton(image: UIImage) {
         wr_setRightButton(normal: image, highlighted: image, title: nil, titleColor: nil)
     }
-    func wr_setRightButton(title:String, titleColor:UIColor) {
+    func wr_setRightButton(title: String, titleColor: UIColor) {
         wr_setRightButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
     }
 
     // 左右按钮私有方法
-    private func wr_setLeftButton(normal:UIImage?, highlighted:UIImage?, title:String?, titleColor:UIColor?) {
+    private func wr_setLeftButton(normal: UIImage?, highlighted: UIImage?, title: String?, titleColor: UIColor?) {
         leftButton.isHidden = false
         leftButton.setImage(normal, for: .normal)
         leftButton.setImage(highlighted, for: .highlighted)
         leftButton.setTitle(title, for: .normal)
         leftButton.setTitleColor(titleColor, for: .normal)
     }
-    private func wr_setRightButton(normal:UIImage?, highlighted:UIImage?, title:String?, titleColor:UIColor?) {
+    private func wr_setRightButton(normal: UIImage?, highlighted: UIImage?, title: String?, titleColor: UIColor?) {
         rightButton.isHidden = false
         rightButton.setImage(normal, for: .normal)
         rightButton.setImage(highlighted, for: .highlighted)

@@ -187,7 +187,7 @@ extension ComponentCollectionsViewController: RollingNoticeViewDataSource, Rolli
     func rollingNoticeView(roolingView: RollingNoticeView, cellAtIndex index: Int) -> RollingNoticeCell {
         var itemCell = roolingView.dequeueReusableCell(withIdentifier: RollingNoticeCell.description())
         if itemCell == nil {
-            itemCell = RollingNoticeCell(reuseIdentifier:RollingNoticeCell.description())
+            itemCell = RollingNoticeCell(reuseIdentifier: RollingNoticeCell.description())
         }
         itemCell?.titleLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview()
