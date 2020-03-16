@@ -81,6 +81,21 @@ public extension UIView {
     func add(_ subviews: UIView...) {
         subviews.forEach(addSubview)
     }
+
+    /// 获取最近的指定view类型的父view
+    /// - Parameter viewType: view类型
+    func getParentView(viewType: AnyClass) -> UIView? {
+        var tempView = self.superview
+        var resultView: UIView?
+        while tempView != nil {
+            if tempView?.isKind(of: viewType) ?? false {
+                resultView = tempView
+                break
+            }
+            tempView = tempView?.superview
+        }
+        return resultView
+    }
 }
 
 public extension UIView {

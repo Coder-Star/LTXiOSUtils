@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
     # 工具
     core.subspec 'Util' do |util|
       util.frameworks = "UIKit","Foundation"
+      util.dependency 'MBProgressHUD' # 加载框，OC库
       util.dependency 'LTXiOSUtils/Core/Extension'
       util.source_files = 'LTXiOSUtils/Classes/Core/Util/**/*.swift'
     end
@@ -36,8 +37,7 @@ Pod::Spec.new do |s|
 
   # 网络请求
   s.subspec 'Network' do |network|
-    network.dependency 'LTXiOSUtils/Core/Extension'
-    network.dependency 'LTXiOSUtils/Component'
+    network.dependency 'LTXiOSUtils/Core'
     network.dependency 'ReachabilitySwift'  # 网络监听
     network.dependency 'Moya' # 网络抽象层，其依赖了Alamofire和Result
     network.dependency 'SwiftyJSON' # 处理JSON
@@ -54,9 +54,8 @@ Pod::Spec.new do |s|
   # 自定义Component组件，包含各种基础view
   s.subspec 'Component' do |component|
     component.dependency 'LTXiOSUtils/Resources'
-    component.dependency 'LTXiOSUtils/Core/Extension'
+    component.dependency 'LTXiOSUtils/Core'
     component.dependency 'SnapKit' # 自动布局
-    component.dependency 'MBProgressHUD' # 加载框，OC库
     component.source_files = 'LTXiOSUtils/Classes/Component/**/*.swift'
   end
 

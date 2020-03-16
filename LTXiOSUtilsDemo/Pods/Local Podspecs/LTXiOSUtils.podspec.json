@@ -51,6 +51,9 @@
             "Foundation"
           ],
           "dependencies": {
+            "MBProgressHUD": [
+
+            ],
             "LTXiOSUtils/Core/Extension": [
 
             ]
@@ -63,9 +66,6 @@
       "name": "Network",
       "dependencies": {
         "LTXiOSUtils/Core/Extension": [
-
-        ],
-        "LTXiOSUtils/Component": [
 
         ],
         "ReachabilitySwift": [
@@ -98,13 +98,10 @@
         "LTXiOSUtils/Resources": [
 
         ],
-        "LTXiOSUtils/Core/Extension": [
+        "LTXiOSUtils/Core": [
 
         ],
         "SnapKit": [
-
-        ],
-        "MBProgressHUD": [
 
         ]
       },

@@ -16,7 +16,7 @@ target 'LTXiOSUtilsDemo' do
 
   # LTXiOSUtils 所需要的库，下面为指定版本需要
 
-  #'LTXiOSUtils/Component'
+  #'LTXiOSUtils/Core/Util'
   pod 'MBProgressHUD','1.1.0'
 
   #'LTXiOSUtils/Network'

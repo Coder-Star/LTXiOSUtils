@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import LTXiOSUtils
+import IQKeyboardManagerSwift
 
 class ComponentCollectionsViewController: BaseUIScrollViewController {
 
@@ -80,7 +81,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         }
 
         let label = CommonLabel()
-        label.text = "17854262835"
+        label.text = "17812345678"
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
             make.left.equalTo(titleLabel.snp.right).offset(5)
@@ -116,7 +117,8 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
 
         titleLabel = UILabel()
         titleLabel.textAlignment = .center
-        titleLabel.text = "变TextView"
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.text = "高度适应TextView"
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
@@ -128,17 +130,19 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         growingTextView.layer.borderColor = UIColor(hexString: "#cdcdcd").cgColor
         growingTextView.layer.borderWidth = 0.5
         growingTextView.layer.cornerRadius = 5
-        growingTextView.needLayoutView = contentView
         contentView.addSubview(growingTextView)
         growingTextView.minHeight = 100
         growingTextView.maxHeight = 200
         growingTextView.placeholder = "请输入信息"
-        growingTextView.limitLength = 20
+        growingTextView.limitLength = 100
         growingTextView.font = UIFont.systemFont(ofSize: 17)
         growingTextView.snp.makeConstraints { make in
             make.left.equalTo(titleLabel.snp.right).offset(5)
             make.right.equalToSuperview().offset(-10)
             make.top.equalTo(titleLabel)
+        }
+        growingTextView.heightChangeCallBack = { _ in
+            IQKeyboardManager.shared.reloadLayoutIfNeeded()
         }
 
         growingTextView.snp.makeConstraints { make in

@@ -32,7 +32,7 @@ open class BaseViewController: UIViewController {
             title = currentTitleInfo
         }
         setupBarHeightData()
-        hideKeyboardWhenTappedAround()
+//        hideKeyboardWhenTappedAround()
     }
 
     open func setupBarHeightData() {
