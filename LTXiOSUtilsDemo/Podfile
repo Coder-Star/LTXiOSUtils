@@ -14,22 +14,6 @@ target 'LTXiOSUtilsDemo' do
 
   pod 'LTXiOSUtils',:path => '../' # 基础功能库
 
-  # LTXiOSUtils 所需要的库，下面为指定版本需要
-
-  #'LTXiOSUtils/Core/Util'
-  pod 'MBProgressHUD','1.1.0'
-
-  #'LTXiOSUtils/Network'
-  pod 'SwiftyJSON','5.0.0'
-  pod 'Moya','13.0.1'
-  pod 'Alamofire','4.9.1'
-
-  #'LTXiOSUtils/Resource'
-  pod 'Localize-Swift','3.1.0'
-
-  #'LTXiOSUtils/ViewController'
-  pod 'SnapKit','5.0.1'
-
   # 本地配置
   pod 'R.swift','5.1.0' # 资源映射
   pod 'SwiftLint','0.38.0' # 代码规范限制，使用swiftlint autocorrect 可自动修复一部分格式问题

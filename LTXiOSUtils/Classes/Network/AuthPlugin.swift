@@ -8,7 +8,6 @@
 
 import Foundation
 import Moya
-import Result
 
 public struct AuthPlugin: PluginType {
     /// 令牌字符串

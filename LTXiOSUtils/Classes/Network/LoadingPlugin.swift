@@ -8,7 +8,6 @@
 
 import Foundation
 import Moya
-import Result
 
 public class LoadingPlugin: PluginType {
     /// 准备网络请求,将TargetType映射为TargetType之后执行，这是请求前对URLRequest进行编辑的最后机会，如为URLRequest添加Header等

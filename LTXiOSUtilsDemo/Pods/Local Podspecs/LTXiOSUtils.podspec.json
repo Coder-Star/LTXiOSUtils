@@ -52,7 +52,7 @@
           ],
           "dependencies": {
             "MBProgressHUD": [
-
+              "1.1.0"
             ],
             "LTXiOSUtils/Core/Extension": [
 
@@ -65,17 +65,17 @@
     {
       "name": "Network",
       "dependencies": {
-        "LTXiOSUtils/Core/Extension": [
+        "LTXiOSUtils/Core": [
 
         ],
         "ReachabilitySwift": [
-
+          "5.0.0"
         ],
         "Moya": [
-
+          "14.0.0"
         ],
         "SwiftyJSON": [
-
+          "5.0.0"
         ]
       },
       "source_files": "LTXiOSUtils/Classes/Network/*.swift"
@@ -84,7 +84,7 @@
       "name": "Resources",
       "dependencies": {
         "Localize-Swift": [
-
+          "3.1.0"
         ]
       },
       "source_files": "LTXiOSUtils/Resources/*.swift",
@@ -102,7 +102,7 @@
 
         ],
         "SnapKit": [
-
+          "5.0.1"
         ]
       },
       "source_files": "LTXiOSUtils/Classes/Component/**/*.swift"
