@@ -1,7 +1,7 @@
 //
 //  WRNavigationBar.swift
 //  WRNavigationBar_swift
-//
+//  导航栏属性设置
 //  Created by wangrui on 2017/4/19.
 //  Copyright © 2017年 wangrui. All rights reserved.
 //

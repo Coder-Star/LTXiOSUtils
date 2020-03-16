@@ -8,13 +8,10 @@
 import Foundation
 import UIKit
 
-/// Checkbox is a simple, animation free checkbox and UISwitch alternative designed
-/// to be performant and easy to implement.
+
 public class Checkbox: UIControl {
 
-    // MARK: - Enums
-
-    /// Shape of the center checkmark that appears when `Checkbox.isChecked == true`.
+    /// 选择框内部选中样式
     public enum CheckmarkStyle {
         /// ■
         case square
@@ -26,9 +23,8 @@ public class Checkbox: UIControl {
         case tick
     }
 
-    /// Shape of the outside box containing the checkmarks contents.
-    ///
-    /// Used as a visual indication of where the user can tap.
+
+    /// 选择框边框样式
     public enum BorderStyle {
         /// ▢
         case square
@@ -36,101 +32,40 @@ public class Checkbox: UIControl {
         case circle
     }
 
-    // MARK: - Properties
 
-    /// Shape of the center checkmark that appears when `Checkbox.isChecked == true`.
-    ///
-    /// **Default:** `CheckmarkStyle.square`
+    /// 默认选中样式
     public var checkmarkStyle: CheckmarkStyle = .square
-
-    /// Shape of the outside border containing the checkmarks contents.
-    ///
-    /// Used as a visual indication of where the user can tap.
-    ///
-    /// **Default:** `BorderStyle.square`
+    /// 默认边框样式
     public var borderStyle: BorderStyle = .square
-
-    /// Width of the borders stroke.
-    ///
-    /// **NOTE**
-    ///
-    /// Diagonal/rounded lines tend to appear thicker, so border styles
-    /// that use these (.circle) have had their border widths halved to compensate
-    /// in order appear similar next to other border styles.
-    ///
-    /// **Default:** `2`
+    /// 边框宽度
     public var borderLineWidth: CGFloat = 2
-
-    /// Size of the center checkmark element.
-    ///
-    /// Drawn as a percentage of the size of the Checkbox's draw rect.
-    ///
-    /// **Default:** `0.5`
+    /// 选中样式尺寸
     public var checkmarkSize: CGFloat = 0.5
-
-    /// The checboxes border color in its unchecked state.
-    ///
-    /// **Default:** The current tintColor.
+    /// 未选中边框颜色
     public var uncheckedBorderColor: UIColor!
-
-    /// The checboxes border color in its checked state.
-    ///
-    /// **Default:** The current tintColor.
+    /// 选中边框颜色
     public var checkedBorderColor: UIColor!
-
-    /// **Default:** The current tintColor.
+    /// 内部选中样式颜色
     public var checkmarkColor: UIColor!
-
-    /// **Default:** White.
-    @available(swift, obsoleted: 4.1, renamed: "checkboxFillColor", message: "Defaults to a clear color")
-    public var checkboxBackgroundColor: UIColor! = .white
-
-    /// The checkboxes fill color in its checked state.
-    ///
-    /// **Default:** `UIColoe.Clear`
+    /// 选中时内部空白处颜色
     public var checkboxFillColor: UIColor = .clear
-
-    /// The checkboxes  fill color in its unchecked state.
-    ///
-    /// **Default:** `UIColoe.Clear`
+    /// 未选中时内部空白颜色
     public var uncheckboxFillColor: UIColor = .clear
-
-    /// Sets the corner radius for the checkbox border.
-    ///
-    ///**Default:** `0.0`
-    /// - Note: Only applies to checkboxes with `BorderStyle.square`
+    /// 圆角度数，只适用于当BorderStyle = square
     public var borderCornerRadius: CGFloat = 0.0
-
-    /// Increases the controls touch area.
-    ///
-    /// Checkbox's tend to be smaller than regular UIButton elements
-    /// and in some cases making them difficult to interact with.
-    /// This property helps with that.
-    ///
-    /// **Default:** `5`
+    /// 增大外部热区尺寸
     public var increasedTouchRadius: CGFloat = 5
-
-    /// A function can be passed in here and will be called
-    /// when the `isChecked` value changes due to a tap gesture
-    /// triggered by the user.
-    ///
-    /// An alternative to use the TargetAction method.
+    /// 选中状态改变闭包
     public var valueChanged: ((_ isChecked: Bool) -> Void)?
-
-    /// Indicates whether the checkbox is currently in a state of being
-    /// checked or not.
+    /// 是否选中
     public var isChecked: Bool = false {
         didSet { setNeedsDisplay() }
     }
-
-    /// Determines if tapping the checkbox generates haptic feedback to the user.
-    ///
-    /// **Default:** `true`
+    /// 选中时是否有视觉反馈效果
     public var useHapticFeedback: Bool = true
 
     private var feedbackGenerator: UIImpactFeedbackGenerator?
 
-    // MARK: - Lifecycle
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -165,7 +100,6 @@ public class Checkbox: UIControl {
     }
 
     // MARK: - Borders
-
     private func drawBorder(shape: BorderStyle, in rect: CGRect) {
         let adjustedRect = CGRect(x: borderLineWidth/2,
                                   y: borderLineWidth/2,
@@ -219,7 +153,6 @@ public class Checkbox: UIControl {
     }
 
     // MARK: - Checkmarks
-
     private func drawCheckmark(style: CheckmarkStyle, in rect: CGRect) {
         let adjustedRect = checkmarkRect(in: rect)
         switch checkmarkStyle {
@@ -268,7 +201,6 @@ public class Checkbox: UIControl {
     }
 
     // MARK: - Size Calculations
-
     private func checkmarkRect(in rect: CGRect) -> CGRect {
         let width = rect.maxX * checkmarkSize
         let height = rect.maxY * checkmarkSize
@@ -280,7 +212,6 @@ public class Checkbox: UIControl {
     }
 
     // MARK: - Touch
-
     @objc
     private func handleTapGesture(recognizer: UITapGestureRecognizer) {
         isChecked = !isChecked
