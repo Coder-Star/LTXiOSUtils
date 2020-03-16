@@ -1,7 +1,7 @@
 //
 //  UserDefaultsProtocol.swift
 //  LTXiOSUtils
-//
+//  UserDefaults协议使枚举继承其时自动获得本地存储能力
 //  Created by 李天星 on 2020/1/8.
 //
 

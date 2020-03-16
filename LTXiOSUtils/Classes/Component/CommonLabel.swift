@@ -1,7 +1,7 @@
 //
 //  CommonLabel.swift
 //  LTXiOSUtils
-//
+//  通用Label，支持复制功能，支持电话、邮箱、网络url等进行跳转
 //  Created by 李天星 on 2020/1/19.
 //
 

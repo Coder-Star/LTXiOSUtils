@@ -1,7 +1,7 @@
 //
 //  UIImageView+GIF.swift
 //  LTXiOSUtils
-//
+//  UIImageView扩展展示gif
 //  Created by 李天星 on 2020/1/14.
 //
 
