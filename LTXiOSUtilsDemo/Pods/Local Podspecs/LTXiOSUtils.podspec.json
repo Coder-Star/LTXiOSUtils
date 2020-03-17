@@ -37,11 +37,6 @@
             "UIKit",
             "Foundation"
           ],
-          "dependencies": {
-            "LTXiOSUtils/Core/Scope": [
-
-            ]
-          },
           "source_files": "LTXiOSUtils/Classes/Core/Extension/*.swift"
         },
         {

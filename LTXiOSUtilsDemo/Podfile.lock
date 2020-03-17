@@ -23,8 +23,7 @@ PODS:
     - LTXiOSUtils/Core/Extension (= 0.0.1)
     - LTXiOSUtils/Core/Scope (= 0.0.1)
     - LTXiOSUtils/Core/Util (= 0.0.1)
-  - LTXiOSUtils/Core/Extension (0.0.1):
-    - LTXiOSUtils/Core/Scope
+  - LTXiOSUtils/Core/Extension (0.0.1)
   - LTXiOSUtils/Core/Scope (0.0.1)
   - LTXiOSUtils/Core/Util (0.0.1):
     - LTXiOSUtils/Core/Extension
@@ -156,7 +155,7 @@ SPEC CHECKSUMS:
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
-  LTXiOSUtils: 461aa23bdb047c8f5068581f9e58af99f71fea1a
+  LTXiOSUtils: f7338d05a17641f4f02edee40cded5066663d62b
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
