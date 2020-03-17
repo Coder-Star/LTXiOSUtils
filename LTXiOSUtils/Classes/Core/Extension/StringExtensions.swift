@@ -229,3 +229,11 @@ public extension String {
         return size.width
     }
 }
+
+// MARK: - 富文本相关
+public extension String {
+    /// 转为富文本
+    var attributedString: NSMutableAttributedString {
+        return NSMutableAttributedString(string: self)
+    }
+}

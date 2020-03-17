@@ -1,7 +1,7 @@
 //
 //  ViewFactory.swift
 //  LTXiOSUtilsDemo
-//
+//  控件创建工厂
 //  Created by 李天星 on 2020/1/1.
 //  Copyright © 2020 李天星. All rights reserved.
 //

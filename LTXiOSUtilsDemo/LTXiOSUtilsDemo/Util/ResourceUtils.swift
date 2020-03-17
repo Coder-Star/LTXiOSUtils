@@ -1,7 +1,7 @@
 //
 //  ResourceUtils.swift
 //  LTXiOSUtils
-//
+//  本地资源操作工具类
 //  Created by 李天星 on 2020/2/3.
 //
 

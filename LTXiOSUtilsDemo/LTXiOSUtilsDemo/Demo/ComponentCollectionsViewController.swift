@@ -72,7 +72,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
 
         titleLabel = UILabel()
         titleLabel.textAlignment = .center
-        titleLabel.text = "多样式Label"
+        titleLabel.attributedText = "多样式Label".attributedString
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
@@ -80,8 +80,9 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
             make.width.equalTo(leftWidth)
         }
 
-        let label = CommonLabel()
-        label.text = "17812345678"
+        let label = CommonShowTextView()
+//        label.text = "17812345678"
+        label.text = "沿着荷塘，是一条曲折的小煤屑路。这是一条幽僻的路；白天也少人走，夜晚更加寂寞。荷塘四面，长着许多树，蓊蓊郁郁的。路的一旁，是些杨柳，和一些不知道名字的树。没有月光的晚上，这路上阴森森的，有些怕人。今晚却很好，虽然月光也还是淡淡的。路上只我一个人，背着手踱着。这一片天地好像是我的；我也像超出了平常的自己，到了另一个世界里。我爱热闹，也爱冷静；爱群居，也爱独处。像今晚上，一个人在这苍茫的月下，什么都可以想，什么都可以不想，便觉是个自由的人。白天里一定要做的事，一定要说的话，现 在都可不理。这是独处的妙处，我且受用这无边的荷香月色好了。"
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
             make.left.equalTo(titleLabel.snp.right).offset(5)

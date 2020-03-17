@@ -22,6 +22,7 @@
 		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
 		DC32F1A823841359008D3D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A723841359008D3D67 /* Constants.swift */; };
 		DC3E61F62420758200105366 /* UIFeedbackGeneratorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E61F52420758200105366 /* UIFeedbackGeneratorUtils.swift */; };
+		DC3E61F824209F1600105366 /* tempUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E61F724209F1600105366 /* tempUtils.swift */; };
 		DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */; };
 		DC4AB9BF22F4606000A5F003 /* DemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BE22F4606000A5F003 /* DemoListViewController.swift */; };
 		DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC4AB9C322F4606100A5F003 /* Assets.xcassets */; };
@@ -96,6 +97,7 @@
 		DC32F1A323840A3E008D3D67 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DC32F1A723841359008D3D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DC3E61F52420758200105366 /* UIFeedbackGeneratorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFeedbackGeneratorUtils.swift; sourceTree = "<group>"; };
+		DC3E61F724209F1600105366 /* tempUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempUtils.swift; sourceTree = "<group>"; };
 		DC4AB9B922F4606000A5F003 /* LTXiOSUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTXiOSUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC4AB9BE22F4606000A5F003 /* DemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				DCA407872406AC0500F62769 /* WRCustomNavigationBar.swift */,
 				DC1AD83623E84D520073CB97 /* ResourceUtils.swift */,
 				DC3E61F52420758200105366 /* UIFeedbackGeneratorUtils.swift */,
+				DC3E61F724209F1600105366 /* tempUtils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -654,7 +657,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/LTXiOSUtilsDemo/R.generated.swift",
+				$SRCROOT/LTXiOSUtilsDemo/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -704,6 +707,7 @@
 				DCA407882406AC0500F62769 /* WRCustomNavigationBar.swift in Sources */,
 				DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */,
 				DC03AE5223F433A3007739DD /* AdModel.swift in Sources */,
+				DC3E61F824209F1600105366 /* tempUtils.swift in Sources */,
 				DC83E7A423F550290030A9B4 /* HomeNavigationController.swift in Sources */,
 				DCB22AB923AB6908004C63EF /* PickViewDemoViewController.swift in Sources */,
 				DC03AE2C23F3D736007739DD /* AppTheme.swift in Sources */,
