@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27CED8DFBFC4F83ABBDA287F /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3215B952B57983DB44DD27D0 /* Pods_LTXiOSUtilsDemoTests.framework */; };
-		5E4D16E9F4C2AE2B349248DA /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60D97EB16E2AC595736336D /* Pods_LTXiOSUtilsDemoUITests.framework */; };
-		BE7796975DA66C3298F98825 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC74D8CD2247CD16F1A04A2 /* Pods_LTXiOSUtilsDemo.framework */; };
+		62CDE5E377FE4772F9441E76 /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032929C53D627595380649E0 /* Pods_LTXiOSUtilsDemoTests.framework */; };
+		90A7E5A659610DE67871CE22 /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11085538BAB6C880FED0814E /* Pods_LTXiOSUtilsDemoUITests.framework */; };
+		B27B04B1276D9DA087D3CB27 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EB7B019A4100D264EEF67F /* Pods_LTXiOSUtilsDemo.framework */; };
 		DC03AE2623F3AB1B007739DD /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2523F3AB1B007739DD /* HomeTabBarController.swift */; };
 		DC03AE2823F3AD96007739DD /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2723F3AD96007739DD /* MineViewController.swift */; };
 		DC03AE2A23F3CA6A007739DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2923F3CA6A007739DD /* HomeViewController.swift */; };
@@ -21,6 +21,7 @@
 		DC1AD83723E84D520073CB97 /* ResourceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD83623E84D520073CB97 /* ResourceUtils.swift */; };
 		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
 		DC32F1A823841359008D3D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A723841359008D3D67 /* Constants.swift */; };
+		DC3E61F62420758200105366 /* UIFeedbackGeneratorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E61F52420758200105366 /* UIFeedbackGeneratorUtils.swift */; };
 		DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */; };
 		DC4AB9BF22F4606000A5F003 /* DemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BE22F4606000A5F003 /* DemoListViewController.swift */; };
 		DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC4AB9C322F4606100A5F003 /* Assets.xcassets */; };
@@ -74,15 +75,15 @@
 
 /* Begin PBXFileReference section */
 		02379853095E1627530EB6BD /* Pods-LTXiOSUtilsDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		032929C53D627595380649E0 /* Pods_LTXiOSUtilsDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F543AF20CACE9D49043770D /* Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		3215B952B57983DB44DD27D0 /* Pods_LTXiOSUtilsDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11085538BAB6C880FED0814E /* Pods_LTXiOSUtilsDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C4FD638EFAAAF61197BFC0 /* Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C69EFBC8200F3382DF3C87 /* Pods-LTXiOSUtilsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.release.xcconfig"; sourceTree = "<group>"; };
 		728D8E2235C330A124AF1910 /* Pods-LTXiOSUtilsDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		7E69F21B8737A1842F9552D7 /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		9AC74D8CD2247CD16F1A04A2 /* Pods_LTXiOSUtilsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84EB7B019A4100D264EEF67F /* Pods_LTXiOSUtilsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94D39D73C90A84C93A55928 /* Pods-LTXiOSUtilsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C60D97EB16E2AC595736336D /* Pods_LTXiOSUtilsDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC03AE2523F3AB1B007739DD /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		DC03AE2723F3AD96007739DD /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		DC03AE2923F3CA6A007739DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		DC1AD83623E84D520073CB97 /* ResourceUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceUtils.swift; sourceTree = "<group>"; };
 		DC32F1A323840A3E008D3D67 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DC32F1A723841359008D3D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DC3E61F52420758200105366 /* UIFeedbackGeneratorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFeedbackGeneratorUtils.swift; sourceTree = "<group>"; };
 		DC4AB9B922F4606000A5F003 /* LTXiOSUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTXiOSUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC4AB9BE22F4606000A5F003 /* DemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE7796975DA66C3298F98825 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */,
+				B27B04B1276D9DA087D3CB27 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27CED8DFBFC4F83ABBDA287F /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */,
+				62CDE5E377FE4772F9441E76 /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E4D16E9F4C2AE2B349248DA /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */,
+				90A7E5A659610DE67871CE22 /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,9 +177,9 @@
 				DCA4077A24066C3500F62769 /* libz.tbd */,
 				DCA4077624066BFB00F62769 /* Alamofire.framework */,
 				DCA407722405405300F62769 /* Alamofire.framework */,
-				9AC74D8CD2247CD16F1A04A2 /* Pods_LTXiOSUtilsDemo.framework */,
-				3215B952B57983DB44DD27D0 /* Pods_LTXiOSUtilsDemoTests.framework */,
-				C60D97EB16E2AC595736336D /* Pods_LTXiOSUtilsDemoUITests.framework */,
+				84EB7B019A4100D264EEF67F /* Pods_LTXiOSUtilsDemo.framework */,
+				032929C53D627595380649E0 /* Pods_LTXiOSUtilsDemoTests.framework */,
+				11085538BAB6C880FED0814E /* Pods_LTXiOSUtilsDemoUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -232,6 +234,7 @@
 				DCF6F54623BCC87500AC4850 /* ViewFactory.swift */,
 				DCA407872406AC0500F62769 /* WRCustomNavigationBar.swift */,
 				DC1AD83623E84D520073CB97 /* ResourceUtils.swift */,
+				DC3E61F52420758200105366 /* UIFeedbackGeneratorUtils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -412,7 +415,7 @@
 				DC4AB9B522F4606000A5F003 /* Sources */,
 				DC4AB9B622F4606000A5F003 /* Frameworks */,
 				DC4AB9B722F4606000A5F003 /* Resources */,
-				7B67F1AE89CE27D9006B4B69 /* [CP] Embed Pods Frameworks */,
+				12995B62444FFBF65E9A3D2E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -536,7 +539,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7B67F1AE89CE27D9006B4B69 /* [CP] Embed Pods Frameworks */ = {
+		12995B62444FFBF65E9A3D2E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -651,7 +654,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/LTXiOSUtilsDemo/R.generated.swift,
+				"$SRCROOT/LTXiOSUtilsDemo/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -684,6 +687,7 @@
 			files = (
 				DC4AB9BF22F4606000A5F003 /* DemoListViewController.swift in Sources */,
 				DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */,
+				DC3E61F62420758200105366 /* UIFeedbackGeneratorUtils.swift in Sources */,
 				DC55E57223F7E6C8008C6941 /* AppThemeApplicationService.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
 				DC1AD83723E84D520073CB97 /* ResourceUtils.swift in Sources */,

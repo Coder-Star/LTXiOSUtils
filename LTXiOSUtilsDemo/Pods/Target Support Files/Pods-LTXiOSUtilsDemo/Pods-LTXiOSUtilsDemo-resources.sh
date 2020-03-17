@@ -99,11 +99,13 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
+  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/SwiftDate/Sources/SwiftDate/Formatters/RelativeFormatter/langs"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
+  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/SwiftDate/Sources/SwiftDate/Formatters/RelativeFormatter/langs"
 fi
 

@@ -1,0 +1,62 @@
+//
+//  UIFeedbackGeneratorUtils.swift
+//  LTXiOSUtilsDemo
+//  震动反馈工具类
+//  Created by 李天星 on 2020/3/17.
+//  Copyright © 2020 李天星. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+/// 震动类型
+public enum FeedbackType: Int {
+    /// 轻
+    case light
+    /// 中
+    case medium
+    /// 重
+    case heavy
+
+    /// 成功
+    case success
+    /// 警告
+    case warning
+    /// 失败
+    case error
+
+    /// 变化，选择时使用
+    /// 如时间选择
+    case change
+}
+
+class UIFeedbackGeneratorUtils {
+
+    class func impactFeedback(style: FeedbackType) {
+        if #available(iOS 10.0, *) {
+            switch style {
+            case .light:
+                let generator = UIImpactFeedbackGenerator(style: .light)
+                generator.impactOccurred()
+            case .medium:
+                let generator = UIImpactFeedbackGenerator(style: .medium)
+                generator.impactOccurred()
+            case .heavy:
+                let generator = UIImpactFeedbackGenerator(style: .heavy)
+                generator.impactOccurred()
+            case .success:
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.success)
+            case .warning:
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.warning)
+            case .error:
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.error)
+            case .change:
+                let generator = UISelectionFeedbackGenerator()
+                generator.selectionChanged()
+            }
+        }
+    }
+}

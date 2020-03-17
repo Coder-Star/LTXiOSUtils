@@ -13,6 +13,7 @@ class HomeTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.delegate = self
         initChildViewControllers()
     }
 
@@ -53,6 +54,7 @@ class HomeTabBarController: UITabBarController {
 
 extension HomeTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        UIFeedbackGeneratorUtils.impactFeedback(style: .light)
         Log.d(viewController)
     }
 }
