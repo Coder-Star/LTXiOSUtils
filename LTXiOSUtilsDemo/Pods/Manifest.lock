@@ -57,32 +57,13 @@ PODS:
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
+  - SKPhotoBrowser (6.1.0)
   - SnapKit (5.0.1)
   - SwiftDate (6.1.0)
-  - SwifterSwift (5.1.0):
-    - SwifterSwift/AppKit (= 5.1.0)
-    - SwifterSwift/CoreGraphics (= 5.1.0)
-    - SwifterSwift/CoreLocation (= 5.1.0)
-    - SwifterSwift/Dispatch (= 5.1.0)
-    - SwifterSwift/Foundation (= 5.1.0)
-    - SwifterSwift/MapKit (= 5.1.0)
-    - SwifterSwift/SceneKit (= 5.1.0)
-    - SwifterSwift/SpriteKit (= 5.1.0)
-    - SwifterSwift/SwiftStdlib (= 5.1.0)
-    - SwifterSwift/UIKit (= 5.1.0)
-  - SwifterSwift/AppKit (5.1.0)
-  - SwifterSwift/CoreGraphics (5.1.0)
-  - SwifterSwift/CoreLocation (5.1.0)
-  - SwifterSwift/Dispatch (5.1.0)
-  - SwifterSwift/Foundation (5.1.0)
-  - SwifterSwift/MapKit (5.1.0)
-  - SwifterSwift/SceneKit (5.1.0)
-  - SwifterSwift/SpriteKit (5.1.0)
-  - SwifterSwift/SwiftStdlib (5.1.0)
-  - SwifterSwift/UIKit (5.1.0)
   - SwiftLint (0.38.0)
   - SwiftyJSON (5.0.0)
   - SwiftyUserDefaults (4.0.0)
+  - TZImagePickerController (3.3.1)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - URLNavigator (2.3.0)
   - XHLaunchAd (3.9.11):
@@ -101,10 +82,11 @@ DEPENDENCIES:
   - R.swift (= 5.1.0)
   - ReachabilitySwift (= 5.0.0)
   - RxCocoa (= 5.0.1)
+  - SKPhotoBrowser (= 6.1.0)
   - SwiftDate (= 6.1.0)
-  - SwifterSwift (= 5.1.0)
   - SwiftLint (= 0.38.0)
   - SwiftyUserDefaults (= 4.0.0)
+  - TZImagePickerController (= 3.3.1)
   - "UITableView+FDTemplateLayoutCell (= 1.6)"
   - URLNavigator
   - XHLaunchAd (= 3.9.11)
@@ -131,12 +113,13 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SKPhotoBrowser
     - SnapKit
     - SwiftDate
-    - SwifterSwift
     - SwiftLint
     - SwiftyJSON
     - SwiftyUserDefaults
+    - TZImagePickerController
     - "UITableView+FDTemplateLayoutCell"
     - URLNavigator
     - XHLaunchAd
@@ -167,17 +150,18 @@ SPEC CHECKSUMS:
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
-  SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
   SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
+  TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 02adf693496798cd3a80f1d3183c25470f046858
+PODFILE CHECKSUM: 55e4234a528162bb2a2c169f3cdab58857fe7709
 
 COCOAPODS: 1.8.4

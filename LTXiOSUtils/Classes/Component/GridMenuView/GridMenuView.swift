@@ -296,7 +296,7 @@ extension GridMenuView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let index = convertDirectionCount(index: indexPath.item)
         if index < menu.count {
-            let cell: DefaultGridMenuCell? = collectionView.dequeueReusableCell(withReuseIdentifier: DefaultGridMenuCell.description(), for: indexPath) as? DefaultGridMenuCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DefaultGridMenuCell.description(), for: indexPath) as? DefaultGridMenuCell
             let model = menu[convertDirectionCount(index: indexPath.item)]
             cell?.markType = model.markType
             cell?.text = model.title
