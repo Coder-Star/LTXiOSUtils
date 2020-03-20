@@ -32,10 +32,12 @@ open class SuspensionButton: UIView {
 }
 
 public extension SuspensionButton {
+    /// 展示
     func show() {
 
     }
 
+    /// 隐藏
     func hide() {
 
     }

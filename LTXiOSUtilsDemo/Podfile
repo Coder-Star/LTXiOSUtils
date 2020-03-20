@@ -20,12 +20,14 @@ target 'LTXiOSUtilsDemo' do
   pod 'SwiftLint','0.38.0' # 代码规范限制，使用swiftlint autocorrect 可自动修复一部分格式问题
 
   #图片相关
-  pod 'Kingfisher','5.12.0' # 图片预览
+  pod 'Kingfisher','5.12.0' # 远程图片预览
+  pod 'SKPhotoBrowser','6.1.0' # 图片浏览
+  pod 'TZImagePickerController','3.3.1' #图片选择
 
   #工具类
   pod 'ObjectMapper', '3.5.1' #model与json互转
   pod 'SwiftyUserDefaults','4.0.0' # UserDefaults存储
-  pod 'SwifterSwift','5.1.0' # Swift相关扩展
+#  pod 'SwifterSwift','5.1.0' # Swift相关扩展
   pod 'IQKeyboardManagerSwift','6.5.4' # 键盘控制
   pod 'SwiftDate','6.1.0' #时间工具
   pod 'GDPerformanceView-Swift','2.0.3' #显示屏幕FPS

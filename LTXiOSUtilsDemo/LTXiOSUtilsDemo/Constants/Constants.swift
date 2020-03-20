@@ -10,7 +10,6 @@
 @_exported import Alamofire
 @_exported import SnapKit
 @_exported import SwiftyJSON
-@_exported import SwifterSwift
 
 @_exported import UITableView_FDTemplateLayoutCell
 

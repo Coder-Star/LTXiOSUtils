@@ -8,7 +8,7 @@
 
 import XCTest
 import SwiftyUserDefaults
-import QorumLogs
+import LTXiOSUtils
 
 @testable import SwiftyUserDefaults
 

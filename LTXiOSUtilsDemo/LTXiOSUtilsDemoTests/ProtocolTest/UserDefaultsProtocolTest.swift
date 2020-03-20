@@ -8,7 +8,6 @@
 
 import XCTest
 import LTXiOSUtils
-import QorumLogs
 
 @testable import LTXiOSUtils
 

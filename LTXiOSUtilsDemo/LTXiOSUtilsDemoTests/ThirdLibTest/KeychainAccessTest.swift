@@ -8,7 +8,7 @@
 
 import XCTest
 import KeychainAccess
-import QorumLogs
+import LTXiOSUtils
 
 @testable import KeychainAccess
 
