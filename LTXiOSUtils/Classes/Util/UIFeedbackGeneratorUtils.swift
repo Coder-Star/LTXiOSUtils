@@ -30,9 +30,10 @@ public enum FeedbackType: Int {
     case change
 }
 
-class UIFeedbackGeneratorUtils {
+/// 震动工具类
+public struct UIFeedbackGeneratorUtils {
 
-    class func impactFeedback(style: FeedbackType) {
+    public static func impactFeedback(style: FeedbackType) {
         if #available(iOS 10.0, *) {
             switch style {
             case .light:

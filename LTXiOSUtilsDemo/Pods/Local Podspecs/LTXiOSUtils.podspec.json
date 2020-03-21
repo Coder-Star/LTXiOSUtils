@@ -65,9 +65,6 @@
         ],
         "Moya": [
           "14.0.0"
-        ],
-        "SwiftyJSON": [
-          "5.0.0"
         ]
       },
       "source_files": "LTXiOSUtils/Classes/Network/*.swift"

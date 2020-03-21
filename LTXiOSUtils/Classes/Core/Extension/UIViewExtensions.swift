@@ -280,134 +280,134 @@ extension UITapGestureRecognizer: UIGestureRecognizerDelegate {
 }
 
 // MARK: - 设置frame相关扩展
-public extension UIView{
-    
-    // 扩展 x 的 set get 方法
-    var x: CGFloat{
-        get{
+public extension UIView {
+
+    /// 扩展 x 的 set get 方法
+    var x: CGFloat {
+        get {
             return frame.origin.x
         }
-        set(newX){
+        set(newX) {
             var tmpFrame: CGRect = frame
             tmpFrame.origin.x = newX
             frame = tmpFrame
         }
     }
-    
-    // 扩展 y 的 set get 方法
-    var y: CGFloat{
-        get{
+
+    /// 扩展 y 的 set get 方法
+    var y: CGFloat {
+        get {
             return frame.origin.y
         }
-        set(newY){
+        set(newY) {
             var tmpFrame: CGRect = frame
             tmpFrame.origin.y = newY
             frame = tmpFrame
         }
     }
-    
-    // 扩展 width 的 set get 方法
-    var width: CGFloat{
-        get{
+
+    /// 扩展 width 的 set get 方法
+    var width: CGFloat {
+        get {
             return frame.size.width
         }
-        set(newWidth){
+        set(newWidth) {
             var tmpFrameWidth: CGRect = frame
             tmpFrameWidth.size.width = newWidth
             frame = tmpFrameWidth
         }
     }
-    
+
     // 扩展 height 的 set get 方法
-    var height: CGFloat{
-        get{
+    var height: CGFloat {
+        get {
             return frame.size.height
         }
-        set(newHeight){
+        set(newHeight) {
             var tmpFrameHeight: CGRect = frame
             tmpFrameHeight.size.height = newHeight
             frame = tmpFrameHeight
         }
     }
-    
-    // 扩展 centerX 的 set get 方法
-    var centerX: CGFloat{
-        get{
+
+    /// 扩展 centerX 的 set get 方法
+    var centerX: CGFloat {
+        get {
             return center.x
         }
-        set(newCenterX){
+        set(newCenterX) {
             center = CGPoint(x: newCenterX, y: center.y)
         }
     }
-    
-    // 扩展 centerY 的 set get 方法
-    var centerY: CGFloat{
-        get{
+
+    /// 扩展 centerY 的 set get 方法
+    var centerY: CGFloat {
+        get {
             return center.y
         }
-        set(newCenterY){
+        set(newCenterY) {
             center = CGPoint(x: center.x, y: newCenterY)
         }
     }
-    
-    // 扩展 origin 的 set get 方法
-    var origin: CGPoint{
-        get{
+
+    /// 扩展 origin 的 set get 方法
+    var origin: CGPoint {
+        get {
             return CGPoint(x: x, y: y)
         }
-        set(newOrigin){
+        set(newOrigin) {
             x = newOrigin.x
             y = newOrigin.y
         }
     }
-    
-    // 扩展 size 的 set get 方法
-    var size: CGSize{
-        get{
+
+    /// 扩展 size 的 set get 方法
+    var size: CGSize {
+        get {
             return CGSize(width: width, height: height)
         }
-        set(newSize){
+        set(newSize) {
             width = newSize.width
             height = newSize.height
         }
     }
-    
-    // 扩展 left 的 set get 方法
-    var left: CGFloat{
-        get{
+
+    /// 扩展 left 的 set get 方法
+    var left: CGFloat {
+        get {
             return x
         }
-        set(newLeft){
+        set(newLeft) {
             x = newLeft
         }
     }
-    
-    // 扩展 right 的 set get 方法
-    var right: CGFloat{
-        get{
+
+    /// 扩展 right 的 set get 方法
+    var right: CGFloat {
+        get {
             return x + width
         }
-        set(newNight){
+        set(newNight) {
             x = newNight - width
         }
     }
-    
-    // 扩展 top 的 set get 方法
-    var top: CGFloat{
-        get{
+
+    /// 扩展 top 的 set get 方法
+    var top: CGFloat {
+        get {
             return y
         }
-        set(newTop){
+        set(newTop) {
             y = newTop
         }
     }
-    
-    // 扩展 bottom 的 set get 方法
-    var bottom: CGFloat{
-        get{
+
+    /// 扩展 bottom 的 set get 方法
+    var bottom: CGFloat {
+        get {
             return y + height
         }
-        set(newBottom){
+        set(newBottom) {
             y = newBottom - height
         }
     }

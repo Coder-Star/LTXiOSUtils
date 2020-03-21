@@ -38,7 +38,6 @@ Pod::Spec.new do |s|
     network.dependency 'LTXiOSUtils/Core'
     network.dependency 'ReachabilitySwift','5.0.0'  # 网络监听
     network.dependency 'Moya','14.0.0' # 网络抽象层，其依赖了Alamofire和Result
-    network.dependency 'SwiftyJSON','5.0.0' # 处理JSON
     network.source_files = 'LTXiOSUtils/Classes/Network/*.swift'
   end
 

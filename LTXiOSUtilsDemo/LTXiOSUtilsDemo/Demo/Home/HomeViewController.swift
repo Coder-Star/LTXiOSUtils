@@ -131,13 +131,14 @@ extension HomeViewController {
 extension HomeViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
     private func getPagerViewData() {
-        let requestParam = RequestParam(baseUrl: NetworkConstant.appUrl, path: NetworkConstant.bannerUrl)
+        var requestParam = RequestParam(baseUrl: NetworkConstant.appUrl, path: NetworkConstant.bannerUrl)
         requestParam.hud.isShow = false
         requestParam.ignoreError = true
         requestParam.method = .get
         NetworkManager.sendRequest(requestParam: requestParam) { data in
-            self.pagerViewImageListData = data["imageList"]
-            self.pagerView.automaticSlidingInterval = CGFloat(data["interval"].floatValue)
+            let json = JSON(data)
+            self.pagerViewImageListData = json["imageList"]
+            self.pagerView.automaticSlidingInterval = CGFloat(json["interval"].floatValue)
             self.pagerView.reloadData()
             self.pageControl.numberOfPages = self.pagerViewImageListData.count
         }

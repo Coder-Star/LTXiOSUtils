@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 /// 网络请求参数类
-public class RequestParam {
+public struct RequestParam {
     /// 基础url
     public var baseUrl: String
     /// 请求路径
@@ -19,12 +19,12 @@ public class RequestParam {
     public var parameters: [String: Any] = [String: Any]()
     /// 等待框相关配置
     public var hud: HudConfig = HudConfig()
-    /// 当token不为空，此次请求会使用该token
-    public var token: String = ""
+    /// token
+    public var token: String = NetworkConfig.token
     /// 超时时间
     public var timeOut: Double = NetworkConfig.requestTimeOut
     /// 请求方法
-    public var method: Moya.Method = .post
+    public var method: Moya.Method = NetworkConfig.method
     /// header设置
     public var header: [String: String]?
     /// 上传文件数组
@@ -34,6 +34,12 @@ public class RequestParam {
     public var ignoreError: Bool = false
     /// 重试次数，大于0时进行重试
     public var retryCount: Int = 0
+
+    /// 构造函数
+    public init(path: String) {
+        self.baseUrl = NetworkConfig.baseURL
+        self.path = path
+    }
 
     /// 构造函数
     public init(baseUrl: String, path: String) {
