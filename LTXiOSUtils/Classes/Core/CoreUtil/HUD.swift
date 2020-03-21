@@ -108,7 +108,7 @@ open class HUD: MBProgressHUD {
         self.progress = progress
         if progress >= 1 {
             self.detailsLabel.text = successTitle
-            DispatchQueue.main.delay(0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.hide(animated: true)
             }
         }

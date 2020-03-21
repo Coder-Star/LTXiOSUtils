@@ -15,7 +15,19 @@ import Photos
 
 class PickImageDemoViewController: BaseUIScrollViewController {
 
-    let pickImageView = ImagePickGridView()
+    private lazy var pickImageView: ImagePickGridView = {
+        let pickImageView = ImagePickGridView()
+        return pickImageView
+    }()
+
+    private lazy var countLabel: UILabel = {
+        let countLabel = UILabel()
+        countLabel.text = "    0/\(maxImageCount)"
+        countLabel.backgroundColor = .lightGray
+        return countLabel
+    }()
+
+    private let maxImageCount = 6
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +35,20 @@ class PickImageDemoViewController: BaseUIScrollViewController {
     }
 
     override func setScrollSubViews(contentView: UIView) {
+        contentView.addSubview(countLabel)
+        countLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalToSuperview()
+            make.height.equalTo(30)
+        }
+
         pickImageView.delegte = self
-        pickImageView.maxImageCount = 6
+        pickImageView.colCount = 3
+        pickImageView.maxImageCount = maxImageCount
         contentView.addSubview(pickImageView)
         pickImageView.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview()
+            make.top.equalTo(countLabel.snp.bottom).offset(10)
+            make.left.right.equalToSuperview()
             make.bottom.equalToSuperview()
         }
     }
@@ -40,12 +61,16 @@ extension PickImageDemoViewController: ImagePickGridViewDelegte {
         Log.d(imagePickGridView.superview?.frame)
     }
 
-    func addImage() {
+    func addImage(imagePickGridView: ImagePickGridView) {
         return pickImage()
     }
 
     func clickImage(imagePickGridView: ImagePickGridView, index: Int) {
         showImage(imagePickGridView: imagePickGridView, index: index)
+    }
+
+    func imageCountChange(imagePickGridView: ImagePickGridView, count: Int) {
+        countLabel.text = "    \(count)/\(maxImageCount)"
     }
 }
 
@@ -62,22 +87,26 @@ extension PickImageDemoViewController: TZImagePickerControllerDelegate {
         arr.addObjects(from: pickImageView.imageList.compactMap { $0.data })
         pickerController?.selectedAssets = arr
         pickerController?.didFinishPickingPhotosHandle = {photos,assets,isSelectOriginalPhoto in
-            Log.d(photos)
-            Log.d(assets)
-            Log.d(isSelectOriginalPhoto)
-            var imageList = [PickImageModel]()
-            for (index,item) in assets!.enumerated() {
-                let asset = item as! PHAsset
-                let assetResource = PHAssetResource.assetResources(for: asset).first
-                Log.d(assetResource)
-//                Log.d(assetResource?.value(forKey: "filename"))
-                Log.d(assetResource?.originalFilename)
-                Log.d(assetResource?.assetLocalIdentifier)
-                Log.d(assetResource?.type)
-                Log.d(assetResource?.uniformTypeIdentifier)
 
-                let image = PickImageModel(image: photos![index], id: assetResource?.assetLocalIdentifier, data: item)
-                imageList.append(image)
+            guard let images = photos else {
+                return
+            }
+            var imageList = [PickImageModel]()
+            for (index,item) in images.enumerated() {
+                if let assetArr = assets, assetArr.count > index, let asset = assetArr[index] as? PHAsset {
+                    let assetResource = PHAssetResource.assetResources(for: asset).first
+                    Log.d(assetResource)
+                    Log.d(assetResource?.originalFilename)
+                    Log.d(assetResource?.assetLocalIdentifier)
+                    Log.d(assetResource?.type)
+                    Log.d(assetResource?.uniformTypeIdentifier)
+
+                    let image = PickImageModel(image: item, id: assetResource?.assetLocalIdentifier, data: asset)
+                    imageList.append(image)
+                } else {
+                    let image = PickImageModel(image: item)
+                    imageList.append(image)
+                }
             }
             self.pickImageView.addImage(imageArr: imageList)
         }
@@ -90,6 +119,7 @@ extension PickImageDemoViewController: SKPhotoBrowserDelegate {
         SKPhotoBrowserOptions.displayAction = false //动作按钮
         SKPhotoBrowserOptions.displayBackAndForwardButton = false //前进后退按钮
         SKPhotoBrowserOptions.displayDeleteButton = true //删除按钮
+        SKPhotoBrowserOptions.displayStatusbar = true
 
         var newImagesArr = [SKPhotoProtocol]()
         for imageInfo in imagePickGridView.imageList {
@@ -97,7 +127,7 @@ extension PickImageDemoViewController: SKPhotoBrowserDelegate {
             photo.contentMode = .scaleAspectFit
             newImagesArr.append(photo)
         }
-        let browser = SKPhotoBrowser(photos:newImagesArr, initialPageIndex: index)
+        let browser = SKPhotoBrowser(photos: newImagesArr, initialPageIndex: index)
         browser.delegate = self
         self.present(browser, animated: true, completion:nil)
     }

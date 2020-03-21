@@ -25,12 +25,11 @@ Pod::Spec.new do |s|
       extension.frameworks = "UIKit","Foundation"
       extension.source_files = 'LTXiOSUtils/Classes/Core/Extension/*.swift'
     end
-    # 工具
-    core.subspec 'Util' do |util|
-      util.frameworks = "UIKit","Foundation"
-      util.dependency 'MBProgressHUD','1.1.0' # 加载框，OC库
-      util.dependency 'LTXiOSUtils/Core/Extension'
-      util.source_files = 'LTXiOSUtils/Classes/Core/Util/**/*.swift'
+    # 核心工具
+    core.subspec 'CoreUtil' do |coreUtil|
+      coreUtil.frameworks = "UIKit","Foundation"
+      coreUtil.dependency 'MBProgressHUD','1.1.0' # 加载框，OC库
+      coreUtil.source_files = 'LTXiOSUtils/Classes/Core/CoreUtil/**/*.swift'
     end
   end
 
@@ -41,6 +40,11 @@ Pod::Spec.new do |s|
     network.dependency 'Moya','14.0.0' # 网络抽象层，其依赖了Alamofire和Result
     network.dependency 'SwiftyJSON','5.0.0' # 处理JSON
     network.source_files = 'LTXiOSUtils/Classes/Network/*.swift'
+  end
+
+  # 工具类
+  s.subspec 'Util' do |util|
+    util.source_files = 'LTXiOSUtils/Classes/Util/*.swift'
   end
 
   # 资源

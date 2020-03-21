@@ -7,13 +7,29 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeNavigationController: UINavigationController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationBar.barTintColor = AppTheme.mainColor
+        navigationBar.tintColor = .white
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
 
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if viewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
         }
         super.pushViewController(viewController, animated: animated)
+    }
+
+    override var childForStatusBarStyle: UIViewController? {
+        return self.topViewController
+    }
+
+    override var childForStatusBarHidden: UIViewController? {
+        return self.topViewController
     }
 }

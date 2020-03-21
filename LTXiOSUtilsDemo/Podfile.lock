@@ -14,20 +14,20 @@ PODS:
     - LTXiOSUtils/Core (= 0.0.1)
     - LTXiOSUtils/Network (= 0.0.1)
     - LTXiOSUtils/Resources (= 0.0.1)
+    - LTXiOSUtils/Util (= 0.0.1)
     - LTXiOSUtils/ViewController (= 0.0.1)
   - LTXiOSUtils/Component (0.0.1):
     - LTXiOSUtils/Core
     - LTXiOSUtils/Resources
     - SnapKit (= 5.0.1)
   - LTXiOSUtils/Core (0.0.1):
+    - LTXiOSUtils/Core/CoreUtil (= 0.0.1)
     - LTXiOSUtils/Core/Extension (= 0.0.1)
     - LTXiOSUtils/Core/Scope (= 0.0.1)
-    - LTXiOSUtils/Core/Util (= 0.0.1)
+  - LTXiOSUtils/Core/CoreUtil (0.0.1):
+    - MBProgressHUD (= 1.1.0)
   - LTXiOSUtils/Core/Extension (0.0.1)
   - LTXiOSUtils/Core/Scope (0.0.1)
-  - LTXiOSUtils/Core/Util (0.0.1):
-    - LTXiOSUtils/Core/Extension
-    - MBProgressHUD (= 1.1.0)
   - LTXiOSUtils/Network (0.0.1):
     - LTXiOSUtils/Core
     - Moya (= 14.0.0)
@@ -35,6 +35,7 @@ PODS:
     - SwiftyJSON (= 5.0.0)
   - LTXiOSUtils/Resources (0.0.1):
     - Localize-Swift (= 3.1.0)
+  - LTXiOSUtils/Util (0.0.1)
   - LTXiOSUtils/ViewController (0.0.1):
     - LTXiOSUtils/Core/Extension
     - MJRefresh
@@ -138,7 +139,7 @@ SPEC CHECKSUMS:
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
-  LTXiOSUtils: f7338d05a17641f4f02edee40cded5066663d62b
+  LTXiOSUtils: 0279d1b20cfa8268c5d637219502a6855cc3410b
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916

@@ -1,6 +1,6 @@
 //
 //  UIFeedbackGeneratorUtils.swift
-//  LTXiOSUtilsDemo
+//  LTXiOSUtils
 //  震动反馈工具类
 //  Created by 李天星 on 2020/3/17.
 //  Copyright © 2020 李天星. All rights reserved.
