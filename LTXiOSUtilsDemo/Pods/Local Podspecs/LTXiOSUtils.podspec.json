@@ -40,7 +40,7 @@
           "source_files": "LTXiOSUtils/Classes/Core/Extension/*.swift"
         },
         {
-          "name": "Util",
+          "name": "CoreUtil",
           "frameworks": [
             "UIKit",
             "Foundation"
@@ -48,12 +48,9 @@
           "dependencies": {
             "MBProgressHUD": [
               "1.1.0"
-            ],
-            "LTXiOSUtils/Core/Extension": [
-
             ]
           },
-          "source_files": "LTXiOSUtils/Classes/Core/Util/**/*.swift"
+          "source_files": "LTXiOSUtils/Classes/Core/CoreUtil/**/*.swift"
         }
       ]
     },
@@ -74,6 +71,10 @@
         ]
       },
       "source_files": "LTXiOSUtils/Classes/Network/*.swift"
+    },
+    {
+      "name": "Util",
+      "source_files": "LTXiOSUtils/Classes/Util/*.swift"
     },
     {
       "name": "Resources",

@@ -16,23 +16,27 @@ open class BaseViewController: UIViewController {
     /// tabBar高度
     public private(set) var tabBarHeight: CGFloat?
 
-    /// 标题
+    /// 导航栏标题
     public var titleInfo = ""
-
     /// 计算属性 子类用于重写
     open var currentTitleInfo: String {
-        return titleInfo
+        return ""
     }
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        setnNavigationItemTitle()
+        setupBarHeightData()
+    }
+
+    open func setnNavigationItemTitle() {
         if let tempTitle = title, tempTitle.isNotEmpty {
 
+        } else if titleInfo.isNotEmpty {
+            self.navigationItem.title = titleInfo
         } else if currentTitleInfo.isNotEmpty {
-            title = currentTitleInfo
+            self.navigationItem.title = currentTitleInfo
         }
-        setupBarHeightData()
-//        hideKeyboardWhenTappedAround()
     }
 
     open func setupBarHeightData() {
@@ -41,4 +45,18 @@ open class BaseViewController: UIViewController {
         tabBarHeight = tabBarController?.tabBar.frame.size.height
     }
 
+    open override var prefersStatusBarHidden: Bool {
+        return BaseViewController.statusBarHidden
+    }
+
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return BaseViewController.statusBarStyle
+    }
+}
+
+public extension BaseViewController {
+    /// 状态栏是否隐藏
+    static var statusBarHidden: Bool = false
+    /// 状态栏显示样式
+    static var statusBarStyle: UIStatusBarStyle = .lightContent
 }

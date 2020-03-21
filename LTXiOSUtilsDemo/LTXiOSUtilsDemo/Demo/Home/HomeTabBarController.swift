@@ -30,7 +30,7 @@ class HomeTabBarController: UITabBarController {
 
         let demoListViewControllerTitle = "Demo列表"
         let demoListViewController = DemoListViewController()
-        demoListViewController.titleInfo = demoListViewControllerTitle //该值不仅影响顶部导航栏标题，还影响底部标题
+        demoListViewController.titleInfo = demoListViewControllerTitle
         let demoListViewControllerWithNavigation = HomeNavigationController(rootViewController: demoListViewController)
         demoListViewControllerWithNavigation.tabBarItem.title = demoListViewControllerTitle
         demoListViewControllerWithNavigation.tabBarItem.core.addDot(color: .red)

@@ -12,8 +12,9 @@ import UIKit
 @objc
 public protocol ImagePickGridViewDelegte {
     /// 添加图片
+    /// - Parameter imagePickGridView: imagePickGridView
     @objc
-    optional func addImage()
+    optional func addImage(imagePickGridView: ImagePickGridView)
 
     /// 点击图片
     /// - Parameters:
@@ -26,6 +27,13 @@ public protocol ImagePickGridViewDelegte {
     /// - Parameter imagePickGridView: imagePickGridView
     @objc
     optional func frameChange(imagePickGridView: ImagePickGridView)
+
+    ///
+    /// - Parameters:
+    ///   - imagePickGridView: imagePickGridView
+    ///   - count: 当前图片数量
+    @objc
+    optional func imageCountChange(imagePickGridView: ImagePickGridView, count: Int)
 
 }
 
@@ -42,7 +50,11 @@ open class ImagePickGridView: UIView {
     }
 
     /// 图片数据
-    public private(set) var imageList = [PickImageModel]()
+    public private(set) var imageList = [PickImageModel]() {
+        didSet {
+            delegte?.imageCountChange?(imagePickGridView: self, count: imageList.count)
+        }
+    }
 
     /// 是否需要图片添加按钮
     public var isNeedAddButton: Bool = true
@@ -84,7 +96,8 @@ open class ImagePickGridView: UIView {
         if layout.itemSize == .zero {
             layout.itemSize = CGSize(width: itemWidth ?? 0, height: itemWidth ?? 0)
         }
-        collectionView?.frame = self.frame
+        collectionView?.height = self.frame.height
+        collectionView?.width = self.frame.width
         reloadDataAndFrame()
     }
 
@@ -95,7 +108,7 @@ open class ImagePickGridView: UIView {
         collectionView?.register(ImagePickGridViewCell.self, forCellWithReuseIdentifier: ImagePickGridViewCell.description())
         collectionView?.dataSource = self
         collectionView?.delegate = self
-        collectionView?.backgroundColor = .clear
+        collectionView?.backgroundColor = self.backgroundColor
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.showsHorizontalScrollIndicator = false
         self.addSubview(collectionView!)
@@ -200,7 +213,7 @@ extension ImagePickGridView: UICollectionViewDelegate {
             self.delegte?.clickImage?(imagePickGridView: self, index: indexPath.item)
         } else if indexPath.item == imageList.count {
             Log.d("点击添加")
-            self.delegte?.addImage?()
+            self.delegte?.addImage?(imagePickGridView: self)
         }
     }
 }
@@ -232,9 +245,17 @@ public class PickImageModel: NSObject {
     /// 构造函数
     /// - Parameters:
     ///   - image: 图片数据
+    ///   - id: id
     public init(image: UIImage?, id: String?) {
         self.image = image
         self.id = id
+    }
+
+    /// 构造函数
+    /// - Parameters:
+    ///   - image: 图片数据
+    public init(image: UIImage?) {
+        self.image = image
     }
 
 }
