@@ -13,37 +13,16 @@ Moya内置三个插件，分别为NetworkLoggerPlugin，NetworkActivityPlugin以
 
 import Foundation
 import Moya
-import SwiftyJSON
 import Reachability
 
-/// 生成请求闭包，将一个Endpoint分解成一个实际的URLRequest，并对URLRequest进行最后的编辑
-func getRequestTimeoutClosure(timeoutInterval: TimeInterval = NetworkConfig.requestTimeOut) -> MoyaProvider<APIManager>.RequestClosure {
-    let requestTimeoutClosure = { (endpoint: Endpoint, closure: @escaping MoyaProvider<APIManager>.RequestResultClosure) in
-        do {
-            var urlRequest = try endpoint.urlRequest()
-            // 设置请求的超时时间
-            urlRequest.timeoutInterval = timeoutInterval
-            closure(.success(urlRequest))
-        } catch MoyaError.requestMapping(let url) {
-            closure(.failure(MoyaError.requestMapping(url)))
-        } catch MoyaError.parameterEncoding(let error) {
-            closure(.failure(MoyaError.parameterEncoding(error)))
-        } catch {
-            closure(.failure(MoyaError.underlying(error, nil)))
-        }
-    }
-    return requestTimeoutClosure
-}
-/// 默认超时请求闭包
-var requestTimeoutClosure = getRequestTimeoutClosure()
-
 /// 默认的MoyaProvider
-var provider = MoyaProvider<APIManager>(requestClosure: requestTimeoutClosure, plugins: [LoadingPlugin(), AuthPlugin()])
+var provider: MoyaProvider<APIManager>?
 
 /// 网络请求工具类
 public class NetworkManager {
+
     /// 成功回调闭包
-    public typealias SuccessBlock = (_ data: JSON) -> Void
+    public typealias SuccessBlock = (_ data: Data) -> Void
      /// 进度回调闭包
     public typealias ProgressBlock = (_ progressResponse: ProgressResponse) -> Void
      /// 失败回调闭包
@@ -114,19 +93,9 @@ public class NetworkManager {
         Log.d("请求url详细信息")
         requestParam.printInfo()
 
-        /// 如果为本次请求设置了与默认值不同的超时时间，重新设置请求闭包
-        if requestParam.timeOut != NetworkConfig.requestTimeOut {
-            requestTimeoutClosure = getRequestTimeoutClosure(timeoutInterval: requestParam.timeOut)
-        }
+        provider = MoyaProvider<APIManager>(requestClosure: getRequestTimeoutClosure(timeoutInterval: requestParam.timeOut), plugins: [LoadingPlugin(), AuthPlugin(token: requestParam.token)])
 
-        /// 如果本次网络请求不使用默认token，则重新设置认证插件AuthPlugin
-        if requestParam.token.isNotEmpty {
-            var authPlugin = AuthPlugin()
-            authPlugin.token = requestParam.token
-            provider = MoyaProvider<APIManager>(requestClosure: requestTimeoutClosure, plugins: [LoadingPlugin(), authPlugin])
-        }
-
-        provider.request(.getData(requestParam:requestParam), progress: { resultProgress in
+        provider?.request(.getData(requestParam:requestParam), progress: { resultProgress in
             progress(resultProgress)
         }, completion: { result in
             switch result {
@@ -134,8 +103,7 @@ public class NetworkManager {
                 Log.d("状态码: \(response.statusCode)")
                 do {
                     let successResponse = try response.filterSuccessfulStatusCodes()
-                    let data = JSON(successResponse.data)
-                    success(data)
+                    success(successResponse.data)
                 } catch {
                     failure(mergeError(statusCode: response.statusCode, moyaError: nil))
                 }
@@ -149,7 +117,7 @@ public class NetworkManager {
 
     /// 取消所有网络请求
     public class func cancelAllRequests() {
-        provider.session.cancelAllRequests()
+        provider?.session.cancelAllRequests()
     }
 
     /// 合并错误
@@ -213,7 +181,7 @@ public class NetworkManager {
     public class func manageError(requestParam: RequestParam, error: RequestError, success: @escaping SuccessBlock) {
         let retryCount = requestParam.retryCount
         if retryCount > 0 {
-            let retryRequestParam = requestParam
+            var retryRequestParam = requestParam
             retryRequestParam.retryCount = retryCount - 1
             sendRequest(requestParam: retryRequestParam) { data in
                 success(data)
@@ -232,6 +200,25 @@ public class NetworkManager {
         }
         errorInfo += "(\(errorCode))"
         HUD.showText(errorInfo)
+    }
+
+    /// 生成请求闭包，将一个Endpoint分解成一个实际的URLRequest，并对URLRequest进行最后的编辑
+    private class func getRequestTimeoutClosure(timeoutInterval: TimeInterval = NetworkConfig.requestTimeOut) -> MoyaProvider<APIManager>.RequestClosure {
+        let requestTimeoutClosure = { (endpoint: Endpoint, closure: @escaping MoyaProvider<APIManager>.RequestResultClosure) in
+            do {
+                var urlRequest = try endpoint.urlRequest()
+                // 设置请求的超时时间
+                urlRequest.timeoutInterval = timeoutInterval
+                closure(.success(urlRequest))
+            } catch MoyaError.requestMapping(let url) {
+                closure(.failure(MoyaError.requestMapping(url)))
+            } catch MoyaError.parameterEncoding(let error) {
+                closure(.failure(MoyaError.parameterEncoding(error)))
+            } catch {
+                closure(.failure(MoyaError.underlying(error, nil)))
+            }
+        }
+        return requestTimeoutClosure
     }
 
 }

@@ -20,7 +20,9 @@ public class LoadingPlugin: PluginType {
         guard let target = target as? CustomizeTargetType, target.hudConfig.isShow else {
             return
         }
-        HUD.showWait(title: target.hudConfig.title, isClickHidden: target.hudConfig.clickCancel)
+        DispatchQueue.main.async {
+            HUD.showWait(title: target.hudConfig.title, isClickHidden: target.hudConfig.clickCancel)
+        }
     }
 
     /// 收到响应后执行，这是检查的机会

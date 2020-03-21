@@ -13,14 +13,19 @@ public struct AuthPlugin: PluginType {
     /// 令牌字符串
     public var token: String = ""
 
+    /// 构造函数
+    /// - Parameter token: token
+    public init(token: String) {
+        self.token = token
+    }
+
     /// 准备网络请求
     public func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
-        guard token.isNotEmpty || NetworkConfig.token.isNotEmpty else {
+        guard token.isNotEmpty else {
             return request
         }
         var request = request
-        let requestToken = token.isNotEmpty ? token : NetworkConfig.token
-        request.addValue(requestToken, forHTTPHeaderField: NetworkConfig.Authorization) //将token添加到请求头中
+        request.addValue(token, forHTTPHeaderField: NetworkConfig.Authorization) //将token添加到请求头中
         return request
     }
 

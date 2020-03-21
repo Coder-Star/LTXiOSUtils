@@ -51,7 +51,8 @@ extension NetworkDemoViewController {
         let path = "/toa/toaMobileLogin_login.json"
         let requestParam = RequestParam(baseUrl: baseUrl, path: path, parameters: parameters)
         NetworkManager.sendRequest(requestParam: requestParam) { data in
-            Log.d(data)
+            let json = JSON(data)
+            Log.d(json)
         }
     }
 }

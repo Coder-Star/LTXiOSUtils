@@ -44,12 +44,13 @@ extension RootVCApplicationService: XHLaunchAdDelegate {
     private func setLaunchAd() {
         XHLaunchAd.setLaunch(.launchScreen)
         XHLaunchAd.setWaitDataDuration(1) //如果这段时间没有取得json，就会直接跳过广告
-        let requestParam = RequestParam(baseUrl: NetworkConstant.appUrl, path: NetworkConstant.launchAdData)
+        var requestParam = RequestParam(baseUrl: NetworkConstant.appUrl, path: NetworkConstant.launchAdData)
         requestParam.method = .get
         requestParam.hud.isShow = false
         NetworkManager.sendRequest(requestParam: requestParam, success: { data in
-            Log.d(data)
-            if let adModel = AdModel(JSONString: data.description) {
+            let json = JSON(data)
+            Log.d(json)
+            if let adModel = AdModel(JSONString: json.description) {
                 let config = XHLaunchImageAdConfiguration()
                 config.duration = adModel.duration!
                 config.skipButtonType = adModel.skipBtnType!
