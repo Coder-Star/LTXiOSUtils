@@ -51,7 +51,7 @@ open class HUD: MBProgressHUD {
     ///   - style: 显示样式
     @discardableResult
     public class func showText(_ title: String, _ delayTime: Double = 1.5, position: HUDPosition = .center, style: HUDStyle = .black) -> HUD? {
-        let hud = getBaseHUD()
+        let hud = getBaseHUD(style: style)
         hud?.detailsLabel.text = title
         hud?.detailsLabel.font = UIFont.systemFont(ofSize: 14)
         hud?.mode = .text
@@ -77,7 +77,7 @@ open class HUD: MBProgressHUD {
     ///   - style: 显示样式
     @discardableResult
     open class func showWait(title: String = "", style: HUDStyle = .black, isClickHidden: Bool = false) -> HUD? {
-        let hud = getBaseHUD()
+        let hud = getBaseHUD(style: style)
         hud?.detailsLabel.text = title
         hud?.detailsLabel.font = UIFont.systemFont(ofSize: 14)
         hud?.isClickHidden = isClickHidden
@@ -90,7 +90,7 @@ open class HUD: MBProgressHUD {
     /// - Parameter style: 显示样式
     @discardableResult
     open class func showProgress(title: String, style: HUDStyle = .default) -> HUD? {
-        let hud = getBaseHUD()
+        let hud = getBaseHUD(style: style)
         hud?.setStyle(style: style)
         hud?.detailsLabel.text = title
         hud?.detailsLabel.font = UIFont.systemFont(ofSize: 14)
@@ -122,8 +122,14 @@ open class HUD: MBProgressHUD {
     }
 
     /// 获取基础HUD
-    open class func getBaseHUD() -> HUD? {
+    open class func getBaseHUD(style: HUDStyle) -> HUD? {
         if let view = viewToShow() {
+            switch style {
+            case .default:
+                UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [MBProgressHUD.self]).color = .black
+            case .black:
+                UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [MBProgressHUD.self]).color = .white
+            }
             let hud = HUD.showAdded(to: view, animated: true)
             hud.removeFromSuperViewOnHide = true
             return hud
@@ -138,7 +144,6 @@ open class HUD: MBProgressHUD {
         if style == .black {
             self.bezelView.style = .solidColor
             self.bezelView.backgroundColor = .black
-            UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [MBProgressHUD.self]).color = .white
             self.label.textColor = .white
             self.contentColor = .white
             self.detailsLabel.textColor = .white
