@@ -535,7 +535,7 @@ extension FWPopupView {
                     }
                 }
                 strongSelf.isHidden = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0001, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0001) {
                     if FWPopupWindow.sharedInstance.willShowingViews.count > 0 {
                         guard let willShowingView: FWPopupView = FWPopupWindow.sharedInstance.willShowingViews.last as? FWPopupView else {
                             return
@@ -559,7 +559,7 @@ extension FWPopupView {
                     if strongSelf.popupDidDisappearBlock != nil {
                         strongSelf.popupDidDisappearBlock!(strongSelf)
                     }
-                })
+                }
                 strongSelf.attachedView?.fwBackgroundAnimating = false
 
             })

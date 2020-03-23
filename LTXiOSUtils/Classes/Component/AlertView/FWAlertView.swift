@@ -202,7 +202,7 @@ extension FWAlertView {
         if title != nil && !title!.isEmpty {
             self.titleLabel = UILabel()
             self.addSubview(self.titleLabel!)
-            self.titleLabel?.snp.makeConstraints({ (make) in
+            self.titleLabel?.snp.makeConstraints { make in
                 var tmpOffset: CGFloat = 0.0
                 if self.commponenetCount == 1 {
                     tmpOffset = singleCommponenetMargin
@@ -214,7 +214,7 @@ extension FWAlertView {
                 make.top.equalToSuperview().offset(tmpOffset)
                 make.left.equalToSuperview().offset(self.vProperty.letfRigthMargin)
                 make.right.equalToSuperview().offset(-self.vProperty.letfRigthMargin)
-            })
+            }
             self.titleLabel?.text = title
             self.titleLabel?.textColor = self.vProperty.titleColor
             self.titleLabel?.textAlignment = .center
@@ -229,12 +229,12 @@ extension FWAlertView {
         if detail != nil && !detail!.isEmpty {
             self.detailLabel = UILabel()
             self.addSubview(self.detailLabel!)
-            self.detailLabel?.snp.makeConstraints({ (make) in
+            self.detailLabel?.snp.makeConstraints { make in
                 make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (lastTopBottomMargin + property.commponentMargin) : singleCommponenetMargin)
                 make.left.equalToSuperview().offset(self.vProperty.letfRigthMargin)
                 make.right.equalToSuperview().offset(-self.vProperty.letfRigthMargin)
                 make.height.lessThanOrEqualTo(self.superview!.frame.size.height * property.popupViewMaxHeightRate - 100)
-            })
+            }
             self.detailLabel?.text = detail
             self.detailLabel?.textColor = property.detailColor
             self.detailLabel?.textAlignment = .center
@@ -273,11 +273,11 @@ extension FWAlertView {
         if customView != nil {
             self.customView = customView
             self.addSubview(self.customView!)
-            self.customView?.snp.makeConstraints({ (make) in
+            self.customView?.snp.makeConstraints { make in
                 make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (lastTopBottomMargin + property.commponentMargin) : singleCommponenetMargin)
                 make.centerX.equalToSuperview()
                 make.size.equalTo(customView!.frame.size)
-            })
+            }
 
             lastTopBottomMargin = 0.0
             lastConstraintItem = self.customView!.snp.bottom

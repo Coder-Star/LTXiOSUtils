@@ -155,11 +155,11 @@ public class MaskPopupView: UIView {
         containerView.addSubview(self)
 
         willDispalyCallback?()
-        animator.display(contentView: contentView, backgroundView: backgroundView, animated: animated, completion: {
+        animator.display(contentView: contentView, backgroundView: backgroundView, animated: animated) {
             completion?()
             self.isAnimating = false
             self.didDispalyCallback?()
-        })
+        }
     }
 
     public func dismiss(animated: Bool, completion: (() -> Void)?) {
@@ -168,12 +168,12 @@ public class MaskPopupView: UIView {
         }
         isAnimating = true
         willDismissCallback?()
-        animator.dismiss(contentView: contentView, backgroundView: backgroundView, animated: animated, completion: {
+        animator.dismiss(contentView: contentView, backgroundView: backgroundView, animated: animated) {
             self.removeFromSuperview()
             completion?()
             self.isAnimating = false
             self.didDismissCallback?()
-        })
+        }
     }
 
     @objc

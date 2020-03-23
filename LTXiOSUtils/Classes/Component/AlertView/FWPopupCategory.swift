@@ -80,9 +80,9 @@ extension UIView {
         if tmpView == nil {
             tmpView = UIView(frame: self.bounds)
             self.addSubview(tmpView!)
-            tmpView?.snp.makeConstraints({ (make) in
+            tmpView?.snp.makeConstraints { make in
                 make.top.left.bottom.right.equalTo(self)
-            })
+            }
 
             tmpView?.alpha = 0.0
             tmpView?.layer.zPosition = CGFloat(MAXFLOAT)

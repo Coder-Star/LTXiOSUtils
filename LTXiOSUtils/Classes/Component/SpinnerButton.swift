@@ -176,37 +176,37 @@ private extension SpinnerButton {
 
     /// 抖动状态
     func shakeAnimation() {
-        UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: [], animations: {
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1, animations: {
+        UIView.animateKeyframes(withDuration: 0.5, delay: 0, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1) {
                 let transform = CGAffineTransform(translationX: 10, y: 0)
                 self.transform = transform
-            })
+            }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.1, relativeDuration: 0.1, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.1, relativeDuration: 0.1) {
                 let transform = CGAffineTransform(translationX: -7, y: 0)
                 self.transform = transform
-            })
+            }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.1, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.1) {
                 let transform = CGAffineTransform(translationX: 5, y: 0)
                 self.transform = transform
-            })
+            }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.1, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.1) {
                 let transform = CGAffineTransform(translationX: -3, y: 0)
                 self.transform = transform
-            })
+            }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.4, relativeDuration: 0.1, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.4, relativeDuration: 0.1) {
                 let transform = CGAffineTransform(translationX: 2, y: 0)
                 self.transform = transform
-            })
+            }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.1, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.1) {
                 let transform = CGAffineTransform(translationX: -1, y: 0)
                 self.transform = transform
-            })
-        })
+            }
+        }, completion: nil)
     }
 }
 

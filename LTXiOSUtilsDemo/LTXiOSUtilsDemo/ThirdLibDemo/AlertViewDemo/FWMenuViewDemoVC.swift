@@ -42,9 +42,9 @@ class FWMenuViewDemoVC: BaseUIViewController {
         vProperty.cornerRadius = 0
         vProperty.selectionStyle = .gray
         vProperty.maskViewColor = UIColor(white: 0, alpha: 0.3)
-        let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: vProperty, itemBlock: { (_, index, _) in
+        let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: vProperty) { (_, index, _) in
             Log.d("Menu：点击了第\(index)个按钮")
-        })
+        }
         menuView.attachedView = self.baseView
         return menuView
     }()
@@ -65,9 +65,9 @@ class FWMenuViewDemoVC: BaseUIViewController {
         vProperty.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.backgroundColor: UIColor.clear, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15.0)]
         vProperty.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 
-        let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images2 as? [UIImage], property: vProperty, itemBlock: { (_, index, _) in
+        let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images2 as? [UIImage], property: vProperty) { (_, index, _) in
             Log.d("Menu：点击了第\(index)个按钮")
-        })
+        }
         menuView.attachedView = self.baseView
         return menuView
     }()
