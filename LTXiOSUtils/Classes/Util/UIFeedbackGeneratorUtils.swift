@@ -33,6 +33,8 @@ public enum FeedbackType: Int {
 /// 震动工具类
 public struct UIFeedbackGeneratorUtils {
 
+    /// 震动
+    /// - Parameter style: 震动类型
     public static func impactFeedback(style: FeedbackType) {
         if #available(iOS 10.0, *) {
             switch style {

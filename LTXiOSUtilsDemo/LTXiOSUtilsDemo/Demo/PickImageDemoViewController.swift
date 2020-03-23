@@ -34,7 +34,7 @@ class PickImageDemoViewController: BaseUIScrollViewController {
         title = "图片选择"
     }
 
-    override func setScrollSubViews(contentView: UIView) {
+    override func setContentViewSubViews(contentView: UIView) {
         contentView.addSubview(countLabel)
         countLabel.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
@@ -76,7 +76,7 @@ extension PickImageDemoViewController: ImagePickGridViewDelegte {
 
 extension PickImageDemoViewController: TZImagePickerControllerDelegate {
     func pickImage() {
-        let pickerController = TZImagePickerController(maxImagesCount:10, columnNumber:3, delegate:self, pushPhotoPickerVc: true)
+        let pickerController = TZImagePickerController(maxImagesCount: 10, columnNumber: 3, delegate: self, pushPhotoPickerVc: true)
         pickerController?.allowPickingVideo = false
         pickerController?.allowTakeVideo = false
         pickerController?.allowPickingGif = false
@@ -86,13 +86,13 @@ extension PickImageDemoViewController: TZImagePickerControllerDelegate {
         let arr = NSMutableArray()
         arr.addObjects(from: pickImageView.imageList.compactMap { $0.data })
         pickerController?.selectedAssets = arr
-        pickerController?.didFinishPickingPhotosHandle = {photos,assets,isSelectOriginalPhoto in
+        pickerController?.didFinishPickingPhotosHandle = {photos, assets, isSelectOriginalPhoto in
 
             guard let images = photos else {
                 return
             }
             var imageList = [PickImageModel]()
-            for (index,item) in images.enumerated() {
+            for (index, item) in images.enumerated() {
                 if let assetArr = assets, assetArr.count > index, let asset = assetArr[index] as? PHAsset {
                     let assetResource = PHAssetResource.assetResources(for: asset).first
                     Log.d(assetResource)
@@ -129,7 +129,7 @@ extension PickImageDemoViewController: SKPhotoBrowserDelegate {
         }
         let browser = SKPhotoBrowser(photos: newImagesArr, initialPageIndex: index)
         browser.delegate = self
-        self.present(browser, animated: true, completion:nil)
+        self.present(browser, animated: true, completion: nil)
     }
 
     func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void)) {

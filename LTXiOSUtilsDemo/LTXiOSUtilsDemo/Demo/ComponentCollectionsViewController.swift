@@ -28,7 +28,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         title = "控件集锦"
     }
 
-    override func setScrollSubViews(contentView: UIView) {
+    override func setContentViewSubViews(contentView: UIView) {
         var titleLabel = UILabel()
         titleLabel.textAlignment = .center
         titleLabel.text = "加载按钮"

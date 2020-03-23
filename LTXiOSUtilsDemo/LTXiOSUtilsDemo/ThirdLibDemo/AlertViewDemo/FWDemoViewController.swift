@@ -122,7 +122,6 @@ class FWDemoViewController: UITableViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
         FWPopupWindow.sharedInstance.touchWildToHide = true
-        
     }
 }
 

@@ -544,7 +544,7 @@
 //    }
 //}
 //
-//// MARK: - UINavigationController
+// MARK: - UINavigationController
 //extension UINavigationController: WRFatherAwakeProtocol {
 //    override open var preferredStatusBarStyle: UIStatusBarStyle {
 //        return topViewController?.statusBarStyle ?? WRNavigationBar.defaultStatusBarStyle
@@ -716,7 +716,7 @@
 //    }
 //}
 //
-//// MARK: - deal the gesture of return
+// MARK: - deal the gesture of return
 //extension UINavigationController: UINavigationBarDelegate {
 //    public func navigationBar(_ navigationBar: UINavigationBar, shouldPop item: UINavigationItem) -> Bool {
 //        if let topVC = topViewController,

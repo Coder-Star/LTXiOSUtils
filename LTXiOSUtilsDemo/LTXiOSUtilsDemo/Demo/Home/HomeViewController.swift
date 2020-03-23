@@ -91,7 +91,7 @@ class HomeViewController: BaseUIScrollViewController {
         return searchView
     }
 
-    override func setScrollSubViews(contentView: UIView) {
+    override func setContentViewSubViews(contentView: UIView) {
         contentView.addSubview(pagerView)
         pagerView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()

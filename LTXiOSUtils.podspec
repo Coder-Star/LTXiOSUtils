@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
 
   # 工具类
   s.subspec 'Util' do |util|
-    util.source_files = 'LTXiOSUtils/Classes/Util/*.swift'
+    util.source_files = 'LTXiOSUtils/Classes/Util/**/*.swift'
   end
 
   # 资源

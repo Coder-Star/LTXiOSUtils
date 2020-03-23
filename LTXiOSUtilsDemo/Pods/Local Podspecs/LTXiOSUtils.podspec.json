@@ -71,7 +71,7 @@
     },
     {
       "name": "Util",
-      "source_files": "LTXiOSUtils/Classes/Util/*.swift"
+      "source_files": "LTXiOSUtils/Classes/Util/**/*.swift"
     },
     {
       "name": "Resources",

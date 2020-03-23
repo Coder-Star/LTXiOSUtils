@@ -370,7 +370,7 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
         case .multiple:
             return multipleColsData?.count ?? 0
         case .multipleAssociated:
-            return multipleAssociatedColsData == nil ? 0 : multipleAssociatedColsData!.count+1
+            return multipleAssociatedColsData == nil ? 0 : multipleAssociatedColsData!.count + 1
         default: return 0
         }
     }
@@ -419,8 +419,8 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
                 if component < multipleAssociatedColsData!.count {
                     pickerView.reloadComponent(component + 1)
                     // 递归
-                    self.pickerView(pickerView, didSelectRow: 0, inComponent: component+1)
-                    pickerView.selectRow(0, inComponent: component+1, animated: true)
+                    self.pickerView(pickerView, didSelectRow: 0, inComponent: component + 1)
+                    pickerView.selectRow(0, inComponent: component + 1, animated: true)
                 }
             }
         default:

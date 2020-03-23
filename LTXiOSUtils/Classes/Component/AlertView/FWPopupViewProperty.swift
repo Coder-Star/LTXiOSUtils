@@ -52,7 +52,7 @@ open class FWPopupViewProperty: NSObject {
     open var splitColor: UIColor = kPV_RGBA(r: 231, g: 231, b: 231, a: 1)
     /// 分割线、边框的宽度
     @objc
-    open var splitWidth: CGFloat = (1/UIScreen.main.scale)
+    open var splitWidth: CGFloat = 1 / UIScreen.main.scale
     /// 圆角值
     @objc
     open var cornerRadius: CGFloat = 5.0

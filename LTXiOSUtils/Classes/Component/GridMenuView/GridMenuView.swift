@@ -112,7 +112,7 @@ public class GridMenuView: UIView {
         pageControl.style = pageStyle
         viewWidth = width
         colCount = col
-        rowCount = min(row, Int(ceil(Float(menu.count)/Float((colCount)))))
+        rowCount = min(row, Int(ceil(Float(menu.count) / Float((colCount)))))
         initView()
     }
 
@@ -136,7 +136,7 @@ public class GridMenuView: UIView {
         switch mode {
         case .horizontalPage:
             collectionView?.isPagingEnabled = true
-            let pageControlCount = Int(ceil(Float(menu.count)/Float((rowCount*colCount))))
+            let pageControlCount = Int(ceil(Float(menu.count) / Float((rowCount * colCount))))
             if pageControlCount <= 1 {
                 viewHeight = collectionView!.frame.height
             } else {
@@ -152,10 +152,10 @@ public class GridMenuView: UIView {
                 viewHeight = collectionView!.frame.height
             } else {
                 let scrollPageControlViewWidth: CGFloat = 50
-                scrollPageControlView.frame = CGRect(x: (viewWidth - scrollPageControlViewWidth)/2, y: collectionView!.frame.height + 5, width: scrollPageControlViewWidth, height: 3)
+                scrollPageControlView.frame = CGRect(x: (viewWidth - scrollPageControlViewWidth) / 2, y: collectionView!.frame.height + 5, width: scrollPageControlViewWidth, height: 3)
                 self.addSubview(scrollPageControlView)
                 scrollPageControlView.currentIndicatorWidth = colCount.cgFloatValue / realColCount.cgFloatValue * scrollPageControlViewWidth
-                viewHeight = collectionView!.frame.height +  scrollPageControlView.frame.height + 10
+                viewHeight = collectionView!.frame.height + scrollPageControlView.frame.height + 10
             }
         }
     }
@@ -287,7 +287,7 @@ extension GridMenuView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch mode {
         case .horizontalPage:
-            return Int(ceil(Float(menu.count)/Float((rowCount*colCount)))) * (rowCount*colCount)
+            return Int(ceil(Float(menu.count) / Float((rowCount * colCount)))) * (rowCount * colCount)
         case .horizontalScroll:
             return menu.count % rowCount == 0 ? menu.count : (menu.count / rowCount + 1) * rowCount
         }

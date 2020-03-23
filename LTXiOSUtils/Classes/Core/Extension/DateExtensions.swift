@@ -95,7 +95,7 @@ public extension Date {
     /// 获取毫秒级时间戳 - 13位
     var milliStamp: CLongLong {
         let timeInterval: TimeInterval = self.timeIntervalSince1970
-        let millisecond = CLongLong(round(timeInterval*1000))
+        let millisecond = CLongLong(round(timeInterval * 1000))
         return millisecond
     }
 
@@ -120,7 +120,7 @@ public extension Date {
 extension TimeInterval {
     /// 时间戳(毫秒)转时间
     var dateAsMilliStamp: Date {
-        let timeInterval = self/1000
+        let timeInterval = self / 1000
         return Date.init(timeIntervalSince1970: timeInterval)
     }
 

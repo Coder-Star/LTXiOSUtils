@@ -172,7 +172,7 @@ public extension Core where Base: UIView {
     func decreaseBy(number: Int) {
         let label = base.badgeView
         let result = (Int(label.text ?? "0") ?? 0) - number
-        if (result <= 0) {
+        if result <= 0 {
             hiddenBadge()
             label.text = "0"
             return

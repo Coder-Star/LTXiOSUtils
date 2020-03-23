@@ -13,7 +13,7 @@
 //private let WRDefaultBackgroundColor = UIColor.white
 //private let WRScreenWidth = UIScreen.main.bounds.size.width
 //
-//// MARK: - Router
+// MARK: - Router
 //extension UIViewController {
 //    func wr_toLastViewController(animated: Bool) {
 //        if self.navigationController != nil {
@@ -230,7 +230,7 @@
 //    }
 //}
 //
-//// MARK: - 导航栏左右按钮事件
+// MARK: - 导航栏左右按钮事件
 //extension WRCustomNavigationBar {
 //    @objc
 //    func clickBack() {

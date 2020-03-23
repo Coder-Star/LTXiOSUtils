@@ -45,14 +45,14 @@ class FWCustomSheetViewTableViewCell: UITableViewCell {
         }
         self.selectionStyle = property.selectionStyle
         self.line.frame = CGRect(x: property.separatorInset.left,
-                                 y: ceil(self.frame.height-property.splitWidth),
-                                 width: self.frame.width-property.separatorInset.left-property.separatorInset.right,
+                                 y: ceil(self.frame.height - property.splitWidth),
+                                 width: self.frame.width - property.separatorInset.left - property.separatorInset.right,
                                  height: property.splitWidth)
         self.line.backgroundColor = property.splitColor.cgColor
         var leftMargin = property.letfRigthMargin
         if image != nil {
             self.imgView.frame = CGRect(x: leftMargin,
-                                        y: (self.frame.height-image!.size.height)/2,
+                                        y: (self.frame.height - image!.size.height) / 2,
                                         width: image!.size.width,
                                         height: image!.size.height)
             self.imgView.image = image
@@ -65,13 +65,13 @@ class FWCustomSheetViewTableViewCell: UITableViewCell {
             let titleSize = (title! as NSString).size(withAttributes: property.titleTextAttributes)
             let secondaryTitleSize = (title! as NSString).size(withAttributes: property.secondaryTitleTextAttributes)
             self.titleLabel.frame = CGRect(x: leftMargin,
-                                           y: (self.frame.height-property.commponentMargin/2-titleSize.height-secondaryTitleSize.height)/2,
-                                           width: self.frame.width-leftMargin-property.letfRigthMargin - FWCustomSheetView.accessoryViewWidth,
+                                           y: (self.frame.height - property.commponentMargin / 2 - titleSize.height - secondaryTitleSize.height) / 2,
+                                           width: self.frame.width - leftMargin - property.letfRigthMargin - FWCustomSheetView.accessoryViewWidth,
                                            height: titleSize.height)
             self.titleLabel.attributedText = attributedString
             self.secondaryTitleLabel.frame = CGRect(x: leftMargin,
-                                                    y: self.titleLabel.frame.maxY+property.commponentMargin/2,
-                                                    width: self.frame.width-leftMargin-property.letfRigthMargin - FWCustomSheetView.accessoryViewWidth,
+                                                    y: self.titleLabel.frame.maxY + property.commponentMargin / 2,
+                                                    width: self.frame.width - leftMargin - property.letfRigthMargin - FWCustomSheetView.accessoryViewWidth,
                                                     height: secondaryTitleSize.height)
             self.secondaryTitleLabel.attributedText = secondaryAttributedString
         } else if title != nil && (secondaryTitle == nil || secondaryTitle!.isEmpty) {
@@ -84,8 +84,8 @@ class FWCustomSheetViewTableViewCell: UITableViewCell {
             } else {
                 let titleSize = (title! as NSString).size(withAttributes: property.titleTextAttributes)
                 self.titleLabel.frame = CGRect(x: leftMargin,
-                                               y: (self.frame.height-titleSize.height)/2,
-                                               width: self.frame.width-leftMargin-property.letfRigthMargin - FWCustomSheetView.accessoryViewWidth,
+                                               y: (self.frame.height - titleSize.height) / 2,
+                                               width: self.frame.width - leftMargin - property.letfRigthMargin - FWCustomSheetView.accessoryViewWidth,
                                                height: titleSize.height)
             }
             self.titleLabel.attributedText = attributedString
@@ -208,15 +208,15 @@ extension FWCustomSheetView {
             self.addSubview(self.headerView!)
 
             let line = CALayer()
-            line.frame = CGRect(x: 0, y: floor(property.headerViewHeight-property.splitWidth), width: selfSize.width, height: property.splitWidth)
+            line.frame = CGRect(x: 0, y: floor(property.headerViewHeight - property.splitWidth), width: selfSize.width, height: property.splitWidth)
             line.backgroundColor = property.splitColor.cgColor
             self.headerView!.layer.addSublayer(line)
 
-            let titleLabel = UILabel(frame: CGRect(x: property.letfRigthMargin, y: 0, width: selfSize.width-property.letfRigthMargin*3, height: property.headerViewHeight))
+            let titleLabel = UILabel(frame: CGRect(x: property.letfRigthMargin, y: 0, width: selfSize.width - property.letfRigthMargin * 3, height: property.headerViewHeight))
             self.headerView!.addSubview(titleLabel)
             titleLabel.attributedText = NSAttributedString(string: headerTitle!, attributes: property.titleTextAttributes)
 
-            let closeBtn = UIButton(frame: CGRect(x: selfSize.width-(property.headerViewHeight-2)-property.letfRigthMargin/2, y: 1, width: property.headerViewHeight-2, height: property.headerViewHeight-2))
+            let closeBtn = UIButton(frame: CGRect(x: selfSize.width - (property.headerViewHeight - 2) - property.letfRigthMargin / 2, y: 1, width: property.headerViewHeight - 2, height: property.headerViewHeight - 2))
             closeBtn.backgroundColor = UIColor.clear
             closeBtn.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
             self.headerView!.addSubview(closeBtn)
@@ -241,8 +241,8 @@ extension FWCustomSheetView {
         if isItemTitleAutoHeight {
             tableViewHeight = getTableHeight()
         }
-        if property.popupViewMaxHeightRate > 0 && tableViewHeight > property.popupViewMaxHeightRate*self.superview!.frame.size.height {
-            selfSize.height = property.popupViewMaxHeightRate*self.superview!.frame.size.height
+        if property.popupViewMaxHeightRate > 0 && tableViewHeight > property.popupViewMaxHeightRate * self.superview!.frame.size.height {
+            selfSize.height = property.popupViewMaxHeightRate * self.superview!.frame.size.height
         } else if property.popupViewMinHeight > 0 && tableViewHeight < property.popupViewMinHeight {
             selfSize.height = property.popupViewMinHeight
         } else {
@@ -250,7 +250,7 @@ extension FWCustomSheetView {
         }
         selfSize.height += property.headerViewHeight
         self.frame = CGRect(x: 0, y: 0, width: selfSize.width, height: selfSize.height)
-        self.tableView.frame = CGRect(x: 0, y: property.headerViewHeight, width: selfSize.width, height: selfSize.height-property.headerViewHeight)
+        self.tableView.frame = CGRect(x: 0, y: property.headerViewHeight, width: selfSize.width, height: selfSize.height - property.headerViewHeight)
 
         // 用来隐藏多余的线条，不想自定义线条
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 1))
@@ -321,7 +321,7 @@ extension FWCustomSheetView: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = self.vProperty.backgroundColor
 
         let property = getProperty()
-        if property.lastNeedAccessoryView == true && indexPath.row == (self.itemsCount()-1) {
+        if property.lastNeedAccessoryView == true && indexPath.row == (self.itemsCount() - 1) {
             cell.accessoryType = .disclosureIndicator
         } else if indexPath.row == self.currentSelectedIndex {
             if property.choiceImage != nil {
@@ -347,7 +347,7 @@ extension FWCustomSheetView: UITableViewDelegate, UITableViewDataSource {
         }
         self.hide()
         let property = getProperty()
-        if !(property.lastNeedAccessoryView == true && indexPath.row == (self.itemsCount()-1)) {
+        if !(property.lastNeedAccessoryView == true && indexPath.row == (self.itemsCount() - 1)) {
             self.lastTimeSelectedIndex = self.currentSelectedIndex
             self.currentSelectedIndex = indexPath.row
         }

@@ -40,9 +40,9 @@ public extension UIColor {
             let g = Int(color >> 8) & mask
             let b = Int(color) & mask
 
-            let red   = CGFloat(r) / 255.0
+            let red = CGFloat(r) / 255.0
             let green = CGFloat(g) / 255.0
-            let blue  = CGFloat(b) / 255.0
+            let blue = CGFloat(b) / 255.0
 
             self.init(red: red, green: green, blue: blue, alpha: alpha)
         }

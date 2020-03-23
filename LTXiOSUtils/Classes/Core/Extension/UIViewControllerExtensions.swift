@@ -37,7 +37,7 @@ public extension UIViewController {
     ///   - completion: 完成dismiss闭包回调
     func dismissToRootViewController(animated: Bool = true, completion: (() -> Void)? = nil) {
         var tempPresentingViewController = self
-        while let viewController  = self.presentingViewController {
+        while let viewController = self.presentingViewController {
             tempPresentingViewController = viewController
         }
         tempPresentingViewController.dismiss(animated: animated, completion: completion)
