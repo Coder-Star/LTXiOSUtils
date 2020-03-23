@@ -167,7 +167,7 @@ extension UITextView {
     @objc
     private func textChange() {
         if placeholder.isNotEmpty {
-            if self.text.count ==  0 {
+            if self.text.count == 0 {
                 placeholderLabel?.isHidden = false
             } else {
                 placeholderLabel?.isHidden = true

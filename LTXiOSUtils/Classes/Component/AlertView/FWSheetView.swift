@@ -117,7 +117,7 @@ extension FWSheetView {
             self.titleLabel = UILabel()
             self.titleContainerView?.addSubview(self.titleLabel!)
             self.titleLabel?.snp.makeConstraints({ (make) in
-                make.edges.equalToSuperview().inset(UIEdgeInsets(top: round(self.vProperty.topBottomMargin*1.5), left: self.vProperty.letfRigthMargin, bottom: round(self.vProperty.topBottomMargin*1.5), right: self.vProperty.letfRigthMargin))
+                make.edges.equalToSuperview().inset(UIEdgeInsets(top: round(self.vProperty.topBottomMargin * 1.5), left: self.vProperty.letfRigthMargin, bottom: round(self.vProperty.topBottomMargin * 1.5), right: self.vProperty.letfRigthMargin))
             })
             self.titleLabel?.text = title
             self.titleLabel?.textColor = self.vProperty.titleColor
@@ -169,7 +169,7 @@ extension FWSheetView {
             btn.snp.makeConstraints { (make) in
                 make.left.right.equalTo(btnContrainerView).inset(UIEdgeInsets(top: 0, left: -self.vProperty.splitWidth, bottom: 0, right: -self.vProperty.splitWidth))
                 make.height.equalTo(property.buttonHeight + property.splitWidth)
-                make.width.equalTo(btnContrainerView).offset(property.splitWidth*2)
+                make.width.equalTo(btnContrainerView).offset(property.splitWidth * 2)
                 if tmpIndex == 0 {
                     make.top.equalToSuperview()
                     lastBtn = btn
@@ -208,7 +208,7 @@ extension FWSheetView {
         }
 
         btnContrainerView.snp.makeConstraints { (make) in
-            var tmpHeight: CGFloat = property.buttonHeight * CGFloat(self.actionItemArray.count-1)
+            var tmpHeight: CGFloat = property.buttonHeight * CGFloat(self.actionItemArray.count - 1)
             if self.vProperty.popupViewMaxHeightRate > 0 && self.superview != nil && self.superview!.frame.height > 0 {
                 tmpHeight = min(tmpHeight, self.superview!.frame.height * self.vProperty.popupViewMaxHeightRate)
             }

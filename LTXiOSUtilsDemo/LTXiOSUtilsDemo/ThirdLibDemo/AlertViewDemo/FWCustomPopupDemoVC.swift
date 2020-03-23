@@ -160,7 +160,7 @@ extension FWCustomPopupDemoVC {
             customPopupView.vProperty = vProperty
             customPopupView.show()
         case 7:
-            let customPopupView = FWCustomPopupView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-20, height: UIScreen.main.bounds.height * 0.4))
+            let customPopupView = FWCustomPopupView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height * 0.4))
             let vProperty = FWPopupViewProperty()
             vProperty.popupCustomAlignment = .bottomCenter
             vProperty.popupAnimationType = .position

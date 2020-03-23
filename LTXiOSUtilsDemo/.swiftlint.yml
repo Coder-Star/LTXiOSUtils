@@ -1,11 +1,12 @@
 disabled_rules: # 执行时排除掉的规则
-  - colon
-  - comma
-  - control_statement
-  - empty_count
+  - empty_count # 这种如果开启 会错误认为 int类型 == 0 为错误格式
 
 opt_in_rules: # 启用指定的规则，有些默认的规则是关闭的，在此设置手动将规则启用
-  - missing_docs
+  - missing_docs #文档
+  # - multiline_arguments #方法参数要么一行，要么一行一个,开启后，方法调用参数是闭包需要额外加上()
+  - discouraged_object_literal #不建议使用代码块初始化，如 #colorLiteral、#imageLiteral
+  - operator_usage_whitespace #操作符 + - = 等左右需要空格
+  - prefixed_toplevel_constant #类似全局常量,建议前缀以k开头
 
 whitelist_rules: #规则白名单，但指定的规则不能和上面两个规则一起使用
 
@@ -61,7 +62,8 @@ type_name:
   max_length: # 警告和错误
     warning: 40
     error: 50
-  excluded: iPhone # 排除某个名字
+  excluded: 
+    - iPhone # 排除某个名字
 
 #变量名
 identifier_name:
@@ -69,9 +71,6 @@ identifier_name:
     warning: 1 
     error: 1 # 只有错误
   excluded: # 排除某些名字
-    - Hm
-    - id
     - URL
-    - GlobalAPIKey
 
 reporter: "xcode" # 报告类型 (xcode, json, csv, checkstyle, junit, html, emoji)

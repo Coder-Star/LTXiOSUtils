@@ -107,11 +107,14 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
             }
             popupView.show()
         case "date":
-            PickerViewManager.showDatePicker("日期选择", clearAction: {
-                self.showAlert(message: "清空")
-            }, doneAction: { selectedDate in
-                self.showAlert(message: selectedDate.formatDate(format: .YMD))
-            })
+            PickerViewManager.showDatePicker(
+                "日期选择",
+                clearAction: ({
+                    self.showAlert(message: "清空")
+                }),
+                doneAction: ({ selectedDate in
+                    self.showAlert(message: selectedDate.formatDate(format: .YMD))
+                }))
         case "time":
             var dateStyle = DatePickerSetting()
             dateStyle.dateMode = .time

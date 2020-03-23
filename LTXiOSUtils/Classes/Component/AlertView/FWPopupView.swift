@@ -105,7 +105,7 @@ public typealias FWPopupHideBlock = (_ popupView: FWPopupView, _ hideWithRemove:
 public typealias FWPopupVoidBlock = () -> Void
 
 /// 隐藏所有弹窗的通知
-let FWPopupViewHideAllNotification = "FWPopupViewHideAllNotification"
+let kFWPopupViewHideAllNotification = "FWPopupViewHideAllNotification"
 
 open class FWPopupView: UIView, UIGestureRecognizerDelegate {
     /// 单击隐藏
@@ -217,7 +217,7 @@ open class FWPopupView: UIView, UIGestureRecognizerDelegate {
         self.isHidden = true
         self.showAnimation = self.customShowAnimation()
         self.hideAnimation = self.customHideAnimation()
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyHideAll(notification:)), name: NSNotification.Name(rawValue: FWPopupViewHideAllNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyHideAll(notification:)), name: NSNotification.Name(rawValue: kFWPopupViewHideAllNotification), object: nil)
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -404,7 +404,7 @@ extension FWPopupView {
     /// 隐藏所有的弹窗
     @objc
     open class func hideAll() {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: FWPopupViewHideAllNotification), object: FWPopupView.self)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kFWPopupViewHideAllNotification), object: FWPopupView.self)
     }
 
     /// 通知
@@ -680,7 +680,7 @@ extension FWPopupView {
             self.snp.updateConstraints { (make) in
                 if self.vProperty.popupAnimationType == .position {
                     if myAlignment == .center {
-                        make.centerY.equalToSuperview().offset(-self.finalSize.height/2 - self.superview!.frame.size.height/2)
+                        make.centerY.equalToSuperview().offset(-self.finalSize.height / 2 - self.superview!.frame.size.height / 2)
                     } else if myAlignment == .topCenter {
                         make.top.equalToSuperview().offset(-self.finalSize.height)
                     } else if myAlignment == .leftCenter {
@@ -734,7 +734,7 @@ extension FWPopupView {
 
         if myAlignment == .center {
             make.centerX.equalToSuperview().offset(edgeInsets.left - edgeInsets.right)
-            make.centerY.equalToSuperview().offset(-self.finalSize.height/2 - self.superview!.frame.size.height/2)
+            make.centerY.equalToSuperview().offset(-self.finalSize.height / 2 - self.superview!.frame.size.height / 2)
         } else if myAlignment == .topCenter {
             make.centerX.equalToSuperview().offset(edgeInsets.left - edgeInsets.right)
             make.top.equalToSuperview().offset(-self.finalSize.height)
@@ -770,7 +770,7 @@ extension FWPopupView {
     private func constraintsBeforeAnimationFrame(make: ConstraintMaker, myAlignment: FWPopupCustomAlignment) {
         let edgeInsets = self.vProperty.popupViewEdgeInsets
         if myAlignment == .center {
-            make.top.equalToSuperview().offset((self.superview!.frame.size.height-self.finalSize.height)/2 + edgeInsets.top - edgeInsets.bottom)
+            make.top.equalToSuperview().offset((self.superview!.frame.size.height - self.finalSize.height) / 2 + edgeInsets.top - edgeInsets.bottom)
             make.centerX.equalToSuperview().offset(edgeInsets.left - edgeInsets.right)
             make.width.equalTo(self.finalSize.width)
             make.height.equalTo(0)
@@ -829,29 +829,29 @@ extension FWPopupView {
         if myAlignment == .center {
             make.center.equalToSuperview().inset(edgeInsets)
         } else if myAlignment == .topCenter {
-            make.centerX.equalToSuperview().offset(-self.finalSize.width*(0.5-anchorPoint.x) + edgeInsets.left - edgeInsets.right)
-            make.top.equalToSuperview().offset(-self.finalSize.height*(1-anchorPoint.y)/2 + edgeInsets.top - edgeInsets.bottom)
+            make.centerX.equalToSuperview().offset(-self.finalSize.width * (0.5 - anchorPoint.x) + edgeInsets.left - edgeInsets.right)
+            make.top.equalToSuperview().offset(-self.finalSize.height * (1 - anchorPoint.y) / 2 + edgeInsets.top - edgeInsets.bottom)
         } else if myAlignment == .leftCenter {
-            make.centerY.equalToSuperview().offset(-self.finalSize.height*(0.5-anchorPoint.y) + edgeInsets.top - edgeInsets.bottom)
-            make.left.equalToSuperview().offset(-self.finalSize.width/2 + self.finalSize.width*anchorPoint.x + edgeInsets.left - edgeInsets.right)
+            make.centerY.equalToSuperview().offset(-self.finalSize.height * (0.5 - anchorPoint.y) + edgeInsets.top - edgeInsets.bottom)
+            make.left.equalToSuperview().offset(-self.finalSize.width / 2 + self.finalSize.width * anchorPoint.x + edgeInsets.left - edgeInsets.right)
         } else if myAlignment == .bottomCenter {
             make.centerX.equalToSuperview().offset(edgeInsets.left - edgeInsets.right)
-            make.bottom.equalToSuperview().offset(self.finalSize.height*(anchorPoint.y-0.5) + edgeInsets.top - edgeInsets.bottom)
+            make.bottom.equalToSuperview().offset(self.finalSize.height * (anchorPoint.y - 0.5) + edgeInsets.top - edgeInsets.bottom)
         } else if myAlignment == .rightCenter {
-            make.centerY.equalToSuperview().offset(-self.finalSize.height*(0.5-anchorPoint.y) + edgeInsets.top - edgeInsets.bottom)
-            make.right.equalToSuperview().offset(self.finalSize.width/2 - self.finalSize.width*(1-anchorPoint.x) + edgeInsets.left - edgeInsets.right)
+            make.centerY.equalToSuperview().offset(-self.finalSize.height * (0.5 - anchorPoint.y) + edgeInsets.top - edgeInsets.bottom)
+            make.right.equalToSuperview().offset(self.finalSize.width / 2 - self.finalSize.width * (1 - anchorPoint.x) + edgeInsets.left - edgeInsets.right)
         } else if myAlignment == .topLeft {
-            make.left.equalToSuperview().offset(-self.finalSize.width/2 + self.finalSize.width*anchorPoint.x + edgeInsets.left - edgeInsets.right)
-            make.top.equalToSuperview().offset(-self.finalSize.height*(1-anchorPoint.y)/2 + edgeInsets.top - edgeInsets.bottom)
+            make.left.equalToSuperview().offset(-self.finalSize.width / 2 + self.finalSize.width * anchorPoint.x + edgeInsets.left - edgeInsets.right)
+            make.top.equalToSuperview().offset(-self.finalSize.height * (1 - anchorPoint.y) / 2 + edgeInsets.top - edgeInsets.bottom)
         } else if myAlignment == .topRight {
-            make.right.equalToSuperview().offset(self.finalSize.width/2 - self.finalSize.width*(1-anchorPoint.x) + edgeInsets.left - edgeInsets.right)
-            make.top.equalToSuperview().offset(-self.finalSize.height*(1-anchorPoint.y)/2 + edgeInsets.top - edgeInsets.bottom)
+            make.right.equalToSuperview().offset(self.finalSize.width / 2 - self.finalSize.width * (1 - anchorPoint.x) + edgeInsets.left - edgeInsets.right)
+            make.top.equalToSuperview().offset(-self.finalSize.height * (1 - anchorPoint.y) / 2 + edgeInsets.top - edgeInsets.bottom)
         } else if myAlignment == .bottomLeft {
-            make.left.equalToSuperview().offset(-self.finalSize.width/2 + self.finalSize.width*anchorPoint.x + edgeInsets.left - edgeInsets.right)
-            make.bottom.equalToSuperview().offset(self.finalSize.height*(anchorPoint.y-0.5) + edgeInsets.top - edgeInsets.bottom)
+            make.left.equalToSuperview().offset(-self.finalSize.width / 2 + self.finalSize.width * anchorPoint.x + edgeInsets.left - edgeInsets.right)
+            make.bottom.equalToSuperview().offset(self.finalSize.height * (anchorPoint.y - 0.5) + edgeInsets.top - edgeInsets.bottom)
         } else if myAlignment == .bottomRight {
-            make.right.equalToSuperview().offset(self.finalSize.width/2 - self.finalSize.width*(1-anchorPoint.x) + edgeInsets.left - edgeInsets.right)
-            make.bottom.equalToSuperview().offset(self.finalSize.height*(anchorPoint.y-0.5) + edgeInsets.top - edgeInsets.bottom)
+            make.right.equalToSuperview().offset(self.finalSize.width / 2 - self.finalSize.width * (1 - anchorPoint.x) + edgeInsets.left - edgeInsets.right)
+            make.bottom.equalToSuperview().offset(self.finalSize.height * (anchorPoint.y - 0.5) + edgeInsets.top - edgeInsets.bottom)
         }
     }
 
@@ -876,7 +876,7 @@ extension FWPopupView {
             if self.vProperty.popupArrowStyle == .none {
                 tmpX = self.vProperty.popupArrowVertexScaleX
             } else {
-                let arrowVertexX = (self.finalSize.width - self.vProperty.popupArrowSize.width) *  self.vProperty.popupArrowVertexScaleX + self.vProperty.popupArrowSize.width / 2
+                let arrowVertexX = (self.finalSize.width - self.vProperty.popupArrowSize.width) * self.vProperty.popupArrowVertexScaleX + self.vProperty.popupArrowSize.width / 2
                 tmpX = arrowVertexX / self.finalSize.width
             }
             tmpY = 0
@@ -890,7 +890,7 @@ extension FWPopupView {
             if self.vProperty.popupArrowStyle == .none {
                 tmpX = self.vProperty.popupArrowVertexScaleX
             } else {
-                let arrowVertexX = (self.finalSize.width - self.vProperty.popupArrowSize.width) *  self.vProperty.popupArrowVertexScaleX + self.vProperty.popupArrowSize.width / 2
+                let arrowVertexX = (self.finalSize.width - self.vProperty.popupArrowSize.width) * self.vProperty.popupArrowVertexScaleX + self.vProperty.popupArrowSize.width / 2
                 tmpX = arrowVertexX / self.finalSize.width
             }
             tmpY = 1

@@ -194,7 +194,7 @@ extension FWAlertView {
             self.commponenetCount += 1
         }
 
-        let singleCommponenetMargin = property.commponentMargin*3
+        let singleCommponenetMargin = property.commponentMargin * 3
 
         var lastConstraintItem = self.snp.top
         var lastTopBottomMargin: CGFloat = 0.0
@@ -230,10 +230,10 @@ extension FWAlertView {
             self.detailLabel = UILabel()
             self.addSubview(self.detailLabel!)
             self.detailLabel?.snp.makeConstraints({ (make) in
-                make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (lastTopBottomMargin+property.commponentMargin) : singleCommponenetMargin)
+                make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (lastTopBottomMargin + property.commponentMargin) : singleCommponenetMargin)
                 make.left.equalToSuperview().offset(self.vProperty.letfRigthMargin)
                 make.right.equalToSuperview().offset(-self.vProperty.letfRigthMargin)
-                make.height.lessThanOrEqualTo(self.superview!.frame.size.height*property.popupViewMaxHeightRate-100)
+                make.height.lessThanOrEqualTo(self.superview!.frame.size.height * property.popupViewMaxHeightRate - 100)
             })
             self.detailLabel?.text = detail
             self.detailLabel?.textColor = property.detailColor
@@ -250,7 +250,7 @@ extension FWAlertView {
             self.inputTF = UITextField()
             self.addSubview(self.inputTF!)
             self.inputTF?.snp.makeConstraints { make in
-                make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (lastTopBottomMargin+property.commponentMargin) : singleCommponenetMargin)
+                make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (lastTopBottomMargin + property.commponentMargin) : singleCommponenetMargin)
                 make.left.equalToSuperview().offset(self.vProperty.letfRigthMargin)
                 make.right.equalToSuperview().offset(-self.vProperty.letfRigthMargin)
                 make.height.equalTo(40)
@@ -274,7 +274,7 @@ extension FWAlertView {
             self.customView = customView
             self.addSubview(self.customView!)
             self.customView?.snp.makeConstraints({ (make) in
-                make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (lastTopBottomMargin+property.commponentMargin) : singleCommponenetMargin)
+                make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (lastTopBottomMargin + property.commponentMargin) : singleCommponenetMargin)
                 make.centerX.equalToSuperview()
                 make.size.equalTo(customView!.frame.size)
             })
@@ -287,7 +287,7 @@ extension FWAlertView {
         self.addSubview(btnContrainerView)
         btnContrainerView.backgroundColor = UIColor.clear
         btnContrainerView.snp.makeConstraints { (make) in
-            make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (property.topBottomMargin+property.commponentMargin) : singleCommponenetMargin)
+            make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (property.topBottomMargin + property.commponentMargin) : singleCommponenetMargin)
             make.left.right.equalToSuperview()
         }
 
@@ -310,7 +310,7 @@ extension FWAlertView {
                 let btnW = (property.alertViewWidth + self.vProperty.splitWidth * 4) / 2
                 btn.snp.makeConstraints { (make) in
                     make.top.equalToSuperview()
-                    make.left.equalToSuperview().offset(-property.splitWidth+btnW*CGFloat(tmpIndex))
+                    make.left.equalToSuperview().offset(-property.splitWidth + btnW * CGFloat(tmpIndex))
                     make.width.equalTo(btnW)
                     make.height.equalTo(property.buttonHeight + property.splitWidth)
                 }
@@ -318,7 +318,7 @@ extension FWAlertView {
                 btn.snp.makeConstraints { (make) in
                     make.left.right.equalTo(btnContrainerView).inset(UIEdgeInsets(top: 0, left: -self.vProperty.splitWidth, bottom: 0, right: -self.vProperty.splitWidth))
                     make.height.equalTo(property.buttonHeight + property.splitWidth)
-                    make.width.equalTo(btnContrainerView).offset(property.splitWidth*2)
+                    make.width.equalTo(btnContrainerView).offset(property.splitWidth * 2)
                     if tmpIndex == 0 {
                         make.top.equalToSuperview()
                         lastBtn = btn
@@ -329,7 +329,7 @@ extension FWAlertView {
                 }
             }
 
-            if tmpIndex == items.count-1 {
+            if tmpIndex == items.count - 1 {
                 lastBtn = btn
             }
 

@@ -165,7 +165,7 @@ extension RollingNoticeView {
         if currentCell == nil {
             if let cell = self.dataSource?.rollingNoticeView(roolingView: self, cellAtIndex: currentIndex) {
                 currentCell = cell
-                cell.frame  = CGRect(x: 0, y: 0, width: w, height: h)
+                cell.frame = CGRect(x: 0, y: 0, width: w, height: h)
                 self.addSubview(cell)
             }
             return

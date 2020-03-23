@@ -127,7 +127,7 @@ public extension NSObject {
     /// - Returns: 属性值
     func getValueOfProperty(property: String) -> AnyObject? {
         let allPropertys = self.getAllPropertys()
-        if(allPropertys.contains(property)) {
+        if allPropertys.contains(property) {
             return self.value(forKey: property) as AnyObject
         } else {
             return nil
@@ -141,7 +141,7 @@ public extension NSObject {
     ///   - value: 属性新值
     func setValueOfProperty(property: String, value: AnyObject) {
         let allPropertys = self.getAllPropertys()
-        if(allPropertys.contains(property)) {
+        if allPropertys.contains(property) {
             self.setValue(value, forKey: property)
         }
     }
@@ -168,7 +168,7 @@ public extension NSObject {
         for i in 0..<Int(count) {
             let property = properties![i]
             let name = property_getName(property)
-            let strName =  String(cString: name)
+            let strName = String(cString: name)
             propertyNames.append(strName)
         }
         free(properties) //释放内存
@@ -187,7 +187,7 @@ public extension NSObject {
         for i in 0..<Int(count) {
             let property = properties![i]
             let name = property_getName(property)
-            let strName =  String(cString: name)
+            let strName = String(cString: name)
             propertyNames.append(strName)
         }
         free(properties) //释放内存

@@ -101,7 +101,7 @@ open class PageControl: UIView {
 
     // 布局默认样式 ring样式 square样式
     private func layoutOrgPages() {
-        let y: CGFloat = (self.frame.height - normalSize.height)*0.5
+        let y: CGFloat = (self.frame.height - normalSize.height) * 0.5
         for i in 0..<numberOfPages {
             let point = UIView(frame: CGRect(x: CGFloat(i) * (margin + normalSize.width) + margin, y: y, width: normalSize.width, height: normalSize.height))
             point.tag = i
@@ -140,8 +140,8 @@ open class PageControl: UIView {
 
     // 布局bigSmall样式
     private func layoutBigSmallPages() {
-        let y1: CGFloat = (self.frame.height - normalSize.height)*0.5
-        let y2: CGFloat = (self.frame.height - currentSize.height)*0.5
+        let y1: CGFloat = (self.frame.height - normalSize.height) * 0.5
+        let y2: CGFloat = (self.frame.height - currentSize.height) * 0.5
         for i in 0..<numberOfPages {
             var pointX = 0.cgFloatValue
             if i <= currentPage {

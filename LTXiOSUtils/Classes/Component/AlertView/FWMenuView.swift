@@ -293,7 +293,7 @@ extension FWMenuView {
             }
 
             // 弹窗箭头顶点坐标
-            let arrowPoint = CGPoint(x: (self.frame.width - arrowSize.width - cornerRadius * 2) * property.popupArrowVertexScaleX + arrowSize.width/2 + cornerRadius, y: isUpArrow ? 0 : self.frame.height)
+            let arrowPoint = CGPoint(x: (self.frame.width - arrowSize.width - cornerRadius * 2) * property.popupArrowVertexScaleX + arrowSize.width / 2 + cornerRadius, y: isUpArrow ? 0 : self.frame.height)
 
             // 顶部Y值
             let maskTop = isUpArrow ? arrowSize.height : 0
@@ -309,15 +309,15 @@ extension FWMenuView {
 
             // 箭头向上时的箭头位置
             if isUpArrow {
-                maskPath.addLine(to: CGPoint(x: arrowPoint.x - arrowSize.width/2, y: arrowSize.height))
+                maskPath.addLine(to: CGPoint(x: arrowPoint.x - arrowSize.width / 2, y: arrowSize.height))
 
                 if property.popupArrowStyle == .triangle { // 菱角箭头
                     maskPath.addLine(to: arrowPoint)
-                    maskPath.addLine(to: CGPoint(x: arrowPoint.x + arrowSize.width/2, y: arrowSize.height))
+                    maskPath.addLine(to: CGPoint(x: arrowPoint.x + arrowSize.width / 2, y: arrowSize.height))
                 } else { // 圆角箭头
-                    maskPath.addQuadCurve(to: CGPoint(x: arrowPoint.x - property.popupArrowCornerRadius, y: property.popupArrowCornerRadius), controlPoint: CGPoint(x: arrowPoint.x - arrowSize.width/2 + property.popupArrowBottomCornerRadius, y: arrowSize.height))
+                    maskPath.addQuadCurve(to: CGPoint(x: arrowPoint.x - property.popupArrowCornerRadius, y: property.popupArrowCornerRadius), controlPoint: CGPoint(x: arrowPoint.x - arrowSize.width / 2 + property.popupArrowBottomCornerRadius, y: arrowSize.height))
                     maskPath.addQuadCurve(to: CGPoint(x: arrowPoint.x + property.popupArrowCornerRadius, y: property.popupArrowCornerRadius), controlPoint: arrowPoint)
-                    maskPath.addQuadCurve(to: CGPoint(x: arrowPoint.x + arrowSize.width/2, y: arrowSize.height), controlPoint: CGPoint(x: arrowPoint.x + arrowSize.width/2 - property.popupArrowBottomCornerRadius, y: arrowSize.height))
+                    maskPath.addQuadCurve(to: CGPoint(x: arrowPoint.x + arrowSize.width / 2, y: arrowSize.height), controlPoint: CGPoint(x: arrowPoint.x + arrowSize.width / 2 - property.popupArrowBottomCornerRadius, y: arrowSize.height))
                 }
             }
 
@@ -331,17 +331,17 @@ extension FWMenuView {
 
             // 箭头向下时的箭头位置
             if !isUpArrow {
-                maskPath.addLine(to: CGPoint(x: arrowPoint.x + arrowSize.width/2, y: self.frame.height - arrowSize.height))
+                maskPath.addLine(to: CGPoint(x: arrowPoint.x + arrowSize.width / 2, y: self.frame.height - arrowSize.height))
 
                 if property.popupArrowStyle == .triangle { // 菱角箭头
                     maskPath.addLine(to: arrowPoint)
-                    maskPath.addLine(to: CGPoint(x: arrowPoint.x - arrowSize.width/2, y: self.frame.height - arrowSize.height))
+                    maskPath.addLine(to: CGPoint(x: arrowPoint.x - arrowSize.width / 2, y: self.frame.height - arrowSize.height))
                 } else { // 圆角箭头
-                    maskPath.addQuadCurve(to: CGPoint(x: arrowPoint.x + property.popupArrowCornerRadius, y: self.frame.height -  property.popupArrowCornerRadius), controlPoint: CGPoint(x: arrowPoint.x + arrowSize.width/2 - property.popupArrowBottomCornerRadius, y: self.frame.height - arrowSize.height))
+                    maskPath.addQuadCurve(to: CGPoint(x: arrowPoint.x + property.popupArrowCornerRadius, y: self.frame.height - property.popupArrowCornerRadius), controlPoint: CGPoint(x: arrowPoint.x + arrowSize.width / 2 - property.popupArrowBottomCornerRadius, y: self.frame.height - arrowSize.height))
 
                     maskPath.addQuadCurve(to: CGPoint(x: arrowPoint.x - property.popupArrowCornerRadius, y: self.frame.height - property.popupArrowCornerRadius), controlPoint: arrowPoint)
 
-                    maskPath.addQuadCurve(to: CGPoint(x: arrowPoint.x - arrowSize.width/2, y: self.frame.height - arrowSize.height), controlPoint: CGPoint(x: arrowPoint.x - arrowSize.width/2 + property.popupArrowBottomCornerRadius, y: self.frame.height - arrowSize.height))
+                    maskPath.addQuadCurve(to: CGPoint(x: arrowPoint.x - arrowSize.width / 2, y: self.frame.height - arrowSize.height), controlPoint: CGPoint(x: arrowPoint.x - arrowSize.width / 2 + property.popupArrowBottomCornerRadius, y: self.frame.height - arrowSize.height))
                 }
             }
 
@@ -534,10 +534,10 @@ open class FWMenuViewProperty: FWPopupViewProperty {
 
     /// 弹窗的最大宽度
     @objc
-    open var popupViewMaxWidth: CGFloat  = UIScreen.main.bounds.width * 0.6
+    open var popupViewMaxWidth: CGFloat = UIScreen.main.bounds.width * 0.6
     /// 弹窗的最小宽度
     @objc
-    open var popupViewMinWidth: CGFloat  = 20
+    open var popupViewMinWidth: CGFloat = 20
 
     public override func reSetParams() {
         super.reSetParams()

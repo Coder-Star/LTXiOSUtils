@@ -145,8 +145,8 @@ extension FWRadioButton {
 
         var radioWidthHieght: CGFloat = 0.0
         if title != nil && !title!.isEmpty {
-            let tmpWidth = self.frame.height-self.vProperty.radioViewEdgeInsets.left-self.vProperty.radioViewEdgeInsets.right
-            let tmpHeight = self.frame.height-self.vProperty.radioViewEdgeInsets.top-self.vProperty.radioViewEdgeInsets.bottom
+            let tmpWidth = self.frame.height - self.vProperty.radioViewEdgeInsets.left - self.vProperty.radioViewEdgeInsets.right
+            let tmpHeight = self.frame.height - self.vProperty.radioViewEdgeInsets.top - self.vProperty.radioViewEdgeInsets.bottom
             if tmpWidth <= 0 {
                 radioWidthHieght = tmpHeight
             } else if tmpHeight <= 0 {
@@ -155,8 +155,8 @@ extension FWRadioButton {
                 radioWidthHieght = min(tmpWidth, tmpHeight)
             }
         } else {
-            let tmpWidth = self.frame.width-self.vProperty.radioViewEdgeInsets.left-self.vProperty.radioViewEdgeInsets.right
-            let tmpHeight = self.frame.height-self.vProperty.radioViewEdgeInsets.top-self.vProperty.radioViewEdgeInsets.bottom
+            let tmpWidth = self.frame.width - self.vProperty.radioViewEdgeInsets.left - self.vProperty.radioViewEdgeInsets.right
+            let tmpHeight = self.frame.height - self.vProperty.radioViewEdgeInsets.top - self.vProperty.radioViewEdgeInsets.bottom
             if tmpWidth <= 0 {
                 radioWidthHieght = tmpHeight
             } else if tmpHeight <= 0 {
@@ -165,7 +165,7 @@ extension FWRadioButton {
                 radioWidthHieght = min(tmpWidth, tmpHeight)
             }
         }
-        let radioFrame = CGRect(x: self.vProperty.radioViewEdgeInsets.left, y: (frame.height - radioWidthHieght)/2, width: radioWidthHieght, height: radioWidthHieght)
+        let radioFrame = CGRect(x: self.vProperty.radioViewEdgeInsets.left, y: (frame.height - radioWidthHieght) / 2, width: radioWidthHieght, height: radioWidthHieght)
 
         if self.currentButtonType == .image {
             self.radioImageView.frame = radioFrame
@@ -230,7 +230,7 @@ extension FWRadioButton {
                 animation.isRemovedOnCompletion = false
                 self.insideLayer.add(animation, forKey: selected ? "scale" : "scale2")
                 self.isAnimating = true
-                DispatchQueue.main.asyncAfter(deadline: .now()+self.vProperty.animationDuration) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + self.vProperty.animationDuration) {
                     self.isAnimating = false
                 }
             } else {
@@ -251,8 +251,8 @@ extension FWRadioButton {
         var borderPath: UIBezierPath!
         switch self.currentButtonType {
         case .circular:
-            let center = CGPoint(x: rect.width/2, y: rect.height/2)
-            borderPath = UIBezierPath(arcCenter: center, radius: rect.width*0.5-self.vProperty.lineWidth, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
+            let center = CGPoint(x: rect.width / 2, y: rect.height / 2)
+            borderPath = UIBezierPath(arcCenter: center, radius: rect.width * 0.5 - self.vProperty.lineWidth, startAngle: 0, endAngle: CGFloat(Double.pi * 2), clockwise: true)
         case .rectangle:
             borderPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: rect.width, height: rect.height))
         default:
@@ -271,7 +271,7 @@ extension FWRadioButton {
         // 选中
         var insideLayerWidthAndHeight: CGFloat = 0.0
         if self.currentButtonType == .circular {
-            insideLayerWidthAndHeight = ((rect.height - self.vProperty.lineWidth*2) * self.vProperty.insideMarginRate)
+            insideLayerWidthAndHeight = ((rect.height - self.vProperty.lineWidth * 2) * self.vProperty.insideMarginRate)
         } else {
             insideLayerWidthAndHeight = ((rect.height - self.vProperty.lineWidth) * self.vProperty.insideMarginRate)
         }
@@ -288,7 +288,7 @@ extension FWRadioButton {
             break
         }
 
-        self.insideLayer.frame = CGRect(x: rect.origin.x + (rect.width-insideLayerWidthAndHeight)/2, y: rect.origin.y + (rect.height-insideLayerWidthAndHeight)/2, width: insideLayerWidthAndHeight, height: insideLayerWidthAndHeight)
+        self.insideLayer.frame = CGRect(x: rect.origin.x + (rect.width - insideLayerWidthAndHeight) / 2, y: rect.origin.y + (rect.height - insideLayerWidthAndHeight) / 2, width: insideLayerWidthAndHeight, height: insideLayerWidthAndHeight)
         self.insideLayer.path = insidePath.cgPath
 
         if !isSelected {

@@ -17,7 +17,7 @@ class UIViewExtensionExampleViewController: BaseUIScrollViewController {
         title = "View相关扩展示例Demo"
     }
 
-    override func setScrollSubViews(contentView: UIView) {
+    override func setContentViewSubViews(contentView: UIView) {
         var titleLabel = UILabel()
         titleLabel.textAlignment = .center
         titleLabel.text = "View点击"

@@ -89,7 +89,7 @@ public extension UIButton {
     ///   - event: 事件
     @objc
     private func sendActionWithRepeatClick(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
-        if (self.isKind(of: UIButton.self)) {
+        if self.isKind(of: UIButton.self) {
             switch self.repeatButtonClickType {
             case .durationTime:
                 clickDurationTime = clickDurationTime == 0 ? UIButton.defaultDuration : clickDurationTime

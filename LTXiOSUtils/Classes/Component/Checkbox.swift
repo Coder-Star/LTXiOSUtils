@@ -97,10 +97,10 @@ public class Checkbox: UIControl {
 
     // MARK: - Borders
     private func drawBorder(shape: BorderStyle, in rect: CGRect) {
-        let adjustedRect = CGRect(x: borderLineWidth/2,
-                                  y: borderLineWidth/2,
-                                  width: rect.width-borderLineWidth,
-                                  height: rect.height-borderLineWidth)
+        let adjustedRect = CGRect(x: borderLineWidth / 2,
+                                  y: borderLineWidth / 2,
+                                  width: rect.width - borderLineWidth,
+                                  height: rect.height - borderLineWidth)
 
         switch shape {
         case .circle:

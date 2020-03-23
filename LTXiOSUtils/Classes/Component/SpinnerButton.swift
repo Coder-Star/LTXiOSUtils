@@ -114,7 +114,7 @@ open class SpinnerButton: UIButton {
 
     private func setUp() {
         self.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        self.backgroundColor = UIColor(red: 49/255, green: 177/255, blue: 229/255, alpha: 1.0)
+        self.backgroundColor = UIColor(red: 49 / 255, green: 177 / 255, blue: 229 / 255, alpha: 1.0)
         self.titleColor = .white
     }
 }
@@ -127,7 +127,7 @@ public extension SpinnerButton {
         switch animation {
         case .load:
             UIView.animate(withDuration: 0.1, animations: {
-                self.layer.cornerRadius = self.frame.height/2
+                self.layer.cornerRadius = self.frame.height / 2
             }, completion: { _ in
                 self.collapseAnimation()
             })
@@ -151,7 +151,7 @@ private extension SpinnerButton {
         isUserInteractionEnabled = false
         let animaton = CABasicAnimation(keyPath: "bounds.size.width")
         animaton.fromValue = frame.width
-        animaton.toValue =  frame.height
+        animaton.toValue = frame.height
         animaton.duration = animationDuration
         animaton.fillMode = CAMediaTimingFillMode.forwards
         animaton.isRemovedOnCompletion = false
@@ -226,8 +226,8 @@ private class SpinnerLayer: CAShapeLayer {
     init(frame: CGRect) {
         super.init()
         self.frame = CGRect(x: 0, y: 0, width: frame.height, height: frame.height)
-        let center = CGPoint(x: frame.height/2, y: frame.height/2)
-        let circlePath = UIBezierPath(arcCenter: center, radius: 10, startAngle: 0, endAngle: CGFloat(2*Double.pi), clockwise: true)
+        let center = CGPoint(x: frame.height / 2, y: frame.height / 2)
+        let circlePath = UIBezierPath(arcCenter: center, radius: 10, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
         path = circlePath.cgPath
         lineWidth = 2.0
         strokeColor = color

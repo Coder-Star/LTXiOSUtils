@@ -21,6 +21,12 @@ open class BaseUIScrollViewController: BaseViewController {
         return baseScrollView
     }()
 
+    /// 基础ContentView
+    public lazy var baseContentView: UIView = {
+        let baseContentView = UIView()
+        return baseContentView
+    }()
+
     override open func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,7 +54,6 @@ open class BaseUIScrollViewController: BaseViewController {
     open func positionUIScrollView() {
         baseScrollView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
-            make.width.equalTo(screenWidth)
             if #available(iOS 11.0, *) {
                 make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
                 make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
@@ -61,18 +66,17 @@ open class BaseUIScrollViewController: BaseViewController {
 
     /// 初始化滚动视图子视图
     open func initScrollSubViews() {
-        let contentView = UIView()
-        baseScrollView.addSubview(contentView)
-        contentView.snp.makeConstraints { make in
+        baseScrollView.addSubview(baseContentView)
+        baseContentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
             make.width.equalTo(screenWidth)
         }
-        setScrollSubViews(contentView: contentView)
+        setContentViewSubViews(contentView: baseContentView)
     }
 
     /// 设置滚动视图子view，子类重写,最后一个控件需要设置底部约束,如下
     /// make.bottom.equalToSuperview()
-    open func setScrollSubViews(contentView: UIView) {
+    open func setContentViewSubViews(contentView: UIView) {
 
     }
 

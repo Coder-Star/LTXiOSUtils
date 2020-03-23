@@ -63,7 +63,7 @@ open class DefaultGridMenuCell: UICollectionViewCell {
         let labelHeight = 20.cgFloatValue
         let imageHeight = frame.height - labelHeight - 20.cgFloatValue
         let imageWidth = imageHeight
-        imageView.frame = CGRect(x: (frame.width - imageWidth)/2, y: 10, width: imageWidth, height: imageHeight)
+        imageView.frame = CGRect(x: (frame.width - imageWidth) / 2, y: 10, width: imageWidth, height: imageHeight)
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         self.addSubview(imageView)
