@@ -91,7 +91,7 @@ extension FWCustomPopupDemoVC {
             customPopupView.vProperty = vProperty
 
             customPopupView.show { (_, popupViewState) in
-                print("\(popupViewState.rawValue)")
+                Log.d("\(popupViewState.rawValue)")
             }
         case 1:
             let customPopupView = FWCustomPopupView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.4))
@@ -104,7 +104,7 @@ extension FWCustomPopupDemoVC {
             customPopupView.vProperty = vProperty
 
             customPopupView.show { (_) in
-                print("popupDidAppearBlock")
+                Log.d("popupDidAppearBlock")
             }
         case 2:
             let customPopupView = FWCustomPopupView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.4))
@@ -117,7 +117,7 @@ extension FWCustomPopupDemoVC {
             customPopupView.vProperty = vProperty
 
             customPopupView.show { (_, popupViewState) in
-                print("当前弹窗状态：\(popupViewState.rawValue)")
+                Log.d("当前弹窗状态：\(popupViewState.rawValue)")
             }
         case 3:
             let customPopupView = FWCustomPopupView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.4))
