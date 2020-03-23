@@ -109,16 +109,16 @@ extension FWSheetView {
 
             self.titleContainerView = UIView()
             self.addSubview(self.titleContainerView!)
-            self.titleContainerView?.snp.makeConstraints({ (make) in
+            self.titleContainerView?.snp.makeConstraints { make in
                 make.top.left.right.equalTo(self)
-            })
+            }
             self.titleContainerView?.backgroundColor = UIColor.white
 
             self.titleLabel = UILabel()
             self.titleContainerView?.addSubview(self.titleLabel!)
-            self.titleLabel?.snp.makeConstraints({ (make) in
+            self.titleLabel?.snp.makeConstraints { make in
                 make.edges.equalToSuperview().inset(UIEdgeInsets(top: round(self.vProperty.topBottomMargin * 1.5), left: self.vProperty.letfRigthMargin, bottom: round(self.vProperty.topBottomMargin * 1.5), right: self.vProperty.letfRigthMargin))
-            })
+            }
             self.titleLabel?.text = title
             self.titleLabel?.textColor = self.vProperty.titleColor
             self.titleLabel?.textAlignment = .center

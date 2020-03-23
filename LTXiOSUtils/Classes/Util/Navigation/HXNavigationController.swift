@@ -103,10 +103,10 @@ extension HXNavigationController {
     private func setupFakeSubviews() {
         guard let fakeSuperView = fakeSuperView else { return }
         if fakeBar.superview == nil {
-            fakeFrameObserver = fakeSuperView.observe(\.frame, changeHandler: { [weak self] (_, _) in
+            fakeFrameObserver = fakeSuperView.observe(\.frame) { [weak self] (_, _) in
                 guard let `self` = self else { return }
                 self.layoutFakeSubviews()
-            })
+            }
             fakeSuperView.insertSubview(fakeBar, at: 0)
         }
     }

@@ -30,7 +30,7 @@ class FWDemoViewController: UITableViewController {
                       "15、含RadioButton的Alert"]
 
     let block: FWPopupItemClickedBlock = { (popupView, index, title) in
-        print("AlertView：点击了第\(index)个按钮")
+        Log.d("AlertView：点击了第\(index)个按钮")
     }
 
     lazy var customSheetView: FWCustomSheetView = {
@@ -40,9 +40,9 @@ class FWDemoViewController: UITableViewController {
         property.selectedIndex = 1
         property.popupViewMaxHeightRate = 0.3
         let titles = ["菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1菜单1", "菜单2", "菜单3", "菜单4", "菜单5", "菜单6", "菜单7"]
-        let customSheetView = FWCustomSheetView.sheet(headerTitle: "选择代币", itemTitles: titles, property: property, itemBlock: { (_, index, _) in
-            print("customSheet：点击了第\(index)个按钮")
-        })
+        let customSheetView = FWCustomSheetView.sheet(headerTitle: "选择代币", itemTitles: titles, property: property) { (_, index, _) in
+            Log.d("customSheet：点击了第\(index)个按钮")
+        }
         return customSheetView
     }()
 
@@ -59,9 +59,9 @@ class FWDemoViewController: UITableViewController {
                       UIImage(named: "right_menu_addFri"),
                       UIImage(named: "right_menu_multichat")]
 
-        let customSheetView = FWCustomSheetView.sheet(headerTitle: "选择一个钱包", itemTitles: titles, itemSecondaryTitles: secondaryTitles, itemImages: images as? [UIImage], property: property, itemBlock: { (_, index, _) in
-            print("customSheet：点击了第\(index)个按钮")
-        })
+        let customSheetView = FWCustomSheetView.sheet(headerTitle: "选择一个钱包", itemTitles: titles, itemSecondaryTitles: secondaryTitles, itemImages: images as? [UIImage], property: property) { (_, index, _) in
+            Log.d("customSheet：点击了第\(index)个按钮")
+        }
 
         return customSheetView
     }()
@@ -90,9 +90,9 @@ class FWDemoViewController: UITableViewController {
         vProperty.titleFontSize = 15.0
 
         let sheetView = FWSheetView.sheet(title: "你们知道微信中为什么经常使用这种提示，而不使用Alert加两个按钮的那种提示吗？", itemTitles: items, itemBlock: { (_, index, _) in
-            print("Sheet：点击了第\(index)个按钮")
+            Log.d("Sheet：点击了第\(index)个按钮")
         }, cancenlBlock: {
-            print("点击了取消")
+            Log.d("点击了取消")
         }, property: vProperty)
         return sheetView
     }()
@@ -109,9 +109,9 @@ class FWDemoViewController: UITableViewController {
         property.lineWidth = 3
         property.radioViewEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 2)
 
-        let radioButton = FWRadioButton.radio(frame: CGRect(x: 0, y: 0, width: 150, height: 40), buttonType: .circular, title: "这个是标题啦", selectedImage: nil, unSelectedImage: nil, property: property, clickedBlock: { (isSelected) in
-            print("FWRadioButtonProperty点击了，是否选中：\(isSelected)")
-        })
+        let radioButton = FWRadioButton.radio(frame: CGRect(x: 0, y: 0, width: 150, height: 40), buttonType: .circular, title: "这个是标题啦", selectedImage: nil, unSelectedImage: nil, property: property) { isSelected in
+            Log.d("FWRadioButtonProperty点击了，是否选中：\(isSelected)")
+        }
         return radioButton
     }()
 
@@ -152,14 +152,14 @@ extension FWDemoViewController {
         switch indexPath.row {
         case 0:
             let alertView = FWAlertView.alert(title: "", detail: "描述描述描述描述") { (_, _, _) in
-                print("点击了确定")
+                Log.d("点击了确定")
             }
             alertView.show()
         case 1:
             let alertView = FWAlertView.alert(title: "温馨提示", detail: "您确认退出当前账号吗？", confirmBlock: { (_, _, _) in
-                print("点击了确定")
+                Log.d("点击了确定")
             }, cancelBlock: { (_, _, _) in
-                print("点击了取消")
+                Log.d("点击了取消")
             })
             alertView.show()
         case 2:
@@ -177,14 +177,14 @@ extension FWDemoViewController {
             vProperty.maskViewColor = UIColor(white: 0, alpha: 0.5)
             let alertView = FWAlertView.alert(title: "标题", detail: "描述描述描述描述描述描述描述描述描述描述", inputPlaceholder: nil, keyboardType: .default, isSecureTextEntry: false, customView: nil, items: items, vProperty: vProperty)
             alertView.show { (_, popupViewState) in
-                print("当前弹窗状态：\(popupViewState.rawValue)")
+                Log.d("当前弹窗状态：\(popupViewState.rawValue)")
                 if popupViewState == .didDisappear {
-                    print("当前弹窗已经隐藏")
+                    Log.d("当前弹窗已经隐藏")
                 }
             }
         case 3:
             let myBlock: FWPopupItemClickedBlock = { [weak self] (popupView, index, title) in
-                print("AlertView：点击了第\(index)个按钮")
+                Log.d("AlertView：点击了第\(index)个按钮")
                 if index == 2 {
                     self?.sheetView.show()
                 }
@@ -211,9 +211,9 @@ extension FWDemoViewController {
             vProperty.cancelItemTitleColor = UIColor.red
 
             let sheetView = FWSheetView.sheet(title: "", itemTitles: items, itemBlock: { (_, index, _) in
-                print("Sheet：点击了第\(index)个按钮")
+                Log.d("Sheet：点击了第\(index)个按钮")
             }, cancenlBlock: {
-                print("点击了取消")
+                Log.d("点击了取消")
             }, property: vProperty)
             sheetView.show()
         case 7:
@@ -222,9 +222,9 @@ extension FWDemoViewController {
             let items = ["Sheet0", "Sheet1", "Sheet2", "Sheet3", "Sheet4", "Sheet5", "Sheet6", "Sheet7", "Sheet8", "Sheet9", "Sheet10", "Sheet11", "Sheet12", "Sheet13", "Sheet14"]
 
             let sheetView = FWSheetView.sheet(title: "标题", itemTitles: items, itemBlock: { (_, index, title) in
-                print("Sheet：点击了第\(index)个按钮，名称为：\(String(describing: title))")
+                Log.d("Sheet：点击了第\(index)个按钮，名称为：\(String(describing: title))")
             }, cancelBlock: {
-                print("点击了取消")
+                Log.d("点击了取消")
             })
             sheetView.show()
         case 9:
@@ -237,18 +237,18 @@ extension FWDemoViewController {
             self.customSheetView2.show()
         case 13:
             let alertView = FWAlertView.alert(title: "标题", detail: "描述描述描述描述") { (_, _, _) in
-                print("点击了确定")
+                Log.d("点击了确定")
             }
             alertView.show { (_, popupViewState) in
-                print("当前alertView状态：\(popupViewState.rawValue)")
+                Log.d("当前alertView状态：\(popupViewState.rawValue)")
             }
 
             let items = ["Sheet0", "Sheet1", "Sheet2", "Sheet3"]
             let vProperty = FWSheetViewProperty()
             let sheetView = FWSheetView.sheet(title: "", itemTitles: items, itemBlock: { (_, index, _) in
-                print("Sheet：点击了第\(index)个按钮")
+                Log.d("Sheet：点击了第\(index)个按钮")
             }, cancenlBlock: {
-                print("点击了取消")
+                Log.d("点击了取消")
             }, property: vProperty)
             sheetView.show()
         case 14:
@@ -261,11 +261,11 @@ extension FWDemoViewController {
             property.radioViewEdgeInsets = UIEdgeInsets(top: 9, left: 9, bottom: 9, right: 2)
 
             let radioButton = FWRadioButton.radio(frame: CGRect(x: 0, y: 0, width: 260, height: 35), buttonType: .image, title: "勾选表示记住当前状态哦！！！", selectedImage: nil, unSelectedImage: nil, property: property, clickedBlock: { (isSelected) in
-                print("FWRadioButtonProperty点击了，是否选中：\(isSelected)")
+                Log.d("FWRadioButtonProperty点击了，是否选中：\(isSelected)")
             })
 
             let block: FWPopupItemClickedBlock = { (popupView, index, title) in
-                print("AlertView：点击了第\(index)个按钮")
+                Log.d("AlertView：点击了第\(index)个按钮")
                 popupView.hide()
             }
 

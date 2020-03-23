@@ -164,22 +164,22 @@ public class PickerView: UIView {
     fileprivate var defalultSelectedIndexs: [Int]? = nil {
         didSet {
             if let defaultIndexs = defalultSelectedIndexs, defaultIndexs.count > 0 {
-                defaultIndexs.enumerated().forEach({ (component: Int, row: Int) in
+                defaultIndexs.enumerated().forEach { (component: Int, row: Int) in
                     assert(component < pickerView.numberOfComponents && row < pickerView.numberOfRows(inComponent: component), "设置的默认选中Indexs有不合法的")
                     if component < pickerView.numberOfComponents && row < pickerView.numberOfRows(inComponent: component) {
                         selectedIndexs[component] = row
                         selectedValues[component] = titleForRow(row, forComponent: component) ?? " "
-                        DispatchQueue.main.async(execute: {
+                        DispatchQueue.main.async {
                             self.pickerView.selectRow(row, inComponent: component, animated: false)
-                        })
+                        }
                     }
-                })
+                }
             } else {
-                multipleColsData?.indices.forEach({ (index) in
+                multipleColsData?.indices.forEach { (index) in
                     pickerView.selectRow(0, inComponent: index, animated: false)
                     selectedIndexs[index] = 0
                     selectedValues[index] = titleForRow(0, forComponent: index) ?? " "
-                })
+                }
             }
         }
     }
@@ -226,9 +226,9 @@ public class PickerView: UIView {
                         if component < pickerView.numberOfComponents {
                             selectedIndexs[component] = row!
                             selectedValues[component] = titleForRow(row!, forComponent: component) ?? " "
-                            DispatchQueue.main.async( execute: {
+                            DispatchQueue.main.async {
                                 self.pickerView.selectRow(row!, inComponent: component, animated: false)
-                            })
+                            }
                         }
                     }
                 }
@@ -546,7 +546,7 @@ public extension PickerView {
         var citiesAndAreasArr = [[String: [String]?]]()
         for value in info {
             for (provinceKey, provinceValue) in value {
-                let sortProvince = provinceValue.sorted(by: { $0.key < $1.key }).compactMap {$0.value}
+                let sortProvince = provinceValue.sorted { $0.key < $1.key }.compactMap {$0.value}
                 var arr = [String]()
                 for areaValue in sortProvince {
                     citiesAndAreasArr.append(areaValue)
