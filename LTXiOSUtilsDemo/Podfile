@@ -32,7 +32,6 @@ target 'LTXiOSUtilsDemo' do
   pod 'SwiftDate','6.1.0' #时间工具
   pod 'GDPerformanceView-Swift','2.0.3' #显示屏幕FPS
   pod 'KeychainAccess','4.1.0' #钥匙串存储
-  pod 'ReachabilitySwift','5.0.0' #网络状态监听
   pod 'ZYCornerRadius','1.0.2' #  UIImageView高性能设置圆角，OC库
   pod 'UITableView+FDTemplateLayoutCell','1.6' #  UITableView缓存高度，OC库
   pod 'SwiftyJSON','5.0.0' # 处理JSON
