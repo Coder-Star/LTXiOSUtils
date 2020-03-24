@@ -27,27 +27,41 @@ public protocol CoreCompatible {
     associatedtype CoreCompatibleClassType
 
     /// 实例方法，只读计算属性
-    var core: CoreCompatibleInstanceType { get }
+    var core: CoreCompatibleInstanceType { get set }
     /// 类方法，只读计算属性
-    static var core: CoreCompatibleClassType { get }
+    static var core: CoreCompatibleClassType { get set }
 }
 /// Compatible协议默认实现
 extension CoreCompatible {
     /// 实例方法默认实现
     public var core: Core<Self> {
-        return Core(self)
+        get {
+            return Core(self)
+        }
+        // swiftlint:disable unused_setter_value
+        set {
+
+        }
+        // swiftlint:enable unused_setter_value
     }
 
     /// 类方法默认实现
     public static var core: Core<Self>.Type {
-        return Core<Self>.self
+        get {
+            return Core<Self>.self
+        }
+        // swiftlint:disable unused_setter_value
+        set {
+
+        }
+        // swiftlint:enable unused_setter_value
     }
 }
 
 extension NSObject: CoreCompatible {}
 
-extension String: CoreCompatible {}
-extension Double: CoreCompatible {}
-extension Array: CoreCompatible {}
-extension Int: CoreCompatible {}
-extension Date: CoreCompatible {}
+//extension String: CoreCompatible {}
+//extension Double: CoreCompatible {}
+//extension Array: CoreCompatible {}
+//extension Int: CoreCompatible {}
+//extension Date: CoreCompatible {}
