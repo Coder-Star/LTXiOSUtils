@@ -15,11 +15,6 @@ Pod::Spec.new do |s|
 
   # 核心类，其他子组件依赖该子组件
   s.subspec 'Core' do |core|
-    # 核心作用域
-    core.subspec 'Scope' do |scope|
-      scope.frameworks = "Foundation"
-      scope.source_files = 'LTXiOSUtils/Classes/Core/Scope/*.swift'
-    end
     # 扩展
     core.subspec 'Extension' do |extension|
       extension.frameworks = "UIKit","Foundation"
