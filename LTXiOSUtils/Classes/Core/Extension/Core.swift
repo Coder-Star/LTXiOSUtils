@@ -38,11 +38,10 @@ extension CoreCompatible {
         get {
             return Core(self)
         }
-        // swiftlint:disable unused_setter_value
+        // swiftlint:disable:next unused_setter_value
         set {
 
         }
-        // swiftlint:enable unused_setter_value
     }
 
     /// 类方法默认实现
@@ -50,11 +49,10 @@ extension CoreCompatible {
         get {
             return Core<Self>.self
         }
-        // swiftlint:disable unused_setter_value
+        // swiftlint:disable:next unused_setter_value
         set {
 
         }
-        // swiftlint:enable unused_setter_value
     }
 }
 
