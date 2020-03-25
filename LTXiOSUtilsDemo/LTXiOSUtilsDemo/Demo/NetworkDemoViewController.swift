@@ -13,6 +13,8 @@ class NetworkDemoViewController: BaseGroupTableMenuViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "网络请求"
+
+        Log.d(NetworkConstant.OaUrl)
     }
 
     override func setMenu() {

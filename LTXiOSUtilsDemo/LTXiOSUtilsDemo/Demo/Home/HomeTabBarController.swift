@@ -15,6 +15,8 @@ class HomeTabBarController: UITabBarController {
         view.backgroundColor = .white
         self.delegate = self
         initChildViewControllers()
+
+        Log.d(NetworkConstant.OaUrl)
     }
 
     private func initChildViewControllers() {

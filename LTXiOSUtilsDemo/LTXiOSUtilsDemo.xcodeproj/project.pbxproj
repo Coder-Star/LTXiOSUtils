@@ -318,11 +318,11 @@
 			isa = PBXGroup;
 			children = (
 				DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */,
+				DCF88148242B60210084C940 /* AppConfigApplicationService.swift */,
 				DC55E57123F7E6C8008C6941 /* AppThemeApplicationService.swift */,
 				DCB1C05823C75B3900D735BD /* RootVCApplicationService.swift */,
 				DCB1C05A23C75C5A00D735BD /* ThirdLibApplicationService.swift */,
 				DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */,
-				DCF88148242B60210084C940 /* AppConfigApplicationService.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";

@@ -100,6 +100,34 @@ public struct FileInfo {
         self.type = type
         self.data = data
     }
+
+    /// 构造函数
+    /// - Parameters:
+    ///   - name: 文件名称
+    ///   - type: 文件类型
+    ///   - data: 文件数据
+    public init(name: String, type: String, data: Data) {
+        self.name = name
+        self.size = String(format: "%.2f", Double(data.count) / 1024.0) + "KB"
+        self.type = type
+        self.data = data
+    }
+
+    /// 构造函数
+    /// - Parameters:
+    ///   - name: 文件名称
+    ///   - type: 文件类型
+    ///   - data: 文件数据
+    public init(name: String, data: Data) {
+        self.name = name
+        self.size = String(format: "%.2f", Double(data.count) / 1024.0) + "KB"
+        if let tempType = name.split(separator: ".").last {
+            self.type = ".\(tempType)"
+        } else {
+            self.type = ""
+        }
+        self.data = data
+    }
 }
 
 /// 菊花框相关配置
