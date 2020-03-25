@@ -57,6 +57,7 @@
 		DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */; };
 		DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */; };
 		DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF6F54623BCC87500AC4850 /* ViewFactory.swift */; };
+		DCF88149242B60210084C940 /* AppConfigApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF88148242B60210084C940 /* AppConfigApplicationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 		DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDemoViewController.swift; sourceTree = "<group>"; };
 		DCF6F54623BCC87500AC4850 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		DCF88148242B60210084C940 /* AppConfigApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigApplicationService.swift; sourceTree = "<group>"; };
 		FEA6FDCDB130B877B872D978 /* Pods-LTXiOSUtilsDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -320,6 +322,7 @@
 				DCB1C05823C75B3900D735BD /* RootVCApplicationService.swift */,
 				DCB1C05A23C75C5A00D735BD /* ThirdLibApplicationService.swift */,
 				DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */,
+				DCF88148242B60210084C940 /* AppConfigApplicationService.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */,
 				DCAAD857241A51C8009622DD /* AutoLabelsModel.swift in Sources */,
 				DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */,
+				DCF88149242B60210084C940 /* AppConfigApplicationService.swift in Sources */,
 				DC3E61FE2423755F00105366 /* PickImageDemoViewController.swift in Sources */,
 				DCA407882406AC0500F62769 /* WRCustomNavigationBar.swift in Sources */,
 				DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */,

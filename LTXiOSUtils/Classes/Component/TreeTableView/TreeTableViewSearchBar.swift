@@ -8,7 +8,7 @@
 import Foundation
 
 /// 协议
-public protocol TreeTableViewSearchBarDelegate: NSObjectProtocol {
+public protocol TreeTableViewSearchBarDelegate: class {
     /// 输入框开始进行编辑
     func treeTableViewSearchBarDidBeginEditing(searchBar: TreeTableViewSearchBar)
     /// 点击键盘搜索键

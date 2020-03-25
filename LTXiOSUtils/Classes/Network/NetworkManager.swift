@@ -105,6 +105,8 @@ public class NetworkManager {
                     let successResponse = try response.filterSuccessfulStatusCodes()
                     success(successResponse.data)
                 } catch {
+                    let responseJSON = try? JSONSerialization.jsonObject(with: response.data, options: .mutableContainers)
+                    Log.d("response: \(String(describing: responseJSON))")
                     failure(mergeError(statusCode: response.statusCode, moyaError: nil))
                 }
 

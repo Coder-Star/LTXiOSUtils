@@ -9,7 +9,7 @@ import Foundation
 
 /// 协议
 @objc
-public protocol TreeTableViewDelegate: NSObjectProtocol {
+public protocol TreeTableViewDelegate {
     /// 获取勾选的数据
     /// - Parameter nodes: 节点数组
     func checkNodes(nodes: [TreeNode])

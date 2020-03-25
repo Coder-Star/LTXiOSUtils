@@ -12,7 +12,7 @@ import Moya
 /// 网络请求参数类
 public struct RequestParam {
     /// 基础url
-    public var baseUrl: String
+    public var baseUrl: String = NetworkConfig.baseURL
     /// 请求路径
     public var path: String
     /// 传递参数
@@ -37,8 +37,13 @@ public struct RequestParam {
 
     /// 构造函数
     public init(path: String) {
-        self.baseUrl = NetworkConfig.baseURL
         self.path = path
+    }
+
+    /// 构造函数
+    public init(path: String, parameters: [String: Any]) {
+        self.path = path
+        self.parameters = parameters
     }
 
     /// 构造函数
@@ -67,6 +72,7 @@ public struct RequestParam {
         }
         if self.fileList.isNotNil {
             Log.d("file: \(String(describing: self.fileList?.compactMap {$0.name}.description))")
+            Log.d("file: \(String(describing: self.fileList?.compactMap {$0.data}.description))")
         }
     }
 }
