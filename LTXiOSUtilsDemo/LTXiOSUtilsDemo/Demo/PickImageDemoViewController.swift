@@ -32,6 +32,8 @@ class PickImageDemoViewController: BaseUIScrollViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "图片选择"
+        let rightBarItem = UIBarButtonItem(title: "上传", style: .plain, target: self, action: #selector(upload))
+        navigationItem.rightBarButtonItem = rightBarItem
     }
 
     override func setContentViewSubViews(contentView: UIView) {
@@ -53,6 +55,21 @@ class PickImageDemoViewController: BaseUIScrollViewController {
         }
     }
 
+}
+
+extension PickImageDemoViewController {
+    @objc
+    private func upload() {
+        var requestParam = RequestParam(path: NetworkConstant.ER.erMobileCommonUploadFile)
+        requestParam.parameters = [
+            "sourceId": "20032300000001",
+            "sourceType": "ErTravel"
+        ]
+        requestParam.fileList = pickImageView.imageList.compactMap { FileInfo(name: $0.name ?? "", size: $0.size ?? "", type: $0.type ?? "", data: $0.image!.jpegData(compressionQuality: 1)!) }
+        NetworkManager.sendRequest(requestParam: requestParam) { data in
+            Log.d(JSON(data))
+        }
+    }
 }
 
 extension PickImageDemoViewController: ImagePickGridViewDelegte {
@@ -102,6 +119,8 @@ extension PickImageDemoViewController: TZImagePickerControllerDelegate {
                     Log.d(assetResource?.uniformTypeIdentifier)
 
                     let image = PickImageModel(image: item, id: assetResource?.assetLocalIdentifier, data: asset)
+                    image.name = assetResource?.originalFilename
+                    image.type = ".\(String(describing: assetResource?.uniformTypeIdentifier.split(separator: ".").last))"
                     imageList.append(image)
                 } else {
                     let image = PickImageModel(image: item)

@@ -21,7 +21,8 @@ class AppDelegate: PluggableApplicationDelegate {
         return [ThirdLibApplicationService(),
                 RootVCApplicationService(),
                 NetworkStateApplicationService(),
-                AppThemeApplicationService()
+                AppThemeApplicationService(),
+                AppConfigApplicationService()
         ]
     }
 
