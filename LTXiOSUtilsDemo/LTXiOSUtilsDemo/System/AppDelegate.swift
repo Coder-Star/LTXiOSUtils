@@ -18,11 +18,11 @@ import PluggableAppDelegate
 class AppDelegate: PluggableApplicationDelegate {
 
     override var services: [ApplicationService] {
-        return [ThirdLibApplicationService(),
-                RootVCApplicationService(),
-                NetworkStateApplicationService(),
+        return [AppConfigApplicationService(),
                 AppThemeApplicationService(),
-                AppConfigApplicationService()
+                ThirdLibApplicationService(),
+                NetworkStateApplicationService(),
+                RootVCApplicationService()
         ]
     }
 

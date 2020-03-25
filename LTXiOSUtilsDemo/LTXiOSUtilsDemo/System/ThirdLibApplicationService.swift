@@ -19,7 +19,6 @@ final class ThirdLibApplicationService: NSObject, ApplicationService {
     }
 
     func initThirdLib() {
-        initLogConfig()
 
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
@@ -27,17 +26,5 @@ final class ThirdLibApplicationService: NSObject, ApplicationService {
         PerformanceMonitor.shared().start()
 
         UIButton.initRepeatClickMethod()
-    }
-}
-
-extension ThirdLibApplicationService {
-    /// 日志设置
-    func initLogConfig() {
-        Log.enabled = true
-        #if DEBUG
-        Log.minShowLogLevel = .debug
-        #else
-        Log.minShowLogLevel = .info
-        #endif
     }
 }

@@ -9,27 +9,25 @@
 import Foundation
 
 /// 网络请求常量
-public struct NetworkConstant {
+public class NetworkConstant: NSObject {
+
     static let isFormal = false //是否正式,正式版为true,测试版为false
-    static let isBanLog = false //是否禁止打印日志，true不打印，false打印
 
     private static var oaUrlInfo = ""
-    private static var erUrlInfo = ""
 
-    static func initUrlInfo() {
+    class func initUrlInfo() {
         NetworkConfig.baseURL = "http://172.20.3.53:8924/fms/"
 
         if NetworkConstant.isFormal {
-            NetworkConstant.oaUrlInfo = "http://172.20.3.53:8919/toa/"
-            NetworkConstant.erUrlInfo = "http://172.20.3.53:8919/toa/"
+            NetworkConstant.oaUrlInfo = "http://oa.topscomm.net:8932/"
         } else {
             NetworkConstant.oaUrlInfo = "http://172.20.3.53:8919/toa/"
-            NetworkConstant.erUrlInfo = "http://172.20.3.53:8919/toa/"
         }
+
     }
 
+    // static let 是自动懒加载的，所以当initUrlInfo被调用之前没有访问OaUrl，逻辑没有问题，如果访问了OaUrl，就有问题了
     static let OaUrl: String = NetworkConstant.oaUrlInfo
-    static let ErUrl: String = NetworkConstant.erUrlInfo
 
 }
 

@@ -60,12 +60,19 @@ class PickImageDemoViewController: BaseUIScrollViewController {
 extension PickImageDemoViewController {
     @objc
     private func upload() {
+        if pickImageView.imageList.count <= 0 {
+            HUD.showText("请选择图片")
+            return
+        }
+
         var requestParam = RequestParam(path: NetworkConstant.ER.erMobileCommonUploadFile)
         requestParam.parameters = [
             "sourceId": "20032300000001",
             "sourceType": "ErTravel"
         ]
-        requestParam.fileList = pickImageView.imageList.compactMap { FileInfo(name: $0.name ?? "", size: $0.size ?? "", type: $0.type ?? "", data: $0.image!.jpegData(compressionQuality: 1)!) }
+        requestParam.fileList = pickImageView.imageList.compactMap { FileInfo(name: $0.name ?? "", data: $0.image!.jpegData(compressionQuality: 1)!) }
+        Log.d(requestParam.fileList?[0].size)
+        Log.d(requestParam.fileList?[0].type)
         NetworkManager.sendRequest(requestParam: requestParam) { data in
             Log.d(JSON(data))
         }
