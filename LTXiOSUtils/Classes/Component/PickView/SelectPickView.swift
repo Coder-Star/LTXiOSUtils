@@ -92,16 +92,6 @@ public class SelectPickView: UIView {
         return toolBarView
     }()
 
-    private lazy var normalImage: UIImage? = {
-        let normalImage = "SelectPickView_select_normal".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
-        return normalImage
-    }()
-
-    private lazy var selectdImage: UIImage? = {
-        let selectdImage = "SelectPickView_select_selected".imageOfLTXiOSUtils()?.setSize(reSize: CGSize(width: 25, height: 25))
-        return selectdImage
-    }()
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -272,9 +262,9 @@ extension SelectPickView: UITableViewDataSource {
             }
         } else {
             if selectIndexArr.contains(indexPath.row) {
-                cell?.accessoryView = UIImageView(image: selectdImage)
+                cell?.accessoryType = .checkmark
             } else {
-                cell?.accessoryView = UIImageView(image: normalImage)
+                cell?.accessoryType = .none
             }
         }
         return cell!
