@@ -58,6 +58,7 @@
 		DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */; };
 		DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF6F54623BCC87500AC4850 /* ViewFactory.swift */; };
 		DCF88149242B60210084C940 /* AppConfigApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF88148242B60210084C940 /* AppConfigApplicationService.swift */; };
+		DCF88152242F2D980084C940 /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF88151242F2D980084C940 /* ImagePickView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDemoViewController.swift; sourceTree = "<group>"; };
 		DCF6F54623BCC87500AC4850 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		DCF88148242B60210084C940 /* AppConfigApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigApplicationService.swift; sourceTree = "<group>"; };
+		DCF88151242F2D980084C940 /* ImagePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
 		FEA6FDCDB130B877B872D978 /* Pods-LTXiOSUtilsDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,6 +283,7 @@
 		DC4AB9BB22F4606000A5F003 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DCF88150242F2D000084C940 /* View */,
 				DC83E7C523F645A40030A9B4 /* ThirdLibDemo */,
 				DC03AE5023F43381007739DD /* Model */,
 				DC1AD83523E84D400073CB97 /* Util */,
@@ -419,6 +422,14 @@
 				DC03AE2B23F3D736007739DD /* AppTheme.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		DCF88150242F2D000084C940 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DCF88151242F2D980084C940 /* ImagePickView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -739,6 +750,7 @@
 				DC03AE2823F3AD96007739DD /* MineViewController.swift in Sources */,
 				DCB1C05923C75B3900D735BD /* RootVCApplicationService.swift in Sources */,
 				DC83E7CF23F645E10030A9B4 /* FWCustomPopupDemoVC.swift in Sources */,
+				DCF88152242F2D980084C940 /* ImagePickView.swift in Sources */,
 				DC03AE2623F3AB1B007739DD /* HomeTabBarController.swift in Sources */,
 				DCCF3E5323C96B0F000E65E1 /* NetworkStateApplicationService.swift in Sources */,
 			);
