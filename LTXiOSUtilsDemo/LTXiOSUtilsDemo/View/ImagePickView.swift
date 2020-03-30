@@ -10,5 +10,4 @@ import Foundation
 import UIKit
 
 class ImagePickView: UIView {
-    
 }
