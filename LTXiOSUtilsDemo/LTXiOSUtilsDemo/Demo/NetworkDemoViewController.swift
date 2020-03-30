@@ -51,8 +51,7 @@ extension NetworkDemoViewController {
         let parameters: Parameters = ["loginname": "6918", "password": "ltx123456", "uuid": "", "ismobile": "1"]
         let requestParam = RequestParam(path: NetworkConstant.ER.loginUrl, parameters: parameters)
         NetworkManager.sendRequest(requestParam: requestParam) { data in
-            let json = JSON(data)
-            Log.d(json)
+            _ = JSON(data)
         }
     }
 }

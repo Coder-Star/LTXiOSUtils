@@ -82,8 +82,8 @@ public struct Log {
 private extension Log {
 
     private static func printLog<T>(_ log: T, file: String, function: String, line: Int, level: LogLevel) {
-        let fileExtension = file.ns.lastPathComponent.ns.pathExtension //文件名称
-        let filename = file.ns.lastPathComponent.ns.deletingPathExtension //文件扩展名
+        let fileExtension = ((file as NSString).lastPathComponent as NSString).pathExtension //文件名称
+        let filename = ((file as NSString).lastPathComponent as NSString).deletingPathExtension //文件扩展名
         let time = getCurrentTime()
         let informationPart = "\(time)-\(filename).\(fileExtension):\(line) \(function):"
         print("\(formatLog(informationPart, level: nil))", terminator: "") //文件、行号等信息
@@ -100,6 +100,13 @@ private extension Log {
     }
 
     private static func formatLog<T>(_ object: T, level: LogLevel?) -> String {
+        if let dict = object as? [String: Any] {
+            return "\(Log.getEmojis(level: level))\(dict.logDescription())\(Log.getEmojis(level: level))"
+        } else if let array = object as? [Any] {
+            return "\(Log.getEmojis(level: level))\(array.logDescription())\(Log.getEmojis(level: level))"
+        } else if let customString = object as? CustomStringConvertible {
+            return "\(Log.getEmojis(level: level))\(customString.description)\(Log.getEmojis(level: level))"
+        }
         return "\(Log.getEmojis(level: level))\(object)\(Log.getEmojis(level: level))"
     }
 
@@ -132,6 +139,98 @@ private extension Log {
 
 }
 
-private extension String {
-    var ns: NSString { return self as NSString }
+// MARK: - 解决字典及数组打印中文乱码
+extension Optional: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .none:
+            return "Optional(null)"
+        case .some(let obj):
+            if let customString = obj as? CustomStringConvertible {
+                if let dict = customString as? [String: Any] {
+                    return "Optional(\(dict.logDescription()))"
+                } else if let array = customString as? [Any] {
+                    return "Optional(\(array.logDescription()))"
+                }
+            }
+            return "Optional(\(obj))"
+        }
+    }
+}
+
+extension Dictionary {
+    /// 控制台打印内容，避免unicode编码乱码
+    /// - Parameter level: 打印层级
+    public func logDescription(level: Int = 0) -> String {
+        var resultStr = ""
+        var tab = ""
+        for _ in 0..<level {
+            tab.append(contentsOf: "\t")
+        }
+        resultStr.append(contentsOf: "{\n")
+        for (key, value) in self {
+            if let resultKey = key as? CVarArg {
+                if let str = value as? String {
+                    resultStr.append(contentsOf: String(format: "%@\t%@ = \"%@\",\n", tab, resultKey, str.unicodeStrWith(level)))
+                } else if let dic = value as? [String: Any] {
+                    resultStr.append(contentsOf: String(format: "%@\t%@ = %@,\n", tab, resultKey, dic.logDescription(level: level + 1)))
+                } else if let array = value as? [Any] {
+                    resultStr.append(contentsOf: String(format: "%@\t%@ = %@,\n", tab, resultKey, array.logDescription(level + 1)))
+                } else {
+                    resultStr.append(contentsOf: String(format: "%@\t%@ = %@,\n", tab, resultKey, "\(value)"))
+                }
+            }
+        }
+        resultStr.append(contentsOf: String(format: "%@}", tab))
+        return resultStr
+    }
+}
+
+extension Array {
+    /// 控制台打印内容，避免unicode编码乱码
+    /// - Parameter level: 打印层级
+    public func logDescription(_ level: Int = 0) -> String {
+        var resultStr = ""
+        var tab = ""
+        resultStr.append(contentsOf: "[\n")
+        for _ in 0..<level {
+            tab.append(contentsOf: "\t")
+        }
+        for value in self {
+            if let str = value as? String {
+                resultStr.append(contentsOf: String(format: "%@\t\"%@\",\n", tab, str.unicodeStrWith(level)))
+            } else if let dict = value as? [String: Any] {
+                resultStr.append(contentsOf: String(format: "%@\t%@,\n", tab, dict.logDescription(level: level + 1)))
+            } else if let array = value as? [Any] {
+                resultStr.append(contentsOf: String(format: "%@\t%@,\n", tab, array.logDescription(level + 1)))
+            } else {
+                resultStr.append(contentsOf: String(format: "%@\t%@,\n", tab, "\(value)"))
+            }
+        }
+        resultStr.append(contentsOf: String(format: "%@]", tab))
+        return resultStr
+    }
+}
+
+extension String {
+    func unicodeStrWith(_ level: Int = 0) -> String {
+        if let data = self.data(using: .utf8) {
+            if let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) {
+                if let jsonArray = json as? [Any] {
+                    return jsonArray.logDescription(level + 1)
+                } else if let jsonDictionary = json as? [String: Any] {
+                    return jsonDictionary.logDescription(level: level + 1)
+                }
+            }
+        }
+        let tempStr = self.replacingOccurrences(of: "\\u", with: "\\U").replacingOccurrences(of: "\"", with: "\\\"")
+        let tempData = ("\"".appending(tempStr).appending("\"")).data(using: .utf8)
+        var returnStr = ""
+        do {
+            returnStr = try (PropertyListSerialization.propertyList(from: tempData!, options: [.mutableContainers], format: nil) as? String ?? "")
+        } catch {
+            print(error)
+        }
+        return returnStr.replacingOccurrences(of: "\\r\\n", with: "\n")
+    }
 }

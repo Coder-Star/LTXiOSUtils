@@ -101,12 +101,12 @@ public class NetworkManager {
             switch result {
             case let .success(response):
                 Log.d("状态码: \(response.statusCode)")
+                let responseJSON = try? JSONSerialization.jsonObject(with: response.data, options: .mutableContainers)
+                Log.d("response: \(String(describing: responseJSON))")
                 do {
                     let successResponse = try response.filterSuccessfulStatusCodes()
                     success(successResponse.data)
                 } catch {
-                    let responseJSON = try? JSONSerialization.jsonObject(with: response.data, options: .mutableContainers)
-                    Log.d("response: \(String(describing: responseJSON))")
                     failure(mergeError(statusCode: response.statusCode, moyaError: nil))
                 }
 
