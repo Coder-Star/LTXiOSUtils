@@ -16,6 +16,7 @@
 		DC03AE2C23F3D736007739DD /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2B23F3D736007739DD /* AppTheme.swift */; };
 		DC03AE5223F433A3007739DD /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE5123F433A3007739DD /* AdModel.swift */; };
 		DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */; };
+		DC09415E2436E4D20052085F /* DemoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC09415D2436E4D20052085F /* DemoTest.swift */; };
 		DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */; };
 		DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */ = {isa = PBXBuildFile; fileRef = DC1AD82D23E83F2F0073CB97 /* TreeResource.json */; };
 		DC1AD83723E84D520073CB97 /* ResourceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD83623E84D520073CB97 /* ResourceUtils.swift */; };
@@ -95,6 +96,7 @@
 		DC03AE2B23F3D736007739DD /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		DC03AE5123F433A3007739DD /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
 		DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMenuViewExampleViewController.swift; sourceTree = "<group>"; };
+		DC09415D2436E4D20052085F /* DemoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTest.swift; sourceTree = "<group>"; };
 		DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewDemoViewController.swift; sourceTree = "<group>"; };
 		DC1AD82D23E83F2F0073CB97 /* TreeResource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TreeResource.json; sourceTree = "<group>"; };
 		DC1AD83623E84D520073CB97 /* ResourceUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceUtils.swift; sourceTree = "<group>"; };
@@ -238,6 +240,14 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		DC09415C2436E4A80052085F /* iOSTest */ = {
+			isa = PBXGroup;
+			children = (
+				DC09415D2436E4D20052085F /* DemoTest.swift */,
+			);
+			path = iOSTest;
+			sourceTree = "<group>";
+		};
 		DC1AD83523E84D400073CB97 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +310,7 @@
 		DC4AB9D022F4606100A5F003 /* LTXiOSUtilsDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				DC09415C2436E4A80052085F /* iOSTest */,
 				DCCF3E4D23C8AB8B000E65E1 /* ThirdLibTest */,
 				DCB1C05C23C7FF5E00D735BD /* ProtocolTest */,
 				DCB1C04E23C581F800D735BD /* ExtensionTest */,
@@ -766,6 +777,7 @@
 				DCCF3E4F23C8ABD1000E65E1 /* KeychainAccessTest.swift in Sources */,
 				DCCF3E5123C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift in Sources */,
 				DC3E62022424714E00105366 /* DoubleExtensionTest.swift in Sources */,
+				DC09415E2436E4D20052085F /* DemoTest.swift in Sources */,
 				DCB1C06023C8006500D735BD /* NSObjectExtensionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

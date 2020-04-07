@@ -16,37 +16,39 @@ target 'LTXiOSUtilsDemo' do
 #  pod 'LTXiOSUtils', :git => 'https://github.com/Coder-Star/LTXiOSUtils.git', :tag => '0.0.0' #直接从源代码托管仓库取
 
   # 本地配置
-  pod 'R.swift','5.1.0' # 资源映射
-  pod 'SwiftLint','0.38.0' # 代码规范限制，使用swiftlint autocorrect 可自动修复一部分格式问题
+  pod 'R.swift', '5.1.0' # 资源映射
+  pod 'SwiftLint', '0.38.0' # 代码规范限制，使用swiftlint autocorrect 可自动修复一部分格式问题
 
   #图片相关
-  pod 'Kingfisher','5.12.0' # 远程图片预览
-  pod 'SKPhotoBrowser','6.1.0' # 图片浏览
-  pod 'TZImagePickerController','3.3.1' #图片选择
+  pod 'Kingfisher', '5.12.0' # 远程图片预览
+  pod 'SKPhotoBrowser', '6.1.0' # 图片浏览
+  pod 'TZImagePickerController', '3.3.1' #图片选择
 
   #工具类
+  pod 'SwiftyUserDefaults', '4.0.0' # UserDefaults存储
+  pod 'KeychainAccess', '4.1.0' #钥匙串存储
+#  pod 'SwifterSwift', '5.1.0' # Swift相关扩展
+  pod 'SwiftDate', '6.1.0' #时间工具
+  pod 'IQKeyboardManagerSwift', '6.5.4' # 键盘控制
+  pod 'GDPerformanceView-Swift', '2.0.3' #显示屏幕FPS
+  pod 'ZYCornerRadius', '1.0.2' #  UIImageView高性能设置圆角，OC库
+  pod 'UITableView+FDTemplateLayoutCell', '1.6' #  UITableView缓存高度，OC库
+  pod 'SwiftyJSON', '5.0.0' # 处理JSON
   pod 'ObjectMapper', '3.5.1' #model与json互转
-  pod 'SwiftyUserDefaults','4.0.0' # UserDefaults存储
-#  pod 'SwifterSwift','5.1.0' # Swift相关扩展
-  pod 'IQKeyboardManagerSwift','6.5.4' # 键盘控制
-  pod 'SwiftDate','6.1.0' #时间工具
-  pod 'GDPerformanceView-Swift','2.0.3' #显示屏幕FPS
-  pod 'KeychainAccess','4.1.0' #钥匙串存储
-  pod 'ZYCornerRadius','1.0.2' #  UIImageView高性能设置圆角，OC库
-  pod 'UITableView+FDTemplateLayoutCell','1.6' #  UITableView缓存高度，OC库
-  pod 'SwiftyJSON','5.0.0' # 处理JSON
 
   #解耦
-  pod 'PluggableAppDelegate','1.3.0' #AppDelegate瘦身、解耦
-  pod 'URLNavigator' #URL路由
+  pod 'PluggableAppDelegate', '1.3.0' #AppDelegate瘦身、解耦
+  pod 'CTMediator', '28' #Runtime路由方案
+  pod 'MGJRouter', '0.10.0' #蘑菇街URl路由方案
+  pod 'URLNavigator', '2.3.0' #URL路由，跟MGJRouter实现思想相同，只不过MGJRouter是OC，这个是Swift
 
   #UI组件等
-  pod 'FSPagerView','0.8.3' #轮播组件
-  pod 'XHLaunchAd', '3.9.11' #广告页
+  pod 'FSPagerView', '0.8.3' #轮播组件
+  pod 'XHLaunchAd', '3.9.11' #广告页，依赖 'FLAnimatedImage'
 #  pod 'Onboard','2.3.3' #引导页
 
   #Rx
-  pod 'RxCocoa','5.0.1' # RxSwift是通用RxAPI的实现，并不涉及任何任何 Cocoa 或 UIKit 类，RxCocoa依赖RxSwift
+  pod 'RxCocoa', '5.0.1' # RxSwift是通用RxAPI的实现，并不涉及任何任何 Cocoa 或 UIKit 类，RxCocoa依赖RxSwift
 
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths
