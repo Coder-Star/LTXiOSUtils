@@ -161,6 +161,15 @@ public extension String {
         let string = String(mutableString)
         return string.replacingOccurrences(of: " ", with: "")
     }
+
+    /// 字符串转为类
+    var `class`: AnyClass? {
+        guard let nameSpace = Bundle.main.infoDictionary?["CFBundleExecutable"] as? String else {
+            return nil
+        }
+        let className = nameSpace.replacingOccurrences(of: " ", with: "_") + "." + self
+        return NSClassFromString(className)
+    }
 }
 
 // MARK: - 判断是否为空

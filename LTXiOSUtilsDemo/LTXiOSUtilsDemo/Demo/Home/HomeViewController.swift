@@ -121,10 +121,25 @@ class HomeViewController: BaseUIScrollViewController {
 extension HomeViewController {
     @objc func scan() {
         Log.d("扫描")
+        guard let className = "HomeViewController".class as? UIViewController.Type else {
+            return
+        }
+        let target = className.init()
+//        let action = #selector(actionInfo(info:))
+        let action = NSSelectorFromString("actionInfo:")
+        let info = ["1": "2"]
+        if target.responds(to: action) {
+            target.perform(action, with: info)
+        }
     }
 
     @objc func showMessage() {
         Log.d("查看消息")
+    }
+
+    @objc
+    func actionInfo(_ info: [String: Any]) {
+        Log.d(info)
     }
 }
 
