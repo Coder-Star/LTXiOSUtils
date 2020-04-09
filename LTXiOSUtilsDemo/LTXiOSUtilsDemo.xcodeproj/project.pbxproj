@@ -355,6 +355,8 @@
 		DC83E7C523F645A40030A9B4 /* ThirdLibDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DCAACAD9243DA0F10028D301 /* CTMediatorDemo */,
+				DCAACAD8243DA0DF0028D301 /* MGJRouterDemo */,
 				DC83E7C623F645B50030A9B4 /* AlertViewDemo */,
 			);
 			path = ThirdLibDemo;
@@ -369,6 +371,20 @@
 				DC83E7C823F645E00030A9B4 /* FWMenuViewDemoVC.swift */,
 			);
 			path = AlertViewDemo;
+			sourceTree = "<group>";
+		};
+		DCAACAD8243DA0DF0028D301 /* MGJRouterDemo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MGJRouterDemo;
+			sourceTree = "<group>";
+		};
+		DCAACAD9243DA0F10028D301 /* CTMediatorDemo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CTMediatorDemo;
 			sourceTree = "<group>";
 		};
 		DCB1C04223C4B1FB00D735BD /* ExtensionsExample */ = {
