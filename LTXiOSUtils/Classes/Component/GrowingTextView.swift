@@ -8,6 +8,15 @@
 import Foundation
 import UIKit
 
+///GrowingTextViewDelegate
+public protocol GrowingTextViewDelegate: class {
+    /// 高度变化
+    /// - Parameters:
+    ///   - growingTextView: GrowingTextView
+    ///   - height: 变化后高度
+    func heightChange(growingTextView: GrowingTextView, height: CGFloat)
+}
+
 open class GrowingTextView: UITextView {
 
     override open var text: String! {
@@ -33,6 +42,8 @@ open class GrowingTextView: UITextView {
 
     /// 高度变化闭包
     open var heightChangeCallBack: ((_ height: CGFloat) -> Void)?
+    /// 代理
+    open weak var growingTextViewDelegate: GrowingTextViewDelegate?
 
     private var heightConstraint: NSLayoutConstraint?
     private var oldText: String = ""
@@ -98,6 +109,7 @@ open class GrowingTextView: UITextView {
             shouldScrollAfterHeightChanged = true
             heightConstraint!.constant = height
             heightChangeCallBack?(height)
+            growingTextViewDelegate?.heightChange(growingTextView: self, height: height)
             setNeedsDisplay()
             self.superview?.layoutIfNeeded()
         } else if shouldScrollAfterHeightChanged {

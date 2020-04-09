@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-// MARK: - 取消对UITextView的监听无法在扩展中进行，需要在业务中进行处理
-
+// MARK: - 取消对UITextView的观察无法在扩展中进行，需要在业务中进行处理
+// MARK: - 在iOS 9 (and OS X 10.11）之后，除了调用block-based api的需要手动调用removeObserver，其他不用再手动调用
 // MARK: - UITextView占位符以及最大字数等
 extension UITextView {
 

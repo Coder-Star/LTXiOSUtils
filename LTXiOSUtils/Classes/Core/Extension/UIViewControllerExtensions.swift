@@ -9,17 +9,25 @@ import Foundation
 
 public extension UIViewController {
 
-    /// 获取当前屏幕当前ViewController
+    /// 获取当前屏幕顶层ViewController
     /// - Parameter base: 基础UIViewController，默认为window的rootViewController
-    class func current(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+    class func topViewController(of base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let presented = base?.presentedViewController {
+            return topViewController(of: presented)
+        }
         if let nav = base as? UINavigationController {
-            return current(base: nav.visibleViewController)
+            return topViewController(of: nav.visibleViewController)
         }
         if let tab = base as? UITabBarController {
-            return current(base: tab.selectedViewController)
+            return topViewController(of: tab.selectedViewController)
         }
-        if let presented = base?.presentedViewController {
-            return current(base: presented)
+        if let page = base as? UIPageViewController, page.viewControllers?.count == 1 {
+            return topViewController(of: page.viewControllers?.first)
+        }
+        for subview in base?.view?.subviews ?? [] {
+            if let childViewController = subview.next as? UIViewController {
+                return topViewController(of: childViewController)
+            }
         }
         return base
     }
@@ -46,17 +54,6 @@ public extension UIViewController {
 }
 
 public extension UIViewController {
-    /// 显示提示框，可自动消失
-    /// - Parameters:
-    ///   - message: 显示内容
-    ///   - time: 延时时间
-    func showToast(_ message: String, delayTime: Double = 1.0) {
-        let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        self.present(alertController, animated: true, completion: nil)
-        DispatchQueue.main.delay(delayTime) {
-            self.presentedViewController?.dismiss(animated: false, completion: nil)
-        }
-    }
 
     /// 生成提示框，一个按钮回调
     /// - Parameters:
