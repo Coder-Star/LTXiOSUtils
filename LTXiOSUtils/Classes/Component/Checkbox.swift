@@ -58,7 +58,7 @@ public class Checkbox: UIControl {
     public var isChecked: Bool = false {
         didSet { setNeedsDisplay() }
     }
-    /// 选中时是否有视觉反馈效果
+    /// 选中时是否有触感反馈效果
     public var useHapticFeedback: Bool = true
 
     private var feedbackGenerator: UIImpactFeedbackGenerator?

@@ -34,6 +34,9 @@ public struct RequestParam {
     public var ignoreError: Bool = false
     /// 重试次数，大于0时进行重试
     public var retryCount: Int = 0
+    /// 请求编码
+    /// 其中，如果使用参数传递方式，encoding为URLEncoding.default；如果使用json方式，encoding为JSONEncoding.default
+    public var parameterEncoding: ParameterEncoding = URLEncoding.default
 
     /// 构造函数
     public init(path: String) {
