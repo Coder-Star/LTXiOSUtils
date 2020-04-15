@@ -62,8 +62,7 @@ extension APIManager: CustomizeTargetType {
             //上传文件
             guard let fileList = requestParam.fileList else {
                 /// 非上传文件
-                /// 其中，如果使用参数传递方式，encoding为URLEncoding.default；如果使用json方式，encoding为JSONEncoding.default
-                return .requestParameters(parameters: requestParam.parameters, encoding: URLEncoding.default)
+                return .requestParameters(parameters: requestParam.parameters, encoding: requestParam.parameterEncoding)
             }
             var multipartFormDataList = [MultipartFormData]()
             for item in fileList {

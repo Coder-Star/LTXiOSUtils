@@ -26,7 +26,7 @@ public class NetworkManager {
      /// 进度回调闭包
     public typealias ProgressBlock = (_ progressResponse: ProgressResponse) -> Void
      /// 失败回调闭包
-    public typealias FailureBlock = (_ st: RequestError) -> Void
+    public typealias FailureBlock = (_ requestError: RequestError) -> Void
 
     /// 网络请求
     /// 成功时进行回调，错误统一处理

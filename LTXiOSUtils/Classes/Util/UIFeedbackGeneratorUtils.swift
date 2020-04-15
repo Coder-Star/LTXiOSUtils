@@ -1,7 +1,7 @@
 //
 //  UIFeedbackGeneratorUtils.swift
 //  LTXiOSUtils
-//  震动反馈工具类
+//  触感反馈工具类
 //  Created by 李天星 on 2020/3/17.
 //  Copyright © 2020 李天星. All rights reserved.
 //
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-/// 震动类型
+/// 触感反馈类型
 public enum FeedbackType: Int {
     /// 轻
     case light
@@ -30,11 +30,11 @@ public enum FeedbackType: Int {
     case change
 }
 
-/// 震动工具类
+/// 触感反馈工具类
 public struct UIFeedbackGeneratorUtils {
 
-    /// 震动
-    /// - Parameter style: 震动类型
+    /// 触感反馈
+    /// - Parameter style: 触感反馈类型
     public static func impactFeedback(style: FeedbackType) {
         if #available(iOS 10.0, *) {
             switch style {
