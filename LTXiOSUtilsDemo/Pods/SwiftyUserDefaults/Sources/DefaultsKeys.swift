@@ -24,43 +24,8 @@
 
 import Foundation
 
-// MARK: - Static keys
+public protocol DefaultsKeyStore {}
 
-/// Extend this class and add your user defaults keys as static constants
-/// so you can use the shortcut dot notation (e.g. `Defaults[.yourKey]`)
-
-open class DefaultsKeys {
-    fileprivate init() {}
-}
-
-/// Base class for static user defaults keys. Specialize with value type
-/// and pass key name to the initializer to create a key.
-open class DefaultsKey<ValueType: DefaultsSerializable>: DefaultsKeys {
-
-    public let _key: String
-    public let defaultValue: ValueType.T?
-
-    public init(_ key: String, defaultValue: ValueType.T) {
-        self._key = key
-        self.defaultValue = defaultValue
-    }
-
-    // Couldn't figure out a way of how to pass a nil/none value from extension, thus this initializer.
-    // Used for creating an optional key (without defaultValue)
-    private init(key: String) {
-        self._key = key
-        self.defaultValue = nil
-    }
-
-    @available(*, unavailable, message: "This key needs a `defaultValue` parameter. If this type does not have a default value, consider using an optional key.")
-    public init(_ key: String) {
-        fatalError()
-    }
-}
-
-public extension DefaultsKey where ValueType: DefaultsSerializable, ValueType: OptionalType, ValueType.Wrapped: DefaultsSerializable {
-
-    convenience init(_ key: String) {
-        self.init(key: key)
-    }
+public struct DefaultsKeys: DefaultsKeyStore {
+    public init() {}
 }
