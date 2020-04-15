@@ -25,7 +25,7 @@ target 'LTXiOSUtilsDemo' do
   pod 'TZImagePickerController', '3.3.1' #图片选择
 
   #工具类
-  pod 'SwiftyUserDefaults', '4.0.0' # UserDefaults存储
+  pod 'SwiftyUserDefaults', '5.0.0' # UserDefaults存储
   pod 'KeychainAccess', '4.1.0' #钥匙串存储
 #  pod 'SwifterSwift', '5.1.0' # Swift相关扩展
   pod 'SwiftDate', '6.1.0' #时间工具

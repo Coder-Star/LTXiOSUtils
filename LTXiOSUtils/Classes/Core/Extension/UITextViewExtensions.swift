@@ -13,6 +13,8 @@ import UIKit
 // MARK: - UITextView占位符以及最大字数等
 extension UITextView {
 
+    private static let observingKeys = ["attributedText", "text"]
+
     private struct RuntimeKey {
         static let placeholder = UnsafeRawPointer.init(bitPattern: "PLACEHOLDEL".hashValue)
         static let limitLength = UnsafeRawPointer.init(bitPattern: "LIMITLENGTH".hashValue)
@@ -104,6 +106,19 @@ extension UITextView {
         }
     }
 
+    /// 移除观察
+    /// 如果不移除，在iOS11以下会因为没有移除观察引起crash
+    public func removeObserver() {
+        NotificationCenter.default.removeObserver(self)
+        if #available(iOS 11, *) {
+            
+        } else {
+            for key in UITextView.observingKeys {
+                self.removeObserver(self, forKeyPath: key)
+            }
+        }
+    }
+
     private var placeholderLabel: UILabel? {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.placeholderLabel!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -127,8 +142,7 @@ extension UITextView {
 
     private func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
-        let observingKeys = ["attributedText", "text"]
-        for key in observingKeys {
+        for key in UITextView.observingKeys {
             self.addObserver(self, forKeyPath: key, options: .new, context: nil)
         }
     }
