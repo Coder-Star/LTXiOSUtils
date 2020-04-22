@@ -59,7 +59,7 @@ Pod::Spec.new do |s|
   # 基础ViewController
   s.subspec 'ViewController' do |viewController|
     viewController.dependency 'LTXiOSUtils/Core/Extension'
-    viewController.dependency 'SnapKit' # 自动布局
+    viewController.dependency 'SnapKit','5.0.1' # 自动布局
     viewController.dependency 'MJRefresh' # 下拉刷新、下拉加载，OC库
     viewController.source_files = 'LTXiOSUtils/Classes/ViewController/**/*.swift'
   end

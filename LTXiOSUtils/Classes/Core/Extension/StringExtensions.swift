@@ -197,6 +197,11 @@ public extension String {
         return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
     }
 
+    /// url解码
+    var urlDecode: String? {
+        return self.removingPercentEncoding
+    }
+
     /// base64编码
     var base64Encode: String? {
         let data = self.data(using: .utf8)

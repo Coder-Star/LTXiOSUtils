@@ -74,6 +74,11 @@ class DemoListViewController: BaseGroupTableMenuViewController {
         ]
         menu.append(extensionMenu)
 
+        let mediatorAndRouterMenu = [
+            BaseGroupTableMenuModel(code: "MediatorAndRouter", title: "组件通信")
+        ]
+        menu.append(mediatorAndRouterMenu)
+
     }
 
     override func click(menuModel: BaseGroupTableMenuModel) {
@@ -96,6 +101,8 @@ class DemoListViewController: BaseGroupTableMenuViewController {
             navigationController?.pushViewController(FWDemoViewController(), animated: true)
         case "PickImage":
             navigationController?.pushViewController(PickImageDemoViewController(), animated: true)
+        case "MediatorAndRouter":
+            navigationController?.pushViewController(MediatorAndRouterDemoViewController(), animated: true)
         default:
             HUD.showText("暂无此模块")
         }

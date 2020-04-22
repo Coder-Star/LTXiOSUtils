@@ -13,16 +13,26 @@ final class AppConfigApplicationService: NSObject, ApplicationService {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         initLogConfig()
         initUrlInfo()
+        initRegisterUrl()
         return true
     }
 }
 
+// MARK: - 网络设置
 extension AppConfigApplicationService {
     private func initUrlInfo() {
         NetworkConstant.initUrlInfo()
     }
 }
 
+// MARK: - 组件注册
+extension AppConfigApplicationService {
+    private func initRegisterUrl() {
+        MGJRouterDemoViewController.registerRouter()
+    }
+}
+
+// MARK: - 日志设置
 extension AppConfigApplicationService {
     /// 日志设置
     private func initLogConfig() {
