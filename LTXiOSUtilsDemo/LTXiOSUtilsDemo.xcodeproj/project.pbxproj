@@ -17,6 +17,8 @@
 		DC03AE5223F433A3007739DD /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE5123F433A3007739DD /* AdModel.swift */; };
 		DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */; };
 		DC09415E2436E4D20052085F /* DemoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC09415D2436E4D20052085F /* DemoTest.swift */; };
+		DC106D48244F1DC300494F45 /* MGJRouterDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC106D47244F1DC300494F45 /* MGJRouterDemoViewController.swift */; };
+		DC106D4A244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC106D49244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift */; };
 		DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */; };
 		DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */ = {isa = PBXBuildFile; fileRef = DC1AD82D23E83F2F0073CB97 /* TreeResource.json */; };
 		DC1AD83723E84D520073CB97 /* ResourceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD83623E84D520073CB97 /* ResourceUtils.swift */; };
@@ -97,6 +99,8 @@
 		DC03AE5123F433A3007739DD /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
 		DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMenuViewExampleViewController.swift; sourceTree = "<group>"; };
 		DC09415D2436E4D20052085F /* DemoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTest.swift; sourceTree = "<group>"; };
+		DC106D47244F1DC300494F45 /* MGJRouterDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGJRouterDemoViewController.swift; sourceTree = "<group>"; };
+		DC106D49244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediatorAndRouterDemoViewController.swift; sourceTree = "<group>"; };
 		DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewDemoViewController.swift; sourceTree = "<group>"; };
 		DC1AD82D23E83F2F0073CB97 /* TreeResource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TreeResource.json; sourceTree = "<group>"; };
 		DC1AD83623E84D520073CB97 /* ResourceUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceUtils.swift; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 		DC83E7C523F645A40030A9B4 /* ThirdLibDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC106D49244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift */,
 				DCAACAD9243DA0F10028D301 /* CTMediatorDemo */,
 				DCAACAD8243DA0DF0028D301 /* MGJRouterDemo */,
 				DC83E7C623F645B50030A9B4 /* AlertViewDemo */,
@@ -376,6 +381,7 @@
 		DCAACAD8243DA0DF0028D301 /* MGJRouterDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC106D47244F1DC300494F45 /* MGJRouterDemoViewController.swift */,
 			);
 			path = MGJRouterDemo;
 			sourceTree = "<group>";
@@ -753,6 +759,7 @@
 				DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */,
 				DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */,
 				DC03AE2A23F3CA6A007739DD /* HomeViewController.swift in Sources */,
+				DC106D48244F1DC300494F45 /* MGJRouterDemoViewController.swift in Sources */,
 				DCB1C05B23C75C5A00D735BD /* ThirdLibApplicationService.swift in Sources */,
 				DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */,
 				DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */,
@@ -777,6 +784,7 @@
 				DC03AE2823F3AD96007739DD /* MineViewController.swift in Sources */,
 				DCB1C05923C75B3900D735BD /* RootVCApplicationService.swift in Sources */,
 				DC83E7CF23F645E10030A9B4 /* FWCustomPopupDemoVC.swift in Sources */,
+				DC106D4A244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift in Sources */,
 				DCF88152242F2D980084C940 /* ImagePickView.swift in Sources */,
 				DC03AE2623F3AB1B007739DD /* HomeTabBarController.swift in Sources */,
 				DCCF3E5323C96B0F000E65E1 /* NetworkStateApplicationService.swift in Sources */,
