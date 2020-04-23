@@ -26,7 +26,9 @@ class MediatorAndRouterDemoViewController: BaseGroupTableMenuViewController {
             BaseGroupTableMenuModel(code: "routerE", title: "传递字典信息"),
             BaseGroupTableMenuModel(code: "routerF", title: "全局的URL Pattern(匹配不到的统一进入这个)"),
             BaseGroupTableMenuModel(code: "routerG", title: "模板生成URL"),
-            BaseGroupTableMenuModel(code: "routerH", title: "opneUrl结束执行Completion Block")
+            BaseGroupTableMenuModel(code: "routerH", title: "opneUrl结束执行Completion Block"),
+            BaseGroupTableMenuModel(code: "routerI", title: "同步获取URL对应的Object"),
+            BaseGroupTableMenuModel(code: "routerJ", title: "组件使用Protocol")
         ]
         menu.append(fisrtMenu)
         let sencondMenu = [
@@ -97,6 +99,23 @@ class MediatorAndRouterDemoViewController: BaseGroupTableMenuViewController {
                     }
                 }
             }
+        // 同步获取URL对应的Object
+        case "routerI":
+            let routerUrl = MGJRouterDemoViewController.routerPrefix + "MGJRouterDemoObject"
+            let content = ["content": "获取URL对应的Object"]
+            if MGJRouter.canOpenURL(routerUrl, matchExactly: true) {
+                MGJRouter.openURL(routerUrl, withUserInfo: content) { info in
+                    Log.d(info)
+                    if let viewController = info as? UIViewController {
+                        self.navigationController?.pushViewController(viewController, animated: true)
+                    }
+                }
+            }
+            let info = MGJRouter.object(forURL: routerUrl, withUserInfo: content)
+            Log.d(info)
+        // 组件使用Protocol
+        case "routerJ":
+            Log.d(BaseGroupTableMenuViewController().description)
         default:
             HUD.showText("暂无此模块")
         }

@@ -70,19 +70,46 @@ extension MGJRouterDemoViewController {
         MGJRouter.registerURLPattern(routerPrefix + "MGJRouterDemoBlock", toHandler: { routerParameters in
             Log.d("opneUrl结束执行Completion Block")
             if let result = routerParameters as? [String: Any] {
-                let block = result[MGJRouterParameterCompletion]
-                typealias CallbackType = @convention(block) (Any?) -> Void
-                let blockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(block as AnyObject).toOpaque())
-                let callback = unsafeBitCast(blockPtr, to: CallbackType.self)
+                // 将block转为closure
+                if let block = result[MGJRouterParameterCompletion] {
+                    typealias CallbackType = @convention(block) (Any?) -> Void
+                    let blockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(block as AnyObject).toOpaque())
+                    let callback = unsafeBitCast(blockPtr, to: CallbackType.self)
 
-                if let userInfo = result[MGJRouterParameterUserInfo] as? [String: String] {
-                    let viewController = MGJRouterDemoViewController()
-                    viewController.content = userInfo["content"] ?? "content为空"
-                    callback(viewController)
+                    if let userInfo = result[MGJRouterParameterUserInfo] as? [String: String] {
+                        let viewController = MGJRouterDemoViewController()
+                        viewController.content = userInfo["content"] ?? "content为空"
+                        callback(viewController)
+                    }
                 }
             }
             printToHandlerInfo(routerParameters: routerParameters)
         })
+
+        // 同步获取URL对应的Object
+        MGJRouter.registerURLPattern(routerPrefix + "MGJRouterDemoObject", toObjectHandler: { routerParameters in
+            Log.d("同步获取URL对应的Object")
+            var content = ""
+            if let result = routerParameters as? [String: Any] {
+                // 将block转为closure
+                if let block = result[MGJRouterParameterCompletion] {
+                    typealias CallbackType = @convention(block) (Any?) -> Void
+                    let blockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(block as AnyObject).toOpaque())
+                    let callback = unsafeBitCast(blockPtr, to: CallbackType.self)
+                    if let userInfo = result[MGJRouterParameterUserInfo] as? [String: String] {
+                        let viewController = MGJRouterDemoViewController()
+                        content = userInfo["content"] ?? "content为空"
+                        viewController.content = content
+                        callback(viewController)
+                    }
+                }
+            }
+            printToHandlerInfo(routerParameters: routerParameters)
+            return "获取URL对应的Object成功"
+        })
+
+        // 取消url的注册
+//        MGJRouter.deregisterURLPattern("")
 
     }
 }

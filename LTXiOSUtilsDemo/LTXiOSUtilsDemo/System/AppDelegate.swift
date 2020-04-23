@@ -17,13 +17,37 @@ import PluggableAppDelegate
 @UIApplicationMain
 class AppDelegate: PluggableApplicationDelegate {
 
+    /*
+     可以将moduleList的获取方式改为从plist文件中进行获取，配置内容为各组件实现ApplicationService的类
+     格式为 组件名.类名
+     这样就可以达到各组件能够接收到AppDelegate中的系统事件
+     如果使用类似MGJRouter的组件通信工具，就可以在各组件的 didFinishLaunchingWithOptions方法中注册url
+     */
+    let moduleList: [AnyClass?] = ["AppConfigApplicationService".class,
+                      "AppThemeApplicationService".class,
+                      "ThirdLibApplicationService".class,
+                      "NetworkStateApplicationService".class,
+                      "RootVCApplicationService".class]
+
     override var services: [ApplicationService] {
-        return [AppConfigApplicationService(),
-                AppThemeApplicationService(),
-                ThirdLibApplicationService(),
-                NetworkStateApplicationService(),
-                RootVCApplicationService()
-        ]
+        var applicationServiceList = [ApplicationService]()
+        for item in moduleList {
+            if let module = item as? NSObject.Type {
+                let service = module.init()
+                if let result = service as? ApplicationService {
+                    print(item.description)
+                    applicationServiceList.append(result)
+                }
+            }
+        }
+
+        return applicationServiceList
+//        return [AppConfigApplicationService(),
+//                AppThemeApplicationService(),
+//                ThirdLibApplicationService(),
+//                NetworkStateApplicationService(),
+//                RootVCApplicationService()
+//        ]
     }
 
     override init() {
