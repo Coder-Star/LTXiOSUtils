@@ -37,7 +37,6 @@ target 'LTXiOSUtilsDemo' do
   pod 'ObjectMapper', '3.5.1' #model与json互转
 
   #解耦
-  pod 'PluggableAppDelegate', '1.3.0' #AppDelegate瘦身、解耦
   pod 'CTMediator', '28' #Runtime路由方案
   pod 'MGJRouter', '0.10.0' #蘑菇街URl路由方案
   pod 'URLNavigator', '2.3.0' #URL路由，跟MGJRouter实现思想相同，只不过MGJRouter是OC，这个是Swift

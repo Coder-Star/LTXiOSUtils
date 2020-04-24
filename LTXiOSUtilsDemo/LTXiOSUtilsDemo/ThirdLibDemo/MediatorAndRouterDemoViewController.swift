@@ -64,7 +64,7 @@ class MediatorAndRouterDemoViewController: BaseGroupTableMenuViewController {
             }
         // 传递自定义参数(首个参数不带形参名)
         case "routerD":
-            let routerUrl = MGJRouterDemoViewController.routerPrefix + "MGJRouterDemo/wash?color=red"
+            let routerUrl = MGJRouterDemoViewController.routerPrefix + "MGJRouterDemo/Custom_Variables?color=red"
             if MGJRouter.canOpenURL(routerUrl, matchExactly: true) {
                 MGJRouter.openURL(routerUrl)
             }
