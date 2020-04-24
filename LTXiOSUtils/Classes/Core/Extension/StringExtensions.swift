@@ -162,7 +162,7 @@ public extension String {
         return string.replacingOccurrences(of: " ", with: "")
     }
 
-    /// 字符串转为类
+    /// 字符串转为类，限制主工程代码使用
     var `class`: AnyClass? {
         guard let nameSpace = Bundle.main.infoDictionary?["CFBundleExecutable"] as? String else {
             return nil

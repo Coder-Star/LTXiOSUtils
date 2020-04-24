@@ -22,12 +22,55 @@ extension ApplicationService {
     }
 }
 
+
+/*
+ 示例AppDelegate
+ @UIApplicationMain
+ class AppDelegate: ApplicationServiceManagerDelegate {
+
+     override var services: [ApplicationService] {
+         return [AppConfigApplicationService(),
+                 AppThemeApplicationService(),
+         ]
+     }
+
+     override init() {
+         super.init()
+         if window == nil {
+             window = UIWindow()
+         }
+     }
+ }
+ */
+
 open class ApplicationServiceManagerDelegate: UIResponder, UIApplicationDelegate {
 
+    /// 子类需要在构造函数中对其进行赋值
     public var window: UIWindow?
 
+    /// 交由子类去重写，返回含有各模块实现ApplicationService的类名称的plist文件地址
+    /// plist文件需要是NSArray类型
+    open var plistPath: String? { return nil }
+
     /// 交由子类去重写，返回各模块实现ApplicationService的类
-    open var services: [ApplicationService] { return [] }
+    open var services: [ApplicationService] {
+        guard let path = plistPath else {
+            return []
+        }
+        guard let applicationServiceNameArr = NSArray(contentsOfFile: path) else {
+            return []
+        }
+        var applicationServiceArr = [ApplicationService]()
+        for applicationServiceName in applicationServiceNameArr {
+            if let applicationServiceNameStr = applicationServiceName as? String, let applicationService = NSClassFromString(applicationServiceNameStr), let module = applicationService as? NSObject.Type {
+                let service = module.init()
+                if let result = service as? ApplicationService {
+                    applicationServiceArr.append(result)
+                }
+            }
+        }
+        return applicationServiceArr
+    }
 
     private lazy var applicationServices: [ApplicationService] = {
         return self.services
