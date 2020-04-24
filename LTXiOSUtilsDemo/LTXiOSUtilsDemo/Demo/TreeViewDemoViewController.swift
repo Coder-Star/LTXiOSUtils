@@ -27,9 +27,11 @@ class TreeViewDemoViewController: BaseUIViewController {
     }
 
     private func initView() {
-        let data = ResourceUtils.getText(url: R.file.treeResourceJson(), type: .json)
+        guard let data = ResourceUtils.getContentInfo(path: R.file.treeResourceJson()?.path, type: .json) as? Data else {
+            return
+        }
         var treeNodes = [TreeNode]()
-        for item in data.arrayValue {
+        for item in JSON(data).arrayValue {
             let name = item["name"].stringValue
             let filterName = [item["name"].stringValue]
             let ID = item["id"].stringValue
