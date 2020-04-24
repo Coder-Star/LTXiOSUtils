@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import PluggableAppDelegate
 
 final class AppConfigApplicationService: NSObject, ApplicationService {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {

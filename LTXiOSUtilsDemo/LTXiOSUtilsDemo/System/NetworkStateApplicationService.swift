@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import PluggableAppDelegate
 import Reachability
 
 final class NetworkStateApplicationService: NSObject, ApplicationService {

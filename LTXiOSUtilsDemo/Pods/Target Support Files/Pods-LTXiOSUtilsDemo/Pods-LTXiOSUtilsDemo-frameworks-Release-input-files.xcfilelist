@@ -14,7 +14,6 @@ ${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework
 ${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
-${BUILT_PRODUCTS_DIR}/PluggableAppDelegate/PluggableAppDelegate.framework
 ${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework
 ${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework

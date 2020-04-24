@@ -12,10 +12,9 @@ PluggableApplicationDelegate实现了UIApplicationDelegate协议，并在扩展�
  */
 
 import UIKit
-import PluggableAppDelegate
 
 @UIApplicationMain
-class AppDelegate: PluggableApplicationDelegate {
+class AppDelegate: ApplicationServiceManagerDelegate {
 
     /*
      可以将moduleList的获取方式改为从plist文件中进行获取，配置内容为各组件实现ApplicationService的类
@@ -35,7 +34,6 @@ class AppDelegate: PluggableApplicationDelegate {
             if let module = item as? NSObject.Type {
                 let service = module.init()
                 if let result = service as? ApplicationService {
-                    print(item.description)
                     applicationServiceList.append(result)
                 }
             }

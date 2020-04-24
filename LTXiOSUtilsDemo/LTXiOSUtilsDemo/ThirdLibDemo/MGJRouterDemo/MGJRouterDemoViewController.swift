@@ -54,8 +54,14 @@ extension MGJRouterDemoViewController {
         })
 
         // 传递自定义参数(首个参数不带形参名)
-        MGJRouter.registerURLPattern(routerPrefix + "MGJRouterDemo/:type", toHandler: { routerParameters in
+        MGJRouter.registerURLPattern(routerPrefix + "MGJRouterDemo/:content", toHandler: { routerParameters in
             Log.d("传递自定义参数(首个参数不带形参名)")
+            if let result = routerParameters, let content = result["content"] {
+                let viewController = MGJRouterDemoViewController()
+                viewController.content = content as? String ?? "content为空"
+                /// 这里还可以通过另外一种方式，自定义navigationController，获取顶部的UIViewController进行跳转
+                UIViewController.topViewController()?.navigationController?.pushViewController(viewController, animated: true)
+            }
             printToHandlerInfo(routerParameters: routerParameters)
         })
 
@@ -69,18 +75,16 @@ extension MGJRouterDemoViewController {
         // opneUrl结束执行Completion Block
         MGJRouter.registerURLPattern(routerPrefix + "MGJRouterDemoBlock", toHandler: { routerParameters in
             Log.d("opneUrl结束执行Completion Block")
-            if let result = routerParameters as? [String: Any] {
+            if let result = routerParameters, let block = result[MGJRouterParameterCompletion] {
                 // 将block转为closure
-                if let block = result[MGJRouterParameterCompletion] {
-                    typealias CallbackType = @convention(block) (Any?) -> Void
-                    let blockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(block as AnyObject).toOpaque())
-                    let callback = unsafeBitCast(blockPtr, to: CallbackType.self)
+                typealias CallbackType = @convention(block) (Any?) -> Void
+                let blockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(block as AnyObject).toOpaque())
+                let callback = unsafeBitCast(blockPtr, to: CallbackType.self)
 
-                    if let userInfo = result[MGJRouterParameterUserInfo] as? [String: String] {
-                        let viewController = MGJRouterDemoViewController()
-                        viewController.content = userInfo["content"] ?? "content为空"
-                        callback(viewController)
-                    }
+                if let userInfo = result[MGJRouterParameterUserInfo] as? [String: String] {
+                    let viewController = MGJRouterDemoViewController()
+                    viewController.content = userInfo["content"] ?? "content为空"
+                    callback(viewController)
                 }
             }
             printToHandlerInfo(routerParameters: routerParameters)
@@ -90,18 +94,16 @@ extension MGJRouterDemoViewController {
         MGJRouter.registerURLPattern(routerPrefix + "MGJRouterDemoObject", toObjectHandler: { routerParameters in
             Log.d("同步获取URL对应的Object")
             var content = ""
-            if let result = routerParameters as? [String: Any] {
+            if let result = routerParameters, let block = result[MGJRouterParameterCompletion] {
                 // 将block转为closure
-                if let block = result[MGJRouterParameterCompletion] {
-                    typealias CallbackType = @convention(block) (Any?) -> Void
-                    let blockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(block as AnyObject).toOpaque())
-                    let callback = unsafeBitCast(blockPtr, to: CallbackType.self)
-                    if let userInfo = result[MGJRouterParameterUserInfo] as? [String: String] {
-                        let viewController = MGJRouterDemoViewController()
-                        content = userInfo["content"] ?? "content为空"
-                        viewController.content = content
-                        callback(viewController)
-                    }
+                typealias CallbackType = @convention(block) (Any?) -> Void
+                let blockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(block as AnyObject).toOpaque())
+                let callback = unsafeBitCast(blockPtr, to: CallbackType.self)
+                if let userInfo = result[MGJRouterParameterUserInfo] as? [String: String] {
+                    let viewController = MGJRouterDemoViewController()
+                    content = userInfo["content"] ?? "content为空"
+                    viewController.content = content
+                    callback(viewController)
                 }
             }
             printToHandlerInfo(routerParameters: routerParameters)
@@ -117,7 +119,7 @@ extension MGJRouterDemoViewController {
 extension MGJRouterDemoViewController {
     class func printToHandlerInfo(routerParameters: [AnyHashable: Any]?) {
         Log.d(routerParameters)
-        if let result = routerParameters as? [String: Any] {
+        if let result = routerParameters {
             if let url = result[MGJRouterParameterURL] as? String {
                 Log.d("MGJRouterParameterURL")
                 Log.d(url)

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import PluggableAppDelegate
 import XHLaunchAd
 import LTXiOSUtils
 
