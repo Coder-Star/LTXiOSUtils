@@ -22,7 +22,6 @@
 		DC106D4A244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC106D49244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift */; };
 		DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */; };
 		DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */ = {isa = PBXBuildFile; fileRef = DC1AD82D23E83F2F0073CB97 /* TreeResource.json */; };
-		DC1AD83723E84D520073CB97 /* ResourceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD83623E84D520073CB97 /* ResourceUtils.swift */; };
 		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
 		DC32F1A823841359008D3D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A723841359008D3D67 /* Constants.swift */; };
 		DC3E61F824209F1600105366 /* TempUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E61F724209F1600105366 /* TempUtils.swift */; };
@@ -105,7 +104,6 @@
 		DC106D49244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediatorAndRouterDemoViewController.swift; sourceTree = "<group>"; };
 		DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewDemoViewController.swift; sourceTree = "<group>"; };
 		DC1AD82D23E83F2F0073CB97 /* TreeResource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TreeResource.json; sourceTree = "<group>"; };
-		DC1AD83623E84D520073CB97 /* ResourceUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceUtils.swift; sourceTree = "<group>"; };
 		DC32F1A323840A3E008D3D67 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DC32F1A723841359008D3D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DC3E61F724209F1600105366 /* TempUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempUtils.swift; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 			children = (
 				DC3E62032425E86F00105366 /* Stash */,
 				DCF6F54623BCC87500AC4850 /* ViewFactory.swift */,
-				DC1AD83623E84D520073CB97 /* ResourceUtils.swift */,
 				DC3E61F724209F1600105366 /* TempUtils.swift */,
 			);
 			path = Util;
@@ -757,7 +754,6 @@
 				DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */,
 				DC55E57223F7E6C8008C6941 /* AppThemeApplicationService.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
-				DC1AD83723E84D520073CB97 /* ResourceUtils.swift in Sources */,
 				DC3E62052425E8A200105366 /* WRNavigationBar.swift in Sources */,
 				DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */,
 				DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */,
