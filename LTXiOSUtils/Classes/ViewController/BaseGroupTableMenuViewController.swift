@@ -22,6 +22,8 @@ open class BaseGroupTableMenuViewController: BaseUIViewController {
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        /// 防止iOS 10 菜单向下偏移
+        self.automaticallyAdjustsScrollViewInsets = false
         setMenu()
         initTableView()
     }
@@ -60,9 +62,9 @@ extension BaseGroupTableMenuViewController: UITableViewDataSource {
         return menu[section].count
     }
 
-    /// sectionFooter高度
+    /// sectionFooter高度,在iOS 10系统上如果设置为0效果实际为未设置
     open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
+        return 0.01
     }
 
     /// sectionFooterView
