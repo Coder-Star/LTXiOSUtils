@@ -48,6 +48,7 @@ class GridMenuViewExampleViewController: BaseUIViewController {
             make.left.right.equalToSuperview()
             make.height.equalTo(menuView.heightInfo)
         }
+        Log.d(menuView.heightInfo)
 
         let scrollMenView = GridMenuView(width: baseView.width, row: 2, col: 4, menu: menu, mode: .horizontalScroll, pageStyle: pageStyle)
         scrollMenView.delegate = self
@@ -58,6 +59,7 @@ class GridMenuViewExampleViewController: BaseUIViewController {
             make.left.right.equalToSuperview()
             make.height.equalTo(scrollMenView.heightInfo)
         }
+        Log.d(scrollMenView.heightInfo)
 
         let firstButtton = ViewFactory.getButton("第二个图标角标消失")
         let secondButton = ViewFactory.getButton("第三个图标改变文字")

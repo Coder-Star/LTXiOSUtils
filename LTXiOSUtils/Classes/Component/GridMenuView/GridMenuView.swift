@@ -40,6 +40,8 @@ public class GridMenuView: UIView {
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        /// iOS 10需要人工设置值
+        layout.footerReferenceSize = CGSize(width: 0, height: 0.01)
         layout.minimumLineSpacing = 0 //最小行间距
         layout.minimumInteritemSpacing = 0 //最小左右间距
         return layout

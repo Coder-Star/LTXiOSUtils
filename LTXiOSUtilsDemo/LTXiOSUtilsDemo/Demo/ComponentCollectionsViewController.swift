@@ -59,6 +59,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         }
 
         let textView = ViewFactory.getTextView()
+        textView.tag = 100
 //        textView.text = "这是内容"
         textView.placeholder = "请输入信息，这是UITextView的扩展"
         textView.limitLength = 100
@@ -128,6 +129,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         }
 
         let growingTextView = GrowingTextView()
+        growingTextView.tag = 200
         growingTextView.layer.borderColor = UIColor(hexString: "#cdcdcd").cgColor
         growingTextView.layer.borderWidth = 0.5
         growingTextView.layer.cornerRadius = 5
@@ -150,6 +152,8 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
     }
 
     deinit {
+        (baseScrollView.viewWithTag(100) as? UITextView)?.removeObserver()
+        (baseScrollView.viewWithTag(200) as? UITextView)?.removeObserver()
         NotificationCenter.default.removeObserver(self)
     }
 }

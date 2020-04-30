@@ -111,7 +111,6 @@ extension UITextView {
     public func removeObserver() {
         NotificationCenter.default.removeObserver(self)
         if #available(iOS 11, *) {
-            
         } else {
             for key in UITextView.observingKeys {
                 self.removeObserver(self, forKeyPath: key)

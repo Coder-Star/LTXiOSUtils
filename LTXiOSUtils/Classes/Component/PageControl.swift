@@ -186,13 +186,14 @@ open class PageControl: UIView {
                     break
                 }
             }
-            let curView = self.viewWithTag(currentPage)!
-            curView.backgroundColor = currentColor
-            switch style {
-            case .square:
-                curView.layer.borderWidth = 0
-            default:
-                break
+            if let curView = self.viewWithTag(currentPage) {
+                curView.backgroundColor = currentColor
+                switch style {
+                case .square:
+                    curView.layer.borderWidth = 0
+                default:
+                    break
+                }
             }
         case .ring:
             for view in self.subviews {
@@ -200,9 +201,10 @@ open class PageControl: UIView {
                 view.layer.borderWidth = 1.0
                 view.layer.borderColor = normorlColor.cgColor
             }
-            let curView = self.viewWithTag(currentPage)!
-            curView.backgroundColor = currentColor
-            curView.layer.borderWidth = 0
+            if let curView = self.viewWithTag(currentPage) {
+                curView.backgroundColor = currentColor
+                curView.layer.borderWidth = 0
+            }
         case .number:
             if let label = self.viewWithTag(curLabelTag) as? UILabel {
                 label.text = "\(currentPage + 1) / \(numberOfPages)"
