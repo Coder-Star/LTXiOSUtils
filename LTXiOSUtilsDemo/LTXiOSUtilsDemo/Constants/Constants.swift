@@ -14,6 +14,7 @@
 @_exported import UITableView_FDTemplateLayoutCell
 
 public enum OpenType: String {
+    case `default` = ""
     case tel = "tel://"
     case email = "mailto:"
 }

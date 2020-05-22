@@ -22,7 +22,6 @@ extension ApplicationService {
     }
 }
 
-
 /*
  示例AppDelegate
  @UIApplicationMain

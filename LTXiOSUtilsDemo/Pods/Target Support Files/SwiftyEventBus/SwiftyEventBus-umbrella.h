@@ -10,8 +10,7 @@
 #endif
 #endif
 
-#import "Localize_Swift.h"
 
-FOUNDATION_EXPORT double Localize_SwiftVersionNumber;
-FOUNDATION_EXPORT const unsigned char Localize_SwiftVersionString[];
+FOUNDATION_EXPORT double SwiftyEventBusVersionNumber;
+FOUNDATION_EXPORT const unsigned char SwiftyEventBusVersionString[];
 

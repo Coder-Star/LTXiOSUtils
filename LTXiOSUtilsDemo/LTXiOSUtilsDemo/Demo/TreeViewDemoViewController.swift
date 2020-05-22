@@ -27,7 +27,9 @@ class TreeViewDemoViewController: BaseUIViewController {
     }
 
     private func initView() {
-        guard let data = ResourceUtils.getContentInfo(path: R.file.treeResourceJson()?.path, type: .json) as? Data else {
+//        let treeResourceJsonPath = Bundle.main.path(forResource: "TreeResource", ofType: "json")
+        let treeResourceJsonPath = R.file.treeResourceJson()?.path
+        guard let data = ResourceUtils.getContentInfo(path: treeResourceJsonPath, type: .json) as? Data else {
             return
         }
         var treeNodes = [TreeNode]()

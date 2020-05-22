@@ -146,9 +146,33 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
             make.top.equalTo(titleLabel)
         }
 
-        growingTextView.snp.makeConstraints { make in
+        titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.text = "加载组件图片"
+        contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.top.equalTo(growingTextView.snp.bottom).offset(10)
+            make.width.equalTo(leftWidth)
+        }
+
+        let otherCompentImageView = UIImageView()
+
+        // addImage.png为直接拖动到项目中的图片，不放置到xcassets中去，也可直接读取 addImage以及addImage.png都可以读取
+         otherCompentImageView.image = UIImage(named: "addImage.png")
+
+        contentView.addSubview(otherCompentImageView)
+        otherCompentImageView.snp.makeConstraints { make in
+            make.height.width.equalTo(100)
+            make.left.equalTo(titleLabel.snp.right).offset(5)
+            make.top.equalTo(titleLabel)
+        }
+
+        otherCompentImageView.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
         }
+
     }
 
     deinit {
@@ -164,6 +188,7 @@ extension ComponentCollectionsViewController: GrowingTextViewDelegate {
 
 extension GrowingTextViewDelegate {
     func heightChange(growingTextView: GrowingTextView, height: CGFloat) {
+        /// 高度自动变化后刷新输入焦点
         IQKeyboardManager.shared.reloadLayoutIfNeeded()
     }
 }
