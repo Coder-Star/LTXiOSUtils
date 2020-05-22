@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62CDE5E377FE4772F9441E76 /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032929C53D627595380649E0 /* Pods_LTXiOSUtilsDemoTests.framework */; };
-		90A7E5A659610DE67871CE22 /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11085538BAB6C880FED0814E /* Pods_LTXiOSUtilsDemoUITests.framework */; };
-		B27B04B1276D9DA087D3CB27 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EB7B019A4100D264EEF67F /* Pods_LTXiOSUtilsDemo.framework */; };
+		96E43647E58D656DD32E3666 /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80077850B498D3973543BB2F /* Pods_LTXiOSUtilsDemoTests.framework */; };
 		DC03AE2623F3AB1B007739DD /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2523F3AB1B007739DD /* HomeTabBarController.swift */; };
 		DC03AE2823F3AD96007739DD /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2723F3AD96007739DD /* MineViewController.swift */; };
 		DC03AE2A23F3CA6A007739DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2923F3CA6A007739DD /* HomeViewController.swift */; };
@@ -24,6 +22,7 @@
 		DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */ = {isa = PBXBuildFile; fileRef = DC1AD82D23E83F2F0073CB97 /* TreeResource.json */; };
 		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
 		DC32F1A823841359008D3D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A723841359008D3D67 /* Constants.swift */; };
+		DC3B5AE8247767AF00AAB1E3 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3B5AE7247767AF00AAB1E3 /* addImage.png */; };
 		DC3E61F824209F1600105366 /* TempUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E61F724209F1600105366 /* TempUtils.swift */; };
 		DC3E61FE2423755F00105366 /* PickImageDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */; };
 		DC3E62022424714E00105366 /* DoubleExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E62012424714E00105366 /* DoubleExtensionTest.swift */; };
@@ -62,6 +61,8 @@
 		DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF6F54623BCC87500AC4850 /* ViewFactory.swift */; };
 		DCF88149242B60210084C940 /* AppConfigApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF88148242B60210084C940 /* AppConfigApplicationService.swift */; };
 		DCF88152242F2D980084C940 /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF88151242F2D980084C940 /* ImagePickView.swift */; };
+		E0D915C897CF2033EFCE6027 /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685E6D010B71AAC761B7FCAA /* Pods_LTXiOSUtilsDemoUITests.framework */; };
+		EC9D74BAFC26A881DFD51D68 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCE0516AC76F7C0E083D227 /* Pods_LTXiOSUtilsDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,14 +84,13 @@
 
 /* Begin PBXFileReference section */
 		02379853095E1627530EB6BD /* Pods-LTXiOSUtilsDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		032929C53D627595380649E0 /* Pods_LTXiOSUtilsDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F543AF20CACE9D49043770D /* Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		11085538BAB6C880FED0814E /* Pods_LTXiOSUtilsDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C4FD638EFAAAF61197BFC0 /* Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C69EFBC8200F3382DF3C87 /* Pods-LTXiOSUtilsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		685E6D010B71AAC761B7FCAA /* Pods_LTXiOSUtilsDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		728D8E2235C330A124AF1910 /* Pods-LTXiOSUtilsDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		7E69F21B8737A1842F9552D7 /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		84EB7B019A4100D264EEF67F /* Pods_LTXiOSUtilsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80077850B498D3973543BB2F /* Pods_LTXiOSUtilsDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94D39D73C90A84C93A55928 /* Pods-LTXiOSUtilsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC03AE2523F3AB1B007739DD /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		DC03AE2723F3AD96007739DD /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +106,7 @@
 		DC1AD82D23E83F2F0073CB97 /* TreeResource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TreeResource.json; sourceTree = "<group>"; };
 		DC32F1A323840A3E008D3D67 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DC32F1A723841359008D3D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DC3B5AE7247767AF00AAB1E3 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addImage.png; sourceTree = "<group>"; };
 		DC3E61F724209F1600105366 /* TempUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempUtils.swift; sourceTree = "<group>"; };
 		DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageDemoViewController.swift; sourceTree = "<group>"; };
 		DC3E62012424714E00105366 /* DoubleExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensionTest.swift; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 		DCF88148242B60210084C940 /* AppConfigApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigApplicationService.swift; sourceTree = "<group>"; };
 		DCF88151242F2D980084C940 /* ImagePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
 		FEA6FDCDB130B877B872D978 /* Pods-LTXiOSUtilsDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FFCE0516AC76F7C0E083D227 /* Pods_LTXiOSUtilsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B27B04B1276D9DA087D3CB27 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */,
+				EC9D74BAFC26A881DFD51D68 /* Pods_LTXiOSUtilsDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62CDE5E377FE4772F9441E76 /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */,
+				96E43647E58D656DD32E3666 /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90A7E5A659610DE67871CE22 /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */,
+				E0D915C897CF2033EFCE6027 /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,9 +195,9 @@
 				DCA4077A24066C3500F62769 /* libz.tbd */,
 				DCA4077624066BFB00F62769 /* Alamofire.framework */,
 				DCA407722405405300F62769 /* Alamofire.framework */,
-				84EB7B019A4100D264EEF67F /* Pods_LTXiOSUtilsDemo.framework */,
-				032929C53D627595380649E0 /* Pods_LTXiOSUtilsDemoTests.framework */,
-				11085538BAB6C880FED0814E /* Pods_LTXiOSUtilsDemoUITests.framework */,
+				FFCE0516AC76F7C0E083D227 /* Pods_LTXiOSUtilsDemo.framework */,
+				80077850B498D3973543BB2F /* Pods_LTXiOSUtilsDemoTests.framework */,
+				685E6D010B71AAC761B7FCAA /* Pods_LTXiOSUtilsDemoUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -347,6 +349,7 @@
 		DC4AB9EC22F461A700A5F003 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DC3B5AE7247767AF00AAB1E3 /* addImage.png */,
 				DC1AD82D23E83F2F0073CB97 /* TreeResource.json */,
 				DC4AB9C322F4606100A5F003 /* Assets.xcassets */,
 				DC62A7C72384084A00DE7800 /* Localizable.strings */,
@@ -479,7 +482,7 @@
 				DC4AB9B522F4606000A5F003 /* Sources */,
 				DC4AB9B622F4606000A5F003 /* Frameworks */,
 				DC4AB9B722F4606000A5F003 /* Resources */,
-				12995B62444FFBF65E9A3D2E /* [CP] Embed Pods Frameworks */,
+				35E644F936D76BEC4CC26FF6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -584,6 +587,7 @@
 				DC05CBC62453055A007A6240 /* ModuleArr.plist in Resources */,
 				DCBB1C3A23B1FCC000FF2925 /* LaunchScreen.storyboard in Resources */,
 				DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */,
+				DC3B5AE8247767AF00AAB1E3 /* addImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,7 +608,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12995B62444FFBF65E9A3D2E /* [CP] Embed Pods Frameworks */ = {
+		35E644F936D76BEC4CC26FF6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -719,7 +723,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/LTXiOSUtilsDemo/R.generated.swift,
+				"$SRCROOT/LTXiOSUtilsDemo/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

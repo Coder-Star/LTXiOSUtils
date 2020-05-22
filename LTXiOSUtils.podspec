@@ -43,7 +43,8 @@ Pod::Spec.new do |s|
 
   # 资源
   s.subspec 'Resources' do |resources|
-    resources.dependency 'Localize-Swift','3.1.0' # 管理本地国际化文件
+#    resources.dependency 'Localize-Swift','3.1.0' # 管理本地国际化文件
+    resources.dependency 'LTXiOSUtils/Util'
     resources.source_files = 'LTXiOSUtils/Resources/*.swift'
     resources.resource_bundle = { "LTXiOSUtils" => "LTXiOSUtils/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
   end

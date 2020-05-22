@@ -21,6 +21,11 @@ public struct Core<Base> {
 
 /// 协议
 public protocol CoreCompatible {
+
+    /*
+     需要使用associatedtype关键字的原因是因为core的类型不固定
+     */
+
     /// 实例方法关联
     associatedtype CoreCompatibleInstanceType
     /// 类方法关联

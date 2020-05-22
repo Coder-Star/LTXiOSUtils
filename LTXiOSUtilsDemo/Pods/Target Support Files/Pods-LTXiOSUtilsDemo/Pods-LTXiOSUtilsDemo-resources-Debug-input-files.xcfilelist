@@ -2,4 +2,6 @@ ${PODS_ROOT}/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo-reso
 ${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle
 ${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
+${PODS_ROOT}/SKPhotoBrowser/SKPhotoBrowser/SKPhotoBrowser.bundle
 ${PODS_ROOT}/SwiftDate/Sources/SwiftDate/Formatters/RelativeFormatter/langs
+${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle

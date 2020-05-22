@@ -105,12 +105,14 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.file` struct is generated, and contains static references to 2 files.
+  /// This `R.file` struct is generated, and contains static references to 3 files.
   struct file {
     /// Resource file `ModuleArr.plist`.
     static let moduleArrPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "ModuleArr", pathExtension: "plist")
     /// Resource file `TreeResource.json`.
     static let treeResourceJson = Rswift.FileResource(bundle: R.hostingBundle, name: "TreeResource", pathExtension: "json")
+    /// Resource file `addImage.png`.
+    static let addImagePng = Rswift.FileResource(bundle: R.hostingBundle, name: "addImage", pathExtension: "png")
 
     /// `bundle.url(forResource: "ModuleArr", withExtension: "plist")`
     static func moduleArrPlist(_: Void = ()) -> Foundation.URL? {
@@ -124,13 +126,21 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "addImage", withExtension: "png")`
+    static func addImagePng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.addImagePng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 38 images.
+  /// This `R.image` struct is generated, and contains static references to 39 images.
   struct image {
     /// Image `add-white`.
     static let addWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "add-white")
+    /// Image `addImage`.
+    static let addImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "addImage")
     /// Image `add`.
     static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "add")
     /// Image `audio_bgm_4`.
@@ -217,6 +227,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "add-white", bundle: ..., traitCollection: ...)`
     static func addWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.addWhite, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "addImage", bundle: ..., traitCollection: ...)`
+    static func addImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.addImage, compatibleWith: traitCollection)
     }
     #endif
 

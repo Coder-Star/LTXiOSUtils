@@ -61,3 +61,35 @@ public struct ResourceUtils {
         return resultInfo
     }
 }
+
+public extension ResourceUtils {
+    /// 获取指定pod的指定Bundle
+    /// - Parameters:
+    ///   - bundleName: bundleName
+    ///   - podName: podName,当使用framwork时使用，如果为nil，赋值为bundleName
+    static func getBundle(bundleName: String, podName: String? = nil) -> Bundle? {
+        var podNameStr = podName
+        var bundleNameStr = bundleName
+        if bundleNameStr.contains(".bundle") {
+            bundleNameStr = bundleNameStr.components(separatedBy: ".bundle").first!
+        }
+        // 不使用framwork
+        var url = Bundle.main.url(forResource: bundleNameStr, withExtension: "bundle")
+        // 使用framwork,拼接路径
+        if url == nil {
+            if podNameStr == nil {
+                podNameStr = bundleNameStr
+            }
+            url = Bundle.main.url(forResource: "Frameworks", withExtension: nil)
+            url = url?.appendingPathComponent(podNameStr!).appendingPathExtension("framework")
+            if url == nil {
+                return nil
+            }
+            url = Bundle(url: url!)?.url(forResource: bundleNameStr, withExtension: "bundle")
+        }
+        guard let bundleUrl = url else {
+            return nil
+        }
+        return Bundle(url: bundleUrl)
+    }
+}
