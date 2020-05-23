@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Localize_Swift
 
 class HomeTabBarController: UITabBarController {
 
@@ -30,7 +31,7 @@ class HomeTabBarController: UITabBarController {
         homeViewControllerWithNavigation.tabBarItem.image = R.image.home_tab()?.withRenderingMode(.alwaysOriginal)
         homeViewControllerWithNavigation.tabBarItem.selectedImage = R.image.home_tab_selected()?.withRenderingMode(.alwaysOriginal)
 
-        let demoListViewControllerTitle = "Demo列表"
+        let demoListViewControllerTitle = "Demo列表".localized()
         let demoListViewController = DemoListViewController()
         demoListViewController.titleInfo = demoListViewControllerTitle
         let demoListViewControllerWithNavigation = HomeNavigationController(rootViewController: demoListViewController)

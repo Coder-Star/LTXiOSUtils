@@ -723,7 +723,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/LTXiOSUtilsDemo/R.generated.swift",
+				$SRCROOT/LTXiOSUtilsDemo/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
