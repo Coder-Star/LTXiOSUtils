@@ -18,6 +18,7 @@ target 'LTXiOSUtilsDemo' do
   # 本地配置
   pod 'R.swift', '5.1.0' # 资源映射
   pod 'SwiftLint', '0.38.0' # 代码规范限制，使用swiftlint autocorrect 可自动修复一部分格式问题
+  pod 'Localize-Swift','3.1.0' # 国际化文件工具
 
   #图片相关
   pod 'Kingfisher', '5.12.0' # 远程图片预览
@@ -36,6 +37,7 @@ target 'LTXiOSUtilsDemo' do
   pod 'SwiftyJSON', '5.0.0' # 处理JSON
   pod 'ObjectMapper', '3.5.1' #model与json互转
   pod 'SwiftyEventBus', '1.0.0' #事件总线
+
 
   #解耦
   pod 'CTMediator', '28' #Runtime路由方案
