@@ -1,6 +1,0 @@
-framework module SwiftyEventBus {
-  umbrella header "SwiftyEventBus-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.0.2)
+  - Bugly (2.5.2)
   - CTMediator (28)
   - FLAnimatedImage (1.0.12)
   - FSPagerView (0.8.3)
@@ -60,7 +61,6 @@ PODS:
   - SnapKit (5.0.1)
   - SwiftDate (6.1.0)
   - SwiftLint (0.38.0)
-  - SwiftyEventBus (1.0.0)
   - SwiftyJSON (5.0.0)
   - SwiftyUserDefaults (5.0.0)
   - TZImagePickerController (3.3.1)
@@ -71,6 +71,7 @@ PODS:
   - ZYCornerRadius (1.0.2)
 
 DEPENDENCIES:
+  - Bugly (= 2.5.2)
   - CTMediator (= 28)
   - FSPagerView (= 0.8.3)
   - GDPerformanceView-Swift (= 2.0.3)
@@ -86,7 +87,6 @@ DEPENDENCIES:
   - SKPhotoBrowser (= 6.1.0)
   - SwiftDate (= 6.1.0)
   - SwiftLint (= 0.38.0)
-  - SwiftyEventBus (= 1.0.0)
   - SwiftyJSON (= 5.0.0)
   - SwiftyUserDefaults (= 5.0.0)
   - TZImagePickerController (= 3.3.1)
@@ -98,6 +98,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Bugly
     - CTMediator
     - FLAnimatedImage
     - FSPagerView
@@ -121,7 +122,6 @@ SPEC REPOS:
     - SnapKit
     - SwiftDate
     - SwiftLint
-    - SwiftyEventBus
     - SwiftyJSON
     - SwiftyUserDefaults
     - TZImagePickerController
@@ -136,6 +136,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  Bugly: dbac48b55ad469a97cc4321045cd50df8f63d44f
   CTMediator: 6a05e9f1098b2d2fbc9d19cc7f28e94c3a08b5d2
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
@@ -160,7 +161,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
-  SwiftyEventBus: 600b7a403684e4c875bd675df46a863a8b7010c5
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
   TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
@@ -169,6 +169,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 30872c4c41b67c748ca78af2445bc70e4b2543de
+PODFILE CHECKSUM: 00baf36a8f40d0a6c708fe3558aa59322b978e92
 
 COCOAPODS: 1.8.4
