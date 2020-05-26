@@ -28,7 +28,7 @@ target 'LTXiOSUtilsDemo' do
   #工具类
   pod 'SwiftyUserDefaults', '5.0.0' # UserDefaults存储
   pod 'KeychainAccess', '4.1.0' #钥匙串存储
-#  pod 'SwifterSwift', '5.1.0' # Swift相关扩展
+
   pod 'SwiftDate', '6.1.0' #时间工具
   pod 'IQKeyboardManagerSwift', '6.5.4' # 键盘控制
   pod 'GDPerformanceView-Swift', '2.0.3' #显示屏幕FPS
@@ -36,8 +36,10 @@ target 'LTXiOSUtilsDemo' do
   pod 'UITableView+FDTemplateLayoutCell', '1.6' #  UITableView缓存高度，OC库
   pod 'SwiftyJSON', '5.0.0' # 处理JSON
   pod 'ObjectMapper', '3.5.1' #model与json互转
-  pod 'SwiftyEventBus', '1.0.0' #事件总线
+  pod 'Bugly','2.5.2' #异常上报
 
+#  pod 'SwiftyEventBus', '1.0.0' #事件总线
+#  pod 'SwifterSwift', '5.1.0' # Swift相关扩展
 
   #解耦
   pod 'CTMediator', '28' #Runtime路由方案
