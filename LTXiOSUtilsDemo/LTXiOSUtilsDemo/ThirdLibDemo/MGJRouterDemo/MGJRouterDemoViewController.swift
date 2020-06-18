@@ -123,7 +123,7 @@ extension MGJRouterDemoViewController {
             if let url = result[MGJRouterParameterURL] as? String {
                 Log.d("MGJRouterParameterURL")
                 Log.d(url)
-                Log.d(url.urlDecode)
+                Log.d(url.tx.urlDecode)
             }
             if let userInfo = result[MGJRouterParameterUserInfo] {
                 Log.d("MGJRouterParameterUserInfo")

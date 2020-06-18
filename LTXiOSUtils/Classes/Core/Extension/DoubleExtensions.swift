@@ -7,11 +7,13 @@
 
 import Foundation
 
-public extension Double {
+extension Double: TxExtensionWrapperProtocol {}
+
+public extension TxExtensionWrapper where Base == Double {
 
     /// 去除浮点数后面多余的0
     var removeSuffixZero: String {
-        return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
+        return self.base.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self.base) : String(self.base)
     }
 
 }

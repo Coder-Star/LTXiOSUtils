@@ -40,7 +40,7 @@ class HUDDemoViewController: BaseGroupTableMenuViewController {
             HUD.showText("这是一段很长很长很长很长很长很长很长很长很长很长很长很长的文本")
         case "wait":
             HUD.showWait()
-            DispatchQueue.main.delay(1) {
+            DispatchQueue.main.tx.delay(1) {
                 HUD.hide()
             }
         case "progress":

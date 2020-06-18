@@ -100,7 +100,7 @@ open class DurationDatePickView: UIView {
         btn.titleLabel?.textAlignment = .right
         btn.addTarget(self, action: #selector(startBtnAction(btn:)), for: .touchUpInside)
 
-        let titleString = self.datePicker.date.formatDate(formatStr: dateType.rawValue)
+        let titleString = self.datePicker.date.tx.formatDate(formatStr: dateType.rawValue)
         btn.setTitle(titleString, for: .normal)
         if dateType == .YMDHM {
             let title = DurationDatePickView.appendTime(dateAndTime: titleString)
@@ -211,14 +211,14 @@ public extension DurationDatePickView {
         popupView.dateType = dateType
 
         if dateType == .YMDHM {
-            let startTitle = appendTime(dateAndTime: startDate.formatDate(formatStr: dateType.rawValue))
+            let startTitle = appendTime(dateAndTime: startDate.tx.formatDate(formatStr: dateType.rawValue))
             popupView.startBtn.setTitle(startTitle, for: .normal)
 
-            let endTitle = appendTime(dateAndTime: endDate.formatDate(formatStr: dateType.rawValue))
+            let endTitle = appendTime(dateAndTime: endDate.tx.formatDate(formatStr: dateType.rawValue))
             popupView.endBtn.setTitle(endTitle, for: .normal)
         } else {
-            popupView.startBtn.setTitle(startDate.formatDate(formatStr: dateType.rawValue), for: .normal)
-            popupView.endBtn.setTitle(endDate.formatDate(formatStr: dateType.rawValue), for: .normal)
+            popupView.startBtn.setTitle(startDate.tx.formatDate(formatStr: dateType.rawValue), for: .normal)
+            popupView.endBtn.setTitle(endDate.tx.formatDate(formatStr: dateType.rawValue), for: .normal)
         }
 
         popupView.setDatePickerStyle()
@@ -275,9 +275,9 @@ private extension DurationDatePickView {
     func endBtnAction(btn: UIButton) {
         btn.isSelected = true
         startBtn.isSelected = false
-        if dateType == .YMD, let date = startBtn.currentTitle?.toDate(dateTypeStr: dateType.rawValue) {
+        if dateType == .YMD, let date = startBtn.currentTitle?.tx.toDate(dateTypeStr: dateType.rawValue) {
             datePicker.minimumDate = date
-        } else if dateType  == .YMDHM, let date = startBtn.currentTitle?.replaceNewlineWithWhitespace().toDate(dateType: .YMDHM) {
+        } else if dateType  == .YMDHM, let date = startBtn.currentTitle?.replaceNewlineWithWhitespace().tx.toDate(dateType: .YMDHM) {
             datePicker.minimumDate = date
         }
         if canGreatNow {
@@ -309,13 +309,13 @@ private extension DurationDatePickView {
     @objc
     func datePicekerValueChanged(picker: UIDatePicker) {
         let date = picker.date
-        let titleString = date.formatDate(formatStr: dateType.rawValue)
+        let titleString = date.tx.formatDate(formatStr: dateType.rawValue)
 
         if startBtn.isSelected {
             if dateType == .YMD {
                 startBtn.setTitle(titleString, for: .normal)
                 if titleString > endBtn.currentTitle ?? ""{
-                    if let tempDate = titleString.toDate(dateTypeStr: dateType.rawValue)?.getDateByDays(days: 1).formatDate(format: .YMD) {
+                    if let tempDate = titleString.tx.toDate(dateTypeStr: dateType.rawValue)?.tx.getDateByDays(days: 1).tx.formatDate(format: .YMD) {
                         endBtn.setTitle(tempDate, for: .normal)
                     }
                 }
@@ -323,7 +323,7 @@ private extension DurationDatePickView {
                 let title = DurationDatePickView.appendTime(dateAndTime: titleString)
                 startBtn.setTitle(title, for: .normal)
                 if titleString > endBtn.currentTitle?.replaceNewlineWithWhitespace() ?? ""{
-                    if let tempDate = titleString.toDate(dateTypeStr: dateType.rawValue)?.getDateByDays(days: 1).formatDate(format: .YMDHM) {
+                    if let tempDate = titleString.tx.toDate(dateTypeStr: dateType.rawValue)?.tx.getDateByDays(days: 1).tx.formatDate(format: .YMDHM) {
                         let tempString = DurationDatePickView.appendTime(dateAndTime: tempDate)
                         endBtn.setTitle(tempString, for: .normal)
                     }
@@ -343,7 +343,7 @@ private extension DurationDatePickView {
 extension DurationDatePickView {
 
     private func rollCurrentDate(btn: UIButton) {
-        if let dateStr = btn.currentTitle?.replaceNewlineWithWhitespace(), let date = dateStr.toDate(dateTypeStr: dateType.rawValue) {
+        if let dateStr = btn.currentTitle?.replaceNewlineWithWhitespace(), let date = dateStr.tx.toDate(dateTypeStr: dateType.rawValue) {
             datePicker.setDate(date, animated: true)
         }
     }
@@ -423,8 +423,8 @@ extension DurationDatePickView {
 // MARK: - 方法
 private extension DurationDatePickView {
     static func appendTime(dateAndTime: String) -> String {
-        let date = dateAndTime.getDateStr(dateType: .YMD)
-        let time = dateAndTime.getDateStr(dateType: .HM)
+        let date = dateAndTime.tx.getDateStr(dateType: .YMD)
+        let time = dateAndTime.tx.getDateStr(dateType: .HM)
         return date + "\n" + time
     }
 }

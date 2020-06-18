@@ -92,7 +92,7 @@ open class ImagePickGridView: UIView {
     open override func layoutSubviews() {
         super.layoutSubviews()
         Log.d(self.frame)
-        itemWidth = self.frame.width / colCount.cgFloatValue
+        itemWidth = self.frame.width / colCount.tx.cgFloatValue
         if layout.itemSize == .zero {
             layout.itemSize = CGSize(width: itemWidth ?? 0, height: itemWidth ?? 0)
         }
@@ -115,7 +115,7 @@ open class ImagePickGridView: UIView {
     }
 
     private func reloadDataAndFrame() {
-        let heightInfo = (itemWidth ?? 0) * Int(ceil(Float(showImageCount) / Float((colCount)))).cgFloatValue
+        let heightInfo = (itemWidth ?? 0) * Int(ceil(Float(showImageCount) / Float((colCount)))).tx.cgFloatValue
         if heightConstraint == nil {
             heightConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0.0, constant: heightInfo)
             addConstraint(heightConstraint!)

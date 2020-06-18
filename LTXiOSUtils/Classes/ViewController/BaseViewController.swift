@@ -30,11 +30,11 @@ open class BaseViewController: UIViewController {
     }
 
     open func setnNavigationItemTitle() {
-        if let tempTitle = title, tempTitle.isNotEmpty {
+        if let tempTitle = title, tempTitle.tx.isNotEmpty {
 
-        } else if titleInfo.isNotEmpty {
+        } else if titleInfo.tx.isNotEmpty {
             self.navigationItem.title = titleInfo
-        } else if currentTitleInfo.isNotEmpty {
+        } else if currentTitleInfo.tx.isNotEmpty {
             self.navigationItem.title = currentTitleInfo
         }
     }

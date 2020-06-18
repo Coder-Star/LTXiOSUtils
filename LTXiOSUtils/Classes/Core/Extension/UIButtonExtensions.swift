@@ -97,10 +97,10 @@ public extension UIButton {
                     return
                 } else if clickDurationTime > 0 {
                     isIgnoreEvent = true
-                    DispatchQueue.global(qos: .default).delay(clickDurationTime) {
+                    DispatchQueue.global(qos: .default).tx.delay(clickDurationTime) {
                         self.isIgnoreEvent = false
                     }
-                    DispatchQueue.main.delay(clickDurationTime) {
+                    DispatchQueue.main.tx.delay(clickDurationTime) {
                         self.isIgnoreEvent = false
                     }
                     sendActionWithRepeatClick(action: action, to: target, forEvent: event)
@@ -121,7 +121,7 @@ public extension UIButton {
         if self !== UIButton.self {
             return
         }
-        DispatchQueue.once(token: "AssociatedKeysWithUIButtonRepeatClick") {
+        DispatchQueue.tx.once(token: "AssociatedKeysWithUIButtonRepeatClick") {
             let originalSelector = #selector(UIButton.sendAction)
             let swizzledSelector = #selector(UIButton.sendActionWithRepeatClick(action:to:forEvent:))
 

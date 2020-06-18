@@ -6,12 +6,15 @@
 //
 
 import Foundation
+
+extension NSObject: TxExtensionWrapperProtocol {}
+
 // MARK: - 基础
-public extension NSObject {
+public extension TxExtensionWrapper where Base: NSObject {
 
     /// 根据对象获取类名
     var className: String {
-        let name = type(of: self).description()
+        let name = type(of: self.base).description()
         if name.contains(".") {
             return name.components(separatedBy: ".")[1]
         } else {
@@ -120,7 +123,7 @@ public extension NSObject {
 }
 
 // MARK: - 获取NSObject子类的所有属性值，使用这个需要类是NSObject的子类，且前面加上@objcMembers，否则为空数组
-public extension NSObject {
+public extension TxExtensionWrapper where Base: NSObject {
     /// 获取指定属性的值
     ///
     /// - Parameter property: 属性
@@ -128,7 +131,7 @@ public extension NSObject {
     func getValueOfProperty(property: String) -> AnyObject? {
         let allPropertys = self.getAllPropertys()
         if allPropertys.contains(property) {
-            return self.value(forKey: property) as AnyObject
+            return self.base.value(forKey: property) as AnyObject
         } else {
             return nil
         }
@@ -142,7 +145,7 @@ public extension NSObject {
     func setValueOfProperty(property: String, value: AnyObject) {
         let allPropertys = self.getAllPropertys()
         if allPropertys.contains(property) {
-            self.setValue(value, forKey: property)
+            self.base.setValue(value, forKey: property)
         }
     }
 
@@ -159,11 +162,11 @@ public extension NSObject {
 
     /// 静态方法，获取对象的所有属性名称
     /// 获取对象的所有属性
-    /// 注意:必须在获取类的class前添加 ，不然获取为空数组
+    /// 注意:必须在获取类的class前添加@objcMembers，不然获取为空数组
     /// - Returns: 属性列表
-    class func getAllPropertys(ignoredProperties: [String] = [String]()) -> [String] {
+    static func getAllPropertys(ignoredProperties: [String] = [String]()) -> [String] {
         var count: UInt32 = 0
-        let properties = class_copyPropertyList(self.classForCoder(), &count)
+        let properties = class_copyPropertyList(Base.classForCoder(), &count)
         var propertyNames: [String] = []
         for i in 0..<Int(count) {
             let property = properties![i]
@@ -182,7 +185,7 @@ public extension NSObject {
     /// - Returns: 属性列表
     private func getAllPropertys() -> [String] {
         var count: UInt32 = 0
-        let properties = class_copyPropertyList(self.classForCoder, &count)
+        let properties = class_copyPropertyList(self.base.classForCoder, &count)
         var propertyNames: [String] = []
         for i in 0..<Int(count) {
             let property = properties![i]

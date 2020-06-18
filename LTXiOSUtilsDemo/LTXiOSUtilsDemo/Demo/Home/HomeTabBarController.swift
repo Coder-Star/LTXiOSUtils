@@ -36,7 +36,7 @@ class HomeTabBarController: UITabBarController {
         demoListViewController.titleInfo = demoListViewControllerTitle
         let demoListViewControllerWithNavigation = HomeNavigationController(rootViewController: demoListViewController)
         demoListViewControllerWithNavigation.tabBarItem.title = demoListViewControllerTitle
-        demoListViewControllerWithNavigation.tabBarItem.core.addDot(color: .red)
+        demoListViewControllerWithNavigation.tabBarItem.tx.addDot(color: .red)
         demoListViewControllerWithNavigation.tabBarItem.image = R.image.demoList_tab()?.withRenderingMode(.alwaysOriginal)
         demoListViewControllerWithNavigation.tabBarItem.selectedImage = R.image.demoList_tab_selected()?.withRenderingMode(.alwaysOriginal)
 
@@ -44,8 +44,8 @@ class HomeTabBarController: UITabBarController {
         mineViewController.tabBarItem.title = "我"
         mineViewController.tabBarItem.image = R.image.mine_tab()?.withRenderingMode(.alwaysOriginal)
         mineViewController.tabBarItem.selectedImage = R.image.mine_tab_selected()?.withRenderingMode(.alwaysOriginal)
-        DispatchQueue.main.delay(0.001) {
-            mineViewController.tabBarItem.core.addDot()
+        DispatchQueue.main.tx.delay(0.001) {
+            mineViewController.tabBarItem.tx.addDot()
         }
 
         self.viewControllers = [homeViewControllerWithNavigation,

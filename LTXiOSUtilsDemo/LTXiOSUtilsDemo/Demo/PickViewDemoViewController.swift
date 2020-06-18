@@ -84,7 +84,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
         switch menuModel.code {
         case "startAndEndDate":
             let start = Date()
-            let end = Date().getDateByDays(days: 1)
+            let end = Date().tx.getDateByDays(days: 1)
             let popupView = DurationDatePickView.getPopupView(startDate: start, endDate: end, canGreatNow: true, dateType: .YMD)
             popupView.titleLabel.text = "请选择查询时间(日期)"
             popupView.sureBlock = { (start, end) in
@@ -96,7 +96,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
             popupView.show()
         case "startAndEndTime":
             let start = Date()
-            let end = Date().getDateByDays(days: 1)
+            let end = Date().tx.getDateByDays(days: 1)
             let popupView = DurationDatePickView.getPopupView(startDate: start, endDate: end, canGreatNow: true, dateType: .YMDHM)
             popupView.titleLabel.text = "请选择查询时间(时间)"
             popupView.sureBlock = { (start, end) in
@@ -113,7 +113,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
                     self.showAlert(message: "清空")
                 }),
                 doneAction: ({ selectedDate in
-                    self.showAlert(message: selectedDate.formatDate(format: .YMD))
+                    self.showAlert(message: selectedDate.tx.formatDate(format: .YMD))
                 }))
         case "time":
             var dateStyle = DatePickerSetting()
@@ -121,7 +121,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
             PickerViewManager.showDatePicker("时间选择", datePickerSetting: dateStyle, clearAction: {
                 self.showAlert(message: "清空")
             }, doneAction: { selectedDate in
-                self.showAlert(message: selectedDate.formatDate(format: .HMS))
+                self.showAlert(message: selectedDate.tx.formatDate(format: .HMS))
             })
         case "dateAndTime":
             var dateStyle = DatePickerSetting()
@@ -129,7 +129,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
             PickerViewManager.showDatePicker("日期与时间选择", datePickerSetting: dateStyle, clearAction: {
                 self.showAlert(message: "清空")
             }, doneAction: { selectedDate in
-                self.showAlert(message: selectedDate.formatDate(format: .YMDHMS))
+                self.showAlert(message: selectedDate.tx.formatDate(format: .YMDHMS))
             })
         case "single":
             PickerViewManager.showSingleColPicker("单列", data: singleData, defaultSelectedIndex: 2, clearAction: {

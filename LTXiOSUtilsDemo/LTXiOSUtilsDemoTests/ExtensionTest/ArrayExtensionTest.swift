@@ -16,7 +16,7 @@ class ArrayExtensionTest: XCTestCase {
     func testArrayExtension() {
         let arr = [1,1,2,3,4,4,5,5]
         let list = [["1":"张三"],["1":"张三"],["1":"李四"]]
-        Log.d(arr.removeDuplicate{$0})
-        Log.d(list.removeDuplicate{$0["1"]})
+        Log.d(arr.core.removeDuplicate{$0})
+        Log.d(list.core.removeDuplicate{$0["1"]})
     }
 }

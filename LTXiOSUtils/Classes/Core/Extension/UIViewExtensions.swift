@@ -61,7 +61,7 @@ public extension UIView {
     func getSubView(name: String) -> [UIView] {
         UIView.allSubviews = []
         let viewArr = viewArray(root: self)
-        return viewArr.filter {$0.className == name}
+        return viewArr.filter {$0.tx.className == name}
     }
 
     /// 获取所有子视图

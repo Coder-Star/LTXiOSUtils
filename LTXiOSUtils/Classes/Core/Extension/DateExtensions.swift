@@ -8,6 +8,8 @@
 
 import Foundation
 
+extension Date: TxExtensionWrapperProtocol {}
+
 /// 日期格式化类型
 public enum DateFormateType: String {
     /// - YMDHMS:  年月日时分秒/2019-01-01 12:00:00
@@ -31,7 +33,7 @@ public enum DateFormateType: String {
 }
 
 // MARK: - 日期扩展
-public extension Date {
+public extension TxExtensionWrapper where Base == Date {
 
     /// Date格式化
     ///
@@ -50,7 +52,7 @@ public extension Date {
         dateFormatter.calendar = Calendar.current
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = formatStr
-        let dateString = dateFormatter.string(from: self)
+        let dateString = dateFormatter.string(from: self.base)
         return dateString
     }
 
@@ -61,7 +63,7 @@ public extension Date {
         let timeZone = TimeZone.current
         calendar?.timeZone = timeZone
         let calendarUnit = NSCalendar.Unit.weekday
-        let theComponents = calendar?.components(calendarUnit, from: self)
+        let theComponents = calendar?.components(calendarUnit, from: self.base)
         if let index = theComponents?.weekday, weekDays.count > index, let weekday = weekDays[index] as? String {
             return weekday
         }
@@ -71,18 +73,18 @@ public extension Date {
     /// 获取相对指定时间之前几天或者之后几天的日期，之前的填入负数
     /// - Parameter days: 日期，单位为天
     func getDateByDays(days: Int) -> Date {
-        let date = Date(timeInterval: TimeInterval(days * 24 * 60 * 60), since: self)
+        let date = Date(timeInterval: TimeInterval(days * 24 * 60 * 60), since: self.base)
         return date
     }
 
 }
 
 // MARK: - 当前时间等相关
-public extension Date {
+public extension TxExtensionWrapper where Base == Date {
 
     /// 秒级时间戳 - 10位
     var timeStamp: Int {
-        let timeInterval: TimeInterval = self.timeIntervalSince1970
+        let timeInterval: TimeInterval = self.base.timeIntervalSince1970
         let timeStamp = Int(timeInterval)
         return timeStamp
     }
@@ -94,7 +96,7 @@ public extension Date {
 
     /// 获取毫秒级时间戳 - 13位
     var milliStamp: CLongLong {
-        let timeInterval: TimeInterval = self.timeIntervalSince1970
+        let timeInterval: TimeInterval = self.base.timeIntervalSince1970
         let millisecond = CLongLong(round(timeInterval * 1000))
         return millisecond
     }
@@ -106,21 +108,21 @@ public extension Date {
 
     /// 获取当前时间
     static func getCurrentTime() -> String {
-        return Date().formatDate(format: .YMDHMS)
+        return Date().tx.formatDate(format: .YMDHMS)
     }
 
     /// 获取当前日期
     static func getCurrentDate() -> String {
-        return Date().formatDate(format: .YMD)
+        return Date().tx.formatDate(format: .YMD)
     }
 
 }
 
 // MARK: - 时间戳转时间
-extension TimeInterval {
+extension TxExtensionWrapper where Base == TimeInterval {
     /// 时间戳(毫秒)转时间
     var dateAsMilliStamp: Date {
-        let timeInterval = self / 1000
+        let timeInterval = self.base / 1000
         return Date.init(timeIntervalSince1970: timeInterval)
     }
 
@@ -128,19 +130,19 @@ extension TimeInterval {
     /// - Parameters:
     ///   - format: 时间格式化格式
     func toDateStrAsMilliStamp(format: DateFormateType) -> String {
-        return dateAsMilliStamp.formatDate(format: format)
+        return dateAsMilliStamp.tx.formatDate(format: format)
     }
 
     /// 时间戳(秒)转时间
     var dateAsTimeStamp: Date {
-        return Date.init(timeIntervalSince1970: self)
+        return Date.init(timeIntervalSince1970: self.base)
     }
 
     /// 时间戳(秒)转时间字符串
     /// - Parameters:
     ///   - format: 时间格式化格式
     func toDateStrAsTimeStamp(format: DateFormateType) -> String {
-        return dateAsTimeStamp.formatDate(format: format)
+        return dateAsTimeStamp.tx.formatDate(format: format)
     }
 }
 
