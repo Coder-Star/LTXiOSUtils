@@ -187,10 +187,12 @@ extension UITextView {
             }
         }
         if limitLength > 0 {
-            if self.text.count > limitLength {
-                self.text = (self.text as NSString).substring(to: limitLength)
+            if self.markedTextRange == nil {
+                if self.text.count > limitLength {
+                    self.text = (self.text as NSString).substring(to: limitLength)
+                }
+                wordCountLabel?.text = "\(self.text.count)/\(limitLength)"
             }
-            wordCountLabel?.text = "\(self.text.count)/\(limitLength)"
         } else if limitLines > 0 {
             var size = getStringPlaceSize(self.text, textFont: self.font!)
             let height = self.font!.lineHeight * CGFloat(limitLines)
@@ -229,5 +231,7 @@ extension UITextView {
                                              width: size.width,
                                              height: size.height)
         }
+
+        wordCountLabel?.backgroundColor = self.backgroundColor
     }
 }

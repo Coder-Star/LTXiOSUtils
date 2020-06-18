@@ -62,7 +62,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         textView.tag = 100
 //        textView.text = "这是内容"
         textView.placeholder = "请输入信息，这是UITextView的扩展"
-        textView.limitLength = 100
+        textView.limitLength = 10
 //        textView.limitLines = 1
         contentView.addSubview(textView)
         textView.snp.makeConstraints { make in
@@ -70,6 +70,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
             make.right.equalToSuperview().offset(-10)
             make.top.equalTo(titleLabel)
         }
+        textView.backgroundColor = .red
 
         titleLabel = UILabel()
         titleLabel.textAlignment = .center

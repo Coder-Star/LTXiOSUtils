@@ -43,11 +43,8 @@ public extension ViewFactory {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 17)
         textView.layer.borderColor = UIColor(hexString: "#cdcdcd").cgColor
-        textView.returnKeyType = .done
         textView.layer.borderWidth = 0.5
         textView.layer.cornerRadius = 5
-        textView.textColor = UIColor.black
-        textView.backgroundColor = .white
         textView.snp.makeConstraints { (make) in
             make.height.equalTo(70)
         }
