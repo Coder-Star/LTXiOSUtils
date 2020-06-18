@@ -146,6 +146,7 @@ extension UITextView {
         }
     }
 
+    // swiftlint:disable block_based_kvo
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         textChange()
     }
@@ -179,7 +180,7 @@ extension UITextView {
 
     @objc
     private func textChange() {
-        if placeholder.isNotEmpty {
+        if placeholder.tx.isNotEmpty {
             if self.text.count == 0 {
                 placeholderLabel?.isHidden = false
             } else {
@@ -223,7 +224,7 @@ extension UITextView {
                                            height: UITextView.wordCountLabelHeight)
         }
 
-        if placeholder.isNotEmpty && placeholderLabel != nil {
+        if placeholder.tx.isNotEmpty && placeholderLabel != nil {
             let width = frame.width - self.textContainer.lineFragmentPadding * 2
             let size = placeholderLabel!.sizeThatFits(CGSize(width: width, height: .zero))
             placeholderLabel!.frame = CGRect(x: self.textContainer.lineFragmentPadding,

@@ -7,13 +7,15 @@
 
 import Foundation
 
-public extension Array {
+extension Array: TxExtensionWrapperProtocol {}
+
+public extension TxExtensionWrapper where Base: Sequence {
 
     /// 数组去重
     /// - Parameter repeated: 去重标准
-    func removeDuplicate<E: Equatable>(_ repeated: (Element) -> E) -> [Element] {
-        var result = [Element]()
-        self.forEach { item in
+    func removeDuplicate<E: Equatable>(_ repeated: (Base.Iterator.Element) -> E) -> [Base.Iterator.Element] {
+        var result = [Base.Iterator.Element]()
+        self.base.forEach { item in
             let key = repeated(item)
             let keys = result.compactMap { repeated($0) }
             guard !keys.contains(key) else {

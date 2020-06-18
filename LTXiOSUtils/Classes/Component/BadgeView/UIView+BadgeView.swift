@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - add Badge
-public extension Core where Base: UIView {
+public extension TxExtensionWrapper where Base: UIView {
 
     /// 角标view
     var badgeView: BadgeControl {

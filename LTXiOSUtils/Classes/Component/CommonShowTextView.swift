@@ -76,13 +76,13 @@ extension CommonShowTextView {
         }
         let typeList = Array(checkType.keys)
 
-        if str.isMobile, typeList.contains(.mobile) {
+        if str.tx.isMobile, typeList.contains(.mobile) {
             self.textColor = checkType[.mobile]
             setTapGesture(type: .mobile, str: str)
-        } else if str.isEmail, typeList.contains(.email) {
+        } else if str.tx.isEmail, typeList.contains(.email) {
             self.textColor = checkType[.email]
             setTapGesture(type: .email, str: str)
-        } else if str.isNetworkUrl, typeList.contains(.networkUrl) {
+        } else if str.tx.isNetworkUrl, typeList.contains(.networkUrl) {
             self.textColor = checkType[.networkUrl]
             setTapGesture(type: .networkUrl, str: str)
         } else {

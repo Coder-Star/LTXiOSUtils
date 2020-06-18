@@ -67,8 +67,8 @@ class HomeViewController: BaseUIScrollViewController {
         navigationItem.titleView = getSearchView()
         // 在viewDidLoad中没法直接获取到UIBarButtonItem的实例，
         // 延长一段时间进行获取,不过一般角标都是根据后台返回的，会有一定的时间缓冲
-        DispatchQueue.main.delay(0.001) {
-            rightBarItem.core.addDot(color: .red)
+        DispatchQueue.main.tx.delay(0.001) {
+            rightBarItem.tx.addDot(color: .red)
         }
         getPagerViewData()
     }
@@ -121,7 +121,7 @@ class HomeViewController: BaseUIScrollViewController {
 extension HomeViewController {
     @objc func scan() {
         Log.d("扫描")
-        guard let className = "HomeViewController".class as? UIViewController.Type else {
+        guard let className = "HomeViewController".tx.class as? UIViewController.Type else {
             return
         }
         let target = className.init()

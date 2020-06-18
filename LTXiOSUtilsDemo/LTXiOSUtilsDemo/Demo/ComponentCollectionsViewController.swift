@@ -74,7 +74,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
 
         titleLabel = UILabel()
         titleLabel.textAlignment = .center
-        titleLabel.attributedText = "多样式Label".attributedString
+        titleLabel.attributedText = "多样式Label".tx.attributedString
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
@@ -199,10 +199,10 @@ extension ComponentCollectionsViewController {
         switch button.tag {
         case 1:
             spinnerBtn.animate(animation: .load)
-            DispatchQueue.main.delay(1) {
+            DispatchQueue.main.tx.delay(1) {
                 self.spinnerBtn.animate(animation: .default)
             }
-            DispatchQueue.main.delay(1.3) {
+            DispatchQueue.main.tx.delay(1.3) {
                 self.spinnerBtn.animate(animation: .shake)
             }
 

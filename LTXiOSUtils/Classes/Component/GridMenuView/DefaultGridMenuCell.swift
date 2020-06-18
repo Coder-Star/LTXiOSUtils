@@ -60,43 +60,43 @@ open class DefaultGridMenuCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let labelHeight = 20.cgFloatValue
-        let imageHeight = frame.height - labelHeight - 20.cgFloatValue
+        let labelHeight = 20.tx.cgFloatValue
+        let imageHeight = frame.height - labelHeight - 20.tx.cgFloatValue
         let imageWidth = imageHeight
         imageView.frame = CGRect(x: (frame.width - imageWidth) / 2, y: 10, width: imageWidth, height: imageHeight)
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         self.addSubview(imageView)
-        label.frame = CGRect(x: 5, y: imageHeight + 15, width: frame.width - 10.cgFloatValue, height: labelHeight)
+        label.frame = CGRect(x: 5, y: imageHeight + 15, width: frame.width - 10.tx.cgFloatValue, height: labelHeight)
         self.addSubview(label)
-        self.core.setBadge(flexMode: .middle)
-        self.core.moveBadge(x: -1 * imageView.frame.origin.x, y: imageView.frame.origin.y)
+        self.tx.setBadge(flexMode: .middle)
+        self.tx.moveBadge(x: -1 * imageView.frame.origin.x, y: imageView.frame.origin.y)
     }
 
     private func setBadge() {
         switch markType {
         case .none:
-            self.core.hiddenBadge()
+            self.tx.hiddenBadge()
         case .number(let number):
             if let maxNumber = DefaultGridMenuCell.maxNumber, number > maxNumber {
-                self.core.setBadge(height: 18)
-                self.core.addBadge(text: "\(maxNumber)+")
+                self.tx.setBadge(height: 18)
+                self.tx.addBadge(text: "\(maxNumber)+")
             } else if number <= 0 {
-                self.core.hiddenBadge()
+                self.tx.hiddenBadge()
             } else {
-                self.core.setBadge(height: 18)
-                self.core.addBadge(number: number)
+                self.tx.setBadge(height: 18)
+                self.tx.addBadge(number: number)
             }
         case .point(let isShow):
             if isShow {
-                self.core.addDot(color: .red)
-                self.core.setBadge(height: 12)
+                self.tx.addDot(color: .red)
+                self.tx.setBadge(height: 12)
             } else {
-                self.core.hiddenBadge()
+                self.tx.hiddenBadge()
             }
         case .text(let text):
-             self.core.setBadge(height: 18)
-             self.core.addBadge(text: text)
+             self.tx.setBadge(height: 18)
+             self.tx.addBadge(text: text)
         }
     }
 

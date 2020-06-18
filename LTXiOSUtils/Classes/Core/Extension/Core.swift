@@ -1,70 +1,51 @@
 //
 //  Core.swift
 //  LTXiOSUtils
-//  核心作用域
+//  系统扩展命名空间，对系统类进行扩展，用来替换OC中前缀的做法，更Swift的做法
 //  Created by 李天星 on 2020/1/12.
 //
 
 import Foundation
 
 /// 核心作用域
-public struct Core<Base> {
+public struct TxExtensionWrapper<Base> {
     /// 泛型
     public let base: Base
 
     /// 构造函数
     /// - Parameter base: 泛型
-    public init(_ base: Base) {
+    public init(_ base: Base ) {
         self.base = base
     }
 }
 
 /// 协议
-public protocol CoreCompatible {
+public protocol TxExtensionWrapperProtocol {
 
     /*
      需要使用associatedtype关键字的原因是因为core的类型不固定
      */
 
     /// 实例方法关联
-    associatedtype CoreCompatibleInstanceType
+    associatedtype CompatibleInstanceType
     /// 类方法关联
-    associatedtype CoreCompatibleClassType
+    associatedtype CompatibleClassType
 
     /// 实例方法，只读计算属性
-    var core: CoreCompatibleInstanceType { get set }
+    var tx: CompatibleInstanceType { get }
     /// 类方法，只读计算属性
-    static var core: CoreCompatibleClassType { get set }
+    static var tx: CompatibleClassType { get }
 }
 /// Compatible协议默认实现
-extension CoreCompatible {
+extension TxExtensionWrapperProtocol {
     /// 实例方法默认实现
-    public var core: Core<Self> {
-        get {
-            return Core(self)
-        }
-        // swiftlint:disable:next unused_setter_value
-        set {
-
-        }
+    public var tx: TxExtensionWrapper<Self> {
+        return TxExtensionWrapper(self)
     }
 
     /// 类方法默认实现
-    public static var core: Core<Self>.Type {
-        get {
-            return Core<Self>.self
-        }
-        // swiftlint:disable:next unused_setter_value
-        set {
-
-        }
+    public static var tx: TxExtensionWrapper<Self>.Type {
+        return TxExtensionWrapper<Self>.self
     }
 }
 
-extension NSObject: CoreCompatible {}
-
-//extension String: CoreCompatible {}
-//extension Double: CoreCompatible {}
-//extension Array: CoreCompatible {}
-//extension Int: CoreCompatible {}
-//extension Date: CoreCompatible {}

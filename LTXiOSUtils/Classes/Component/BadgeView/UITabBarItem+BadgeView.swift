@@ -7,40 +7,40 @@
 
 import UIKit
 
-public extension Core where Base: UITabBarItem {
+public extension TxExtensionWrapper where Base: UITabBarItem {
 
     /// 角标view
     var badgeView: BadgeControl {
-        return _bottomView.core.badgeView
+        return _bottomView.tx.badgeView
     }
 
     /// 添加带文本内容的Badge, 默认右上角, 红色, 18pts
     ///
-    /// Add Badge with text content, the default ucoreer right corner, red backgroundColor, 18pts
+    /// Add Badge with text content, the default utxer right corner, red backgroundColor, 18pts
     ///
     /// - Parameter text: 文本字符串
     func addBadge(text: String) {
-        _bottomView.core.addBadge(text: text)
-        _bottomView.core.moveBadge(x: 4, y: 3)
+        _bottomView.tx.addBadge(text: text)
+        _bottomView.tx.moveBadge(x: 4, y: 3)
     }
 
     /// 添加带数字的Badge, 默认右上角,红色,18pts
     ///
-    /// Add the Badge with numbers, the default ucoreer right corner, red backgroundColor, 18pts
+    /// Add the Badge with numbers, the default utxer right corner, red backgroundColor, 18pts
     ///
     /// - Parameter number: 整形数字
     func addBadge(number: Int) {
-        _bottomView.core.addBadge(number: number)
-        _bottomView.core.moveBadge(x: 4, y: 3)
+        _bottomView.tx.addBadge(number: number)
+        _bottomView.tx.moveBadge(x: 4, y: 3)
     }
 
     /// 添加带颜色的小圆点, 默认右上角, 红色, 8pts
     ///
-    /// Add small dots with color, the default ucoreer right corner, red backgroundColor, 8pts
+    /// Add small dots with color, the default utxer right corner, red backgroundColor, 8pts
     ///
     /// - Parameter color: 颜色
     func addDot(color: UIColor? = .red) {
-        _bottomView.core.addDot(color: color)
+        _bottomView.tx.addDot(color: color)
     }
 
     /// 设置Badge的偏移量, Badge中心点默认为其父视图的右上角
@@ -51,19 +51,19 @@ public extension Core where Base: UITabBarItem {
     ///   - x: X轴偏移量 (x<0: 左移, x>0: 右移) axis offset (x <0: left, x> 0: right)
     ///   - y: Y轴偏移量 (y<0: 上移, y>0: 下移) axis offset (Y <0: up,   y> 0: down)
     func moveBadge(x: CGFloat, y: CGFloat) {
-        _bottomView.core.moveBadge(x: x, y: y)
+        _bottomView.tx.moveBadge(x: x, y: y)
     }
 
     /// 设置Badge伸缩的方向
     ///
     /// Setting the direction of Badge expansion
     ///
-    /// coreBadgeViewFlexModeHead,    左伸缩 Head Flex    : <==●
-    /// coreBadgeViewFlexModeTail,    右伸缩 Tail Flex    : ●==>
-    /// coreBadgeViewFlexModeMiddle   左右伸缩 Middle Flex : <=●=>
-    /// - Parameter flexMode : Default is coreBadgeViewFlexModeTail
+    /// txBadgeViewFlexModeHead,    左伸缩 Head Flex    : <==●
+    /// txBadgeViewFlexModeTail,    右伸缩 Tail Flex    : ●==>
+    /// txBadgeViewFlexModeMiddle   左右伸缩 Middle Flex : <=●=>
+    /// - Parameter flexMode : Default is txBadgeViewFlexModeTail
     func setBadge(flexMode: BadgeViewFlexMode = .tail) {
-        _bottomView.core.setBadge(flexMode: flexMode)
+        _bottomView.tx.setBadge(flexMode: flexMode)
     }
 
     /// 设置Badge的高度,因为Badge宽度是动态可变的,通过改变Badge高度,其宽度也按比例变化,方便布局
@@ -76,39 +76,39 @@ public extension Core where Base: UITabBarItem {
     ///
     /// - Parameter height: 高度大小
     func setBadge(height: CGFloat) {
-        _bottomView.core.setBadge(height: height)
+        _bottomView.tx.setBadge(height: height)
     }
 
     /// 显示Badge
     func showBadge() {
-        _bottomView.core.showBadge()
+        _bottomView.tx.showBadge()
     }
 
     /// 隐藏Badge
     func hiddenBadge() {
-        _bottomView.core.hiddenBadge()
+        _bottomView.tx.hiddenBadge()
     }
 
     // MARK: - 数字增加/减少, 注意:以下方法只适用于Badge内容为纯数字的情况
-    // MARK: - Digital increase /decrease, note: the following method acorelies only to cases where the Badge content is purely numeric
+    // MARK: - Digital increase /decrease, note: the following method atxlies only to cases where the Badge content is purely numeric
     /// badge数字加1
     func increase() {
-        _bottomView.core.increase()
+        _bottomView.tx.increase()
     }
 
     /// badge数字加number
     func increaseBy(number: Int) {
-        _bottomView.core.increaseBy(number: number)
+        _bottomView.tx.increaseBy(number: number)
     }
 
     /// badge数字加1
     func decrease() {
-        _bottomView.core.decrease()
+        _bottomView.tx.decrease()
     }
 
     /// badge数字减number
     func decreaseBy(number: Int) {
-        _bottomView.core.decreaseBy(number: number)
+        _bottomView.tx.decreaseBy(number: number)
     }
 
     /// 通过Xcode视图调试工具找到UITabBarItem原生Badge所在父视图

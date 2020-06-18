@@ -62,7 +62,7 @@ extension RootVCApplicationService: XHLaunchAdDelegate {
         }, failure: { _ in
             Log.d(XHLaunchAd.cacheImageURLString())
             let url = XHLaunchAd.cacheImageURLString()
-            if url.isNotEmpty {
+            if url.tx.isNotEmpty {
                 let config = XHLaunchImageAdConfiguration()
                 config.duration = 5
                 config.skipButtonType = .timeText

@@ -95,7 +95,7 @@ open class PageControl: UIView {
             numberLabel.font = font
             numberLabel.textColor = color
             numberLabel.tag = curLabelTag
-            numberLabel.frame = CGRect(x: 0.cgFloatValue, y: 0.cgFloatValue, width: 100, height: 25)
+            numberLabel.frame = CGRect(x: 0.tx.cgFloatValue, y: 0.tx.cgFloatValue, width: 100, height: 25)
         }
     }
 
@@ -143,11 +143,11 @@ open class PageControl: UIView {
         let y1: CGFloat = (self.frame.height - normalSize.height) * 0.5
         let y2: CGFloat = (self.frame.height - currentSize.height) * 0.5
         for i in 0..<numberOfPages {
-            var pointX = 0.cgFloatValue
+            var pointX = 0.tx.cgFloatValue
             if i <= currentPage {
-                pointX = i.cgFloatValue * (margin + normalSize.width) + margin
+                pointX = i.tx.cgFloatValue * (margin + normalSize.width) + margin
             } else {
-                pointX = i.cgFloatValue * margin + (i - 1).cgFloatValue * normalSize.width + currentSize.width + margin
+                pointX = i.tx.cgFloatValue * margin + (i - 1).tx.cgFloatValue * normalSize.width + currentSize.width + margin
             }
             let pointY = i == currentPage ? y2 : y1
             let pointW = i == currentPage ? currentSize.width : normalSize.width
@@ -226,7 +226,7 @@ extension PageControl {
         if numberLabel.frame != .zero {
             return numberLabel.frame.size
         }
-        let frameWidth = currentSize.width + (numberOfPages - 1).cgFloatValue * normalSize.width + (numberOfPages + 1).cgFloatValue * margin
+        let frameWidth = currentSize.width + (numberOfPages - 1).tx.cgFloatValue * normalSize.width + (numberOfPages + 1).tx.cgFloatValue * margin
         let frameHeight = max(currentSize.height, normalSize.height) + 5
         return CGSize(width: frameWidth, height: frameHeight)
     }

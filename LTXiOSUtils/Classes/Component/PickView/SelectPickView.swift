@@ -291,8 +291,8 @@ extension SelectPickView: UITableViewDelegate {
             /// 为tableView加上header,使内容垂直居中
             let margin = tableViewHeight - tableView.contentSize.height
             if margin > 0 {
-                let headerView = UIView(frame: CGRect(x: 0.cgFloatValue, y: 0, width: screenWidth, height: margin / 2))
-                let lineView = UIView(frame: CGRect(x: 0.cgFloatValue, y: headerView.frame.height - 0.05, width: screenWidth, height: 0.05))
+                let headerView = UIView(frame: CGRect(x: 0.tx.cgFloatValue, y: 0, width: screenWidth, height: margin / 2))
+                let lineView = UIView(frame: CGRect(x: 0.tx.cgFloatValue, y: headerView.frame.height - 0.05, width: screenWidth, height: 0.05))
                 lineView.backgroundColor = UIColor(hexString: "#bbbbbb")
                 headerView.addSubview(lineView)
                 tableView.tableHeaderView = headerView

@@ -21,7 +21,7 @@ public struct AuthPlugin: PluginType {
 
     /// 准备网络请求
     public func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
-        guard token.isNotEmpty else {
+        guard token.tx.isNotEmpty else {
             return request
         }
         var request = request

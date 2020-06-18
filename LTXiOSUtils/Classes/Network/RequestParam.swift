@@ -67,7 +67,7 @@ public struct RequestParam {
         Log.d("url: \(self.baseUrl + self.path)")
         Log.d("parameters: \(self.parameters)")
         Log.d("method: \(self.method)")
-        if self.token.isNotEmpty {
+        if self.token.tx.isNotEmpty {
             Log.d("token: \(self.token)")
         }
         if self.header.isNotNil {
