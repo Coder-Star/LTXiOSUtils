@@ -7,11 +7,11 @@
 
 import Foundation
 
-public extension UIViewController {
+public extension TxExtensionWrapper where Base: UIViewController {
 
     /// 获取当前屏幕顶层ViewController
     /// - Parameter base: 基础UIViewController，默认为window的rootViewController
-    class func topViewController(of base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+    static func topViewController(of base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let presented = base?.presentedViewController {
             return topViewController(of: presented)
         }
@@ -34,7 +34,7 @@ public extension UIViewController {
 
     /// 删除所有子ViewController
     func removeAllChildren() {
-        self.children.forEach {
+        self.base.children.forEach {
             $0.removeFromParent()
         }
     }
@@ -44,8 +44,8 @@ public extension UIViewController {
     ///   - animated: 是否显示动画
     ///   - completion: 完成dismiss闭包回调
     func dismissToRootViewController(animated: Bool = true, completion: (() -> Void)? = nil) {
-        var tempPresentingViewController = self
-        while let viewController = self.presentingViewController {
+        var tempPresentingViewController = self.base
+        while let viewController = self.base.presentingViewController as? Base {
             tempPresentingViewController = viewController
         }
         tempPresentingViewController.dismiss(animated: animated, completion: completion)

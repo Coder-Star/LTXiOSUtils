@@ -268,13 +268,13 @@ public class PickerView: UIView {
         let picker = UIPickerView()
         picker.delegate = self
         picker.dataSource = self
-        picker.backgroundColor = UIColor.white.adapt()
+        picker.backgroundColor = UIColor.white.tx.adapt()
         return picker
         }()
 
     fileprivate lazy var datePicker: UIDatePicker = {[unowned self] in
         let datePic = UIDatePicker()
-        datePic.backgroundColor = UIColor.white.adapt()
+        datePic.backgroundColor = UIColor.white.tx.adapt()
         datePic.timeZone = TimeZone.current //时区
         if let language = Locale.preferredLanguages.first {
             datePic.locale = Locale(identifier: language)
@@ -432,7 +432,7 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
         let label = UILabel()
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = UIColor.black.adapt()
+        label.textColor = UIColor.black.tx.adapt()
         label.font = UIFont.systemFont(ofSize: 18.0)
         label.backgroundColor = UIColor.clear
         label.text = titleForRow(row, forComponent: component)

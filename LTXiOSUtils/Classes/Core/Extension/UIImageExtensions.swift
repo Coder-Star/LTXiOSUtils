@@ -17,7 +17,7 @@ public enum ImageCompressType {
 }
 
 // MARK: - UIImage压缩相关
-public extension UIImage {
+public extension TxExtensionWrapper where Base: UIImage {
 
     /// 压缩图片
     /// 注意压缩后含有透明背景图片的背景会变成白色
@@ -31,8 +31,8 @@ public extension UIImage {
     }
 
     private func wxImageSize(type: ImageCompressType) -> CGSize {
-        var width = self.size.width
-        var height = self.size.height
+        var width = self.base.size.width
+        var height = self.base.size.height
         var boundary: CGFloat = 1280
 
         guard width > boundary || height > boundary else {
@@ -69,7 +69,7 @@ public extension UIImage {
         let newRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         var newImage: UIImage!
         UIGraphicsBeginImageContext(newRect.size)
-        newImage = UIImage(cgImage: self.cgImage!, scale: 1, orientation: self.imageOrientation)
+        newImage = UIImage(cgImage: self.base.cgImage!, scale: 1, orientation: self.base.imageOrientation)
         newImage.draw(in: newRect)
         newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -79,7 +79,7 @@ public extension UIImage {
 }
 
 // MARK: - 扩展
-public extension UIImage {
+public extension TxExtensionWrapper where Base: UIImage {
 
     /// 设置图片尺寸
     ///
@@ -87,7 +87,7 @@ public extension UIImage {
     /// - Returns: 处理后的图片
     func setSize(reSize: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(reSize, false, UIScreen.main.scale)
-        self.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height))
+        self.base.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height))
         let reSizeImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return reSizeImage
@@ -98,8 +98,8 @@ public extension UIImage {
     /// - Parameter scaleSize: 缩放比例
     /// - Returns: 缩放后的图片
     func scaleImage(scaleSize: CGFloat) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize), false, UIScreen.main.scale)
-        self.draw(in: CGRect(x: 0, y: 0, width: self.size.width * scaleSize, height: self.size.height * scaleSize))
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.base.size.width * scaleSize, height: self.base.size.height * scaleSize), false, UIScreen.main.scale)
+        self.base.draw(in: CGRect(x: 0, y: 0, width: self.base.size.width * scaleSize, height: self.base.size.height * scaleSize))
         let reSizeImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return reSizeImage
@@ -109,7 +109,7 @@ public extension UIImage {
     ///
     /// - Parameter orientation: 旋转方向
     /// - Returns: 旋转后的图片
-    func rotate(orientation: Orientation) -> UIImage {
-        return UIImage(cgImage: self.cgImage!, scale: self.scale, orientation: orientation)
+    func rotate(orientation: UIImage.Orientation) -> UIImage {
+        return UIImage(cgImage: self.base.cgImage!, scale: self.base.scale, orientation: orientation)
     }
 }

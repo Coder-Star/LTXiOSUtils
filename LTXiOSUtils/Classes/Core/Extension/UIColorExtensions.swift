@@ -47,7 +47,9 @@ public extension UIColor {
             self.init(red: red, green: green, blue: blue, alpha: alpha)
         }
     }
+}
 
+public extension TxExtensionWrapper where Base: UIColor {
     /// 颜色转hex值
     var hexString: String? {
         var red: CGFloat = 0
@@ -57,7 +59,7 @@ public extension UIColor {
 
         let multiplier = CGFloat(255.999999)
 
-        guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
+        guard self.base.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
             return nil
         }
 
@@ -82,45 +84,45 @@ public extension UIColor {
     /// 颜色的反色
     var invertColor: UIColor {
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0
-        self.getRed(&r, green: &g, blue: &b, alpha: nil)
+        self.base.getRed(&r, green: &g, blue: &b, alpha: nil)
         return UIColor(red: 1.0 - r, green: 1.0 - g, blue: 1.0 - b, alpha: 1)
     }
 
     /// 红色值
     var redColor: Int {
         var red: CGFloat = 0
-        self.getRed(&red, green: nil, blue: nil, alpha: nil)
+        self.base.getRed(&red, green: nil, blue: nil, alpha: nil)
         return Int(red * 255)
     }
 
     /// 绿色值
     var greenColor: Int {
         var green: CGFloat = 0
-        self.getRed(nil, green: &green, blue: nil, alpha: nil)
+        self.base.getRed(nil, green: &green, blue: nil, alpha: nil)
         return Int(green * 255)
     }
 
     /// 蓝色值
     var blueColor: Int {
         var blue: CGFloat = 0
-        self.getRed(nil, green: nil, blue: &blue, alpha: nil)
+        self.base.getRed(nil, green: nil, blue: &blue, alpha: nil)
         return Int(blue * 255)
     }
 
 }
 
 // MARK: - 颜色、图片
-public extension UIColor {
+public extension TxExtensionWrapper where Base: UIColor {
 
     /// 颜色生成指定大小的UIImage
     ///
     /// - Parameter size: 图片尺寸
     /// - Returns: 图片
     func toImage(size: CGSize) -> UIImage? {
-        let rect: CGRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContext(rect.size)
         let context: CGContext = UIGraphicsGetCurrentContext()!
-        context.setFillColor(self.cgColor)
+        context.setFillColor(self.base.cgColor)
         context.fill(rect)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsGetCurrentContext()
@@ -128,7 +130,7 @@ public extension UIColor {
     }
 }
 
-public extension UIColor {
+public extension TxExtensionWrapper where Base: UIColor {
     /// 适配暗黑模式
     /// - Parameter colorWithDark: 暗黑模式下的颜色,默认为nil，取颜色反色
     func adaptDark(_ colorWithDark: UIColor? = nil) -> UIColor {
@@ -140,9 +142,9 @@ public extension UIColor {
                 return darkColor
             }
         } else {
-            return self
+            return self.base
         }
-        return self
+        return self.base
     }
 
     /// 适配各种模式

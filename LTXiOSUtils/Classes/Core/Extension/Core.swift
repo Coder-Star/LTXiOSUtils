@@ -32,20 +32,29 @@ public protocol TxExtensionWrapperProtocol {
     associatedtype CompatibleClassType
 
     /// 实例方法，只读计算属性
-    var tx: CompatibleInstanceType { get }
+    var tx: CompatibleInstanceType { get set }
     /// 类方法，只读计算属性
-    static var tx: CompatibleClassType { get }
+    static var tx: CompatibleClassType { get set }
 }
 /// Compatible协议默认实现
 extension TxExtensionWrapperProtocol {
     /// 实例方法默认实现
     public var tx: TxExtensionWrapper<Self> {
-        return TxExtensionWrapper(self)
+        get {
+            return TxExtensionWrapper(self)
+        }
+        set {
+
+        }
     }
 
     /// 类方法默认实现
     public static var tx: TxExtensionWrapper<Self>.Type {
-        return TxExtensionWrapper<Self>.self
+        get {
+            return TxExtensionWrapper<Self>.self
+        }
+        set {
+            
+        }
     }
 }
-

@@ -96,8 +96,8 @@ open class ImagePickGridView: UIView {
         if layout.itemSize == .zero {
             layout.itemSize = CGSize(width: itemWidth ?? 0, height: itemWidth ?? 0)
         }
-        collectionView?.height = self.frame.height
-        collectionView?.width = self.frame.width
+        collectionView?.tx.height = self.frame.height
+        collectionView?.tx.width = self.frame.width
         reloadDataAndFrame()
     }
 

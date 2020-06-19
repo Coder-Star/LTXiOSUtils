@@ -39,11 +39,11 @@ public extension TxExtensionWrapper where Base: NSMutableAttributedString {
         case .default:
             break
         case .bold:
-            font = UIFont.boldFont(name: fontName, size: fontSize)
+            font = UIFont.tx.boldFont(name: fontName, size: fontSize)
         case .italic:
-            font = UIFont.italicFont(name: fontName, size: fontSize)
+            font = UIFont.tx.italicFont(name: fontName, size: fontSize)
         case .boldItalic:
-            font = UIFont.boldItalicFont(name: fontName, size: fontSize)
+            font = UIFont.tx.boldItalicFont(name: fontName, size: fontSize)
         }
         self.base.addAttribute(NSMutableAttributedString.Key.font, value: font, range: self.allRange)
         return self.base

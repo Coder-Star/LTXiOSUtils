@@ -60,7 +60,7 @@ extension MGJRouterDemoViewController {
                 let viewController = MGJRouterDemoViewController()
                 viewController.content = content as? String ?? "content为空"
                 /// 这里还可以通过另外一种方式，自定义navigationController，获取顶部的UIViewController进行跳转
-                UIViewController.topViewController()?.navigationController?.pushViewController(viewController, animated: true)
+                UIViewController.tx.topViewController()?.navigationController?.pushViewController(viewController, animated: true)
             }
             printToHandlerInfo(routerParameters: routerParameters)
         })

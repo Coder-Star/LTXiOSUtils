@@ -67,9 +67,9 @@ class HomeViewController: BaseUIScrollViewController {
         navigationItem.titleView = getSearchView()
         // 在viewDidLoad中没法直接获取到UIBarButtonItem的实例，
         // 延长一段时间进行获取,不过一般角标都是根据后台返回的，会有一定的时间缓冲
-        DispatchQueue.main.tx.delay(0.001) {
+//        DispatchQueue.main.tx.delay(0.001) {
             rightBarItem.tx.addDot(color: .red)
-        }
+//        }
         getPagerViewData()
     }
 
@@ -104,7 +104,7 @@ class HomeViewController: BaseUIScrollViewController {
         }
 
         contentView.layoutIfNeeded()
-        let scrollMenView = GridMenuView(width: contentView.width, row: 2, col: 5, menu: menu, mode: .horizontalScroll, pageStyle: PageControlStyle.ring(circleSize: 5))
+        let scrollMenView = GridMenuView(width: contentView.tx.width, row: 2, col: 5, menu: menu, mode: .horizontalScroll, pageStyle: PageControlStyle.ring(circleSize: 5))
         scrollMenView.backgroundColor = UIColor(hexString: "#eeeeee")
         scrollMenView.pageControlNormorlColor = .lightGray
         scrollMenView.delegate = self
