@@ -10,11 +10,11 @@ import UIKit
 open class ToolBarView: UIView {
 
     /// 取消按钮颜色
-    public static var clearButtonColor: UIColor = UIColor.black.adapt()
+    public static var clearButtonColor: UIColor = UIColor.black.tx.adapt()
     /// 完成按钮颜色
-    public static var doneButtonColor: UIColor = UIColor.black.adapt()
+    public static var doneButtonColor: UIColor = UIColor.black.tx.adapt()
     /// 中间title颜色
-    public static var centerLabelColor: UIColor = UIColor.black.adapt()
+    public static var centerLabelColor: UIColor = UIColor.black.tx.adapt()
 
     typealias CustomClosures = (_ titleLabel: UILabel, _ clearBtn: UIButton, _ doneBtn: UIButton) -> Void
     public typealias BtnAction = () -> Void
@@ -31,7 +31,7 @@ open class ToolBarView: UIView {
     // 用来产生上下分割线的效果
     fileprivate lazy var contentView: UIView = {
         let content = UIView()
-        content.backgroundColor = UIColor.white.adapt()
+        content.backgroundColor = UIColor.white.tx.adapt()
         return content
     }()
 

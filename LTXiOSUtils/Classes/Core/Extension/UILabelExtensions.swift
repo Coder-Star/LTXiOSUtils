@@ -7,20 +7,20 @@
 
 import Foundation
 
-public extension UILabel {
+public extension TxExtensionWrapper where Base: UILabel {
 
     /// UIlabel设置内容，当设置值为空时，改为赋值为空格
     /// 主要是为自动布局使用，避免设置值为空时，导致label高度较小
     var content: String? {
         set {
             if let value = newValue, value.tx.isNotEmpty {
-                self.text = value
+                self.base.text = value
             } else {
-                self.text = " "
+                self.base.text = " "
             }
         }
         get {
-            return self.text
+            return self.base.text
         }
     }
 

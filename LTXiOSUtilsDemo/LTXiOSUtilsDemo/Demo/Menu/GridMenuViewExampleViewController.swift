@@ -39,7 +39,7 @@ class GridMenuViewExampleViewController: BaseUIViewController {
 //        pageStyle = .original(circleSize: 5)
 //        pageStyle = .number(font: UIFont.systemFont(ofSize: 16), color: .black)
 
-        let menuView = GridMenuView(width: baseView.width, row: 2, col: 4, menu: menu, pageStyle: pageStyle)
+        let menuView = GridMenuView(width: baseView.tx.width, row: 2, col: 4, menu: menu, pageStyle: pageStyle)
 //        menuView.pageControlCurrentColor = .black
         menuView.delegate = self
         baseView.addSubview(menuView)
@@ -50,7 +50,7 @@ class GridMenuViewExampleViewController: BaseUIViewController {
         }
         Log.d(menuView.heightInfo)
 
-        let scrollMenView = GridMenuView(width: baseView.width, row: 2, col: 4, menu: menu, mode: .horizontalScroll, pageStyle: pageStyle)
+        let scrollMenView = GridMenuView(width: baseView.tx.width, row: 2, col: 4, menu: menu, mode: .horizontalScroll, pageStyle: pageStyle)
         scrollMenView.delegate = self
 //        scrollMenView.pageControlCurrentColor = .black
         baseView.addSubview(scrollMenView)

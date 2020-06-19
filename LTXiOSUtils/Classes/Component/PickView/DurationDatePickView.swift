@@ -51,7 +51,7 @@ open class DurationDatePickView: UIView {
         if let language = Locale.preferredLanguages.first {
             datePicker.locale = Locale(identifier: language)
         }
-        datePicker.backgroundColor = UIColor.white.adapt()
+        datePicker.backgroundColor = UIColor.white.tx.adapt()
         datePicker.alpha = 0
         return datePicker
     }()
@@ -75,7 +75,7 @@ open class DurationDatePickView: UIView {
         let width = screenWidth - (leftAndRightMargin * 2)
         let topMargin: CGFloat = (screenHeight - popupViewHeight - datePickerHeight) / 2
         popupView.frame = CGRect.init(x: leftAndRightMargin, y: topMargin, width: width, height: popupViewHeight)
-        popupView.backgroundColor = UIColor.white.adapt()
+        popupView.backgroundColor = UIColor.white.tx.adapt()
         popupView.layer.masksToBounds = true
         popupView.layer.cornerRadius = 10
         popupView.alpha = 0
@@ -87,14 +87,14 @@ open class DurationDatePickView: UIView {
         titleLabel.frame = CGRect.init(x: 0, y: 0, width: popupView.frame.width, height: 50)
         titleLabel.text = "DurationDatePickView.topTitle".localizedOfLTXiOSUtils()
         titleLabel.font = UIFont.systemFont(ofSize: 16)
-        titleLabel.textColor = UIColor.black.adapt()
+        titleLabel.textColor = UIColor.black.tx.adapt()
         titleLabel.textAlignment = .center
         return titleLabel
     }()
 
     public lazy var startBtn: UIButton = {
         let btn = UIButton.init(type: .custom)
-        btn.setTitleColor(UIColor(hexString: "#333333").adapt(), for: .normal)
+        btn.setTitleColor(UIColor(hexString: "#333333").tx.adapt(), for: .normal)
         btn.setTitleColor(UIColor(hexString: "#0F9CFE"), for: .selected)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         btn.titleLabel?.textAlignment = .right
@@ -112,7 +112,7 @@ open class DurationDatePickView: UIView {
 
     public lazy var endBtn: UIButton = {
         let btn = UIButton.init(type: .custom)
-        btn.setTitleColor(UIColor(hexString: "#333333").adapt(), for: .normal)
+        btn.setTitleColor(UIColor(hexString: "#333333").tx.adapt(), for: .normal)
         btn.setTitleColor(UIColor(hexString: "#0F9CFE"), for: .selected)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         btn.titleLabel?.textAlignment = .left

@@ -11,6 +11,21 @@ import Localize_Swift
 
 class HomeTabBarController: UITabBarController {
 
+    private var homeViewController: HomeViewController = {
+        let viewController = HomeViewController()
+        return viewController
+    }()
+
+    private var demoListViewController: DemoListViewController = {
+        let viewController = DemoListViewController()
+        return viewController
+    }()
+
+    private var mineViewController: MineViewController = {
+        let viewController = MineViewController()
+        return viewController
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -20,8 +35,14 @@ class HomeTabBarController: UITabBarController {
         Log.d(NetworkConstant.OaUrl)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // TabBarItem加载到TabBar上是在 viewDidLoad 之后执行的
+        mineViewController.tabBarItem.tx.addDot()
+    }
+
     private func initChildViewControllers() {
-        let homeViewController = HomeViewController()
         let homeViewControllerTitle = "首页"
         homeViewController.titleInfo = homeViewControllerTitle
         let homeViewControllerWithNavigation = HomeNavigationController(rootViewController: homeViewController)
@@ -32,7 +53,6 @@ class HomeTabBarController: UITabBarController {
         homeViewControllerWithNavigation.tabBarItem.selectedImage = R.image.home_tab_selected()?.withRenderingMode(.alwaysOriginal)
 
         let demoListViewControllerTitle = "Demo列表".localized()
-        let demoListViewController = DemoListViewController()
         demoListViewController.titleInfo = demoListViewControllerTitle
         let demoListViewControllerWithNavigation = HomeNavigationController(rootViewController: demoListViewController)
         demoListViewControllerWithNavigation.tabBarItem.title = demoListViewControllerTitle
@@ -40,13 +60,9 @@ class HomeTabBarController: UITabBarController {
         demoListViewControllerWithNavigation.tabBarItem.image = R.image.demoList_tab()?.withRenderingMode(.alwaysOriginal)
         demoListViewControllerWithNavigation.tabBarItem.selectedImage = R.image.demoList_tab_selected()?.withRenderingMode(.alwaysOriginal)
 
-        let mineViewController = MineViewController()
         mineViewController.tabBarItem.title = "我"
         mineViewController.tabBarItem.image = R.image.mine_tab()?.withRenderingMode(.alwaysOriginal)
         mineViewController.tabBarItem.selectedImage = R.image.mine_tab_selected()?.withRenderingMode(.alwaysOriginal)
-        DispatchQueue.main.tx.delay(0.001) {
-            mineViewController.tabBarItem.tx.addDot()
-        }
 
         self.viewControllers = [homeViewControllerWithNavigation,
                                 demoListViewControllerWithNavigation,

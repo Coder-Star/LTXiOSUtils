@@ -15,7 +15,7 @@ open class BaseUIScrollViewController: BaseViewController {
     /// 基础滚动View
     public lazy var baseScrollView: UIScrollView = {
         let baseScrollView = UIScrollView()
-        baseScrollView.backgroundColor = UIColor.white.adapt()
+        baseScrollView.backgroundColor = UIColor.white.tx.adapt()
         baseScrollView.alwaysBounceVertical = true
         baseScrollView.isScrollEnabled = true
         return baseScrollView

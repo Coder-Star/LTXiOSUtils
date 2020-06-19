@@ -62,7 +62,7 @@ public class SelectPickView: UIView {
     private lazy var coverView: UIView = {
         let coverView = UIView()
         coverView.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        coverView.backgroundColor = UIColor.black.adapt()
+        coverView.backgroundColor = UIColor.black.tx.adapt()
         coverView.alpha = 0
         coverView.addTapGesture { [weak self] _ in
             self?.dismiss()

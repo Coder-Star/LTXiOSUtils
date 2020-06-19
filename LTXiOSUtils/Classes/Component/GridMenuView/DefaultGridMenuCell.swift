@@ -23,7 +23,7 @@ open class DefaultGridMenuCell: UICollectionViewCell {
     /// 角标显示数字最大值，如果再比这个大，就显示99+的形式,为nil值不限制
     public static var maxNumber: Int? = 99
     /// 标题颜色
-    public static var labelColor = UIColor.black.adapt()
+    public static var labelColor = UIColor.black.tx.adapt()
     /// 标题字体
     public static var labelFont = UIFont.systemFont(ofSize: 14)
 

@@ -22,7 +22,7 @@ open class BaseUIViewController: BaseViewController {
 
     /// 设置view颜色以及约束
     open func initBaseView() {
-        view.backgroundColor = UIColor.white.adapt()
+        view.backgroundColor = UIColor.white.tx.adapt()
         view.addSubview(baseView)
         baseView.snp.makeConstraints { make in
             if #available(iOS 11.0, *) {
