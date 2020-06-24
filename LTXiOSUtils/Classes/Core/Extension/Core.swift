@@ -43,8 +43,8 @@ extension TxExtensionWrapperProtocol {
         get {
             return TxExtensionWrapper(self)
         }
+        // swiftlint:disable:next unused_setter_value
         set {
-
         }
     }
 
@@ -53,8 +53,8 @@ extension TxExtensionWrapperProtocol {
         get {
             return TxExtensionWrapper<Self>.self
         }
+        // swiftlint:disable:next unused_setter_value
         set {
-            
         }
     }
 }

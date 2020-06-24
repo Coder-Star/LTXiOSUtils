@@ -27,6 +27,11 @@ class UIViewExtensionExampleViewController: BaseUIScrollViewController {
             make.top.equalToSuperview().offset(20)
             make.width.equalTo(leftWidth)
         }
+        // 扩大点击热区
+        titleLabel.setEnlargeEdge(top: 10, right: 10, bottom: 10, left: 10)
+        titleLabel.addTapGesture { _ in
+           Log.d("点击标题")
+        }
 
         let redView = UIView()
         redView.backgroundColor = .red
