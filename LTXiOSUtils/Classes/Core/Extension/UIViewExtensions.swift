@@ -412,3 +412,101 @@ public extension TxExtensionWrapper where Base: UIView {
         }
     }
 }
+
+// MARK: - 扩大UIView子类的点击热区
+extension UIView {
+    private struct HitDictKey {
+        static var top: Void?
+        static var right: Void?
+        static var bottom: Void?
+        static var left: Void?
+    }
+
+    fileprivate var hitTop: CGFloat? {
+        get {
+            return objc_getAssociatedObject(self, &HitDictKey.top) as? CGFloat
+        }
+        set {
+            objc_setAssociatedObject(self, &HitDictKey.top, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+
+    fileprivate var hitRight: CGFloat? {
+        get {
+            return objc_getAssociatedObject(self, &HitDictKey.right) as? CGFloat
+        }
+        set {
+            objc_setAssociatedObject(self, &HitDictKey.right, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+
+    fileprivate var hitBottom: CGFloat? {
+        get {
+            return objc_getAssociatedObject(self, &HitDictKey.bottom) as? CGFloat
+        }
+        set {
+            objc_setAssociatedObject(self, &HitDictKey.bottom, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+
+    fileprivate var hitLeft: CGFloat? {
+        get {
+            return objc_getAssociatedObject(self, &HitDictKey.left) as? CGFloat
+        }
+        set {
+            objc_setAssociatedObject(self, &HitDictKey.left, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+
+    /// 扩大点击区域，设置的值为正整数
+    /// 此方法只对UIView的子类起作用，目前支持UIImageView及UILabel
+    /// - Parameters:
+    ///   - top: 顶部扩大长度
+    ///   - right: 右边扩大长度
+    ///   - bottom: 底部扩大长度
+    ///   - left: 左边扩大长度
+    public func setEnlargeEdge(top: CGFloat, right: CGFloat, bottom: CGFloat, left: CGFloat) {
+        hitTop = top
+        hitRight = right
+        hitBottom = bottom
+        hitLeft = left
+    }
+
+    fileprivate func checkEnlargeEdge(_ point: CGPoint) -> Bool? {
+        if let topEdge = hitTop, let rightEdge = hitRight, let bottomEdge = hitBottom, let leftEdge = hitLeft {
+            return CGRect(x: bounds.origin.x - leftEdge, y: bounds.origin.y - topEdge, width: bounds.width + leftEdge + rightEdge, height: bounds.height + topEdge + bottomEdge).contains(point)
+        }
+        return nil
+    }
+
+}
+
+// MARK: - 增大UIImageView点击热区
+extension UIImageView {
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if let isEnlarge = checkEnlargeEdge(point) {
+            if isEnlarge {
+                return self
+            } else {
+                return nil
+            }
+
+        }
+        return super.hitTest(point, with: event)
+    }
+}
+
+// MARK: - 增大UILabel点击热区
+extension UILabel {
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if let isEnlarge = checkEnlargeEdge(point) {
+            if isEnlarge {
+                return self
+            } else {
+                return nil
+            }
+
+        }
+        return super.hitTest(point, with: event)
+    }
+}
