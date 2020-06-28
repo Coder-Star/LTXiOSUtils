@@ -32,7 +32,7 @@ class HomeTabBarController: UITabBarController {
         self.delegate = self
         initChildViewControllers()
 
-        Log.d(NetworkConstant.OaUrl)
+        Log.d(NSHomeDirectory())
     }
 
     override func viewWillAppear(_ animated: Bool) {
