@@ -137,6 +137,7 @@ extension HomeViewController {
         Log.d("查看消息")
     }
 
+    /// 这里的第一个方法参数不可以使用Argument Label，使用下划线，否则生成的oc方法名会是这样 actionInfoWithInfo
     @objc
     func actionInfo(_ info: [String: Any]) {
         Log.d(info)
