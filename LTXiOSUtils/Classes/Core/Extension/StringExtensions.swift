@@ -116,14 +116,14 @@ public extension TxExtensionWrapper where Base == String {
     /// 是否手机号
     var isMobile: Bool {
         let pattern = "^1[0-9]{10}$"
-        let regex = NSPredicate(format: "self.base MATCHES %@", pattern)
+        let regex = NSPredicate(format: "SELF MATCHES %@", pattern)
         return regex.evaluate(with: self.base)
     }
 
     /// 是否身份证号
     var isIDNumber: Bool {
         let pattern = "^(\\d{14}|\\d{17})(\\d|[xX])$"
-        let regex = NSPredicate(format: "self.base MATCHES %@", pattern)
+        let regex = NSPredicate(format: "SELF MATCHES %@", pattern)
         return regex.evaluate(with: self.base)
     }
 
@@ -138,7 +138,7 @@ public extension TxExtensionWrapper where Base == String {
         } else if self.base.count == 8 {
             pattern = "^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF]$)|([DF][A-HJ-NP-Z0-9][0-9]{4}$))"
         }
-        let regex = NSPredicate(format: "self.base MATCHES %@", pattern)
+        let regex = NSPredicate(format: "SELF MATCHES %@", pattern)
         return regex.evaluate(with: self.base)
     }
 
@@ -165,7 +165,7 @@ public extension TxExtensionWrapper where Base == String {
     }
 
     /// 字符串转为类，限制主工程代码使用
-    var `class`: AnyClass? {
+    var classOfMainBundle: AnyClass? {
         guard let nameSpace = Bundle.main.infoDictionary?["CFBundleExecutable"] as? String else {
             return nil
         }

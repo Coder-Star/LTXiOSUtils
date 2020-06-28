@@ -121,7 +121,7 @@ class HomeViewController: BaseUIScrollViewController {
 extension HomeViewController {
     @objc func scan() {
         Log.d("扫描")
-        guard let className = "HomeViewController".tx.class as? UIViewController.Type else {
+        guard let className = "HomeViewController".tx.classOfMainBundle as? UIViewController.Type else {
             return
         }
         let target = className.init()

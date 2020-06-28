@@ -1015,7 +1015,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6C67KJ54CD;
+				DEVELOPMENT_TEAM = Q4PJEY75E2;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1024,7 +1024,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "LTXiOSUtilsDemo/LTXiOSUtilsDemo-Bridging-Header.h";
@@ -1042,7 +1042,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6C67KJ54CD;
+				DEVELOPMENT_TEAM = Q4PJEY75E2;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1051,7 +1051,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "LTXiOSUtilsDemo/LTXiOSUtilsDemo-Bridging-Header.h";
