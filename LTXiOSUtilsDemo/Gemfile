@@ -1,0 +1,8 @@
+#source "https://gems.ruby-china.com"
+
+#gem "fastlane"
+
+# 当出现An error occurred while installing unf_ext (0.0.7.6), and Bundler cannot continue.Make sure that `gem install unf_ext -v '0.0.7.6'` succeeds before bundling.这个出错误时，将上述两个语句注释掉
+
+plugins_path = File.join(File.dirname(__FILE__), '.', 'Pluginfile')
+eval_gemfile(plugins_path) if File.exist?(plugins_path)

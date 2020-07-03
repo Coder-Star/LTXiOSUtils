@@ -39,29 +39,34 @@ extension ThirdLibApplicationService: BuglyDelegate {
         // 卡顿监控间隔
         buglyConfig.blockMonitorTimeout = 3
         buglyConfig.reportLogLevel = .verbose
-        // 自定义渠道
+        // 自定义渠道 设置关键数据，在跟踪数据-自定义数据中展示
         buglyConfig.channel = "APP"
+
         buglyConfig.delegate = self
 
         // 设置用户ID
         Bugly.setUserIdentifier("CoderStar")
+        // 设置关键数据，在跟踪数据-自定义数据中展示
+        Bugly.setUserValue("17812345678", forKey: "phone")
+
+        // 跟踪数据-自定义数据 在附件信息valueMapOthers.txt中也有体现
+
         Bugly.start(withAppId: "68933b555c", config: buglyConfig)
-        /*
-        let exception = NSException(name: NSExceptionName(rawValue: "错误名称"), reason: "错误原因", userInfo: ["key":"value"])
+        Bugly.setTag(160761)
+        let exception = NSException(name: NSExceptionName(rawValue: "不带分类异常名称"), reason: "", userInfo: ["NSException": "info"])
         Bugly.report(exception)
 
-        let error = NSError(domain: "com.coderstar", code: 1, userInfo: ["key":"value"])
+        let error = NSError(domain: "com.coderstar", code: 1, userInfo: ["key": "value"])
         Bugly.reportError(error)
+        Bugly.setTag(160764)
+        // category必须是 类型(Cocoa=3,CSharp=4,JS=5,Lua=6) 如果不是这几种之内 则不会上传
+        Bugly.reportException(withCategory: 3, name: "带有分类异常名称", reason: "", callStack: [], extraInfo: ["reportException": "info"], terminateApp: false)
 
-        Bugly.reportException(withCategory: 1, name: "错误名称", reason: "原因", callStack: [], extraInfo: ["key":"value"], terminateApp: false)
-
-         上面为自定义异常部分，在后台 错误分析 模块中
-        */
+        // 上面为自定义异常部分，在后台 错误分析 模块中
     }
 
     func attachment(for exception: NSException?) -> String? {
         // 在附件crash_attach.log中看
-        // 如果返回信息为nil，则不会生成crash_attach.log文件
         return nil
     }
 }

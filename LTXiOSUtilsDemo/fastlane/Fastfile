@@ -1,0 +1,21 @@
+default_platform(:ios)
+
+platform :ios do
+    desc "正式包"
+    lane :release do #函数名称，执行打包的时候使用 fastlane release
+    time = Time.new.strftime("%Y-%m-%d") #获取时间格式
+    version = get_version_number(xcodeproj: "LTXiOSUtilsDemo.xcodeproj") #获取版本号
+    ipaName = "Release_#{version}_#{time}.ipa"
+    gym(
+        clean:true, #清空上次打包信息
+        scheme:"LTXiOSUtilsDemo", #项目名称
+        export_method:"enterprise", #打包的类型 导出方式 ad-hoc、enterprise、app-store、development
+        configuration:"Release", #模式，默认Release，还有Debug
+        output_name:"#{ipaName}", #输出的包名
+        output_directory:"./build" #输出的位置
+    )
+
+    firim(firim_api_token: '42657ebf5cc71b0f11d4101d2e6f6fab') #上传安装包到fir.im 
+    #pgyer(api_key: "", user_key: "")
+    end
+end

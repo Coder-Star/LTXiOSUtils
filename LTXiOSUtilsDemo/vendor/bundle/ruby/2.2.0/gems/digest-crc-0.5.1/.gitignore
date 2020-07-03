@@ -1,0 +1,5 @@
+Gemfile.lock
+doc
+pkg
+.bundle
+.yardoc
