@@ -484,13 +484,15 @@ extension UIView {
 // MARK: - 增大UIImageView点击热区
 extension UIImageView {
     open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if !self.isUserInteractionEnabled || self.alpha <= 0.01 || self.isHidden {
+            return nil
+        }
         if let isEnlarge = checkEnlargeEdge(point) {
             if isEnlarge {
                 return self
             } else {
                 return nil
             }
-
         }
         return super.hitTest(point, with: event)
     }
@@ -499,13 +501,32 @@ extension UIImageView {
 // MARK: - 增大UILabel点击热区
 extension UILabel {
     open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if !self.isUserInteractionEnabled || self.alpha <= 0.01 || self.isHidden {
+            return nil
+        }
         if let isEnlarge = checkEnlargeEdge(point) {
             if isEnlarge {
                 return self
             } else {
                 return nil
             }
+        }
+        return super.hitTest(point, with: event)
+    }
+}
 
+// MARK: - 增大UIControl点击热区
+extension UIControl {
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if !self.isUserInteractionEnabled || self.alpha <= 0.01 || self.isHidden || !self.isEnabled {
+            return nil
+        }
+        if let isEnlarge = checkEnlargeEdge(point) {
+            if isEnlarge {
+                return self
+            } else {
+                return nil
+            }
         }
         return super.hitTest(point, with: event)
     }

@@ -32,6 +32,7 @@ class UIViewExtensionExampleViewController: BaseUIScrollViewController {
         titleLabel.addTapGesture { _ in
            Log.d("点击标题")
         }
+        titleLabel.isUserInteractionEnabled = false
 
         let redView = UIView()
         redView.backgroundColor = .red
@@ -70,9 +71,10 @@ class UIViewExtensionExampleViewController: BaseUIScrollViewController {
 //        button.addTouchUpInsideAction { _ in
 //            Log.d("点击")
 //        }
+        button.setEnlargeEdge(top: 10, right: 10, bottom: 10, left: 10)
         button.addAction(event: .touchUpInside) { _ in
             Log.d("点击")
         }
-
+//        button.isEnabled = false
     }
 }

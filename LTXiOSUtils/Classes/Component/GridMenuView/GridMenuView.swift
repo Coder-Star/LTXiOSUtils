@@ -65,7 +65,7 @@ public class GridMenuView: UIView {
     /// 列
     private var colCount: Int = 0
     /// 菜单
-    private var menu: [GridMenuItem] = [GridMenuItem]()
+    public private(set) var menu: [GridMenuItem] = [GridMenuItem]()
     /// 页面宽度
     private var viewWidth: CGFloat = 0
     /// 页面高度
