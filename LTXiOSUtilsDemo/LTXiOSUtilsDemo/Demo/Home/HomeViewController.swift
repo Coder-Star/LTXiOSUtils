@@ -43,7 +43,7 @@ class HomeViewController: BaseUIScrollViewController {
     }()
 
     private var menu = [
-        GridMenuItem(code: "1", title: "小金库", image: R.image.home_button_bmfw(), markType: .none),
+        GridMenuItem(code: "ViewEvent", title: "ViewEvent", image: R.image.home_button_bmfw(), markType: .none),
         GridMenuItem(code: "2", title: "集贸", image: R.image.home_button_jmsc(), markType: .point(isShow: true)),
         GridMenuItem(code: "3", title: "旅游", image: R.image.home_button_mlxc(), markType: .text(text: "角标")),
         GridMenuItem(code: "4", title: "名优", image: R.image.home_button_myzq(), markType: .number(number: 4)),
@@ -196,6 +196,13 @@ extension HomeViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
 extension HomeViewController: GridMenuViewItemDelegate {
     func gridMenuView(_ gridMenuView: GridMenuView, selectedItemAt index: Int) {
-        Log.d(index)
+        let code = gridMenuView.menu[index].code
+        Log.d(code)
+        switch code {
+        case "ViewEvent":
+            navigationController?.pushViewController(ViewEventViewController(), animated: true)
+        default:
+            break
+        }
     }
 }

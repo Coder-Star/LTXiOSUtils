@@ -20,6 +20,7 @@
 		DC106D4A244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC106D49244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift */; };
 		DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */; };
 		DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */ = {isa = PBXBuildFile; fileRef = DC1AD82D23E83F2F0073CB97 /* TreeResource.json */; };
+		DC1BE0B224B011D700745671 /* ViewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BE0B124B011D700745671 /* ViewEventViewController.swift */; };
 		DC2518D424A825F200A28595 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2518D324A825F200A28595 /* UITextView+Placeholder.m */; };
 		DC2518D624A8277500A28595 /* OC-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2518D524A8277500A28595 /* OC-Swift.swift */; };
 		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
@@ -106,6 +107,7 @@
 		DC106D49244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediatorAndRouterDemoViewController.swift; sourceTree = "<group>"; };
 		DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewDemoViewController.swift; sourceTree = "<group>"; };
 		DC1AD82D23E83F2F0073CB97 /* TreeResource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TreeResource.json; sourceTree = "<group>"; };
+		DC1BE0B124B011D700745671 /* ViewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEventViewController.swift; sourceTree = "<group>"; };
 		DC2518D224A825F200A28595 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		DC2518D324A825F200A28595 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		DC2518D524A8277500A28595 /* OC-Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OC-Swift.swift"; sourceTree = "<group>"; };
@@ -270,6 +272,22 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		DC1BE0AF24B0116F00745671 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				DC1BE0B024B0118200745671 /* ViewTest */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		DC1BE0B024B0118200745671 /* ViewTest */ = {
+			isa = PBXGroup;
+			children = (
+				DC1BE0B124B011D700745671 /* ViewEventViewController.swift */,
+			);
+			path = ViewTest;
+			sourceTree = "<group>";
+		};
 		DC2518CD24A8247200A28595 /* OC-Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +332,7 @@
 		DC4AB9BB22F4606000A5F003 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC1BE0AF24B0116F00745671 /* Test */,
 				DC2518CD24A8247200A28595 /* OC-Swift */,
 				DCF88150242F2D000084C940 /* View */,
 				DC83E7C523F645A40030A9B4 /* ThirdLibDemo */,
@@ -806,6 +825,7 @@
 				DCB1C05B23C75C5A00D735BD /* ThirdLibApplicationService.swift in Sources */,
 				DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */,
 				DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */,
+				DC1BE0B224B011D700745671 /* ViewEventViewController.swift in Sources */,
 				DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */,
 				DCAAD857241A51C8009622DD /* AutoLabelsModel.swift in Sources */,
 				DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */,
