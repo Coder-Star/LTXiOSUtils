@@ -99,6 +99,7 @@ extension MGJRouterDemoViewController {
                 typealias CallbackType = @convention(block) (Any?) -> Void
                 let blockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(block as AnyObject).toOpaque())
                 let callback = unsafeBitCast(blockPtr, to: CallbackType.self)
+
                 if let userInfo = result[MGJRouterParameterUserInfo] as? [String: String] {
                     let viewController = MGJRouterDemoViewController()
                     content = userInfo["content"] ?? "content为空"

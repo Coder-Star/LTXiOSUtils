@@ -253,10 +253,9 @@ extension UITapGestureRecognizer: UIGestureRecognizerDelegate {
     }
 
     /// 不可用时间间隔
-    public var disEnabledtimeInterval: CGFloat? {
+    private var disEnabledtimeInterval: CGFloat? {
         set {
             objc_setAssociatedObject(self, &UITapGestureDictKey.key, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
-            self.delegate = self
         }
         get {
             return  objc_getAssociatedObject(self, &UITapGestureDictKey.key) as? CGFloat
@@ -270,8 +269,11 @@ extension UITapGestureRecognizer: UIGestureRecognizerDelegate {
     }
 
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        self.isEnabled = false
-        let time: TimeInterval = TimeInterval(disEnabledtimeInterval ?? 0.0)
+        // 延时禁用，防止认为手势未识别成功导致调用touch相关函数不正常
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            self.isEnabled = false
+        }
+        let time = TimeInterval(disEnabledtimeInterval ?? 0.0)
         DispatchQueue.main.asyncAfter(deadline: .now() + time) {
             self.isEnabled = true
         }

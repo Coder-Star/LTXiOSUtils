@@ -44,7 +44,7 @@ class HomeViewController: BaseUIScrollViewController {
 
     private var menu = [
         GridMenuItem(code: "ViewEvent", title: "ViewEvent", image: R.image.home_button_bmfw(), markType: .none),
-        GridMenuItem(code: "2", title: "集贸", image: R.image.home_button_jmsc(), markType: .point(isShow: true)),
+        GridMenuItem(code: "OperationTest", title: "OperationTest", image: R.image.home_button_jmsc(), markType: .point(isShow: true)),
         GridMenuItem(code: "3", title: "旅游", image: R.image.home_button_mlxc(), markType: .text(text: "角标")),
         GridMenuItem(code: "4", title: "名优", image: R.image.home_button_myzq(), markType: .number(number: 4)),
         GridMenuItem(code: "5", title: "农场", image: R.image.home_button_nczg(), markType: .number(number: 5)),
@@ -201,6 +201,8 @@ extension HomeViewController: GridMenuViewItemDelegate {
         switch code {
         case "ViewEvent":
             navigationController?.pushViewController(ViewEventViewController(), animated: true)
+        case "OperationTest":
+            navigationController?.pushViewController(OperationTestViewController(), animated: true)
         default:
             break
         }
