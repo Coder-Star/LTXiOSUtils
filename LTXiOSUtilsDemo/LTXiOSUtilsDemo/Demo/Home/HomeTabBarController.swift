@@ -33,6 +33,7 @@ class HomeTabBarController: UITabBarController {
         initChildViewControllers()
 
         Log.d(NSHomeDirectory())
+        SwiftTest.setup()
     }
 
     override func viewWillAppear(_ animated: Bool) {

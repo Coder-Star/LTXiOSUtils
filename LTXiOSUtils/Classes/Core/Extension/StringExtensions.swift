@@ -164,12 +164,17 @@ public extension TxExtensionWrapper where Base == String {
         return string.replacingOccurrences(of: " ", with: "")
     }
 
+    /*
+     guard let className = "xxxxx".tx.classOfMainBundle as? UIViewController.Type else {
+     return
+     }
+     */
     /// 字符串转为类，限制主工程代码使用
     var classOfMainBundle: AnyClass? {
         guard let nameSpace = Bundle.main.infoDictionary?["CFBundleExecutable"] as? String else {
             return nil
         }
-        let className = nameSpace.replacingOccurrences(of: " ", with: "_") + "." + self.base
+        let className = nameSpace.replacingOccurrences(of: " ", with: "_").replacingOccurrences(of: "-", with: "_") + "." + self.base
         return NSClassFromString(className)
     }
 }

@@ -28,7 +28,7 @@ extension ViewEventViewController {
             make.width.equalTo(350)
         }
 
-        let blueChildView = UIView()
+        let blueChildView = TapTestView()
         blueChildView.backgroundColor = .blue
         parentView.add(blueChildView)
         blueChildView.snp.makeConstraints { make in
@@ -38,7 +38,7 @@ extension ViewEventViewController {
             make.height.equalTo(200)
         }
 
-        let yellowChildView = TapTestView()
+        let yellowChildView = UIView()
         yellowChildView.backgroundColor = .yellow
         parentView.add(yellowChildView)
         yellowChildView.snp.makeConstraints { make in
@@ -53,9 +53,25 @@ extension ViewEventViewController {
             Log.d("parentView被点击")
         }
 
-//        yellowChildView.addTapGesture { _ in
-//            Log.d("yellowChildView被点击")
-//        }
+        yellowChildView.addTapGesture { _ in
+            Log.d("yellowChildView被点击")
+        }
+        /*
+         现在yellowChildView为普通UIView，blueChildView为自定义UIView，可以看到点击yellowChildView时没有坐标输出
+         原因是因为view在hitTest遍历自己的子View是按照加入的顺序倒序查找的
+        */
+
+        blueChildView.addTapGesture { tap in
+            //        tap.cancelsTouchesInView = false
+            //        tap.delaysTouchesBegan = true
+            //        tap.delaysTouchesEnded = false
+            Log.d("blueChildView被点击、手势")
+        }
+
+    }
+
+    @objc func click() {
+        Log.d("blueChildView被点击、手势")
     }
 }
 
@@ -70,11 +86,24 @@ class TapTestView: UIView {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        Log.d("触摸事件开始")
         for touch in touches {
             let touchPoint = touch.location(in: self)
-            Log.d(touchPoint)
-            Log.d(touch.type.rawValue)
+            Log.d(touch.tapCount)
+            Log.d(touch.timestamp)
         }
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        Log.d("触摸事件结束")
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        Log.d("触摸事件移动")
+    }
+
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        Log.d("触摸事件取消")
     }
 
     required init?(coder: NSCoder) {

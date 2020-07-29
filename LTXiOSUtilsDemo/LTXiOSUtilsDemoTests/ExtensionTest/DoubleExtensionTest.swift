@@ -17,9 +17,9 @@ class DoubleExtensionTest: XCTestCase {
         let floatInfo: Float = 0.4111
         let doubleInfo: Double = 0.4111
         Log.d("\(doubleInfo * 1000)")
-        Log.d((doubleInfo * 1000).removeSuffixZero)
+        Log.d((doubleInfo * 1000).tx.removeSuffixZero)
 
         Log.d("\(Double(floatInfo * 1000))")
-        Log.d(Double(floatInfo * 1000).removeSuffixZero)
+        Log.d(Double(floatInfo * 1000).tx.removeSuffixZero)
     }
 }
