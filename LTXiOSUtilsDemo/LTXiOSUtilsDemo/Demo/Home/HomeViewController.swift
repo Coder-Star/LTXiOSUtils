@@ -45,7 +45,7 @@ class HomeViewController: BaseUIScrollViewController {
     private var menu = [
         GridMenuItem(code: "ViewEvent", title: "ViewEvent", image: R.image.home_button_bmfw(), markType: .none),
         GridMenuItem(code: "OperationTest", title: "OperationTest", image: R.image.home_button_jmsc(), markType: .point(isShow: true)),
-        GridMenuItem(code: "3", title: "旅游", image: R.image.home_button_mlxc(), markType: .text(text: "角标")),
+        GridMenuItem(code: "AudioAndRecord", title: "AudioAndRecord", image: R.image.home_button_mlxc(), markType: .text(text: "角标")),
         GridMenuItem(code: "4", title: "名优", image: R.image.home_button_myzq(), markType: .number(number: 4)),
         GridMenuItem(code: "5", title: "农场", image: R.image.home_button_nczg(), markType: .number(number: 5)),
         GridMenuItem(code: "6", title: "分类", image: R.image.home_button_nyjs(), markType: .number(number: 6)),
@@ -71,6 +71,7 @@ class HomeViewController: BaseUIScrollViewController {
             rightBarItem.tx.addDot(color: .red)
 //        }
         getPagerViewData()
+        Log.d(RunLoop.current.currentMode)
     }
 
     private func getSearchView() -> UIView {
@@ -203,6 +204,8 @@ extension HomeViewController: GridMenuViewItemDelegate {
             navigationController?.pushViewController(ViewEventViewController(), animated: true)
         case "OperationTest":
             navigationController?.pushViewController(OperationTestViewController(), animated: true)
+        case "AudioAndRecord":
+            navigationController?.pushViewController(AudioAndRecordViewController(), animated: true)
         default:
             break
         }

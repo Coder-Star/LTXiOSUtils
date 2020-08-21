@@ -21,7 +21,6 @@
 		DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */; };
 		DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */ = {isa = PBXBuildFile; fileRef = DC1AD82D23E83F2F0073CB97 /* TreeResource.json */; };
 		DC1BE0B224B011D700745671 /* ViewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BE0B124B011D700745671 /* ViewEventViewController.swift */; };
-		DC2518D424A825F200A28595 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2518D324A825F200A28595 /* UITextView+Placeholder.m */; };
 		DC2518D624A8277500A28595 /* OC-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2518D524A8277500A28595 /* OC-Swift.swift */; };
 		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
 		DC32F1A823841359008D3D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A723841359008D3D67 /* Constants.swift */; };
@@ -35,15 +34,21 @@
 		DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC4AB9C322F4606100A5F003 /* Assets.xcassets */; };
 		DC4AB9D222F4606100A5F003 /* DateExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9D122F4606100A5F003 /* DateExtensionTest.swift */; };
 		DC4AB9DD22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9DC22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift */; };
+		DC55976624E7DF9B00BAEF88 /* SoundRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55976524E7DF9B00BAEF88 /* SoundRecorder.swift */; };
+		DC55976824E7DFB600BAEF88 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55976724E7DFB600BAEF88 /* AudioPlayer.swift */; };
 		DC55E57223F7E6C8008C6941 /* AppThemeApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55E57123F7E6C8008C6941 /* AppThemeApplicationService.swift */; };
 		DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */; };
 		DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC62A7C72384084A00DE7800 /* Localizable.strings */; };
+		DC7C935624EE5837005E0AAA /* SystemNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C935524EE5837005E0AAA /* SystemNotificationService.swift */; };
+		DC7C935924EE658C005E0AAA /* LameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7C935824EE658C005E0AAA /* LameUtil.m */; };
+		DC7C936124EE9DC6005E0AAA /* OC-Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7C936024EE9DC6005E0AAA /* OC-Swift.m */; };
 		DC83E7A423F550290030A9B4 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7A323F550290030A9B4 /* HomeNavigationController.swift */; };
 		DC83E7CC23F645E10030A9B4 /* FWCustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7C723F645E00030A9B4 /* FWCustomPopupView.swift */; };
 		DC83E7CD23F645E10030A9B4 /* FWMenuViewDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7C823F645E00030A9B4 /* FWMenuViewDemoVC.swift */; };
 		DC83E7CF23F645E10030A9B4 /* FWCustomPopupDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7CA23F645E00030A9B4 /* FWCustomPopupDemoVC.swift */; };
 		DC83E7D023F645E10030A9B4 /* FWDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7CB23F645E00030A9B4 /* FWDemoViewController.swift */; };
 		DC870E9024D1A427000CAC6D /* OperationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC870E8F24D1A427000CAC6D /* OperationTestViewController.swift */; };
+		DC9F89CC24ED0E7500C0487F /* AudioAndRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */; };
 		DCA407882406AC0500F62769 /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA407872406AC0500F62769 /* WRCustomNavigationBar.swift */; };
 		DCAAD857241A51C8009622DD /* AutoLabelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAD856241A51C8009622DD /* AutoLabelsModel.swift */; };
 		DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */; };
@@ -110,8 +115,6 @@
 		DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewDemoViewController.swift; sourceTree = "<group>"; };
 		DC1AD82D23E83F2F0073CB97 /* TreeResource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TreeResource.json; sourceTree = "<group>"; };
 		DC1BE0B124B011D700745671 /* ViewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEventViewController.swift; sourceTree = "<group>"; };
-		DC2518D224A825F200A28595 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
-		DC2518D324A825F200A28595 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		DC2518D524A8277500A28595 /* OC-Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OC-Swift.swift"; sourceTree = "<group>"; };
 		DC32F1A323840A3E008D3D67 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DC32F1A723841359008D3D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -131,10 +134,18 @@
 		DC4AB9D822F4606100A5F003 /* LTXiOSUtilsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTXiOSUtilsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4AB9DC22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTXiOSUtilsDemoUITests.swift; sourceTree = "<group>"; };
 		DC4AB9DE22F4606100A5F003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC55976524E7DF9B00BAEF88 /* SoundRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRecorder.swift; sourceTree = "<group>"; };
+		DC55976724E7DFB600BAEF88 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		DC55E57123F7E6C8008C6941 /* AppThemeApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeApplicationService.swift; sourceTree = "<group>"; };
 		DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Extension.swift"; sourceTree = "<group>"; };
 		DC62A7C62384084A00DE7800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DC7C935524EE5837005E0AAA /* SystemNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotificationService.swift; sourceTree = "<group>"; };
+		DC7C935724EE658C005E0AAA /* LameUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LameUtil.h; sourceTree = "<group>"; };
+		DC7C935824EE658C005E0AAA /* LameUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LameUtil.m; sourceTree = "<group>"; };
+		DC7C935F24EE9DC6005E0AAA /* OC-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OC-Swift.h"; sourceTree = "<group>"; };
+		DC7C936024EE9DC6005E0AAA /* OC-Swift.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OC-Swift.m"; sourceTree = "<group>"; };
+		DC7C936224EE9E84005E0AAA /* LameUtilDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LameUtilDelegate.h; sourceTree = "<group>"; };
 		DC7F38EE247CF07800783D65 /* LTXiOSUtilsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LTXiOSUtilsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC83E7A323F550290030A9B4 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		DC83E7C723F645E00030A9B4 /* FWCustomPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWCustomPopupView.swift; sourceTree = "<group>"; };
@@ -142,6 +153,7 @@
 		DC83E7CA23F645E00030A9B4 /* FWCustomPopupDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWCustomPopupDemoVC.swift; sourceTree = "<group>"; };
 		DC83E7CB23F645E00030A9B4 /* FWDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWDemoViewController.swift; sourceTree = "<group>"; };
 		DC870E8F24D1A427000CAC6D /* OperationTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTestViewController.swift; sourceTree = "<group>"; };
+		DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAndRecordViewController.swift; sourceTree = "<group>"; };
 		DCA407722405405300F62769 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA4077624066BFB00F62769 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA4077A24066C3500F62769 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -269,6 +281,7 @@
 		DC1AD83523E84D400073CB97 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				DC55976424E7D9B900BAEF88 /* Audio */,
 				DC3E62032425E86F00105366 /* Stash */,
 				DCF6F54623BCC87500AC4850 /* ViewFactory.swift */,
 				DC3E61F724209F1600105366 /* TempUtils.swift */,
@@ -297,9 +310,9 @@
 		DC2518CD24A8247200A28595 /* OC-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				DC2518D224A825F200A28595 /* UITextView+Placeholder.h */,
-				DC2518D324A825F200A28595 /* UITextView+Placeholder.m */,
 				DC2518D524A8277500A28595 /* OC-Swift.swift */,
+				DC7C935F24EE9DC6005E0AAA /* OC-Swift.h */,
+				DC7C936024EE9DC6005E0AAA /* OC-Swift.m */,
 			);
 			path = "OC-Swift";
 			sourceTree = "<group>";
@@ -338,6 +351,7 @@
 		DC4AB9BB22F4606000A5F003 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC9F89CD24ED505F00C0487F /* Lib */,
 				DC1BE0AF24B0116F00745671 /* Test */,
 				DC2518CD24A8247200A28595 /* OC-Swift */,
 				DCF88150242F2D000084C940 /* View */,
@@ -385,6 +399,7 @@
 				DCB1C05823C75B3900D735BD /* RootVCApplicationService.swift */,
 				DCB1C05A23C75C5A00D735BD /* ThirdLibApplicationService.swift */,
 				DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */,
+				DC7C935524EE5837005E0AAA /* SystemNotificationService.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -402,13 +417,22 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		DC55976424E7D9B900BAEF88 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				DC55976524E7DF9B00BAEF88 /* SoundRecorder.swift */,
+				DC55976724E7DFB600BAEF88 /* AudioPlayer.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		DC83E7C523F645A40030A9B4 /* ThirdLibDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DC106D49244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift */,
 				DCAACAD9243DA0F10028D301 /* CTMediatorDemo */,
 				DCAACAD8243DA0DF0028D301 /* MGJRouterDemo */,
 				DC83E7C623F645B50030A9B4 /* AlertViewDemo */,
+				DC106D49244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift */,
 			);
 			path = ThirdLibDemo;
 			sourceTree = "<group>";
@@ -446,6 +470,24 @@
 				DC870E8F24D1A427000CAC6D /* OperationTestViewController.swift */,
 			);
 			path = Operation;
+			sourceTree = "<group>";
+		};
+		DC9F89CD24ED505F00C0487F /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				DC9F89CF24ED50BF00C0487F /* lame */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		DC9F89CF24ED50BF00C0487F /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				DC7C935724EE658C005E0AAA /* LameUtil.h */,
+				DC7C935824EE658C005E0AAA /* LameUtil.m */,
+				DC7C936224EE9E84005E0AAA /* LameUtilDelegate.h */,
+			);
+			path = lame;
 			sourceTree = "<group>";
 		};
 		DCAACAD8243DA0DF0028D301 /* MGJRouterDemo */ = {
@@ -504,6 +546,7 @@
 				DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */,
 				DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */,
 				DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */,
+				DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -842,15 +885,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC4AB9BF22F4606000A5F003 /* DemoListViewController.swift in Sources */,
-				DC2518D424A825F200A28595 /* UITextView+Placeholder.m in Sources */,
 				DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */,
+				DC55976824E7DFB600BAEF88 /* AudioPlayer.swift in Sources */,
 				DC55E57223F7E6C8008C6941 /* AppThemeApplicationService.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
 				DC3E62052425E8A200105366 /* WRNavigationBar.swift in Sources */,
 				DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */,
+				DC7C935624EE5837005E0AAA /* SystemNotificationService.swift in Sources */,
 				DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */,
 				DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */,
 				DC03AE2A23F3CA6A007739DD /* HomeViewController.swift in Sources */,
+				DC55976624E7DF9B00BAEF88 /* SoundRecorder.swift in Sources */,
 				DC106D48244F1DC300494F45 /* MGJRouterDemoViewController.swift in Sources */,
 				DCB1C05B23C75C5A00D735BD /* ThirdLibApplicationService.swift in Sources */,
 				DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */,
@@ -873,16 +918,19 @@
 				DCB1C04723C4B41500D735BD /* ExtensionExampleMenuViewController.swift in Sources */,
 				DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */,
 				DC32F1A823841359008D3D67 /* Constants.swift in Sources */,
+				DC7C935924EE658C005E0AAA /* LameUtil.m in Sources */,
 				DC83E7CC23F645E10030A9B4 /* FWCustomPopupView.swift in Sources */,
 				DC83E7D023F645E10030A9B4 /* FWDemoViewController.swift in Sources */,
 				DCEB8C0C24B70F9B00A83735 /* SwiftTest.swift in Sources */,
 				DC03AE2823F3AD96007739DD /* MineViewController.swift in Sources */,
 				DCB1C05923C75B3900D735BD /* RootVCApplicationService.swift in Sources */,
+				DC7C936124EE9DC6005E0AAA /* OC-Swift.m in Sources */,
 				DC83E7CF23F645E10030A9B4 /* FWCustomPopupDemoVC.swift in Sources */,
 				DC106D4A244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift in Sources */,
 				DCF88152242F2D980084C940 /* ImagePickView.swift in Sources */,
 				DC2518D624A8277500A28595 /* OC-Swift.swift in Sources */,
 				DC03AE2623F3AB1B007739DD /* HomeTabBarController.swift in Sources */,
+				DC9F89CC24ED0E7500C0487F /* AudioAndRecordViewController.swift in Sources */,
 				DCCF3E5323C96B0F000E65E1 /* NetworkStateApplicationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1075,6 +1123,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LTXiOSUtilsDemo/Lib/lame",
+				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1101,6 +1153,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LTXiOSUtilsDemo/Lib/lame",
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils;
