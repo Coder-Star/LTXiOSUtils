@@ -140,6 +140,7 @@
 		DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Extension.swift"; sourceTree = "<group>"; };
 		DC62A7C62384084A00DE7800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DC6F4D3424EF75D000B69A31 /* LTXiOSUtilsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LTXiOSUtilsDemo.entitlements; sourceTree = "<group>"; };
 		DC7C935524EE5837005E0AAA /* SystemNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotificationService.swift; sourceTree = "<group>"; };
 		DC7C935724EE658C005E0AAA /* LameUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LameUtil.h; sourceTree = "<group>"; };
 		DC7C935824EE658C005E0AAA /* LameUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LameUtil.m; sourceTree = "<group>"; };
@@ -351,6 +352,7 @@
 		DC4AB9BB22F4606000A5F003 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC6F4D3424EF75D000B69A31 /* LTXiOSUtilsDemo.entitlements */,
 				DC9F89CD24ED505F00C0487F /* Lib */,
 				DC1BE0AF24B0116F00745671 /* Test */,
 				DC2518CD24A8247200A28595 /* OC-Swift */,
@@ -1112,6 +1114,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LTXiOSUtilsDemo/LTXiOSUtilsDemo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1144,6 +1147,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LTXiOSUtilsDemo/LTXiOSUtilsDemo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4PJEY75E2;

@@ -9,28 +9,45 @@
 import Foundation
 import AVFoundation
 
-/// 初始化结果类型
-public enum SoundRecorderInitType {
-    /// 启动成功
-    case success
+/// 错误类型
+public enum SoundRecorderErrorType {
     /// 没有权限
     case noPermission
-    /// 出现错误
-    case error(message: String)
+    /// 启动时已经正在录音
+    case recording
+    /// 启动出现错误
+    case initError(message: String)
+    /// 录音出现错误
+    case recordError(message: String)
+    /// 转码出现错误
+    case encodeError(message: String)
+}
+
+/// 录音机状态
+public enum SoundRecorderState {
+    /// 启动成功
+    case start
+    /// 使用中
+    case recording(currentTime: TimeInterval)
+    /// 暂停
+    case pause
+    /// 停止
+    case stop(audioPath: String)
+    /// 删除
+    case delete
+    /// 结束，转码结束
+    case finish(audioPath: String, mp3Path: String?)
 }
 
 /// 录音工具类代理
-@objc
-public protocol SoundRecorderDelegate {
-    /// 开始
-    @objc
-    optional func start()
+public protocol SoundRecorderDelegate: class {
+    /// 状态改变
+    /// - Parameter state: 状态类型
+    func stateChange(state: SoundRecorderState)
+
     /// 出现错误
-    @objc
-    optional func error(message: String)
-    /// 结束
-    @objc
-    optional func end(audioPath: String, mp3Path: String?)
+    /// - Parameter type: 错误类型
+    func error(type: SoundRecorderErrorType)
 }
 
 /// 录音工具类
@@ -38,10 +55,6 @@ final public class SoundRecorder: NSObject {
     /// 单例
     public static let shared = SoundRecorder()
 
-    /// 启动过程结果闭包
-    public var initClosure: ((SoundRecorderInitType) -> Void)?
-    /// 更新时间闭包
-    public var updateTimeClosure: ((TimeInterval) -> Void)?
     /// 代理
     public weak var delegate: SoundRecorderDelegate?
 
@@ -111,7 +124,7 @@ public extension SoundRecorder {
     /// - Parameter isToMp3: 是否转mp3，默认false
     func begin(recordDirectoryPath: String, fileName: String, isToMp3: Bool = false) {
         if audioRecorder?.isRecording ?? false {
-            self.initClosure?(.error(message: "录音使用中"))
+            self.delegate?.error(type: .recording)
             return
         }
 
@@ -131,30 +144,31 @@ public extension SoundRecorder {
                     DispatchQueue.main.async {
                         Log.d(self?.audioRecorder?.isRecording)
                         if self?.audioRecorder?.isRecording ?? false {
-                            self?.initClosure?(.success)
-                            self?.delegate?.start?()
+                            self?.delegate?.stateChange(state: .start)
                             self?.timer = Timer(timeInterval: 0.001, repeats: true) { [weak self] _ in
-                                self?.updateTimeClosure?(self?.audioRecorder?.currentTime ?? 0)
+                                self?.delegate?.stateChange(state: .recording(currentTime: self?.audioRecorder?.currentTime ?? 0))
                             }
                             RunLoop.current.add(self!.timer!, forMode: .common)
                             self?.isEnd = false
 
-//                            guard let strongSelf = self else { return }
-//                            DispatchQueue.global().async {
-//                                LameUtil.convertWhenRecording(from: strongSelf.fileURL!.path, mp3File: recordDirectoryPath + "/\(fileName.components(separatedBy: ".")[0]).mp3", delegate: strongSelf)
-//                            }
+                            if isToMp3 {
+                                guard let strongSelf = self else { return }
+                                DispatchQueue.global().async {
+                                    LameUtil.convertWhenRecording(from: strongSelf.recordFilePath, mp3File: strongSelf.mp3FilePath, delegate: strongSelf)
+                                }
+                            }
                         } else {
-                            self?.initClosure?(.error(message: "未知错误"))
+                            self?.delegate?.error(type: .initError(message: "未知错误"))
                         }
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self?.initClosure?(.noPermission)
+                        self?.delegate?.error(type: .noPermission)
                     }
                 }
             }
         } else {
-            self.initClosure?(.error(message: initAudioRecorderResult.message))
+            self.delegate?.error(type: .initError(message: initAudioRecorderResult.message))
         }
     }
 
@@ -165,6 +179,7 @@ public extension SoundRecorder {
         }
         timer?.fireDate = Date.distantFuture
         audioRecorder?.pause()
+        self.delegate?.stateChange(state: .pause)
         Log.d(audioRecorder?.isRecording)
     }
 
@@ -178,7 +193,7 @@ public extension SoundRecorder {
     }
 
     /// 结束
-    func end() {
+    func stop() {
         isEnd = true
         timer?.invalidate()
         audioRecorder?.stop()
@@ -186,8 +201,9 @@ public extension SoundRecorder {
 
     /// 删除
     func delete() {
-        end()
+        stop()
         audioRecorder?.deleteRecording()
+        self.delegate?.stateChange(state: .delete)
     }
 
     /// 录音分贝
@@ -216,24 +232,18 @@ public extension SoundRecorder {
 extension SoundRecorder: AVAudioRecorderDelegate {
     public func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         Log.d("录音完成")
-        if isToMp3 ?? false {
-            DispatchQueue.global().async {
-                LameUtil.convertWhenRecorded(from: self.recordFilePath, mp3File: self.mp3FilePath, delegate: self)
-            }
-        } else {
-            delegate?.end?(audioPath: recordFilePath, mp3Path: nil)
-        }
+        delegate?.stateChange(state: .stop(audioPath: recordFilePath))
     }
 
     public func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder, error: Error?) {
-        self.delegate?.error?(message: error?.localizedDescription ?? "")
+        self.delegate?.error(type: .recordError(message: error?.localizedDescription ?? ""))
     }
 }
 
 extension SoundRecorder: LameUtilDelegate {
     public func convertFinish(_ audioFilePath: String!, mp3Path: String!) {
         Log.d("转码结束\(audioFilePath ?? "") \(mp3Path ?? "")")
-        delegate?.end?(audioPath: audioFilePath, mp3Path: mp3Path)
+        delegate?.stateChange(state: .finish(audioPath: audioFilePath, mp3Path: mp3Path))
     }
 
     public func getEndSign() -> Bool {
@@ -242,7 +252,7 @@ extension SoundRecorder: LameUtilDelegate {
 
     public func convertError(_ message: String!) {
         Log.d("转码失败\(message ?? "")")
-        delegate?.end?(audioPath: recordFilePath, mp3Path: nil)
-        delegate?.error?(message: message)
+        delegate?.stateChange(state: .finish(audioPath: recordFilePath, mp3Path: nil))
+        delegate?.error(type: .encodeError(message: message))
     }
 }

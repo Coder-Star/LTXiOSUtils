@@ -118,27 +118,9 @@ class AudioAndRecordViewController: BaseUIViewController {
         case "开始":
             soundRecorder.begin(recordDirectoryPath: path, fileName: "\(Date().tx.formatDate(format: .YMDHMS)).caf", isToMp3: true)
             soundRecorder.delegate = self
-            soundRecorder.initClosure = { [weak self] result in
-                switch result {
-                case .success:
-                    sender.setTitle("暂停", for: .normal)
-                    self?.finishButton.isHidden = false
-                    self?.timerLabel.isHidden = false
-                case .noPermission:
-                    HUD.showText("请在“设置-隐私-麦克风”中允许访问麦克风")
-                case .error(let message):
-                    HUD.showText(message)
-                }
-            }
-
-            soundRecorder.updateTimeClosure = { [weak self] time in
-                self?.timerLabel.text = self?.soundRecorder.formtTime(time: time)
-            }
         case "继续":
-            sender.setTitle("暂停", for: .normal)
             soundRecorder.resume()
         case "暂停":
-            sender.setTitle("继续", for: .normal)
             soundRecorder.pause()
         default:
             break
@@ -147,11 +129,7 @@ class AudioAndRecordViewController: BaseUIViewController {
 
     @objc
     func finish() {
-        finishButton.isHidden = true
-        timerLabel.isHidden = true
-        recordButton.setTitle("开始", for: .normal)
-        HUD.showWait(title: "正在保存...")
-        soundRecorder.end()
+        soundRecorder.stop()
     }
 
     private func getFileList() -> [(name: String, path: String)] {
@@ -193,12 +171,42 @@ extension AudioAndRecordViewController: UITableViewDelegate {
 }
 
 extension AudioAndRecordViewController: SoundRecorderDelegate {
-    func end(audioPath: String, mp3Path: String?) {
-        HUD.hide()
-        tableView.reloadData()
+    func stateChange(state: SoundRecorderState) {
+        switch state {
+        case .start:
+            self.finishButton.isHidden = false
+            self.timerLabel.isHidden = false
+        case .recording(let currentTime):
+            recordButton.setTitle("暂停", for: .normal)
+            self.timerLabel.text = self.soundRecorder.formtTime(time: currentTime)
+        case .pause:
+            recordButton.setTitle("继续", for: .normal)
+        case .stop:
+            finishButton.isHidden = true
+            timerLabel.isHidden = true
+            recordButton.setTitle("开始", for: .normal)
+            HUD.showWait(title: "正在保存...")
+        case .delete:
+            break
+        case .finish:
+            HUD.hide()
+            HUD.showText("保存成功")
+            tableView.reloadData()
+        }
     }
 
-    func error(message: String) {
-        HUD.showText(message)
+    func error(type: SoundRecorderErrorType) {
+        switch type {
+        case .noPermission:
+            HUD.showText("请在“设置-隐私-麦克风”中允许访问麦克风")
+        case .recording:
+            HUD.showText("正在录音")
+        case .initError(let message):
+            HUD.showText("初始化录音失败\(message)")
+        case .recordError(let message):
+            HUD.showText("录音出现错误\(message)")
+        case .encodeError(let message):
+            HUD.showText("转码失败\(message)")
+        }
     }
 }
