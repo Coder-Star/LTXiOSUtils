@@ -12,6 +12,7 @@ class SwiftTest {
 
     class func setup() {
         testSet()
+        testFile()
     }
 
     /// 测试Set
@@ -24,5 +25,23 @@ class SwiftTest {
 
         let a: AnyObject = SwiftTest()
         Log.d(a)
+    }
+
+    class func testFile() {
+        // 沙盒主目录
+        let path = NSHomeDirectory()
+        // Documtents目录
+        let documtentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        // Library目录
+        let libraryPath = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first!
+        // Application Support目录，在Library目录下
+        let applicationSupportPath = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).first!
+        // Caches目录，在Library目录下
+        let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
+        // Preferences目录，在Library目录下
+        let preferencesPath = NSSearchPathForDirectoriesInDomains(.preferencePanesDirectory, .userDomainMask, true).first!
+        // tmp目录
+        let tmpPath = NSTemporaryDirectory()
+        Log.d([path, documtentsPath, libraryPath, applicationSupportPath, cachesPath, preferencesPath, tmpPath])
     }
 }

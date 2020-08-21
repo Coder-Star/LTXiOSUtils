@@ -7,5 +7,6 @@
 	<string>LTXiOSUtilsDemo.ThirdLibApplicationService</string>
 	<string>LTXiOSUtilsDemo.NetworkStateApplicationService</string>
 	<string>LTXiOSUtilsDemo.RootVCApplicationService</string>
+	<string>LTXiOSUtilsDemo.SystemNotificationService</string>
 </array>
 </plist>

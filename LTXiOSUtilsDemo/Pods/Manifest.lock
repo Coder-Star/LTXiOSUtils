@@ -46,6 +46,7 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - mp3lame-for-ios (0.1.1)
   - ObjectMapper (3.5.1)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - Localize-Swift (= 3.1.0)
   - LTXiOSUtils (from `../`)
   - MGJRouter (= 0.10.0)
+  - mp3lame-for-ios (= 0.1.1)
   - ObjectMapper (= 3.5.1)
   - R.swift (= 5.1.0)
   - RxCocoa (= 5.0.1)
@@ -111,6 +113,7 @@ SPEC REPOS:
     - MGJRouter
     - MJRefresh
     - Moya
+    - mp3lame-for-ios
     - ObjectMapper
     - R.swift
     - R.swift.Library
@@ -150,6 +153,7 @@ SPEC CHECKSUMS:
   MGJRouter: 15d94541eb2cc81eff7d577337288feb7ae9575f
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  mp3lame-for-ios: 4daeb5686885be66438154050e3fe975d4ee1f07
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
@@ -169,6 +173,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 00baf36a8f40d0a6c708fe3558aa59322b978e92
+PODFILE CHECKSUM: 1d4cb426c336526ab02acfe4b641f7ff56da7a2f
 
 COCOAPODS: 1.8.4

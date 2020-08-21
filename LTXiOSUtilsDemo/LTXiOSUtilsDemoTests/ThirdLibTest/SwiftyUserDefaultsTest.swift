@@ -30,16 +30,16 @@ class SwiftyUserDefaultsTest: XCTestCase {
     }
 
     func save() {
-        defaults[.launchCount] = 2
-        defaults[DefaultsKeys.Login.username] = "1111"
+//        defaults[.launchCount] = 2
+//        defaults[DefaultsKeys.Login.username] = "1111"
     }
 
     func get() {
-        Log.d(defaults[.launchCount])
-        Log.d(defaults[DefaultsKeys.Login.username])
+//        Log.d(defaults[.launchCount])
+//        Log.d(defaults[DefaultsKeys.Login.username])
     }
 
     func remove() {
-        defaults.remove(DefaultsKey<Int>.launchCount)
+//        defaults.remove(DefaultsKey<Int>.launchCount)
     }
 }

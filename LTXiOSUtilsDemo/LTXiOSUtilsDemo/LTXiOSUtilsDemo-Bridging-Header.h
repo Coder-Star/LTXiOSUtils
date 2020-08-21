@@ -13,3 +13,4 @@
 #endif /* LTXiOSUtilsDemo_Bridging_Header_h */
 
 #import <Bugly/Bugly.h> // bugly
+#import "LameUtil.h"

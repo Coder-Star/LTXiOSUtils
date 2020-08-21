@@ -12,6 +12,9 @@ import LTXiOSUtils
 
 final class RootVCApplicationService: NSObject, ApplicationService {
 
+    // 定义成全局，使其被强引用，避免释放，释放就不显示
+    var secondWindow: UIWindow?
+
     private let showAd = false //是否启用广告
     let showGuide = false //是否启用引导页
 
@@ -33,12 +36,25 @@ final class RootVCApplicationService: NSObject, ApplicationService {
 
         }
 
+        // 等待rootview加载完成
+//        self.perform(#selector(setSecondWindow), with: nil, afterDelay: 0.5)
+
         return true
     }
 
     private func setNormalRootViewController() {
         let rootViewController = HomeTabBarController()
         window?.rootViewController = rootViewController
+    }
+
+    @objc
+    private func setSecondWindow() {
+        Log.d("显示第二个Window")
+        secondWindow = UIWindow()
+        secondWindow?.frame = CGRect(x: 10, y: 500, width: 50, height: 50)
+        secondWindow?.backgroundColor = .red
+        secondWindow?.windowLevel = UIWindow.Level.alert + 1
+        secondWindow?.makeKeyAndVisible()
     }
 }
 

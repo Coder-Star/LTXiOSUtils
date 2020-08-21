@@ -14,5 +14,10 @@ class OperationTestViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "OperationTest"
+
+        let array1 = NSMutableArray()
+        let array2 = NSMutableArray()
+        array1.add(array2)
+        array2.add(array1)
     }
 }

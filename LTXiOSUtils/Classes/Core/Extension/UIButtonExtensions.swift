@@ -121,18 +121,23 @@ public extension UIButton {
         if self !== UIButton.self {
             return
         }
+        // 保证方法只交换一次
         DispatchQueue.tx.once(token: "AssociatedKeysWithUIButtonRepeatClick") {
             let originalSelector = #selector(UIButton.sendAction)
             let swizzledSelector = #selector(UIButton.sendActionWithRepeatClick(action:to:forEvent:))
 
+            // 原有方法
             let originalMethod = class_getInstanceMethod(self, originalSelector)
+            // 现有方法
             let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
-
+            // 先尝试給原有方法添加IMP，这里是为了避免原有SEL没有实现IMP的情况
             let didAddMethod = class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod!), method_getTypeEncoding(swizzledMethod!))
 
             if didAddMethod {
+                // 添加成功，说明原SEL没有实现IMP，将原SEL的IMP替换到交换SEL的IMP
                 class_replaceMethod(self, swizzledSelector, method_getImplementation(originalMethod!), method_getTypeEncoding(originalMethod!))
             } else {
+                // 添加失败，说明原SEL已经实现了IMP，直接将两个SEL的IMP实现即可
                 method_exchangeImplementations(originalMethod!, swizzledMethod!)
             }
         }

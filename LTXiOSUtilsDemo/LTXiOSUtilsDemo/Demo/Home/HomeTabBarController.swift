@@ -31,8 +31,7 @@ class HomeTabBarController: UITabBarController {
         view.backgroundColor = .white
         self.delegate = self
         initChildViewControllers()
-
-        Log.d(NSHomeDirectory())
+        
         SwiftTest.setup()
     }
 
