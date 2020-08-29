@@ -59,7 +59,8 @@
                 startPos = 0;
                 endPos = 0;
             } else {
-
+                // 不知道为什么需要休眠，但是得到了效果是会降低CPU使用率
+                [NSThread sleepForTimeInterval:0.05];
             }
         } while (![delegate getEndSign]);
 

@@ -203,7 +203,7 @@ extension HomeViewController: GridMenuViewItemDelegate {
         case "ViewEvent":
             navigationController?.pushViewController(ViewEventViewController(), animated: true)
         case "OperationTest":
-            navigationController?.pushViewController(OperationTestViewController(), animated: true)
+           break
         case "AudioAndRecord":
             navigationController?.pushViewController(AudioAndRecordViewController(), animated: true)
         default:
