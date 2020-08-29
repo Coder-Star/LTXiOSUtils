@@ -22,7 +22,7 @@ final class RootVCApplicationService: NSObject, ApplicationService {
 
         /// 当APP处于死亡状态，收到推送、点击推送消息启动APP，可以通过下面的方式获取到推送消息
         let pushInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification]
-        Log.d(pushInfo)
+//        Log.d(pushInfo)
 
         window?.makeKeyAndVisible()
 

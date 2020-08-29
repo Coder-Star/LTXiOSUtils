@@ -20,11 +20,11 @@ class SwiftTest {
         var set = Set<String>()
         set.insert("1")
         set.insert("2")
-        Log.d(set.insert("3")) // (inserted: true, memberAfterInsert: "3")
-        Log.d(set.insert("1")) // (inserted: false, memberAfterInsert: "1")
+//        Log.d(set.insert("3")) // (inserted: true, memberAfterInsert: "3")
+//        Log.d(set.insert("1")) // (inserted: false, memberAfterInsert: "1")
 
         let a: AnyObject = SwiftTest()
-        Log.d(a)
+//        Log.d(a)
     }
 
     class func testFile() {
@@ -42,6 +42,6 @@ class SwiftTest {
         let preferencesPath = NSSearchPathForDirectoriesInDomains(.preferencePanesDirectory, .userDomainMask, true).first!
         // tmp目录
         let tmpPath = NSTemporaryDirectory()
-        Log.d([path, documtentsPath, libraryPath, applicationSupportPath, cachesPath, preferencesPath, tmpPath])
+//        Log.d([path, documtentsPath, libraryPath, applicationSupportPath, cachesPath, preferencesPath, tmpPath])
     }
 }

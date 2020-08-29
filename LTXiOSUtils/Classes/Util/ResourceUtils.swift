@@ -63,10 +63,11 @@ public struct ResourceUtils {
 }
 
 public extension ResourceUtils {
-    /// 获取指定pod的指定Bundle
+    /// 获取指定pod的指定Bundl，pod以resource_bundle方式引入资源
     /// - Parameters:
     ///   - bundleName: bundleName
     ///   - podName: podName,当使用framwork时使用，如果为nil，赋值为bundleName
+    /// - Note: 当使用framework引用三方库时，每一个三方库都会在Frameworks下面以一个单独的framework存在
     static func getBundle(bundleName: String, podName: String? = nil) -> Bundle? {
         var podNameStr = podName
         var bundleNameStr = bundleName
