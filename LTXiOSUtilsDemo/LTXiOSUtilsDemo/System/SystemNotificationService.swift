@@ -23,19 +23,25 @@ final class SystemNotificationService: NSObject, ApplicationService {
     @objc
     func handleNotification(_ notification: Notification) {
         Log.d(notification)
-        Log.d("录音打断")
-        guard let allKeys = notification.userInfo?.keys else {
+        guard let userInfo = notification.userInfo else {
             return
         }
-        // 中断事件类型
-        if allKeys.contains(AVAudioSessionInterruptionTypeKey) {
-            let audioInterruptionType = notification.userInfo![AVAudioSessionInterruptionTypeKey]
-            Log.d(audioInterruptionType)
+        guard let audioInterruptionType = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt else {
+            return
         }
 
-        // 中断的音频录制是否可以恢复录制
-        if allKeys.contains(AVAudioSessionInterruptionOptionKey) {
-            Log.d(notification.userInfo![AVAudioSessionInterruptionOptionKey])
+        if audioInterruptionType == AVAudioSession.InterruptionType.began.rawValue {
+            //中断开始
+
+        } else if audioInterruptionType == AVAudioSession.InterruptionType.ended.rawValue {
+            // 中断结束
+            guard let options = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt else {
+                return
+            }
+            if options == AVAudioSession.InterruptionOptions.shouldResume.rawValue {
+                // 可以继续处理
+                SoundRecorder.shared.pause()
+            }
         }
     }
 }

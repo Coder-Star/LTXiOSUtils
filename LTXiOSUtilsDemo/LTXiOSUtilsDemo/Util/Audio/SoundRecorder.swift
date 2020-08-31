@@ -24,7 +24,7 @@ public enum SoundRecorderErrorType {
 }
 
 /// 录音机状态
-public enum SoundRecorderState {
+public enum SoundRecorderOperateState {
     /// 启动成功
     case start
     /// 使用中
@@ -43,11 +43,21 @@ public enum SoundRecorderState {
 public protocol SoundRecorderDelegate: class {
     /// 状态改变
     /// - Parameter state: 状态类型
-    func stateChange(state: SoundRecorderState)
+    func stateChange(state: SoundRecorderOperateState)
 
     /// 出现错误
     /// - Parameter type: 错误类型
     func error(type: SoundRecorderErrorType)
+}
+
+/// 录音机状态
+public enum SoundRecorderState {
+    /// 空闲
+    case idle
+    /// 使用中
+    case recording
+    /// 暂停
+    case pause
 }
 
 /// 录音工具类
@@ -69,6 +79,8 @@ final public class SoundRecorder: NSObject {
     private var isEnd: Bool?
     /// 是否转mp3
     private var isToMp3: Bool?
+    /// 是否暂停
+    private var isPause: Bool?
 
     private var recordFilePath: String {
         return recordDirectoryPath + "/\(fileName)"
@@ -139,17 +151,19 @@ public extension SoundRecorder {
                 if granted {
                     // 启用音频测量,启用后可以通过updateMeters方法更新测量值
                     self?.audioRecorder?.isMeteringEnabled = true
-                    self?.audioRecorder?.record()
+                    let result = self?.audioRecorder?.record()
                     /// 当第一次获取权限弹出权限框时，当前不是主Runloop
                     DispatchQueue.main.async {
                         Log.d(self?.audioRecorder?.isRecording)
-                        if self?.audioRecorder?.isRecording ?? false {
+                        if result ?? false {
                             self?.delegate?.stateChange(state: .start)
                             self?.timer = Timer(timeInterval: 0.001, repeats: true) { [weak self] _ in
                                 self?.delegate?.stateChange(state: .recording(currentTime: self?.audioRecorder?.currentTime ?? 0))
                             }
                             RunLoop.current.add(self!.timer!, forMode: .common)
+
                             self?.isEnd = false
+                            self?.isPause = false
 
                             if isToMp3 {
                                 guard let strongSelf = self else { return }
@@ -180,21 +194,28 @@ public extension SoundRecorder {
         timer?.fireDate = Date.distantFuture
         audioRecorder?.pause()
         self.delegate?.stateChange(state: .pause)
-        Log.d(audioRecorder?.isRecording)
+        isPause = true
     }
 
     /// 继续
-    func resume() {
+    /// 当调用之前已经在录音，返回nil
+    @discardableResult
+    func resume() -> Bool? {
         if audioRecorder?.isRecording ?? false {
-            return
+            return nil
         }
-        timer?.fireDate = Date.distantPast
-        audioRecorder?.record()
+        let result = audioRecorder?.record()
+        if result ?? false {
+            isPause = false
+            timer?.fireDate = Date.distantPast
+        }
+        return result
     }
 
     /// 结束
     func stop() {
         isEnd = true
+        isPause = false
         timer?.invalidate()
         audioRecorder?.stop()
     }
@@ -215,9 +236,15 @@ public extension SoundRecorder {
         return peakPowerForChannel
     }
 
-    /// 是否正在录音
-    var isRecording: Bool {
-        return audioRecorder?.isRecording ?? false
+    /// 当前录音状态
+    var state: SoundRecorderState {
+        if audioRecorder?.isRecording ?? false {
+            return .recording
+        }
+        if isPause ?? false {
+            return .pause
+        }
+        return .idle
     }
 
     /// 格式化时间

@@ -170,7 +170,27 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
             make.top.equalTo(titleLabel)
         }
 
-        otherCompentImageView.snp.makeConstraints { make in
+        titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.text = "步进器"
+        contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.top.equalTo(otherCompentImageView.snp.bottom).offset(10)
+            make.width.equalTo(leftWidth)
+        }
+
+        let stepper = UIStepper()
+        stepper.value = 0
+        contentView.addSubview(stepper)
+        stepper.snp.makeConstraints { make in
+            make.height.width.equalTo(100)
+            make.left.equalTo(titleLabel.snp.right).offset(5)
+            make.top.equalTo(titleLabel)
+        }
+
+        stepper.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
         }
 

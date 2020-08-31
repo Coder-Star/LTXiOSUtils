@@ -14,6 +14,11 @@ import LTXiOSUtils
 class DemoTest: XCTestCase {
 
     func testDemo() {
-        
+        // 次方运算
+        print(pow(2, 2))
+        // 位左移，下为2的4次方
+        print(1<<4)
+        // 四舍五入
+        print(lroundf(23.5))
     }
 }

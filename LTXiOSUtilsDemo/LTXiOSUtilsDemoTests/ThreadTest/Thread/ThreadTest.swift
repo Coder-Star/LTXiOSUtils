@@ -19,18 +19,19 @@ class ThreadTest: XCTestCase {
 
     func test() {
         thread = Thread(block: {
-            for (index, item) in self.list.enumerated() {
-                print(self.thread)
+            for item in self.list {
                 print(item)
             }
         })
         thread?.name = "线程"
         thread?.start()
-        Thread.sleep(forTimeInterval: 1)
-//        thread?.cancel()
+
+        CFRunLoopStop(CFRunLoopGetCurrent())
     }
 }
 
 class MyThread: Thread {
-
+    override func main() {
+        
+    }
 }
