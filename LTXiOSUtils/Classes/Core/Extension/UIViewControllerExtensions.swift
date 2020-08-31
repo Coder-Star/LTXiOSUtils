@@ -32,6 +32,11 @@ public extension TxExtensionWrapper where Base: UIViewController {
         return base
     }
 
+    /// 是否可见
+    var isVisible: Bool {
+        return self.base.isViewLoaded && self.base.view.window != nil
+    }
+
     /// 删除所有子ViewController
     func removeAllChildren() {
         self.base.children.forEach {

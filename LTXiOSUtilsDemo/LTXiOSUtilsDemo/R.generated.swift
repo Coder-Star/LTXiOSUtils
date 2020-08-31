@@ -85,6 +85,7 @@ struct R: Rswift.Validatable {
   }
 
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
 
@@ -105,14 +106,22 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.file` struct is generated, and contains static references to 3 files.
+  /// This `R.file` struct is generated, and contains static references to 4 files.
   struct file {
+    /// Resource file `FangZhengMiaoWu.ttf`.
+    static let fangZhengMiaoWuTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FangZhengMiaoWu", pathExtension: "ttf")
     /// Resource file `ModuleArr.plist`.
     static let moduleArrPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "ModuleArr", pathExtension: "plist")
     /// Resource file `TreeResource.json`.
     static let treeResourceJson = Rswift.FileResource(bundle: R.hostingBundle, name: "TreeResource", pathExtension: "json")
     /// Resource file `addImage.png`.
     static let addImagePng = Rswift.FileResource(bundle: R.hostingBundle, name: "addImage", pathExtension: "png")
+
+    /// `bundle.url(forResource: "FangZhengMiaoWu", withExtension: "ttf")`
+    static func fangZhengMiaoWuTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fangZhengMiaoWuTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "ModuleArr", withExtension: "plist")`
     static func moduleArrPlist(_: Void = ()) -> Foundation.URL? {
@@ -130,6 +139,23 @@ struct R: Rswift.Validatable {
     static func addImagePng(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.addImagePng
       return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.font` struct is generated, and contains static references to 1 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `FZMWJW--GB1-0`.
+    static let fzmwjwgb10 = Rswift.FontResource(fontName: "FZMWJW--GB1-0")
+
+    /// `UIFont(name: "FZMWJW--GB1-0", size: ...)`
+    static func fzmwjwgb10(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: fzmwjwgb10, size: size)
+    }
+
+    static func validate() throws {
+      if R.font.fzmwjwgb10(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FZMWJW--GB1-0' could not be loaded, is 'FangZhengMiaoWu.ttf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
     fileprivate init() {}

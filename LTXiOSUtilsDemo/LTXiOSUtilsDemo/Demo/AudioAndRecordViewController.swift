@@ -171,7 +171,7 @@ extension AudioAndRecordViewController: UITableViewDelegate {
 }
 
 extension AudioAndRecordViewController: SoundRecorderDelegate {
-    func stateChange(state: SoundRecorderState) {
+    func stateChange(state: SoundRecorderOperateState) {
         switch state {
         case .start:
             self.finishButton.isHidden = false
