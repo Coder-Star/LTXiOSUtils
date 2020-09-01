@@ -1,7 +1,7 @@
 //
 //  KeyedArchiverTest.swift
 //  LTXiOSUtilsDemoTests
-//
+//  解归档测试
 //  Created by 李天星 on 2020/8/30.
 //  Copyright © 2020 李天星. All rights reserved.
 //
@@ -66,6 +66,7 @@ class KeyedArchiverByNSCodingTest: XCTestCase {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!.appending("/ArchiverUser.archiver")
 
         Log.d(path)
+        
         if #available(iOS 12, *) {
             let user1 = ArchiverSecureUser(name: "张三", phone: "123")
             let user2 = ArchiverSecureUser(name: "李四", phone: "234")
