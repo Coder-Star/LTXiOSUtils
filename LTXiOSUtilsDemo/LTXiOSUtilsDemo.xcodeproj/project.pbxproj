@@ -66,6 +66,7 @@
 		DCCF3E4F23C8ABD1000E65E1 /* KeychainAccessTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */; };
 		DCCF3E5123C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3E5023C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift */; };
 		DCCF3E5323C96B0F000E65E1 /* NetworkStateApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */; };
+		DCDBA7AB24FDF4050073E293 /* SwiftyJSONTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDBA7AA24FDF4050073E293 /* SwiftyJSONTest.swift */; };
 		DCE1457824FA96B000E3B6B0 /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1457724FA96B000E3B6B0 /* FontUtil.swift */; };
 		DCE1457A24FA976100E3B6B0 /* FangZhengMiaoWu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCE1457924FA976100E3B6B0 /* FangZhengMiaoWu.ttf */; };
 		DCE1457D24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1457C24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift */; };
@@ -145,7 +146,6 @@
 		DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Extension.swift"; sourceTree = "<group>"; };
 		DC62A7C62384084A00DE7800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		DC6F4D3424EF75D000B69A31 /* LTXiOSUtilsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LTXiOSUtilsDemo.entitlements; sourceTree = "<group>"; };
 		DC6F4D3924F68EF400B69A31 /* GCDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTest.swift; sourceTree = "<group>"; };
 		DC6F4D4624F7CAAF00B69A31 /* ThreadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTest.swift; sourceTree = "<group>"; };
 		DC7C935524EE5837005E0AAA /* SystemNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotificationService.swift; sourceTree = "<group>"; };
@@ -181,6 +181,7 @@
 		DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccessTest.swift; sourceTree = "<group>"; };
 		DCCF3E5023C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaultsTest.swift; sourceTree = "<group>"; };
 		DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStateApplicationService.swift; sourceTree = "<group>"; };
+		DCDBA7AA24FDF4050073E293 /* SwiftyJSONTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSONTest.swift; sourceTree = "<group>"; };
 		DCE1457724FA96B000E3B6B0 /* FontUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtil.swift; sourceTree = "<group>"; };
 		DCE1457924FA976100E3B6B0 /* FangZhengMiaoWu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FangZhengMiaoWu.ttf; sourceTree = "<group>"; };
 		DCE1457C24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedArchiverByNSCodingTest.swift; sourceTree = "<group>"; };
@@ -363,7 +364,6 @@
 		DC4AB9BB22F4606000A5F003 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DC6F4D3424EF75D000B69A31 /* LTXiOSUtilsDemo.entitlements */,
 				DC9F89CD24ED505F00C0487F /* Lib */,
 				DC1BE0AF24B0116F00745671 /* Test */,
 				DC2518CD24A8247200A28595 /* OC-Swift */,
@@ -574,6 +574,7 @@
 			children = (
 				DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */,
 				DCCF3E5023C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift */,
+				DCDBA7AA24FDF4050073E293 /* SwiftyJSONTest.swift */,
 			);
 			path = ThirdLibTest;
 			sourceTree = "<group>";
@@ -978,6 +979,7 @@
 				DC09415E2436E4D20052085F /* DemoTest.swift in Sources */,
 				DCE1457D24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift in Sources */,
 				DCB1C06023C8006500D735BD /* NSObjectExtensionTest.swift in Sources */,
+				DCDBA7AB24FDF4050073E293 /* SwiftyJSONTest.swift in Sources */,
 				DC6F4D4724F7CAAF00B69A31 /* ThreadTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
