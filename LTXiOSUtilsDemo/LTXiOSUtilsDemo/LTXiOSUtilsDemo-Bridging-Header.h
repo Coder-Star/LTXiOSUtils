@@ -13,4 +13,4 @@
 #endif /* LTXiOSUtilsDemo_Bridging_Header_h */
 
 #import <Bugly/Bugly.h> // bugly
-#import "LameUtil.h"
+#import "LameUtil.h" // 将录音文件转码为mp3文件

@@ -44,37 +44,47 @@ public struct Log {
 
     /// verbose日志
     public static func v<T>(_ verbose: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        #if DEBUG
         if Log.shouldLog(level: .verbose) {
             printLog(verbose, file: file, function: function, line: line, level: .verbose)
         }
+        #endif
     }
 
     /// debug日志
     public static func d<T>(_ debug: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        #if DEBUG
         if Log.shouldLog(level: .debug) {
             printLog(debug, file: file, function: function, line: line, level: .debug)
         }
+        #endif
     }
 
     /// info日志
     public static func i<T>(_ info: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        #if DEBUG
         if Log.shouldLog(level: .info) {
             printLog(info, file: file, function: function, line: line, level: .info)
         }
+        #endif
     }
 
     /// warning日志
     public static func w<T>(_ warning: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        #if DEBUG
         if Log.shouldLog(level: .warning) {
             printLog(warning, file: file, function: function, line: line, level: .warning)
         }
+        #endif
     }
 
     /// error日志
     public static func e<T>(_ error: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        #if DEBUG
         if Log.shouldLog(level: .error) {
             printLog(error, file: file, function: function, line: line, level: .error)
         }
+        #endif
     }
 
 }
