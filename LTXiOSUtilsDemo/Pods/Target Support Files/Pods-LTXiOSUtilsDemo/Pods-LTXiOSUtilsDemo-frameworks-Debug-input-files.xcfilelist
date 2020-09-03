@@ -29,3 +29,4 @@ ${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLay
 ${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework
 ${BUILT_PRODUCTS_DIR}/XHLaunchAd/XHLaunchAd.framework
 ${BUILT_PRODUCTS_DIR}/ZYCornerRadius/ZYCornerRadius.framework
+${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework

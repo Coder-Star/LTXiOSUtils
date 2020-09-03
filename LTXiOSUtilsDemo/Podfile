@@ -36,7 +36,8 @@ target 'LTXiOSUtilsDemo' do
   pod 'UITableView+FDTemplateLayoutCell', '1.6' #  UITableView缓存高度，OC库
   pod 'SwiftyJSON', '5.0.0' # 处理JSON
   pod 'ObjectMapper', '3.5.1' #model与json互转
-  pod 'Bugly','2.5.2' #异常上报
+  pod 'Bugly', '2.5.2' #异常上报
+  pod "dsBridge", '3.0.6' #与JS通信
 
 #  pod 'SwiftyEventBus', '1.0.0' #事件总线
 #  pod 'SwifterSwift', '5.1.0' # Swift相关扩展

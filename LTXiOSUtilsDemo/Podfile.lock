@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.0.2)
   - Bugly (2.5.2)
   - CTMediator (28)
+  - dsBridge (3.0.6)
   - FLAnimatedImage (1.0.12)
   - FSPagerView (0.8.3)
   - GDPerformanceView-Swift (2.0.3)
@@ -74,6 +75,7 @@ PODS:
 DEPENDENCIES:
   - Bugly (= 2.5.2)
   - CTMediator (= 28)
+  - dsBridge (= 3.0.6)
   - FSPagerView (= 0.8.3)
   - GDPerformanceView-Swift (= 2.0.3)
   - IQKeyboardManagerSwift (= 6.5.4)
@@ -102,6 +104,7 @@ SPEC REPOS:
     - Alamofire
     - Bugly
     - CTMediator
+    - dsBridge
     - FLAnimatedImage
     - FSPagerView
     - GDPerformanceView-Swift
@@ -141,6 +144,7 @@ SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
   Bugly: dbac48b55ad469a97cc4321045cd50df8f63d44f
   CTMediator: 6a05e9f1098b2d2fbc9d19cc7f28e94c3a08b5d2
+  dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GDPerformanceView-Swift: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
@@ -173,6 +177,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 1d4cb426c336526ab02acfe4b641f7ff56da7a2f
+PODFILE CHECKSUM: 784a84285f7e63944c14d82ed025b7cbb4229769
 
 COCOAPODS: 1.8.4

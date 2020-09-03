@@ -25,6 +25,8 @@ public enum LogLevel: Int {
 /// 日志工具
 public struct Log {
 
+    private init(){}
+
     /// 日志开关
     public static var enabled = false
     /// 日志显示最低等级
