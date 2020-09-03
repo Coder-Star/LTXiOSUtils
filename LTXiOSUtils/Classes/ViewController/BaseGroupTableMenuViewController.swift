@@ -90,6 +90,7 @@ extension BaseGroupTableMenuViewController: UITableViewDataSource {
         }
         tableCell?.textLabel?.text = menu[indexPath.section][indexPath.row].title
         tableCell?.imageView?.image = menu[indexPath.section][indexPath.row].image
+        // accessoryView的优先级高于accessoryType
         tableCell?.accessoryType = .disclosureIndicator
         return tableCell!
     }
@@ -103,7 +104,11 @@ extension BaseGroupTableMenuViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         click(menuModel: menu[indexPath.section][indexPath.row])
     }
-
+    /// 点击列表项尾部附件
+    /// 当tablecell的accessoryType为detailButton、detailDisclosureButton才可以触发此回调
+    open func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        Log.d(indexPath.row)
+    }
 }
 
 /// BaseGroupTableMenu子项实体

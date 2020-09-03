@@ -14,6 +14,13 @@ import LTXiOSUtils
 class SwiftyJSONTest: XCTestCase {
 
     func test() {
+
+        /**
+         只能将Foundation对象转换成JSON。
+         即顶层对象必须是Array或者Dictionary，所有的对象必须是String、Number、Array、Dictionary、Nil的实例。
+         如果想将自定义对象转成JSON需要借助Codable或者NSCoding协议
+         */
+
         // MARK: - SwiftyJSON
         let jsonStr = "[{\"ID\":1,\"Name\":\"元台禅寺\",\"LineID\":1},{\"ID\":2,\"Name\":\"田坞里山塘\",\"LineID\":1},{\"ID\":3,\"Name\":\"滴水石\",\"LineID\":1}]"
         Log.d(JSON(parseJSON: jsonStr))
