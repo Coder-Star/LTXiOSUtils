@@ -24,6 +24,7 @@ public protocol TxExtensionWrapperProtocol {
 
     /*
      需要使用associatedtype关键字的原因是因为core的类型不固定
+     associatedtype是protocol实现泛型的方式
      */
 
     /// 实例方法关联
@@ -45,6 +46,7 @@ extension TxExtensionWrapperProtocol {
         }
         // swiftlint:disable:next unused_setter_value
         set {
+            // 提供set方法使关联的实例可以进行修改
         }
     }
 
@@ -55,6 +57,7 @@ extension TxExtensionWrapperProtocol {
         }
         // swiftlint:disable:next unused_setter_value
         set {
+            // 提供set方法使关联的类可以进行修改
         }
     }
 }

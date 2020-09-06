@@ -15,10 +15,14 @@ class DemoTest: XCTestCase {
 
     func testDemo() {
         // 次方运算
-        print(pow(2, 2))
+        Log.d(pow(2, 2))
         // 位左移，下为2的4次方
-        print(1<<4)
+        Log.d(1<<4)
         // 四舍五入
-        print(lroundf(23.5))
+        Log.d(lroundf(23.5))
+
+        // 数字用下划线隔开，方便查看
+        let x = 1_11_11
+        Log.d(x)
     }
 }

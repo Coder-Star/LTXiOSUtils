@@ -25,6 +25,12 @@ class UserDefaultsProtocolTest: XCTestCase {
     func test() {
         UserInfoEnum.name.save(int: 5)
         Log.d(UserInfoEnum.name.int)
+
+        // UserDefault存储自定义对象的时候可以
+        let data = "123".data(using: .utf8)
+        UserInfoEnum.name.save(object: data)
+        Log.d(String(data: UserInfoEnum.name.data!, encoding: .utf8))
+        
     }
 }
 

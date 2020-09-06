@@ -10,9 +10,6 @@ import XCTest
 import LTXiOSUtils
 
 // 只有继承自NSObject并且遵守了NSCoding协议的类才可以进行相应的归档操作，为什么必须继承NSObject的原因应该是因为swift还没有实现解归档的协议
-// 在ios12以上，由继承NSCoding改为继承NSSecureCoding协议，NSSecureCoding协议也是继承自NSCoding
-// NSSecureCoding主要是用于加强安全性的
-
 class ArchiverUser:NSObject, NSCoding {
     var name: String
     var phone: String
@@ -33,6 +30,8 @@ class ArchiverUser:NSObject, NSCoding {
     }
 }
 
+// 在ios12以上，由继承NSCoding改为继承NSSecureCoding协议，NSSecureCoding协议也是继承自NSCoding
+// NSSecureCoding主要是用于加强安全性的, NSSecureCoding要求实现一个supportsSecureCoding的bool值
 class ArchiverSecureUser: NSObject, NSSecureCoding {
 
     var name: String
@@ -75,8 +74,12 @@ class KeyedArchiverByNSCodingTest: XCTestCase {
             list.append(user2)
             do {
                 let fileUrl = URL(fileURLWithPath: path)
+
+                // 归档
                 let data = try NSKeyedArchiver.archivedData(withRootObject: list, requiringSecureCoding: true)
                 try data.write(to: fileUrl)
+
+                // 解档
                 let fileData = try Data(contentsOf: fileUrl)
                 let info = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(fileData) as? Array<ArchiverSecureUser>
                 Log.d(info![0].name)
@@ -90,7 +93,9 @@ class KeyedArchiverByNSCodingTest: XCTestCase {
             var list = Array<ArchiverUser>()
             list.append(user1)
             list.append(user2)
+
             NSKeyedArchiver.archiveRootObject(list, toFile: path)
+
             let info = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? Array<ArchiverUser>
             Log.d(info![0].name)
         }
