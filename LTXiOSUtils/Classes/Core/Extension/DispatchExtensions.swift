@@ -1,5 +1,5 @@
 //
-//  DispatchQueueExtensions.swift
+//  DispatchExtensions.swift
 //  LTXiOSUtils
 //
 //  Created by 李天星 on 2019/12/16.
@@ -35,5 +35,17 @@ public extension TxExtensionWrapper where Base == DispatchQueue {
         }
         onceTracker.append(token)
         block()
+    }
+}
+
+// MARK: - DispatchTime扩展，构造函数
+extension DispatchTime: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
+
+    public init(integerLiteral value: Int) {
+        self = DispatchTime.now() + .seconds(value)
+    }
+
+    public init(floatLiteral value: Double) {
+        self = DispatchTime.now() + .milliseconds(Int(value * 1000))
     }
 }

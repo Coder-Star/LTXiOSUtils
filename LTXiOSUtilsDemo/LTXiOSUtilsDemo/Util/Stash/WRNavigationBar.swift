@@ -800,10 +800,10 @@
 //    }
 //}
 //
-//public protocol WRAwakeProtocol: class {
+//public protocol WRAwakeProtocol: AnyObject {
 //    static func wrAwake()
 //}
-//public protocol WRFatherAwakeProtocol: class {
+//public protocol WRFatherAwakeProtocol: AnyObject {
 //    static func fatherAwake()
 //}
 //

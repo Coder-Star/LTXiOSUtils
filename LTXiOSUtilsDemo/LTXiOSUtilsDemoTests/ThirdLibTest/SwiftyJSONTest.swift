@@ -56,6 +56,7 @@ class SwiftyJSONTest: XCTestCase {
          */
 
         // 将对象转换为json字符串
+        // 这是将Foundation对象转换成Data的方式
         let dataFromJSON = try! JSONSerialization.data(withJSONObject: json!, options: .prettyPrinted)
         Log.d(String(data: dataFromJSON, encoding: .utf8))
 

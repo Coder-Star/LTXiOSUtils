@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 ///GrowingTextViewDelegate
-public protocol GrowingTextViewDelegate: class {
+public protocol GrowingTextViewDelegate: AnyObject {
     /// 高度变化
     /// - Parameters:
     ///   - growingTextView: GrowingTextView

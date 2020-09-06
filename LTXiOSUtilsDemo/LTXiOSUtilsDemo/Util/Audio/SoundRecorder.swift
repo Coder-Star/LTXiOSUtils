@@ -40,7 +40,7 @@ public enum SoundRecorderOperateState {
 }
 
 /// 录音工具类代理
-public protocol SoundRecorderDelegate: class {
+public protocol SoundRecorderDelegate: AnyObject {
     /// 状态改变
     /// - Parameter state: 状态类型
     func stateChange(state: SoundRecorderOperateState)

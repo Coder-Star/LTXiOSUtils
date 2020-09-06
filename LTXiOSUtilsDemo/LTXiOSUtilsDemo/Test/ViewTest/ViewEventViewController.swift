@@ -107,6 +107,7 @@ class TapTestView: UIView {
             let touchPoint = touch.location(in: self)
             Log.d(touch.tapCount)
             Log.d(touch.timestamp)
+            Log.d(touchPoint)
         }
     }
 

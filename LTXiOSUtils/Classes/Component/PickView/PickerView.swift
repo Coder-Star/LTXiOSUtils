@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - PickerViewDelegate 用于自动设置TextField的选中值
-public protocol PickerViewDelegate: class {
+public protocol PickerViewDelegate: AnyObject {
     func singleColDidSelecte(_ selectedIndex: Int, selectedValue: String)
     func multipleColsDidSelecte(_ selectedIndexs: [Int], selectedValues: [String])
     func dateDidSelecte(_ selectedDate: Date)

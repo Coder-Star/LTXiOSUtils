@@ -145,15 +145,3 @@ extension TxExtensionWrapper where Base == TimeInterval {
         return dateAsTimeStamp.tx.formatDate(format: format)
     }
 }
-
-// MARK: - DispatchTime扩展，构造函数
-extension DispatchTime: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
-
-    public init(integerLiteral value: Int) {
-        self = DispatchTime.now() + .seconds(value)
-    }
-
-    public init(floatLiteral value: Double) {
-        self = DispatchTime.now() + .milliseconds(Int(value * 1000))
-    }
-}

@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+/**
+ #column: 列号
+ #file: 文件名
+ #function: 函数名
+ #line: 行号
+ */
+
 /// 日志等级
 public enum LogLevel: Int {
     /// verbose
@@ -25,7 +32,7 @@ public enum LogLevel: Int {
 /// 日志工具
 public struct Log {
 
-    private init(){}
+    private init() {}
 
     /// 日志开关
     public static var enabled = false
