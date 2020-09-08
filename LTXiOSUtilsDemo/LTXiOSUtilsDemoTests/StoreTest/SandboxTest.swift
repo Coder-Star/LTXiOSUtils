@@ -1,33 +1,19 @@
 //
-//  SwiftTest.swift
-//  LTXiOSUtilsDemo
+//  SandboxTest.swift
+//  LTXiOSUtilsDemoTests
 //
-//  Created by 李天星 on 2020/7/9.
+//  Created by 李天星 on 2020/9/7.
 //  Copyright © 2020 李天星. All rights reserved.
 //
 
 import Foundation
+import XCTest
+import LTXiOSUtils
 
-class SwiftTest {
 
-    class func setup() {
-        testSet()
-        testFile()
-    }
+class SandboxTest: XCTestCase {
 
-    /// 测试Set
-    class func testSet() {
-        var set = Set<String>()
-        set.insert("1")
-        set.insert("2")
-//        Log.d(set.insert("3")) // (inserted: true, memberAfterInsert: "3")
-//        Log.d(set.insert("1")) // (inserted: false, memberAfterInsert: "1")
-
-        let a: AnyObject = SwiftTest()
-//        Log.d(a)
-    }
-
-    class func testFile() {
+    func test() {
         // 沙盒主目录
         let path = NSHomeDirectory()
         // Documtents目录
@@ -42,6 +28,6 @@ class SwiftTest {
         let preferencesPath = NSSearchPathForDirectoriesInDomains(.preferencePanesDirectory, .userDomainMask, true).first!
         // tmp目录
         let tmpPath = NSTemporaryDirectory()
-//        Log.d([path, documtentsPath, libraryPath, applicationSupportPath, cachesPath, preferencesPath, tmpPath])
+        Log.d([path, documtentsPath, libraryPath, applicationSupportPath, cachesPath, preferencesPath, tmpPath])
     }
 }

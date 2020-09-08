@@ -869,6 +869,7 @@
 		DB334197E0D51FFE75A6B399E0948819 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F80983662A17B4224676071CDEA949 /* UIScrollView+MJRefresh.m */; };
 		DB554B5AB273B8734135CA81CB6E5633 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AC09AF4C817389FD4B0EB04D41A4FF /* NSObjectExtensions.swift */; };
 		DB9C2CF4AE6D71F14D0E543587F81058 /* UITabBar+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A417C38AF40FD1E5816E9FCAEB57E /* UITabBar+Rx.swift */; };
+		DC2A02C625067F0D00BABEDB /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2A02C525067F0D00BABEDB /* URLExtensions.swift */; };
 		DCA9221B3596DE7D98EDA14C538E6CC1 /* InvocableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95CA992F39EDB7C0EA855A4057240D /* InvocableType.swift */; };
 		DCBE950AABC61F4C3F2967FC067A040A /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3638A2F639E9BF8992199B82ED92486 /* Deprecated.swift */; };
 		DD045FE669F6DD2CC9AFD50B86C4A3DD /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8668219D023EF529D7A5915CC8E7F84F /* UIViewExtensions.swift */; };
@@ -2269,6 +2270,7 @@
 		DBFC6E0D2F67EC53037E61E8D17DCF17 /* DelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelegateProxy.swift; path = RxCocoa/Common/DelegateProxy.swift; sourceTree = "<group>"; };
 		DC11F263EC09CCC242AC6ACB8EDC6771 /* Pods-LTXiOSUtilsDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LTXiOSUtilsDemoTests.modulemap"; sourceTree = "<group>"; };
 		DC1EAFFD1F2296273B5B769ADF3625D1 /* CustomizeTargetType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomizeTargetType.swift; path = LTXiOSUtils/Classes/Network/CustomizeTargetType.swift; sourceTree = "<group>"; };
+		DC2A02C525067F0D00BABEDB /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		DC55E786FDF09DD2A7ACAA7293C2714D /* NopDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NopDisposable.swift; path = RxSwift/Disposables/NopDisposable.swift; sourceTree = "<group>"; };
 		DC595D99ACBA0034436117507442DCB7 /* MainScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainScheduler.swift; path = RxSwift/Schedulers/MainScheduler.swift; sourceTree = "<group>"; };
 		DC5E2F1C7C767D08FCACBA033AD49D0B /* Signal+Subscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Signal+Subscription.swift"; path = "RxCocoa/Traits/Signal/Signal+Subscription.swift"; sourceTree = "<group>"; };
@@ -4661,6 +4663,7 @@
 				71111EC0C0D1963ED07749179B7C58A5 /* UITextViewExtensions.swift */,
 				4475B91586DE477AD777BE8EED93A66B /* UIViewControllerExtensions.swift */,
 				8668219D023EF529D7A5915CC8E7F84F /* UIViewExtensions.swift */,
+				DC2A02C525067F0D00BABEDB /* URLExtensions.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -6271,6 +6274,7 @@
 				62D4123212DEE1C667548F206C11C5E4 /* LTXiOSUtilsResource.swift in Sources */,
 				9D1AA3AFE44662A50E7CC7B3299713D7 /* MaskPopupView.swift in Sources */,
 				72589C025C3F6DB5001C5A85A0B32E85 /* NetworkConfig.swift in Sources */,
+				DC2A02C625067F0D00BABEDB /* URLExtensions.swift in Sources */,
 				4DA8AB7E114045F8113BC6A3047C0128 /* NetworkManager.swift in Sources */,
 				117B38C923BE4DD5B24D080C457BF1AC /* NSMutableAttributedStringExtensions.swift in Sources */,
 				DB554B5AB273B8734135CA81CB6E5633 /* NSObjectExtensions.swift in Sources */,

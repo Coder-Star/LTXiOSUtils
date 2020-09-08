@@ -13,7 +13,7 @@ import UIKit
 // 分为两种模式，一种是时间等候模式，一种事件完成模式，事件完成之后需要重新将isFinishEvent赋值为false才可以让按钮再进行响应
 public extension UIButton {
     /// 时间等待模式默认的等待时间 0.5s
-    static let defaultDuration = 0.5
+    static var RepeatClickDefaultDuration = 0.5
 
     /// 使用模式
     enum RepeatButtonClickType: String {
@@ -52,7 +52,7 @@ public extension UIButton {
             if let clickDurationTime = objc_getAssociatedObject(self, &AssociatedKeysWithUIButtonRepeatClick.clickDurationTime) as? TimeInterval {
                 return clickDurationTime
             }
-            return UIButton.defaultDuration
+            return UIButton.RepeatClickDefaultDuration
         }
     }
 
@@ -92,7 +92,7 @@ public extension UIButton {
         if self.isKind(of: UIButton.self) {
             switch self.repeatButtonClickType {
             case .durationTime:
-                clickDurationTime = clickDurationTime == 0 ? UIButton.defaultDuration : clickDurationTime
+                clickDurationTime = clickDurationTime == 0 ? UIButton.RepeatClickDefaultDuration : clickDurationTime
                 if isIgnoreEvent {
                     return
                 } else if clickDurationTime > 0 {
