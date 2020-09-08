@@ -113,10 +113,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 4 files.
+  /// This `R.file` struct is generated, and contains static references to 5 files.
   struct file {
     /// Resource file `FangZhengMiaoWu.ttf`.
     static let fangZhengMiaoWuTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FangZhengMiaoWu", pathExtension: "ttf")
+    /// Resource file `JSAndNativeFountion.html`.
+    static let jsAndNativeFountionHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "JSAndNativeFountion", pathExtension: "html")
     /// Resource file `ModuleArr.plist`.
     static let moduleArrPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "ModuleArr", pathExtension: "plist")
     /// Resource file `TreeResource.json`.
@@ -127,6 +129,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "FangZhengMiaoWu", withExtension: "ttf")`
     static func fangZhengMiaoWuTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.fangZhengMiaoWuTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "JSAndNativeFountion", withExtension: "html")`
+    static func jsAndNativeFountionHtml(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.jsAndNativeFountionHtml
       return fileResource.bundle.url(forResource: fileResource)
     }
 

@@ -46,7 +46,7 @@ class HomeViewController: BaseUIScrollViewController {
         GridMenuItem(code: "ViewEvent", title: "ViewEvent", image: R.image.home_button_bmfw(), markType: .none),
         GridMenuItem(code: "OperationTest", title: "OperationTest", image: R.image.home_button_jmsc(), markType: .point(isShow: true)),
         GridMenuItem(code: "AudioAndRecord", title: "AudioAndRecord", image: R.image.home_button_mlxc(), markType: .text(text: "角标")),
-        GridMenuItem(code: "4", title: "名优", image: R.image.home_button_myzq(), markType: .number(number: 4)),
+        GridMenuItem(code: "JSAndNative", title: "JS与原生通信", image: R.image.home_button_myzq(), markType: .number(number: 4)),
         GridMenuItem(code: "5", title: "农场", image: R.image.home_button_nczg(), markType: .number(number: 5)),
         GridMenuItem(code: "6", title: "分类", image: R.image.home_button_nyjs(), markType: .number(number: 6)),
         GridMenuItem(code: "7", title: "热点", image: R.image.home_button_nyq(), markType: .number(number: 7)),
@@ -206,6 +206,8 @@ extension HomeViewController: GridMenuViewItemDelegate {
            break
         case "AudioAndRecord":
             navigationController?.pushViewController(AudioAndRecordViewController(), animated: true)
+        case "JSAndNative":
+            navigationController?.pushViewController(JSAndNativeMenuViewController(), animated: true)
         default:
             break
         }

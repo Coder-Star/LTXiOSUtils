@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fountion</title>
+</head>
+
+<body>
+    <p>下面是一个a标签，完整的路径为"app://showInfo?info=hello，Native，我是JS"，
+        iOS通过拦截此url，然后拆解信息，并可起到JS调用Native的效果</p>
+    <a href="app://showInfo?info=hello，Native，我是JS">JS给Native打招呼</a>
+
+    <p>调用Native通过WKScriptMessageHandler注册的方法，方法名为 </p>
+    <button onclick="buttonAction()">调用注册方法</button>
+</body>
+<script>
+    // 供原生通过 evaluateJavaScript 方式调用
+    function showJSInfo(info) {
+        alert("原生调用，来自原生的信息：" + info)
+        return info
+    }
+
+    function buttonAction() {
+        try {
+
+            // showInfoFromNative 是原生注册到JS里面的方法，如果没有注册，则会进入到Catch
+
+            // 即使不传递参数，参数也需要使用 ``，不可以直接使用()，会报错
+            window.webkit.messageHandlers.showInfoFromNative.postMessage('')
+
+            window.webkit.messageHandlers.showInfoFromNative.postMessage("我是js通过messageHandlers传递过来的数据")
+            
+            // 传递字典，原生接收该参数的数据结构为Any
+            let dict = {"name": "张三", "age": "18"}
+            window.webkit.messageHandlers.showInfoFromNative.postMessage(dict)
+        } catch (e) {
+            alert(e)
+        }
+    }
+</script>
+
+</html>

@@ -24,6 +24,8 @@ final class ThirdLibApplicationService: NSObject, ApplicationService {
 
         PerformanceMonitor.shared().start()
 
+        // 防重复点击
+        UIButton.RepeatClickDefaultDuration = 0.55
         UIButton.initRepeatClickMethod()
 
         initBugly()
