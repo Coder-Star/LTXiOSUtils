@@ -12,8 +12,12 @@
         iOS通过拦截此url，然后拆解信息，并可起到JS调用Native的效果</p>
     <a href="app://showInfo?info=hello，Native，我是JS">JS给Native打招呼</a>
 
-    <p>调用Native通过WKScriptMessageHandler注册的方法，方法名为 </p>
+    <p>调用Native通过WKScriptMessageHandler注册的方法，方法名为 showInfoFromNative</p>
     <button onclick="buttonAction()">调用注册方法</button>
+
+    <p>通过弹出输入框的形式获取数据</p>
+    <button onclick="showPrompt()">弹出输入框</button>
+
 </body>
 <script>
     // 供原生通过 evaluateJavaScript 方式调用
@@ -24,20 +28,26 @@
 
     function buttonAction() {
         try {
-
-            // showInfoFromNative 是原生注册到JS里面的方法，如果没有注册，则会进入到Catch
-
+            // showInfoFromNative 是原生注册到JS里面的方法，如果没有注册，则会进入到Catch，在非WebView环境下肯定会报错
             // 即使不传递参数，参数也需要使用 ``，不可以直接使用()，会报错
             window.webkit.messageHandlers.showInfoFromNative.postMessage('')
-
             window.webkit.messageHandlers.showInfoFromNative.postMessage("我是js通过messageHandlers传递过来的数据")
-            
             // 传递字典，原生接收该参数的数据结构为Any
-            let dict = {"name": "张三", "age": "18"}
+            let dict = {
+                "name": "张三",
+                "age": "18"
+            }
             window.webkit.messageHandlers.showInfoFromNative.postMessage(dict)
         } catch (e) {
             alert(e)
         }
+    }
+
+    function showPrompt() {
+        var placeholder = "输入信息标题"
+        var defaultText = "这是默认输入信息"
+        var result = prompt(placeholder,defaultText)
+        alert(result)
     }
 </script>
 

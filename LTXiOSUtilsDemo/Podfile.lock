@@ -68,6 +68,7 @@ PODS:
   - TZImagePickerController (3.3.1)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - URLNavigator (2.3.0)
+  - WebViewJavascriptBridge (6.0.3)
   - XHLaunchAd (3.9.11):
     - FLAnimatedImage (~> 1.0.12)
   - ZYCornerRadius (1.0.2)
@@ -96,6 +97,7 @@ DEPENDENCIES:
   - TZImagePickerController (= 3.3.1)
   - "UITableView+FDTemplateLayoutCell (= 1.6)"
   - URLNavigator (= 2.3.0)
+  - WebViewJavascriptBridge (= 6.0.3)
   - XHLaunchAd (= 3.9.11)
   - ZYCornerRadius (= 1.0.2)
 
@@ -133,6 +135,7 @@ SPEC REPOS:
     - TZImagePickerController
     - "UITableView+FDTemplateLayoutCell"
     - URLNavigator
+    - WebViewJavascriptBridge
     - XHLaunchAd
     - ZYCornerRadius
 
@@ -174,9 +177,10 @@ SPEC CHECKSUMS:
   TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 784a84285f7e63944c14d82ed025b7cbb4229769
+PODFILE CHECKSUM: 502e00373a5875cdba0d78b1276d952cd2aad98f
 
 COCOAPODS: 1.8.4
