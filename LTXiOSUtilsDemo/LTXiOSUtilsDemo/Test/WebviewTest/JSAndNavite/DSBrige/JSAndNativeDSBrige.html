@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSBrige</title>
+</head>
+
+<body>
+    <p>同步调用Native</p>
+    <button onclick="callNativeSync()">同步调用</button>
+
+    <p>异步调用Native</p>
+    <button onclick="callNativeAsync()">异步调用</button>
+
+    <p>同步调用Native(无参数)</p>
+    <button onclick="callNativeNoArgSync()">同步调用(无参数)</button>
+
+    <p>异步调用Native(无参数)</p>
+    <button onclick="callNativeNoArgAsync()">异步调用(无参数)</button>
+
+    <p>执行window.close()</p>
+    <button onclick="window.close()">执行</button>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/dsbridge/dist/dsbridge.js"> </script>
+<script>
+    
+    // 调用原生
+
+    function callNativeSync() {
+        // app.common为 原生注册的namespace，callNativeSync为方法名
+        var info = {"type": "同步", "message": "从JS发来的同步数据参数"}
+        var result = dsBridge.call("app.common.callNativeSync", info)
+        alert(JSON.stringify(result))
+    }
+
+    function callNativeAsync() {
+        var info = {"type": "异步", "message": "从JS发来的异步数据参数"}
+        dsBridge.call("app.common.callNativeAsync", info, function (v) {
+            alert(JSON.stringify(v))
+        })
+    }
+
+    function callNativeNoArgSync() {
+        var result = dsBridge.call("app.common.callNativeSync")
+        alert(JSON.stringify(result))
+    }
+
+    function callNativeNoArgAsync() {
+        dsBridge.call("app.common.callNativeAsync", function (v) {
+            alert(JSON.stringify(v))
+        })
+    }
+
+
+    // 注册JS供原生调用
+    
+
+</script>
+
+</html>

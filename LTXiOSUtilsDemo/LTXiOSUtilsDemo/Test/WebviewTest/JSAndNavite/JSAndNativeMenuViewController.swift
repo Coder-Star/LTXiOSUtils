@@ -31,7 +31,9 @@ class JSAndNativeMenuViewController: BaseGroupTableMenuViewController {
             viewController.titleInfo = menuModel.title
             navigationController?.pushViewController(viewController, animated: true)
         case "dsBrige":
-            break
+            let viewController = JSAndNativeDSBrigeViewController()
+            viewController.titleInfo = menuModel.title
+            navigationController?.pushViewController(viewController, animated: true)
         case "WebViewJavascriptBridge":
             break
         default:

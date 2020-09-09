@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		96E43647E58D656DD32E3666 /* Pods_LTXiOSUtilsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80077850B498D3973543BB2F /* Pods_LTXiOSUtilsDemoTests.framework */; };
+		DC01C3CC2508C29C00C5AEC3 /* JSAndNativeDSBrigeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC01C3CA2508C29C00C5AEC3 /* JSAndNativeDSBrigeViewController.swift */; };
+		DC01C3CD2508C29C00C5AEC3 /* JSAndNativeDSBrige.html in Resources */ = {isa = PBXBuildFile; fileRef = DC01C3CB2508C29C00C5AEC3 /* JSAndNativeDSBrige.html */; };
+		DC01C3CF2508C53D00C5AEC3 /* NativeAPIForJS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC01C3CE2508C53D00C5AEC3 /* NativeAPIForJS.swift */; };
+		DC01C3D62508E00900C5AEC3 /* dsbridge.js in Resources */ = {isa = PBXBuildFile; fileRef = DC01C3D52508E00900C5AEC3 /* dsbridge.js */; };
 		DC03AE2623F3AB1B007739DD /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2523F3AB1B007739DD /* HomeTabBarController.swift */; };
 		DC03AE2823F3AD96007739DD /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2723F3AD96007739DD /* MineViewController.swift */; };
 		DC03AE2A23F3CA6A007739DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE2923F3CA6A007739DD /* HomeViewController.swift */; };
@@ -26,7 +30,7 @@
 		DC2A02BA2506552200BABEDB /* JSAndNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2A02B92506552200BABEDB /* JSAndNativeViewController.swift */; };
 		DC2A02BC250657EB00BABEDB /* JSAndNativeFountion.html in Resources */ = {isa = PBXBuildFile; fileRef = DC2A02BB250657EB00BABEDB /* JSAndNativeFountion.html */; };
 		DC2A02BE2506602E00BABEDB /* JSAndNativeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2A02BD2506602E00BABEDB /* JSAndNativeMenuViewController.swift */; };
-		DC2A02C22506777700BABEDB /* JSAndNativeSchemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2A02C12506777700BABEDB /* JSAndNativeSchemeViewController.swift */; };
+		DC2A02C22506777700BABEDB /* JSAndNativeFountionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2A02C12506777700BABEDB /* JSAndNativeFountionViewController.swift */; };
 		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
 		DC32F1A823841359008D3D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A723841359008D3D67 /* Constants.swift */; };
 		DC3B5AE8247767AF00AAB1E3 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3B5AE7247767AF00AAB1E3 /* addImage.png */; };
@@ -117,6 +121,10 @@
 		7E69F21B8737A1842F9552D7 /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		80077850B498D3973543BB2F /* Pods_LTXiOSUtilsDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94D39D73C90A84C93A55928 /* Pods-LTXiOSUtilsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC01C3CA2508C29C00C5AEC3 /* JSAndNativeDSBrigeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSAndNativeDSBrigeViewController.swift; sourceTree = "<group>"; };
+		DC01C3CB2508C29C00C5AEC3 /* JSAndNativeDSBrige.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JSAndNativeDSBrige.html; sourceTree = "<group>"; };
+		DC01C3CE2508C53D00C5AEC3 /* NativeAPIForJS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAPIForJS.swift; sourceTree = "<group>"; };
+		DC01C3D52508E00900C5AEC3 /* dsbridge.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = dsbridge.js; sourceTree = "<group>"; };
 		DC03AE2523F3AB1B007739DD /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		DC03AE2723F3AD96007739DD /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		DC03AE2923F3CA6A007739DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +143,7 @@
 		DC2A02B92506552200BABEDB /* JSAndNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSAndNativeViewController.swift; sourceTree = "<group>"; };
 		DC2A02BB250657EB00BABEDB /* JSAndNativeFountion.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JSAndNativeFountion.html; sourceTree = "<group>"; };
 		DC2A02BD2506602E00BABEDB /* JSAndNativeMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSAndNativeMenuViewController.swift; sourceTree = "<group>"; };
-		DC2A02C12506777700BABEDB /* JSAndNativeSchemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSAndNativeSchemeViewController.swift; sourceTree = "<group>"; };
+		DC2A02C12506777700BABEDB /* JSAndNativeFountionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSAndNativeFountionViewController.swift; sourceTree = "<group>"; };
 		DC32F1A323840A3E008D3D67 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DC32F1A723841359008D3D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DC3B5AE7247767AF00AAB1E3 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addImage.png; sourceTree = "<group>"; };
@@ -364,8 +372,8 @@
 				DC2A02BF2506774100BABEDB /* Fountion */,
 				DCD53E5C2507982D003BA517 /* WebViewJavascriptBridge */,
 				DC2A02C02506774800BABEDB /* DSBrige */,
-				DC2A02B92506552200BABEDB /* JSAndNativeViewController.swift */,
 				DC2A02BD2506602E00BABEDB /* JSAndNativeMenuViewController.swift */,
+				DC2A02B92506552200BABEDB /* JSAndNativeViewController.swift */,
 			);
 			path = JSAndNavite;
 			sourceTree = "<group>";
@@ -374,7 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				DC2A02BB250657EB00BABEDB /* JSAndNativeFountion.html */,
-				DC2A02C12506777700BABEDB /* JSAndNativeSchemeViewController.swift */,
+				DC2A02C12506777700BABEDB /* JSAndNativeFountionViewController.swift */,
 			);
 			path = Fountion;
 			sourceTree = "<group>";
@@ -382,6 +390,10 @@
 		DC2A02C02506774800BABEDB /* DSBrige */ = {
 			isa = PBXGroup;
 			children = (
+				DC01C3CB2508C29C00C5AEC3 /* JSAndNativeDSBrige.html */,
+				DC01C3CA2508C29C00C5AEC3 /* JSAndNativeDSBrigeViewController.swift */,
+				DC01C3CE2508C53D00C5AEC3 /* NativeAPIForJS.swift */,
+				DC01C3D52508E00900C5AEC3 /* dsbridge.js */,
 			);
 			path = DSBrige;
 			sourceTree = "<group>";
@@ -810,8 +822,10 @@
 				DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */,
 				DCE1457A24FA976100E3B6B0 /* FangZhengMiaoWu.ttf in Resources */,
 				DC2A02BC250657EB00BABEDB /* JSAndNativeFountion.html in Resources */,
+				DC01C3CD2508C29C00C5AEC3 /* JSAndNativeDSBrige.html in Resources */,
 				DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */,
 				DC05CBC62453055A007A6240 /* ModuleArr.plist in Resources */,
+				DC01C3D62508E00900C5AEC3 /* dsbridge.js in Resources */,
 				DCBB1C3A23B1FCC000FF2925 /* LaunchScreen.storyboard in Resources */,
 				DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */,
 				DC3B5AE8247767AF00AAB1E3 /* addImage.png in Resources */,
@@ -1004,6 +1018,7 @@
 				DC55976824E7DFB600BAEF88 /* AudioPlayer.swift in Sources */,
 				DC55E57223F7E6C8008C6941 /* AppThemeApplicationService.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
+				DC01C3CC2508C29C00C5AEC3 /* JSAndNativeDSBrigeViewController.swift in Sources */,
 				DC3E62052425E8A200105366 /* WRNavigationBar.swift in Sources */,
 				DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */,
 				DC7C935624EE5837005E0AAA /* SystemNotificationService.swift in Sources */,
@@ -1022,6 +1037,7 @@
 				DCAAD857241A51C8009622DD /* AutoLabelsModel.swift in Sources */,
 				DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */,
 				DCF88149242B60210084C940 /* AppConfigApplicationService.swift in Sources */,
+				DC01C3CF2508C53D00C5AEC3 /* NativeAPIForJS.swift in Sources */,
 				DC3E61FE2423755F00105366 /* PickImageDemoViewController.swift in Sources */,
 				DCA407882406AC0500F62769 /* WRCustomNavigationBar.swift in Sources */,
 				DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */,
@@ -1044,7 +1060,7 @@
 				DC83E7CF23F645E10030A9B4 /* FWCustomPopupDemoVC.swift in Sources */,
 				DC106D4A244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift in Sources */,
 				DCF88152242F2D980084C940 /* ImagePickView.swift in Sources */,
-				DC2A02C22506777700BABEDB /* JSAndNativeSchemeViewController.swift in Sources */,
+				DC2A02C22506777700BABEDB /* JSAndNativeFountionViewController.swift in Sources */,
 				DC2518D624A8277500A28595 /* OC-Swift.swift in Sources */,
 				DC03AE2623F3AB1B007739DD /* HomeTabBarController.swift in Sources */,
 				DC9F89CC24ED0E7500C0487F /* AudioAndRecordViewController.swift in Sources */,
