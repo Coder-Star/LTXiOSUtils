@@ -27,6 +27,7 @@ ${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework
 ${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework
 ${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework
 ${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework
+${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework
 ${BUILT_PRODUCTS_DIR}/XHLaunchAd/XHLaunchAd.framework
 ${BUILT_PRODUCTS_DIR}/ZYCornerRadius/ZYCornerRadius.framework
 ${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework

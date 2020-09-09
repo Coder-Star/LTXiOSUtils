@@ -32,6 +32,7 @@ class JSAndNativeFountionViewController: JSAndNativeViewController {
     func action() {
         let info = "Hello，JS，我是Native"
         /// 注意下面这个函数参数，加上单引号
+        /// evaluateJavaScript是一个异步方法
         webView.evaluateJavaScript("showJSInfo('\(info)')") { (result, error) in
             /// result是调用showJSInfo()这个js方法的返回值
             Log.d(result)
@@ -84,5 +85,16 @@ extension JSAndNativeFountionViewController: WKScriptMessageHandler {
         // 传递的数据
         Log.d(message.body)
         HUD.showText(JSON(message.body).description)
+    }
+}
+
+extension JSAndNativeFountionViewController {
+    // 通过输入框的形式来进行信息传递，可以同步获取数据
+    override func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
+        // 输入框标题
+        Log.d(prompt)
+        // 默认输入信息
+        Log.d(defaultText)
+        completionHandler("输入框返回结果")
     }
 }

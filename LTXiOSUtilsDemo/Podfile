@@ -23,41 +23,47 @@ target 'LTXiOSUtilsDemo' do
   #图片相关
   pod 'Kingfisher', '5.12.0' # 远程图片预览
   pod 'SKPhotoBrowser', '6.1.0' # 图片浏览
-  pod 'TZImagePickerController', '3.3.1' #图片选择
+  pod 'TZImagePickerController', '3.3.1' # 图片选择
 
   #工具类
   pod 'SwiftyUserDefaults', '5.0.0' # UserDefaults存储
-  pod 'KeychainAccess', '4.1.0' #钥匙串存储
+  pod 'KeychainAccess', '4.1.0' # 钥匙串存储
 
   pod 'SwiftDate', '6.1.0' #时间工具
   pod 'IQKeyboardManagerSwift', '6.5.4' # 键盘控制
-  pod 'GDPerformanceView-Swift', '2.0.3' #显示屏幕FPS
-  pod 'ZYCornerRadius', '1.0.2' #  UIImageView高性能设置圆角，OC库
-  pod 'UITableView+FDTemplateLayoutCell', '1.6' #  UITableView缓存高度，OC库
-  pod 'SwiftyJSON', '5.0.0' # 处理JSON
-  pod 'ObjectMapper', '3.5.1' #model与json互转
-  pod 'Bugly', '2.5.2' #异常上报
-  pod "dsBridge", '3.0.6' #与JS通信
+  pod 'GDPerformanceView-Swift', '2.0.3' # 显示屏幕FPS
+  pod 'ZYCornerRadius', '1.0.2' # UIImageView高性能设置圆角，OC库
+  pod 'UITableView+FDTemplateLayoutCell', '1.6' # UITableView缓存高度，OC库
 
-#  pod 'SwiftyEventBus', '1.0.0' #事件总线
+  pod 'SwiftyJSON', '5.0.0' # 处理JSON
+  pod 'ObjectMapper', '3.5.1' # model与json互转
+
+
+  pod "dsBridge", '3.0.6' # 与JS通信
+  pod 'WebViewJavascriptBridge', '6.0.3' # 与JS通信
+
+
+  pod 'Bugly', '2.5.2' # 异常上报
+
+#  pod 'SwiftyEventBus', '1.0.0' # 事件总线
 #  pod 'SwifterSwift', '5.1.0' # Swift相关扩展
 
   #解耦
-  pod 'CTMediator', '28' #Runtime路由方案
-  pod 'MGJRouter', '0.10.0' #蘑菇街URl路由方案
-  pod 'URLNavigator', '2.3.0' #URL路由，跟MGJRouter实现思想相同，只不过MGJRouter是OC，这个是Swift
+  pod 'CTMediator', '28' # Runtime路由方案
+  pod 'MGJRouter', '0.10.0' # 蘑菇街URl路由方案
+  pod 'URLNavigator', '2.3.0' # URL路由，跟MGJRouter实现思想相同，只不过MGJRouter是OC，这个是Swift
 
   #UI组件等
-  pod 'FSPagerView', '0.8.3' #轮播组件
-  pod 'XHLaunchAd', '3.9.11' #广告页，依赖 'FLAnimatedImage'
-#  pod 'Onboard','2.3.3' #引导页
+  pod 'FSPagerView', '0.8.3' # 轮播组件
+  pod 'XHLaunchAd', '3.9.11' # 广告页，依赖 'FLAnimatedImage'
+#  pod 'Onboard','2.3.3' # 引导页
 
   #Rx
   pod 'RxCocoa', '5.0.1' # RxSwift是通用RxAPI的实现，并不涉及任何任何 Cocoa 或 UIKit 类，RxCocoa依赖RxSwift
 
   #音视频相关
 
-  pod "mp3lame-for-ios", "0.1.1" #将录音文件格式修改为mp3格式
+  pod "mp3lame-for-ios", "0.1.1" # 将录音文件格式修改为mp3格式
 
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths
