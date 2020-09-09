@@ -29,7 +29,7 @@ class JSAndNativeViewController: BaseUIViewController {
         super.viewDidLoad()
         setupWebview()
         setupProgressView()
-        webView.uiDelegate = self
+        setUIDelegate()
 
         /// 清除所有缓存
         WKWebsiteDataStore.default().removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), modifiedSince: Date(timeIntervalSince1970: 0)) {}
@@ -38,6 +38,10 @@ class JSAndNativeViewController: BaseUIViewController {
     func getWKWebView() -> WKWebView {
         let webview = WKWebView()
         return webview
+    }
+
+    func setUIDelegate() {
+        webView.uiDelegate = self
     }
 
     deinit {
