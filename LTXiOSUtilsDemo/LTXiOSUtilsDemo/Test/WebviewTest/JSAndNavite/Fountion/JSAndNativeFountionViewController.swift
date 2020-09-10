@@ -78,8 +78,8 @@ extension JSAndNativeFountionViewController: WKNavigationDelegate {
     }
 }
 
-extension JSAndNativeFountionViewController: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+extension JSAndNativeFountionViewController {
+   override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         // 方法名
         Log.d(message.name)
         // 传递的数据

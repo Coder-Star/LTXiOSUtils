@@ -16,7 +16,13 @@ import Foundation
 
 class NativeAPIForJS {
 
-    typealias JSCallback = (Any, Bool) -> Void
+    /**
+     异步时使用闭包
+     Any表示回传到JS的数据
+     Bool表示是否回传完毕，如果设置成true，表示数据已经回传完毕，js不会再接收来自原生的数据，
+     设置为false，表示js会继续接收来自原生的数据
+     */
+    typealias JSCallback = (_ dataToJS: Any, _ endSendData: Bool) -> Void
 
     private init() {}
     /// 单例
@@ -34,10 +40,30 @@ class NativeAPIForJS {
 
     // js调用原生，异步
     @objc
-    func callNativeAsync(_ arg: Any, hander: JSCallback) {
+    func callNativeAsync(_ arg: Any, hander: @escaping JSCallback) {
         Log.d(arg)
         let result = ["type": "异步", "message": "从Native返回的异步数据"]
-        hander(result, true)
+
+        // 模仿耗时操作
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+            hander(result, true)
+        }
+    }
+
+    // js调用原生，获取进度
+    @objc
+    func callProgress(_ arg: Any, hander: @escaping JSCallback) {
+        Log.d(arg)
+        var value = 1
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            if value > 10 {
+                timer.invalidate()
+                hander("结束", true)
+            } else {
+                hander(value, false)
+                value += 1
+            }
+        }
     }
 
 }

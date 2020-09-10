@@ -31,8 +31,15 @@ class JSAndNativeViewController: BaseUIViewController {
         setupProgressView()
         setUIDelegate()
 
+        setLogHandler()
+
         /// 清除所有缓存
         WKWebsiteDataStore.default().removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), modifiedSince: Date(timeIntervalSince1970: 0)) {}
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        webView.configuration.userContentController.removeScriptMessageHandler(forName: "logHandler")
     }
 
     func getWKWebView() -> WKWebView {
@@ -44,10 +51,25 @@ class JSAndNativeViewController: BaseUIViewController {
         webView.uiDelegate = self
     }
 
+    func setLogHandler() {
+        let source = "function captureLog(msg) { window.webkit.messageHandlers.logHandler.postMessage(msg); } window.console.log = captureLog;"
+        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+        webView.configuration.userContentController.addUserScript(script)
+        webView.configuration.userContentController.add(self, name: "logHandler")
+    }
+
     deinit {
         webView.removeObserver(self, forKeyPath: estimatedProgressKeyPath)
         webView.removeObserver(self, forKeyPath: titleKeyPath)
         webView.removeObserver(self, forKeyPath: loadingKeyPath)
+    }
+}
+
+extension JSAndNativeViewController: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "logHandler" {
+            Log.d("LOG: \(message.body)")
+        }
     }
 }
 

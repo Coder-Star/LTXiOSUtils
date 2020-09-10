@@ -113,7 +113,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 6 files.
+  /// This `R.file` struct is generated, and contains static references to 7 files.
   struct file {
     /// Resource file `FangZhengMiaoWu.ttf`.
     static let fangZhengMiaoWuTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FangZhengMiaoWu", pathExtension: "ttf")
@@ -127,6 +127,8 @@ struct R: Rswift.Validatable {
     static let treeResourceJson = Rswift.FileResource(bundle: R.hostingBundle, name: "TreeResource", pathExtension: "json")
     /// Resource file `addImage.png`.
     static let addImagePng = Rswift.FileResource(bundle: R.hostingBundle, name: "addImage", pathExtension: "png")
+    /// Resource file `dsbridge.js`.
+    static let dsbridgeJs = Rswift.FileResource(bundle: R.hostingBundle, name: "dsbridge", pathExtension: "js")
 
     /// `bundle.url(forResource: "FangZhengMiaoWu", withExtension: "ttf")`
     static func fangZhengMiaoWuTtf(_: Void = ()) -> Foundation.URL? {
@@ -161,6 +163,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "addImage", withExtension: "png")`
     static func addImagePng(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.addImagePng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "dsbridge", withExtension: "js")`
+    static func dsbridgeJs(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dsbridgeJs
       return fileResource.bundle.url(forResource: fileResource)
     }
 
