@@ -21,8 +21,11 @@ class JSAndNativeDSBrigeViewController: JSAndNativeViewController {
         (webView as? DWKWebView)?.dsuiDelegate = self
         (webView as? DWKWebView)?.setDebugMode(true)
 
-        ///
-//        (webView as? DWKWebView)?.disableJavascriptDialogBlock(false)
+        // 请求原生URL
+        //        (webView as? DWKWebView)?.loadUrl("")
+
+        //
+        //        (webView as? DWKWebView)?.disableJavascriptDialogBlock(false)
 
         // 当js使用window.close()，会触发该监听器
         (webView as? DWKWebView)?.setJavascriptCloseWindowListener {
@@ -37,9 +40,8 @@ class JSAndNativeDSBrigeViewController: JSAndNativeViewController {
     }
 
     private func initNavigation() {
-        let rightBarItemOne = UIBarButtonItem(title: "同步调用JS", style: .plain, target: self, action: #selector(actionSync))
-        let rightBarItemTwo = UIBarButtonItem(title: "异步调用JS", style: .plain, target: self, action: #selector(actionAsync))
-        navigationItem.rightBarButtonItems = [rightBarItemOne, rightBarItemTwo]
+        let rightBarItem = UIBarButtonItem(title: "调用JS操作", style: .plain, target: self, action: #selector(action))
+        navigationItem.rightBarButtonItem = rightBarItem
     }
 
     private func setJavascriptObject() {
@@ -47,12 +49,50 @@ class JSAndNativeDSBrigeViewController: JSAndNativeViewController {
     }
 
     @objc
-    func actionSync() {
-//        (webView as? DWKWebView)?.callHandler(<#T##methodName: String##String#>, arguments: <#T##[Any]?#>)
-    }
+    func action() {
+        let alertController = UIAlertController(title: "选项", message: "请选择", preferredStyle: .actionSheet)
+        let sync = UIAlertAction(title: "同步调用JS", style: .default) { _ in
+            (self.webView as? DWKWebView)?.callHandler("callJSSync", arguments: ["同步", "这是来自Native的同步信息"]) { result in
+                Log.d(result)
+            }
+        }
 
-    @objc
-    func actionAsync() {
+        let async = UIAlertAction(title: "异步调用JS", style: .default) { _ in
+            (self.webView as? DWKWebView)?.callHandler("callJSAsync", arguments: ["异步", "这是来自Native的异步信息"]) { result in
+                Log.d(result)
+            }
+        }
+
+        let syncNameSpace = UIAlertAction(title: "同步调用JS(命名空间)", style: .default) { _ in
+            // 可将下面 method1 改为 method2 以此调用 method2 方法
+            (self.webView as? DWKWebView)?.callHandler("js.callJSSyncNameSpace.method1", arguments: ["同步", "这是来自Native的同步信息"]) { result in
+                Log.d(result)
+            }
+        }
+
+        let asyncNameSpace = UIAlertAction(title: "异步调用JS(命名空间)", style: .default) { _ in
+            // 可将下面 method1 改为 method2 以此调用 method2 方法
+            (self.webView as? DWKWebView)?.callHandler("js.callJSAsyncNameSpace.method1", arguments: ["异步", "这是来自Native的异步信息"]) { result in
+                Log.d(result)
+            }
+        }
+
+        let checkJSMethod = UIAlertAction(title: "判断是否有JS方法", style: .default) { _ in
+            (self.webView as? DWKWebView)?.hasJavascriptMethod("callJSAsync") { result in
+                Log.d(result)
+            }
+        }
+
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+
+        alertController.addAction(sync)
+        alertController.addAction(async)
+        alertController.addAction(syncNameSpace)
+        alertController.addAction(asyncNameSpace)
+         alertController.addAction(checkJSMethod)
+        alertController.addAction(cancel)
+
+        present(alertController, animated: true, completion: nil)
 
     }
 
