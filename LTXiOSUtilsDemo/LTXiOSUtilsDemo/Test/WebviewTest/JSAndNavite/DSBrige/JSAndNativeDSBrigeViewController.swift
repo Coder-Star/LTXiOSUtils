@@ -37,6 +37,10 @@ class JSAndNativeDSBrigeViewController: JSAndNativeViewController {
             return
         }
         webView.loadFileURL(htmlURL, allowingReadAccessTo: htmlURL)
+
+        var count: UInt32 = 0
+        Log.d(class_copyMethodList(NativeAPIForJS.self, &count))
+        Log.d(count)
     }
 
     private func initNavigation() {

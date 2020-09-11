@@ -66,7 +66,7 @@
     })
 
     // 供原生异步调用
-    // responseCallback已经
+    // responseCallback
     dsBridge.registerAsyn('callJSAsync', function (arg1, arg2, responseCallback) {
         alert(arg1 + "  " + arg2)
         var t = 0
@@ -84,7 +84,6 @@
 
     // 注册方法时，设置命名空间
     dsBridge.register("js.callJSSyncNameSpace", {
-        // tag: "syn",
         method1: function (arg1, arg2) {
             alert(arg1 + "  " + arg2)
             return "调用JS的方法成功，方法1，同步"
@@ -95,7 +94,6 @@
     })
 
     dsBridge.registerAsyn("js.callJSAsyncNameSpace", {
-        // tag: "asyn",
         method1: function (arg1, arg2, responseCallback) {
             console.log(arg1 + "  " + arg2)
             responseCallback("调用JS的方法成功，方法1，异步");
