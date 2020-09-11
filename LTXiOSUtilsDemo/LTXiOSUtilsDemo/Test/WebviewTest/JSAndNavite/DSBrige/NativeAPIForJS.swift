@@ -50,7 +50,7 @@ class NativeAPIForJS {
         }
     }
 
-    // js调用原生，获取进度
+    // js调用原生，获取进度，JS调用原生的异步任务实际上是Native通过定时器不断去执行JS的回调函数，定时器周期为50ms，当异步任务的频率大于此频率时，就会出现问题
     @objc
     func callProgress(_ arg: Any, hander: @escaping JSCallback) {
         Log.d(arg)

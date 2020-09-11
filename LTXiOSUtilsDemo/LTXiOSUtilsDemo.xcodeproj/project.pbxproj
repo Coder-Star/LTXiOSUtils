@@ -50,6 +50,8 @@
 		DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC62A7C72384084A00DE7800 /* Localizable.strings */; };
 		DC6F4D3A24F68EF400B69A31 /* GCDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F4D3924F68EF400B69A31 /* GCDTest.swift */; };
 		DC6F4D4724F7CAAF00B69A31 /* ThreadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F4D4624F7CAAF00B69A31 /* ThreadTest.swift */; };
+		DC725FD7250B02120091C807 /* PtrotocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC725FD6250B02120091C807 /* PtrotocolTest.swift */; };
+		DC725FD9250B7EBC0091C807 /* FoundationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC725FD8250B7EBC0091C807 /* FoundationTest.swift */; };
 		DC7C935624EE5837005E0AAA /* SystemNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C935524EE5837005E0AAA /* SystemNotificationService.swift */; };
 		DC7C935924EE658C005E0AAA /* LameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7C935824EE658C005E0AAA /* LameUtil.m */; };
 		DC7C936124EE9DC6005E0AAA /* OC-Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7C936024EE9DC6005E0AAA /* OC-Swift.m */; };
@@ -170,6 +172,8 @@
 		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		DC6F4D3924F68EF400B69A31 /* GCDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTest.swift; sourceTree = "<group>"; };
 		DC6F4D4624F7CAAF00B69A31 /* ThreadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTest.swift; sourceTree = "<group>"; };
+		DC725FD6250B02120091C807 /* PtrotocolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PtrotocolTest.swift; sourceTree = "<group>"; };
+		DC725FD8250B7EBC0091C807 /* FoundationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationTest.swift; sourceTree = "<group>"; };
 		DC7C935524EE5837005E0AAA /* SystemNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotificationService.swift; sourceTree = "<group>"; };
 		DC7C935724EE658C005E0AAA /* LameUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LameUtil.h; sourceTree = "<group>"; };
 		DC7C935824EE658C005E0AAA /* LameUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LameUtil.m; sourceTree = "<group>"; };
@@ -661,6 +665,8 @@
 				DCDBA7B024FE94D10073E293 /* ExpressibleProtocolTest.swift */,
 				DCDBA7B3250082410073E293 /* EnumTest.swift */,
 				DCDBA7BA250528130073E293 /* FunctionTest.swift */,
+				DC725FD6250B02120091C807 /* PtrotocolTest.swift */,
+				DC725FD8250B7EBC0091C807 /* FoundationTest.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -1073,9 +1079,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC4AB9D222F4606100A5F003 /* DateExtensionTest.swift in Sources */,
+				DC725FD9250B7EBC0091C807 /* FoundationTest.swift in Sources */,
 				DC2A02B625064D6300BABEDB /* SandboxTest.swift in Sources */,
 				DCDBA7B124FE94D10073E293 /* ExpressibleProtocolTest.swift in Sources */,
 				DCB1C05023C5821F00D735BD /* ArrayExtensionTest.swift in Sources */,
+				DC725FD7250B02120091C807 /* PtrotocolTest.swift in Sources */,
 				DCDBA7B925010AC00073E293 /* CodecTest.swift in Sources */,
 				DCE1458124FBFD3700E3B6B0 /* PlistTest.swift in Sources */,
 				DCB1C05E23C7FF8400D735BD /* UserDefaultsProtocolTest.swift in Sources */,
