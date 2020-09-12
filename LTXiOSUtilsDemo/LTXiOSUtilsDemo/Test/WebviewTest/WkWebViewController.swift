@@ -10,7 +10,12 @@ import Foundation
 import LTXiOSUtils
 import WebKit
 
-class JSAndNativeViewController: BaseUIViewController {
+/**
+ WkWebView是再在独立于APP进程的另外进程运行
+ WKWebView 发起的请求不会自动带上存储于 NSHTTPCookieStorage 容器中的 Cookie
+ */
+
+class WkWebViewController: BaseUIViewController {
 
     lazy var webView: WKWebView = {
         return getWKWebView()
@@ -43,8 +48,20 @@ class JSAndNativeViewController: BaseUIViewController {
     }
 
     func getWKWebView() -> WKWebView {
-        let webview = WKWebView()
+        let webview = WKWebView(frame: .zero, configuration: getConfiguration())
         return webview
+    }
+
+    func getConfiguration() -> WKWebViewConfiguration {
+        let preferences = WKPreferences()
+        // 禁用JS
+        // preferences.javaScriptEnabled = false
+        // 设置最小字体
+        preferences.minimumFontSize = 20
+
+        let config = WKWebViewConfiguration()
+        config.preferences = preferences
+        return config
     }
 
     func setUIDelegate() {
@@ -54,7 +71,9 @@ class JSAndNativeViewController: BaseUIViewController {
     func setLogHandler() {
         let source = "function captureLog(msg) { window.webkit.messageHandlers.logHandler.postMessage(msg); } window.console.log = captureLog;"
         let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+        // 执行自定义js
         webView.configuration.userContentController.addUserScript(script)
+        // 定义方法供原生调用
         webView.configuration.userContentController.add(self, name: "logHandler")
     }
 
@@ -65,7 +84,7 @@ class JSAndNativeViewController: BaseUIViewController {
     }
 }
 
-extension JSAndNativeViewController: WKScriptMessageHandler {
+extension WkWebViewController: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "logHandler" {
             Log.d("LOG: \(message.body)")
@@ -73,7 +92,7 @@ extension JSAndNativeViewController: WKScriptMessageHandler {
     }
 }
 
-extension JSAndNativeViewController {
+extension WkWebViewController {
 
     private func setupWebview() {
         self.baseView.addSubview(webView)
@@ -96,30 +115,33 @@ extension JSAndNativeViewController {
         webView.addObserver(self, forKeyPath: loadingKeyPath, options: .new, context: nil)
     }
 
-    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    // swiftlint:disable block_based_kvo
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         switch keyPath {
         case estimatedProgressKeyPath?:
             let estimatedProgress = Float(webView.estimatedProgress)
+            Log.d(estimatedProgress)
             progressView.alpha = 1
             progressView.setProgress(estimatedProgress, animated: true)
-            if estimatedProgress >= 1.0 {
+        case titleKeyPath:
+            title = webView.title
+        case loadingKeyPath:
+            Log.d("是否加载完毕:\(!webView.isLoading)")
+            // 当访问一个不存在的url时，estimatedProgress不会到1，需要通过isLoading参数判断是否隐藏进度条
+            if !webView.isLoading {
                 UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut, animations: {
                     self.progressView.alpha = 0
                 }, completion: { _ in
                     self.progressView.setProgress(0, animated: false)
                 })
             }
-        case titleKeyPath:
-            title = webView.title
-        case loadingKeyPath:
-            Log.d(webView.isLoading)
         default:
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
 }
 
-extension JSAndNativeViewController: WKUIDelegate {
+extension WkWebViewController: WKUIDelegate {
     public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         if self.navigationController?.visibleViewController != self {
             completionHandler()

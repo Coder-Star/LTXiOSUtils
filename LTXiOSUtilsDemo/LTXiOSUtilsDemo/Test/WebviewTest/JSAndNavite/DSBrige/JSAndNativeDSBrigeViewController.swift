@@ -12,7 +12,13 @@ import LTXiOSUtils
 import SwiftyJSON
 import dsBridge
 
-class JSAndNativeDSBrigeViewController: JSAndNativeViewController {
+/**
+ DSBrige基本原理是
+ JS -> Native 通过promt
+ Native -> JS evaluateJavaScript
+ */
+
+class JSAndNativeDSBrigeViewController: WkWebViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +28,10 @@ class JSAndNativeDSBrigeViewController: JSAndNativeViewController {
         (webView as? DWKWebView)?.setDebugMode(true)
 
         // 请求原生URL
-        //        (webView as? DWKWebView)?.loadUrl("")
+        // (webView as? DWKWebView)?.loadUrl("")
 
-        //
-        //        (webView as? DWKWebView)?.disableJavascriptDialogBlock(false)
+        // 控制js
+        // (webView as? DWKWebView)?.disableJavascriptDialogBlock(false)
 
         // 当js使用window.close()，会触发该监听器
         (webView as? DWKWebView)?.setJavascriptCloseWindowListener {
@@ -37,9 +43,8 @@ class JSAndNativeDSBrigeViewController: JSAndNativeViewController {
             return
         }
         webView.loadFileURL(htmlURL, allowingReadAccessTo: htmlURL)
-
         var count: UInt32 = 0
-        Log.d(class_copyMethodList(NativeAPIForJS.self, &count))
+        Log.d(class_copyMethodList(NativeAPIForJSWithDSBrige.self, &count))
         Log.d(count)
     }
 
@@ -49,7 +54,7 @@ class JSAndNativeDSBrigeViewController: JSAndNativeViewController {
     }
 
     private func setJavascriptObject() {
-        (webView as? DWKWebView)?.addJavascriptObject(NativeAPIForJS.shared, namespace: NativeAPIForJS.nameSpace)
+        (webView as? DWKWebView)?.addJavascriptObject(NativeAPIForJSWithDSBrige.shared, namespace: NativeAPIForJSWithDSBrige.nameSpace)
     }
 
     @objc

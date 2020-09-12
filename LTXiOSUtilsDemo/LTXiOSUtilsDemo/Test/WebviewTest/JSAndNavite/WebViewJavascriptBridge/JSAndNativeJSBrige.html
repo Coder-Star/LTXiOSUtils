@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebViewJavascriptBridge</title>
+</head>
+
+<body>
+    <p>调取</p>
+    <button onclick="showPrompt()">弹出输入框</button>
+
+</body>
+<script>
+    // 供原生通过 evaluateJavaScript 方式调用
+    function showJSInfo(info) {
+        alert("原生调用，来自原生的信息：" + info)
+        return info
+    }
+
+    function buttonAction() {
+        try {
+            // showInfoFromNative 是原生注册到JS里面的方法，如果没有注册，则会进入到Catch，在非WebView环境下肯定会报错
+            // 即使不传递参数，参数也需要使用 ``，不可以直接使用()，会报错
+            window.webkit.messageHandlers.showInfoFromNative.postMessage('')
+            window.webkit.messageHandlers.showInfoFromNative.postMessage("我是js通过messageHandlers传递过来的数据")
+            // 传递字典，原生接收该参数的数据结构为Any
+            let dict = {
+                "name": "张三",
+                "age": "18"
+            }
+            window.webkit.messageHandlers.showInfoFromNative.postMessage(dict)
+        } catch (e) {
+            alert(e)
+        }
+    }
+
+    function showPrompt() {
+        var placeholder = "输入信息标题"
+        var defaultText = "这是默认输入信息"
+        var result = prompt(placeholder, defaultText)
+        alert(result)
+    }
+</script>
+
+</html>

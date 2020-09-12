@@ -14,7 +14,7 @@ import Foundation
  方法前必须加上 @objc 关键字
  */
 
-class NativeAPIForJS {
+class NativeAPIForJSWithDSBrige {
 
     /**
      异步时使用闭包
@@ -26,7 +26,7 @@ class NativeAPIForJS {
 
     private init() {}
     /// 单例
-    public static let shared = NativeAPIForJS()
+    public static let shared = NativeAPIForJSWithDSBrige()
 
     // 可多级设置，方便区分层级
     static let nameSpace = "app.common"
