@@ -11,7 +11,7 @@ import WebKit
 import LTXiOSUtils
 import SwiftyJSON
 
-class JSAndNativeFountionViewController: JSAndNativeViewController {
+class JSAndNativeFountionViewController: WkWebViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +75,12 @@ extension JSAndNativeFountionViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         /// swift调用JS需要确保页面加载完毕
         initNavigation()
+    }
+
+    /// 页面即将白屏
+    /// 当WKWebView占用内存较大时，WebContent Process 会 crash，从而出现白屏现象
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        webView.reload()
     }
 }
 

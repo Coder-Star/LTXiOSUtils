@@ -113,22 +113,44 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 7 files.
+  /// This `R.file` struct is generated, and contains static references to 12 files.
   struct file {
+    /// Resource file `CustomURLProtocol.html`.
+    static let customURLProtocolHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "CustomURLProtocol", pathExtension: "html")
+    /// Resource file `CustomURLProtocolResponse.html`.
+    static let customURLProtocolResponseHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "CustomURLProtocolResponse", pathExtension: "html")
     /// Resource file `FangZhengMiaoWu.ttf`.
     static let fangZhengMiaoWuTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FangZhengMiaoWu", pathExtension: "ttf")
     /// Resource file `JSAndNativeDSBrige.html`.
     static let jsAndNativeDSBrigeHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "JSAndNativeDSBrige", pathExtension: "html")
     /// Resource file `JSAndNativeFountion.html`.
     static let jsAndNativeFountionHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "JSAndNativeFountion", pathExtension: "html")
+    /// Resource file `JSAndNativeJSBrige.html`.
+    static let jsAndNativeJSBrigeHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "JSAndNativeJSBrige", pathExtension: "html")
     /// Resource file `ModuleArr.plist`.
     static let moduleArrPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "ModuleArr", pathExtension: "plist")
     /// Resource file `TreeResource.json`.
     static let treeResourceJson = Rswift.FileResource(bundle: R.hostingBundle, name: "TreeResource", pathExtension: "json")
+    /// Resource file `WKURLSchemeHandler.html`.
+    static let wkurlSchemeHandlerHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "WKURLSchemeHandler", pathExtension: "html")
+    /// Resource file `WKURLSchemeHandlerResponse.html`.
+    static let wkurlSchemeHandlerResponseHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "WKURLSchemeHandlerResponse", pathExtension: "html")
     /// Resource file `addImage.png`.
     static let addImagePng = Rswift.FileResource(bundle: R.hostingBundle, name: "addImage", pathExtension: "png")
     /// Resource file `dsbridge.js`.
     static let dsbridgeJs = Rswift.FileResource(bundle: R.hostingBundle, name: "dsbridge", pathExtension: "js")
+
+    /// `bundle.url(forResource: "CustomURLProtocol", withExtension: "html")`
+    static func customURLProtocolHtml(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.customURLProtocolHtml
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "CustomURLProtocolResponse", withExtension: "html")`
+    static func customURLProtocolResponseHtml(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.customURLProtocolResponseHtml
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "FangZhengMiaoWu", withExtension: "ttf")`
     static func fangZhengMiaoWuTtf(_: Void = ()) -> Foundation.URL? {
@@ -148,6 +170,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "JSAndNativeJSBrige", withExtension: "html")`
+    static func jsAndNativeJSBrigeHtml(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.jsAndNativeJSBrigeHtml
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "ModuleArr", withExtension: "plist")`
     static func moduleArrPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.moduleArrPlist
@@ -157,6 +185,18 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "TreeResource", withExtension: "json")`
     static func treeResourceJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.treeResourceJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "WKURLSchemeHandler", withExtension: "html")`
+    static func wkurlSchemeHandlerHtml(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.wkurlSchemeHandlerHtml
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "WKURLSchemeHandlerResponse", withExtension: "html")`
+    static func wkurlSchemeHandlerResponseHtml(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.wkurlSchemeHandlerResponseHtml
       return fileResource.bundle.url(forResource: fileResource)
     }
 
