@@ -16,6 +16,8 @@ import dsBridge
  DSBrige基本原理是
  JS -> Native 通过promt
  Native -> JS evaluateJavaScript
+
+ 因为DSBrige需要借助promt进行通信，所以需要DWKWebView内部实现uiDelegate，所以一定不可以将uiDelegate的实现转换给其他类，如果想实现uiDelegate，则实现DWKWebView提供的dsuiDelegate
  */
 
 class JSAndNativeDSBrigeViewController: WkWebViewController {
@@ -23,7 +25,7 @@ class JSAndNativeDSBrigeViewController: WkWebViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.navigationDelegate = self
-
+        // 将DWKWebView的uiDelegate交给当前VC实现，实现协议为  WKUIDelegate
         (webView as? DWKWebView)?.dsuiDelegate = self
         (webView as? DWKWebView)?.setDebugMode(true)
 
@@ -120,3 +122,12 @@ extension JSAndNativeDSBrigeViewController: WKNavigationDelegate {
         initNavigation()
     }
 }
+
+//extension JSAndNativeDSBrigeViewController {
+//    override func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+//
+//        Log.d(message)
+//
+//        completionHandler()
+//    }
+//}
