@@ -595,8 +595,8 @@
 			isa = PBXGroup;
 			children = (
 				DC88A35C250CB318000198AD /* WKURLSchemeHandler.html */,
-				DC88A34F250C97B1000198AD /* CustomURLSchemeHandler.swift */,
 				DC88A356250CA6A8000198AD /* WKURLSchemeHandlerResponse.html */,
+				DC88A34F250C97B1000198AD /* CustomURLSchemeHandler.swift */,
 			);
 			path = WKURLSchemeHandler;
 			sourceTree = "<group>";

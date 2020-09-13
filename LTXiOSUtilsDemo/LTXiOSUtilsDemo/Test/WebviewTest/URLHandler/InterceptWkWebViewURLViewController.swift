@@ -29,15 +29,18 @@ class InterceptWkWebViewURLViewController: WkWebViewController {
 
         if type == .customURLProtocol {
             // 将APP中网络请求交给CustomURLProtocol监控
+            // FIXME: - 注册之后目前无法拦截Ajax请求，并且DSBrige库失效
             URLProtocol.registerClass(CustomURLProtocol.self)
-            //
             webView.supportURLProtocol()
         }
     }
 
     override func getConfiguration() -> WKWebViewConfiguration {
         let config = super.getConfiguration()
+        // 利用KVO设置允许跨域
+        config.setValue(true, forKey: "_allowUniversalAccessFromFileURLs")
         if #available(iOS 11.0, *) {
+            // 必须在创建WKWebView的时候设置，创建完成再设置无效果
             config.setURLSchemeHandler(CustomURLSchemeHandler(), forURLScheme: "coderstar")
         }
         return config
@@ -62,12 +65,13 @@ extension InterceptWkWebViewURLViewController: WKNavigationDelegate {
 }
 
 extension WKWebView {
+
+    // WkWebView与APP不在同一个进程，需要手动将WKWebview的http、https交给URLProtocol处理
+    // 下面使用私有API的方式容易不通过苹果的审核，可以将私有API使用字符串拼接的方式
     func supportURLProtocol() {
         let selector = Selector(("registerSchemeForCustomProtocol:"))
         let vc = WKWebView().value(forKey: "browsingContextController") as AnyObject
         let cls = type(of: vc) as AnyObject
-        Log.d(vc)
-        Log.d(cls)
         _ = cls.perform(selector, with: "http")
         _ = cls.perform(selector, with: "https")
     }

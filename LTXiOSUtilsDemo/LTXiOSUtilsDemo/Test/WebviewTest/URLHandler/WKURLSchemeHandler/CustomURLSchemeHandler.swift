@@ -13,6 +13,7 @@ class CustomURLSchemeHandler: NSObject {
 
 }
 
+// 这种方式只可以在iOS11以上版本才可以使用，在以下版本需要借助URLProtocol进行拦截
 @available(iOS 11.0, *)
 extension CustomURLSchemeHandler: WKURLSchemeHandler {
 
