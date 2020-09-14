@@ -71,6 +71,13 @@ open class ApplicationServiceManagerDelegate: UIResponder, UIApplicationDelegate
         return applicationServiceArr
     }
 
+    public func getService(by type: ApplicationService.Type) -> ApplicationService? {
+        for service in applicationServices where service.isMember(of: type) {
+            return service
+        }
+        return nil
+    }
+
     private lazy var applicationServices: [ApplicationService] = {
         return self.services
     }()

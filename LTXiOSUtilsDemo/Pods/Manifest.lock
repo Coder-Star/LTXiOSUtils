@@ -4,6 +4,11 @@ PODS:
   - CTMediator (28)
   - dsBridge (3.0.6)
   - FLAnimatedImage (1.0.12)
+  - Flutter (1.0.0)
+  - flutter_module (0.0.1):
+    - Flutter
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
   - FSPagerView (0.8.3)
   - GDPerformanceView-Swift (2.0.3)
   - IQKeyboardManagerSwift (6.5.4)
@@ -77,6 +82,9 @@ DEPENDENCIES:
   - Bugly (= 2.5.2)
   - CTMediator (= 28)
   - dsBridge (= 3.0.6)
+  - Flutter (from `/CoderStar-Github/LTXiOSUtils/flutter_module/.ios/Flutter/engine`)
+  - flutter_module (from `/CoderStar-Github/LTXiOSUtils/flutter_module/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `/CoderStar-Github/LTXiOSUtils/flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
   - FSPagerView (= 0.8.3)
   - GDPerformanceView-Swift (= 2.0.3)
   - IQKeyboardManagerSwift (= 6.5.4)
@@ -140,6 +148,12 @@ SPEC REPOS:
     - ZYCornerRadius
 
 EXTERNAL SOURCES:
+  Flutter:
+    :path: "/CoderStar-Github/LTXiOSUtils/flutter_module/.ios/Flutter/engine"
+  flutter_module:
+    :path: "/CoderStar-Github/LTXiOSUtils/flutter_module/.ios/Flutter"
+  FlutterPluginRegistrant:
+    :path: "/CoderStar-Github/LTXiOSUtils/flutter_module/.ios/Flutter/FlutterPluginRegistrant"
   LTXiOSUtils:
     :path: "../"
 
@@ -149,6 +163,9 @@ SPEC CHECKSUMS:
   CTMediator: 6a05e9f1098b2d2fbc9d19cc7f28e94c3a08b5d2
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  flutter_module: 37f078337caf8acad3074374a49bf81442fd3e07
+  FlutterPluginRegistrant: 8855ca2b426d228cb41aa6c26c0c83b8c49e3593
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GDPerformanceView-Swift: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
@@ -181,6 +198,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 502e00373a5875cdba0d78b1276d952cd2aad98f
+PODFILE CHECKSUM: 3468ab394b80c085fe1404931349af0e468b97c4
 
 COCOAPODS: 1.8.4

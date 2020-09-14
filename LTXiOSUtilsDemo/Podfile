@@ -1,6 +1,10 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+# flutter
+flutter_application_path = '../flutter_module'
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+
 target 'LTXiOSUtilsDemo' do
   source 'https://github.com/CocoaPods/Specs.git' #公有库地址
   # source 'https://cdn.cocoapods.org/' #公有库地址,使用CDN，pod 1.7版本后
@@ -8,12 +12,15 @@ target 'LTXiOSUtilsDemo' do
   platform :ios, '10.0'
   
   use_frameworks! #使用动态库方式
-#  use_modular_headers! #使用静态库方式
-# 在ios 13.3.1系统真机上，苹果不再允许个人开发者使用嵌入式frameworks，
-# 需要use_modular_headers，不再use_frameworks
+  #  use_modular_headers! #使用静态库方式
+  # 在ios 13.3.1系统真机上，苹果不再允许个人开发者使用嵌入式frameworks，
+  # 需要use_modular_headers，不再use_frameworks
+
+  # 安装flutter模块
+  install_all_flutter_pods(flutter_application_path)
 
   pod 'LTXiOSUtils',:path => '../' # 基础功能库
-#  pod 'LTXiOSUtils', :git => 'https://github.com/Coder-Star/LTXiOSUtils.git', :tag => '0.0.0' #直接从源代码托管仓库取
+  #  pod 'LTXiOSUtils', :git => 'https://github.com/Coder-Star/LTXiOSUtils.git', :tag => '0.0.0' #直接从源代码托管仓库取
 
   # 本地配置
   pod 'R.swift', '5.1.0' # 资源映射
@@ -45,8 +52,8 @@ target 'LTXiOSUtilsDemo' do
 
   pod 'Bugly', '2.5.2' # 异常上报
 
-#  pod 'SwiftyEventBus', '1.0.0' # 事件总线
-#  pod 'SwifterSwift', '5.1.0' # Swift相关扩展
+  #  pod 'SwiftyEventBus', '1.0.0' # 事件总线
+  #  pod 'SwifterSwift', '5.1.0' # Swift相关扩展
 
   #解耦
   pod 'CTMediator', '28' # Runtime路由方案
@@ -56,7 +63,7 @@ target 'LTXiOSUtilsDemo' do
   #UI组件等
   pod 'FSPagerView', '0.8.3' # 轮播组件
   pod 'XHLaunchAd', '3.9.11' # 广告页，依赖 'FLAnimatedImage'
-#  pod 'Onboard','2.3.3' # 引导页
+  #  pod 'Onboard','2.3.3' # 引导页
 
   #Rx
   pod 'RxCocoa', '5.0.1' # RxSwift是通用RxAPI的实现，并不涉及任何任何 Cocoa 或 UIKit 类，RxCocoa依赖RxSwift

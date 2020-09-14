@@ -8,5 +8,6 @@
 	<string>LTXiOSUtilsDemo.NetworkStateApplicationService</string>
 	<string>LTXiOSUtilsDemo.RootVCApplicationService</string>
 	<string>LTXiOSUtilsDemo.SystemNotificationService</string>
+	<string>LTXiOSUtilsDemo.FlutterApplicationService</string>
 </array>
 </plist>
