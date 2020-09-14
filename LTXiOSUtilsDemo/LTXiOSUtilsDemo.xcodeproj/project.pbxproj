@@ -96,6 +96,8 @@
 		DCE1457A24FA976100E3B6B0 /* FangZhengMiaoWu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCE1457924FA976100E3B6B0 /* FangZhengMiaoWu.ttf */; };
 		DCE1457D24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1457C24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift */; };
 		DCE1458124FBFD3700E3B6B0 /* PlistTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1458024FBFD3700E3B6B0 /* PlistTest.swift */; };
+		DCEE982D250F835C00A19CF9 /* FlutterMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE982C250F835C00A19CF9 /* FlutterMainViewController.swift */; };
+		DCEE982F250F865A00A19CF9 /* FlutterApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE982E250F865A00A19CF9 /* FlutterApplicationService.swift */; };
 		DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */; };
 		DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */; };
 		DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF6F54623BCC87500AC4850 /* ViewFactory.swift */; };
@@ -237,6 +239,8 @@
 		DCE1457C24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedArchiverByNSCodingTest.swift; sourceTree = "<group>"; };
 		DCE1457E24FBB09000E3B6B0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DCE1458024FBFD3700E3B6B0 /* PlistTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistTest.swift; sourceTree = "<group>"; };
+		DCEE982C250F835C00A19CF9 /* FlutterMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterMainViewController.swift; sourceTree = "<group>"; };
+		DCEE982E250F865A00A19CF9 /* FlutterApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterApplicationService.swift; sourceTree = "<group>"; };
 		DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 		DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDemoViewController.swift; sourceTree = "<group>"; };
 		DCF6F54623BCC87500AC4850 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
@@ -356,6 +360,7 @@
 		DC1BE0AF24B0116F00745671 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				DCEE982B250F834400A19CF9 /* Flutter */,
 				DC2A02B7250650E200BABEDB /* WebviewTest */,
 				DC1BE0B024B0118200745671 /* ViewTest */,
 			);
@@ -509,6 +514,7 @@
 				DCB1C05A23C75C5A00D735BD /* ThirdLibApplicationService.swift */,
 				DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */,
 				DC7C935524EE5837005E0AAA /* SystemNotificationService.swift */,
+				DCEE982E250F865A00A19CF9 /* FlutterApplicationService.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -742,6 +748,14 @@
 			path = StoreTest;
 			sourceTree = "<group>";
 		};
+		DCEE982B250F834400A19CF9 /* Flutter */ = {
+			isa = PBXGroup;
+			children = (
+				DCEE982C250F835C00A19CF9 /* FlutterMainViewController.swift */,
+			);
+			path = Flutter;
+			sourceTree = "<group>";
+		};
 		DCF41B5F23AA45A400AEF70E /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,6 +785,7 @@
 				DC62A7C92384093900DE7800 /* R.swift */,
 				DC55E58923FBE7BB008C6941 /* Update App Version 自动替换故事板上的APP版本 */,
 				DCF41C2D2382282D00D7B13D /* SwiftLint配置检测脚本路径 */,
+				898517DCD9A747BD53A8A086 /* [CP-User] Run Flutter Build Script */,
 				DC4AB9B522F4606000A5F003 /* Sources */,
 				DC4AB9B622F4606000A5F003 /* Frameworks */,
 				DC4AB9B722F4606000A5F003 /* Resources */,
@@ -928,6 +943,22 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		898517DCD9A747BD53A8A086 /* [CP-User] Run Flutter Build Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../flutter_module/.metadata",
+				"${SRCROOT}/../flutter_module/.ios/Flutter/App.framework/App",
+				"${SRCROOT}/../flutter_module/.ios/Flutter/engine/Flutter.framework/Flutter",
+				"${SRCROOT}/../flutter_module/.ios/Flutter/flutter_export_environment.sh",
+			);
+			name = "[CP-User] Run Flutter Build Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source \"${SRCROOT}/../flutter_module/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
 		996E594BD9EB1CA39553EF3A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1083,8 +1114,10 @@
 				DC01C3CC2508C29C00C5AEC3 /* JSAndNativeDSBrigeViewController.swift in Sources */,
 				DC3E62052425E8A200105366 /* WRNavigationBar.swift in Sources */,
 				DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */,
+				DCEE982D250F835C00A19CF9 /* FlutterMainViewController.swift in Sources */,
 				DC7C935624EE5837005E0AAA /* SystemNotificationService.swift in Sources */,
 				DC88A350250C97B1000198AD /* CustomURLSchemeHandler.swift in Sources */,
+				DCEE982F250F865A00A19CF9 /* FlutterApplicationService.swift in Sources */,
 				DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */,
 				DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */,
 				DC03AE2A23F3CA6A007739DD /* HomeViewController.swift in Sources */,

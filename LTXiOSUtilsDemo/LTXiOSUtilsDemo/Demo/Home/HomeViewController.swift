@@ -49,7 +49,7 @@ class HomeViewController: BaseUIScrollViewController {
         GridMenuItem(code: "WKWebView", title: "WKWebView", image: R.image.home_button_myzq(), markType: .number(number: 4)),
         GridMenuItem(code: "5", title: "农场", image: R.image.home_button_nczg(), markType: .number(number: 5)),
         GridMenuItem(code: "6", title: "分类", image: R.image.home_button_nyjs(), markType: .number(number: 6)),
-        GridMenuItem(code: "7", title: "热点", image: R.image.home_button_nyq(), markType: .number(number: 7)),
+        GridMenuItem(code: "Flutter", title: "Flutter", image: R.image.home_button_nyq(), markType: .number(number: 7)),
         GridMenuItem(code: "8", title: "行情", image: R.image.home_button_schq(), markType: .number(number: 8)),
         GridMenuItem(code: "9", title: "商城", image: R.image.home_button_shop(), markType: .number(number: 9)),
         GridMenuItem(code: "10", title: "视频", image: R.image.home_button_xsp(), markType: .number(number: 10)),
@@ -208,6 +208,8 @@ extension HomeViewController: GridMenuViewItemDelegate {
             navigationController?.pushViewController(AudioAndRecordViewController(), animated: true)
         case "WKWebView":
             navigationController?.pushViewController(WkWebViewMenuViewController(), animated: true)
+        case "Flutter":
+            navigationController?.pushViewController(FlutterMainViewController(), animated: true)
         default:
             break
         }
