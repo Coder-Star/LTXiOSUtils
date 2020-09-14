@@ -39,13 +39,13 @@
             'url': 'http://www.baidu.com'
         };
 
-        setupWebViewJavascriptBridge(function (bridge) {
-            bridge.callHandler('callForJS', params, function (response) {
-                alert(response);
-            });
-        })
+        // setupWebViewJavascriptBridge
+        WebViewJavascriptBridge.callHandler('callForJS', params, function (response) {
+            alert(response);
+        });
     }
 
+     // setupWebViewJavascriptBridge主动调一次的目的除了注册方法之外，还主动与Native通信一下，使Native注入js，生成WebViewJavascriptBridge这个属性，否则不可以使用WebViewJavascriptBridge这个属性调用Native方法
     setupWebViewJavascriptBridge(function (bridge) {
         bridge.registerHandler('callForNative', function (data, responseCallback) {
             console.log("callForNative:" + JSON.stringify(data))
