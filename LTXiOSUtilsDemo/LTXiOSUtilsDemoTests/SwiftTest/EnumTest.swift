@@ -10,20 +10,16 @@ import Foundation
 import XCTest
 import LTXiOSUtils
 
-// 定义协议，方便遍历枚举
-protocol EnumeratableEnumType {
-    static var allCases: [Self] {get}
-}
-
-enum Direction: String, EnumeratableEnumType {
+enum Direction: String {
     case top = "上"
     case bottom = "下"
     case left = "左"
     case right = "右"
+}
 
-    static var allCases: [Direction] {
-        return [.top, .bottom, .left, .right]
-    }
+// CaseIterable协议提供了allCases方法用来获取枚举所有选项
+extension Direction: CaseIterable {
+
 }
 
 class EnumTest: XCTestCase {
