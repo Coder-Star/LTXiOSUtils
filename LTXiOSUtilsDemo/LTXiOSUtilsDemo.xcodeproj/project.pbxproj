@@ -33,7 +33,6 @@
 		DC2A02C22506777700BABEDB /* JSAndNativeFountionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2A02C12506777700BABEDB /* JSAndNativeFountionViewController.swift */; };
 		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
 		DC32F1A823841359008D3D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A723841359008D3D67 /* Constants.swift */; };
-		DC3B5AE8247767AF00AAB1E3 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3B5AE7247767AF00AAB1E3 /* addImage.png */; };
 		DC3E61F824209F1600105366 /* TempUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E61F724209F1600105366 /* TempUtils.swift */; };
 		DC3E61FE2423755F00105366 /* PickImageDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */; };
 		DC3E62022424714E00105366 /* DoubleExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E62012424714E00105366 /* DoubleExtensionTest.swift */; };
@@ -98,6 +97,7 @@
 		DCE1458124FBFD3700E3B6B0 /* PlistTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1458024FBFD3700E3B6B0 /* PlistTest.swift */; };
 		DCEE982D250F835C00A19CF9 /* FlutterMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE982C250F835C00A19CF9 /* FlutterMainViewController.swift */; };
 		DCEE982F250F865A00A19CF9 /* FlutterApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE982E250F865A00A19CF9 /* FlutterApplicationService.swift */; };
+		DCEE98302510DFAB00A19CF9 /* chinese_and_english.png in Resources */ = {isa = PBXBuildFile; fileRef = DCEE98322510DFAB00A19CF9 /* chinese_and_english.png */; };
 		DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */; };
 		DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */; };
 		DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF6F54623BCC87500AC4850 /* ViewFactory.swift */; };
@@ -159,7 +159,6 @@
 		DC2A02C12506777700BABEDB /* JSAndNativeFountionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSAndNativeFountionViewController.swift; sourceTree = "<group>"; };
 		DC32F1A323840A3E008D3D67 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DC32F1A723841359008D3D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		DC3B5AE7247767AF00AAB1E3 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addImage.png; sourceTree = "<group>"; };
 		DC3E61F724209F1600105366 /* TempUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempUtils.swift; sourceTree = "<group>"; };
 		DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageDemoViewController.swift; sourceTree = "<group>"; };
 		DC3E62012424714E00105366 /* DoubleExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensionTest.swift; sourceTree = "<group>"; };
@@ -241,6 +240,8 @@
 		DCE1458024FBFD3700E3B6B0 /* PlistTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistTest.swift; sourceTree = "<group>"; };
 		DCEE982C250F835C00A19CF9 /* FlutterMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterMainViewController.swift; sourceTree = "<group>"; };
 		DCEE982E250F865A00A19CF9 /* FlutterApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterApplicationService.swift; sourceTree = "<group>"; };
+		DCEE98312510DFAB00A19CF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/chinese_and_english.png; sourceTree = "<group>"; };
+		DCEE98332510DFB200A19CF9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/chinese_and_english.png"; sourceTree = "<group>"; };
 		DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 		DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDemoViewController.swift; sourceTree = "<group>"; };
 		DCF6F54623BCC87500AC4850 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
@@ -523,7 +524,7 @@
 			isa = PBXGroup;
 			children = (
 				DCE1457924FA976100E3B6B0 /* FangZhengMiaoWu.ttf */,
-				DC3B5AE7247767AF00AAB1E3 /* addImage.png */,
+				DCEE98322510DFAB00A19CF9 /* chinese_and_english.png */,
 				DC1AD82D23E83F2F0073CB97 /* TreeResource.json */,
 				DC4AB9C322F4606100A5F003 /* Assets.xcassets */,
 				DC62A7C72384084A00DE7800 /* Localizable.strings */,
@@ -905,7 +906,7 @@
 				DCBB1C3A23B1FCC000FF2925 /* LaunchScreen.storyboard in Resources */,
 				DC88A35D250CB318000198AD /* WKURLSchemeHandler.html in Resources */,
 				DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */,
-				DC3B5AE8247767AF00AAB1E3 /* addImage.png in Resources */,
+				DCEE98302510DFAB00A19CF9 /* chinese_and_english.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1226,6 +1227,15 @@
 				DC62A7C82384088400DE7800 /* zh-Hans */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		DCEE98322510DFAB00A19CF9 /* chinese_and_english.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCEE98312510DFAB00A19CF9 /* en */,
+				DCEE98332510DFB200A19CF9 /* zh-Hans */,
+			);
+			name = chinese_and_english.png;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

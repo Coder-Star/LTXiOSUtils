@@ -161,7 +161,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         let otherCompentImageView = UIImageView()
 
         // addImage.png为直接拖动到项目中的图片，不放置到xcassets中去，也可直接读取 addImage以及addImage.png都可以读取
-         otherCompentImageView.image = UIImage(named: "addImage.png")
+         otherCompentImageView.image = UIImage(named: "chinese_and_english.png")
 
         contentView.addSubview(otherCompentImageView)
         otherCompentImageView.snp.makeConstraints { make in

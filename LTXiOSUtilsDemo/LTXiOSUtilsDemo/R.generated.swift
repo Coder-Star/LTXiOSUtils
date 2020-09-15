@@ -135,8 +135,8 @@ struct R: Rswift.Validatable {
     static let wkurlSchemeHandlerHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "WKURLSchemeHandler", pathExtension: "html")
     /// Resource file `WKURLSchemeHandlerResponse.html`.
     static let wkurlSchemeHandlerResponseHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "WKURLSchemeHandlerResponse", pathExtension: "html")
-    /// Resource file `addImage.png`.
-    static let addImagePng = Rswift.FileResource(bundle: R.hostingBundle, name: "addImage", pathExtension: "png")
+    /// Resource file `chinese_and_english.png`.
+    static let chinese_and_englishPng = Rswift.FileResource(bundle: R.hostingBundle, name: "chinese_and_english", pathExtension: "png")
     /// Resource file `dsbridge.js`.
     static let dsbridgeJs = Rswift.FileResource(bundle: R.hostingBundle, name: "dsbridge", pathExtension: "js")
 
@@ -200,9 +200,9 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "addImage", withExtension: "png")`
-    static func addImagePng(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.addImagePng
+    /// `bundle.url(forResource: "chinese_and_english", withExtension: "png")`
+    static func chinese_and_englishPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.chinese_and_englishPng
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -236,12 +236,12 @@ struct R: Rswift.Validatable {
   struct image {
     /// Image `add-white`.
     static let addWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "add-white")
-    /// Image `addImage`.
-    static let addImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "addImage")
     /// Image `add`.
     static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "add")
     /// Image `audio_bgm_4`.
     static let audio_bgm_4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "audio_bgm_4")
+    /// Image `chinese_and_english`.
+    static let chinese_and_english = Rswift.ImageResource(bundle: R.hostingBundle, name: "chinese_and_english")
     /// Image `com_arrow_vc_back`.
     static let com_arrow_vc_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "com_arrow_vc_back")
     /// Image `demoList_tab_selected`.
@@ -328,16 +328,16 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "addImage", bundle: ..., traitCollection: ...)`
-    static func addImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.addImage, compatibleWith: traitCollection)
+    /// `UIImage(named: "audio_bgm_4", bundle: ..., traitCollection: ...)`
+    static func audio_bgm_4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.audio_bgm_4, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "audio_bgm_4", bundle: ..., traitCollection: ...)`
-    static func audio_bgm_4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.audio_bgm_4, compatibleWith: traitCollection)
+    /// `UIImage(named: "chinese_and_english", bundle: ..., traitCollection: ...)`
+    static func chinese_and_english(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.chinese_and_english, compatibleWith: traitCollection)
     }
     #endif
 
