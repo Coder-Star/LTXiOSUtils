@@ -26,9 +26,6 @@ class FlutterMainViewController: BaseUIViewController {
         guard let delegate = (UIApplication.shared.delegate as? ApplicationServiceManagerDelegate)?.getService(by: FlutterApplicationService.self) as? FlutterApplicationService else {
             return
         }
-        Log.d(delegate.flutterEngine)
-        Log.d(navigationController?.viewControllers)
-
         /**
          在iOS模拟器下，第二次使用engin 创建FlutterViewContainer时， initWithEngine: 会crash，报错如下
          Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)

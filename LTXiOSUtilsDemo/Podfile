@@ -84,6 +84,7 @@ target 'LTXiOSUtilsDemo' do
 
 end
 
+# 将部分指定pod包的swift版本设置为4.2
 #swift_42 = [
 #'SwifterSwift',
 #'SwiftyJSON',
@@ -97,16 +98,29 @@ end
 #
 #post_install do |installer|
 #  installer.pods_project.targets.each do |target|
-#    swift_version = nil
-#
 #    if swift_42.include?(target.name)
-#      swift_version = '4.2'
-#    end
-#
-#    if swift_version
 #      target.build_configurations.each do |config|
 #        config.build_settings['SWIFT_VERSION'] = swift_version
 #      end
 #    end
 #  end
 #end
+
+# 将Flutter相关pod包的bitcode选项关掉，因为Flutter不支持bitcode
+# 也需要手动将APP的bitcode关掉
+disabled_bitcode = [
+'Flutter',
+'flutter_module',
+'FlutterPluginRegistrant',
+]
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if disabled_bitcode.include?(target.name)
+      target.build_configurations.each do |config|
+        config.build_settings['ENABLE_BITCODE'] = 'NO'
+      end
+    end
+  end
+end
+
