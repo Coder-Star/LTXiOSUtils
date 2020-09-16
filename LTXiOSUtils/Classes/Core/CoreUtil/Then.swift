@@ -12,7 +12,7 @@ public protocol Then {}
 
 extension Then where Self: Any {
 
-  /// Makes it available to set properties with closures just after initializing and copying the value types.
+  /// 值类型数据初始化属性
   ///
   ///     let frame = CGRect().with {
   ///       $0.origin.x = 10
@@ -24,7 +24,7 @@ extension Then where Self: Any {
     return copy
   }
 
-  /// Makes it available to execute something with closures.
+  /// 初始化动作，与初始化属性不同在于此没有返回值
   ///
   ///     UserDefaults.standard.do {
   ///       $0.set("devxoul", forKey: "username")
@@ -39,7 +39,7 @@ extension Then where Self: Any {
 
 extension Then where Self: AnyObject {
 
-  /// Makes it available to set properties with closures just after initializing.
+  /// 引用类型数据初始化属性
   ///
   ///     let label = UILabel().then {
   ///       $0.textAlignment = .center

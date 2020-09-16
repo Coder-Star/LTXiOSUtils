@@ -21,10 +21,15 @@ class HomeTabBarController: UITabBarController {
         return viewController
     }()
 
-    private var mineViewController: MineViewController = {
-        let viewController = MineViewController()
+    private var mineViewController: UINavigationController = {
+        let viewController = HomeNavigationController(rootViewController: MineViewController())
         return viewController
     }()
+
+//    private var mineViewController: UIViewController = {
+//        let viewController = MineViewController()
+//        return viewController
+//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()

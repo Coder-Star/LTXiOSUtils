@@ -40,6 +40,9 @@ class WkWebViewController: BaseUIViewController {
 
         /// 清除所有缓存
         WKWebsiteDataStore.default().removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), modifiedSince: Date(timeIntervalSince1970: 0)) {}
+
+        // 关闭回弹效果
+        webView.scrollView.bounces = false
     }
 
     override func viewWillDisappear(_ animated: Bool) {
