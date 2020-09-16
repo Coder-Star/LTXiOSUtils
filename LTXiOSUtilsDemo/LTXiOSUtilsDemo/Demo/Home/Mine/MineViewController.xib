@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineViewController" customModule="LTXiOSUtilsDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="headerIconImageView" destination="NHv-mW-QFr" id="ax3-Mo-RlN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xib_header" translatesAutoresizingMaskIntoConstraints="NO" id="NHv-mW-QFr">
+                    <rect key="frame" x="182" y="20" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="EUW-Hh-a14"/>
+                        <constraint firstAttribute="height" constant="50" id="Sx1-Im-kh8"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vH-0V-303">
+                    <rect key="frame" x="14.999999999999996" y="80" width="34.666666666666657" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="github地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfS-A7-9FE">
+                    <rect key="frame" x="15" y="160.66666666666666" width="83.666666666666671" height="20.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="博客地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQ8-u9-oYe">
+                    <rect key="frame" x="15" y="120.33333333333333" width="69.333333333333329" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoderStar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ife-ad-W2c">
+                    <rect key="frame" x="320" y="80" width="79" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://coder-star.github.io" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzN-6s-lMO">
+                    <rect key="frame" x="193" y="121" width="206" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com/Coder-Star" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpy-Cv-RtP">
+                    <rect key="frame" x="167" y="162" width="232" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="这是CoderStar的自我描述，应该很长，请耐心看完" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWC-H6-flP">
+                    <rect key="frame" x="95" y="203" width="304" height="40.666666666666657"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="描述" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edO-9z-LAP">
+                    <rect key="frame" x="15" y="201" width="50" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="NkU-cg-fAm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RWC-H6-flP" firstAttribute="top" secondItem="dpy-Cv-RtP" secondAttribute="bottom" constant="20" id="5zp-Ed-eOe"/>
+                <constraint firstItem="zQ8-u9-oYe" firstAttribute="top" secondItem="1vH-0V-303" secondAttribute="bottom" constant="20" id="6Qp-9t-HXK"/>
+                <constraint firstItem="jfS-A7-9FE" firstAttribute="top" secondItem="zQ8-u9-oYe" secondAttribute="bottom" constant="20" id="9rj-dK-wpx"/>
+                <constraint firstItem="NHv-mW-QFr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="DSe-t0-oKq"/>
+                <constraint firstItem="Ife-ad-W2c" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="FM3-R3-yTg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ife-ad-W2c" secondAttribute="trailing" constant="15" id="GuN-EK-SD5"/>
+                <constraint firstItem="edO-9z-LAP" firstAttribute="top" secondItem="jfS-A7-9FE" secondAttribute="bottom" constant="20" id="HAT-4G-Ca7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dpy-Cv-RtP" secondAttribute="trailing" constant="15" id="KuG-YN-buj"/>
+                <constraint firstItem="NHv-mW-QFr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Mlr-9j-MQd"/>
+                <constraint firstItem="zQ8-u9-oYe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="NIm-5X-UWs"/>
+                <constraint firstItem="RWC-H6-flP" firstAttribute="leading" secondItem="edO-9z-LAP" secondAttribute="trailing" constant="30" id="R3B-vB-YK4"/>
+                <constraint firstItem="jfS-A7-9FE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Tsj-ny-K6X"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RzN-6s-lMO" secondAttribute="trailing" constant="15" id="Vrh-z1-QAc"/>
+                <constraint firstItem="1vH-0V-303" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="YRt-vM-usY"/>
+                <constraint firstItem="1vH-0V-303" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="cWJ-LV-5EP"/>
+                <constraint firstItem="edO-9z-LAP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="i1g-E2-8St"/>
+                <constraint firstItem="dpy-Cv-RtP" firstAttribute="top" secondItem="RzN-6s-lMO" secondAttribute="bottom" constant="20" id="oGP-oS-G3k"/>
+                <constraint firstItem="RzN-6s-lMO" firstAttribute="top" secondItem="Ife-ad-W2c" secondAttribute="bottom" constant="20" id="ulP-rM-Q6W"/>
+                <constraint firstAttribute="trailing" secondItem="RWC-H6-flP" secondAttribute="trailing" constant="15" id="xdM-Vo-0IY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="89.855072463768124" y="42.391304347826093"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xib_header" width="50" height="50"/>
+    </resources>
+</document>
