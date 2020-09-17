@@ -8,6 +8,7 @@
 import Foundation
 
 extension URL {
+
     /// 获取URL的参数
     public var parametersFromQueryString: [String: String]? {
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true),

@@ -9,11 +9,11 @@ import Foundation
 
 extension Array: TxExtensionWrapperProtocol {}
 
-public extension TxExtensionWrapper where Base: Sequence {
+extension TxExtensionWrapper where Base: Sequence {
 
     /// 数组去重
     /// - Parameter repeated: 去重标准
-    func removeDuplicate<E: Equatable>(_ repeated: (Base.Iterator.Element) -> E) -> [Base.Iterator.Element] {
+    public func removeDuplicate<E: Equatable>(_ repeated: (Base.Iterator.Element) -> E) -> [Base.Iterator.Element] {
         var result = [Base.Iterator.Element]()
         self.base.forEach { item in
             let key = repeated(item)

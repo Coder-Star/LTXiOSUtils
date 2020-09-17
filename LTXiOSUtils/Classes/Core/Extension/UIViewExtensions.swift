@@ -8,14 +8,15 @@
 import Foundation
 
 // MARK: - view绑定数据
-public extension UIView {
+extension UIView {
+
     private struct UIViewAssociatedKey {
         static var dataStr: Void?
         static var dataAny: Void?
     }
 
     /// 为view绑定字符串数据
-    var dataStr: String {
+    public var dataStr: String {
         set {
             objc_setAssociatedObject(self, &UIViewAssociatedKey.dataStr, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
@@ -28,7 +29,7 @@ public extension UIView {
     }
 
     /// 为view绑定Any类型数据
-    var dataAny: Any {
+    public var dataAny: Any {
         set {
             objc_setAssociatedObject(self, &UIViewAssociatedKey.dataAny, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
@@ -43,7 +44,7 @@ public extension UIView {
 }
 
 // MARK: - view视图相关
-public extension UIView {
+extension UIView {
     private static var allSubviews: [UIView] = []
 
     // 递归遍历view的所有子孙view，深度优先遍历
@@ -58,33 +59,33 @@ public extension UIView {
     }
 
     /// 获取指定子视图
-    func getSubView(name: String) -> [UIView] {
+    public func getSubView(name: String) -> [UIView] {
         UIView.allSubviews = []
         let viewArr = viewArray(root: self)
         return viewArr.filter {$0.tx.className == name}
     }
 
     /// 获取所有子视图
-    func getAllSubViews() -> [UIView] {
+    public func getAllSubViews() -> [UIView] {
         UIView.allSubviews = []
         return viewArray(root: self)
     }
 
     /// 移除所有子视图
-    func removeAllChildView() {
+    public func removeAllChildView() {
         self.subviews.forEach {
             $0.removeFromSuperview()
         }
     }
 
     /// 同时添加多个视图
-    func add(_ subviews: UIView...) {
+    public func add(_ subviews: UIView...) {
         subviews.forEach(addSubview)
     }
 
     /// 获取最近的指定view类型的父view
     /// - Parameter viewType: view类型
-    func getParentView(viewType: AnyClass) -> UIView? {
+    public func getParentView(viewType: AnyClass) -> UIView? {
         var tempView = self.superview
         var resultView: UIView?
         while tempView != nil {
@@ -98,14 +99,14 @@ public extension UIView {
     }
 }
 
-public extension UIView {
+extension UIView {
 
     /// 设置View部分圆角,若使用自动布局，应在设置宽高约束后使用
     /// 示例：view.setCorner(size:5, roundingCorners:[.topLeft,.topRight])，
     /// - Parameters:
     ///   - size: 圆角大小
     ///   - roundingCorners: 圆角位置
-    func setCorner(size: CGFloat, roundingCorners: UIRectCorner) {
+    public func setCorner(size: CGFloat, roundingCorners: UIRectCorner) {
         self.layoutIfNeeded()
         let fieldPath = UIBezierPath.init(roundedRect: self.bounds, byRoundingCorners: roundingCorners, cornerRadii: CGSize(width: size, height: size) )
         let fieldLayer = CAShapeLayer()
@@ -116,7 +117,7 @@ public extension UIView {
 }
 
 // MARK: - 闭包实现view操作手势的链式监听，建议使用这个，内部加入了防重复点击
-public extension UIView {
+extension UIView {
 
     private struct GestureDictKey {
         static var key: Void?
@@ -130,6 +131,7 @@ public extension UIView {
         case panGesture
         case longPressGesture
     }
+
     private var gestureDict: [String: GestureClosures]? {
         get {
             return objc_getAssociatedObject(self, &GestureDictKey.key) as? [String: GestureClosures]
@@ -138,45 +140,51 @@ public extension UIView {
             objc_setAssociatedObject(self, &GestureDictKey.key, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
+
     /// 闭包
-    typealias GestureClosures = (UIGestureRecognizer) -> Void
+    public typealias GestureClosures = (UIGestureRecognizer) -> Void
 
     /// 点击
     /// - Parameters:
     ///   - disEnabledtimeInterval: 不可用时间，默认时间为0.5s
     ///   - gesture: 手势回调
     @discardableResult
-    func addTapGesture(disEnabledtimeInterval: CGFloat = 0.5, _ gesture: @escaping GestureClosures) -> UIView {
+    public func addTapGesture(disEnabledtimeInterval: CGFloat = 0.5, _ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .tapGesture, disEnabledtimeInterval: disEnabledtimeInterval)
         return self
     }
+
     /// 捏合
     @discardableResult
-    func addPinchGesture(_ gesture: @escaping GestureClosures) -> UIView {
+    public func addPinchGesture(_ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .pinchGesture)
         return self
     }
+
     /// 旋转
     @discardableResult
-    func addRotationGesture(_ gesture: @escaping GestureClosures) -> UIView {
+    public func addRotationGesture(_ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .rotationGesture)
         return self
     }
+
     /// 滑动
     @discardableResult
-    func addSwipeGesture(_ gesture: @escaping GestureClosures) -> UIView {
+    public func addSwipeGesture(_ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .swipeGesture)
         return self
     }
+
     /// 拖动
     @discardableResult
     func addPanGesture(_ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .panGesture)
         return self
     }
+
     /// 长按
     @discardableResult
-    func addLongPressGesture(_ gesture: @escaping GestureClosures) -> UIView {
+    public func addLongPressGesture(_ gesture: @escaping GestureClosures) -> UIView {
         addGesture(gesture: gesture, for: .longPressGesture)
         return self
     }
@@ -211,26 +219,32 @@ public extension UIView {
             addGestureRecognizer(longPress)
         }
     }
+
     @objc
     private func tapGestureAction (_ tap: UITapGestureRecognizer) {
         executeGestureAction(.tapGesture, gesture: tap)
     }
+
     @objc
     private func pinchGestureAction (_ pinch: UIPinchGestureRecognizer) {
         executeGestureAction(.pinchGesture, gesture: pinch)
     }
+
     @objc
     private func rotationGestureAction (_ rotation: UIRotationGestureRecognizer) {
         executeGestureAction(.rotationGesture, gesture: rotation)
     }
+
     @objc
     private func swipeGestureAction (_ swipe: UISwipeGestureRecognizer) {
         executeGestureAction(.swipeGesture, gesture: swipe)
     }
+
     @objc
     private func panGestureAction (_ pan: UIPanGestureRecognizer) {
         executeGestureAction(.panGesture, gesture: pan)
     }
+
     @objc
     private func longPressGestureAction (_ longPress: UILongPressGestureRecognizer) {
         if longPress.state != .began {
@@ -238,6 +252,7 @@ public extension UIView {
         }
         executeGestureAction(.longPressGesture, gesture: longPress)
     }
+
     private func executeGestureAction(_ gestureType: GestureType, gesture: UIGestureRecognizer) {
         let gestureKey = String(gestureType.rawValue)
         if let gestureDict = self.gestureDict, let gestureReg = gestureDict[gestureKey] {
@@ -262,6 +277,11 @@ extension UITapGestureRecognizer: UIGestureRecognizerDelegate {
         }
     }
 
+    /// 防重复点击手势便利构造函数
+    /// - Parameters:
+    ///   - target: target
+    ///   - action: action
+    ///   - disEnabledtimeInterval: 不可点击时间
     public convenience init(target: Any?, action: Selector?, disEnabledtimeInterval: CGFloat) {
         self.init(target: target, action: action)
         self.disEnabledtimeInterval = disEnabledtimeInterval
@@ -282,10 +302,10 @@ extension UITapGestureRecognizer: UIGestureRecognizerDelegate {
 }
 
 // MARK: - 设置frame相关扩展
-public extension TxExtensionWrapper where Base: UIView {
+extension TxExtensionWrapper where Base: UIView {
 
     /// 扩展 x 的 set get 方法
-    var x: CGFloat {
+    public var x: CGFloat {
         get {
             return base.frame.origin.x
         }
@@ -297,7 +317,7 @@ public extension TxExtensionWrapper where Base: UIView {
     }
 
     /// 扩展 y 的 set get 方法
-    var y: CGFloat {
+    public var y: CGFloat {
         get {
             return base.frame.origin.y
         }
@@ -309,7 +329,7 @@ public extension TxExtensionWrapper where Base: UIView {
     }
 
     /// 扩展 width 的 set get 方法
-    var width: CGFloat {
+    public var width: CGFloat {
         get {
             return base.frame.size.width
         }
@@ -321,7 +341,7 @@ public extension TxExtensionWrapper where Base: UIView {
     }
 
     /// 扩展 height 的 set get 方法
-    var height: CGFloat {
+    public var height: CGFloat {
         get {
             return base.frame.size.height
         }
@@ -333,7 +353,7 @@ public extension TxExtensionWrapper where Base: UIView {
     }
 
     /// 扩展 centerX 的 set get 方法
-    var centerX: CGFloat {
+    public var centerX: CGFloat {
         get {
             return base.center.x
         }
@@ -343,7 +363,7 @@ public extension TxExtensionWrapper where Base: UIView {
     }
 
     /// 扩展 centerY 的 set get 方法
-    var centerY: CGFloat {
+    public var centerY: CGFloat {
         get {
             return base.center.y
         }
@@ -353,7 +373,7 @@ public extension TxExtensionWrapper where Base: UIView {
     }
 
     /// 扩展 origin 的 set get 方法
-    var origin: CGPoint {
+    public var origin: CGPoint {
         get {
             return CGPoint(x: x, y: y)
         }
@@ -364,7 +384,7 @@ public extension TxExtensionWrapper where Base: UIView {
     }
 
     /// 扩展 size 的 set get 方法
-    var size: CGSize {
+    public var size: CGSize {
         get {
             return CGSize(width: width, height: height)
         }
@@ -375,7 +395,7 @@ public extension TxExtensionWrapper where Base: UIView {
     }
 
     /// 扩展 left 的 set get 方法
-    var left: CGFloat {
+    public var left: CGFloat {
         get {
             return x
         }
@@ -385,7 +405,7 @@ public extension TxExtensionWrapper where Base: UIView {
     }
 
     /// 扩展 right 的 set get 方法
-    var right: CGFloat {
+    public var right: CGFloat {
         get {
             return x + width
         }
@@ -395,7 +415,7 @@ public extension TxExtensionWrapper where Base: UIView {
     }
 
     /// 扩展 top 的 set get 方法
-    var top: CGFloat {
+    public var top: CGFloat {
         get {
             return y
         }
@@ -405,7 +425,7 @@ public extension TxExtensionWrapper where Base: UIView {
     }
 
     /// 扩展 bottom 的 set get 方法
-    var bottom: CGFloat {
+    public var bottom: CGFloat {
         get {
             return y + height
         }
@@ -424,7 +444,7 @@ extension UIView {
         static var left: Void?
     }
 
-    fileprivate var hitTop: CGFloat? {
+    private var hitTop: CGFloat? {
         get {
             return objc_getAssociatedObject(self, &HitDictKey.top) as? CGFloat
         }
@@ -433,7 +453,7 @@ extension UIView {
         }
     }
 
-    fileprivate var hitRight: CGFloat? {
+    private var hitRight: CGFloat? {
         get {
             return objc_getAssociatedObject(self, &HitDictKey.right) as? CGFloat
         }
@@ -442,7 +462,7 @@ extension UIView {
         }
     }
 
-    fileprivate var hitBottom: CGFloat? {
+    private var hitBottom: CGFloat? {
         get {
             return objc_getAssociatedObject(self, &HitDictKey.bottom) as? CGFloat
         }
@@ -451,7 +471,7 @@ extension UIView {
         }
     }
 
-    fileprivate var hitLeft: CGFloat? {
+    private var hitLeft: CGFloat? {
         get {
             return objc_getAssociatedObject(self, &HitDictKey.left) as? CGFloat
         }
@@ -519,6 +539,7 @@ extension UILabel {
 
 // MARK: - 增大UIControl点击热区
 extension UIControl {
+
     open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if !self.isUserInteractionEnabled || self.alpha <= 0.01 || self.isHidden || !self.isEnabled {
             return nil

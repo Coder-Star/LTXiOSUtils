@@ -7,11 +7,11 @@
 
 import Foundation
 
-public extension TxExtensionWrapper where Base: UIViewController {
+extension TxExtensionWrapper where Base: UIViewController {
 
     /// 获取当前屏幕顶层ViewController
     /// - Parameter base: 基础UIViewController，默认为window的rootViewController
-    static func topViewController(of base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+    public static func topViewController(of base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let presented = base?.presentedViewController {
             return topViewController(of: presented)
         }
@@ -33,12 +33,12 @@ public extension TxExtensionWrapper where Base: UIViewController {
     }
 
     /// 是否可见
-    var isVisible: Bool {
+    public var isVisible: Bool {
         return self.base.isViewLoaded && self.base.view.window != nil
     }
 
     /// 删除所有子ViewController
-    func removeAllChildren() {
+    public func removeAllChildren() {
         self.base.children.forEach {
             $0.removeFromParent()
         }
@@ -48,7 +48,7 @@ public extension TxExtensionWrapper where Base: UIViewController {
     /// - Parameters:
     ///   - animated: 是否显示动画
     ///   - completion: 完成dismiss闭包回调
-    func dismissToRootViewController(animated: Bool = true, completion: (() -> Void)? = nil) {
+    public func dismissToRootViewController(animated: Bool = true, completion: (() -> Void)? = nil) {
         var tempPresentingViewController = self.base
         while let viewController = self.base.presentingViewController as? Base {
             tempPresentingViewController = viewController
@@ -58,7 +58,7 @@ public extension TxExtensionWrapper where Base: UIViewController {
 
 }
 
-public extension UIViewController {
+extension UIViewController {
 
     /// 生成提示框，一个按钮回调
     /// - Parameters:
@@ -67,7 +67,7 @@ public extension UIViewController {
     ///   - message: 消息
     ///   - cancelTitle: 按钮标题
     ///   - sureBlock: 按钮闭包
-    func getAlert(style: UIAlertController.Style = .alert,
+    public func getAlert(style: UIAlertController.Style = .alert,
                   title: String = "",
                   message: String,
                   cancelTitle: String = "好的",
@@ -94,7 +94,7 @@ public extension UIViewController {
     ///   - message: 消息
     ///   - cancelTitle: 按钮标题
     ///   - sureBlock: 按钮闭包
-    func showAlert(style: UIAlertController.Style = .alert,
+    public func showAlert(style: UIAlertController.Style = .alert,
                    title: String = "",
                    message: String,
                    cancelTitle: String = "好的",
@@ -114,7 +114,7 @@ public extension UIViewController {
     ///   - cancelTitle: 取消按钮
     ///   - sureBlock: 确定按钮闭包回调
     ///   - cancelBlock: 取消按钮闭包回调
-    func getAlert(style: UIAlertController.Style = .alert,
+    public func getAlert(style: UIAlertController.Style = .alert,
                   title: String = "",
                   message: String,
                   sureTitle: String = "确定",
@@ -149,7 +149,7 @@ public extension UIViewController {
     ///   - cancelTitle: 取消按钮
     ///   - sureBlock: 确定按钮闭包回调
     ///   - cancelBlock: 取消按钮闭包回调
-    func showAlert(style: UIAlertController.Style = .alert,
+    public func showAlert(style: UIAlertController.Style = .alert,
                    title: String = "",
                    message: String,
                    sureTitle: String = "确定",
@@ -163,10 +163,10 @@ public extension UIViewController {
     }
 }
 
-public extension UIViewController {
+extension UIViewController {
 
     /// 点击空白处取消键盘
-    func hideKeyboardWhenTappedAround() {
+    public func hideKeyboardWhenTappedAround() {
         self.view.addTapGesture { tap in
             tap.cancelsTouchesInView = false
             self.view.endEditing(true)

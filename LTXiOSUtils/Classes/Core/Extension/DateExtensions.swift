@@ -33,13 +33,13 @@ public enum DateFormateType: String {
 }
 
 // MARK: - 日期扩展
-public extension TxExtensionWrapper where Base == Date {
+extension TxExtensionWrapper where Base == Date {
 
     /// Date格式化
     ///
     /// - Parameter format: 格式化类型
     /// - Returns: 格式化后的字符串
-    func formatDate(format: DateFormateType) -> String {
+    public func formatDate(format: DateFormateType) -> String {
         return self.formatDate(formatStr: format.rawValue)
     }
 
@@ -47,7 +47,7 @@ public extension TxExtensionWrapper where Base == Date {
     ///
     /// - Parameter format: 日期格式
     /// - Returns: 格式化后的字符串
-    func formatDate(formatStr: String) -> String {
+    public func formatDate(formatStr: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar.current
         dateFormatter.timeZone = TimeZone.current
@@ -57,7 +57,7 @@ public extension TxExtensionWrapper where Base == Date {
     }
 
     /// 获取星期
-    var weekDay: String {
+    public var weekDay: String {
         let weekDays = [NSNull.init(), "日", "一", "二", "三", "四", "五", "六"] as [Any]
         let calendar = NSCalendar.init(calendarIdentifier: .gregorian)
         let timeZone = TimeZone.current
@@ -72,7 +72,7 @@ public extension TxExtensionWrapper where Base == Date {
 
     /// 获取相对指定时间之前几天或者之后几天的日期，之前的填入负数
     /// - Parameter days: 日期，单位为天
-    func getDateByDays(days: Int) -> Date {
+    public func getDateByDays(days: Int) -> Date {
         let date = Date(timeInterval: TimeInterval(days * 24 * 60 * 60), since: self.base)
         return date
     }
@@ -80,39 +80,39 @@ public extension TxExtensionWrapper where Base == Date {
 }
 
 // MARK: - 当前时间等相关
-public extension TxExtensionWrapper where Base == Date {
+extension TxExtensionWrapper where Base == Date {
 
     /// 秒级时间戳 - 10位
-    var timeStamp: Int {
+    public var timeStamp: Int {
         let timeInterval: TimeInterval = self.base.timeIntervalSince1970
         let timeStamp = Int(timeInterval)
         return timeStamp
     }
 
     /// 获取秒级时间戳 - 10位
-    var timeStampStr: String {
+    public var timeStampStr: String {
         return "\(timeStamp)"
     }
 
     /// 获取毫秒级时间戳 - 13位
-    var milliStamp: CLongLong {
+    public var milliStamp: CLongLong {
         let timeInterval: TimeInterval = self.base.timeIntervalSince1970
         let millisecond = CLongLong(round(timeInterval * 1000))
         return millisecond
     }
 
     /// 获取毫秒级时间戳 - 13位
-    var milliStampStr: String {
+    public var milliStampStr: String {
         return "\(milliStamp)"
     }
 
     /// 获取当前时间
-    static func getCurrentTime() -> String {
+    public static func getCurrentTime() -> String {
         return Date().tx.formatDate(format: .YMDHMS)
     }
 
     /// 获取当前日期
-    static func getCurrentDate() -> String {
+    public static func getCurrentDate() -> String {
         return Date().tx.formatDate(format: .YMD)
     }
 
@@ -121,7 +121,7 @@ public extension TxExtensionWrapper where Base == Date {
 // MARK: - 时间戳转时间
 extension TxExtensionWrapper where Base == TimeInterval {
     /// 时间戳(毫秒)转时间
-    var dateAsMilliStamp: Date {
+    public var dateAsMilliStamp: Date {
         let timeInterval = self.base / 1000
         return Date.init(timeIntervalSince1970: timeInterval)
     }
@@ -129,19 +129,19 @@ extension TxExtensionWrapper where Base == TimeInterval {
     /// 时间戳转时间字符串
     /// - Parameters:
     ///   - format: 时间格式化格式
-    func toDateStrAsMilliStamp(format: DateFormateType) -> String {
+    public func toDateStrAsMilliStamp(format: DateFormateType) -> String {
         return dateAsMilliStamp.tx.formatDate(format: format)
     }
 
     /// 时间戳(秒)转时间
-    var dateAsTimeStamp: Date {
+    public var dateAsTimeStamp: Date {
         return Date.init(timeIntervalSince1970: self.base)
     }
 
     /// 时间戳(秒)转时间字符串
     /// - Parameters:
     ///   - format: 时间格式化格式
-    func toDateStrAsTimeStamp(format: DateFormateType) -> String {
+    public func toDateStrAsTimeStamp(format: DateFormateType) -> String {
         return dateAsTimeStamp.tx.formatDate(format: format)
     }
 }

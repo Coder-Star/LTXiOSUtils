@@ -17,13 +17,13 @@ public enum ImageCompressType {
 }
 
 // MARK: - UIImage压缩相关
-public extension TxExtensionWrapper where Base: UIImage {
+extension TxExtensionWrapper where Base: UIImage {
 
     /// 压缩图片
     /// 注意压缩后含有透明背景图片的背景会变成白色
     /// - Parameter type: 压缩类型
     /// - Returns: 压缩后的图片
-    func compress(type: ImageCompressType = .timeline) -> UIImage {
+    public func compress(type: ImageCompressType = .timeline) -> UIImage {
         let size = self.wxImageSize(type: type)
         let reImage = resizedImage(size: size)
         let data = reImage.jpegData(compressionQuality: 0.5)!
@@ -79,13 +79,13 @@ public extension TxExtensionWrapper where Base: UIImage {
 }
 
 // MARK: - 扩展
-public extension TxExtensionWrapper where Base: UIImage {
+extension TxExtensionWrapper where Base: UIImage {
 
     /// 设置图片尺寸
     ///
     /// - Parameter reSize: 图片尺寸
     /// - Returns: 处理后的图片
-    func setSize(reSize: CGSize) -> UIImage {
+    public func setSize(reSize: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(reSize, false, UIScreen.main.scale)
         self.base.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height))
         let reSizeImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -97,7 +97,7 @@ public extension TxExtensionWrapper where Base: UIImage {
     ///
     /// - Parameter scaleSize: 缩放比例
     /// - Returns: 缩放后的图片
-    func scaleImage(scaleSize: CGFloat) -> UIImage {
+    public func scaleImage(scaleSize: CGFloat) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: self.base.size.width * scaleSize, height: self.base.size.height * scaleSize), false, UIScreen.main.scale)
         self.base.draw(in: CGRect(x: 0, y: 0, width: self.base.size.width * scaleSize, height: self.base.size.height * scaleSize))
         let reSizeImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -109,7 +109,7 @@ public extension TxExtensionWrapper where Base: UIImage {
     ///
     /// - Parameter orientation: 旋转方向
     /// - Returns: 旋转后的图片
-    func rotate(orientation: UIImage.Orientation) -> UIImage {
+    public func rotate(orientation: UIImage.Orientation) -> UIImage {
         return UIImage(cgImage: self.base.cgImage!, scale: self.base.scale, orientation: orientation)
     }
 }

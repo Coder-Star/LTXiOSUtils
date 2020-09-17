@@ -37,6 +37,7 @@ public protocol TxExtensionWrapperProtocol {
     /// 类方法，只读计算属性
     static var tx: CompatibleClassType { get set }
 }
+
 /// Compatible协议默认实现
 extension TxExtensionWrapperProtocol {
     /// 实例方法默认实现
