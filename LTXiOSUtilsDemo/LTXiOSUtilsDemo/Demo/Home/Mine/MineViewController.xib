@@ -50,31 +50,31 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoderStar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ife-ad-W2c">
-                    <rect key="frame" x="320" y="80" width="79" height="21"/>
+                    <rect key="frame" x="320.66666666666669" y="80" width="78.333333333333314" height="20.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://coder-star.github.io" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzN-6s-lMO">
-                    <rect key="frame" x="193" y="121" width="206" height="21"/>
+                    <rect key="frame" x="193.33333333333337" y="120.33333333333333" width="205.66666666666663" height="20.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com/Coder-Star" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpy-Cv-RtP">
-                    <rect key="frame" x="167" y="162" width="232" height="21"/>
+                    <rect key="frame" x="167.33333333333337" y="160.66666666666666" width="231.66666666666663" height="20.333333333333343"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="这是CoderStar的自我描述，应该很长，请耐心看完" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWC-H6-flP">
-                    <rect key="frame" x="95" y="203" width="304" height="40.666666666666657"/>
+                    <rect key="frame" x="95" y="201" width="304" height="40.666666666666657"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="描述" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edO-9z-LAP">
-                    <rect key="frame" x="15" y="201" width="50" height="21"/>
+                    <rect key="frame" x="15" y="201" width="50" height="20.333333333333343"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="NkU-cg-fAm"/>
                     </constraints>
@@ -82,9 +82,54 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="EjF-oe-ub1">
+                    <rect key="frame" x="10" y="271.66666666666669" width="394" height="110"/>
+                    <subviews>
+                        <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKH-Vy-dIk">
+                            <rect key="frame" x="0.0" y="0.0" width="104.66666666666667" height="110"/>
+                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="前端" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkO-kK-VgP">
+                            <rect key="frame" x="144.66666666666666" y="0.0" width="104.66666666666666" height="110"/>
+                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="后端" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-E9-I1i">
+                            <rect key="frame" x="289.33333333333331" y="0.0" width="104.66666666666669" height="110"/>
+                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="uF3-Hj-VQK"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="EjF-oe-ub1" firstAttribute="top" secondItem="RWC-H6-flP" secondAttribute="bottom" constant="30" id="4e2-Ji-8bA"/>
                 <constraint firstItem="RWC-H6-flP" firstAttribute="top" secondItem="dpy-Cv-RtP" secondAttribute="bottom" constant="20" id="5zp-Ed-eOe"/>
                 <constraint firstItem="zQ8-u9-oYe" firstAttribute="top" secondItem="1vH-0V-303" secondAttribute="bottom" constant="20" id="6Qp-9t-HXK"/>
                 <constraint firstItem="jfS-A7-9FE" firstAttribute="top" secondItem="zQ8-u9-oYe" secondAttribute="bottom" constant="20" id="9rj-dK-wpx"/>
@@ -92,6 +137,7 @@
                 <constraint firstItem="Ife-ad-W2c" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="FM3-R3-yTg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ife-ad-W2c" secondAttribute="trailing" constant="15" id="GuN-EK-SD5"/>
                 <constraint firstItem="edO-9z-LAP" firstAttribute="top" secondItem="jfS-A7-9FE" secondAttribute="bottom" constant="20" id="HAT-4G-Ca7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EjF-oe-ub1" secondAttribute="trailing" constant="10" id="Jpp-Ei-aCk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dpy-Cv-RtP" secondAttribute="trailing" constant="15" id="KuG-YN-buj"/>
                 <constraint firstItem="NHv-mW-QFr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Mlr-9j-MQd"/>
                 <constraint firstItem="zQ8-u9-oYe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="NIm-5X-UWs"/>
@@ -101,6 +147,7 @@
                 <constraint firstItem="1vH-0V-303" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="YRt-vM-usY"/>
                 <constraint firstItem="1vH-0V-303" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="cWJ-LV-5EP"/>
                 <constraint firstItem="edO-9z-LAP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="i1g-E2-8St"/>
+                <constraint firstItem="EjF-oe-ub1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="i96-jx-cLO"/>
                 <constraint firstItem="dpy-Cv-RtP" firstAttribute="top" secondItem="RzN-6s-lMO" secondAttribute="bottom" constant="20" id="oGP-oS-G3k"/>
                 <constraint firstItem="RzN-6s-lMO" firstAttribute="top" secondItem="Ife-ad-W2c" secondAttribute="bottom" constant="20" id="ulP-rM-Q6W"/>
                 <constraint firstAttribute="trailing" secondItem="RWC-H6-flP" secondAttribute="trailing" constant="15" id="xdM-Vo-0IY"/>

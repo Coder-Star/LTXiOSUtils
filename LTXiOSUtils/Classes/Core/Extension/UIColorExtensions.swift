@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 // MARK: - 颜色扩展
-public extension UIColor {
+extension UIColor {
 
     /// 颜色hex值转颜色，如果hex值去除头部符号后不满6位，返回默认色-白色
     ///
     /// - Parameters:
     ///   - hexString: hex值
     ///   - alpha: 透明度
-    convenience init(hexString: String, alpha: CGFloat = 1.0) {
+    public convenience init(hexString: String, alpha: CGFloat = 1.0) {
         var hexString = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
         hexString = hexString.lowercased()
 
@@ -49,9 +49,10 @@ public extension UIColor {
     }
 }
 
-public extension TxExtensionWrapper where Base: UIColor {
+extension TxExtensionWrapper where Base: UIColor {
+
     /// 颜色转hex值
-    var hexString: String? {
+    public var hexString: String? {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
@@ -82,28 +83,28 @@ public extension TxExtensionWrapper where Base: UIColor {
     }
 
     /// 颜色的反色
-    var invertColor: UIColor {
+    public var invertColor: UIColor {
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0
         self.base.getRed(&r, green: &g, blue: &b, alpha: nil)
         return UIColor(red: 1.0 - r, green: 1.0 - g, blue: 1.0 - b, alpha: 1)
     }
 
     /// 红色值
-    var redColor: Int {
+    public var redColor: Int {
         var red: CGFloat = 0
         self.base.getRed(&red, green: nil, blue: nil, alpha: nil)
         return Int(red * 255)
     }
 
     /// 绿色值
-    var greenColor: Int {
+    public var greenColor: Int {
         var green: CGFloat = 0
         self.base.getRed(nil, green: &green, blue: nil, alpha: nil)
         return Int(green * 255)
     }
 
     /// 蓝色值
-    var blueColor: Int {
+    public var blueColor: Int {
         var blue: CGFloat = 0
         self.base.getRed(nil, green: nil, blue: &blue, alpha: nil)
         return Int(blue * 255)
@@ -112,13 +113,13 @@ public extension TxExtensionWrapper where Base: UIColor {
 }
 
 // MARK: - 颜色、图片
-public extension TxExtensionWrapper where Base: UIColor {
+extension TxExtensionWrapper where Base: UIColor {
 
     /// 颜色生成指定大小的UIImage
     ///
     /// - Parameter size: 图片尺寸
     /// - Returns: 图片
-    func toImage(size: CGSize) -> UIImage? {
+    public func toImage(size: CGSize) -> UIImage? {
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContext(rect.size)
         let context: CGContext = UIGraphicsGetCurrentContext()!
@@ -130,10 +131,11 @@ public extension TxExtensionWrapper where Base: UIColor {
     }
 }
 
-public extension TxExtensionWrapper where Base: UIColor {
+extension TxExtensionWrapper where Base: UIColor {
+
     /// 适配暗黑模式
     /// - Parameter colorWithDark: 暗黑模式下的颜色,默认为nil，取颜色反色
-    func adaptDark(_ colorWithDark: UIColor? = nil) -> UIColor {
+    public func adaptDark(_ colorWithDark: UIColor? = nil) -> UIColor {
         if #available(iOS 13.0, *) {
             if UITraitCollection.current.userInterfaceStyle == .dark {
                 guard let darkColor = colorWithDark else {
@@ -149,7 +151,7 @@ public extension TxExtensionWrapper where Base: UIColor {
 
     /// 适配各种模式
     /// - Parameter colorWithDark: 暗黑模式颜色
-    func adapt(colorWithDark: UIColor? = nil) -> UIColor {
+    public func adapt(colorWithDark: UIColor? = nil) -> UIColor {
         return self.adaptDark(colorWithDark)
     }
 }
