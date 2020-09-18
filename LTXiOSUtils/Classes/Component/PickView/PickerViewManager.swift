@@ -178,14 +178,14 @@ extension PickerViewManager {
 }
 
 // MARK: - 快速使用方法
-public extension PickerViewManager {
+extension PickerViewManager {
 
     /// 单列选择器
     ///  - parameter title:                      标题
     ///  - parameter data:                       数据；数据为空时，会弹出提示框提示数据为空
     ///  - parameter defaultSeletedIndex:        默认选中的行数；传入当默认索引不在合理范围内,会默认显示第一个
     ///  - parameter doneAction:                 响应完成的Closure
-    class func showSingleColPicker(_ toolBarTitle: String, data: [String], defaultSelectedIndex: Int?, clearAction: BtnAction?, doneAction: SingleDoneAction?) {
+    public class func showSingleColPicker(_ toolBarTitle: String, data: [String], defaultSelectedIndex: Int?, clearAction: BtnAction?, doneAction: SingleDoneAction?) {
         if data.isEmpty {
             HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtils())
             return
@@ -202,7 +202,7 @@ public extension PickerViewManager {
     /// - Parameter data: 数据；为空时，会弹出提示框提示数据为空
     /// - Parameter defaultSelectedIndexs: 默认选中的每一列的行数；当默认索引不在合理范围内,会默认显示第一个，默认索引数组数量不做限制，已兼容
     /// - Parameter doneAction: 响应完成的Closure
-    class func showMultipleColsPicker(_ toolBarTitle: String, data: [[String]], defaultSelectedIndexs: [Int]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
+    public class func showMultipleColsPicker(_ toolBarTitle: String, data: [[String]], defaultSelectedIndexs: [Int]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
         if data.isEmpty {
             HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtils())
             return
@@ -219,7 +219,7 @@ public extension PickerViewManager {
     /// - Parameter data: 数据；为空时，会弹出提示框提示数据为空
     /// - Parameter defaultSelectedValues: 默认选中的每一列的数值；当默认值不存在时,会默认显示第一个，默认数据数组数量不做限制，已兼容
     /// - Parameter doneAction: 响应完成的Closure
-    class func showMultipleAssociatedColsPicker(_ toolBarTitle: String, data: MultipleAssociatedDataType, defaultSelectedValues: [String]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
+    public class func showMultipleAssociatedColsPicker(_ toolBarTitle: String, data: MultipleAssociatedDataType, defaultSelectedValues: [String]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
         if data.isEmpty {
             HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtils())
             return
@@ -236,7 +236,7 @@ public extension PickerViewManager {
     /// - Parameter type: 显示样式类型
     /// - Parameter defaultSelectedValues: 默认选中的每一列的值, 注意不是行数；当默认值不存在时,会默认显示第一个，默认数据数组数量不做限制，已兼容
     /// - Parameter doneAction: 响应完成的Closure
-    class func showCitiesPicker(_ toolBarTitle: String, type: CityPickStyle = .province, defaultSelectedValues: [String]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
+    public class func showCitiesPicker(_ toolBarTitle: String, type: CityPickStyle = .province, defaultSelectedValues: [String]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
         currentWindow.endEditing(true)
@@ -248,7 +248,7 @@ public extension PickerViewManager {
     /// - Parameter toolBarTitle: 标题
     /// - Parameter datePickerSetting: 可配置UIDatePicker的样式
     /// - Parameter doneAction: 响应完成的Closure
-    class func showDatePicker(_ toolBarTitle: String, datePickerSetting: DatePickerSetting = DatePickerSetting(), clearAction: BtnAction?, doneAction: DateDoneAction?) {
+    public class func showDatePicker(_ toolBarTitle: String, datePickerSetting: DatePickerSetting = DatePickerSetting(), clearAction: BtnAction?, doneAction: DateDoneAction?) {
         let window = UIApplication.shared.keyWindow
         guard let currentWindow = window else { return }
         currentWindow.endEditing(true)

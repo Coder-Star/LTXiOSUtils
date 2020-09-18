@@ -14,7 +14,7 @@ import UIKit
 extension UIButton {
     /// 时间等待模式默认的等待时间 0.5s
     public static var RepeatClickDefaultDuration = 0.5
-    
+
     /// 使用模式
     public enum RepeatButtonClickType: String {
         /// 时间等候模式，默认
@@ -22,14 +22,14 @@ extension UIButton {
         /// 事件完成模式
         case eventDone
     }
-    
+
     private struct AssociatedKeysWithUIButtonRepeatClick {
         static var clickDurationTime: Void?
         static var isIgnoreEvent: Void?
         static var isFinish: Void?
         static var repeatButtonClickType: Void?
     }
-    
+
     /// 使用模式
     public var repeatButtonClickType: RepeatButtonClickType {
         set {
@@ -42,7 +42,7 @@ extension UIButton {
             return .durationTime
         }
     }
-    
+
     /// 点击间隔时间
     public var clickDurationTime: TimeInterval {
         set {
@@ -55,7 +55,7 @@ extension UIButton {
             return UIButton.RepeatClickDefaultDuration
         }
     }
-    
+
     /// 是否完成点击事件
     public var isFinishEvent: Bool {
         set {
@@ -68,7 +68,7 @@ extension UIButton {
             return false
         }
     }
-    
+
     /// 是否忽视点击事件
     private var isIgnoreEvent: Bool {
         set {
@@ -81,7 +81,7 @@ extension UIButton {
             return false
         }
     }
-    
+
     ///
     /// - Parameters:
     ///   - action: 执行函数
@@ -116,7 +116,7 @@ extension UIButton {
             sendActionWithRepeatClick(action: action, to: target, forEvent: event)
         }
     }
-    
+
     /// 初始化，需手动调用一下
     public class func initRepeatClickMethod() {
         if self !== UIButton.self {
@@ -126,14 +126,14 @@ extension UIButton {
         DispatchQueue.tx.once(token: "AssociatedKeysWithUIButtonRepeatClick") {
             let originalSelector = #selector(UIButton.sendAction)
             let swizzledSelector = #selector(UIButton.sendActionWithRepeatClick(action:to:forEvent:))
-            
+
             // 原有方法，通过方法编号找到方法
             let originalMethod = class_getInstanceMethod(self, originalSelector)
             // 现有方法
             let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
             // 先尝试給原有SEL添加新IMP，这里是为了避免原有SEL没有实现IMP的情况
             let didAddMethod = class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod!), method_getTypeEncoding(swizzledMethod!))
-            
+
             if didAddMethod {
                 // 添加成功，说明原SEL没有实现IMP，添加成功后将新的SEL的IMP替换成老IMPΩ
                 class_replaceMethod(self, swizzledSelector, method_getImplementation(originalMethod!), method_getTypeEncoding(originalMethod!))
@@ -143,19 +143,19 @@ extension UIButton {
             }
         }
     }
-    
+
 }
 
 // MARK: - Button所有事件的链式调用
 extension UIButton {
-    
+
     private struct ActionDictKey {
         static var key: Void?
     }
-    
+
     /// 闭包
     public typealias ButtonAction = (UIButton) -> Void
-    
+
     // MARK: - 属性
     // 用于保存所有事件对应的闭包
     private var actionDict: [String: ButtonAction]? {
@@ -166,9 +166,9 @@ extension UIButton {
             objc_setAssociatedObject(self, &ActionDictKey.key, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
-    
+
     // MARK: - 公开函数
-    
+
     /// 按钮点击事件
     /// - Parameter action: 回调
     @discardableResult
@@ -176,7 +176,7 @@ extension UIButton {
         self.addAction(action: action, for: .touchUpInside)
         return self
     }
-    
+
     /// 按钮事件
     /// - Parameters:
     ///   - event: 事件类型
@@ -186,7 +186,7 @@ extension UIButton {
         self.addAction(action: action, for: event)
         return self
     }
-    
+
     // MARK: - 私有方法
     private func addAction(action: @escaping ButtonAction, for controlEvents: UIControl.Event) {
         let eventKey = String(controlEvents.rawValue)
@@ -199,7 +199,7 @@ extension UIButton {
         self.dataStr = "\(controlEvents.rawValue)"
         addTarget(self, action: #selector(respondControlEvent(button:)), for: controlEvents)
     }
-    
+
     /// 响应事件
     @objc
     private func respondControlEvent(button: UIButton) {
@@ -207,7 +207,7 @@ extension UIButton {
             executeControlEvent( UIControl.Event(rawValue: eventRawValue) )
         }
     }
-    
+
     private func executeControlEvent(_ event: UIControl.Event) {
         let eventKey = String(event.rawValue)
         if let actionDict = self.actionDict, let action = actionDict[eventKey] {

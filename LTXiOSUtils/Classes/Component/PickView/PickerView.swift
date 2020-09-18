@@ -472,7 +472,7 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 // MARK: 快速使用方法
-public extension PickerView {
+extension PickerView {
 
     /// 单列
     /// - Parameter toolBarTitle: 工具栏标题
@@ -480,7 +480,7 @@ public extension PickerView {
     /// - Parameter defaultIndex: 默认选中索引
     /// - Parameter cancelAction: 取消回调
     /// - Parameter doneAction: 完成回调
-    class func singleColPicker(_ toolBarTitle: String, singleColData: [String], defaultIndex: Int?, cancelAction: BtnAction?, doneAction: SingleDoneAction?) -> PickerView {
+    public class func singleColPicker(_ toolBarTitle: String, singleColData: [String], defaultIndex: Int?, cancelAction: BtnAction?, doneAction: SingleDoneAction?) -> PickerView {
         let pic = PickerView(pickerStyle: .single)
         pic.toolBarTitle = toolBarTitle
         pic.singleColData = singleColData
@@ -497,7 +497,7 @@ public extension PickerView {
     /// - Parameter defaultSelectedIndexs: 默认选中索引
     /// - Parameter cancelAction: 取消回调
     /// - Parameter doneAction: 完成回调
-    class func multipleCosPicker(_ toolBarTitle: String, multipleColsData: [[String]], defaultSelectedIndexs: [Int]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
+    public class func multipleCosPicker(_ toolBarTitle: String, multipleColsData: [[String]], defaultSelectedIndexs: [Int]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
         let pic = PickerView(pickerStyle: .multiple)
         pic.toolBarTitle = toolBarTitle
         pic.multipleColsData = multipleColsData
@@ -514,7 +514,7 @@ public extension PickerView {
     /// - Parameter defaultSelectedValues: 默认选中值 ~> [String]？
     /// - Parameter cancelAction: 取消回调
     /// - Parameter doneAction: 完成回调
-    class func multipleAssociatedCosPicker(_ toolBarTitle: String, multipleAssociatedColsData: MultipleAssociatedDataType, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
+    public class func multipleAssociatedCosPicker(_ toolBarTitle: String, multipleAssociatedColsData: MultipleAssociatedDataType, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
         let pic = PickerView(pickerStyle: .multipleAssociated)
         pic.toolBarTitle = toolBarTitle
         pic.multipleAssociatedColsData = multipleAssociatedColsData
@@ -531,7 +531,7 @@ public extension PickerView {
     /// - Parameter cancelAction: 取消回调
     /// - Parameter doneAction: 完成回调
     /// - Parameter type: 显示样式类型
-    class func citiesPicker(_ toolBarTitle: String, type: CityPickStyle, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
+    public class func citiesPicker(_ toolBarTitle: String, type: CityPickStyle, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
         var pic = PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: [[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
         guard let path = ResourceUtils.getBundle(bundleName: "LTXiOSUtils")?.path(forResource: "Address", ofType: "plist") else {
             return pic
@@ -585,7 +585,7 @@ public extension PickerView {
     /// - Parameter datePickerSetting: date配置
     /// - Parameter cancelAction: 取消回调
     /// - Parameter doneAction: 完成回调
-    class func datePicker(_ toolBarTitle: String, datePickerSetting: DatePickerSetting, cancelAction: BtnAction?, doneAction: DateDoneAction?) -> PickerView {
+    public class func datePicker(_ toolBarTitle: String, datePickerSetting: DatePickerSetting, cancelAction: BtnAction?, doneAction: DateDoneAction?) -> PickerView {
         let pic = PickerView(pickerStyle: .date)
         pic.datePickerSetting = datePickerSetting
         pic.toolBarTitle = toolBarTitle

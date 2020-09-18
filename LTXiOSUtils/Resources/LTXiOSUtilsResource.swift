@@ -8,17 +8,17 @@
 import Foundation
 
 // MARK: - 字符串扩展，获取资源
-public extension String {
+extension String {
 
     /// 获取LTXiOSUtils库中的国际化
     /// - Parameter comment: 注释参数
-    func localizedOfLTXiOSUtils(_ comment: String = "") -> String {
+    public func localizedOfLTXiOSUtils(_ comment: String = "") -> String {
         return ResourceUtils.getBundle(bundleName: "LTXiOSUtils")?.localizedString(forKey: self, value: "", table: nil) ?? ""
 //        return localized(in: ResourceUtils.getBundle(bundleName: "LTXiOSUtils"))
     }
 
     /// 获取LTXiOSUtils库中的图片
-    func imageOfLTXiOSUtils() -> UIImage? {
+    public func imageOfLTXiOSUtils() -> UIImage? {
         return UIImage(named: self, in: ResourceUtils.getBundle(bundleName: "LTXiOSUtils"), compatibleWith: nil)
     }
 }

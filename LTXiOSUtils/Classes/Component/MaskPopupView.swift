@@ -183,10 +183,10 @@ public class MaskPopupView: UIView {
 }
 
 /// 扩展
-public extension UIView {
+extension UIView {
 
     /// 便利获取MaskPopupView
-    var maskPopupView: MaskPopupView? {
+    public var maskPopupView: MaskPopupView? {
         if self.superview?.isKind(of: MaskPopupView.classForCoder()) == true {
             return self.superview as? MaskPopupView
         }

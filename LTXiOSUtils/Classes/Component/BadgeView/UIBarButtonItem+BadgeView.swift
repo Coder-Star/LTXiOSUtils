@@ -7,10 +7,10 @@
 
 import UIKit
 
-public extension TxExtensionWrapper where Base: UIBarButtonItem {
+extension TxExtensionWrapper where Base: UIBarButtonItem {
 
     /// 角标view
-    var badgeView: BadgeControl {
+    public var badgeView: BadgeControl {
         return _bottomView.tx.badgeView
     }
 
@@ -19,7 +19,7 @@ public extension TxExtensionWrapper where Base: UIBarButtonItem {
     /// Add Badge with text content, the default utxer right corner, red backgroundColor, 18pts
     ///
     /// - Parameter text: 文本字符串
-    func addBadge(text: String) {
+    public func addBadge(text: String) {
         _bottomView.tx.addBadge(text: text)
     }
 
@@ -28,7 +28,7 @@ public extension TxExtensionWrapper where Base: UIBarButtonItem {
     /// Add the Badge with numbers, the default utxer right corner, red backgroundColor, 18pts
     ///
     /// - Parameter number: 整形数字
-    func addBadge(number: Int) {
+    public func addBadge(number: Int) {
         _bottomView.tx.addBadge(number: number)
     }
 
@@ -37,7 +37,7 @@ public extension TxExtensionWrapper where Base: UIBarButtonItem {
     /// Add small dots with color, the default utxer right corner, red backgroundColor, 8pts
     ///
     /// - Parameter color: 颜色
-    func addDot(color: UIColor? = .red) {
+    public func addDot(color: UIColor? = .red) {
         _bottomView.tx.addDot(color: color)
     }
 
@@ -48,7 +48,7 @@ public extension TxExtensionWrapper where Base: UIBarButtonItem {
     /// - Parameters:
     ///   - x: X轴偏移量 (x<0: 左移, x>0: 右移) axis offset (x <0: left, x> 0: right)
     ///   - y: Y轴偏移量 (y<0: 上移, y>0: 下移) axis offset (Y <0: up,   y> 0: down)
-    func moveBadge(x: CGFloat, y: CGFloat) {
+    public func moveBadge(x: CGFloat, y: CGFloat) {
         _bottomView.tx.moveBadge(x: x, y: y)
     }
 
@@ -60,7 +60,7 @@ public extension TxExtensionWrapper where Base: UIBarButtonItem {
     /// txBadgeViewFlexModeTail,    右伸缩 Tail Flex    : ●==>
     /// txBadgeViewFlexModeMiddle   左右伸缩 Middle Flex : <=●=>
     /// - Parameter flexMode : Default is txBadgeViewFlexModeTail
-    func setBadge(flexMode: BadgeViewFlexMode = .tail) {
+    public func setBadge(flexMode: BadgeViewFlexMode = .tail) {
         _bottomView.tx.setBadge(flexMode: flexMode)
     }
 
@@ -73,39 +73,39 @@ public extension TxExtensionWrapper where Base: UIBarButtonItem {
     /// (Note: this method needs to add Badge to the controls and then use it !!!)
     ///
     /// - Parameter points: 高度大小
-    func setBadge(height: CGFloat) {
+    public func setBadge(height: CGFloat) {
         _bottomView.tx.setBadge(height: height)
     }
 
     /// 显示Badge
-    func showBadge() {
+    public func showBadge() {
         _bottomView.tx.showBadge()
     }
 
     /// 隐藏Badge
-    func hiddenBadge() {
+    public func hiddenBadge() {
         _bottomView.tx.hiddenBadge()
     }
 
     // MARK: - 数字增加/减少, 注意:以下方法只适用于Badge内容为纯数字的情况
     // MARK: - Digital increase /decrease, note: the following method atxlies only to cases where the Badge content is purely numeric
     /// badge数字加1
-    func increase() {
+    public func increase() {
         _bottomView.tx.increase()
     }
 
     /// badge数字加number
-    func increaseBy(number: Int) {
+    public func increaseBy(number: Int) {
         _bottomView.tx.increaseBy(number: number)
     }
 
     /// badge数字加1
-    func decrease() {
+    public func decrease() {
         _bottomView.tx.decrease()
     }
 
     /// badge数字减number
-    func decreaseBy(number: Int) {
+    public func decreaseBy(number: Int) {
         _bottomView.tx.decreaseBy(number: number)
     }
 
