@@ -8,9 +8,9 @@
 import UIKit
 
 // MARK: - 加载gif图片
-public extension UIImageView {
+extension UIImageView {
     /// 加载本地gif文件
-    func loadGif(name: String) {
+    public func loadGif(name: String) {
         DispatchQueue.global().async {
             let image = UIImage.gif(name: name)
             DispatchQueue.main.async {
@@ -19,7 +19,7 @@ public extension UIImageView {
         }
     }
     /// 加载远程gif文件
-    func loadGif(url: String) {
+    public func loadGif(url: String) {
         DispatchQueue.global().async {
             let image = UIImage.gif(url: url)
             DispatchQueue.main.async {
@@ -31,9 +31,9 @@ public extension UIImageView {
 }
 
 // MARK: - 加载gif图片
-public extension UIImage {
+extension UIImage {
     /// 加载gif图片data数据
-    class func gif(data: Data) -> UIImage? {
+    public class func gif(data: Data) -> UIImage? {
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
             return nil
         }
@@ -42,7 +42,7 @@ public extension UIImage {
     }
 
     /// 加载远程gif文件
-    class func gif(url: String) -> UIImage? {
+    public class func gif(url: String) -> UIImage? {
         guard let bundleURL = URL(string: url) else {
             return nil
         }
@@ -54,7 +54,7 @@ public extension UIImage {
     }
 
     /// 加载本地gif文件
-    class func gif(name: String) -> UIImage? {
+    public class func gif(name: String) -> UIImage? {
         guard let bundleURL = Bundle.main.url(forResource: name, withExtension: "gif") else {
             return nil
         }
@@ -64,7 +64,7 @@ public extension UIImage {
         return gif(data: imageData)
     }
 
-    internal class func delayForImageAtIndex(_ index: Int, source: CGImageSource!) -> Double {
+    class func delayForImageAtIndex(_ index: Int, source: CGImageSource!) -> Double {
         var delay = 0.0000005
         let minDelay = 0.0000005
         let cfProperties = CGImageSourceCopyPropertiesAtIndex(source, index, nil)
@@ -91,7 +91,7 @@ public extension UIImage {
         return delay
     }
 
-    internal class func gcdForPair(_ a: Int?, _ b: Int?) -> Int {
+    class func gcdForPair(_ a: Int?, _ b: Int?) -> Int {
         var a = a
         var b = b
         if b == nil || a == nil {
@@ -122,7 +122,7 @@ public extension UIImage {
         }
     }
 
-    internal class func gcdForArray(_ array: [Int]) -> Int {
+    class func gcdForArray(_ array: [Int]) -> Int {
         if array.isEmpty {
             return 1
         }
@@ -133,7 +133,7 @@ public extension UIImage {
         return gcd
     }
 
-    internal class func animatedImageWithSource(_ source: CGImageSource) -> UIImage? {
+    class func animatedImageWithSource(_ source: CGImageSource) -> UIImage? {
         let count = CGImageSourceGetCount(source)
         var images = [CGImage]()
         var delays = [Int]()

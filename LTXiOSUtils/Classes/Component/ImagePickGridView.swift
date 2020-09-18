@@ -131,17 +131,17 @@ open class ImagePickGridView: UIView {
 }
 
 // MARK: - 公有方法
-public extension ImagePickGridView {
+extension ImagePickGridView {
     /// 删除图片
     /// - Parameter index: 删除图片索引
-    func removeImage(index: Int) {
+    public func removeImage(index: Int) {
         imageList.remove(at: index)
         reloadDataAndFrame()
     }
 
     /// 添加图片
     /// - Parameter imageArr: 图片列表
-    func addImage(imageArr: [PickImageModel]) {
+    public func addImage(imageArr: [PickImageModel]) {
         for item in imageArr {
             if item.id == nil ||
                 (item.id != nil && !imageList.compactMap { $0.id }.contains(item.id!) ) {
@@ -156,7 +156,7 @@ public extension ImagePickGridView {
     }
 
     /// 剩余可选最大数量
-    var canPickResidueMaxCount: Int {
+    public var canPickResidueMaxCount: Int {
         if maxImageCount <= 0 {
             return -1
         } else {

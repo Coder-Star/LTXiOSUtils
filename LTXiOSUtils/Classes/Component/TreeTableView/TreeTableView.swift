@@ -121,10 +121,10 @@ public class TreeTableView: UIView {
 
 }
 
-public extension TreeTableView {
+extension TreeTableView {
 
     /// 多选时使用，调用代理
-    func prepareCommit() {
+    public func prepareCommit() {
         if let data = treeData {
             delegate?.checkNodes(nodes: data.allCheckNodes)
         }
@@ -132,20 +132,20 @@ public extension TreeTableView {
 
     /// 选中、取消选中所有的节点
     /// - Parameter isCheck: 是否选中
-    func checkAllNodes(isCheck: Bool) {
+    public func checkAllNodes(isCheck: Bool) {
         treeData?.checkAllNode(isCheck: isCheck)
         tableView.reloadData()
     }
     /// 展开、收起所有节点
     /// - Parameter isExpand: 是否展开
-    func expandAllNodes(isExpand: Bool) {
+    public func expandAllNodes(isExpand: Bool) {
         expandNodesWithLevel(level: isExpand ? Int.max : 0)
     }
 
     /// 展开、收起指定层级的节点
     /// - Parameter isExpand: 是否展开
     /// - Parameter level: 展开等级
-    func expandNodesWithLevel(level: Int) {
+    public func expandNodesWithLevel(level: Int) {
         treeData?.expandNodeWithLevel(expandLevel: level, noExpandCompleted: { noExpandNodes in
             selectNodes(nodes: noExpandNodes, isExpand: false)
         }, expandCompleted: { expandCompleted in
@@ -154,7 +154,7 @@ public extension TreeTableView {
     }
 
     /// 刷新
-    func reload() {
+    public func reload() {
         tableView.reloadData()
     }
 

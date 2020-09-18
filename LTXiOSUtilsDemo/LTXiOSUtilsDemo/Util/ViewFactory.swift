@@ -14,15 +14,15 @@ public class ViewFactory {
 
 }
 
-public extension ViewFactory {
+extension ViewFactory {
     /// 创建UIlabel
-    class func createLabel() {
+    public class func createLabel() {
 
     }
 
     /// 获取普通按钮
     /// - Parameter title: 标题
-    class func getButton(_ title: String) -> UIButton {
+    public class func getButton(_ title: String) -> UIButton {
         let normalUIButton = UIButton()
         normalUIButton.setTitle(title, for: .normal)
         normalUIButton.titleLabel?.textAlignment = .center
@@ -39,7 +39,7 @@ public extension ViewFactory {
     }
 
     /// 获取UITextView
-    class func getTextView() -> UITextView {
+    public class func getTextView() -> UITextView {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 17)
         textView.layer.borderColor = UIColor(hexString: "#cdcdcd").cgColor

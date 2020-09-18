@@ -160,7 +160,7 @@ open class DurationDatePickView: UIView {
 }
 
 // MARK: - 暴露出去的方法，供外部调用
-public extension DurationDatePickView {
+extension DurationDatePickView {
 
     /// 展示起止时间弹出框
     /// - Parameters:
@@ -173,14 +173,14 @@ public extension DurationDatePickView {
     ///   - sureBlock: 确定闭包
     ///   - cancelBlock: 取消闭包
 
-    class func showPopupView(title: String = "DurationDatePickView.topTitle".localizedOfLTXiOSUtils(),
-                             startDate: Date,
-                             endDate: Date,
-                             canGreatNow: Bool = true,
-                             canLessNow: Bool = true,
-                             dateType: DurationDatePickViewDateType = .YMD,
-                             sureBlock: @escaping SureBlock,
-                             cancelBlock: CancelBlock? = nil) {
+    public class func showPopupView(title: String = "DurationDatePickView.topTitle".localizedOfLTXiOSUtils(),
+                                    startDate: Date,
+                                    endDate: Date,
+                                    canGreatNow: Bool = true,
+                                    canLessNow: Bool = true,
+                                    dateType: DurationDatePickViewDateType = .YMD,
+                                    sureBlock: @escaping SureBlock,
+                                    cancelBlock: CancelBlock? = nil) {
         let popupView = getPopupView(startDate: startDate, endDate: endDate, canGreatNow: canGreatNow, canLessNow: canLessNow, dateType: dateType)
         popupView.sureBlock = sureBlock
         popupView.cancelBlock = cancelBlock
@@ -195,11 +195,11 @@ public extension DurationDatePickView {
     ///   - canGreatNow: 是否可大于当前时间，默认为true
     ///   - canLessNow: 是否可以小于当前时间，默认为true
     ///   - dateType: 时间类型
-    class func getPopupView(startDate: Date,
-                            endDate: Date,
-                            canGreatNow: Bool = true,
-                            canLessNow: Bool = true,
-                            dateType: DurationDatePickViewDateType = .YMD) -> DurationDatePickView {
+    public class func getPopupView(startDate: Date,
+                                   endDate: Date,
+                                   canGreatNow: Bool = true,
+                                   canLessNow: Bool = true,
+                                   dateType: DurationDatePickViewDateType = .YMD) -> DurationDatePickView {
 
         UIApplication.shared.keyWindow?.endEditing(true)
         let popupView = DurationDatePickView.init(frame: UIScreen.main.bounds)
@@ -228,7 +228,7 @@ public extension DurationDatePickView {
     }
 
     /// 弹出框显示
-    func show() {
+    public func show() {
         UIView.animate(withDuration: 0.25, animations: { [weak self] in
             self?.coverView.alpha = 0.1
             self?.popupView.alpha = 1
@@ -239,7 +239,7 @@ public extension DurationDatePickView {
     }
 
     /// 弹出框消失
-    func dismiss() {
+    public func dismiss() {
         UIView.animate(withDuration: 0.25, animations: { [weak self] in
             self?.coverView.alpha = 0
             self?.popupView.alpha = 0

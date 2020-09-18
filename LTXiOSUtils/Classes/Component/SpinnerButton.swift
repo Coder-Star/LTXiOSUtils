@@ -120,10 +120,10 @@ open class SpinnerButton: UIButton {
 }
 
 // MARK: - Public Methods
-public extension SpinnerButton {
+extension SpinnerButton {
     /// 状态切换
     /// - Parameter animation: 动画样式
-    func animate(animation: AnimationType) {
+    public func animate(animation: AnimationType) {
         switch animation {
         case .load:
             UIView.animate(withDuration: 0.1, animations: {

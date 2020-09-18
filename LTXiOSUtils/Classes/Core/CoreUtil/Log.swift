@@ -98,7 +98,7 @@ public struct Log {
 
 }
 
-private extension Log {
+extension Log {
 
     private static func printLog<T>(_ log: T, file: String, function: String, line: Int, level: LogLevel) {
         let fileExtension = ((file as NSString).lastPathComponent as NSString).pathExtension //文件名称

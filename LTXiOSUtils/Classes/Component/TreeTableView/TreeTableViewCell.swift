@@ -101,9 +101,9 @@ public class TreeTableViewCell: UITableViewCell {
 }
 
 // MARK: - 公开属性
-public extension TreeTableViewCell {
+extension TreeTableViewCell {
     /// 刷新箭头
-    func refreshArrow() {
+    public func refreshArrow() {
         UIView.animate(withDuration: 0.25) {
             self.updateArrow()
         }

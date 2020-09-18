@@ -1,4 +1,3 @@
-
 //
 //  LayoutMainViewController.swift
 //  LTXiOSUtilsDemo
@@ -27,9 +26,9 @@ class LayoutMainViewController: BaseGroupTableMenuViewController {
     override func click(menuModel: BaseGroupTableMenuModel) {
         switch menuModel.code {
         case "Xib":
-            fallthrough
+            break
         case "StoryBoard":
-            fallthrough
+            break
         default:
             HUD.showText("暂无此模块")
         }

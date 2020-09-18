@@ -418,15 +418,15 @@ extension TreeData {
 }
 
 // MARK: - 获取数据
-public extension TreeData {
+extension TreeData {
     /// 根据节点ID获取指定节点
     /// - Parameter ID: 节点ID
-    func getNodeByID(ID: String) -> TreeNode? {
+    public func getNodeByID(ID: String) -> TreeNode? {
         return nodesMap[ID]
     }
 
     /// 所有勾选的节点
-    var allCheckNodes: [TreeNode] {
+    public var allCheckNodes: [TreeNode] {
         var nodes = [TreeNode]()
         /// 从顶级节点进行遍历，防止多次计算
         for node in showNodes where node.level == 0 {
@@ -448,7 +448,7 @@ public extension TreeData {
 
     /// 获取指定节点的所有子节点
     /// - Parameter node: 指定子节点
-    func getAllChildNodesByNode(node: TreeNode) -> [TreeNode] {
+    public func getAllChildNodesByNode(node: TreeNode) -> [TreeNode] {
         var childNodes = [TreeNode]()
         childNodes = addNode(node: node, childNodes: childNodes)
         return childNodes
@@ -471,7 +471,7 @@ public extension TreeData {
 
     /// 获取指定节点的所有父节点
     /// - Parameter node: 指定节点
-    func getAllParentNodesByNode(node: TreeNode) -> [TreeNode] {
+    public func getAllParentNodesByNode(node: TreeNode) -> [TreeNode] {
         var parentNodes = [TreeNode]()
         var parentNode = node.parentNode
         while parentNode != nil {

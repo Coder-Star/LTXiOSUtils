@@ -31,14 +31,14 @@ open class SuspensionButton: UIView {
 
 }
 
-public extension SuspensionButton {
+extension SuspensionButton {
     /// 展示
-    func show() {
+    public func show() {
 
     }
 
     /// 隐藏
-    func hide() {
+    public func hide() {
 
     }
 }

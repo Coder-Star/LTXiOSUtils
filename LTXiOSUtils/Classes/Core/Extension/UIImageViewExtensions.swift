@@ -7,6 +7,6 @@
 
 import Foundation
 
-public extension UIImageView {
+extension UIImageView {
 
 }

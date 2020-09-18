@@ -184,9 +184,9 @@ public class GridMenuView: UIView {
 }
 
 // MARK: - 公开属性、方法
-public extension GridMenuView {
+extension GridMenuView {
     /// 分页控件当前颜色
-    var pageControlCurrentColor: UIColor {
+    public var pageControlCurrentColor: UIColor {
         set {
             switch mode {
             case .horizontalPage:
@@ -206,7 +206,7 @@ public extension GridMenuView {
     }
 
     /// 分页控件正常颜色
-    var pageControlNormorlColor: UIColor {
+    public var pageControlNormorlColor: UIColor {
         set {
             switch mode {
             case .horizontalPage:
@@ -226,7 +226,7 @@ public extension GridMenuView {
     }
 
     /// 横向滚动滑动宽度
-    var currentIndicatorWidth: CGFloat {
+    public var currentIndicatorWidth: CGFloat {
         set {
             scrollPageControlView.currentIndicatorWidth = newValue
         }
@@ -236,7 +236,7 @@ public extension GridMenuView {
     }
 
     /// 刷新
-    func reloadData() {
+    public func reloadData() {
         collectionView?.reloadData()
     }
 
@@ -245,7 +245,7 @@ public extension GridMenuView {
     /// - Parameters:
     ///   - code: 模块编码
     ///   - number: 数字
-    func updateMark(code: String, number: Int) {
+    public func updateMark(code: String, number: Int) {
         if let index = menu.compactMap({$0.code}).firstIndex(of: code) {
             switch menu[index].markType {
             case .point:
@@ -264,7 +264,7 @@ public extension GridMenuView {
     /// - Parameters:
     ///   - code: 模块编码
     ///   - number: 数字
-    func updateMark(code: String, isShow: Bool) {
+    public func updateMark(code: String, isShow: Bool) {
         if let index = menu.compactMap({$0.code}).firstIndex(of: code) {
             menu[index].markType = .point(isShow: isShow)
             reloadData()
@@ -276,7 +276,7 @@ public extension GridMenuView {
     /// - Parameters:
     ///   - code: 模块编码
     ///   - text: 文本内容
-    func updateMark(code: String, text: String) {
+    public func updateMark(code: String, text: String) {
         if let index = menu.compactMap({$0.code}).firstIndex(of: code) {
             menu[index].markType = .text(text: text)
             reloadData()

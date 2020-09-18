@@ -147,7 +147,7 @@ public class SelectPickView: UIView {
 }
 
 // MARK: - 对外暴露方法
-public extension SelectPickView {
+extension SelectPickView {
 
     /// 展示多选view
     /// - Parameters:
@@ -155,7 +155,7 @@ public extension SelectPickView {
     ///   - data: 数据
     ///   - defaultSelectedIndex: 默认选中索引
     ///   - sureBlock: 确定闭包
-    class func showView(title: String, data: [String], defaultSelectedIndexs: [Int]?, clearBlock: @escaping ClearBlock, sureBlock: @escaping SureBlock) {
+    public class func showView(title: String, data: [String], defaultSelectedIndexs: [Int]?, clearBlock: @escaping ClearBlock, sureBlock: @escaping SureBlock) {
         guard let view = getView(title: title, data: data, defaultSelectedIndexs: defaultSelectedIndexs) else {
             return
         }
@@ -169,7 +169,7 @@ public extension SelectPickView {
     ///   - title: 标题
     ///   - data: 数据
     ///   - defaultSelectedIndexs: 默认选中索引,如果为nil，表示都不选中
-    class func getView(title: String, data: [String], defaultSelectedIndexs: [Int]?) -> SelectPickView? {
+    public class func getView(title: String, data: [String], defaultSelectedIndexs: [Int]?) -> SelectPickView? {
         if data.isEmpty {
             HUD.showText("SelectPickView.emptyData".localizedOfLTXiOSUtils())
             return nil
@@ -192,7 +192,7 @@ public extension SelectPickView {
     ///   - data: 数据
     ///   - defaultSelectedIndex: 默认选中索引
     ///   - sureBlock: 确定闭包
-    class func showSingleView(title: String, data: [String], defaultSelectedIndex: Int?, clearBlock: @escaping ClearBlock, sureBlock: @escaping SingleSureBlock) {
+    public class func showSingleView(title: String, data: [String], defaultSelectedIndex: Int?, clearBlock: @escaping ClearBlock, sureBlock: @escaping SingleSureBlock) {
         guard let view = getSingleView(title: title, data: data, defaultSelectedIndex: defaultSelectedIndex) else {
             return
         }
@@ -206,7 +206,7 @@ public extension SelectPickView {
     ///   - title: 标题
     ///   - data: 数据
     ///   - defaultSelectedIndexs: 默认选中索引,如果为nil，表示都不选中
-    class func getSingleView(title: String, data: [String], defaultSelectedIndex: Int?) -> SelectPickView? {
+    public class func getSingleView(title: String, data: [String], defaultSelectedIndex: Int?) -> SelectPickView? {
         if data.isEmpty {
             HUD.showText("SelectPickView.emptyData".localizedOfLTXiOSUtils())
             return nil
@@ -223,7 +223,7 @@ public extension SelectPickView {
     }
 
     /// 弹出框显示
-    func show() {
+    public func show() {
         UIView.animate(withDuration: 0.25, animations: { [unowned self] in
             self.pickView.frame = self.showFrame
             self.coverView.alpha = 0.1
@@ -232,7 +232,7 @@ public extension SelectPickView {
     }
 
     /// 弹出框消失
-    func dismiss() {
+    public func dismiss() {
         UIView.animate(withDuration: 0.25, animations: { [unowned self] in
             self.pickView.frame = self.hideFrame
             self.coverView.alpha = 0

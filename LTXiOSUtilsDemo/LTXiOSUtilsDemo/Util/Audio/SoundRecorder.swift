@@ -129,12 +129,13 @@ final public class SoundRecorder: NSObject {
 }
 
 // MARK: - 公开方法
-public extension SoundRecorder {
+extension SoundRecorder {
+
     /// 开始录音
     /// - Parameter recordDirectoryPath: 录音文件保存文件夹路径
     /// - Parameter fileName: 文件名称
     /// - Parameter isToMp3: 是否转mp3，默认false
-    func begin(recordDirectoryPath: String, fileName: String, isToMp3: Bool = false) {
+    public func begin(recordDirectoryPath: String, fileName: String, isToMp3: Bool = false) {
         if audioRecorder?.isRecording ?? false {
             self.delegate?.error(type: .recording)
             return
@@ -187,7 +188,7 @@ public extension SoundRecorder {
     }
 
     /// 暂停
-    func pause() {
+    public func pause() {
         if !(audioRecorder?.isRecording ?? false) {
             return
         }
@@ -200,7 +201,7 @@ public extension SoundRecorder {
     /// 继续
     /// 当调用之前已经在录音，返回nil
     @discardableResult
-    func resume() -> Bool? {
+    public func resume() -> Bool? {
         if audioRecorder?.isRecording ?? false {
             return nil
         }
@@ -213,7 +214,7 @@ public extension SoundRecorder {
     }
 
     /// 结束
-    func stop() {
+    public func stop() {
         isEnd = true
         isPause = false
         timer?.invalidate()
@@ -221,14 +222,14 @@ public extension SoundRecorder {
     }
 
     /// 删除
-    func delete() {
+    public func delete() {
         stop()
         audioRecorder?.deleteRecording()
         self.delegate?.stateChange(state: .delete)
     }
 
     /// 录音分贝
-    var level: Float {
+    public var level: Float {
         audioRecorder?.updateMeters()
         // 音量平均值
         let averageV = audioRecorder?.averagePower(forChannel: 0) ?? 0.0
@@ -237,7 +238,7 @@ public extension SoundRecorder {
     }
 
     /// 当前录音状态
-    var state: SoundRecorderState {
+    public var state: SoundRecorderState {
         if audioRecorder?.isRecording ?? false {
             return .recording
         }
@@ -249,7 +250,7 @@ public extension SoundRecorder {
 
     /// 格式化时间
     /// - Parameter time: 时间，精确秒
-    func formtTime(time: TimeInterval) -> String {
+    public func formtTime(time: TimeInterval) -> String {
         let second = Int(time)
         return String(format: "%02d:%02d:%02d", second / 3600, (second % 3600) / 60, second % 3600 % 60)
     }
