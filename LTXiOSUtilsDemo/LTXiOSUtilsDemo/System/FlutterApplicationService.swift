@@ -23,7 +23,7 @@ final class FlutterApplicationService: FlutterAppDelegate, ApplicationService {
 
     func runFlutter() {
         // withEntrypoint表示flutter端入口函数，如果传入nil，则使用默认主函数，main()
-        flutterEngine?.run(withEntrypoint: nil)
+        flutterEngine.run(withEntrypoint: nil)
         GeneratedPluginRegistrant.register(with: self.flutterEngine)
     }
 

@@ -32,9 +32,7 @@ class FlutterMainViewController: BaseUIViewController {
          原因是僵尸指针导致
          真机上不会出现
          */
-        guard let viewController = FlutterViewController(engine: delegate.flutterEngine, nibName: nil, bundle: nil) else {
-            return
-        }
+        let viewController = FlutterViewController(engine: delegate.flutterEngine, nibName: nil, bundle: nil)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
