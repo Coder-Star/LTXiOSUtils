@@ -104,6 +104,7 @@
 		DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */; };
 		DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */; };
 		DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF6F54623BCC87500AC4850 /* ViewFactory.swift */; };
+		DCF812782514F8AB004B0849 /* StoryboardMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCF812772514F8AB004B0849 /* StoryboardMain.storyboard */; };
 		DCF88149242B60210084C940 /* AppConfigApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF88148242B60210084C940 /* AppConfigApplicationService.swift */; };
 		DCF88152242F2D980084C940 /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF88151242F2D980084C940 /* ImagePickView.swift */; };
 		E0D915C897CF2033EFCE6027 /* Pods_LTXiOSUtilsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685E6D010B71AAC761B7FCAA /* Pods_LTXiOSUtilsDemoUITests.framework */; };
@@ -251,6 +252,7 @@
 		DCF41B5D23AA459800AEF70E /* NetworkConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 		DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDemoViewController.swift; sourceTree = "<group>"; };
 		DCF6F54623BCC87500AC4850 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		DCF812772514F8AB004B0849 /* StoryboardMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardMain.storyboard; sourceTree = "<group>"; };
 		DCF88148242B60210084C940 /* AppConfigApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigApplicationService.swift; sourceTree = "<group>"; };
 		DCF88151242F2D980084C940 /* ImagePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
 		FEA6FDCDB130B877B872D978 /* Pods-LTXiOSUtilsDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -469,16 +471,11 @@
 			isa = PBXGroup;
 			children = (
 				DC9F89CD24ED505F00C0487F /* Lib */,
-				DC1BE0AF24B0116F00745671 /* Test */,
-				DC2518CD24A8247200A28595 /* OC-Swift */,
-				DCF88150242F2D000084C940 /* View */,
-				DC83E7C523F645A40030A9B4 /* ThirdLibDemo */,
-				DC03AE5023F43381007739DD /* Model */,
 				DC1AD83523E84D400073CB97 /* Util */,
 				DC4AB9EC22F461A700A5F003 /* Resource */,
 				DC4AB9EB22F4618400A5F003 /* System */,
 				DCF41B5F23AA45A400AEF70E /* Constants */,
-				DCC76E4823A782C40029590C /* Demo */,
+				DCC76E4823A782C40029590C /* Module */,
 				DC4AB9C822F4606100A5F003 /* Info.plist */,
 				DCDBA7B224FE9C7D0073E293 /* LTXiOSUtilsDemo.entitlements */,
 				DC32F1A323840A3E008D3D67 /* R.generated.swift */,
@@ -637,19 +634,19 @@
 		DC9F89CD24ED505F00C0487F /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				DC9F89CF24ED50BF00C0487F /* lame */,
+				DC9F89CF24ED50BF00C0487F /* Lame */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		DC9F89CF24ED50BF00C0487F /* lame */ = {
+		DC9F89CF24ED50BF00C0487F /* Lame */ = {
 			isa = PBXGroup;
 			children = (
 				DC7C935724EE658C005E0AAA /* LameUtil.h */,
 				DC7C935824EE658C005E0AAA /* LameUtil.m */,
 				DC7C936224EE9E84005E0AAA /* LameUtilDelegate.h */,
 			);
-			path = lame;
+			path = Lame;
 			sourceTree = "<group>";
 		};
 		DCAACAD8243DA0DF0028D301 /* MGJRouterDemo */ = {
@@ -695,9 +692,14 @@
 			path = ProtocolTest;
 			sourceTree = "<group>";
 		};
-		DCC76E4823A782C40029590C /* Demo */ = {
+		DCC76E4823A782C40029590C /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				DC03AE5023F43381007739DD /* Model */,
+				DC83E7C523F645A40030A9B4 /* ThirdLibDemo */,
+				DCF88150242F2D000084C940 /* View */,
+				DC2518CD24A8247200A28595 /* OC-Swift */,
+				DC1BE0AF24B0116F00745671 /* Test */,
 				DC03AE2423F3A802007739DD /* Home */,
 				DC0567DA23CAF545008E7C02 /* Menu */,
 				DCB1C04223C4B1FB00D735BD /* ExtensionsExample */,
@@ -710,7 +712,7 @@
 				DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */,
 				DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */,
 			);
-			path = Demo;
+			path = Module;
 			sourceTree = "<group>";
 		};
 		DCCF3E4D23C8AB8B000E65E1 /* ThirdLibTest */ = {
@@ -794,6 +796,7 @@
 		DCEE98372510FE4800A19CF9 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				DCF812772514F8AB004B0849 /* StoryboardMain.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -827,7 +830,7 @@
 				DC62A7C92384093900DE7800 /* R.swift */,
 				DC55E58923FBE7BB008C6941 /* Update App Version 自动替换故事板上的APP版本 */,
 				DCF41C2D2382282D00D7B13D /* SwiftLint配置检测脚本路径 */,
-				898517DCD9A747BD53A8A086 /* [CP-User] Run Flutter Build Script */,
+				A74664F69712360D96902534 /* [CP-User] Run Flutter Build flutter_module Script */,
 				DC4AB9B522F4606000A5F003 /* Sources */,
 				DC4AB9B622F4606000A5F003 /* Frameworks */,
 				DC4AB9B722F4606000A5F003 /* Resources */,
@@ -947,6 +950,7 @@
 				DC88A35F250CB322000198AD /* CustomURLProtocol.html in Resources */,
 				DCBB1C3A23B1FCC000FF2925 /* LaunchScreen.storyboard in Resources */,
 				DC88A35D250CB318000198AD /* WKURLSchemeHandler.html in Resources */,
+				DCF812782514F8AB004B0849 /* StoryboardMain.storyboard in Resources */,
 				DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */,
 				DCEE98302510DFAB00A19CF9 /* chinese_and_english.png in Resources */,
 			);
@@ -986,22 +990,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		898517DCD9A747BD53A8A086 /* [CP-User] Run Flutter Build Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/../flutter_module/.metadata",
-				"${SRCROOT}/../flutter_module/.ios/Flutter/App.framework/App",
-				"${SRCROOT}/../flutter_module/.ios/Flutter/engine/Flutter.framework/Flutter",
-				"${SRCROOT}/../flutter_module/.ios/Flutter/flutter_export_environment.sh",
-			);
-			name = "[CP-User] Run Flutter Build Script";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "source \"${SRCROOT}/../flutter_module/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
-		};
 		996E594BD9EB1CA39553EF3A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1023,6 +1011,22 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A74664F69712360D96902534 /* [CP-User] Run Flutter Build flutter_module Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../flutter_module/.metadata",
+				"${SRCROOT}/../flutter_module/.ios/Flutter/App.framework/App",
+				"${SRCROOT}/../flutter_module/.ios/Flutter/engine/Flutter.framework/Flutter",
+				"${SRCROOT}/../flutter_module/.ios/Flutter/flutter_export_environment.sh",
+			);
+			name = "[CP-User] Run Flutter Build flutter_module Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../flutter_module/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
 		C0B05217F7247966D6BF26D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1100,7 +1104,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/LTXiOSUtilsDemo/R.generated.swift,
+				"$SRCROOT/LTXiOSUtilsDemo/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

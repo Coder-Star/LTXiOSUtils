@@ -90,15 +90,24 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `StoryboardMain`.
+    static let storyboardMain = _R.storyboard.storyboardMain()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "StoryboardMain", bundle: ...)`
+    static func storyboardMain(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.storyboardMain)
     }
     #endif
 
@@ -232,7 +241,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 42 images.
+  /// This `R.image` struct is generated, and contains static references to 41 images.
   struct image {
     /// Image `add-white`.
     static let addWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "add-white")
@@ -316,8 +325,6 @@ struct R: Rswift.Validatable {
     static let xib_header_dog = Rswift.ImageResource(bundle: R.hostingBundle, name: "xib_header_dog")
     /// Image `xib_header`.
     static let xib_header = Rswift.ImageResource(bundle: R.hostingBundle, name: "xib_header")
-    /// Image `头像`.
-    static let 头像 = Rswift.ImageResource(bundle: R.hostingBundle, name: "头像")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "add", bundle: ..., traitCollection: ...)`
@@ -606,13 +613,6 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "头像", bundle: ..., traitCollection: ...)`
-    static func 头像(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.头像, compatibleWith: traitCollection)
-    }
-    #endif
-
     fileprivate init() {}
   }
 
@@ -722,6 +722,9 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try storyboardMain.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -730,6 +733,20 @@ struct _R: Rswift.Validatable {
 
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct storyboardMain: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "StoryboardMain"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {

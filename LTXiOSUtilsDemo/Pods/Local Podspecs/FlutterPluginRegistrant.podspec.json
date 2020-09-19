@@ -11,7 +11,7 @@
     "Flutter Dev Team": "flutter-dev@googlegroups.com"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": [
     "Classes",
@@ -21,8 +21,21 @@
     "path": "."
   },
   "public_header_files": "./Classes/**/*.h",
+  "static_framework": true,
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  },
   "dependencies": {
     "Flutter": [
+
+    ],
+    "flutter_webview_plugin": [
+
+    ],
+    "fluttertoast": [
+
+    ],
+    "shared_preferences": [
 
     ]
   }
