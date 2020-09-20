@@ -4,19 +4,6 @@ PODS:
   - CTMediator (28)
   - dsBridge (3.0.6)
   - FLAnimatedImage (1.0.12)
-  - Flutter (1.0.0)
-  - flutter_module (0.0.1):
-    - Flutter
-  - flutter_webview_plugin (0.0.1):
-    - Flutter
-  - FlutterPluginRegistrant (0.0.1):
-    - Flutter
-    - flutter_webview_plugin
-    - fluttertoast
-    - shared_preferences
-  - fluttertoast (0.0.2):
-    - Flutter
-    - Toast
   - FSPagerView (0.8.3)
   - GDPerformanceView-Swift (2.0.3)
   - IQKeyboardManagerSwift (6.5.4)
@@ -72,15 +59,12 @@ PODS:
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
-  - shared_preferences (0.0.1):
-    - Flutter
   - SKPhotoBrowser (6.1.0)
   - SnapKit (5.0.1)
   - SwiftDate (6.1.0)
   - SwiftLint (0.38.0)
   - SwiftyJSON (5.0.0)
   - SwiftyUserDefaults (5.0.0)
-  - Toast (4.0.0)
   - TZImagePickerController (3.3.1)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - URLNavigator (2.3.0)
@@ -93,11 +77,6 @@ DEPENDENCIES:
   - Bugly (= 2.5.2)
   - CTMediator (= 28)
   - dsBridge (= 3.0.6)
-  - Flutter (from `../flutter_module/.ios/Flutter/engine`)
-  - flutter_module (from `../flutter_module/.ios/Flutter`)
-  - flutter_webview_plugin (from `../flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios`)
-  - FlutterPluginRegistrant (from `../flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
-  - fluttertoast (from `../flutter_module/.ios/Flutter/.symlinks/fluttertoast/ios`)
   - FSPagerView (= 0.8.3)
   - GDPerformanceView-Swift (= 2.0.3)
   - IQKeyboardManagerSwift (= 6.5.4)
@@ -110,7 +89,6 @@ DEPENDENCIES:
   - ObjectMapper (= 3.5.1)
   - R.swift (= 5.1.0)
   - RxCocoa (= 5.0.1)
-  - shared_preferences (from `../flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios`)
   - SKPhotoBrowser (= 6.1.0)
   - SwiftDate (= 6.1.0)
   - SwiftLint (= 0.38.0)
@@ -154,7 +132,6 @@ SPEC REPOS:
     - SwiftLint
     - SwiftyJSON
     - SwiftyUserDefaults
-    - Toast
     - TZImagePickerController
     - "UITableView+FDTemplateLayoutCell"
     - URLNavigator
@@ -163,20 +140,8 @@ SPEC REPOS:
     - ZYCornerRadius
 
 EXTERNAL SOURCES:
-  Flutter:
-    :path: "../flutter_module/.ios/Flutter/engine"
-  flutter_module:
-    :path: "../flutter_module/.ios/Flutter"
-  flutter_webview_plugin:
-    :path: "../flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios"
-  FlutterPluginRegistrant:
-    :path: "../flutter_module/.ios/Flutter/FlutterPluginRegistrant"
-  fluttertoast:
-    :path: "../flutter_module/.ios/Flutter/.symlinks/fluttertoast/ios"
   LTXiOSUtils:
     :path: "../"
-  shared_preferences:
-    :path: "../flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios"
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
@@ -184,11 +149,6 @@ SPEC CHECKSUMS:
   CTMediator: 6a05e9f1098b2d2fbc9d19cc7f28e94c3a08b5d2
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_module: d1e1ff44505640bd9aa37f23f63380c646272be4
-  flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
-  FlutterPluginRegistrant: a46bebd5e6cd917023c594d7301b1bf9a9a381e2
-  fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GDPerformanceView-Swift: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
@@ -208,14 +168,12 @@ SPEC CHECKSUMS:
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
-  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
-  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
@@ -223,6 +181,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 43f843eae9ba70f93bb47e3c228f86a7b67ff893
+PODFILE CHECKSUM: 25292534bd633eaaa766aa9b2ddf48afc004c6c2
 
 COCOAPODS: 1.8.4

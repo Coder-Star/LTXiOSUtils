@@ -21,11 +21,6 @@ class HomeTabBarController: UITabBarController {
         return viewController
     }()
 
-//    private var mineViewController: UINavigationController = {
-//        let viewController = HomeNavigationController(rootViewController: MineViewController())
-//        return viewController
-//    }()
-
     private var mineViewController: UIViewController = {
         let viewController = MineViewController()
         return viewController
@@ -34,7 +29,7 @@ class HomeTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.delegate = self
+        delegate = self
         initChildViewControllers()
     }
 
@@ -43,6 +38,13 @@ class HomeTabBarController: UITabBarController {
 
         // TabBarItem加载到TabBar上是在 viewDidLoad 之后执行的
         mineViewController.tabBarItem.tx.addDot()
+
+        // 设置选中的底部tabBar文字颜色
+//        tabBar.tintColor = .red
+        // 设置未选中的底部tabBar文字颜色
+//        tabBar.unselectedItemTintColor = .yellow
+        // tabBar的背景色
+//        tabBar.barTintColor = UIColor.white
     }
 
     private func initChildViewControllers() {
@@ -67,9 +69,11 @@ class HomeTabBarController: UITabBarController {
         mineViewController.tabBarItem.image = R.image.mine_tab()?.withRenderingMode(.alwaysOriginal)
         mineViewController.tabBarItem.selectedImage = R.image.mine_tab_selected()?.withRenderingMode(.alwaysOriginal)
 
-        self.viewControllers = [homeViewControllerWithNavigation,
+        viewControllers = [homeViewControllerWithNavigation,
                                 demoListViewControllerWithNavigation,
                                 mineViewController]
+
+        UIButton().setTitleColor(<#T##color: UIColor?##UIColor?#>, for: .disabled)
     }
 
 }
