@@ -22,6 +22,7 @@ dependencies:
 
   flutter_webview_plugin: 0.3.11 # webview
 
+
 #  flutter_boost: # 闲鱼出品，用于原生与flutter之间
 #    git:
 #      url: 'https://github.com/alibaba/flutter_boost.git'
@@ -36,9 +37,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   # 图片依赖
-#  assets:
-#    - assets/images/ic_file_transfer.png
-#    - assets/images/ic_fengchao.png
+  assets:
+    - assets/images/home/mine/header_icon.png
   # 字体依赖
 #  fonts:
 #    - family: appIconFont

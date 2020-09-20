@@ -8,7 +8,7 @@
 
 import Foundation
 import LTXiOSUtils
-import Flutter
+//import Flutter
 
 class FlutterMainViewController: BaseUIViewController {
 
@@ -23,16 +23,16 @@ class FlutterMainViewController: BaseUIViewController {
 
     @objc
     func action() {
-        guard let delegate = (UIApplication.shared.delegate as? ApplicationServiceManagerDelegate)?.getService(by: FlutterApplicationService.self) as? FlutterApplicationService else {
-            return
-        }
-        /**
-         在iOS模拟器下，第二次使用engin 创建FlutterViewContainer时， initWithEngine: 会crash，报错如下
-         Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
-         原因是僵尸指针导致
-         真机上不会出现
-         */
-        let viewController = FlutterViewController(engine: delegate.flutterEngine, nibName: nil, bundle: nil)
-        navigationController?.pushViewController(viewController, animated: true)
+//        guard let delegate = (UIApplication.shared.delegate as? ApplicationServiceManagerDelegate)?.getService(by: FlutterApplicationService.self) as? FlutterApplicationService else {
+//            return
+//        }
+//        /**
+//         在iOS模拟器下，第二次使用engin 创建FlutterViewContainer时， initWithEngine: 会crash，报错如下
+//         Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
+//         原因是僵尸指针导致
+//         真机上不会出现
+//         */
+//        let viewController = FlutterViewController(engine: delegate.flutterEngine, nibName: nil, bundle: nil)
+//        navigationController?.pushViewController(viewController, animated: true)
     }
 }

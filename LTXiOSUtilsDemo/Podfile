@@ -2,8 +2,8 @@
 # platform :ios, '9.0'
 
 # flutter
-flutter_application_path = '../flutter_module'
-load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+#flutter_application_path = '../flutter_module'
+#load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 target 'LTXiOSUtilsDemo' do
   source 'https://github.com/CocoaPods/Specs.git' #公有库地址
@@ -17,7 +17,7 @@ target 'LTXiOSUtilsDemo' do
   # 需要use_modular_headers，不再use_frameworks
 
   # 安装flutter模块
-  install_all_flutter_pods(flutter_application_path)
+#  install_all_flutter_pods(flutter_application_path)
 
   pod 'LTXiOSUtils',:path => '../' # 基础功能库
   #  pod 'LTXiOSUtils', :git => 'https://github.com/Coder-Star/LTXiOSUtils.git', :tag => '0.0.0' #直接从源代码托管仓库取

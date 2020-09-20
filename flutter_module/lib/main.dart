@@ -1,62 +1,84 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_module/themes/theme_color.dart';
+import 'package:flutter_module/pages/home/index_page.dart';
+import 'package:flutter_module/pages/home/function_page.dart';
+import 'package:flutter_module/pages/home/mine_page.dart';
+
+// main方法是flutter的入口
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false, // 不显示debug标志
+      home: BottomNavigationWidget(),
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+          primaryColor: ThemeColor.mainColor //主题色
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
+class BottomNavigationWidget extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<StatefulWidget> createState() {
+    return BottomNavigationWidgetState();
+  }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
+  final _normalColor = Colors.black12;
+  final _selectedColor = ThemeColor.mainColor;
+  final pages = [IndexPage(), FunctionPage(), MinePage()];
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: _normalColor,
+              ),
+              activeIcon: Icon(
+                Icons.home,
+                color: _selectedColor,
+              ),
+              label: "首页"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.apps_sharp,
+                color: _normalColor,
+              ),
+              activeIcon: Icon(
+                Icons.apps_sharp,
+                color: _selectedColor,
+              ),
+              label: "功能"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_box,
+                color: _normalColor,
+              ),
+              activeIcon: Icon(
+                Icons.account_box,
+                color: _selectedColor,
+              ),
+              label: "我"),
+        ],
+        currentIndex: _currentIndex,
+        type: BottomNavigationBarType.fixed,
+//        fixedColor: _selectedColor,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+      body: pages[_currentIndex],
     );
   }
 }

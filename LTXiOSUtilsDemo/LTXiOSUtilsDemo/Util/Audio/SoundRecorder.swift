@@ -137,7 +137,7 @@ extension SoundRecorder {
     /// - Parameter isToMp3: 是否转mp3，默认false
     public func begin(recordDirectoryPath: String, fileName: String, isToMp3: Bool = false) {
         if audioRecorder?.isRecording ?? false {
-            self.delegate?.error(type: .recording)
+            delegate?.error(type: .recording)
             return
         }
 
@@ -183,7 +183,7 @@ extension SoundRecorder {
                 }
             }
         } else {
-            self.delegate?.error(type: .initError(message: initAudioRecorderResult.message))
+            delegate?.error(type: .initError(message: initAudioRecorderResult.message))
         }
     }
 
@@ -194,7 +194,7 @@ extension SoundRecorder {
         }
         timer?.fireDate = Date.distantFuture
         audioRecorder?.pause()
-        self.delegate?.stateChange(state: .pause)
+        delegate?.stateChange(state: .pause)
         isPause = true
     }
 
@@ -225,7 +225,7 @@ extension SoundRecorder {
     public func delete() {
         stop()
         audioRecorder?.deleteRecording()
-        self.delegate?.stateChange(state: .delete)
+        delegate?.stateChange(state: .delete)
     }
 
     /// 录音分贝
@@ -264,7 +264,7 @@ extension SoundRecorder: AVAudioRecorderDelegate {
     }
 
     public func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder, error: Error?) {
-        self.delegate?.error(type: .recordError(message: error?.localizedDescription ?? ""))
+        delegate?.error(type: .recordError(message: error?.localizedDescription ?? ""))
     }
 }
 
