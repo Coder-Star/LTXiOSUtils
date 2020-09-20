@@ -72,8 +72,6 @@ class HomeTabBarController: UITabBarController {
         viewControllers = [homeViewControllerWithNavigation,
                                 demoListViewControllerWithNavigation,
                                 mineViewController]
-
-        UIButton().setTitleColor(<#T##color: UIColor?##UIColor?#>, for: .disabled)
     }
 
 }
