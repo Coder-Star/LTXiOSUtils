@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // 不显示debug标志
+      showPerformanceOverlay: false,
       home: BottomNavigationWidget(),
       theme: ThemeData(
           primaryColor: ThemeColor.mainColor //主题色

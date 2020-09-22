@@ -12,9 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: 0.1.3 # 图标
+  cupertino_icons: 0.1.3 # 图标，暂未发现用处
   dio: 3.0.10 # 网络请求
-  shared_preferences: 0.5.10 # 存储，iOS的UserDefaults和Android的SharedPreferences
+
   fluttertoast: 7.1.1 # toast
 
   pull_to_refresh: 1.6.1 # 上拉加载和下拉刷新
@@ -22,7 +22,11 @@ dependencies:
 
   flutter_webview_plugin: 0.3.11 # webview
 
+  flustars: 0.3.2 # 工具类，依赖于common_utils，shared_preferences、synchronized、path_provider
+#  shared_preferences: 0.5.10 # 存储，iOS的UserDefaults和Android的SharedPreferences
+  redux: 4.0.0+3 # 全局状态管理
 
+  fluro: 1.6.3 # 路由
 #  flutter_boost: # 闲鱼出品，用于原生与flutter之间
 #    git:
 #      url: 'https://github.com/alibaba/flutter_boost.git'
@@ -35,7 +39,7 @@ dev_dependencies:
 
 
 flutter:
-  uses-material-design: true
+  uses-material-design: true # 允许使用material icon，如果设置为false，则使用Icons下的图标显示均为问号
   # 图片依赖
   assets:
     - assets/images/home/mine/header_icon.png
