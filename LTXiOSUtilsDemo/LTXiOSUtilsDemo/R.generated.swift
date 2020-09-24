@@ -90,6 +90,47 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
+  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
+  struct segue {
+    /// This struct is generated for `StoryboardMainViewController`, and contains static references to 1 segues.
+    struct storyboardMainViewController {
+      /// Segue identifier `StoryboardSecondVCSegue`.
+      static let storyboardSecondVCSegue: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, StoryboardMainViewController, StoryboardSecondViewController> = Rswift.StoryboardSegueIdentifier(identifier: "StoryboardSecondVCSegue")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `StoryboardSecondVCSegue`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func storyboardSecondVCSegue(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, StoryboardMainViewController, StoryboardSecondViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.storyboardMainViewController.storyboardSecondVCSegue, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `StoryboardSecondViewController`, and contains static references to 1 segues.
+    struct storyboardSecondViewController {
+      /// Segue identifier `backToStoryboardMainViewControllerSegue`.
+      static let backToStoryboardMainViewControllerSegue: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, StoryboardSecondViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "backToStoryboardMainViewControllerSegue")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `backToStoryboardMainViewControllerSegue`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func backToStoryboardMainViewControllerSegue(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, StoryboardSecondViewController, UIKit.UIViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.storyboardSecondViewController.backToStoryboardMainViewControllerSegue, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
+
+  #if os(iOS) || os(tvOS)
   /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
@@ -636,6 +677,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `basicCell`.
+    static let basicCell: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "basicCell")
+
+    fileprivate init() {}
+  }
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
     /// This `R.string.localizable` struct is generated, and contains static references to 1 localization keys.
@@ -744,13 +793,28 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct storyboardMain: Rswift.StoryboardResourceType, Rswift.Validatable {
+    struct storyboardMain: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = StoryboardMainViewController
+
       let bundle = R.hostingBundle
       let name = "StoryboardMain"
+      let storyboardMainViewController = StoryboardViewControllerResource<StoryboardMainViewController>(identifier: "StoryboardMainViewController")
+      let storyboardSecondViewController = StoryboardViewControllerResource<StoryboardSecondViewController>(identifier: "StoryboardSecondViewController")
+
+      func storyboardMainViewController(_: Void = ()) -> StoryboardMainViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: storyboardMainViewController)
+      }
+
+      func storyboardSecondViewController(_: Void = ()) -> StoryboardSecondViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: storyboardSecondViewController)
+      }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "audio_bgm_4", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'audio_bgm_4' is used in storyboard 'StoryboardMain', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.storyboardMain().storyboardMainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'storyboardMainViewController' could not be loaded from storyboard 'StoryboardMain' as 'StoryboardMainViewController'.") }
+        if _R.storyboard.storyboardMain().storyboardSecondViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'storyboardSecondViewController' could not be loaded from storyboard 'StoryboardMain' as 'StoryboardSecondViewController'.") }
       }
 
       fileprivate init() {}

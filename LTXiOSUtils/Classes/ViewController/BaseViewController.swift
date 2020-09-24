@@ -31,7 +31,10 @@ open class BaseViewController: UIViewController {
 
     open func setnNavigationItemTitle() {
         if let tempTitle = title, tempTitle.tx.isNotEmpty {
-
+            // 解决在Storyboard中设置ViewController的title后，navigationItem.title不赋值的问题
+            if navigationItem.title?.isEmpty ?? true {
+                navigationItem.title = tempTitle
+            }
         } else if titleInfo.tx.isNotEmpty {
             self.navigationItem.title = titleInfo
         } else if currentTitleInfo.tx.isNotEmpty {
