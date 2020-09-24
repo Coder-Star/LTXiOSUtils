@@ -17,4 +17,8 @@ class FoundationTest: XCTestCase {
         Log.d(dic)
     }
 
+    func testArray() {
+
+    }
+
 }

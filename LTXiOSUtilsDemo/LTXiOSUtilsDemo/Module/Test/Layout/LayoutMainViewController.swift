@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class LayoutMainViewController: BaseGroupTableMenuViewController {
 
@@ -28,7 +29,13 @@ class LayoutMainViewController: BaseGroupTableMenuViewController {
         case "Xib":
             break
         case "StoryBoard":
-            break
+            let storyboard = UIStoryboard(name: "StoryboardMain", bundle: nil)
+//            let viewController = storyboard.instantiateViewController(withIdentifier: "StoryboardSecondVC")
+            guard let viewController = storyboard.instantiateInitialViewController() else {
+                return
+            }
+
+            navigationController?.pushViewController(viewController, animated: true)
         default:
             HUD.showText("暂无此模块")
         }
