@@ -79,7 +79,7 @@ extension UIViewController {
         if cancelTitle.isEmpty {
             return nil
         }
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { _ in
             sureBlock?()
         }

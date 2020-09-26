@@ -316,6 +316,8 @@ extension ApplicationServiceManagerDelegate {
 // MARK: - DownloadingData
 extension ApplicationServiceManagerDelegate {
 
+    // 开启Background Fetch后台模式后的回调
+    // 如果实现了该方法，但没有开启Background Fetch后台模式则会出现警告信息
     @available(iOS 7.0, *)
     open func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         apply({ (service, completionHandler) -> Void? in
