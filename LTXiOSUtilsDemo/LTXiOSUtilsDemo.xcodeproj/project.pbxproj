@@ -42,6 +42,7 @@
 		DC4AB9D222F4606100A5F003 /* DateExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9D122F4606100A5F003 /* DateExtensionTest.swift */; };
 		DC4AB9DD22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9DC22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift */; };
 		DC4F88C62511BCCC00B68C72 /* ErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F88C52511BCCB00B68C72 /* ErrorTest.swift */; };
+		DC55150E251F1B98006223AE /* CoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55150D251F1B98006223AE /* CoreDataUtils.swift */; };
 		DC55976624E7DF9B00BAEF88 /* SoundRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55976524E7DF9B00BAEF88 /* SoundRecorder.swift */; };
 		DC55976824E7DFB600BAEF88 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55976724E7DFB600BAEF88 /* AudioPlayer.swift */; };
 		DC55E57223F7E6C8008C6941 /* AppThemeApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55E57123F7E6C8008C6941 /* AppThemeApplicationService.swift */; };
@@ -87,6 +88,8 @@
 		DCCF3E5323C96B0F000E65E1 /* NetworkStateApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */; };
 		DCD8763D251AFC5000F50138 /* StoryboardMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD8763C251AFC5000F50138 /* StoryboardMainViewController.swift */; };
 		DCD8763F251B25E600F50138 /* StoryboardSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD8763E251B25E600F50138 /* StoryboardSecondViewController.swift */; };
+		DCD97BAA251CF798002E9C0A /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCD97BA8251CF798002E9C0A /* data.xcdatamodeld */; };
+		DCD97BEB251CFB54002E9C0A /* DBMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD97BEA251CFB54002E9C0A /* DBMenuViewController.swift */; };
 		DCDBA7AB24FDF4050073E293 /* SwiftyJSONTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDBA7AA24FDF4050073E293 /* SwiftyJSONTest.swift */; };
 		DCDBA7AF24FE6A290073E293 /* CustomStringConvertibleProtocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDBA7AE24FE6A290073E293 /* CustomStringConvertibleProtocolTest.swift */; };
 		DCDBA7B124FE94D10073E293 /* ExpressibleProtocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDBA7B024FE94D10073E293 /* ExpressibleProtocolTest.swift */; };
@@ -180,6 +183,7 @@
 		DC4AB9DC22F4606100A5F003 /* LTXiOSUtilsDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTXiOSUtilsDemoUITests.swift; sourceTree = "<group>"; };
 		DC4AB9DE22F4606100A5F003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC4F88C52511BCCB00B68C72 /* ErrorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTest.swift; sourceTree = "<group>"; };
+		DC55150D251F1B98006223AE /* CoreDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUtils.swift; sourceTree = "<group>"; };
 		DC55976524E7DF9B00BAEF88 /* SoundRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRecorder.swift; sourceTree = "<group>"; };
 		DC55976724E7DFB600BAEF88 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		DC55E57123F7E6C8008C6941 /* AppThemeApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeApplicationService.swift; sourceTree = "<group>"; };
@@ -234,6 +238,9 @@
 		DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStateApplicationService.swift; sourceTree = "<group>"; };
 		DCD8763C251AFC5000F50138 /* StoryboardMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardMainViewController.swift; sourceTree = "<group>"; };
 		DCD8763E251B25E600F50138 /* StoryboardSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSecondViewController.swift; sourceTree = "<group>"; };
+		DCD97BA9251CF798002E9C0A /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
+		DCD97BEA251CFB54002E9C0A /* DBMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMenuViewController.swift; sourceTree = "<group>"; };
+		DCD97BEC251D01A7002E9C0A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DCDBA7AA24FDF4050073E293 /* SwiftyJSONTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSONTest.swift; sourceTree = "<group>"; };
 		DCDBA7AE24FE6A290073E293 /* CustomStringConvertibleProtocolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStringConvertibleProtocolTest.swift; sourceTree = "<group>"; };
 		DCDBA7B024FE94D10073E293 /* ExpressibleProtocolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressibleProtocolTest.swift; sourceTree = "<group>"; };
@@ -294,6 +301,7 @@
 		B817270E2E0652B5231C8E27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCD97BEC251D01A7002E9C0A /* CoreData.framework */,
 				DCA4077C24066CC300F62769 /* Alamofire.framework */,
 				DCA4077A24066C3500F62769 /* libz.tbd */,
 				DCA4077624066BFB00F62769 /* Alamofire.framework */,
@@ -373,6 +381,7 @@
 		DC1BE0AF24B0116F00745671 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				DCD97B67251CF55F002E9C0A /* DB */,
 				DCEE98352510FE1400A19CF9 /* Layout */,
 				DCEE982B250F834400A19CF9 /* Flutter */,
 				DC2A02B7250650E200BABEDB /* WebviewTest */,
@@ -551,6 +560,13 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
+		DC55150F251F215D006223AE /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
 		DC55976424E7D9B900BAEF88 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +579,7 @@
 		DC6F4D3624F68DA900B69A31 /* ThreadTest */ = {
 			isa = PBXGroup;
 			children = (
+				DC55150F251F215D006223AE /* Operation */,
 				DC6F4D4524F7CA9300B69A31 /* Thread */,
 				DC6F4D4424F7CA8600B69A31 /* GCD */,
 			);
@@ -736,6 +753,24 @@
 				DC88A34B250C6B51000198AD /* JSAndNativeJSBrigeViewController.swift */,
 			);
 			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
+		DCD97B67251CF55F002E9C0A /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				DCD97BA7251CF6C6002E9C0A /* CoreData */,
+				DCD97BEA251CFB54002E9C0A /* DBMenuViewController.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		DCD97BA7251CF6C6002E9C0A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DCD97BA8251CF798002E9C0A /* data.xcdatamodeld */,
+				DC55150D251F1B98006223AE /* CoreDataUtils.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		DCDBA7AD24FE69DF0073E293 /* SwiftTest */ = {
@@ -1144,6 +1179,7 @@
 			files = (
 				DC4AB9BF22F4606000A5F003 /* DemoListViewController.swift in Sources */,
 				DCEE983A2510FF2900A19CF9 /* MineViewController.swift in Sources */,
+				DC55150E251F1B98006223AE /* CoreDataUtils.swift in Sources */,
 				DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */,
 				DC55976824E7DFB600BAEF88 /* AudioPlayer.swift in Sources */,
 				DC55E57223F7E6C8008C6941 /* AppThemeApplicationService.swift in Sources */,
@@ -1156,7 +1192,9 @@
 				DC7C935624EE5837005E0AAA /* SystemNotificationService.swift in Sources */,
 				DC88A350250C97B1000198AD /* CustomURLSchemeHandler.swift in Sources */,
 				DCEE982F250F865A00A19CF9 /* FlutterApplicationService.swift in Sources */,
+				DCD97BEB251CFB54002E9C0A /* DBMenuViewController.swift in Sources */,
 				DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */,
+				DCD97BAA251CF798002E9C0A /* data.xcdatamodeld in Sources */,
 				DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */,
 				DC03AE2A23F3CA6A007739DD /* HomeViewController.swift in Sources */,
 				DC55976624E7DF9B00BAEF88 /* SoundRecorder.swift in Sources */,
@@ -1599,6 +1637,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DCD97BA8251CF798002E9C0A /* data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DCD97BA9251CF798002E9C0A /* data.xcdatamodel */,
+			);
+			currentVersion = DCD97BA9251CF798002E9C0A /* data.xcdatamodel */;
+			path = data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DC4AB9B122F4606000A5F003 /* Project object */;
 }

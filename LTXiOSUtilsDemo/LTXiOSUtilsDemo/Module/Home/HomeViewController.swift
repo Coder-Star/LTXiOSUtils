@@ -202,8 +202,6 @@ extension HomeViewController: GridMenuViewItemDelegate {
         switch code {
         case "ViewEvent":
             navigationController?.pushViewController(ViewEventViewController(), animated: true)
-        case "OperationTest":
-           break
         case "AudioAndRecord":
             navigationController?.pushViewController(AudioAndRecordViewController(), animated: true)
         case "WKWebView":
@@ -212,6 +210,8 @@ extension HomeViewController: GridMenuViewItemDelegate {
             navigationController?.pushViewController(FlutterMainViewController(), animated: true)
         case "Layout":
             navigationController?.pushViewController(LayoutMainViewController(), animated: true)
+        case "Database":
+            navigationController?.pushViewController(DBMenuViewController(), animated: true)
         default:
             break
         }

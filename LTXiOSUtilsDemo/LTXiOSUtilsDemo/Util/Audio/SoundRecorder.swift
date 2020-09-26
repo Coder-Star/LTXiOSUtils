@@ -61,7 +61,7 @@ public enum SoundRecorderState {
 }
 
 /// 录音工具类
-final public class SoundRecorder: NSObject {
+public final class SoundRecorder: NSObject {
     /// 单例
     public static let shared = SoundRecorder()
 
