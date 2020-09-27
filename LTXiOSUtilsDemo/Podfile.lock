@@ -12,6 +12,7 @@ PODS:
     - Kingfisher/Core (= 5.12.0)
   - Kingfisher/Core (5.12.0)
   - Localize-Swift (3.1.0)
+  - LookinServer (1.0.0)
   - LTXiOSUtils (0.0.1):
     - LTXiOSUtils/Component (= 0.0.1)
     - LTXiOSUtils/Core (= 0.0.1)
@@ -53,6 +54,11 @@ PODS:
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
   - ReachabilitySwift (5.0.0)
+  - Realm (5.0.0):
+    - Realm/Headers (= 5.0.0)
+  - Realm/Headers (5.0.0)
+  - RealmSwift (5.0.0):
+    - Realm (= 5.0.0)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -83,11 +89,13 @@ DEPENDENCIES:
   - KeychainAccess (= 4.1.0)
   - Kingfisher (= 5.12.0)
   - Localize-Swift (= 3.1.0)
+  - LookinServer
   - LTXiOSUtils (from `../`)
   - MGJRouter (= 0.10.0)
   - mp3lame-for-ios (= 0.1.1)
   - ObjectMapper (= 3.5.1)
   - R.swift (= 5.1.0)
+  - RealmSwift (= 5.0.0)
   - RxCocoa (= 5.0.1)
   - SKPhotoBrowser (= 6.1.0)
   - SwiftDate (= 6.1.0)
@@ -114,6 +122,7 @@ SPEC REPOS:
     - KeychainAccess
     - Kingfisher
     - Localize-Swift
+    - LookinServer
     - MBProgressHUD
     - MGJRouter
     - MJRefresh
@@ -123,6 +132,8 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - ReachabilitySwift
+    - Realm
+    - RealmSwift
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -155,6 +166,7 @@ SPEC CHECKSUMS:
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
+  LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   LTXiOSUtils: d3ce00e4427e443ab0788d63c20e342cbd033b79
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MGJRouter: 15d94541eb2cc81eff7d577337288feb7ae9575f
@@ -165,6 +177,8 @@ SPEC CHECKSUMS:
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  Realm: 76066d333de26f97e9caedaa85ee3ff4a62ca265
+  RealmSwift: c1bdff09b422569dc6881410d9ccf712bcdb79b0
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
@@ -181,6 +195,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 25292534bd633eaaa766aa9b2ddf48afc004c6c2
+PODFILE CHECKSUM: ea287d1cd3f9c982a47181f9d3ae95976ae4a7f1
 
 COCOAPODS: 1.8.4
