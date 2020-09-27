@@ -51,9 +51,12 @@ target 'LTXiOSUtilsDemo' do
 
 
   pod 'Bugly', '2.5.2' # 异常上报
+  pod 'LookinServer', :configurations => ['Debug'] # 查看UI
 
   #  pod 'SwiftyEventBus', '1.0.0' # 事件总线
   #  pod 'SwifterSwift', '5.1.0' # Swift相关扩展
+
+  pod 'RealmSwift', '5.0.0' # Realm数据库
 
   #解耦
   pod 'CTMediator', '28' # Runtime路由方案
@@ -69,7 +72,6 @@ target 'LTXiOSUtilsDemo' do
   pod 'RxCocoa', '5.0.1' # RxSwift是通用RxAPI的实现，并不涉及任何任何 Cocoa 或 UIKit 类，RxCocoa依赖RxSwift
 
   #音视频相关
-
   pod "mp3lame-for-ios", "0.1.1" # 将录音文件格式修改为mp3格式
 
   target 'LTXiOSUtilsDemoTests' do

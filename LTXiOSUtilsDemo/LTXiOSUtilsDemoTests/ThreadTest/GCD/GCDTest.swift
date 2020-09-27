@@ -74,5 +74,9 @@ class GCDTest: XCTestCase {
             }
         }
     }
+
+    func testDemo2() {
+
+    }
 }
 
