@@ -8,8 +8,24 @@
 import Foundation
 import UIKit
 
-// MARK: - 取消对UITextView的观察无法在扩展中进行，需要在业务中进行处理
-// MARK: - 在iOS 9 (and OS X 10.11）之后，除了调用block-based api的需要手动调用removeObserver，其他不用再手动调用
+extension TxExtensionWrapper where Base: UITextView {
+
+    /// 取值时去除了空格符以及换行符
+    /// 可用于提交表单前用来判断值是否不为空
+    public var contentText: String? {
+        set {
+            self.base.text = newValue
+        }
+        get {
+            return self.base.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+    }
+}
+
+/**
+ 取消对UITextView的观察无法在扩展中进行，需要在业务中进行处理
+ 在iOS 9 (and OS X 10.11）之后，除了调用block-based api的需要手动调用removeObserver，其他不用再手动调用
+ */
 // MARK: - UITextView占位符以及最大字数等
 extension UITextView {
 
