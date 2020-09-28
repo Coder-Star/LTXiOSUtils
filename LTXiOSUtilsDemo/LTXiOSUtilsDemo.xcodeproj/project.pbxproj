@@ -52,6 +52,7 @@
 		DC6F4D4724F7CAAF00B69A31 /* ThreadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F4D4624F7CAAF00B69A31 /* ThreadTest.swift */; };
 		DC725FD7250B02120091C807 /* PtrotocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC725FD6250B02120091C807 /* PtrotocolTest.swift */; };
 		DC725FD9250B7EBC0091C807 /* FoundationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC725FD8250B7EBC0091C807 /* FoundationTest.swift */; };
+		DC73E8252520C636009472A9 /* TaskGroupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73E8242520C636009472A9 /* TaskGroupTest.swift */; };
 		DC7C935624EE5837005E0AAA /* SystemNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C935524EE5837005E0AAA /* SystemNotificationService.swift */; };
 		DC7C935924EE658C005E0AAA /* LameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7C935824EE658C005E0AAA /* LameUtil.m */; };
 		DC7C936124EE9DC6005E0AAA /* OC-Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7C936024EE9DC6005E0AAA /* OC-Swift.m */; };
@@ -194,6 +195,7 @@
 		DC6F4D4624F7CAAF00B69A31 /* ThreadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTest.swift; sourceTree = "<group>"; };
 		DC725FD6250B02120091C807 /* PtrotocolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PtrotocolTest.swift; sourceTree = "<group>"; };
 		DC725FD8250B7EBC0091C807 /* FoundationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationTest.swift; sourceTree = "<group>"; };
+		DC73E8242520C636009472A9 /* TaskGroupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupTest.swift; sourceTree = "<group>"; };
 		DC7C935524EE5837005E0AAA /* SystemNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotificationService.swift; sourceTree = "<group>"; };
 		DC7C935724EE658C005E0AAA /* LameUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LameUtil.h; sourceTree = "<group>"; };
 		DC7C935824EE658C005E0AAA /* LameUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LameUtil.m; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				DC6F4D3924F68EF400B69A31 /* GCDTest.swift */,
+				DC73E8242520C636009472A9 /* TaskGroupTest.swift */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -600,6 +603,13 @@
 				DC6F4D4624F7CAAF00B69A31 /* ThreadTest.swift */,
 			);
 			path = Thread;
+			sourceTree = "<group>";
+		};
+		DC73E82325209D95009472A9 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		DC83E7C523F645A40030A9B4 /* ThirdLibDemo */ = {
@@ -758,6 +768,7 @@
 		DCD97B67251CF55F002E9C0A /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				DC73E82325209D95009472A9 /* Realm */,
 				DCD97BA7251CF6C6002E9C0A /* CoreData */,
 				DCD97BEA251CFB54002E9C0A /* DBMenuViewController.swift */,
 			);
@@ -1266,6 +1277,7 @@
 				DCDBA7BB250528130073E293 /* FunctionTest.swift in Sources */,
 				DCE1457D24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift in Sources */,
 				DCB1C06023C8006500D735BD /* NSObjectExtensionTest.swift in Sources */,
+				DC73E8252520C636009472A9 /* TaskGroupTest.swift in Sources */,
 				DCDBA7AB24FDF4050073E293 /* SwiftyJSONTest.swift in Sources */,
 				DCDBA7AF24FE6A290073E293 /* CustomStringConvertibleProtocolTest.swift in Sources */,
 				DCDBA7B4250082410073E293 /* EnumTest.swift in Sources */,

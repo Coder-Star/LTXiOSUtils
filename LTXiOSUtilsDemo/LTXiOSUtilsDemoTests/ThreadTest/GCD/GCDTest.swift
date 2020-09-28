@@ -77,6 +77,19 @@ class GCDTest: XCTestCase {
 
     func testDemo2() {
 
+        let expectationInfo = expectation(description: "thread")
+
+        let workItem = DispatchWorkItem {
+            Log.d("任务开始")
+            expectationInfo.fulfill()
+        }
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2, execute: workItem)
+
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2.01) {
+            workItem.cancel()
+        }
+
+        _ = XCTWaiter(delegate: self).wait(for: [expectationInfo], timeout:  5)
     }
 }
 
