@@ -1,5 +1,45 @@
-﻿TPNS iOS SDK ReleaseNote
+﻿在线集成文档地址：https://cloud.tencent.com/document/product/548/36663。
 
+TPNS iOS SDK ReleaseNote
+
+VERSION 1.2.8.0
+-------------------------------------------
+1. Added  "user attributes"  for personalized push
+2. Added  "in-app messaging"  , we provide several templates
+3. Fixed known issues
+
+版本 1.2.8.0
+-------------------------------------------
+1. 新增「用户属性」相关接口，用于个性化推送
+2. 新增「应用内消息」功能，以及若干应用内消息模板
+3. 修复已知问题
+
+
+VERSION 1.2.7.2
+-------------------------------------------
+1. Added custom event reporting
+2. Increased the success rate of reporting  "arrivals"
+3. Fixed known issues
+
+版本 1.2.7.2
+-------------------------------------------
+1. 增加自定义事件上报功能
+2. 增加"抵达数"上报的成功率
+3. 修复已知问题
+
+VERSION 1.2.7.1
+-------------------------------------------
+1. Reduced SDK startup time
+2. Added new callback interface in case of registration failure
+3. Optimized account and label interface
+4. Fixed known issues
+
+版本 1.2.7.1
+-------------------------------------------
+1. 减少 SDK 启动耗时
+2. 新增注册失败的回调接口
+3. 优化账号、标签接口
+4. 修复已知问题
 VERSION 1.2.6.1
 -------------------------------------------
 1. Improve stability, fix known issues caused by SDK

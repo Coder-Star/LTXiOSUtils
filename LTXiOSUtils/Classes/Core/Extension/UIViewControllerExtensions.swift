@@ -67,11 +67,11 @@ extension UIViewController {
     ///   - message: 消息
     ///   - cancelTitle: 按钮标题
     ///   - sureBlock: 按钮闭包
-    public func getAlert(style: UIAlertController.Style = .alert,
-                         title: String = "",
-                         message: String,
-                         cancelTitle: String = "好的",
-                         sureBlock: (() -> Void)? = nil) -> UIAlertController? {
+    public static func getAlert(style: UIAlertController.Style = .alert,
+                                title: String = "",
+                                message: String,
+                                cancelTitle: String = "好的",
+                                sureBlock: (() -> Void)? = nil) -> UIAlertController? {
 
         if title.isEmpty, message.isEmpty {
             return nil
@@ -100,7 +100,7 @@ extension UIViewController {
                           cancelTitle: String = "好的",
                           sureBlock: (() -> Void)? = nil) {
 
-        if let alertController = getAlert(style: style, title: title, message: message, cancelTitle: cancelTitle, sureBlock: sureBlock) {
+        if let alertController = UIViewController.getAlert(style: style, title: title, message: message, cancelTitle: cancelTitle, sureBlock: sureBlock) {
             self.present(alertController, animated: true, completion: nil)
         }
     }
@@ -114,13 +114,13 @@ extension UIViewController {
     ///   - cancelTitle: 取消按钮
     ///   - sureBlock: 确定按钮闭包回调
     ///   - cancelBlock: 取消按钮闭包回调
-    public func getAlert(style: UIAlertController.Style = .alert,
-                         title: String = "",
-                         message: String,
-                         sureTitle: String = "确定",
-                         cancelTitle: String = "取消",
-                         cancelBlock: (() -> Void)? = nil,
-                         sureBlock: @escaping () -> Void) -> UIAlertController? {
+    public static func getAlert(style: UIAlertController.Style = .alert,
+                                title: String = "",
+                                message: String,
+                                sureTitle: String = "确定",
+                                cancelTitle: String = "取消",
+                                cancelBlock: (() -> Void)? = nil,
+                                sureBlock: @escaping () -> Void) -> UIAlertController? {
 
         if title.isEmpty, message.isEmpty {
             return nil
@@ -157,7 +157,7 @@ extension UIViewController {
                           cancelBlock: (() -> Void)? = nil,
                           sureBlock: @escaping () -> Void) {
 
-        if let alertController = getAlert(style: style, title: title, message: message, sureTitle: sureTitle, cancelTitle: cancelTitle, cancelBlock: cancelBlock, sureBlock: sureBlock) {
+        if let alertController = UIViewController.getAlert(style: style, title: title, message: message, sureTitle: sureTitle, cancelTitle: cancelTitle, cancelBlock: cancelBlock, sureBlock: sureBlock) {
             self.present(alertController, animated: true, completion: nil)
         }
     }

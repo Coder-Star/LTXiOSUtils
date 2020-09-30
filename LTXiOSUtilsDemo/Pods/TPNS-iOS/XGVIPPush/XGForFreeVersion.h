@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+/// 免费集群accessId,在反注册设备时会用到，防止两边同时推送出现重，免费集群url: https://xg.qq.com
 @interface XGForFreeVersion : NSObject
-
-/// 免费集群accessId,在反注册设备时会用到，防止两边同时推送出现重
-/// @note 免费集群url: https://xg.qq.com
+/// accessid for free version
 @property uint32_t freeAccessId;
-
+/// share instance
 + (instancetype)defaultForFreeVersion;
 
 @end

@@ -39,7 +39,7 @@ class DBMenuViewController: BaseGroupTableMenuViewController {
 
 extension DBMenuViewController {
     func showCoreDataAction() {
-        let alertController = getAlert(style: .actionSheet, title: "操作", message: "请选择操作", cancelTitle: "取消", sureBlock: nil)
+        let alertController = UIAlertController.getAlert(style: .actionSheet, title: "操作", message: "请选择操作", cancelTitle: "取消", sureBlock: nil)
         let action1 = UIAlertAction(title: "存入", style: .destructive) { [weak self] _ in
             self?.saveInfo()
         }

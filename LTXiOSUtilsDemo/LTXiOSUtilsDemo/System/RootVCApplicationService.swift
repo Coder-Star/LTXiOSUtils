@@ -19,11 +19,6 @@ final class RootVCApplicationService: NSObject, ApplicationService {
     let showGuide = false //是否启用引导页
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-
-        /// 当APP处于死亡状态，收到推送、点击推送消息启动APP，可以通过下面的方式获取到推送消息
-        //        let pushInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification]
-        //        Log.d(pushInfo)
-
         window?.makeKeyAndVisible()
 
         if showAd {

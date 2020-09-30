@@ -116,11 +116,6 @@ typedef enum {
 @property uint32_t maxStoreEventCount;
 
 /**
- 一次最大加载未发送的缓存消息，默认30条
- */
-@property uint32_t maxLoadEventCount;
-
-/**
  统计上报策略为BATCH时，触发上报时最小缓存消息数，默认30条
  */
 @property uint32_t minBatchReportCount;
@@ -209,6 +204,15 @@ typedef enum {
  */
 - (NSString *)getCustomProperty:(NSString *)key default:(NSString *)v;
 
+/**
+自定义上报地址
+*/
 @property (nonatomic, copy) NSString *statReportURL;
+
+/// tpns accessID
+@property (nonatomic, assign) uint32_t tpnsAccessID;
+
+/// tpns sdk版本
+@property (nonatomic, copy) NSString *tpnsSDKVersion;
 
 @end
