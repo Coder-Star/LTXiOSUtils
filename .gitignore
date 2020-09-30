@@ -162,3 +162,4 @@ Dependencies/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.gitignore.io/api/xcode,swift,macos,objective-c
+LTXiOSUtils推送证书.p12

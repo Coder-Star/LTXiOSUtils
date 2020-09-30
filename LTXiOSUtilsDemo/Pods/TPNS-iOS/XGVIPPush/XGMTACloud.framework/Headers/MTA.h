@@ -3,7 +3,7 @@
 //  XGPushStatMTA-SDK
 //
 //  Originally Created by uweiyuan on 2019/7/4.
-//
+//  Copyright (c) 2020 TEG of Tencent. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -12,7 +12,7 @@
  XGPushStatMTA版本号
  */
 
-#define MTA_SDK_VERSION @"2.5.4"
+#define MTA_SDK_VERSION @"2.5.6"
 
 #pragma mark - 接口监控相关数据结构
 /**
@@ -51,7 +51,17 @@ typedef NS_ENUM(NSInteger, XGPushStatMTAErrorCode) {
 };
 
 #pragma mark - XGPushStatMTA统计功能相关接口
+/// XGPushStatMTA核心类
 @interface XGPushStatMTA : NSObject
+
+#pragma mark - 获取XGPushStatMTA版本号
+
+/**
+获取XGPushStatMTA版本号
+
+@return 返回XGPushStatMTA版本号
+*/
++ (NSString *)getSdkVersion;
 
 #pragma mark - 启动XGPushStatMTA
 
@@ -62,19 +72,6 @@ typedef NS_ENUM(NSInteger, XGPushStatMTAErrorCode) {
  */
 + (void)startWithAppkey:(NSString *)appkey;
 
-/**
- 检测版本，并启动XGPushStatMTA。
- 如果当前XGPushStatMTA的版本小于ver参数，则XGPushStatMTA不启动。否则启动XGPushStatMTA。
-
- @param appkey 从网页申请的appKey
- @param ver 最低允许启动的版本
- @return 如果XGPushStatMTA成功启动，返回YES，否则返回NO
- */
-+ (BOOL)startWithAppkey:(NSString *)appkey checkedSdkVersion:(NSString *)ver;
-
 #pragma mark - XG
-+ (XGPushStatMTAErrorCode)reportMessageInfo:(NSDictionary *)info;
-
-+ (XGPushStatMTAErrorCode)reportErrInfo:(NSDictionary *)info;
 
 @end

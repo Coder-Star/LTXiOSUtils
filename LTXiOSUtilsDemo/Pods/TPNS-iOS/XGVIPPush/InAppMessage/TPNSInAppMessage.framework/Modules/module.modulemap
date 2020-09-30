@@ -1,0 +1,6 @@
+framework module TPNSInAppMessage {
+  umbrella header "TPNSInAppMessage.h"
+
+  export *
+  module * { export * }
+}

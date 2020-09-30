@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>LTXiOSUtilsDemo.AppConfigApplicationService</string>
+	<string>LTXiOSUtilsDemo.AppThemeApplicationService</string>
+	<string>LTXiOSUtilsDemo.ThirdLibApplicationService</string>
+	<string>LTXiOSUtilsDemo.NetworkStateApplicationService</string>
+	<string>LTXiOSUtilsDemo.RootVCApplicationService</string>
+	<string>LTXiOSUtilsDemo.SystemNotificationService</string>
+	<string>LTXiOSUtilsDemo.FlutterApplicationService</string>
+	<string>LTXiOSUtilsDemo.NotificationApplicationService</string>
+</array>
+</plist>
