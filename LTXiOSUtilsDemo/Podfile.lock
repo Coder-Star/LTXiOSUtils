@@ -71,6 +71,7 @@ PODS:
   - SwiftLint (0.38.0)
   - SwiftyJSON (5.0.0)
   - SwiftyUserDefaults (5.0.0)
+  - TPNS-iOS (1.2.6.1)
   - TZImagePickerController (3.3.1)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - URLNavigator (2.3.0)
@@ -102,6 +103,7 @@ DEPENDENCIES:
   - SwiftLint (= 0.38.0)
   - SwiftyJSON (= 5.0.0)
   - SwiftyUserDefaults (= 5.0.0)
+  - TPNS-iOS (= 1.2.6.1)
   - TZImagePickerController (= 3.3.1)
   - "UITableView+FDTemplateLayoutCell (= 1.6)"
   - URLNavigator (= 2.3.0)
@@ -143,6 +145,7 @@ SPEC REPOS:
     - SwiftLint
     - SwiftyJSON
     - SwiftyUserDefaults
+    - TPNS-iOS
     - TZImagePickerController
     - "UITableView+FDTemplateLayoutCell"
     - URLNavigator
@@ -188,6 +191,7 @@ SPEC CHECKSUMS:
   SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
+  TPNS-iOS: 19d500bf272a4f8f3f08472cb49baeaff9a8af70
   TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
@@ -195,6 +199,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: ea287d1cd3f9c982a47181f9d3ae95976ae4a7f1
+PODFILE CHECKSUM: 46704f37ce9f95633ceef6b71619f74c7ccaee1e
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

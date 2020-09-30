@@ -1,0 +1,6 @@
+framework module XGMTACloud {
+  umbrella header "XGMTACloud.h"
+
+  export *
+  module * { export * }
+}

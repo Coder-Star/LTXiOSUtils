@@ -51,6 +51,8 @@ target 'LTXiOSUtilsDemo' do
 
 
   pod 'Bugly', '2.5.2' # 异常上报
+  pod 'TPNS-iOS','1.2.6.1' # 腾讯云推送
+
   pod 'LookinServer', :configurations => ['Debug'] # 查看UI
 
   #  pod 'SwiftyEventBus', '1.0.0' # 事件总线
