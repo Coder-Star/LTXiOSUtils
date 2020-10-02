@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class LayoutMainViewController: BaseGroupTableMenuViewController {
 
@@ -19,7 +20,8 @@ class LayoutMainViewController: BaseGroupTableMenuViewController {
     override func setMenu() {
         let fisrtMenu = [
             BaseGroupTableMenuModel(code: "Xib", title: "Xib"),
-            BaseGroupTableMenuModel(code: "StoryBoard", title: "StoryBoard")
+            BaseGroupTableMenuModel(code: "StoryBoard", title: "StoryBoard"),
+            BaseGroupTableMenuModel(code: "SwiftUI", title: "SwiftUI")
         ]
         menu.append(fisrtMenu)
     }
@@ -30,11 +32,14 @@ class LayoutMainViewController: BaseGroupTableMenuViewController {
             break
         case "StoryBoard":
             let storyboard = UIStoryboard(name: "StoryboardMain", bundle: nil)
-//            let viewController = storyboard.instantiateViewController(withIdentifier: "StoryboardSecondVC")
+            // 指定VC
+            //            let viewController = storyboard.instantiateViewController(withIdentifier: "StoryboardSecondVC")
             guard let viewController = storyboard.instantiateInitialViewController() else {
                 return
             }
-
+            navigationController?.pushViewController(viewController, animated: true)
+        case "SwiftUI":
+            let viewController = UIHostingController(rootView: SwiftUIMainView())
             navigationController?.pushViewController(viewController, animated: true)
         default:
             HUD.showText("暂无此模块")

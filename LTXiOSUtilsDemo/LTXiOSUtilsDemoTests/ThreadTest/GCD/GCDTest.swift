@@ -15,6 +15,9 @@ class GCDTest: XCTestCase {
 
     let list = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
+    /**
+     使用Lock以及信号量保证串行运行
+     */
     func testDemo() {
         let lockA = NSLock()
         let lockB = NSLock()
@@ -75,6 +78,9 @@ class GCDTest: XCTestCase {
         }
     }
 
+    /**
+     将还未完成的WorkItem取消
+     */
     func testDemo2() {
 
         let expectationInfo = expectation(description: "thread")
@@ -90,6 +96,64 @@ class GCDTest: XCTestCase {
         }
 
         _ = XCTWaiter(delegate: self).wait(for: [expectationInfo], timeout:  5)
+    }
+
+
+    func testDemo3() {
+        Log.d(Thread.isMainThread)
+        let serialQueue = DispatchQueue(label: "serialQueue",qos: .userInteractive)
+
+        serialQueue.async {
+            for item in 0..<3 {
+                Log.d("串行队列1\(item)")
+            }
+        }
+
+        serialQueue.async {
+            for item in 0..<3 {
+                Log.d("串行队列2\(item)")
+            }
+        }
+
+        Log.d("函数结束")
+    }
+
+    func testDemo4() {
+        Log.d(Thread.isMainThread)
+        let concurrentQueue = DispatchQueue(label: "concurrentQueue", attributes: .concurrent)
+
+        concurrentQueue.async {
+            for item in 0..<3 {
+                Log.d("并行队列1\(item)")
+            }
+        }
+
+        concurrentQueue.async {
+            for item in 0..<3 {
+                Log.d("并行队列2\(item)")
+            }
+        }
+        Log.d("函数结束")
+    }
+
+    /**
+     引发死锁，死锁原因是sync方法会立刻阻塞主线程，函数不再向下进行，但是主线程当前正在运行函数，需要函数运行完毕之后才可以同步任务，两者互相等待，导致死锁
+     */
+    func testDemo5() {
+        DispatchQueue.main.sync {
+            Log.d("main")
+        }
+        Log.d("函数结束")
+    }
+
+    /**
+     主队列不会开启新的线程，会把已经添完的任务执行完毕执行 异步任务
+     */
+    func testDemo6() {
+        DispatchQueue.main.async {
+            Log.d("main")
+        }
+        Log.d("函数结束")
     }
 }
 

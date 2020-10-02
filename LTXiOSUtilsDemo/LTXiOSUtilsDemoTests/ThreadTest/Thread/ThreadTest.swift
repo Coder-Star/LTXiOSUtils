@@ -30,6 +30,7 @@ class ThreadTest: XCTestCase {
         CFRunLoopStop(CFRunLoopGetCurrent())
     }
 
+    // 自定义线程
     func test1() {
         // Thread子类重写main方法，执行体变为main()方法里面的内容，不再执行闭包内容
         thread = MyThread()
@@ -44,7 +45,9 @@ class ThreadTest: XCTestCase {
 }
 
 class MyThread: Thread {
+    // 这种重写方法的方式比较适合代码较多，功能较复杂的操作
     override func main() {
+        Log.d(Thread.isMainThread)
         Log.d("重写main方法的线程")
     }
 }

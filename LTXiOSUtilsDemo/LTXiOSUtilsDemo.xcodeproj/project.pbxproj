@@ -72,6 +72,8 @@
 		DC88A35F250CB322000198AD /* CustomURLProtocol.html in Resources */ = {isa = PBXBuildFile; fileRef = DC88A35E250CB322000198AD /* CustomURLProtocol.html */; };
 		DC9F89CC24ED0E7500C0487F /* AudioAndRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */; };
 		DCA407882406AC0500F62769 /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA407872406AC0500F62769 /* WRCustomNavigationBar.swift */; };
+		DCA76A0F2525A6D0001374FA /* SwiftUIMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA76A0E2525A6D0001374FA /* SwiftUIMainView.swift */; };
+		DCAA74B32526D45900240398 /* OperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAA74B22526D45900240398 /* OperationTest.swift */; };
 		DCAAD857241A51C8009622DD /* AutoLabelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAAD856241A51C8009622DD /* AutoLabelsModel.swift */; };
 		DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */; };
 		DCB1C04723C4B41500D735BD /* ExtensionExampleMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1C04623C4B41500D735BD /* ExtensionExampleMenuViewController.swift */; };
@@ -224,6 +226,8 @@
 		DCA4077A24066C3500F62769 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		DCA4077C24066CC300F62769 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA407872406AC0500F62769 /* WRCustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCustomNavigationBar.swift; sourceTree = "<group>"; };
+		DCA76A0E2525A6D0001374FA /* SwiftUIMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMainView.swift; sourceTree = "<group>"; };
+		DCAA74B22526D45900240398 /* OperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTest.swift; sourceTree = "<group>"; };
 		DCAAD856241A51C8009622DD /* AutoLabelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLabelsModel.swift; sourceTree = "<group>"; };
 		DCB1C04323C4B25600D735BD /* UIViewExtensionExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensionExampleViewController.swift; sourceTree = "<group>"; };
 		DCB1C04623C4B41500D735BD /* ExtensionExampleMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionExampleMenuViewController.swift; sourceTree = "<group>"; };
@@ -568,6 +572,7 @@
 		DC55150F251F215D006223AE /* Operation */ = {
 			isa = PBXGroup;
 			children = (
+				DCAA74B22526D45900240398 /* OperationTest.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -681,6 +686,14 @@
 				DC7C936224EE9E84005E0AAA /* LameUtilDelegate.h */,
 			);
 			path = Lame;
+			sourceTree = "<group>";
+		};
+		DCA76A0D2525A6A8001374FA /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				DCA76A0E2525A6D0001374FA /* SwiftUIMainView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		DCAACAD8243DA0DF0028D301 /* MGJRouterDemo */ = {
@@ -832,6 +845,7 @@
 		DCEE98352510FE1400A19CF9 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				DCA76A0D2525A6A8001374FA /* SwiftUI */,
 				DCEE98372510FE4800A19CF9 /* StoryBoard */,
 				DCEE98362510FE3C00A19CF9 /* Xib */,
 				DCEE983C2510FF6D00A19CF9 /* LayoutMainViewController.swift */,
@@ -1160,7 +1174,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/LTXiOSUtilsDemo/R.generated.swift",
+				$SRCROOT/LTXiOSUtilsDemo/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1242,6 +1256,7 @@
 				DCAAD857241A51C8009622DD /* AutoLabelsModel.swift in Sources */,
 				DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */,
 				DCF88149242B60210084C940 /* AppConfigApplicationService.swift in Sources */,
+				DCA76A0F2525A6D0001374FA /* SwiftUIMainView.swift in Sources */,
 				DC01C3CF2508C53D00C5AEC3 /* NativeAPIForJSWithDSBrige.swift in Sources */,
 				DC3E61FE2423755F00105366 /* PickImageDemoViewController.swift in Sources */,
 				DCA407882406AC0500F62769 /* WRCustomNavigationBar.swift in Sources */,
@@ -1304,6 +1319,7 @@
 				DCDBA7AF24FE6A290073E293 /* CustomStringConvertibleProtocolTest.swift in Sources */,
 				DCDBA7B4250082410073E293 /* EnumTest.swift in Sources */,
 				DC6F4D4724F7CAAF00B69A31 /* ThreadTest.swift in Sources */,
+				DCAA74B32526D45900240398 /* OperationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1487,7 +1503,7 @@
 				DEVELOPMENT_TEAM = Q4PJEY75E2;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1519,7 +1535,7 @@
 				DEVELOPMENT_TEAM = Q4PJEY75E2;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
