@@ -97,6 +97,16 @@ extension UIView {
         }
         return resultView
     }
+
+    /// 获取view所在的ViewController
+    public var firstViewController: UIViewController? {
+        for view in sequence(first: self.superview, next: { $0?.superview }) {
+            if let responder = view?.next, responder.isKind(of: UIViewController.self) {
+                return responder as? UIViewController
+            }
+        }
+        return nil
+    }
 }
 
 extension UIView {
