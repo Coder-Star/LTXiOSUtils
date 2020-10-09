@@ -53,6 +53,9 @@ open class DurationDatePickView: UIView {
         }
         datePicker.backgroundColor = UIColor.white.tx.adapt()
         datePicker.alpha = 0
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
         return datePicker
     }()
 

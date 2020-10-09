@@ -274,6 +274,9 @@ public class PickerView: UIView {
 
     fileprivate lazy var datePicker: UIDatePicker = {[unowned self] in
         let datePic = UIDatePicker()
+        if #available(iOS 13.4, *) {
+            datePic.preferredDatePickerStyle = .wheels
+        }
         datePic.backgroundColor = UIColor.white.tx.adapt()
         datePic.timeZone = TimeZone.current //时区
         if let language = Locale.preferredLanguages.first {
@@ -281,7 +284,7 @@ public class PickerView: UIView {
         }
         datePic.calendar = Calendar.current //显示时制，日历
         return datePic
-        }()
+    }()
 
     fileprivate lazy var toolBar: ToolBarView = {
         let toolBar = ToolBarView()
