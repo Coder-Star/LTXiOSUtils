@@ -24,7 +24,7 @@ final class NotificationApplicationService: NSObject, ApplicationService {
         // 向APNs请求token
         //        UIApplication.shared.registerForRemoteNotifications()
 
-        initXGPush()
+//        initXGPush()
 
         return true
     }
@@ -76,6 +76,18 @@ final class NotificationApplicationService: NSObject, ApplicationService {
             /// 远程推送
             let userInfo = response.notification.request.content.userInfo
             Log.d(userInfo)
+
+            if let textInputNotificationResponse = response as? UNTextInputNotificationResponse {
+                let userText = textInputNotificationResponse.userText
+                Log.d(userText)
+            }
+
+            let actionIdentifier = response.actionIdentifier
+            Log.d(actionIdentifier)
+            if actionIdentifier == "action.look" {
+
+            }
+
         } else if trigger.isKind(of: UNLocationNotificationTrigger.self) {
             /// 本地推送
         }
@@ -87,17 +99,21 @@ extension NotificationApplicationService {
     /// 获取权限
     func requestAuthorization() {
         let center = UNUserNotificationCenter.current()
+        // 必须设置
         center.delegate = self
-        center.getNotificationSettings { settings in
+        center.getNotificationSettings {[weak self] settings in
             switch settings.authorizationStatus {
             case .authorized:
                 // 权限通过
+                self?.setNotificationCategories()
                 return
             case .notDetermined:
                 // 没有请求授权过，请求权限
                 center.requestAuthorization(options: [.alert, .sound, .badge]) { accepted, error in
                     if !accepted {
                         Log.d("用户不允许推送\(String(describing: error))")
+                    } else {
+                        self?.setNotificationCategories()
                     }
                 }
             case .denied:
@@ -119,6 +135,25 @@ extension NotificationApplicationService {
                 break
             }
         }
+    }
+
+    func setNotificationCategories() {
+        let center = UNUserNotificationCenter.current()
+        /**
+         options是一个枚举，包括authenticationRequired、foreground、destructive
+         authenticationRequired：需要解锁显示，点击不会进去APP
+         foreground：红色文字，点击不会进app
+         destructive：黑色文字，点击不会进app
+         */
+        let lookAction = UNNotificationAction.init(identifier: "action.look", title: "查看邀请", options: .authenticationRequired)
+        let joinAction = UNNotificationAction.init(identifier: "action.join", title: "接受邀请", options: .foreground)
+        let cancelAction = UNNotificationAction.init(identifier: "action.cancel", title: "取消邀请", options: .destructive)
+
+        let inputAction = UNTextInputNotificationAction(identifier: "action.input", title: "输入", options: .foreground, textInputButtonTitle: "确定", textInputPlaceholder: "请输入接受邀请备注")
+
+        // 锁屏及在通知中心收到推送，侧滑，会展示 action
+        let category = UNNotificationCategory(identifier: "join_category", actions: [lookAction, joinAction, inputAction, cancelAction], intentIdentifiers: [], options: .customDismissAction)
+        center.setNotificationCategories([category])
     }
 }
 
