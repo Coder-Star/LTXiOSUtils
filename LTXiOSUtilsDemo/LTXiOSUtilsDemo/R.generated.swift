@@ -163,7 +163,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 12 files.
+  /// This `R.file` struct is generated, and contains static references to 13 files.
   struct file {
     /// Resource file `CustomURLProtocol.html`.
     static let customURLProtocolHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "CustomURLProtocol", pathExtension: "html")
@@ -189,6 +189,8 @@ struct R: Rswift.Validatable {
     static let chinese_and_englishPng = Rswift.FileResource(bundle: R.hostingBundle, name: "chinese_and_english", pathExtension: "png")
     /// Resource file `dsbridge.js`.
     static let dsbridgeJs = Rswift.FileResource(bundle: R.hostingBundle, name: "dsbridge", pathExtension: "js")
+    /// Resource file `pushSound.mp3`.
+    static let pushSoundMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "pushSound", pathExtension: "mp3")
 
     /// `bundle.url(forResource: "CustomURLProtocol", withExtension: "html")`
     static func customURLProtocolHtml(_: Void = ()) -> Foundation.URL? {
@@ -259,6 +261,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "dsbridge", withExtension: "js")`
     static func dsbridgeJs(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.dsbridgeJs
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "pushSound", withExtension: "mp3")`
+    static func pushSoundMp3(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pushSoundMp3
       return fileResource.bundle.url(forResource: fileResource)
     }
 

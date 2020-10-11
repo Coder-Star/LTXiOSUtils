@@ -17,7 +17,7 @@ target 'LTXiOSUtilsDemo' do
   # 需要use_modular_headers，不再use_frameworks
 
   # 安装flutter模块
-#  install_all_flutter_pods(flutter_application_path)
+  #  install_all_flutter_pods(flutter_application_path)
 
   pod 'LTXiOSUtils',:path => '../' # 基础功能库
   #  pod 'LTXiOSUtils', :git => 'https://github.com/Coder-Star/LTXiOSUtils.git', :tag => '0.0.0' #直接从源代码托管仓库取
@@ -51,7 +51,7 @@ target 'LTXiOSUtilsDemo' do
 
 
   pod 'Bugly', '2.5.2' # 异常上报
-  pod 'TPNS-iOS','1.2.8.0' # 腾讯云推送
+  pod 'TPNS-iOS', '1.2.8.0' # 腾讯云推送
 
   pod 'LookinServer', :configurations => ['Debug'] # 查看UI
 
@@ -78,14 +78,17 @@ target 'LTXiOSUtilsDemo' do
 
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths
-
   end
 
   target 'LTXiOSUtilsDemoUITests' do
     inherit! :search_paths
-    
   end
 
+end
+
+target 'NotificationServiceExtension' do
+  use_frameworks!
+  pod 'TPNS-iOS-Extension', '1.2.8.0'
 end
 
 # 将部分指定pod包的swift版本设置为4.2
