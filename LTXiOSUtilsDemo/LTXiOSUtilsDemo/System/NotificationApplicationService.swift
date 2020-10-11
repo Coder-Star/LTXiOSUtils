@@ -40,7 +40,6 @@ final class NotificationApplicationService: NSObject, ApplicationService {
     /// 静默推送时回调此方法，大概可以执行30s，APP处于前台、后台时都可回调此方法
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         Log.d(userInfo)
-
         // 此闭包告诉系统是否执行完毕
         completionHandler(.noData)
     }
@@ -142,8 +141,8 @@ extension NotificationApplicationService {
         /**
          options是一个枚举，包括authenticationRequired、foreground、destructive
          authenticationRequired：需要解锁显示，点击不会进去APP
-         foreground：红色文字，点击不会进app
-         destructive：黑色文字，点击不会进app
+         foreground：黑色文字，点击不会进app
+         destructive：红色文字，点击不会进app
          */
         let lookAction = UNNotificationAction.init(identifier: "action.look", title: "查看邀请", options: .authenticationRequired)
         let joinAction = UNNotificationAction.init(identifier: "action.join", title: "接受邀请", options: .foreground)
