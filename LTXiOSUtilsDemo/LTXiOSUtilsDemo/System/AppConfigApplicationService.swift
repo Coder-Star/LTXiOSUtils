@@ -13,6 +13,7 @@ final class AppConfigApplicationService: NSObject, ApplicationService {
         initLogConfig()
         initUrlInfo()
         initRegisterUrl()
+        catchCrash()
         return true
     }
 }
@@ -41,5 +42,16 @@ extension AppConfigApplicationService {
         #else
         Log.minShowLogLevel = .info
         #endif
+    }
+}
+
+// MARK: - 全局捕获异常
+extension AppConfigApplicationService {
+    private func catchCrash() {
+        // 注册全局捕获
+        CrashManager.registerHandler()
+
+        // 输出错误日志信息，耗时，可开线程读取
+        Log.d(CrashManager.readAllCrashInfo())
     }
 }

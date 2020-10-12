@@ -32,12 +32,15 @@ class NotificationService: UNNotificationServiceExtension {
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         
         if let bestAttemptContent = bestAttemptContent {
+
+            bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
+
             // TAPNs统计上报
             XGExtension.defaultManager().reportDomainName = "tpns.sh.tencent.com"
             XGExtension.defaultManager().handle(request, accessID: 1680001375, accessKey: "IYBJPGFD2RRO") { attachments, error in
-                bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
+                print(error)
                 if let attachments = attachments {
-//                    bestAttemptContent.attachments = attachments
+                    bestAttemptContent.attachments = attachments
                 }
                 contentHandler(bestAttemptContent)
             }

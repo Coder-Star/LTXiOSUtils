@@ -12,10 +12,16 @@
 
 #endif /* LTXiOSUtilsDemo_Bridging_Header_h */
 
-#import <Bugly/Bugly.h> // bugly
-#import "LameUtil.h" // 将录音文件转码为mp3文件
+// bugly
+#import <Bugly/Bugly.h>
 
 // TAPNs推送相关
 #import <XGPush.h>
 #import <XGPushPrivate.h>
 #import <XGForFreeVersion.h>
+
+// 将录音文件转码为mp3文件
+#import "LameUtil.h"
+
+// 偏移量工具
+#import "SlideAdressTool.h"
