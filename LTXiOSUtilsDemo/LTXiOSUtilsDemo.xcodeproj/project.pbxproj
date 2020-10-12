@@ -72,6 +72,10 @@
 		DC88A359250CA959000198AD /* CustomURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88A358250CA959000198AD /* CustomURLProtocol.swift */; };
 		DC88A35D250CB318000198AD /* WKURLSchemeHandler.html in Resources */ = {isa = PBXBuildFile; fileRef = DC88A35C250CB318000198AD /* WKURLSchemeHandler.html */; };
 		DC88A35F250CB322000198AD /* CustomURLProtocol.html in Resources */ = {isa = PBXBuildFile; fileRef = DC88A35E250CB322000198AD /* CustomURLProtocol.html */; };
+		DC9D2C5525344FB500C83C79 /* CrashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5025344FB500C83C79 /* CrashManager.swift */; };
+		DC9D2C5625344FB500C83C79 /* SlideAdressTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5125344FB500C83C79 /* SlideAdressTool.m */; };
+		DC9D2C5725344FB500C83C79 /* CrashNSExceptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5225344FB500C83C79 /* CrashNSExceptionManager.swift */; };
+		DC9D2C5825344FB500C83C79 /* CrashSignalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5425344FB500C83C79 /* CrashSignalManager.swift */; };
 		DC9F89CC24ED0E7500C0487F /* AudioAndRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */; };
 		DCA407882406AC0500F62769 /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA407872406AC0500F62769 /* WRCustomNavigationBar.swift */; };
 		DCA76A0F2525A6D0001374FA /* SwiftUIMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA76A0E2525A6D0001374FA /* SwiftUIMainView.swift */; };
@@ -262,6 +266,11 @@
 		DC88A358250CA959000198AD /* CustomURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomURLProtocol.swift; sourceTree = "<group>"; };
 		DC88A35C250CB318000198AD /* WKURLSchemeHandler.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKURLSchemeHandler.html; sourceTree = "<group>"; };
 		DC88A35E250CB322000198AD /* CustomURLProtocol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CustomURLProtocol.html; sourceTree = "<group>"; };
+		DC9D2C5025344FB500C83C79 /* CrashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashManager.swift; sourceTree = "<group>"; };
+		DC9D2C5125344FB500C83C79 /* SlideAdressTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideAdressTool.m; sourceTree = "<group>"; };
+		DC9D2C5225344FB500C83C79 /* CrashNSExceptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashNSExceptionManager.swift; sourceTree = "<group>"; };
+		DC9D2C5325344FB500C83C79 /* SlideAdressTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideAdressTool.h; sourceTree = "<group>"; };
+		DC9D2C5425344FB500C83C79 /* CrashSignalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashSignalManager.swift; sourceTree = "<group>"; };
 		DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAndRecordViewController.swift; sourceTree = "<group>"; };
 		DCA407722405405300F62769 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA4077624066BFB00F62769 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -455,6 +464,7 @@
 		DC1AD83523E84D400073CB97 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				DC9D2C4F25344FB500C83C79 /* CrashManager */,
 				DC55976424E7D9B900BAEF88 /* Audio */,
 				DC3E62032425E86F00105366 /* Stash */,
 				DCF6F54623BCC87500AC4850 /* ViewFactory.swift */,
@@ -751,6 +761,18 @@
 				DC88A358250CA959000198AD /* CustomURLProtocol.swift */,
 			);
 			path = CustomURLProtocol;
+			sourceTree = "<group>";
+		};
+		DC9D2C4F25344FB500C83C79 /* CrashManager */ = {
+			isa = PBXGroup;
+			children = (
+				DC9D2C5125344FB500C83C79 /* SlideAdressTool.m */,
+				DC9D2C5325344FB500C83C79 /* SlideAdressTool.h */,
+				DC9D2C5425344FB500C83C79 /* CrashSignalManager.swift */,
+				DC9D2C5225344FB500C83C79 /* CrashNSExceptionManager.swift */,
+				DC9D2C5025344FB500C83C79 /* CrashManager.swift */,
+			);
+			path = CrashManager;
 			sourceTree = "<group>";
 		};
 		DC9F89CD24ED505F00C0487F /* Lib */ = {
@@ -1425,6 +1447,7 @@
 				DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */,
 				DCEE982D250F835C00A19CF9 /* FlutterMainViewController.swift in Sources */,
 				DC7C935624EE5837005E0AAA /* SystemNotificationService.swift in Sources */,
+				DC9D2C5725344FB500C83C79 /* CrashNSExceptionManager.swift in Sources */,
 				DC88A350250C97B1000198AD /* CustomURLSchemeHandler.swift in Sources */,
 				DCEE982F250F865A00A19CF9 /* FlutterApplicationService.swift in Sources */,
 				DCD97BEB251CFB54002E9C0A /* DBMenuViewController.swift in Sources */,
@@ -1440,6 +1463,7 @@
 				DC2A02BA2506552200BABEDB /* WkWebViewController.swift in Sources */,
 				DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */,
 				DC1BE0B224B011D700745671 /* ViewEventViewController.swift in Sources */,
+				DC9D2C5525344FB500C83C79 /* CrashManager.swift in Sources */,
 				DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */,
 				DCAAD857241A51C8009622DD /* AutoLabelsModel.swift in Sources */,
 				DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */,
@@ -1455,6 +1479,7 @@
 				DCEE983D2510FF6D00A19CF9 /* LayoutMainViewController.swift in Sources */,
 				DCB22AB923AB6908004C63EF /* PickViewDemoViewController.swift in Sources */,
 				DC03AE2C23F3D736007739DD /* AppTheme.swift in Sources */,
+				DC9D2C5625344FB500C83C79 /* SlideAdressTool.m in Sources */,
 				DC83E7CD23F645E10030A9B4 /* FWMenuViewDemoVC.swift in Sources */,
 				DCB1C04723C4B41500D735BD /* ExtensionExampleMenuViewController.swift in Sources */,
 				DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */,
@@ -1463,6 +1488,7 @@
 				DC83E7CC23F645E10030A9B4 /* FWCustomPopupView.swift in Sources */,
 				DC83E7D023F645E10030A9B4 /* FWDemoViewController.swift in Sources */,
 				DC2A02BE2506602E00BABEDB /* WkWebViewMenuViewController.swift in Sources */,
+				DC9D2C5825344FB500C83C79 /* CrashSignalManager.swift in Sources */,
 				DCD8763D251AFC5000F50138 /* StoryboardMainViewController.swift in Sources */,
 				DC88A353250C9FC6000198AD /* InterceptWkWebViewURLViewController.swift in Sources */,
 				DCB1C05923C75B3900D735BD /* RootVCApplicationService.swift in Sources */,

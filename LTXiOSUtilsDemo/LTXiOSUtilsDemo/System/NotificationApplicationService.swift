@@ -47,7 +47,7 @@ final class NotificationApplicationService: NSObject, ApplicationService {
     /// APP处于前台时才会回调该方法
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         Log.d("原生收到推送")
-        Log.d(notification)
+        Log.d(notification.request.trigger)
 
         guard let trigger = notification.request.trigger else {
             completionHandler([.alert, .sound, .badge])
