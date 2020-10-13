@@ -43,7 +43,7 @@ class CrashSignalManager {
 func signalExceptionHandler(signal: Int32) {
     var mstr = String()
     mstr += "Stack:\n"
-    // 增加偏移量地址
+    // 获取偏移量地址
     mstr = mstr.appendingFormat("slideAdress:0x%0x\r\n", calculate())
     // 增加错误信息
     for symbol in Thread.callStackSymbols {
