@@ -52,6 +52,6 @@ extension AppConfigApplicationService {
         CrashManager.registerHandler()
 
         // 输出错误日志信息，耗时，可开线程读取
-        Log.d(CrashManager.readAllCrashInfo())
+//        Log.d(CrashManager.readAllCrashInfo())
     }
 }

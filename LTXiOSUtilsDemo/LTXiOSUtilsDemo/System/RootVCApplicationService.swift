@@ -33,7 +33,7 @@ final class RootVCApplicationService: NSObject, ApplicationService {
 
         // 等待rootview加载完成
 //        self.perform(#selector(setSecondWindow), with: nil, afterDelay: 0.5)
-
+        launchAnimation()
         return true
     }
 
@@ -50,6 +50,26 @@ final class RootVCApplicationService: NSObject, ApplicationService {
         secondWindow?.backgroundColor = .red
         secondWindow?.windowLevel = UIWindow.Level.alert + 1
         secondWindow?.makeKeyAndVisible()
+    }
+}
+
+extension RootVCApplicationService {
+    // 播放启动画面动画
+    private func launchAnimation() {
+        let vc = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+        guard let launchview = vc?.view else {
+            return
+        }
+        guard let window = UIApplication.shared.delegate?.window else {
+            return
+        }
+        window!.addSubview(launchview)
+        UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
+            let transform = CATransform3DScale(CATransform3DIdentity, 1.5, 1.5, 1.0)
+            launchview.layer.transform = transform
+        }, completion: { _ in
+            launchview.removeFromSuperview()
+        })
     }
 }
 
@@ -92,12 +112,5 @@ extension RootVCApplicationService: XHLaunchAdDelegate {
     func xhLaunchAd(_ launchAd: XHLaunchAd, clickAtOpenModel openModel: Any, click clickPoint: CGPoint) -> Bool {
         Log.d(openModel)
         return true
-    }
-}
-
-extension RootVCApplicationService {
-    func go() {
-        setNormalRootViewController()
-        Log.d(showAd)
     }
 }
