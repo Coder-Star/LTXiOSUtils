@@ -290,7 +290,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 41 images.
+  /// This `R.image` struct is generated, and contains static references to 44 images.
   struct image {
     /// Image `add-white`.
     static let addWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "add-white")
@@ -298,6 +298,12 @@ struct R: Rswift.Validatable {
     static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "add")
     /// Image `audio_bgm_4`.
     static let audio_bgm_4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "audio_bgm_4")
+    /// Image `carousel_1`.
+    static let carousel_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "carousel_1")
+    /// Image `carousel_2`.
+    static let carousel_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "carousel_2")
+    /// Image `carousel_3`.
+    static let carousel_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "carousel_3")
     /// Image `chinese_and_english`.
     static let chinese_and_english = Rswift.ImageResource(bundle: R.hostingBundle, name: "chinese_and_english")
     /// Image `com_arrow_vc_back`.
@@ -393,6 +399,27 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "audio_bgm_4", bundle: ..., traitCollection: ...)`
     static func audio_bgm_4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.audio_bgm_4, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "carousel_1", bundle: ..., traitCollection: ...)`
+    static func carousel_1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.carousel_1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "carousel_2", bundle: ..., traitCollection: ...)`
+    static func carousel_2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.carousel_2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "carousel_3", bundle: ..., traitCollection: ...)`
+    static func carousel_3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.carousel_3, compatibleWith: traitCollection)
     }
     #endif
 
