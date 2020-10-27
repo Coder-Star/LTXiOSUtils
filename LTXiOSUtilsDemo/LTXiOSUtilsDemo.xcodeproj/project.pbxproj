@@ -103,6 +103,7 @@
 		DCCF3E4F23C8ABD1000E65E1 /* KeychainAccessTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */; };
 		DCCF3E5123C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3E5023C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift */; };
 		DCCF3E5323C96B0F000E65E1 /* NetworkStateApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */; };
+		DCD12EA92537096F000A58C0 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD12EA82537096E000A58C0 /* CarouselViewController.swift */; };
 		DCD8763D251AFC5000F50138 /* StoryboardMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD8763C251AFC5000F50138 /* StoryboardMainViewController.swift */; };
 		DCD8763F251B25E600F50138 /* StoryboardSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD8763E251B25E600F50138 /* StoryboardSecondViewController.swift */; };
 		DCD97BAA251CF798002E9C0A /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCD97BA8251CF798002E9C0A /* data.xcdatamodeld */; };
@@ -304,6 +305,7 @@
 		DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccessTest.swift; sourceTree = "<group>"; };
 		DCCF3E5023C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaultsTest.swift; sourceTree = "<group>"; };
 		DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStateApplicationService.swift; sourceTree = "<group>"; };
+		DCD12EA82537096E000A58C0 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		DCD8763C251AFC5000F50138 /* StoryboardMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardMainViewController.swift; sourceTree = "<group>"; };
 		DCD8763E251B25E600F50138 /* StoryboardSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSecondViewController.swift; sourceTree = "<group>"; };
 		DCD97BA9251CF798002E9C0A /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 		DC1AD83523E84D400073CB97 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				DC6264E025481D500096530C /* FPSMonitor */,
 				DC9D2C4F25344FB500C83C79 /* CrashManager */,
 				DC55976424E7D9B900BAEF88 /* Audio */,
 				DC3E62032425E86F00105366 /* Stash */,
@@ -477,6 +480,7 @@
 		DC1BE0AF24B0116F00745671 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				DCD12EA725370944000A58C0 /* Carousel */,
 				DCD97B67251CF55F002E9C0A /* DB */,
 				DCEE98352510FE1400A19CF9 /* Layout */,
 				DCEE982B250F834400A19CF9 /* Flutter */,
@@ -677,6 +681,13 @@
 				DC55976724E7DFB600BAEF88 /* AudioPlayer.swift */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		DC6264E025481D500096530C /* FPSMonitor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FPSMonitor;
 			sourceTree = "<group>";
 		};
 		DC6F4D3624F68DA900B69A31 /* ThreadTest */ = {
@@ -895,6 +906,14 @@
 				DCDBA7AA24FDF4050073E293 /* SwiftyJSONTest.swift */,
 			);
 			path = ThirdLibTest;
+			sourceTree = "<group>";
+		};
+		DCD12EA725370944000A58C0 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				DCD12EA82537096E000A58C0 /* CarouselViewController.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 		DCD53E5C2507982D003BA517 /* WebViewJavascriptBridge */ = {
@@ -1499,6 +1518,7 @@
 				DCF88152242F2D980084C940 /* ImagePickView.swift in Sources */,
 				DC88A359250CA959000198AD /* CustomURLProtocol.swift in Sources */,
 				DC2A02C22506777700BABEDB /* JSAndNativeFountionViewController.swift in Sources */,
+				DCD12EA92537096F000A58C0 /* CarouselViewController.swift in Sources */,
 				DC2518D624A8277500A28595 /* OC-Swift.swift in Sources */,
 				DC03AE2623F3AB1B007739DD /* HomeTabBarController.swift in Sources */,
 				DC9F89CC24ED0E7500C0487F /* AudioAndRecordViewController.swift in Sources */,
