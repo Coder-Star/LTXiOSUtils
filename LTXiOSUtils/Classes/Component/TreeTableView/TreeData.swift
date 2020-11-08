@@ -74,7 +74,8 @@ extension TreeData {
                 tempTopNodes.append(node)
             }
             /// 建立层级关系
-            if let parentNode = nodesMap[node.parentID] {
+            /// 判断当前节点与父节点不是同一个节点，避免死循环
+            if let parentNode = nodesMap[node.parentID], node != parentNode {
                 node.parentNode = parentNode
                 if !parentNode.childNodes.contains(node) {
                     parentNode.childNodes.append(node)

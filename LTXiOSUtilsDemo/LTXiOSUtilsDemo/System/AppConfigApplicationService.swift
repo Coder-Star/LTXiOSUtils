@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 final class AppConfigApplicationService: NSObject, ApplicationService {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
@@ -46,12 +47,15 @@ extension AppConfigApplicationService {
 }
 
 // MARK: - 全局捕获异常
-extension AppConfigApplicationService {
+extension AppConfigApplicationService: CrashHandlerDelegate {
     private func catchCrash() {
         // 注册全局捕获
-        CrashManager.registerHandler()
+        CrashHandler.enabled = true
+        CrashHandler.delegate = self
+    }
 
-        // 输出错误日志信息，耗时，可开线程读取
-//        Log.d(CrashManager.readAllCrashInfo())
+    func didCatchCarsh(carshInfo: CrashInfoModel) {
+        Log.d(carshInfo.name)
+        Log.d(carshInfo.callStack)
     }
 }

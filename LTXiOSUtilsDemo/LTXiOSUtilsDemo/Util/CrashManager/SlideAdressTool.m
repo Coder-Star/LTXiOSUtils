@@ -11,7 +11,8 @@
 
 @implementation SlideAdressTool
 
-long calculate(void) {
+/// 获取偏移量地址 SlideAdress
++ (long)calculate {
     long slide = 0;
     for (uint32_t i = 0; i < _dyld_image_count(); i++) {
         if (_dyld_get_image_header(i)->filetype == MH_EXECUTE) {

@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface SlideAdressTool: NSObject
+
+/// 获取偏移量地址 SlideAdress
++(long) calculate;
+
 @end
 
-/// 获取偏移量地址
-long calculate(void);
+

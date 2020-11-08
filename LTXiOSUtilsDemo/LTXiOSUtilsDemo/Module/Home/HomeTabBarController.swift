@@ -26,11 +26,16 @@ class HomeTabBarController: UITabBarController {
         return viewController
     }()
 
+    let baseTest = BaseTest()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         delegate = self
         initChildViewControllers()
+
+        baseTest.test()
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
