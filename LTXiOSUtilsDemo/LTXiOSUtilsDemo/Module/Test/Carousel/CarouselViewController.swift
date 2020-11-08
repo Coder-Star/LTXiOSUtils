@@ -36,7 +36,9 @@ class CarouselViewController: BaseUIViewController {
     }
 }
 
-/// 利用UIScrollView，左右各多放置一个的方法实现，这种方案没有考虑view的复用
+/// 利用UIScrollView，左右各多放置一个的方法实现
+/// 这种方案没有考虑view的复用，如果图片过多，内存占用过大，会出现内存溢出的问题
+/// 建议确定只放置少量图片的时候使用这种方式
 extension CarouselViewController: UIScrollViewDelegate {
     func setupCarouselView() {
         let scrollView = UIScrollView()

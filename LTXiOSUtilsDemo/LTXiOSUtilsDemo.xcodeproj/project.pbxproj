@@ -37,6 +37,11 @@
 		DC3E61FE2423755F00105366 /* PickImageDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */; };
 		DC3E62022424714E00105366 /* DoubleExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E62012424714E00105366 /* DoubleExtensionTest.swift */; };
 		DC3E62052425E8A200105366 /* WRNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E62042425E8A200105366 /* WRNavigationBar.swift */; };
+		DC4610462550386D0018BBF5 /* OpenURLApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4610452550386D0018BBF5 /* OpenURLApplicationService.swift */; };
+		DC46106125541E650018BBF5 /* Mirror&KVC&KVOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC46106025541E650018BBF5 /* Mirror&KVC&KVOTest.swift */; };
+		DC4610692554F3610018BBF5 /* BaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4610682554F3610018BBF5 /* BaseUser.swift */; };
+		DC4610712554F3ED0018BBF5 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4610702554F3ED0018BBF5 /* BaseTest.swift */; };
+		DC4610842557CC1B0018BBF5 /* TestOCError.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4610832557CC1B0018BBF5 /* TestOCError.m */; };
 		DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */; };
 		DC4AB9BF22F4606000A5F003 /* DemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AB9BE22F4606000A5F003 /* DemoListViewController.swift */; };
 		DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC4AB9C322F4606100A5F003 /* Assets.xcassets */; };
@@ -48,6 +53,7 @@
 		DC55976824E7DFB600BAEF88 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55976724E7DFB600BAEF88 /* AudioPlayer.swift */; };
 		DC55E57223F7E6C8008C6941 /* AppThemeApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55E57123F7E6C8008C6941 /* AppThemeApplicationService.swift */; };
 		DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */; };
+		DC6264E225483A2C0096530C /* PerformanceMonitorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6264E125483A2C0096530C /* PerformanceMonitorUtil.swift */; };
 		DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC62A7C72384084A00DE7800 /* Localizable.strings */; };
 		DC6F4D3A24F68EF400B69A31 /* GCDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F4D3924F68EF400B69A31 /* GCDTest.swift */; };
 		DC6F4D4724F7CAAF00B69A31 /* ThreadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F4D4624F7CAAF00B69A31 /* ThreadTest.swift */; };
@@ -72,10 +78,8 @@
 		DC88A359250CA959000198AD /* CustomURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88A358250CA959000198AD /* CustomURLProtocol.swift */; };
 		DC88A35D250CB318000198AD /* WKURLSchemeHandler.html in Resources */ = {isa = PBXBuildFile; fileRef = DC88A35C250CB318000198AD /* WKURLSchemeHandler.html */; };
 		DC88A35F250CB322000198AD /* CustomURLProtocol.html in Resources */ = {isa = PBXBuildFile; fileRef = DC88A35E250CB322000198AD /* CustomURLProtocol.html */; };
-		DC9D2C5525344FB500C83C79 /* CrashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5025344FB500C83C79 /* CrashManager.swift */; };
 		DC9D2C5625344FB500C83C79 /* SlideAdressTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5125344FB500C83C79 /* SlideAdressTool.m */; };
-		DC9D2C5725344FB500C83C79 /* CrashNSExceptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5225344FB500C83C79 /* CrashNSExceptionManager.swift */; };
-		DC9D2C5825344FB500C83C79 /* CrashSignalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5425344FB500C83C79 /* CrashSignalManager.swift */; };
+		DC9D2C5825344FB500C83C79 /* CrashHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5425344FB500C83C79 /* CrashHandler.swift */; };
 		DC9F89CC24ED0E7500C0487F /* AudioAndRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */; };
 		DCA407882406AC0500F62769 /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA407872406AC0500F62769 /* WRCustomNavigationBar.swift */; };
 		DCA76A0F2525A6D0001374FA /* SwiftUIMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA76A0E2525A6D0001374FA /* SwiftUIMainView.swift */; };
@@ -220,6 +224,12 @@
 		DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageDemoViewController.swift; sourceTree = "<group>"; };
 		DC3E62012424714E00105366 /* DoubleExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensionTest.swift; sourceTree = "<group>"; };
 		DC3E62042425E8A200105366 /* WRNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRNavigationBar.swift; sourceTree = "<group>"; };
+		DC4610452550386D0018BBF5 /* OpenURLApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURLApplicationService.swift; sourceTree = "<group>"; };
+		DC46106025541E650018BBF5 /* Mirror&KVC&KVOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mirror&KVC&KVOTest.swift"; sourceTree = "<group>"; };
+		DC4610682554F3610018BBF5 /* BaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUser.swift; sourceTree = "<group>"; };
+		DC4610702554F3ED0018BBF5 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
+		DC4610822557CC1B0018BBF5 /* TestOCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestOCError.h; sourceTree = "<group>"; };
+		DC4610832557CC1B0018BBF5 /* TestOCError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestOCError.m; sourceTree = "<group>"; };
 		DC4AB9B922F4606000A5F003 /* LTXiOSUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTXiOSUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4AB9BC22F4606000A5F003 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC4AB9BE22F4606000A5F003 /* DemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +247,7 @@
 		DC55976724E7DFB600BAEF88 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		DC55E57123F7E6C8008C6941 /* AppThemeApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeApplicationService.swift; sourceTree = "<group>"; };
 		DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Extension.swift"; sourceTree = "<group>"; };
+		DC6264E125483A2C0096530C /* PerformanceMonitorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMonitorUtil.swift; sourceTree = "<group>"; };
 		DC62A7C62384084A00DE7800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		DC6F4D3924F68EF400B69A31 /* GCDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTest.swift; sourceTree = "<group>"; };
@@ -267,11 +278,9 @@
 		DC88A358250CA959000198AD /* CustomURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomURLProtocol.swift; sourceTree = "<group>"; };
 		DC88A35C250CB318000198AD /* WKURLSchemeHandler.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKURLSchemeHandler.html; sourceTree = "<group>"; };
 		DC88A35E250CB322000198AD /* CustomURLProtocol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CustomURLProtocol.html; sourceTree = "<group>"; };
-		DC9D2C5025344FB500C83C79 /* CrashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashManager.swift; sourceTree = "<group>"; };
 		DC9D2C5125344FB500C83C79 /* SlideAdressTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideAdressTool.m; sourceTree = "<group>"; };
-		DC9D2C5225344FB500C83C79 /* CrashNSExceptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashNSExceptionManager.swift; sourceTree = "<group>"; };
 		DC9D2C5325344FB500C83C79 /* SlideAdressTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideAdressTool.h; sourceTree = "<group>"; };
-		DC9D2C5425344FB500C83C79 /* CrashSignalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashSignalManager.swift; sourceTree = "<group>"; };
+		DC9D2C5425344FB500C83C79 /* CrashHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashHandler.swift; sourceTree = "<group>"; };
 		DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAndRecordViewController.swift; sourceTree = "<group>"; };
 		DCA407722405405300F62769 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA4077624066BFB00F62769 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -466,7 +475,7 @@
 		DC1AD83523E84D400073CB97 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				DC6264E025481D500096530C /* FPSMonitor */,
+				DC6264E025481D500096530C /* PerformanceMonitor */,
 				DC9D2C4F25344FB500C83C79 /* CrashManager */,
 				DC55976424E7D9B900BAEF88 /* Audio */,
 				DC3E62032425E86F00105366 /* Stash */,
@@ -558,6 +567,31 @@
 			path = Stash;
 			sourceTree = "<group>";
 		};
+		DC4610672554F3290018BBF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC4610682554F3610018BBF5 /* BaseUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC46106F2554F3B90018BBF5 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				DC4610702554F3ED0018BBF5 /* BaseTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		DC4610812557CBE30018BBF5 /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				DC4610822557CC1B0018BBF5 /* TestOCError.h */,
+				DC4610832557CC1B0018BBF5 /* TestOCError.m */,
+			);
+			path = OC;
+			sourceTree = "<group>";
+		};
 		DC4AB9B022F4606000A5F003 = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +621,9 @@
 		DC4AB9BB22F4606000A5F003 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC4610812557CBE30018BBF5 /* OC */,
+				DC46106F2554F3B90018BBF5 /* Test */,
+				DC4610672554F3290018BBF5 /* Model */,
 				DC9F89CD24ED505F00C0487F /* Lib */,
 				DC1AD83523E84D400073CB97 /* Util */,
 				DC4AB9EC22F461A700A5F003 /* Resource */,
@@ -639,6 +676,7 @@
 				DC7C935524EE5837005E0AAA /* SystemNotificationService.swift */,
 				DCEE982E250F865A00A19CF9 /* FlutterApplicationService.swift */,
 				DCCF3C3825245FF0008F0E29 /* NotificationApplicationService.swift */,
+				DC4610452550386D0018BBF5 /* OpenURLApplicationService.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -683,11 +721,12 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
-		DC6264E025481D500096530C /* FPSMonitor */ = {
+		DC6264E025481D500096530C /* PerformanceMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				DC6264E125483A2C0096530C /* PerformanceMonitorUtil.swift */,
 			);
-			path = FPSMonitor;
+			path = PerformanceMonitor;
 			sourceTree = "<group>";
 		};
 		DC6F4D3624F68DA900B69A31 /* ThreadTest */ = {
@@ -779,9 +818,7 @@
 			children = (
 				DC9D2C5125344FB500C83C79 /* SlideAdressTool.m */,
 				DC9D2C5325344FB500C83C79 /* SlideAdressTool.h */,
-				DC9D2C5425344FB500C83C79 /* CrashSignalManager.swift */,
-				DC9D2C5225344FB500C83C79 /* CrashNSExceptionManager.swift */,
-				DC9D2C5025344FB500C83C79 /* CrashManager.swift */,
+				DC9D2C5425344FB500C83C79 /* CrashHandler.swift */,
 			);
 			path = CrashManager;
 			sourceTree = "<group>";
@@ -954,6 +991,7 @@
 				DC725FD6250B02120091C807 /* PtrotocolTest.swift */,
 				DC725FD8250B7EBC0091C807 /* FoundationTest.swift */,
 				DC4F88C52511BCCB00B68C72 /* ErrorTest.swift */,
+				DC46106025541E650018BBF5 /* Mirror&KVC&KVOTest.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -1461,12 +1499,14 @@
 				DC55E57223F7E6C8008C6941 /* AppThemeApplicationService.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
 				DC01C3CC2508C29C00C5AEC3 /* JSAndNativeDSBrigeViewController.swift in Sources */,
+				DC4610462550386D0018BBF5 /* OpenURLApplicationService.swift in Sources */,
+				DC4610712554F3ED0018BBF5 /* BaseTest.swift in Sources */,
 				DCD8763F251B25E600F50138 /* StoryboardSecondViewController.swift in Sources */,
 				DC3E62052425E8A200105366 /* WRNavigationBar.swift in Sources */,
 				DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */,
 				DCEE982D250F835C00A19CF9 /* FlutterMainViewController.swift in Sources */,
 				DC7C935624EE5837005E0AAA /* SystemNotificationService.swift in Sources */,
-				DC9D2C5725344FB500C83C79 /* CrashNSExceptionManager.swift in Sources */,
+				DC4610842557CC1B0018BBF5 /* TestOCError.m in Sources */,
 				DC88A350250C97B1000198AD /* CustomURLSchemeHandler.swift in Sources */,
 				DCEE982F250F865A00A19CF9 /* FlutterApplicationService.swift in Sources */,
 				DCD97BEB251CFB54002E9C0A /* DBMenuViewController.swift in Sources */,
@@ -1481,10 +1521,11 @@
 				DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */,
 				DC2A02BA2506552200BABEDB /* WkWebViewController.swift in Sources */,
 				DCF41B5E23AA459800AEF70E /* NetworkConstant.swift in Sources */,
+				DC6264E225483A2C0096530C /* PerformanceMonitorUtil.swift in Sources */,
 				DC1BE0B224B011D700745671 /* ViewEventViewController.swift in Sources */,
-				DC9D2C5525344FB500C83C79 /* CrashManager.swift in Sources */,
 				DCB1C04423C4B25600D735BD /* UIViewExtensionExampleViewController.swift in Sources */,
 				DCAAD857241A51C8009622DD /* AutoLabelsModel.swift in Sources */,
+				DC4610692554F3610018BBF5 /* BaseUser.swift in Sources */,
 				DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */,
 				DCF88149242B60210084C940 /* AppConfigApplicationService.swift in Sources */,
 				DCA76A0F2525A6D0001374FA /* SwiftUIMainView.swift in Sources */,
@@ -1507,7 +1548,7 @@
 				DC83E7CC23F645E10030A9B4 /* FWCustomPopupView.swift in Sources */,
 				DC83E7D023F645E10030A9B4 /* FWDemoViewController.swift in Sources */,
 				DC2A02BE2506602E00BABEDB /* WkWebViewMenuViewController.swift in Sources */,
-				DC9D2C5825344FB500C83C79 /* CrashSignalManager.swift in Sources */,
+				DC9D2C5825344FB500C83C79 /* CrashHandler.swift in Sources */,
 				DCD8763D251AFC5000F50138 /* StoryboardMainViewController.swift in Sources */,
 				DC88A353250C9FC6000198AD /* InterceptWkWebViewURLViewController.swift in Sources */,
 				DCB1C05923C75B3900D735BD /* RootVCApplicationService.swift in Sources */,
@@ -1552,6 +1593,7 @@
 				DCDBA7AB24FDF4050073E293 /* SwiftyJSONTest.swift in Sources */,
 				DCDBA7AF24FE6A290073E293 /* CustomStringConvertibleProtocolTest.swift in Sources */,
 				DCDBA7B4250082410073E293 /* EnumTest.swift in Sources */,
+				DC46106125541E650018BBF5 /* Mirror&KVC&KVOTest.swift in Sources */,
 				DC6F4D4724F7CAAF00B69A31 /* ThreadTest.swift in Sources */,
 				DCAA74B32526D45900240398 /* OperationTest.swift in Sources */,
 			);
@@ -1773,6 +1815,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1806,6 +1849,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_GENERATE_MAP_FILE = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

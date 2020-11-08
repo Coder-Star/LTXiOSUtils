@@ -79,6 +79,12 @@ class DemoListViewController: BaseGroupTableMenuViewController {
         ]
         menu.append(mediatorAndRouterMenu)
 
+        let testCrashMenu = [
+            BaseGroupTableMenuModel(code: "OCCrash", title: "OC Crash触发"),
+            BaseGroupTableMenuModel(code: "SwiftCrash", title: "Swift Crash触发")
+        ]
+        menu.append(testCrashMenu)
+
     }
 
     override func click(menuModel: BaseGroupTableMenuModel) {
@@ -103,6 +109,12 @@ class DemoListViewController: BaseGroupTableMenuViewController {
             navigationController?.pushViewController(PickImageDemoViewController(), animated: true)
         case "MediatorAndRouter":
             navigationController?.pushViewController(MediatorAndRouterDemoViewController(), animated: true)
+        case "OCCrash":
+            TestOCError.testArrayIndexOutOfExpection()
+        case "SwiftCrash":
+            let a = [1]
+            Log.d(a[10])
+
         default:
             HUD.showText("暂无此模块")
         }

@@ -112,9 +112,10 @@ open class ApplicationServiceManagerDelegate: UIResponder, UIApplicationDelegate
 // swiftlint:disable missing_docs
 // swiftlint:disable deployment_target
 // swiftlint:disable reduce_boolean
-// MARK: - AppInitializing
+// MARK: - AppInitializing APP启动时回调
 extension ApplicationServiceManagerDelegate {
 
+    /// 进程启动还未进入状态保存
     @available(iOS 6.0, *)
     open func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         var result = false
@@ -126,6 +127,7 @@ extension ApplicationServiceManagerDelegate {
         return result
     }
 
+    /// 启动基本完成，程序准备进行
     @available(iOS 3.0, *)
     open func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         var result = false
@@ -137,15 +139,17 @@ extension ApplicationServiceManagerDelegate {
         return result
     }
 
+    /// 程序载入后执行
     @available(iOS 2.0, *)
     open func applicationDidFinishLaunching(_ application: UIApplication) {
         applicationServices.forEach { $0.applicationDidFinishLaunching?(application) }
     }
 }
 
-// MARK: - AppStateAndSystemEvents
+// MARK: - AppStateAndSystemEvents，APP生命周期
 extension ApplicationServiceManagerDelegate {
 
+    /// APP在前台
     @available(iOS 2.0, *)
     open func applicationDidBecomeActive(_ application: UIApplication) {
         for service in applicationServices {
@@ -153,6 +157,7 @@ extension ApplicationServiceManagerDelegate {
         }
     }
 
+    /// APP即将从前台切换到后台，在此期间，APP不接收消息及事件，比如来电话时
     @available(iOS 2.0, *)
     open func applicationWillResignActive(_ application: UIApplication) {
         for service in applicationServices {
@@ -160,6 +165,7 @@ extension ApplicationServiceManagerDelegate {
         }
     }
 
+    /// APP进入后台
     @available(iOS 4.0, *)
     open func applicationDidEnterBackground(_ application: UIApplication) {
         for service in applicationServices {
@@ -167,6 +173,7 @@ extension ApplicationServiceManagerDelegate {
         }
     }
 
+    /// APP即将从后台进入前台
     @available(iOS 4.0, *)
     open func applicationWillEnterForeground(_ application: UIApplication) {
         for service in applicationServices {
@@ -174,6 +181,7 @@ extension ApplicationServiceManagerDelegate {
         }
     }
 
+    /// APP即将退出，用于保存数据以及推出前的清理工作
     @available(iOS 2.0, *)
     open func applicationWillTerminate(_ application: UIApplication) {
         for service in applicationServices {
@@ -181,6 +189,7 @@ extension ApplicationServiceManagerDelegate {
         }
     }
 
+    /// APP即将锁屏
     @available(iOS 4.0, *)
     open func applicationProtectedDataWillBecomeUnavailable(_ application: UIApplication) {
         for service in applicationServices {
@@ -188,6 +197,7 @@ extension ApplicationServiceManagerDelegate {
         }
     }
 
+    /// APP已经锁屏
     @available(iOS 4.0, *)
     open func applicationProtectedDataDidBecomeAvailable(_ application: UIApplication) {
         for service in applicationServices {
@@ -195,6 +205,7 @@ extension ApplicationServiceManagerDelegate {
         }
     }
 
+    /// APP内存警告
     @available(iOS 2.0, *)
     open func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
         for service in applicationServices {
@@ -202,6 +213,7 @@ extension ApplicationServiceManagerDelegate {
         }
     }
 
+    /// 手动改变手机的系统日期与时间以及切换24小时、12小时制的时候也会触发该回调
     @available(iOS 2.0, *)
     open func applicationSignificantTimeChange(_ application: UIApplication) {
         for service in applicationServices {
@@ -210,7 +222,7 @@ extension ApplicationServiceManagerDelegate {
     }
 }
 
-// MARK: - AppStateRestoration
+// MARK: - AppStateRestoration，APP数据状态保存
 extension ApplicationServiceManagerDelegate {
 
     @available(iOS 6.0, *)
@@ -345,6 +357,7 @@ extension ApplicationServiceManagerDelegate {
 // MARK: - ExtensionTypes
 extension ApplicationServiceManagerDelegate {
 
+    /// 是否允许第三方键盘
     @available(iOS 8.0, *)
     open func application(_ application: UIApplication, shouldAllowExtensionPointIdentifier extensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool {
         var result = false
@@ -360,6 +373,7 @@ extension ApplicationServiceManagerDelegate {
 // MARK: - HandlingActions
 extension ApplicationServiceManagerDelegate {
 
+    /// 3D touch点击回调
     @available(iOS 9.0, *)
     open func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         apply({ (service, completionHandler) -> Void? in
@@ -383,7 +397,7 @@ extension ApplicationServiceManagerDelegate {
     }
 }
 
-// MARK: - InterfaceGeometry
+// MARK: - InterfaceGeometry，APP屏幕转换
 extension ApplicationServiceManagerDelegate {
 
     @available(iOS 2.0, *)
@@ -415,16 +429,37 @@ extension ApplicationServiceManagerDelegate {
     }
 }
 
-// MARK: - RemoteNotification
-extension ApplicationServiceManagerDelegate {
+// MARK: - UNUserNotification，推送通知相关
+extension ApplicationServiceManagerDelegate: UNUserNotificationCenterDelegate {
 
-    @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotification UNNotification Settings instead")
-    open func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+    /// 后台发送通知时，APP处于前台时会回调该方法
+    @available(iOS 10.0, *)
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         for service in applicationServices {
-            service.application?(application, didRegister: notificationSettings)
+            service.userNotificationCenter?(center, willPresent: notification, withCompletionHandler: completionHandler)
         }
     }
 
+    /// 点击推送横幅时，启动APP并回调该方法
+    @available(iOS 10.0, *)
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        for service in applicationServices {
+            service.userNotificationCenter?(center, didReceive: response, withCompletionHandler: completionHandler)
+        }
+    }
+
+    @available(iOS 12.0, *)
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
+        for service in applicationServices {
+            service.userNotificationCenter?(center, openSettingsFor: notification)
+        }
+    }
+}
+
+// MARK: - RemoteNotification
+extension ApplicationServiceManagerDelegate {
+
+    /// APP获取token回调
     @available(iOS 3.0, *)
     open func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         for service in applicationServices {
@@ -432,10 +467,33 @@ extension ApplicationServiceManagerDelegate {
         }
     }
 
+    /// APP获取token失败回调，返回数据为16进制的Data
     @available(iOS 3.0, *)
     open func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         for service in applicationServices {
             service.application?(application, didFailToRegisterForRemoteNotificationsWithError: error)
+        }
+    }
+
+    /// 后台发送静默推送时，回调该方法，APP收到后大约可以执行30秒，APP处于前台及后台时都可以收到，APP被杀死收不到
+    @available(iOS 7.0, *)
+    open func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        apply({ (service, completionHandler) -> Void? in
+            service.application?(
+                application,
+                didReceiveRemoteNotification: userInfo,
+                fetchCompletionHandler: completionHandler
+            )
+        }, completionHandler: { results in
+            let result = results.min { $0.rawValue < $1.rawValue } ?? .noData
+            completionHandler(result)
+        })
+    }
+
+    @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotification UNNotification Settings instead")
+    open func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        for service in applicationServices {
+            service.application?(application, didRegister: notificationSettings)
         }
     }
 
@@ -510,21 +568,9 @@ extension ApplicationServiceManagerDelegate {
             completionHandler()
         })
     }
-
-    @available(iOS 7.0, *)
-    open func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        apply({ (service, completionHandler) -> Void? in
-            service.application?(
-                application,
-                didReceiveRemoteNotification: userInfo,
-                fetchCompletionHandler: completionHandler
-            )
-        }, completionHandler: { results in
-            let result = results.min { $0.rawValue < $1.rawValue } ?? .noData
-            completionHandler(result)
-        })
-    }
 }
+
+
 
 // MARK: - SiriKitHandling
 extension ApplicationServiceManagerDelegate {
@@ -540,32 +586,7 @@ extension ApplicationServiceManagerDelegate {
     }
 }
 
-// MARK: - UNUserNotification
-extension ApplicationServiceManagerDelegate: UNUserNotificationCenterDelegate {
-
-    @available(iOS 10.0, *)
-    public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        for service in applicationServices {
-            service.userNotificationCenter?(center, willPresent: notification, withCompletionHandler: completionHandler)
-        }
-    }
-
-    @available(iOS 10.0, *)
-    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        for service in applicationServices {
-            service.userNotificationCenter?(center, didReceive: response, withCompletionHandler: completionHandler)
-        }
-    }
-
-    @available(iOS 12.0, *)
-    public func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-        for service in applicationServices {
-            service.userNotificationCenter?(center, openSettingsFor: notification)
-        }
-    }
-}
-
-// MARK: - URLOpening
+// MARK: - URLOpening，外部调用URL打开此应用
 extension ApplicationServiceManagerDelegate {
 
     @available(iOS 9.0, *)

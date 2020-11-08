@@ -10,5 +10,6 @@
 	<string>LTXiOSUtilsDemo.SystemNotificationService</string>
 	<string>LTXiOSUtilsDemo.FlutterApplicationService</string>
 	<string>LTXiOSUtilsDemo.NotificationApplicationService</string>
+	<string>LTXiOSUtilsDemo.OpenURLApplicationService</string>
 </array>
 </plist>
