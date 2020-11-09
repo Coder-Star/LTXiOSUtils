@@ -149,8 +149,9 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
 
         titleLabel = UILabel()
         titleLabel.textAlignment = .center
-        titleLabel.adjustsFontSizeToFitWidth = true
-        titleLabel.text = "加载组件图片"
+        titleLabel.lineBreakMode = .byCharWrapping
+        titleLabel.numberOfLines = 0
+        titleLabel.text = "加载多语言图片(不同语言环境下显示图片不同)"
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
@@ -158,13 +159,34 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
             make.width.equalTo(leftWidth)
         }
 
-        let otherCompentImageView = UIImageView()
+        var imageView = UIImageView()
+        // addImage.png为直接拖动到项目中的图片，没有放置到xcassets中去，也可直接读取 chinese_and_english以及chinese_and_english.png都可以读取
+        // chinese_and_english.png为多环境图片，包含两套图片
+        imageView.image = UIImage(named: "chinese_and_english.png")
+        contentView.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.height.width.equalTo(100)
+            make.left.equalTo(titleLabel.snp.right).offset(5)
+            make.top.equalTo(titleLabel)
+        }
 
-        // addImage.png为直接拖动到项目中的图片，不放置到xcassets中去，也可直接读取 addImage以及addImage.png都可以读取
-         otherCompentImageView.image = UIImage(named: "chinese_and_english.png")
+        titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.lineBreakMode = .byCharWrapping
+        titleLabel.numberOfLines = 0
+        titleLabel.text = "加载组件图片"
+        contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.top.equalTo(imageView.snp.bottom).offset(10)
+            make.width.equalTo(leftWidth)
+        }
 
-        contentView.addSubview(otherCompentImageView)
-        otherCompentImageView.snp.makeConstraints { make in
+        imageView = UIImageView()
+        // Assets.xcassets中的图片资源只能通过imageNamed:方法加载
+        imageView.image = UIImage(named: "AlertView_selected", in: Bundle.getBundle(bundleName: "LTXiOSUtils"), compatibleWith: nil)
+        contentView.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
             make.height.width.equalTo(100)
             make.left.equalTo(titleLabel.snp.right).offset(5)
             make.top.equalTo(titleLabel)
@@ -177,7 +199,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
-            make.top.equalTo(otherCompentImageView.snp.bottom).offset(10)
+            make.top.equalTo(imageView.snp.bottom).offset(10)
             make.width.equalTo(leftWidth)
         }
 

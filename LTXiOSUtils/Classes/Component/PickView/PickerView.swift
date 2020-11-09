@@ -536,7 +536,7 @@ extension PickerView {
     /// - Parameter type: 显示样式类型
     public class func citiesPicker(_ toolBarTitle: String, type: CityPickStyle, defaultSelectedValues: [String]?, cancelAction: BtnAction?, doneAction: MultipleDoneAction?) -> PickerView {
         var pic = PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: [[[String: [String]?]]](), defaultSelectedValues: nil, cancelAction: cancelAction, doneAction: doneAction)
-        guard let path = ResourceUtils.getBundle(bundleName: "LTXiOSUtils")?.path(forResource: "Address", ofType: "plist") else {
+        guard let path = Bundle.getBundle(bundleName: "LTXiOSUtils")?.path(forResource: "Address", ofType: "plist") else {
             return pic
         }
 

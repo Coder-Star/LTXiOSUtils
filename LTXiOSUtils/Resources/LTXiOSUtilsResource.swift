@@ -13,12 +13,12 @@ extension String {
     /// 获取LTXiOSUtils库中的国际化
     /// - Parameter comment: 注释参数
     public func localizedOfLTXiOSUtils(_ comment: String = "") -> String {
-        return ResourceUtils.getBundle(bundleName: "LTXiOSUtils")?.localizedString(forKey: self, value: "", table: nil) ?? ""
+        return Bundle.getBundle(bundleName: "LTXiOSUtils")?.localizedString(forKey: self, value: "", table: nil) ?? ""
 //        return localized(in: ResourceUtils.getBundle(bundleName: "LTXiOSUtils"))
     }
 
     /// 获取LTXiOSUtils库中的图片
     public func imageOfLTXiOSUtils() -> UIImage? {
-        return UIImage(named: self, in: ResourceUtils.getBundle(bundleName: "LTXiOSUtils"), compatibleWith: nil)
+        return UIImage(named: self, in: Bundle.getBundle(bundleName: "LTXiOSUtils"), compatibleWith: nil)
     }
 }
