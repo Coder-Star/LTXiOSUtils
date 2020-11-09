@@ -162,7 +162,8 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
         var imageView = UIImageView()
         // addImage.png为直接拖动到项目中的图片，没有放置到xcassets中去，也可直接读取 chinese_and_english以及chinese_and_english.png都可以读取
         // chinese_and_english.png为多环境图片，包含两套图片
-        imageView.image = UIImage(named: "chinese_and_english.png")
+        // 加载png图片不用添加后缀，加载其他格式的图片，如jpg必须要添加后缀
+        imageView.image = UIImage(named: "chinese_and_english")
         contentView.addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.height.width.equalTo(100)
@@ -184,7 +185,7 @@ class ComponentCollectionsViewController: BaseUIScrollViewController {
 
         imageView = UIImageView()
         // Assets.xcassets中的图片资源只能通过imageNamed:方法加载
-        imageView.image = UIImage(named: "AlertView_selected", in: Bundle.getBundle(bundleName: "LTXiOSUtils"), compatibleWith: nil)
+        imageView.image = UIImage.tx.getImage(named: "AlertView_selected", bundleName: "LTXiOSUtils")
         contentView.addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.height.width.equalTo(100)

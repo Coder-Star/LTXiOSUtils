@@ -163,8 +163,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 13 files.
+  /// This `R.file` struct is generated, and contains static references to 14 files.
   struct file {
+    /// Resource file `1.jpg`.
+    static let jpg = Rswift.FileResource(bundle: R.hostingBundle, name: "1", pathExtension: "jpg")
     /// Resource file `CustomURLProtocol.html`.
     static let customURLProtocolHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "CustomURLProtocol", pathExtension: "html")
     /// Resource file `CustomURLProtocolResponse.html`.
@@ -191,6 +193,12 @@ struct R: Rswift.Validatable {
     static let dsbridgeJs = Rswift.FileResource(bundle: R.hostingBundle, name: "dsbridge", pathExtension: "js")
     /// Resource file `pushSound.mp3`.
     static let pushSoundMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "pushSound", pathExtension: "mp3")
+
+    /// `bundle.url(forResource: "1", withExtension: "jpg")`
+    static func jpg(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.jpg
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "CustomURLProtocol", withExtension: "html")`
     static func customURLProtocolHtml(_: Void = ()) -> Foundation.URL? {
@@ -290,8 +298,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 44 images.
+  /// This `R.image` struct is generated, and contains static references to 45 images.
   struct image {
+    /// Image `1.jpg`.
+    static let jpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "1.jpg")
     /// Image `add-white`.
     static let addWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "add-white")
     /// Image `add`.
@@ -380,6 +390,13 @@ struct R: Rswift.Validatable {
     static let xib_header_dog = Rswift.ImageResource(bundle: R.hostingBundle, name: "xib_header_dog")
     /// Image `xib_header`.
     static let xib_header = Rswift.ImageResource(bundle: R.hostingBundle, name: "xib_header")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "1.jpg", bundle: ..., traitCollection: ...)`
+    static func jpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.jpg, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "add", bundle: ..., traitCollection: ...)`
