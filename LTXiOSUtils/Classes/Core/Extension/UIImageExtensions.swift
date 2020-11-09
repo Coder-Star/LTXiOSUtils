@@ -113,3 +113,19 @@ extension TxExtensionWrapper where Base: UIImage {
         return UIImage(cgImage: self.base.cgImage!, scale: self.base.scale, orientation: orientation)
     }
 }
+
+extension TxExtensionWrapper where Base: UIImage {
+
+    /// 获取其他Bundle中的图片
+    /// - Parameters:
+    ///   - named: 图片名称
+    ///   - bundleName: bundleName
+    ///   - podName: podName，当使用framwork时使用，如果为nil，赋值为bundleName
+    /// - Returns: UIImage?
+    /// - Note: 当使用framework方式引用三方库时，每一个三方库都会在Frameworks下面以一个单独的framework存在
+    @available(iOS 8.0, *)
+    public static func getImage(named: String, bundleName: String, podName: String? = nil) -> UIImage? {
+        let bundle = Bundle.getBundle(bundleName: bundleName, podName: podName)
+        return UIImage(named: named, in: bundle, compatibleWith: nil)
+    }
+}
