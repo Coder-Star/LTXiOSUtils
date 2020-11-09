@@ -36,4 +36,5 @@ ${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework
 ${PODS_ROOT}/../../flutter_module/.ios/Flutter/App.framework
 ${BUILT_PRODUCTS_DIR}/flutter_webview_plugin/flutter_webview_plugin.framework
 ${BUILT_PRODUCTS_DIR}/fluttertoast/fluttertoast.framework
+${BUILT_PRODUCTS_DIR}/path_provider/path_provider.framework
 ${BUILT_PRODUCTS_DIR}/shared_preferences/shared_preferences.framework

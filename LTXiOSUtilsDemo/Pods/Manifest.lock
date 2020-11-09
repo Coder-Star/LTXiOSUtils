@@ -13,6 +13,7 @@ PODS:
     - Flutter
     - flutter_webview_plugin
     - fluttertoast
+    - path_provider
     - shared_preferences
   - fluttertoast (0.0.2):
     - Flutter
@@ -62,6 +63,8 @@ PODS:
     - Alamofire (~> 5.0)
   - mp3lame-for-ios (0.1.1)
   - ObjectMapper (3.5.1)
+  - path_provider (0.0.1):
+    - Flutter
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
@@ -108,6 +111,7 @@ DEPENDENCIES:
   - MGJRouter (= 0.10.0)
   - mp3lame-for-ios (= 0.1.1)
   - ObjectMapper (= 3.5.1)
+  - path_provider (from `../flutter_module/.ios/Flutter/.symlinks/path_provider/ios`)
   - R.swift (= 5.1.0)
   - RxCocoa (= 5.0.1)
   - shared_preferences (from `../flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios`)
@@ -175,6 +179,8 @@ EXTERNAL SOURCES:
     :path: "../flutter_module/.ios/Flutter/.symlinks/fluttertoast/ios"
   LTXiOSUtils:
     :path: "../"
+  path_provider:
+    :path: "../flutter_module/.ios/Flutter/.symlinks/path_provider/ios"
   shared_preferences:
     :path: "../flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios"
 
@@ -187,7 +193,7 @@ SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_module: d1e1ff44505640bd9aa37f23f63380c646272be4
   flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
-  FlutterPluginRegistrant: a46bebd5e6cd917023c594d7301b1bf9a9a381e2
+  FlutterPluginRegistrant: 9ca247bca8c7b29934cdc151eb62dfe71ce63d5b
   fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GDPerformanceView-Swift: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
@@ -202,6 +208,7 @@ SPEC CHECKSUMS:
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   mp3lame-for-ios: 4daeb5686885be66438154050e3fe975d4ee1f07
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
@@ -225,4 +232,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 43f843eae9ba70f93bb47e3c228f86a7b67ff893
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

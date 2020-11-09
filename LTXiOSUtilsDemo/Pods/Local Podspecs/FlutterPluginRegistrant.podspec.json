@@ -35,6 +35,9 @@
     "fluttertoast": [
 
     ],
+    "path_provider": [
+
+    ],
     "shared_preferences": [
 
     ]
