@@ -28,3 +28,6 @@
 
 // 测试OC错误
 #import "TestOCError.h"
+
+// 捕获OC异常
+#import "OCExceptionCatch.h"
