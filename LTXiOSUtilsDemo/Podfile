@@ -80,6 +80,8 @@ target 'LTXiOSUtilsDemo' do
   pod 'SwiftSVG' # SVG加载，Swift
   pod "Macaw", "0.9.7" # SVG，Swift
 
+  pod 'lottie-ios', "3.1.8" # 加载lottie动画
+
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths
   end
