@@ -21,6 +21,11 @@
 		DC05CBC62453055A007A6240 /* ModuleArr.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC05CBC52453055A007A6240 /* ModuleArr.plist */; };
 		DC09415E2436E4D20052085F /* DemoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC09415D2436E4D20052085F /* DemoTest.swift */; };
 		DC0EC27A255955BA0046B46A /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC0EC279255955BA0046B46A /* 1.jpg */; };
+		DC0EC2F125597D660046B46A /* light.svg in Resources */ = {isa = PBXBuildFile; fileRef = DC0EC2F025597D660046B46A /* light.svg */; };
+		DC0EC2F82559855B0046B46A /* ShowImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0EC2F72559855B0046B46A /* ShowImageViewController.swift */; };
+		DC0EC301255A373D0046B46A /* tap-add.svg in Resources */ = {isa = PBXBuildFile; fileRef = DC0EC300255A373D0046B46A /* tap-add.svg */; };
+		DC0EC308255A60A70046B46A /* tap-forcus.svg in Resources */ = {isa = PBXBuildFile; fileRef = DC0EC307255A60A70046B46A /* tap-forcus.svg */; };
+		DC0EC321255A76580046B46A /* OCExceptionCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0EC31F255A76580046B46A /* OCExceptionCatch.m */; };
 		DC106D48244F1DC300494F45 /* MGJRouterDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC106D47244F1DC300494F45 /* MGJRouterDemoViewController.swift */; };
 		DC106D4A244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC106D49244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift */; };
 		DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */; };
@@ -209,6 +214,12 @@
 		DC05CBC52453055A007A6240 /* ModuleArr.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ModuleArr.plist; sourceTree = "<group>"; };
 		DC09415D2436E4D20052085F /* DemoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTest.swift; sourceTree = "<group>"; };
 		DC0EC279255955BA0046B46A /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		DC0EC2F025597D660046B46A /* light.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = light.svg; sourceTree = "<group>"; };
+		DC0EC2F72559855B0046B46A /* ShowImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageViewController.swift; sourceTree = "<group>"; };
+		DC0EC300255A373D0046B46A /* tap-add.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "tap-add.svg"; sourceTree = "<group>"; };
+		DC0EC307255A60A70046B46A /* tap-forcus.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "tap-forcus.svg"; sourceTree = "<group>"; };
+		DC0EC31F255A76580046B46A /* OCExceptionCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCExceptionCatch.m; sourceTree = "<group>"; };
+		DC0EC320255A76580046B46A /* OCExceptionCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCExceptionCatch.h; sourceTree = "<group>"; };
 		DC106D47244F1DC300494F45 /* MGJRouterDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGJRouterDemoViewController.swift; sourceTree = "<group>"; };
 		DC106D49244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediatorAndRouterDemoViewController.swift; sourceTree = "<group>"; };
 		DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewDemoViewController.swift; sourceTree = "<group>"; };
@@ -474,9 +485,19 @@
 			path = iOSTest;
 			sourceTree = "<group>";
 		};
+		DC0EC31E255A76580046B46A /* OCExceptionCatch */ = {
+			isa = PBXGroup;
+			children = (
+				DC0EC31F255A76580046B46A /* OCExceptionCatch.m */,
+				DC0EC320255A76580046B46A /* OCExceptionCatch.h */,
+			);
+			path = OCExceptionCatch;
+			sourceTree = "<group>";
+		};
 		DC1AD83523E84D400073CB97 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				DC0EC31E255A76580046B46A /* OCExceptionCatch */,
 				DC6264E025481D500096530C /* PerformanceMonitor */,
 				DC9D2C4F25344FB500C83C79 /* CrashManager */,
 				DC55976424E7D9B900BAEF88 /* Audio */,
@@ -686,6 +707,9 @@
 		DC4AB9EC22F461A700A5F003 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DC0EC307255A60A70046B46A /* tap-forcus.svg */,
+				DC0EC300255A373D0046B46A /* tap-add.svg */,
+				DC0EC2F025597D660046B46A /* light.svg */,
 				DC0EC279255955BA0046B46A /* 1.jpg */,
 				DC83C44725333BC500259A03 /* pushSound.mp3 */,
 				DCE1457924FA976100E3B6B0 /* FangZhengMiaoWu.ttf */,
@@ -934,6 +958,7 @@
 				DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */,
 				DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */,
 				DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */,
+				DC0EC2F72559855B0046B46A /* ShowImageViewController.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1237,6 +1262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC0EC301255A373D0046B46A /* tap-add.svg in Resources */,
 				DC88A357250CA6A8000198AD /* WKURLSchemeHandlerResponse.html in Resources */,
 				DC0EC27A255955BA0046B46A /* 1.jpg in Resources */,
 				DCEE983B2510FF2900A19CF9 /* MineViewController.xib in Resources */,
@@ -1248,6 +1274,7 @@
 				DC835F7C250CD69A00D1E006 /* CustomURLProtocolResponse.html in Resources */,
 				DC4AB9C422F4606100A5F003 /* Assets.xcassets in Resources */,
 				DC05CBC62453055A007A6240 /* ModuleArr.plist in Resources */,
+				DC0EC308255A60A70046B46A /* tap-forcus.svg in Resources */,
 				DC01C3D62508E00900C5AEC3 /* dsbridge.js in Resources */,
 				DC88A35F250CB322000198AD /* CustomURLProtocol.html in Resources */,
 				DC83C44825333BC500259A03 /* pushSound.mp3 in Resources */,
@@ -1256,6 +1283,7 @@
 				DCF812782514F8AB004B0849 /* StoryboardMain.storyboard in Resources */,
 				DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */,
 				DCEE98302510DFAB00A19CF9 /* chinese_and_english.png in Resources */,
+				DC0EC2F125597D660046B46A /* light.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1498,10 +1526,12 @@
 				DCCF3C3925245FF0008F0E29 /* NotificationApplicationService.swift in Sources */,
 				DCEE983A2510FF2900A19CF9 /* MineViewController.swift in Sources */,
 				DC55150E251F1B98006223AE /* CoreDataUtils.swift in Sources */,
+				DC0EC2F82559855B0046B46A /* ShowImageViewController.swift in Sources */,
 				DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */,
 				DC55976824E7DFB600BAEF88 /* AudioPlayer.swift in Sources */,
 				DC55E57223F7E6C8008C6941 /* AppThemeApplicationService.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
+				DC0EC321255A76580046B46A /* OCExceptionCatch.m in Sources */,
 				DC01C3CC2508C29C00C5AEC3 /* JSAndNativeDSBrigeViewController.swift in Sources */,
 				DC4610462550386D0018BBF5 /* OpenURLApplicationService.swift in Sources */,
 				DC4610712554F3ED0018BBF5 /* BaseTest.swift in Sources */,

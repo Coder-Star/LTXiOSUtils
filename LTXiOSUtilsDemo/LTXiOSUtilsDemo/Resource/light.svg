@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="106.5" height="127.35" viewBox="0 0 106.5 127.35">
+  <defs>
+    <style>
+      .a {
+        fill: url(#a);
+      }
+
+      .b {
+        fill: url(#b);
+      }
+
+      .c {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="a" data-name="未命名的渐变 5" x1="49.15" x2="49.15" y2="118.3" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5067ef"/>
+      <stop offset="0.19" stop-color="#556ef0"/>
+      <stop offset="0.47" stop-color="#6283f4"/>
+      <stop offset="0.81" stop-color="#77a4fb"/>
+      <stop offset="1" stop-color="#85baff"/>
+    </linearGradient>
+    <linearGradient id="b" data-name="未命名的渐变 4" x1="57.34" y1="9.05" x2="57.34" y2="127.35" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#177eff"/>
+      <stop offset="0.19" stop-color="#1e85ff"/>
+      <stop offset="0.48" stop-color="#3398ff"/>
+      <stop offset="0.82" stop-color="#54b6ff"/>
+      <stop offset="1" stop-color="#69c9ff"/>
+    </linearGradient>
+  </defs>
+  <title>资源 4</title>
+  <g>
+    <rect class="a" width="98.31" height="118.3" rx="10" ry="10"/>
+    <rect class="b" x="8.19" y="9.05" width="98.31" height="118.3" rx="10" ry="10"/>
+    <path class="c" d="M76,67.74,51.28,99.2a1.35,1.35,0,0,1-1.58.47,1.25,1.25,0,0,1-.8-1.39L52,76.15a1.31,1.31,0,0,0-.34-1,1.36,1.36,0,0,0-1-.44h-11A1.31,1.31,0,0,1,38.52,74a1.19,1.19,0,0,1,.12-1.29L63.2,41a1.25,1.25,0,0,1,1.56-.57,1.19,1.19,0,0,1,.76,1.43L62.67,64.31a1.29,1.29,0,0,0,.33,1,1.37,1.37,0,0,0,1,.44H74.65a1.35,1.35,0,0,1,1.44.52A1.23,1.23,0,0,1,76,67.74Z"/>
+  </g>
+</svg>

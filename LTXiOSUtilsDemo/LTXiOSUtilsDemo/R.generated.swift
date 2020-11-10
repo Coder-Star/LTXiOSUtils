@@ -156,6 +156,23 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.color` struct is generated, and contains static references to 1 colors.
+  struct color {
+    /// Color `base-color`.
+    static let baseColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "base-color")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "base-color", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func baseColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.baseColor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
   struct entitlements {
     static let apsEnvironment = infoPlistString(path: [], key: "aps-environment") ?? "development"
@@ -163,7 +180,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 14 files.
+  /// This `R.file` struct is generated, and contains static references to 17 files.
   struct file {
     /// Resource file `1.jpg`.
     static let jpg = Rswift.FileResource(bundle: R.hostingBundle, name: "1", pathExtension: "jpg")
@@ -191,8 +208,14 @@ struct R: Rswift.Validatable {
     static let chinese_and_englishPng = Rswift.FileResource(bundle: R.hostingBundle, name: "chinese_and_english", pathExtension: "png")
     /// Resource file `dsbridge.js`.
     static let dsbridgeJs = Rswift.FileResource(bundle: R.hostingBundle, name: "dsbridge", pathExtension: "js")
+    /// Resource file `light.svg`.
+    static let lightSvg = Rswift.FileResource(bundle: R.hostingBundle, name: "light", pathExtension: "svg")
     /// Resource file `pushSound.mp3`.
     static let pushSoundMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "pushSound", pathExtension: "mp3")
+    /// Resource file `tap-add.svg`.
+    static let tapAddSvg = Rswift.FileResource(bundle: R.hostingBundle, name: "tap-add", pathExtension: "svg")
+    /// Resource file `tap-forcus.svg`.
+    static let tapForcusSvg = Rswift.FileResource(bundle: R.hostingBundle, name: "tap-forcus", pathExtension: "svg")
 
     /// `bundle.url(forResource: "1", withExtension: "jpg")`
     static func jpg(_: Void = ()) -> Foundation.URL? {
@@ -272,9 +295,27 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "light", withExtension: "svg")`
+    static func lightSvg(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.lightSvg
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "pushSound", withExtension: "mp3")`
     static func pushSoundMp3(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.pushSoundMp3
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "tap-add", withExtension: "svg")`
+    static func tapAddSvg(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tapAddSvg
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "tap-forcus", withExtension: "svg")`
+    static func tapForcusSvg(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tapForcusSvg
       return fileResource.bundle.url(forResource: fileResource)
     }
 

@@ -48,6 +48,7 @@ public struct CrashHandler {
     static var delegate: CrashHandlerDelegate?
 }
 
+// MARK: - Signal信号异常捕获
 extension CrashHandler {
 
     private static func openSignalHandler() {
@@ -113,6 +114,8 @@ extension CrashHandler {
     }
 }
 
+// MARK: - NSException异常捕获
+// NSException一般只在OC当中捕获，一般情况下捕获NSException异常后同时也会捕获一个对应的signal异常
 extension CrashHandler {
 
     private static func openExceptionHandler() {

@@ -60,7 +60,8 @@ class DemoListViewController: BaseGroupTableMenuViewController {
             BaseGroupTableMenuModel(code: "Menu", title: "菜单"),
             BaseGroupTableMenuModel(code: "TreeView", title: "无限级树形View"),
             BaseGroupTableMenuModel(code: "AlertView", title: "弹出框"),
-            BaseGroupTableMenuModel(code: "PickImage", title: "图片选择")
+            BaseGroupTableMenuModel(code: "PickImage", title: "图片选择"),
+            BaseGroupTableMenuModel(code: "ShowImage", title: "图片加载")
         ]
         menu.append(componetMenu)
 
@@ -114,7 +115,8 @@ class DemoListViewController: BaseGroupTableMenuViewController {
         case "SwiftCrash":
             let a = [1]
             Log.d(a[10])
-
+        case "ShowImage":
+            navigationController?.pushViewController(ShowImageViewController(), animated: true)
         default:
             HUD.showText("暂无此模块")
         }
