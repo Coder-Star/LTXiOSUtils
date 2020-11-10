@@ -109,6 +109,28 @@ class ShowImageViewController: BaseUIScrollViewController {
             make.top.equalTo(titleLabel)
         }
 
+        titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.lineBreakMode = .byCharWrapping
+        titleLabel.numberOfLines = 0
+        titleLabel.text = "远程SVG"
+        contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.top.equalTo(imageView.snp.bottom).offset(10)
+            make.width.equalTo(leftWidth)
+        }
+
+        imageView = UIImageView()
+        let url = URL(string: "http://121.36.20.56:8080/LTXiOSUtils/map.svg")
+        imageView.kf.setSVGImage(with: url!)
+        contentView.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.height.width.equalTo(100)
+            make.left.equalTo(titleLabel.snp.right).offset(5)
+            make.top.equalTo(titleLabel)
+        }
+
         imageView.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
         }
@@ -162,46 +184,25 @@ extension UIImage {
     }
 }
 
-//struct SVGProcessor {
-//    var size = CGSize(width: 32, height: 32)
-//
-//    init(_ size: CGSize) {
-//        if size.width != 0 && size.height != 0 {
-//            self.size = size
-//        }
-//    }
-//}
-//
-//extension SVGProcessor: ImageProcessor {
-//    var identifier: String {
-//        return "com.star.LTXiOSUtils"
-//    }
-//
-//    func process(item: ImageProcessItem, options: KingfisherParsedOptionsInfo) -> KFCrossPlatformImage? {
-//        switch item {
-//        case .image(let image):
-//            return image
-//        case .data(let data):
-//            let svgContent = String.init(data: data, encoding: String.Encoding.utf8)
-//            var img: UIImage?
-//            try? Macaw.SVGParser.parse(resource: <#T##String#>)
-//            DispatchQueue.main.sync {
-//                let rootNode = try! SVGParser.parse(text: svgContent!)
-//                let macawView = MacawView(node: rootNode, frame:CGRect(origin: CGPoint.zero, size: size))
-//                UIGraphicsBeginImageContextWithOptions(size, true, UIScreen.main.scale)
-//                macawView.layer.render(in: UIGraphicsGetCurrentContext()!)
-//                img = UIGraphicsGetImageFromCurrentImageContext()
-//                UIGraphicsEndImageContext()
-//            }
-//            return img
-//        }
-//    }
-//}
-//
-//extension UIImageView {
-//    func setSvgImage(_ urlStr: String) {
-//        let processor = SVGProcessor(self.frame.size)
-//        let url = URL(string: urlStr)
-//        self.kf.setImage(with: url, options: [.processor(processor)])
-//    }
-//}
+// MARK: - SVGKit与Kingfisher结合实现远程svg加载
+struct SVGProcessor: ImageProcessor {
+    var identifier: String {
+        return "com.star.LTXiOSUtils"
+    }
+
+    func process(item: ImageProcessItem, options: KingfisherParsedOptionsInfo) -> KFCrossPlatformImage? {
+        switch item {
+        case .image(let image):
+            return image
+        case .data(let data):
+            let img = SVGKImage(data: data)?.uiImage
+            return img
+        }
+    }
+}
+
+extension KingfisherWrapper where Base: KFCrossPlatformImageView {
+    func setSVGImage(with resource: Resource) {
+        setImage(with: resource, options: [.processor(SVGProcessor())])
+    }
+}
