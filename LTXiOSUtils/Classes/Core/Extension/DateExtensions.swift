@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Date: TxExtensionWrapperProtocol {}
+extension Date: TxExtensionWrapperCompatibleValue {}
 
 /// 日期格式化类型
 public enum DateFormateType: String {

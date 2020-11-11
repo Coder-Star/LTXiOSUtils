@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension String: TxExtensionWrapperProtocol {}
+extension String: TxExtensionWrapperCompatibleValue {}
 
 // MARK: - 字符串截取
 extension TxExtensionWrapper where Base == String {

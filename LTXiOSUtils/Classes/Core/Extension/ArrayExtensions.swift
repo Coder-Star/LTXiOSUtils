@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Array: TxExtensionWrapperProtocol {}
+extension Array: TxExtensionWrapperCompatibleValue {}
 
 extension TxExtensionWrapper where Base: Sequence {
 

@@ -65,7 +65,7 @@ class GridMenuViewExampleViewController: BaseUIViewController {
         let secondButton = ViewFactory.getButton("第三个图标改变文字")
         let thirdButton = ViewFactory.getButton("第四个图标改变数字")
         let forthButton = ViewFactory.getButton("第九个图标改变数字")
-        baseView.add(firstButtton, secondButton, thirdButton, forthButton)
+        baseView.addSubviews(firstButtton, secondButton, thirdButton, forthButton)
         firstButtton.snp.makeConstraints { make in
             make.top.equalTo(scrollMenView.snp.bottom).offset(20)
             make.left.equalToSuperview()

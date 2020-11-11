@@ -28,7 +28,7 @@ class MGJRouterDemoViewController: BaseUIViewController {
         super.viewDidLoad()
         title = "组件详情"
         contentTextView.text = content
-        baseView.add(contentTextView)
+        baseView.addSubview(contentTextView)
         contentTextView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
         }
