@@ -72,14 +72,14 @@ extension UIView {
     }
 
     /// 移除所有子视图
-    public func removeAllChildView() {
+    public func removeAllSubview() {
         self.subviews.forEach {
             $0.removeFromSuperview()
         }
     }
 
     /// 同时添加多个视图
-    public func add(_ subviews: UIView...) {
+    public func addSubviews(_ subviews: UIView...) {
         subviews.forEach(addSubview)
     }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Double: TxExtensionWrapperProtocol {}
+extension Double: TxExtensionWrapperCompatibleValue {}
 
 extension TxExtensionWrapper where Base == Double {
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension NSObject: TxExtensionWrapperProtocol {}
+extension NSObject: TxExtensionWrapperCompatible {}
 
 // MARK: - 基础
 extension TxExtensionWrapper where Base: NSObject {

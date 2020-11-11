@@ -28,6 +28,7 @@ class ShowImageViewController: BaseUIScrollViewController {
         titleLabel.numberOfLines = 0
         titleLabel.text = "加载多语言图片(不同语言环境下显示图片不同)"
         contentView.addSubview(titleLabel)
+        titleLabel.backgroundColor = titleLabel.superview?.backgroundColor
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.top.equalToSuperview().offset(20)
@@ -52,6 +53,7 @@ class ShowImageViewController: BaseUIScrollViewController {
         titleLabel.numberOfLines = 0
         titleLabel.text = "加载组件图片"
         contentView.addSubview(titleLabel)
+        titleLabel.backgroundColor = titleLabel.superview?.backgroundColor
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.top.equalTo(imageView.snp.bottom).offset(10)
@@ -94,6 +96,7 @@ class ShowImageViewController: BaseUIScrollViewController {
         titleLabel.numberOfLines = 0
         titleLabel.text = "SVGKit"
         contentView.addSubview(titleLabel)
+        titleLabel.backgroundColor = titleLabel.superview?.backgroundColor
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.top.equalTo(imageView.snp.bottom).offset(10)
@@ -115,6 +118,7 @@ class ShowImageViewController: BaseUIScrollViewController {
         titleLabel.numberOfLines = 0
         titleLabel.text = "远程SVG"
         contentView.addSubview(titleLabel)
+        titleLabel.backgroundColor = titleLabel.superview?.backgroundColor
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.top.equalTo(imageView.snp.bottom).offset(10)
@@ -125,6 +129,7 @@ class ShowImageViewController: BaseUIScrollViewController {
         let url = URL(string: "http://121.36.20.56:8080/LTXiOSUtils/map.svg")
         imageView.kf.setSVGImage(with: url!)
         contentView.addSubview(imageView)
+        imageView.backgroundColor = imageView.superview?.backgroundColor
         imageView.snp.makeConstraints { make in
             make.height.width.equalTo(100)
             make.left.equalTo(titleLabel.snp.right).offset(5)
@@ -173,7 +178,8 @@ extension UIImage {
     /// - Parameter color: 修改成的颜色
     /// - Returns: 修改颜色后的UIImage
     public func withTintColor(color: UIColor) -> UIImage? {
-        UIGraphicsBeginImageContext(self.size)
+        // 第二个参数为 opaque ，将其设置为false，避免图片重绘后导致图片四周出现边框
+        UIGraphicsBeginImageContextWithOptions(self.size, false, 0)
         color.setFill()
         let bounds = CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height)
         UIRectFill(bounds)

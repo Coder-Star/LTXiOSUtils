@@ -21,7 +21,7 @@ extension ViewEventViewController {
     func initUI() {
         let parentView = UIView()
         parentView.backgroundColor = .red
-        baseView.add(parentView)
+        baseView.addSubview(parentView)
         parentView.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.height.equalTo(600)
@@ -30,7 +30,7 @@ extension ViewEventViewController {
 
         let blueChildView = TapTestView()
         blueChildView.backgroundColor = .blue
-        parentView.add(blueChildView)
+        parentView.addSubview(blueChildView)
         blueChildView.snp.makeConstraints { make in
             make.top.equalTo(20)
             make.left.equalTo(20)
@@ -40,7 +40,7 @@ extension ViewEventViewController {
 
         let yellowChildView = UIView()
         yellowChildView.backgroundColor = .yellow
-        parentView.add(yellowChildView)
+        parentView.addSubview(yellowChildView)
         yellowChildView.snp.makeConstraints { make in
             make.top.equalTo(blueChildView.snp.bottom).offset(20)
             make.left.equalTo(20)
@@ -52,7 +52,7 @@ extension ViewEventViewController {
         greenButton.setTitle("按钮", for: .normal)
 
         greenButton.backgroundColor = .green
-        parentView.add(greenButton)
+        parentView.addSubview(greenButton)
         greenButton.snp.makeConstraints { make in
             make.top.equalTo(yellowChildView.snp.bottom).offset(20)
             make.left.equalTo(20)

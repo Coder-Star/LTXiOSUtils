@@ -67,6 +67,7 @@ open class BaseUIScrollViewController: BaseViewController {
     /// 初始化滚动视图子视图
     open func initScrollSubViews() {
         baseScrollView.addSubview(baseContentView)
+        baseContentView.backgroundColor = baseContentView.superview?.backgroundColor
         baseContentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
             make.width.equalTo(screenWidth)

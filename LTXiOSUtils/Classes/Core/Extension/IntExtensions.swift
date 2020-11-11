@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Int: TxExtensionWrapperProtocol {}
+extension Int: TxExtensionWrapperCompatibleValue {}
 
 extension TxExtensionWrapper where Base == Int {
 
