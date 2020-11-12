@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
 
   # 资源
   s.subspec 'Resources' do |resources|
-    resources.dependency 'LTXiOSUtils/Util'
+    resources.dependency 'LTXiOSUtils/Core'
     resources.source_files = 'LTXiOSUtils/Resources/*.swift'
     resources.resource_bundle = { "LTXiOSUtils" => "LTXiOSUtils/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
   end
@@ -51,14 +51,13 @@ Pod::Spec.new do |s|
   # 自定义Component组件，包含各种基础view
   s.subspec 'Component' do |component|
     component.dependency 'LTXiOSUtils/Resources'
-    component.dependency 'LTXiOSUtils/Core'
     component.dependency 'SnapKit','5.0.1' # 自动布局
     component.source_files = 'LTXiOSUtils/Classes/Component/**/*.swift'
   end
 
   # 基础ViewController
   s.subspec 'ViewController' do |viewController|
-    viewController.dependency 'LTXiOSUtils/Core/Extension'
+    viewController.dependency 'LTXiOSUtils/Core'
     viewController.dependency 'SnapKit','5.0.1' # 自动布局
     viewController.dependency 'MJRefresh' # 下拉刷新、下拉加载，OC库
     viewController.source_files = 'LTXiOSUtils/Classes/ViewController/**/*.swift'
