@@ -14,7 +14,6 @@ extension String {
     /// - Parameter comment: 注释参数
     public func localizedOfLTXiOSUtils(_ comment: String = "") -> String {
         return Bundle.getBundle(bundleName: "LTXiOSUtils")?.localizedString(forKey: self, value: "", table: nil) ?? ""
-//        return localized(in: ResourceUtils.getBundle(bundleName: "LTXiOSUtils"))
     }
 
     /// 获取LTXiOSUtils库中的图片
