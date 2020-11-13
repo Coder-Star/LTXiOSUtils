@@ -15,6 +15,10 @@ class FoundationTest: XCTestCase {
     func testDic() {
         let dic = Dictionary(uniqueKeysWithValues: zip(["name", "age"], ["张三"]))
         Log.d(dic)
+
+        for item in dic.enumerated() {
+            Log.d(item.element)
+        }
     }
 
     func testArray() {

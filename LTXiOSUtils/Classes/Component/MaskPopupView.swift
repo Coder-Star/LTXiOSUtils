@@ -46,9 +46,6 @@ public enum MaskPopupViewBackgroundStyle {
     case blur
 }
 
-/// 一个轻量级的自定义视图弹框框架，主要提供动画、背景的灵活配置，功能简单却强大
-/// 通过面对协议MaskPopupViewAnimationProtocol，实现对动画的灵活配置
-/// 通过MaskBackgroundView对背景进行自定义配置
 public class MaskPopupView: UIView {
     /*
      举个例子
@@ -72,23 +69,35 @@ public class MaskPopupView: UIView {
      - isInteractive  为YES时，点击区域A可以触发contentView上的交互操作
      - isPenetrable   为YES时，将会忽略区域B的交互操作
      */
-    public var isDismissible = false {
+
+    /// 是否点击蒙版空白处关闭弹框
+    public var isDismissible = true {
         didSet {
             backgroundView.isUserInteractionEnabled = isDismissible
         }
     }
+    /// 内容view是否可以进行交互
     public var isInteractive = true
+    /// 蒙版View是否忽略交互操作
     public var isPenetrable = false
+    /// 蒙版View
     public let backgroundView: MaskBackgroundView
+    /// 蒙版即将出现闭包
     public var willDispalyCallback: (() -> Void)?
+    /// 蒙版已经出现闭包
     public var didDispalyCallback: (() -> Void)?
+    /// 蒙版即将消失闭包
     public var willDismissCallback: (() -> Void)?
+    /// 蒙版已经消失闭包
     public var didDismissCallback: (() -> Void)?
 
-    weak var containerView: UIView!
-    let contentView: UIView
-    let animator: MaskPopupViewAnimationProtocol
-    var isAnimating = false
+    /// 当containerView为UIScrollview时，是否自定义尺寸
+    public var isAdaptSize = true
+
+    private weak var containerView: UIView!
+    private var contentView: UIView
+    private let animator: MaskPopupViewAnimationProtocol
+    private var isAnimating = false
 
     deinit {
         willDispalyCallback = nil
@@ -125,6 +134,7 @@ public class MaskPopupView: UIView {
 
     public override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let pointInContent = convert(point, to: contentView)
+        // 是否位于内容View里
         let isPointInContent = contentView.bounds.contains(pointInContent)
         if isPointInContent {
             if isInteractive {
@@ -147,6 +157,10 @@ public class MaskPopupView: UIView {
         backgroundView.frame = self.bounds
     }
 
+    /// 蒙版显示
+    /// - Parameters:
+    ///   - animated: 是否显示动画
+    ///   - completion: 显示完成
     public func display(animated: Bool, completion: (() -> Void)?) {
         if isAnimating {
             return
@@ -154,6 +168,10 @@ public class MaskPopupView: UIView {
         isAnimating = true
         containerView.addSubview(self)
 
+        if let contentScrollView = contentView as? UIScrollView, isAdaptSize {
+            containerView.layoutIfNeeded()
+            contentView.tx.height = contentScrollView.contentSize.height
+        }
         willDispalyCallback?()
         animator.display(contentView: contentView, backgroundView: backgroundView, animated: animated) {
             completion?()
@@ -162,6 +180,10 @@ public class MaskPopupView: UIView {
         }
     }
 
+    /// 蒙版消失
+    /// - Parameters:
+    ///   - animated: 是否显示动画
+    ///   - completion: 消失完成
     public func dismiss(animated: Bool, completion: (() -> Void)?) {
         if isAnimating {
             return
@@ -185,7 +207,7 @@ public class MaskPopupView: UIView {
 /// 扩展
 extension UIView {
 
-    /// 便利获取MaskPopupView
+    /// 获取view父View中的MaskPopupView
     public var maskPopupView: MaskPopupView? {
         if self.superview?.isKind(of: MaskPopupView.classForCoder()) == true {
             return self.superview as? MaskPopupView
@@ -195,23 +217,27 @@ extension UIView {
 }
 
 public class MaskBackgroundView: UIControl {
+    /// 蒙版样式
     public var style = MaskPopupViewBackgroundStyle.solidColor {
         didSet {
             refreshBackgroundStyle()
         }
     }
+
+    /// 蒙版样式为毛玻璃时，毛玻璃样式
     public var blurEffectStyle = UIBlurEffect.Style.dark {
         didSet {
             refreshBackgroundStyle()
         }
     }
-    /// 无论style是什么值，color都会生效。如果你使用blur的时候，觉得叠加上该color过于黑暗时，可以置为clearColor。
+    /// 蒙版颜色
     public var color = UIColor.black.withAlphaComponent(0.3) {
         didSet {
             backgroundColor = color
         }
     }
-    var effectView: UIVisualEffectView? //毛玻璃效果
+
+    private var effectView: UIVisualEffectView? //毛玻璃效果
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -228,7 +254,7 @@ public class MaskBackgroundView: UIControl {
     public override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
         if view == effectView {
-            //将event交给backgroundView处理
+            // 将毛玻璃的点击事件转为蒙版处理
             return self
         }
         return view
@@ -251,6 +277,7 @@ public class MaskBackgroundView: UIControl {
     }
 }
 
+/// 基础动画效果类
 open class MaskPopupViewBaseAnimator: MaskPopupViewAnimationProtocol {
     open var displayDuration: TimeInterval = 0.25
     open var displayAnimationOptions = UIView.AnimationOptions.init(rawValue: UIView.AnimationOptions.beginFromCurrentState.rawValue & UIView.AnimationOptions.curveEaseInOut.rawValue)
@@ -265,6 +292,7 @@ open class MaskPopupViewBaseAnimator: MaskPopupViewAnimationProtocol {
     public init() {
     }
 
+    // 子类通过重写该方法实现不同动画效果，主要是设置显示闭包以及消失闭包
     open func setup(contentView: UIView, backgroundView: MaskBackgroundView, containerView: UIView) {
     }
 
@@ -415,7 +443,6 @@ open class MaskPopupViewZoomInOutAnimator: MaskPopupViewBaseAnimator {
 
 /// 弹性动画
 open class MaskPopupViewSpringDownwardAnimator: MaskPopupViewDownwardAnimator {
-
     open override func display(contentView: UIView, backgroundView: MaskBackgroundView, animated: Bool, completion: @escaping () -> Void) {
         if animated {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.7, options: displayAnimationOptions, animations: {
