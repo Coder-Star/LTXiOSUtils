@@ -23,7 +23,6 @@
 		DC0EC27A255955BA0046B46A /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC0EC279255955BA0046B46A /* 1.jpg */; };
 		DC0EC2F125597D660046B46A /* light.svg in Resources */ = {isa = PBXBuildFile; fileRef = DC0EC2F025597D660046B46A /* light.svg */; };
 		DC0EC2F82559855B0046B46A /* ShowImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0EC2F72559855B0046B46A /* ShowImageViewController.swift */; };
-		DC0EC301255A373D0046B46A /* tap-add.svg in Resources */ = {isa = PBXBuildFile; fileRef = DC0EC300255A373D0046B46A /* tap-add.svg */; };
 		DC0EC308255A60A70046B46A /* tap-forcus.svg in Resources */ = {isa = PBXBuildFile; fileRef = DC0EC307255A60A70046B46A /* tap-forcus.svg */; };
 		DC0EC321255A76580046B46A /* OCExceptionCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0EC31F255A76580046B46A /* OCExceptionCatch.m */; };
 		DC106D48244F1DC300494F45 /* MGJRouterDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC106D47244F1DC300494F45 /* MGJRouterDemoViewController.swift */; };
@@ -217,7 +216,6 @@
 		DC0EC279255955BA0046B46A /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		DC0EC2F025597D660046B46A /* light.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = light.svg; sourceTree = "<group>"; };
 		DC0EC2F72559855B0046B46A /* ShowImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageViewController.swift; sourceTree = "<group>"; };
-		DC0EC300255A373D0046B46A /* tap-add.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "tap-add.svg"; sourceTree = "<group>"; };
 		DC0EC307255A60A70046B46A /* tap-forcus.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "tap-forcus.svg"; sourceTree = "<group>"; };
 		DC0EC31F255A76580046B46A /* OCExceptionCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCExceptionCatch.m; sourceTree = "<group>"; };
 		DC0EC320255A76580046B46A /* OCExceptionCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCExceptionCatch.h; sourceTree = "<group>"; };
@@ -710,7 +708,6 @@
 			isa = PBXGroup;
 			children = (
 				DC0EC307255A60A70046B46A /* tap-forcus.svg */,
-				DC0EC300255A373D0046B46A /* tap-add.svg */,
 				DC0EC2F025597D660046B46A /* light.svg */,
 				DC0EC279255955BA0046B46A /* 1.jpg */,
 				DC83C44725333BC500259A03 /* pushSound.mp3 */,
@@ -1265,7 +1262,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0EC301255A373D0046B46A /* tap-add.svg in Resources */,
 				DC88A357250CA6A8000198AD /* WKURLSchemeHandlerResponse.html in Resources */,
 				DC0EC27A255955BA0046B46A /* 1.jpg in Resources */,
 				DCEE983B2510FF2900A19CF9 /* MineViewController.xib in Resources */,

@@ -104,7 +104,7 @@ class ShowImageViewController: BaseUIScrollViewController {
         }
 
         imageView = UIImageView()
-        imageView.image = UIImage.svgImage(named: "tap-add", color: UIColor(named: "base-color"))
+        imageView.image = UIImage(named: "tap-add")?.withTintColor(color: .red)
         contentView.addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.height.width.equalTo(50)

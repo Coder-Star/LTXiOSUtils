@@ -564,3 +564,40 @@ extension UIControl {
         return super.hitTest(point, with: event)
     }
 }
+
+// MARK: - IB支持配置动态属性
+extension UIView {
+    /// 圆角
+    @IBInspectable
+    public var cornerRadius: CGFloat {
+        set {
+            layer.masksToBounds = true
+            layer.cornerRadius = newValue
+        }
+        get {
+            return layer.cornerRadius
+        }
+    }
+
+    /// 边框宽度
+    @IBInspectable
+    public var borderWidth: CGFloat {
+        set {
+            layer.borderWidth = newValue
+        }
+        get {
+            return layer.borderWidth
+        }
+    }
+
+    /// 边框颜色
+    @IBInspectable
+    public var borderColor: UIColor {
+        set {
+            layer.borderColor = newValue.cgColor
+        }
+        get {
+            return UIColor(cgColor: layer.borderColor ?? UIColor.black.cgColor)
+        }
+    }
+}

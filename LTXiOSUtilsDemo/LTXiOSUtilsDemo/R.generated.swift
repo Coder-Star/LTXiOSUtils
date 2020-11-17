@@ -180,7 +180,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 17 files.
+  /// This `R.file` struct is generated, and contains static references to 16 files.
   struct file {
     /// Resource file `1.jpg`.
     static let jpg = Rswift.FileResource(bundle: R.hostingBundle, name: "1", pathExtension: "jpg")
@@ -212,8 +212,6 @@ struct R: Rswift.Validatable {
     static let lightSvg = Rswift.FileResource(bundle: R.hostingBundle, name: "light", pathExtension: "svg")
     /// Resource file `pushSound.mp3`.
     static let pushSoundMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "pushSound", pathExtension: "mp3")
-    /// Resource file `tap-add.svg`.
-    static let tapAddSvg = Rswift.FileResource(bundle: R.hostingBundle, name: "tap-add", pathExtension: "svg")
     /// Resource file `tap-forcus.svg`.
     static let tapForcusSvg = Rswift.FileResource(bundle: R.hostingBundle, name: "tap-forcus", pathExtension: "svg")
 
@@ -307,12 +305,6 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "tap-add", withExtension: "svg")`
-    static func tapAddSvg(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.tapAddSvg
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
     /// `bundle.url(forResource: "tap-forcus", withExtension: "svg")`
     static func tapForcusSvg(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.tapForcusSvg
@@ -339,7 +331,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 45 images.
+  /// This `R.image` struct is generated, and contains static references to 46 images.
   struct image {
     /// Image `1.jpg`.
     static let jpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "1.jpg")
@@ -427,6 +419,8 @@ struct R: Rswift.Validatable {
     static let scan = Rswift.ImageResource(bundle: R.hostingBundle, name: "scan")
     /// Image `search`.
     static let search = Rswift.ImageResource(bundle: R.hostingBundle, name: "search")
+    /// Image `tap-add`.
+    static let tapAdd = Rswift.ImageResource(bundle: R.hostingBundle, name: "tap-add")
     /// Image `xib_header_dog`.
     static let xib_header_dog = Rswift.ImageResource(bundle: R.hostingBundle, name: "xib_header_dog")
     /// Image `xib_header`.
@@ -730,6 +724,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "search", bundle: ..., traitCollection: ...)`
     static func search(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.search, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tap-add", bundle: ..., traitCollection: ...)`
+    static func tapAdd(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tapAdd, compatibleWith: traitCollection)
     }
     #endif
 
