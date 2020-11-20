@@ -26,7 +26,6 @@ ${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework
 ${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework
-${BUILT_PRODUCTS_DIR}/Toast/Toast.framework
 ${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework
 ${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework
 ${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework
@@ -35,6 +34,5 @@ ${BUILT_PRODUCTS_DIR}/ZYCornerRadius/ZYCornerRadius.framework
 ${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework
 ${PODS_ROOT}/../../flutter_module/.ios/Flutter/App.framework
 ${BUILT_PRODUCTS_DIR}/flutter_webview_plugin/flutter_webview_plugin.framework
-${BUILT_PRODUCTS_DIR}/fluttertoast/fluttertoast.framework
 ${BUILT_PRODUCTS_DIR}/path_provider/path_provider.framework
 ${BUILT_PRODUCTS_DIR}/shared_preferences/shared_preferences.framework

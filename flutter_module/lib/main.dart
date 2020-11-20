@@ -1,12 +1,29 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_module/themes/theme_color.dart';
 import 'package:flutter_module/pages/home/index_page.dart';
 import 'package:flutter_module/pages/home/function_page.dart';
 import 'package:flutter_module/pages/home/mine_page.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 // main方法是flutter的入口
-void main() => runApp(MyApp());
+void main() {
+  // 捕获dart异常
+  runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    runApp(MyApp());
+  }, (Object error, StackTrace stack) async {
+    print(error);
+    print(stack);
+  });
+
+  // 捕获Flutter异常
+  FlutterError.onError = (FlutterErrorDetails errorDetails) {
+    print(errorDetails);
+  };
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -15,9 +32,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, // 不显示debug标志
       showPerformanceOverlay: false,
       home: BottomNavigationWidget(),
-      theme: ThemeData(
-          primaryColor: ThemeColor.mainColor //主题色
-      ),
+      theme: ThemeData(primaryColor: ThemeColor.mainColor //主题色
+          ),
+      builder: (BuildContext context, Widget child) {
+        /// 确保 loading 组件能覆盖在其他组件之上.
+        return FlutterEasyLoading(child: child);
+      },
     );
   }
 }

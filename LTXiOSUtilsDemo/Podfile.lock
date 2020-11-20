@@ -12,12 +12,8 @@ PODS:
   - FlutterPluginRegistrant (0.0.1):
     - Flutter
     - flutter_webview_plugin
-    - fluttertoast
     - path_provider
     - shared_preferences
-  - fluttertoast (0.0.2):
-    - Flutter
-    - Toast
   - FSPagerView (0.8.3)
   - GDPerformanceView-Swift (2.0.3)
   - IQKeyboardManagerSwift (6.5.4)
@@ -83,7 +79,6 @@ PODS:
   - SwiftLint (0.38.0)
   - SwiftyJSON (5.0.0)
   - SwiftyUserDefaults (5.0.0)
-  - Toast (4.0.0)
   - TZImagePickerController (3.3.1)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - URLNavigator (2.3.0)
@@ -100,7 +95,6 @@ DEPENDENCIES:
   - flutter_module (from `../flutter_module/.ios/Flutter`)
   - flutter_webview_plugin (from `../flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios`)
   - FlutterPluginRegistrant (from `../flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
-  - fluttertoast (from `../flutter_module/.ios/Flutter/.symlinks/fluttertoast/ios`)
   - FSPagerView (= 0.8.3)
   - GDPerformanceView-Swift (= 2.0.3)
   - IQKeyboardManagerSwift (= 6.5.4)
@@ -158,7 +152,6 @@ SPEC REPOS:
     - SwiftLint
     - SwiftyJSON
     - SwiftyUserDefaults
-    - Toast
     - TZImagePickerController
     - "UITableView+FDTemplateLayoutCell"
     - URLNavigator
@@ -175,8 +168,6 @@ EXTERNAL SOURCES:
     :path: "../flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios"
   FlutterPluginRegistrant:
     :path: "../flutter_module/.ios/Flutter/FlutterPluginRegistrant"
-  fluttertoast:
-    :path: "../flutter_module/.ios/Flutter/.symlinks/fluttertoast/ios"
   LTXiOSUtils:
     :path: "../"
   path_provider:
@@ -193,8 +184,7 @@ SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_module: d1e1ff44505640bd9aa37f23f63380c646272be4
   flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
-  FlutterPluginRegistrant: 9ca247bca8c7b29934cdc151eb62dfe71ce63d5b
-  fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
+  FlutterPluginRegistrant: c76b389f9a75b221a28d62ccc8cb74793a42926c
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GDPerformanceView-Swift: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
@@ -222,7 +212,6 @@ SPEC CHECKSUMS:
   SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
-  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
@@ -232,4 +221,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 43f843eae9ba70f93bb47e3c228f86a7b67ff893
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0
