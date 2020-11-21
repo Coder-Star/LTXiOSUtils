@@ -2,22 +2,22 @@
 # platform :ios, '9.0'
 
 # flutter
-#flutter_application_path = '../flutter_module'
-#load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+flutter_application_path = '../flutter_module'
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 target 'LTXiOSUtilsDemo' do
-  source 'https://github.com/CocoaPods/Specs.git' #公有库地址
-  # source 'https://cdn.cocoapods.org/' #公有库地址,使用CDN，pod 1.7版本后
-  source 'https://github.com/Coder-Star/LTXSpecs.git' #私有库地址
+  source 'https://github.com/CocoaPods/Specs.git' # 公有库地址
+  # source 'https://cdn.cocoapods.org/' # 公有库地址,使用CDN，pod 1.7版本后
+  source 'https://github.com/Coder-Star/LTXSpecs.git' # 私有库地址
   platform :ios, '10.0'
-  
+
   use_frameworks! #使用动态库方式
-  #  use_modular_headers! #使用静态库方式
+  # use_modular_headers! #使用静态库方式
   # 在ios 13.3.1系统真机上，苹果不再允许个人开发者使用嵌入式frameworks，
   # 需要use_modular_headers，不再use_frameworks
 
   # 安装flutter模块
-  #  install_all_flutter_pods(flutter_application_path)
+  install_all_flutter_pods(flutter_application_path)
 
   pod 'LTXiOSUtils',:path => '../' # 基础功能库
   #  pod 'LTXiOSUtils', :git => 'https://github.com/Coder-Star/LTXiOSUtils.git', :tag => '0.0.0' #直接从源代码托管仓库取
@@ -27,12 +27,12 @@ target 'LTXiOSUtilsDemo' do
   pod 'SwiftLint', '0.38.0' # 代码规范限制，使用swiftlint autocorrect 可自动修复一部分格式问题
   pod 'Localize-Swift','3.1.0' # 国际化文件工具
 
-  #图片相关
+  # 图片相关
   pod 'Kingfisher', '5.12.0' # 远程图片预览
   pod 'SKPhotoBrowser', '6.1.0' # 图片浏览
   pod 'TZImagePickerController', '3.3.1' # 图片选择
 
-  #工具类
+  # 工具类
   pod 'SwiftyUserDefaults', '5.0.0' # UserDefaults存储
   pod 'KeychainAccess', '4.1.0' # 钥匙串存储
 
@@ -60,20 +60,20 @@ target 'LTXiOSUtilsDemo' do
 
   pod 'RealmSwift', '5.0.0' # Realm数据库
 
-  #解耦
+  # 解耦
   pod 'CTMediator', '28' # Runtime路由方案
   pod 'MGJRouter', '0.10.0' # 蘑菇街URl路由方案
   pod 'URLNavigator', '2.3.0' # URL路由，跟MGJRouter实现思想相同，只不过MGJRouter是OC，这个是Swift
 
-  #UI组件等
+  # UI组件等
   pod 'FSPagerView', '0.8.3' # 轮播组件
   pod 'XHLaunchAd', '3.9.11' # 广告页，依赖 'FLAnimatedImage'
   #  pod 'Onboard','2.3.3' # 引导页
 
-  #Rx
+  # Rx
   pod 'RxCocoa', '5.0.1' # RxSwift是通用RxAPI的实现，并不涉及任何任何 Cocoa 或 UIKit 类，RxCocoa依赖RxSwift
 
-  #音视频相关
+  # 音视频相关
   pod "mp3lame-for-ios", "0.1.1" # 将录音文件格式修改为mp3格式
 
   pod 'SVGKit', '2.1.1' # SVG加载，OC
@@ -136,4 +136,3 @@ post_install do |installer|
     end
   end
 end
-

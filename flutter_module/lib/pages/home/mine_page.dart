@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class MinePage extends StatefulWidget{
   @override
@@ -10,12 +10,10 @@ class MinePage extends StatefulWidget{
 class MineWidgetState extends State<MinePage>{
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('我'),
-      ),
-      body: new Center(
-        child: Icon(Icons.account_box,size: 130.0,color: Colors.blue,),
+    return new CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(middle: Text("我")),
+      child: new Center(
+        child: Icon(CupertinoIcons.tortoise_fill,size: 130.0,color: CupertinoColors.systemBlue),
       ),
     );
   }
