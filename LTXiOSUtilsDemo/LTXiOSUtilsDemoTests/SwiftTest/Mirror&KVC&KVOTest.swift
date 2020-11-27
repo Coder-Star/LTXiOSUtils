@@ -71,4 +71,27 @@ class MirrorTest: XCTestCase {
         Log.d(user)
     }
 
+
+    func testKeyPath() {
+        let user = User()
+        user.name = "张三"
+        user.age = 18
+
+        Log.d(user[keyPath: \User.name])
+
+        var userList = [User]()
+        userList.append(user)
+
+        let names = userList.map(\.name)
+        Log.d(names)
+
+        userList.tx.sorted(by: \.name)
+    }
+
+    // 利用keyPath赋值防止循环引用
+    func setter<Object: AnyObject, Value>(for object: Object, keyPath: ReferenceWritableKeyPath<Object, Value>) -> (Value) -> Void {
+        return { [weak object] value in
+            object?[keyPath: keyPath] = value
+        }
+    }
 }

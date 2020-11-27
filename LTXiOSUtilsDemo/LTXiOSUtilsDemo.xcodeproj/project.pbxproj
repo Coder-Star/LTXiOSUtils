@@ -38,6 +38,8 @@
 		DC32F1A423840A3E008D3D67 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A323840A3E008D3D67 /* R.generated.swift */; };
 		DC32F1A823841359008D3D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32F1A723841359008D3D67 /* Constants.swift */; };
 		DC3361872566BF3A0032D34E /* FlutterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3361862566BF3A0032D34E /* FlutterConstants.swift */; };
+		DC3A2815256D229700784A50 /* FoldViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3A2814256D229700784A50 /* FoldViewDemoViewController.swift */; };
+		DC3A281E256D470D00784A50 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3A281D256D470D00784A50 /* LoginUser.swift */; };
 		DC3E61F824209F1600105366 /* TempUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E61F724209F1600105366 /* TempUtils.swift */; };
 		DC3E61FE2423755F00105366 /* PickImageDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */; };
 		DC3E62022424714E00105366 /* DoubleExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E62012424714E00105366 /* DoubleExtensionTest.swift */; };
@@ -109,6 +111,7 @@
 		DCBB1C3A23B1FCC000FF2925 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBB1C3923B1FCC000FF2925 /* LaunchScreen.storyboard */; };
 		DCBF290C23BCA65B00EF365C /* ComponentCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */; };
 		DCBF42CC256521A300DC7076 /* ThirdLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF42CB256521A300DC7076 /* ThirdLib.swift */; };
+		DCC67CFA2570C98B005515CF /* CopyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC67CF92570C98B005515CF /* CopyTest.swift */; };
 		DCC76E4C23A783550029590C /* HUDDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC76E4B23A783550029590C /* HUDDemoViewController.swift */; };
 		DCCF3C3925245FF0008F0E29 /* NotificationApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3C3825245FF0008F0E29 /* NotificationApplicationService.swift */; };
 		DCCF3E4F23C8ABD1000E65E1 /* KeychainAccessTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */; };
@@ -238,6 +241,8 @@
 		DC32F1A323840A3E008D3D67 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DC32F1A723841359008D3D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DC3361862566BF3A0032D34E /* FlutterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterConstants.swift; sourceTree = "<group>"; };
+		DC3A2814256D229700784A50 /* FoldViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldViewDemoViewController.swift; sourceTree = "<group>"; };
+		DC3A281D256D470D00784A50 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		DC3E61F724209F1600105366 /* TempUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempUtils.swift; sourceTree = "<group>"; };
 		DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageDemoViewController.swift; sourceTree = "<group>"; };
 		DC3E62012424714E00105366 /* DoubleExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensionTest.swift; sourceTree = "<group>"; };
@@ -329,6 +334,7 @@
 		DCBB1C3923B1FCC000FF2925 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentCollectionsViewController.swift; sourceTree = "<group>"; };
 		DCBF42CB256521A300DC7076 /* ThirdLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdLib.swift; sourceTree = "<group>"; };
+		DCC67CF92570C98B005515CF /* CopyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyTest.swift; sourceTree = "<group>"; };
 		DCC76E4B23A783550029590C /* HUDDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDDemoViewController.swift; sourceTree = "<group>"; };
 		DCCF3C3825245FF0008F0E29 /* NotificationApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationApplicationService.swift; sourceTree = "<group>"; };
 		DCCF3E4E23C8ABD1000E65E1 /* KeychainAccessTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccessTest.swift; sourceTree = "<group>"; };
@@ -587,6 +593,22 @@
 			path = DSBrige;
 			sourceTree = "<group>";
 		};
+		DC3A281B256D46D500784A50 /* DesignPattern */ = {
+			isa = PBXGroup;
+			children = (
+				DC3A281C256D46E800784A50 /* Builder */,
+			);
+			path = DesignPattern;
+			sourceTree = "<group>";
+		};
+		DC3A281C256D46E800784A50 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				DC3A281D256D470D00784A50 /* LoginUser.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		DC3E62032425E86F00105366 /* Stash */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +692,7 @@
 		DC4AB9D022F4606100A5F003 /* LTXiOSUtilsDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				DC3A281B256D46D500784A50 /* DesignPattern */,
 				DCDBA7AD24FE69DF0073E293 /* SwiftTest */,
 				DCE1457B24FBABCC00E3B6B0 /* StoreTest */,
 				DC6F4D3624F68DA900B69A31 /* ThreadTest */,
@@ -965,6 +988,7 @@
 				DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */,
 				DC0EC2F72559855B0046B46A /* ShowImageViewController.swift */,
 				DCFE0922255EC43B00826344 /* MaskPopupViewController.swift */,
+				DC3A2814256D229700784A50 /* FoldViewDemoViewController.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1026,6 +1050,7 @@
 				DC725FD8250B7EBC0091C807 /* FoundationTest.swift */,
 				DC4F88C52511BCCB00B68C72 /* ErrorTest.swift */,
 				DC46106025541E650018BBF5 /* Mirror&KVC&KVOTest.swift */,
+				DCC67CF92570C98B005515CF /* CopyTest.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -1470,7 +1495,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/LTXiOSUtilsDemo/R.generated.swift",
+				$SRCROOT/LTXiOSUtilsDemo/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1544,6 +1569,7 @@
 				DC4AB9BF22F4606000A5F003 /* DemoListViewController.swift in Sources */,
 				DCCF3C3925245FF0008F0E29 /* NotificationApplicationService.swift in Sources */,
 				DCEE983A2510FF2900A19CF9 /* MineViewController.swift in Sources */,
+				DC3A2815256D229700784A50 /* FoldViewDemoViewController.swift in Sources */,
 				DC55150E251F1B98006223AE /* CoreDataUtils.swift in Sources */,
 				DC0EC2F82559855B0046B46A /* ShowImageViewController.swift in Sources */,
 				DC3361872566BF3A0032D34E /* FlutterConstants.swift in Sources */,
@@ -1628,6 +1654,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC67CFA2570C98B005515CF /* CopyTest.swift in Sources */,
 				DC4AB9D222F4606100A5F003 /* DateExtensionTest.swift in Sources */,
 				DC725FD9250B7EBC0091C807 /* FoundationTest.swift in Sources */,
 				DC2A02B625064D6300BABEDB /* SandboxTest.swift in Sources */,
@@ -1650,6 +1677,7 @@
 				DCDBA7AB24FDF4050073E293 /* SwiftyJSONTest.swift in Sources */,
 				DCDBA7AF24FE6A290073E293 /* CustomStringConvertibleProtocolTest.swift in Sources */,
 				DCDBA7B4250082410073E293 /* EnumTest.swift in Sources */,
+				DC3A281E256D470D00784A50 /* LoginUser.swift in Sources */,
 				DC46106125541E650018BBF5 /* Mirror&KVC&KVOTest.swift in Sources */,
 				DC6F4D4724F7CAAF00B69A31 /* ThreadTest.swift in Sources */,
 				DCAA74B32526D45900240398 /* OperationTest.swift in Sources */,
@@ -1882,6 +1910,7 @@
 					"$(PROJECT_DIR)/LTXiOSUtilsDemo/Lib/lame",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xfrontend -warn-long-function-bodies=100 -Xfrontend -warn-long-expression-type-checking=100";
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1916,6 +1945,7 @@
 					"$(PROJECT_DIR)/LTXiOSUtilsDemo/Lib/lame",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xfrontend -warn-long-function-bodies=100 -Xfrontend -warn-long-expression-type-checking=100";
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

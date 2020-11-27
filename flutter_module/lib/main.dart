@@ -7,6 +7,7 @@ import 'package:flutter_module/pages/home/index_page.dart';
 import 'package:flutter_module/pages/home/function_page.dart';
 import 'package:flutter_module/pages/home/mine_page.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_module/utils/FlutterHandler.dart';
 
 // main方法是flutter的入口
 void main() {
@@ -14,6 +15,7 @@ void main() {
   runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
     runApp(MyApp());
+    FlutterHanlder.initFlutterHander();
   }, (Object error, StackTrace stack) async {
     print(error);
     print(stack);

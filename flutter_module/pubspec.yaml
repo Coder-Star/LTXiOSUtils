@@ -27,6 +27,10 @@ dependencies:
   redux: 4.0.0+3 # 全局状态管理
 
   fluro: 1.6.3 # 路由
+  logger: 0.9.4 #日志
+
+
+
 #  flutter_boost: # 闲鱼出品，用于原生与flutter之间
 #    git:
 #      url: 'https://github.com/alibaba/flutter_boost.git'

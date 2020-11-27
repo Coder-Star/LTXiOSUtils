@@ -53,6 +53,14 @@ class CodecModel: Codable {
         self.name = name
         self.age = age
     }
+
+    // 当json对应key与实体属性名不同时，需要实现CodingKey协议，并且需要罗列出所有属性case
+    private enum CodingKeys: String, CodingKey {
+        /// name为实体属性，loginName为json对应key值
+        case name = "loginName"
+        /// 当json对应key与实体属性名一致时，直接case就可以
+        case age
+    }
 }
 
 extension CodecModel: CustomStringConvertible {
@@ -105,6 +113,17 @@ class CodecTest: XCTestCase {
 
 
         let decodeModel = try? JSONDecoder().decode(CodecModel.self, from: encodeModelData!)
+        Log.d(decodeModel)
+    }
+
+    func testJSONToModel() {
+        let json = """
+           {
+            "loginName": "CodecModel",
+            "age": 10
+           }
+           """
+        let decodeModel = try? JSONDecoder().decode(CodecModel.self, from: json.data(using: .utf8)!)
         Log.d(decodeModel)
     }
 

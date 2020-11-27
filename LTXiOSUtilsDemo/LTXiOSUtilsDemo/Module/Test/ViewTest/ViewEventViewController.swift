@@ -10,6 +10,9 @@ import Foundation
 import LTXiOSUtils
 
 class ViewEventViewController: BaseUIViewController {
+
+    let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "ViewEvent"
@@ -62,7 +65,15 @@ extension ViewEventViewController {
 //        greenButton.addTapGesture { _ in
 //            Log.d("greenButton被点击")
 //        }
-        greenButton.addTarget(self, action: #selector(click), for: .touchUpInside)
+//        greenButton.addTarget(self, action: #selector(click), for: .touchUpInside)
+
+        greenButton
+            .rx
+            .tap
+            .bind {
+                Log.d("greenButton被点击")
+            }
+            .disposed(by: disposeBag)
 
         // 点击事件测试
         parentView.addTapGesture { _ in

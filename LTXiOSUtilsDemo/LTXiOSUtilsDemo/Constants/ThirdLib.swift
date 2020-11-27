@@ -15,3 +15,6 @@
 
 @_exported import Flutter
 @_exported import FlutterPluginRegistrant
+
+@_exported import RxSwift
+@_exported import RxCocoa

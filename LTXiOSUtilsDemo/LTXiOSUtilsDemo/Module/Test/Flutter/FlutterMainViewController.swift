@@ -41,12 +41,24 @@ class FlutterMainViewController: BaseGroupTableMenuViewController {
             }
             let channel = FlutterMethodChannel(name: FlutterConstants.getChannelName(type: .method, channelName: "testMethodChannel"), binaryMessenger: binaryMessenger)
             channel.invokeMethod("callFlutter", arguments: ["key": "来自Native的数据"]) { result in
-                Log.d(result)
+                HUD.showText(String(describing: result))
             }
         case "eventChannel":
-            break
+            guard let binaryMessenger = viewController as? FlutterBinaryMessenger  else {
+                return
+            }
+            let channel = FlutterEventChannel(name: FlutterConstants.getChannelName(type: .event, channelName: "testEventChannel"), binaryMessenger: binaryMessenger)
+            channel.setStreamHandler(self)
         case "messageChannel":
-            break
+            guard let binaryMessenger = viewController as? FlutterBinaryMessenger  else {
+                return
+            }
+            // 需要指定编码器
+            let channel = FlutterBasicMessageChannel(name: FlutterConstants.getChannelName(type: .basicMessage, channelName: "testMessageChannel"), binaryMessenger: binaryMessenger, codec: FlutterStringCodec())
+            channel.sendMessage("来自Native的Message") { result in
+                HUD.showText(String(describing: result))
+            }
+
         default:
             HUD.showText("暂无此模块")
         }
@@ -75,8 +87,8 @@ extension FlutterMainViewController {
         registerMethodChannel(viewController: viewController)
         registerEventChannel(viewController: viewController)
         registerBasicMessageChannel(viewController: viewController)
-        // 注册插件
-        // GeneratedPluginRegistrant.register(with: self)
+        // 注册插件，使准备好的插件被加载
+         GeneratedPluginRegistrant.register(with: self)
     }
 
     // MethodChannel
@@ -96,15 +108,6 @@ extension FlutterMainViewController {
         }
     }
 
-    // EventChannel
-    func registerEventChannel(viewController: FlutterViewController) {
-        let channelName = "com.star.LTXiOSUtils/event"
-        guard let binaryMessenger = viewController as? FlutterBinaryMessenger  else {
-            return
-        }
-        let channel = FlutterEventChannel(name: channelName, binaryMessenger: binaryMessenger)
-    }
-
     // BasicMessageChannel
     // 相对与其他Channel类型的创建，MessageChannel的创建除了channel名以外，还需要指定编码方式
     /**
@@ -114,18 +117,37 @@ extension FlutterMainViewController {
      StringCodec 发送String类型消息时
      */
     func registerBasicMessageChannel(viewController: FlutterViewController) {
-        let channelName = "com.star.LTXiOSUtils/basicMessage"
         guard let binaryMessenger = viewController as? FlutterBinaryMessenger  else {
             return
         }
-        let channel = FlutterBasicMessageChannel(name: channelName, binaryMessenger: binaryMessenger, codec: FlutterStringCodec())
-        channel.setMessageHandler { call, result in
-            Log.d(call)
-            result("结果")
+        let channel = FlutterBasicMessageChannel(name: FlutterConstants.getChannelName(type: .basicMessage, channelName: "testMessageChannel"), binaryMessenger: binaryMessenger, codec: FlutterStringCodec())
+        channel.setMessageHandler { message, result in
+            Log.d(message)
+            result("来自Native的messageHandler")
         }
 
     }
 
+}
+
+extension FlutterMainViewController: FlutterStreamHandler {
+    // EventChannel
+    func registerEventChannel(viewController: FlutterViewController) {
+        guard let binaryMessenger = viewController as? FlutterBinaryMessenger  else {
+            return
+        }
+        let channel = FlutterEventChannel(name: FlutterConstants.getChannelName(type: .event, channelName: "testEventChannel"), binaryMessenger: binaryMessenger)
+        channel.setStreamHandler(self)
+    }
+
+    func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
+        events(0)
+        return nil
+    }
+
+    func onCancel(withArguments arguments: Any?) -> FlutterError? {
+        return nil
+    }
 }
 
 extension FlutterMainViewController: FlutterPluginRegistry {

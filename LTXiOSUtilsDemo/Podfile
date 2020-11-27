@@ -58,7 +58,7 @@ target 'LTXiOSUtilsDemo' do
   #  pod 'SwiftyEventBus', '1.0.0' # 事件总线
   #  pod 'SwifterSwift', '5.1.0' # Swift相关扩展
 
-  pod 'RealmSwift', '5.0.0' # Realm数据库
+#  pod 'RealmSwift', '5.0.0' # Realm数据库
 
   # 解耦
   pod 'CTMediator', '28' # Runtime路由方案

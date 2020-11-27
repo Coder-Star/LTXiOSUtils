@@ -59,6 +59,7 @@ class DemoListViewController: BaseGroupTableMenuViewController {
             BaseGroupTableMenuModel(code: "Component", title: "控件集锦"),
             BaseGroupTableMenuModel(code: "Menu", title: "菜单"),
             BaseGroupTableMenuModel(code: "TreeView", title: "无限级树形View"),
+            BaseGroupTableMenuModel(code: "FoldView", title: "二级折叠View"),
             BaseGroupTableMenuModel(code: "AlertView", title: "弹出框"),
             BaseGroupTableMenuModel(code: "MaskPopup", title: "蒙板弹出"),
             BaseGroupTableMenuModel(code: "PickImage", title: "图片选择"),
@@ -103,6 +104,8 @@ class DemoListViewController: BaseGroupTableMenuViewController {
             navigationController?.pushViewController(ExtensionExampleMenuViewController(), animated: true)
         case "Menu":
             navigationController?.pushViewController(GridMenuViewExampleViewController(), animated: true)
+        case "FoldView":
+            navigationController?.pushViewController(FoldViewDemoViewController(), animated: true)
         case "TreeView":
             navigationController?.pushViewController(TreeViewDemoViewController(), animated: true)
         case "AlertView":
