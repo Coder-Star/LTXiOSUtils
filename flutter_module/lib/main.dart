@@ -1,13 +1,14 @@
 import 'dart:async';
 
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-
-import 'package:flutter_module/themes/theme_color.dart';
-import 'package:flutter_module/pages/home/index_page.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_module/pages/home/function_page.dart';
 import 'package:flutter_module/pages/home/mine_page.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_module/utils/FlutterHandler.dart';
+import 'package:flutter_module/pages/home/widgets_list_page.dart';
+import 'package:flutter_module/routers/routers.dart';
+import 'package:flutter_module/themes/theme_color.dart';
+import 'package:flutter_module/utils/futter_handler.dart';
 
 // main方法是flutter的入口
 void main() {
@@ -27,23 +28,44 @@ void main() {
   };
 }
 
-class MyApp extends StatelessWidget {
+///
+class MyApp extends StatefulWidget {
+  ///
+  MyApp() {
+    final router = FluroRouter.appRouter;
+    Routers.router = router;
+    // 配置fluro路由
+    Routers.configureRoutes(router);
+  }
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // 不显示debug标志
       showPerformanceOverlay: false,
       home: BottomNavigationWidget(),
-      theme: ThemeData(primaryColor: ThemeColor.mainColor //主题色
-          ),
+      theme: ThemeData(
+        primaryColor: ThemeColor.mainColor, //主题色
+      ),
       builder: (BuildContext context, Widget child) {
         /// 确保 loading 组件能覆盖在其他组件之上.
         return FlutterEasyLoading(child: child);
       },
+      onGenerateRoute: Routers.router.generator,
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
   }
 }
 
+///
 class BottomNavigationWidget extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -51,10 +73,11 @@ class BottomNavigationWidget extends StatefulWidget {
   }
 }
 
+///
 class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   final _normalColor = Colors.black12;
   final _selectedColor = ThemeColor.mainColor;
-  final pages = [IndexPage(), FunctionPage(), MinePage()];
+  final _pages = [WidgetsListPage(), FunctionPage(), MinePage()];
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -63,14 +86,14 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
         items: [
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.home,
+                Icons.widgets,
                 color: _normalColor,
               ),
               activeIcon: Icon(
-                Icons.home,
+                Icons.widgets,
                 color: _selectedColor,
               ),
-              label: "首页"),
+              label: 'widgets'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.apps_sharp,
@@ -80,7 +103,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 Icons.apps_sharp,
                 color: _selectedColor,
               ),
-              label: "功能"),
+              label: '功能'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.account_box,
@@ -90,7 +113,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 Icons.account_box,
                 color: _selectedColor,
               ),
-              label: "我"),
+              label: '我'),
         ],
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
@@ -101,7 +124,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
           });
         },
       ),
-      body: pages[_currentIndex],
+      body: _pages[_currentIndex],
     );
   }
 }

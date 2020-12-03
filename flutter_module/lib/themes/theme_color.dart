@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/utils/color_utils.dart';
 
+/// 主题颜色
 class ThemeColor {
+  /// 主色
   static final mainColor = Color(0xFF2e76d2);
 }

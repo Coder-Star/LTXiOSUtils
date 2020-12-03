@@ -76,7 +76,6 @@ class FlutterMainViewController: BaseGroupTableMenuViewController {
          真机上不会出现
          */
         let viewController = FlutterContentViewController(engine: delegate.flutterEngine, nibName: nil, bundle: nil)
-//        viewController.modalPresentationStyle = .fullScreen
         registerPlugins(viewController: viewController)
         navigationController?.present(viewController, animated: true, completion: nil)
     }
@@ -87,8 +86,6 @@ extension FlutterMainViewController {
         registerMethodChannel(viewController: viewController)
         registerEventChannel(viewController: viewController)
         registerBasicMessageChannel(viewController: viewController)
-        // 注册插件，使准备好的插件被加载
-         GeneratedPluginRegistrant.register(with: self)
     }
 
     // MethodChannel

@@ -527,7 +527,6 @@
 				DCD12EA725370944000A58C0 /* Carousel */,
 				DCD97B67251CF55F002E9C0A /* DB */,
 				DCEE98352510FE1400A19CF9 /* Layout */,
-				DCEE982B250F834400A19CF9 /* Flutter */,
 				DC2A02B7250650E200BABEDB /* WebviewTest */,
 				DC1BE0B024B0118200745671 /* ViewTest */,
 			);
@@ -596,17 +595,26 @@
 		DC3A281B256D46D500784A50 /* DesignPattern */ = {
 			isa = PBXGroup;
 			children = (
-				DC3A281C256D46E800784A50 /* Builder */,
+				DC3A762D2571253E00E577A8 /* Prototype(原型) */,
+				DC3A281C256D46E800784A50 /* Builder(建造者) */,
 			);
 			path = DesignPattern;
 			sourceTree = "<group>";
 		};
-		DC3A281C256D46E800784A50 /* Builder */ = {
+		DC3A281C256D46E800784A50 /* Builder(建造者) */ = {
 			isa = PBXGroup;
 			children = (
 				DC3A281D256D470D00784A50 /* LoginUser.swift */,
 			);
-			path = Builder;
+			path = "Builder(建造者)";
+			sourceTree = "<group>";
+		};
+		DC3A762D2571253E00E577A8 /* Prototype(原型) */ = {
+			isa = PBXGroup;
+			children = (
+				DCC67CF92570C98B005515CF /* CopyTest.swift */,
+			);
+			path = "Prototype(原型)";
 			sourceTree = "<group>";
 		};
 		DC3E62032425E86F00105366 /* Stash */ = {
@@ -967,9 +975,26 @@
 			path = ProtocolTest;
 			sourceTree = "<group>";
 		};
+		DCC5D27D2574799800D9BEB4 /* Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				DCC5D27E25747C0000D9BEB4 /* MVVM+RAC */,
+			);
+			path = Pattern;
+			sourceTree = "<group>";
+		};
+		DCC5D27E25747C0000D9BEB4 /* MVVM+RAC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "MVVM+RAC";
+			sourceTree = "<group>";
+		};
 		DCC76E4823A782C40029590C /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				DCEE982B250F834400A19CF9 /* Flutter */,
+				DCC5D27D2574799800D9BEB4 /* Pattern */,
 				DC03AE5023F43381007739DD /* Model */,
 				DC83E7C523F645A40030A9B4 /* ThirdLibDemo */,
 				DCF88150242F2D000084C940 /* View */,
@@ -1050,7 +1075,6 @@
 				DC725FD8250B7EBC0091C807 /* FoundationTest.swift */,
 				DC4F88C52511BCCB00B68C72 /* ErrorTest.swift */,
 				DC46106025541E650018BBF5 /* Mirror&KVC&KVOTest.swift */,
-				DCC67CF92570C98B005515CF /* CopyTest.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";

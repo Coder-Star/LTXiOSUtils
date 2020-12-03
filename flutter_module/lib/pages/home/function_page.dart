@@ -1,80 +1,105 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_module/utils/NativeMessager.dart';
-import 'package:logger/logger.dart';
+import 'package:flutter_module/routers/routers.dart';
+import 'package:flutter_module/utils/log_utils.dart';
 
-
-var logger = Logger(printer: PrettyPrinter());
-
+///
 class FunctionPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    var items = new List<Map>();
-    const item1 = {"code": "methodChannel", "title": "methodChannel调用Native"};
-    const item2 = {"code": "eventChannel", "title": "eventChannel调用Native"};
-    const item3 = {"code": "messageChannel", "title": "messageChannel调用Native"};
-    items.add(item1);
-    items.add(item2);
-    items.add(item3);
-    return new FunctionWidgetState(items);
+    return _FunctionWidgetState();
   }
 }
 
-class FunctionWidgetState extends State<FunctionPage> {
-  final List<Map> items;
-
-  // 构造函数
-  FunctionWidgetState(this.items);
+class _FunctionWidgetState extends State<FunctionPage> {
+  List<ListTile> items = [
+    ListTile(
+      key: Key('FlutterChannel'),
+      title: Text('FlutterChannel'),
+      trailing: Icon(Icons.keyboard_arrow_right),
+    ),
+    ListTile(
+      key: Key('ComponentList'),
+      title: Text('ComponentList'),
+      trailing: Icon(Icons.keyboard_arrow_right),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text('功能'),
-        ),
-        body: new ListView.separated(
-            scrollDirection: Axis.vertical,
-            itemCount: items.length,
-            itemBuilder: (context, index) {
-              return getItem(index);
-            },
-            separatorBuilder: (BuildContext context, int index) =>
-                Divider(height: 1.0, color: Colors.grey)));
-  }
-
-  Widget getItem(int index) {
-    return GestureDetector(
-        child: ListTile(
-          title: new Text('${items[index]["title"]}'),
-          trailing: Icon(Icons.keyboard_arrow_right),
-        ),
-        onTap: () {
-          setState(() {
-            clickItem(index);
-          });
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('功能'),
+      ),
+      body: ListView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+              child: Card(
+                child: items[index],
+              ),
+              onTap: () {
+                setState(() {
+                  clickItem(items[index].key.toString());
+                });
+              },
+              onLongPress: () {
+                EasyLoading.showToast('长按');
+              });
         },
-        onLongPress: () {
-          EasyLoading.showToast("长按");
-        });
+      ),
+    );
   }
 
-  Future<void> clickItem(int index) async {
-    String code = items[index]["code"];
+  void clickItem(String code) {
+    code = code
+        .replaceAll("'", '')
+        .replaceAll('[', '')
+        .replaceAll(']', '')
+        .replaceAll('<', '')
+        .replaceAll('>', '');
     switch (code) {
-      case "methodChannel":
-        logger.e("123");
-        final message = await NativeMessager.callNativeMethod(
-            "testMethodChannel", "callNativeMethond", {"key": "flutter"});
-        EasyLoading.showToast(message);
+      // FlutterChannel
+      case 'FlutterChannel':
+        // Navigator.push(
+        //     context,
+        //     MaterialPageRoute(
+        //         builder: (_) => FlutterChannel(),
+        //         settings: RouteSettings(name: "路由名称", arguments: "这是参数")));
+
+        // final result = Navigator.pushNamed(context, "/flutter_channel",
+        //     arguments: "从功能页传过来的参数");
+        // result.then((value) {
+        //   // 页面返回回传的参数
+        //   Log.logger.d(value);
+        // });
+
+        // Routers.router
+        //     .navigateTo(context, Routers.flutterChannel + "/标题：flutterChannel",
+        //         transition: TransitionType.native)
+        //     .then(
+        //       (value) => {
+        //         // 页面返回回传的参数
+        //         Log.logger.d(value)
+        //       },
+        //     );
+        Routers.router
+            .navigateTo(
+              context,
+              Routers.flutterChannel,
+              transition: TransitionType.native,
+              routeSettings: RouteSettings(
+                arguments: {'title': '标题'},
+              ),
+            )
+            .then(
+              (value) => Log.logger.e(value),
+            );
         break;
-      case "eventChannel":
-        NativeMessager.callNativeMethod(
-            "testMethodChannel", "callNativeMethond", {"key": "flutter"});
-        EasyLoading.showToast(code);
-        break;
-      case "messageChannel":
-        final message = await NativeMessager.callNativeMessage("testMessageChannel", "来自Flutter的消息");
-        EasyLoading.showToast(message);
+      // ComponentList
+      case 'ComponentList':
         break;
       default:
         break;

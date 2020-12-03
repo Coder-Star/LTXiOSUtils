@@ -1,0 +1,21 @@
+include: package:pedantic/analysis_options.1.9.0.yaml
+analyzer:
+  strong-mode:
+    implicit-casts: false
+linter:
+  rules:
+    - camel_case_types
+    - camel_case_extensions
+    - file_names
+    - non_constant_identifier_names
+    - constant_identifier_names
+    - directives_ordering
+    - lines_longer_than_80_chars
+
+    - package_api_docs # 包注释
+    - public_member_api_docs # 类、方法等注释
+
+
+
+# 命令
+# dartanalyzer lib

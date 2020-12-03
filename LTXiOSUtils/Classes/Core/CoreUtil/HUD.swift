@@ -50,7 +50,7 @@ open class HUD: MBProgressHUD {
     ///   - delayTime: 延迟时间，默认为1.5s
     ///   - style: 显示样式
     @discardableResult
-    public class func showText(_ title: String, delayTime: Double = 1.5, position: HUDPosition = .center, style: HUDStyle = .black) -> HUD? {
+    public class func showText(_ title: String, delayTime: Double = 1.5, position: HUDPosition = .center, style: HUDStyle = .black, completion: (() -> Void)? = nil) -> HUD? {
         let hud = getBaseHUD(style: style)
         hud?.detailsLabel.text = title
         hud?.detailsLabel.font = UIFont.systemFont(ofSize: 14)
@@ -67,6 +67,7 @@ open class HUD: MBProgressHUD {
         hud?.margin = 10
         hud?.setStyle(style: style)
         hud?.hide(animated: true, afterDelay: delayTime)
+        hud?.completionBlock = completion
         return hud
     }
 
