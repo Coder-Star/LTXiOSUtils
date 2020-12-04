@@ -1,14 +1,16 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
-/// 颜色工具类
-class ColorUtils {
+/// 颜色扩展
+extension ColorExtension on Color {
   /// Color转为MaterialColor
-  static MaterialColor toMaterialColor(Color color) {
+  MaterialColor toMaterialColor() {
     var strengths = <double>[.05];
     var swatch = <int, Color>{};
-    final r = color.red;
-    final g = color.green;
-    final b = color.blue;
+    final r = red;
+    final g = green;
+    final b = blue;
 
     for (var i = 1; i < 10; i++) {
       strengths.add(0.1 * i);
@@ -22,6 +24,17 @@ class ColorUtils {
         1,
       );
     });
-    return MaterialColor(color.value, swatch);
+    return MaterialColor(value, swatch);
+  }
+
+  /// 转为hex值字符串
+  String toHex() {
+    // ignore: lines_longer_than_80_chars
+    return '#${(value & 0xFFFFFF).toRadixString(16).padLeft(6, '0').toUpperCase()}';
+  }
+
+  /// hex值转Color
+  static Color hexToColor(String hex) {
+    return Color(int.parse(hex.substring(1, 7), radix: 16) + 0xFF000000);
   }
 }

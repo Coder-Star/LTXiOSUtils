@@ -234,10 +234,12 @@ extension TxExtensionWrapper where Base == String {
 extension TxExtensionWrapper where Base == String {
 
     /// 获取指定宽度、字体的字符串高度
+    ///
+    /// 不是绝对准确
     /// - Parameters:
     ///   - font: 字体
     ///   - width: 宽度
-    public func heightWithStr(font: UIFont, width: CGFloat) -> CGFloat {
+    public func height(font: UIFont, width: CGFloat) -> CGFloat {
         let attribute = [NSAttributedString.Key.font: font]
         let options = NSStringDrawingOptions.usesLineFragmentOrigin
         let size = self.base.boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: attribute, context: nil).size
@@ -245,10 +247,12 @@ extension TxExtensionWrapper where Base == String {
     }
 
     /// 获取指定高度、字体的字符串宽度
+    ///
+    /// 不是绝对准确
     /// - Parameters:
     ///   - font: 字体
     ///   - height: 高度
-    public func widthWithStr(font: UIFont, height: CGFloat) -> CGFloat {
+    public func width(font: UIFont, height: CGFloat) -> CGFloat {
         let attribute = [NSAttributedString.Key.font: font]
         let options = NSStringDrawingOptions.usesLineFragmentOrigin
         let size = self.base.boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: height), options: options, attributes: attribute, context: nil).size

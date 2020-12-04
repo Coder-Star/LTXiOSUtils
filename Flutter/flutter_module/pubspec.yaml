@@ -5,13 +5,15 @@ description: A new flutter module project.
 version: 1.0.0+1 # 版本，其中+号前面1.0.0类似versionname，+号后面1类似versioncode
 
 environment:
-  sdk: ">=2.2.0 <3.0.0"
+  # extension语法只可以在2.6之上用
+  sdk: ">=2.6.0 <3.0.0"
 
 # 常规依赖
 dependencies:
   flutter:
     sdk: flutter
 
+  # 从https://pub.dev依赖
   cupertino_icons: 1.0.1+1 # cupertino风格的图标，1.0版本之后加入了很多图标
   dio: 3.0.10 # 网络请求
   flutter_easyloading: 2.1.3 # toast，loading
@@ -23,11 +25,22 @@ dependencies:
   fluro: 1.7.8 # 路由
   logger: 0.9.4 #日志
 
-#  flutter_boost: # 闲鱼出品，用于原生与flutter之间
-#    git:
-#      url: 'https://github.com/alibaba/flutter_boost.git'
-#      ref: '1.12.13+1'
+  # 从git依赖
+  flutter_boost: # 闲鱼出品，用于原生与flutter之间
+    git:
+      url: 'https://github.com/alibaba/flutter_boost.git'
+      ref: '1.17.1'
 
+
+  # 从本地依赖
+  # 包名
+  flutter_star:
+    # 本地包路径
+    path: ../flutter_star
+
+#  dartx: 0.5.0 # 扩展
+#  time: ^1.3.0 #时间扩展包
+#  i18n_extension: ^1.4.5 #国际化扩展包
 #  shared_preferences: 0.5.10 # 存储，iOS的UserDefaults和Android的SharedPreferences
 
 # 开发依赖
@@ -44,7 +57,7 @@ flutter:
     - assets/images/widgets/
   # 字体依赖
   fonts:
-    - family: appIconFont
+    - family: iconfont # 这种引入图标字体的方式只可以引入单色图标，多色图标可以借用flutter-iconfont-cli
       fonts:
         - asset: assets/fonts/iconfont.ttf
 

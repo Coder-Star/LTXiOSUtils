@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_module/extension/color_extension.dart';
+import 'package:flutter_module/resources/icon_font.dart';
 
 ///
 class WidgetsListPage extends StatefulWidget {
@@ -25,6 +27,11 @@ class _WidgetsListPageState extends State<WidgetsListPage> {
       key: Key('ComponentList'),
       title: Text('ComponentList'),
       trailing: Icon(Icons.keyboard_arrow_right),
+      minLeadingWidth: 0,
+      leading: Icon(
+        IconFonts.android,
+        color: ColorExtension.hexToColor('#98bd66'),
+      ),
     ),
   ];
   @override

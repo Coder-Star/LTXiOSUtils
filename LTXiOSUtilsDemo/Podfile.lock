@@ -8,12 +8,15 @@ PODS:
   - dsBridge (3.0.6)
   - FLAnimatedImage (1.0.12)
   - Flutter (1.0.0)
+  - flutter_boost (0.0.2):
+    - Flutter
   - flutter_module (0.0.1):
     - Flutter
   - flutter_webview_plugin (0.0.1):
     - Flutter
   - FlutterPluginRegistrant (0.0.1):
     - Flutter
+    - flutter_boost
     - flutter_webview_plugin
     - path_provider
     - shared_preferences
@@ -103,10 +106,11 @@ DEPENDENCIES:
   - Bugly (= 2.5.2)
   - CTMediator (= 28)
   - dsBridge (= 3.0.6)
-  - Flutter (from `../flutter_module/.ios/Flutter/engine`)
-  - flutter_module (from `../flutter_module/.ios/Flutter`)
-  - flutter_webview_plugin (from `../flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios`)
-  - FlutterPluginRegistrant (from `../flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
+  - Flutter (from `../Flutter/flutter_module/.ios/Flutter/engine`)
+  - flutter_boost (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios`)
+  - flutter_module (from `../Flutter/flutter_module/.ios/Flutter`)
+  - flutter_webview_plugin (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios`)
+  - FlutterPluginRegistrant (from `../Flutter/flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
   - FSPagerView (= 0.8.3)
   - GDPerformanceView-Swift (= 2.0.3)
   - IQKeyboardManagerSwift (= 6.5.4)
@@ -120,10 +124,10 @@ DEPENDENCIES:
   - MGJRouter (= 0.10.0)
   - mp3lame-for-ios (= 0.1.1)
   - ObjectMapper (= 3.5.1)
-  - path_provider (from `../flutter_module/.ios/Flutter/.symlinks/path_provider/ios`)
+  - path_provider (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/path_provider/ios`)
   - R.swift (= 5.1.0)
   - RxCocoa (= 5.0.1)
-  - shared_preferences (from `../flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios`)
+  - shared_preferences (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios`)
   - SKPhotoBrowser (= 6.1.0)
   - SVGKit (= 2.1.1)
   - SwiftDate (= 6.1.0)
@@ -189,19 +193,21 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: "../flutter_module/.ios/Flutter/engine"
+    :path: "../Flutter/flutter_module/.ios/Flutter/engine"
+  flutter_boost:
+    :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios"
   flutter_module:
-    :path: "../flutter_module/.ios/Flutter"
+    :path: "../Flutter/flutter_module/.ios/Flutter"
   flutter_webview_plugin:
-    :path: "../flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios"
+    :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios"
   FlutterPluginRegistrant:
-    :path: "../flutter_module/.ios/Flutter/FlutterPluginRegistrant"
+    :path: "../Flutter/flutter_module/.ios/Flutter/FlutterPluginRegistrant"
   LTXiOSUtils:
     :path: "../"
   path_provider:
-    :path: "../flutter_module/.ios/Flutter/.symlinks/path_provider/ios"
+    :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/path_provider/ios"
   shared_preferences:
-    :path: "../flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios"
+    :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios"
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
@@ -211,9 +217,10 @@ SPEC CHECKSUMS:
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_boost: a7cfa776b75329d5e7d101d0cd33e75042bcde69
   flutter_module: d1e1ff44505640bd9aa37f23f63380c646272be4
   flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
-  FlutterPluginRegistrant: c76b389f9a75b221a28d62ccc8cb74793a42926c
+  FlutterPluginRegistrant: 4665bf49db19e9f2a69b63647e2d8d424001a648
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GDPerformanceView-Swift: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
@@ -256,6 +263,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: c1b1624168eda9e0d89eae6460d957517524e07c
+PODFILE CHECKSUM: 11e33edb6c00c27f0869aeeacd062f137f63fd10
 
 COCOAPODS: 1.10.0

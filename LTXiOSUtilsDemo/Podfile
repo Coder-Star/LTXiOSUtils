@@ -2,7 +2,7 @@
 # platform :ios, '9.0'
 
 # flutter
-flutter_application_path = '../flutter_module'
+flutter_application_path = '../Flutter/flutter_module'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 target 'LTXiOSUtilsDemo' do

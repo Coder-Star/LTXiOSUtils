@@ -10,7 +10,7 @@ import '../main.dart';
 /// 路由找不到时对应回调
 var notFoundHandler =
     Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-  Log.logger.d('未找到路由');
+  Log.d('未找到路由');
   return PageNotFound();
 });
 
@@ -23,7 +23,7 @@ var rootHandler =
 ///
 var flutterChannelHandler =
     Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-  Log.logger.d(context.settings);
+  Log.d(context.settings);
   return FlutterChannel();
 });
 

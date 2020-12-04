@@ -29,7 +29,7 @@ class FunctionWidgetState extends State<FlutterChannel> {
   Widget build(BuildContext context) {
     // 获取页面传递过来的参数
     final args = ModalRoute.of(context).settings;
-    Log.logger.e(args);
+    Log.e(args);
     return Scaffold(
         appBar: AppBar(
           title: Text((args.arguments as Map<String, String>)['title']),
@@ -73,7 +73,7 @@ class FunctionWidgetState extends State<FlutterChannel> {
     var code = _items[index]['code'] as String;
     switch (code) {
       case 'methodChannel':
-        Log.logger.e('123');
+        Log.e('123');
         final message = await NativeMessager.callNativeMethod(
           'testMethodChannel',
           'callNativeMethond',

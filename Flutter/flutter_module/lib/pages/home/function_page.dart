@@ -1,8 +1,8 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_module/constant/common_lib.dart';
 import 'package:flutter_module/routers/routers.dart';
-import 'package:flutter_module/utils/log_utils.dart';
 
 ///
 class FunctionPage extends StatefulWidget {
@@ -95,7 +95,7 @@ class _FunctionWidgetState extends State<FunctionPage> {
               ),
             )
             .then(
-              (value) => Log.logger.e(value),
+              (value) => Log.e(value),
             );
         break;
       // ComponentList
