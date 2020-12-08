@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_module/constant/common_lib.dart';
 import 'package:flutter_module/themes/theme_color.dart';
 
 ///
@@ -14,7 +15,7 @@ class MineWidgetState extends State<MinePage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(middle: Text('我')),
+      navigationBar: CupertinoNavigationBar(middle: Text(S.of(context).me)),
       child: Center(
         child: Icon(
           CupertinoIcons.tortoise_fill,

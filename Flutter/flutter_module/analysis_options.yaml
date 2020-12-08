@@ -1,8 +1,14 @@
 include: package:pedantic/analysis_options.1.9.0.yaml
 analyzer:
   strong-mode:
+    # 隐式转换
     implicit-casts: false
+  # flutter sdk的bug，这种忽略方式不起效果
+  exclude:
+    - lib/generated/**
+    - lib/api/**
   enable-experiment:
+      # 开启扩展方法
       - extension-methods
 linter:
   rules:
@@ -16,8 +22,3 @@ linter:
 
     - package_api_docs # 包注释
     - public_member_api_docs # 类、方法等注释
-
-
-
-# 命令
-# dartanalyzer lib

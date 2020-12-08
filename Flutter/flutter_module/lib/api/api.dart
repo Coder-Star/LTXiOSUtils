@@ -1,6 +1,5 @@
 /// API接口
 class API {
-  /// 基础URL
   static const String baseURL =
       'http://121.36.20.56:8080/LTXiOSUtils/LaunchAd/data.json';
 

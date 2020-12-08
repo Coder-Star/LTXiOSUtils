@@ -1,14 +1,18 @@
 import 'dart:async';
 
 import 'package:fluro/fluro.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_module/pages/home/function_page.dart';
 import 'package:flutter_module/pages/home/mine_page.dart';
 import 'package:flutter_module/pages/home/widgets_list_page.dart';
 import 'package:flutter_module/routers/routers.dart';
 import 'package:flutter_module/themes/theme_color.dart';
 import 'package:flutter_module/utils/futter_handler.dart';
+
+import 'generated/l10n.dart';
 
 // main方法是flutter的入口
 void main() {
@@ -55,6 +59,13 @@ class _MyAppState extends State<MyApp> {
         /// 确保 loading 组件能覆盖在其他组件之上.
         return FlutterEasyLoading(child: child);
       },
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       onGenerateRoute: Routers.router.generator,
     );
   }
@@ -113,7 +124,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 Icons.account_box,
                 color: _selectedColor,
               ),
-              label: '我'),
+              label: S.of(context).me),
         ],
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,

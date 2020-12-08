@@ -1,8 +1,7 @@
 name: flutter_star
 description: A new Flutter package project.
 version: 0.0.1
-author:
-homepage:
+homepage: https://coder-star.github.io/
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

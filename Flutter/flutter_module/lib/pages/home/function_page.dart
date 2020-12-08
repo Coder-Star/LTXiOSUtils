@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_module/constant/common_lib.dart';
 import 'package:flutter_module/routers/routers.dart';
+import 'package:flutter_star/main.dart';
 
 ///
 class FunctionPage extends StatefulWidget {
@@ -20,8 +21,8 @@ class _FunctionWidgetState extends State<FunctionPage> {
       trailing: Icon(Icons.keyboard_arrow_right),
     ),
     ListTile(
-      key: Key('ComponentList'),
-      title: Text('ComponentList'),
+      key: Key('otherLib'),
+      title: Text('访问其他Lib的页面'),
       trailing: Icon(Icons.keyboard_arrow_right),
     ),
   ];
@@ -98,8 +99,9 @@ class _FunctionWidgetState extends State<FunctionPage> {
               (value) => Log.e(value),
             );
         break;
-      // ComponentList
-      case 'ComponentList':
+      // otherLib
+      case 'otherLib':
+        Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
         break;
       default:
         break;

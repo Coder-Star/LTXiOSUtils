@@ -1,2 +1,4 @@
 /// 主题字体
-class ThemeFont {}
+class ThemeFont {
+  static const fangZhengMiaoWu = 'FangZhengMiaoWu';
+}

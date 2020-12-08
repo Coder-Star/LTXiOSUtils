@@ -12,7 +12,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  # 国际化
+  flutter_localizations:
+    sdk: flutter
   # 从https://pub.dev依赖
   cupertino_icons: 1.0.1+1 # cupertino风格的图标，1.0版本之后加入了很多图标
   dio: 3.0.10 # 网络请求
@@ -24,12 +26,13 @@ dependencies:
   redux: 4.0.0+3 # 全局状态管理
   fluro: 1.7.8 # 路由
   logger: 0.9.4 #日志
-
+  sqflite: 1.3.2+1 #SQLite
   # 从git依赖
   flutter_boost: # 闲鱼出品，用于原生与flutter之间
     git:
       url: 'https://github.com/alibaba/flutter_boost.git'
       ref: '1.17.1'
+#      path:
 
 
   # 从本地依赖
@@ -60,8 +63,14 @@ flutter:
     - family: iconfont # 这种引入图标字体的方式只可以引入单色图标，多色图标可以借用flutter-iconfont-cli
       fonts:
         - asset: assets/fonts/iconfont.ttf
-
+    - family: FangZhengMiaoWu # 字体名称，在使用字体的时候用到
+      fonts:
+        - asset: assets/fonts/FangZhengMiaoWu.ttf # 字体路径
+          weight: 700 # 字重，值为100整数倍，范围从100到900
+          style: normal # 字体风格， italic、normal两种选项，
   module:
     androidX: false
     androidPackage: com.example.flutter_module
     iosBundleIdentifier: com.example.flutterModule
+flutter_intl:
+  enabled: true

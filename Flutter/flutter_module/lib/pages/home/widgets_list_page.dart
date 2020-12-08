@@ -1,5 +1,8 @@
+import 'dart:core';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_module/extension/color_extension.dart';
+import 'package:flutter_module/constant/common_lib.dart';
+import 'package:flutter_module/pages/demo/common/dialog_demo.dart';
 import 'package:flutter_module/resources/icon_font.dart';
 
 ///
@@ -11,29 +14,19 @@ class WidgetsListPage extends StatefulWidget {
 }
 
 class _WidgetsListPageState extends State<WidgetsListPage> {
-  List<ListTile> items = [
-    ListTile(
-      key: Key('iOS'),
-      title: Text('iOS'),
-      trailing: Icon(Icons.keyboard_arrow_right),
-      minLeadingWidth: 0,
-      leading: Image.asset(
-        'assets/images/widgets/icon_ios.png',
-        width: 30,
-        height: 30,
-      ),
-    ),
-    ListTile(
-      key: Key('ComponentList'),
-      title: Text('ComponentList'),
-      trailing: Icon(Icons.keyboard_arrow_right),
-      minLeadingWidth: 0,
-      leading: Icon(
-        IconFonts.android,
-        color: ColorExtension.hexToColor('#98bd66'),
-      ),
-    ),
+  static final List _commonList = [
+    {'code': 'Dialog', 'title': 'Dialog'},
   ];
+
+  static final List _iOSList = [
+    {'code': 'iOS', 'title': 'iOS'},
+  ];
+  static final List _androidList = [
+    {'code': 'Android', 'title': 'Android'},
+  ];
+
+  final _allList = [..._commonList, ..._iOSList, ..._androidList];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,34 +35,61 @@ class _WidgetsListPageState extends State<WidgetsListPage> {
       ),
       body: ListView.builder(
         scrollDirection: Axis.vertical,
-        itemCount: items.length,
+        itemCount: _allList.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
-            child: Card(
-              child: items[index],
+          var code = (_allList[index] as Map)['code'] as String;
+          var title = (_allList[index] as Map)['title'] as String;
+          if (['Android', 'iOS'].contains(code)) {
+            Widget icon;
+            if (code == 'Android') {
+              icon = Icon(
+                IconFonts.android,
+                color: ColorExtension.hexToColor('#98bd66'),
+              );
+            } else if (code == 'iOS') {
+              icon = Image.asset(
+                'assets/images/widgets/icon_ios.png',
+                width: 30,
+                height: 30,
+              );
+            }
+            return ListTile(
+              key: Key(code),
+              title: Text(
+                title,
+                style: TextStyle(
+                    fontFamily: ThemeFont.fangZhengMiaoWu, fontSize: 30),
+              ),
+              minLeadingWidth: 0,
+              leading: icon,
+              onTap: () {
+                _clickItem(code);
+              },
+            );
+          }
+          return Card(
+            child: ListTile(
+              key: Key(code),
+              title: Text(
+                title,
+              ),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                _clickItem(code);
+              },
             ),
-            onTap: () {
-              setState(() {
-                clickItem(items[index].key.toString());
-              });
-            },
           );
         },
       ),
     );
   }
 
-  void clickItem(String code) {
-    code = code
-        .replaceAll("'", '')
-        .replaceAll('[', '')
-        .replaceAll(']', '')
-        .replaceAll('<', '')
-        .replaceAll('>', '');
+  void _clickItem(String code) {
+    Log.d(code);
     switch (code) {
-      case 'FlutterChannel':
-        break;
-      case 'ComponentList':
+      case 'Dialog':
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => DialogDemo()));
         break;
       default:
         break;
