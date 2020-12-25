@@ -94,12 +94,12 @@ class HomeViewController: BaseUIScrollViewController {
 
     override func setContentViewSubViews(contentView: UIView) {
         contentView.addSubview(pagerView)
-        pagerView.snp.makeConstraints { (make) in
+        pagerView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(150)
         }
         contentView.addSubview(pageControl)
-        pageControl.snp.makeConstraints { (make) in
+        pageControl.snp.makeConstraints { make in
             make.left.right.equalTo(pagerView)
             make.top.equalTo(pagerView.snp.bottom).offset(-20)
         }

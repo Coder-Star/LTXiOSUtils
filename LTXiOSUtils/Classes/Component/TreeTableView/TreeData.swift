@@ -139,7 +139,7 @@ extension TreeData {
 
     /// 对节点进行排序
     private func sortNode(nodes: [TreeNode]) -> [TreeNode] {
-        return nodes.sorted { (obj1, obj2) -> Bool in
+        return nodes.sorted { obj1, obj2 -> Bool in
             switch sordType {
             case .asc:
                 return obj1.sordCode < obj2.sordCode

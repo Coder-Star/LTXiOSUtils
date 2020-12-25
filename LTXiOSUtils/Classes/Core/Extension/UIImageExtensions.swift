@@ -33,7 +33,7 @@ extension TxExtensionWrapper where Base: UIImage {
     private func wxImageSize(type: ImageCompressType) -> CGSize {
         var width = self.base.size.width
         var height = self.base.size.height
-        var boundary: CGFloat = 1280
+        var boundary: CGFloat = 1_280
 
         guard width > boundary || height > boundary else {
             return CGSize(width: width, height: height)
@@ -51,7 +51,7 @@ extension TxExtensionWrapper where Base: UIImage {
             }
         } else {
             if min(width, height) >= boundary {
-                boundary = type == .session ? 800 : 1280
+                boundary = type == .session ? 800 : 1_280
                 let minValue = min(width, height) / boundary
                 if width < height {
                     width = boundary

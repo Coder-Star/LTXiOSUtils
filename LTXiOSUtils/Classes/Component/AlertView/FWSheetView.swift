@@ -83,7 +83,7 @@ extension FWSheetView {
             self.vProperty = property!
         }
 
-        let itemClickedBlock: FWPopupItemClickedBlock = { (popupView, index, title) in
+        let itemClickedBlock: FWPopupItemClickedBlock = { popupView, index, title in
             if itemBlock != nil {
                 itemBlock!(self, index, title)
             }
@@ -136,12 +136,12 @@ extension FWSheetView {
         self.addSubview(btnContrainerView)
         btnContrainerView.bounces = false
         btnContrainerView.backgroundColor = UIColor.clear
-        btnContrainerView.snp.makeConstraints { (make) in
+        btnContrainerView.snp.makeConstraints { make in
             make.top.equalTo(lastConstraintItem)
             make.left.right.equalTo(self)
         }
 
-        let block: FWPopupItemClickedBlock = { (popupView, index, title) in
+        let block: FWPopupItemClickedBlock = { popupView, index, title in
             if cancenlBlock != nil {
                 cancenlBlock!()
             }
@@ -166,7 +166,7 @@ extension FWSheetView {
             btn.addTarget(self, action: #selector(btnAction(_:)), for: .touchUpInside)
             btn.tag = tmpIndex
 
-            btn.snp.makeConstraints { (make) in
+            btn.snp.makeConstraints { make in
                 make.left.right.equalTo(btnContrainerView).inset(UIEdgeInsets(top: 0, left: -self.vProperty.splitWidth, bottom: 0, right: -self.vProperty.splitWidth))
                 make.height.equalTo(property.buttonHeight + property.splitWidth)
                 make.width.equalTo(btnContrainerView).offset(property.splitWidth * 2)
@@ -207,7 +207,7 @@ extension FWSheetView {
             tmpIndex += 1
         }
 
-        btnContrainerView.snp.makeConstraints { (make) in
+        btnContrainerView.snp.makeConstraints { make in
             var tmpHeight: CGFloat = property.buttonHeight * CGFloat(self.actionItemArray.count - 1)
             if self.vProperty.popupViewMaxHeightRate > 0 && self.superview != nil && self.superview!.frame.height > 0 {
                 tmpHeight = min(tmpHeight, self.superview!.frame.height * self.vProperty.popupViewMaxHeightRate)
@@ -216,11 +216,11 @@ extension FWSheetView {
             make.bottom.equalTo(lastBtn.snp.bottom).offset(-self.vProperty.splitWidth)
         }
 
-        cancelBtn.snp.makeConstraints { (make) in
+        cancelBtn.snp.makeConstraints { make in
             make.top.equalTo(btnContrainerView.snp.bottom).offset(property.cancelBtnMarginTop)
         }
 
-        self.snp.makeConstraints { (make) in
+        self.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             if #available(iOS 11.0, *) {
                 make.bottom.equalTo(cancelBtn.snp.bottom).inset(-FWPopupWindow.sharedInstance.safeAreaInsets.bottom)

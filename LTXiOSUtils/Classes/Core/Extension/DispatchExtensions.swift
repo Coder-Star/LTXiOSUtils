@@ -47,6 +47,6 @@ extension DispatchTime: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
     }
 
     public init(floatLiteral value: Double) {
-        self = DispatchTime.now() + .milliseconds(Int(value * 1000))
+        self = DispatchTime.now() + .milliseconds(Int(value * 1_000))
     }
 }

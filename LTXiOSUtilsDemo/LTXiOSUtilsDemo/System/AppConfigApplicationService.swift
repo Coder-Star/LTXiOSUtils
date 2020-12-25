@@ -12,6 +12,10 @@ import SwiftyJSON
 final class AppConfigApplicationService: NSObject, ApplicationService {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         initLogConfig()
+
+        let time = Date().timeIntervalSince1970 - kAppStartLaunchTimeInterval
+        Log.d("APP启动时间耗时，从mian函数开始到didFinishLaunchingWithOptions方法: \(time)秒")
+
         initUrlInfo()
         initRegisterUrl()
         catchCrash()

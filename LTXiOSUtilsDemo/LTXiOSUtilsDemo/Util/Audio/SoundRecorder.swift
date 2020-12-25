@@ -103,8 +103,8 @@ public final class SoundRecorder: NSObject {
             AVFormatIDKey: NSNumber(value: kAudioFormatLinearPCM), //音频格式，因为设置到可能需要mp3转码，所以将格式设置为pcm，其余格式转码工具不支持
             AVNumberOfChannelsKey: 2, //通道数，1为单声道，2为立体声
             AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue, //音频质量
-            AVEncoderBitRateKey: 128000, //编码比特率
-            AVSampleRateKey: 44100 //采样率，越高文件越大质量越好，标准的有8000、16000、22050、44100
+            AVEncoderBitRateKey: 128_000, //编码比特率
+            AVSampleRateKey: 44_100 //采样率，越高文件越大质量越好，标准的有8000、16000、22050、44100
         ]
 
         do {
@@ -252,7 +252,7 @@ extension SoundRecorder {
     /// - Parameter time: 时间，精确秒
     public func formtTime(time: TimeInterval) -> String {
         let second = Int(time)
-        return String(format: "%02d:%02d:%02d", second / 3600, (second % 3600) / 60, second % 3600 % 60)
+        return String(format: "%02d:%02d:%02d", second / 3_600, (second % 3_600) / 60, second % 3_600 % 60)
     }
 }
 

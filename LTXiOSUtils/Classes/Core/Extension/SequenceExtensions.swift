@@ -26,6 +26,9 @@ extension TxExtensionWrapper where Base: Sequence {
         return result
     }
 
+    /// keyPath的形式对数组排序
+    /// - Parameter keyPath: keyPath
+    /// - Returns: 排序后的数组
     public func sorted<T: Comparable>(by keyPath: KeyPath<Base.Iterator.Element, T>) -> [Base.Iterator.Element] {
         return base.sorted {
             return $0[keyPath: keyPath] < $1[keyPath: keyPath]

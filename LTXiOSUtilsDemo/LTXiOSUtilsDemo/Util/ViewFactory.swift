@@ -45,7 +45,7 @@ extension ViewFactory {
         textView.layer.borderColor = UIColor(hexString: "#cdcdcd").cgColor
         textView.layer.borderWidth = 0.5
         textView.layer.cornerRadius = 5
-        textView.snp.makeConstraints { (make) in
+        textView.snp.makeConstraints { make in
             make.height.equalTo(70)
         }
         return textView

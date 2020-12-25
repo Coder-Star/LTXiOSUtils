@@ -144,10 +144,10 @@ extension SpinnerButton {
 }
 
 // MARK: - 动画相关方法
-private extension SpinnerButton {
+extension SpinnerButton {
 
     /// 加载状态
-    func collapseAnimation() {
+    private func collapseAnimation() {
         isUserInteractionEnabled = false
         let animaton = CABasicAnimation(keyPath: "bounds.size.width")
         animaton.fromValue = frame.width
@@ -161,7 +161,7 @@ private extension SpinnerButton {
     }
 
     /// 返回到默认状态
-    func backToDefaults() {
+    private func backToDefaults() {
         spinner.stopAnimation()
         isUserInteractionEnabled = true
         let animaton = CABasicAnimation(keyPath: "bounds.size.width")
@@ -175,7 +175,7 @@ private extension SpinnerButton {
     }
 
     /// 抖动状态
-    func shakeAnimation() {
+    private func shakeAnimation() {
         UIView.animateKeyframes(withDuration: 0.5, delay: 0, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1) {
                 let transform = CGAffineTransform(translationX: 10, y: 0)

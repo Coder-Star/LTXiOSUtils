@@ -54,13 +54,13 @@ extension ThirdLibApplicationService: BuglyDelegate {
         // 跟踪数据-自定义数据 在附件信息valueMapOthers.txt中也有体现
 
         Bugly.start(withAppId: "68933b555c", config: buglyConfig)
-        Bugly.setTag(160761)
+        Bugly.setTag(160_761)
         let exception = NSException(name: NSExceptionName(rawValue: "不带分类异常名称"), reason: "", userInfo: ["NSException": "info"])
         Bugly.report(exception)
 
         let error = NSError(domain: "com.coderstar", code: 1, userInfo: ["key": "value"])
         Bugly.reportError(error)
-        Bugly.setTag(160764)
+        Bugly.setTag(160_764)
         // category必须是 类型(Cocoa=3,CSharp=4,JS=5,Lua=6) 如果不是这几种之内 则不会上传
         Bugly.reportException(withCategory: 3, name: "带有分类异常名称", reason: "", callStack: [], extraInfo: ["reportException": "info"], terminateApp: false)
 

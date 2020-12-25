@@ -87,7 +87,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
             let end = Date().tx.getDateByDays(days: 1)
             let popupView = DurationDatePickView.getPopupView(startDate: start, endDate: end, canGreatNow: true, dateType: .YMD)
             popupView.titleLabel.text = "请选择查询时间(日期)"
-            popupView.sureBlock = { (start, end) in
+            popupView.sureBlock = { start, end in
                 self.showAlert(message: "起始时间\(start)\n结束时间\(end)")
             }
             popupView.cancelBlock = {
@@ -99,7 +99,7 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
             let end = Date().tx.getDateByDays(days: 1)
             let popupView = DurationDatePickView.getPopupView(startDate: start, endDate: end, canGreatNow: true, dateType: .YMDHM)
             popupView.titleLabel.text = "请选择查询时间(时间)"
-            popupView.sureBlock = { (start, end) in
+            popupView.sureBlock = { start, end in
                 self.showAlert(message: "起始时间\(start)\n结束时间\(end)")
             }
             popupView.cancelBlock = {
@@ -134,25 +134,25 @@ class PickViewDemoViewController: BaseGroupTableMenuViewController {
         case "single":
             PickerViewManager.showSingleColPicker("单列", data: singleData, defaultSelectedIndex: 2, clearAction: {
                 self.showAlert(message: "清空")
-            }, doneAction: { (selectedIndex, selectedValue) in
+            }, doneAction: { selectedIndex, selectedValue in
                 self.showAlert(message: "\(selectedIndex)\(selectedValue)")
             })
         case "multiple":
             PickerViewManager.showMultipleColsPicker("多列不关联", data: multipleData, defaultSelectedIndexs: [0, 1, 1], clearAction: {
                 self.showAlert(message: "清空")
-            }, doneAction: { (selectedIndexs, selectedValues) in
+            }, doneAction: { selectedIndexs, selectedValues in
                 self.showAlert(message: "\(selectedIndexs)\(selectedValues)")
             })
         case "multipleAssociated":
             PickerViewManager.showMultipleAssociatedColsPicker("多列关联", data: multipleAssociatedData, defaultSelectedValues: ["食品", "垃圾食品", "不健康小吃"], clearAction: {
                 self.showAlert(message: "清空")
-            }, doneAction: { (selectedIndexs, selectedValues) in
+            }, doneAction: { selectedIndexs, selectedValues in
                 self.showAlert(message: "\(selectedIndexs)\(selectedValues)")
             })
         case "city":
             PickerViewManager.showCitiesPicker("省市区选择", type: .province, defaultSelectedValues: ["天津市", "天津市", "河东区"], clearAction: {
                 self.showAlert(message: "清空")
-            }, doneAction: { (selectedIndexs, selectedValues) in
+            }, doneAction: { selectedIndexs, selectedValues in
                 self.showAlert(message: "\(selectedIndexs)   \(selectedValues)")
             })
         case "singleSelect":

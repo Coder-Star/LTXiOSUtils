@@ -169,6 +169,7 @@ extension NotificationApplicationService {
         // 设置成上海集群
         XGPush.defaultManager().configureClusterDomainName("tpns.sh.tencent.com")
 
+        // swiftlint:disable number_separator
         XGPush.defaultManager().startXG(withAccessID: 1680001375, accessKey: "IYBJPGFD2RRO", delegate: self)
     }
 

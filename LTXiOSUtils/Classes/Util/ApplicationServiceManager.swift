@@ -570,7 +570,6 @@ extension ApplicationServiceManagerDelegate {
     }
 }
 
-
 // MARK: - SiriKitHandling
 extension ApplicationServiceManagerDelegate {
 

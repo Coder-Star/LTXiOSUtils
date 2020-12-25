@@ -167,7 +167,7 @@ extension ImagePickGridView {
 }
 
 // MARK: - 私有方法
-private extension ImagePickGridView {
+extension ImagePickGridView {
     private var showImageCount: Int {
         if maxImageCount > 0, imageList.count >= maxImageCount {
             return maxImageCount

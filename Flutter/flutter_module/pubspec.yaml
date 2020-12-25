@@ -26,7 +26,7 @@ dependencies:
   redux: 4.0.0+3 # 全局状态管理
   fluro: 1.7.8 # 路由
   logger: 0.9.4 #日志
-  sqflite: 1.3.2+1 #SQLite
+#  sqflite: 1.3.2+1 #SQLite
   # 从git依赖
   flutter_boost: # 闲鱼出品，用于原生与flutter之间
     git:
@@ -70,7 +70,7 @@ flutter:
           style: normal # 字体风格， italic、normal两种选项，
   module:
     androidX: false
-    androidPackage: com.example.flutter_module
-    iosBundleIdentifier: com.example.flutterModule
+    androidPackage: com.star.flutter_module
+    iosBundleIdentifier: com.star.flutterModule
 flutter_intl:
   enabled: true

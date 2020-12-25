@@ -84,7 +84,7 @@ extension TxExtensionWrapper where Base == Date {
 
     /// 秒级时间戳 - 10位
     public var timeStamp: Int {
-        let timeInterval: TimeInterval = self.base.timeIntervalSince1970
+        let timeInterval = self.base.timeIntervalSince1970
         let timeStamp = Int(timeInterval)
         return timeStamp
     }
@@ -95,15 +95,15 @@ extension TxExtensionWrapper where Base == Date {
     }
 
     /// 获取毫秒级时间戳 - 13位
-    public var milliStamp: CLongLong {
-        let timeInterval: TimeInterval = self.base.timeIntervalSince1970
-        let millisecond = CLongLong(round(timeInterval * 1000))
+    public var milliTimeStamp: CLongLong {
+        let timeInterval = self.base.timeIntervalSince1970
+        let millisecond = CLongLong(round(timeInterval * 1_000))
         return millisecond
     }
 
     /// 获取毫秒级时间戳 - 13位
-    public var milliStampStr: String {
-        return "\(milliStamp)"
+    public var milliTimeStampStr: String {
+        return "\(milliTimeStamp)"
     }
 
     /// 获取当前时间
@@ -122,7 +122,7 @@ extension TxExtensionWrapper where Base == Date {
 extension TxExtensionWrapper where Base == TimeInterval {
     /// 时间戳(毫秒)转时间
     public var dateAsMilliStamp: Date {
-        let timeInterval = self.base / 1000
+        let timeInterval = self.base / 1_000
         return Date.init(timeIntervalSince1970: timeInterval)
     }
 

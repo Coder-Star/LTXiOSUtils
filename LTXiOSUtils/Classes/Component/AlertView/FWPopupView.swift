@@ -535,7 +535,7 @@ extension FWPopupView {
                     }
                 }
                 strongSelf.isHidden = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0001) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.000_1) {
                     if FWPopupWindow.sharedInstance.willShowingViews.count > 0 {
                         guard let willShowingView: FWPopupView = FWPopupWindow.sharedInstance.willShowingViews.last as? FWPopupView else {
                             return
@@ -584,12 +584,12 @@ extension FWPopupView {
             if self.vProperty.popupAnimationType == .position {
                 if self.isResetSuperView == true {
                     self.isResetSuperView = false
-                    self.snp.remakeConstraints { (make) in
+                    self.snp.remakeConstraints { make in
                         make.size.equalTo(self.finalSize)
                         self.constraintsBeforeAnimationPosition(make: make, myAlignment: myAlignment)
                     }
                 } else {
-                    self.snp.makeConstraints { (make) in
+                    self.snp.makeConstraints { make in
                         if self.isNotMakeSize == false {
                             make.size.equalTo(self.finalSize)
                         }
@@ -600,11 +600,11 @@ extension FWPopupView {
             } else if self.vProperty.popupAnimationType == .frame {
                 if self.isResetSuperView == true {
                     self.isResetSuperView = false
-                    self.snp.remakeConstraints { (make) in
+                    self.snp.remakeConstraints { make in
                         self.constraintsBeforeAnimationFrame(make: make, myAlignment: myAlignment)
                     }
                 } else {
-                    self.snp.makeConstraints { (make) in
+                    self.snp.makeConstraints { make in
                         self.constraintsBeforeAnimationFrame(make: make, myAlignment: myAlignment)
                     }
                 }
@@ -612,12 +612,12 @@ extension FWPopupView {
             } else if self.vProperty.popupAnimationType == .scale || self.vProperty.popupAnimationType == .scale3D {
                 if self.isResetSuperView == true {
                     self.isResetSuperView = false
-                    self.snp.remakeConstraints { (make) in
+                    self.snp.remakeConstraints { make in
                         make.size.equalTo(self.finalSize)
                         self.constraintsBeforeAnimationScale(make: make, myAlignment: myAlignment)
                     }
                 } else {
-                    self.snp.makeConstraints { (make) in
+                    self.snp.makeConstraints { make in
                         if self.isNotMakeSize == false {
                             make.size.equalTo(self.finalSize)
                         }
@@ -633,7 +633,7 @@ extension FWPopupView {
                 }
             }
         } else if constraintsState == .constraintsShownAnimation {
-            self.snp.updateConstraints { (make) in
+            self.snp.updateConstraints { make in
                 if self.vProperty.popupAnimationType == .position {
                     if myAlignment == .center {
                         make.centerY.equalToSuperview().offset(edgeInsets.top - edgeInsets.bottom)
@@ -677,7 +677,7 @@ extension FWPopupView {
                 }
             }
         } else if constraintsState == .constraintsHiddenAnimation {
-            self.snp.updateConstraints { (make) in
+            self.snp.updateConstraints { make in
                 if self.vProperty.popupAnimationType == .position {
                     if myAlignment == .center {
                         make.centerY.equalToSuperview().offset(-self.finalSize.height / 2 - self.superview!.frame.size.height / 2)
@@ -911,7 +911,7 @@ extension FWPopupView {
     open func resetSize(size: CGSize, isImmediateEffect: Bool) {
         self.finalSize = size
         if isImmediateEffect && (self.currentPopupViewState == .didAppear || self.currentPopupViewState == .didAppearAgain) {
-            self.hide { [weak self] (_) in
+            self.hide { [weak self] _ in
                 guard let strongSelf = self else {
                     return
                 }

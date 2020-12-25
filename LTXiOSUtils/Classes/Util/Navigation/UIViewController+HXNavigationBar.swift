@@ -10,9 +10,9 @@ import UIKit
 
 // MARK: - 自定义导航栏相关的属性, 支持UINavigationBar.appearance()
 extension UIViewController {
-    
+
     // MARK: - 属性
-    
+
     /// keys
     private struct HXNavigationBarKeys {
         static var barStyle = "HXNavigationBarKeys_barStyle"
@@ -26,7 +26,7 @@ extension UIViewController {
         static var shadowColor = "HXNavigationBarKeys_shadowColor"
         static var enablePopGesture = "HXNavigationBarKeys_enablePopGesture"
     }
-    
+
     /// 导航栏样式，默认样式
     var navigationBarStyle: UIBarStyle {
         get {
@@ -37,7 +37,7 @@ extension UIViewController {
             hx_setNeedsNavigationBarTintUpdate()
         }
     }
-    
+
     /// 导航栏前景色（item的文字图标颜色），默认黑色
     var navigationBarTintColor: UIColor {
         get {
@@ -54,7 +54,7 @@ extension UIViewController {
             hx_setNeedsNavigationBarTintUpdate()
         }
     }
-    
+
     /// 导航栏标题文字颜色，默认黑色
     var navigationBarTitleColor: UIColor {
         get {
@@ -71,7 +71,7 @@ extension UIViewController {
             hx_setNeedsNavigationBarTintUpdate()
         }
     }
-    
+
     /// 导航栏标题文字字体，默认17号粗体
     var navigationBarTitleFont: UIFont {
         get {
@@ -88,7 +88,7 @@ extension UIViewController {
             hx_setNeedsNavigationBarTintUpdate()
         }
     }
-    
+
     /// 导航栏背景色，默认白色
     var navigationBarBackgroundColor: UIColor {
         get {
@@ -105,7 +105,7 @@ extension UIViewController {
             hx_setNeedsNavigationBarBackgroundUpdate()
         }
     }
-    
+
     /// 导航栏背景图片
     var navigationBarBackgroundImage: UIImage? {
         get {
@@ -116,7 +116,7 @@ extension UIViewController {
             hx_setNeedsNavigationBarBackgroundUpdate()
         }
     }
-    
+
     /// 导航栏背景透明度，默认1
     var navigationBarAlpha: CGFloat {
         get {
@@ -127,7 +127,7 @@ extension UIViewController {
             hx_setNeedsNavigationBarBackgroundUpdate()
         }
     }
-    
+
     /// 导航栏底部分割线是否隐藏，默认不隐藏
     var navigationBarShadowHidden: Bool {
         get {
@@ -138,7 +138,7 @@ extension UIViewController {
             hx_setNeedsNavigationBarShadowUpdate()
         }
     }
-    
+
     /// 导航栏底部分割线颜色
     var navigationBarShadowColor: UIColor {
         get {
@@ -149,7 +149,7 @@ extension UIViewController {
             hx_setNeedsNavigationBarShadowUpdate()
         }
     }
-    
+
     /// 是否开启手势返回，默认开启
     var navigationBarEnablePopGesture: Bool {
         get {
@@ -159,31 +159,31 @@ extension UIViewController {
             objc_setAssociatedObject(self, &HXNavigationBarKeys.enablePopGesture, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
-    
+
     // MARK: - 更新UI
-    
+
     // 整体更新
     func hx_setNeedsNavigationBarUpdate() {
         guard let naviController = navigationController as? HXNavigationController else { return }
         naviController.hx_updateNavigationBar(for: self)
     }
-    
+
     // 更新文字、title颜色
     func hx_setNeedsNavigationBarTintUpdate() {
         guard let naviController = navigationController as? HXNavigationController else { return }
         naviController.hx_updateNavigationBarTint(for: self)
     }
-    
+
     // 更新背景
     func hx_setNeedsNavigationBarBackgroundUpdate() {
         guard let naviController = navigationController as? HXNavigationController else { return }
         naviController.hx_updateNavigationBarBackground(for: self)
     }
-    
+
     // 更新shadow
     func hx_setNeedsNavigationBarShadowUpdate() {
         guard let naviController = navigationController as? HXNavigationController else { return }
         naviController.hx_updateNavigationBarShadow(for: self)
     }
-    
+
 }

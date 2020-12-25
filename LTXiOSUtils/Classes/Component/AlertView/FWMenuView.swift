@@ -40,7 +40,7 @@ class FWMenuViewTableViewCell: UITableViewCell {
         if image != nil {
             self.iconImgView.isHidden = false
             self.iconImgView.image = image
-            self.iconImgView.snp.makeConstraints { (make) in
+            self.iconImgView.snp.makeConstraints { make in
                 make.left.equalToSuperview().offset(property.letfRigthMargin)
                 make.centerY.equalToSuperview()
                 make.size.equalTo(image!.size)
@@ -53,7 +53,7 @@ class FWMenuViewTableViewCell: UITableViewCell {
             self.titleLabel.textAlignment = property.textAlignment
             let attributedString = NSAttributedString(string: title!, attributes: property.titleTextAttributes)
             self.titleLabel.attributedText = attributedString
-            self.titleLabel.snp.makeConstraints { (make) in
+            self.titleLabel.snp.makeConstraints { make in
                 if image != nil {
                     make.left.equalTo(self.iconImgView.snp.right).offset(property.commponentMargin)
                 } else {
@@ -220,7 +220,7 @@ extension FWMenuView {
         footerView.backgroundColor = UIColor.clear
         self.tableView.tableFooterView = footerView
 
-        self.tableView.snp.remakeConstraints { (make) in
+        self.tableView.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(isUpArrow ? tableViewY : 0)
             make.left.right.equalToSuperview()
             make.bottom.equalToSuperview().offset(-((isUpArrow ? 0 : tableViewY ) - footerViewHeight))

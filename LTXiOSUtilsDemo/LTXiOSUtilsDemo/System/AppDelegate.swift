@@ -9,7 +9,12 @@
 import UIKit
 import CoreData
 
-@UIApplicationMain
+/**
+ UIApplicationMain标志为我们自动添加了main函数
+ 如果我们需要在main函数里面做一些其他操作的话，我们可以自己创建main.swift文件，删除UIApplicationMain标志，
+ 当有了main.swift文件，该标志会显示错误，错误为"UIApplicationMain' attribute cannot be used in a module that contains top-level code"
+ */
+//@UIApplicationMain
 class AppDelegate: ApplicationServiceManagerDelegate {
 
     //    override var services: [ApplicationService] {

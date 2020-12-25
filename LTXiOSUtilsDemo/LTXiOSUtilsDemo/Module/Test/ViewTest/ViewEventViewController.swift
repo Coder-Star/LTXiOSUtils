@@ -37,7 +37,7 @@ extension ViewEventViewController {
         blueChildView.snp.makeConstraints { make in
             make.top.equalTo(20)
             make.left.equalTo(20)
-            make.right.equalTo(-20)
+            make.right.equalTo(20)
             make.height.equalTo(200)
         }
 
@@ -65,7 +65,7 @@ extension ViewEventViewController {
 //        greenButton.addTapGesture { _ in
 //            Log.d("greenButton被点击")
 //        }
-//        greenButton.addTarget(self, action: #selector(click), for: .touchUpInside)
+        greenButton.addTarget(self, action: #selector(click), for: .touchUpInside)
 
         greenButton
             .rx
@@ -88,12 +88,12 @@ extension ViewEventViewController {
          原因是因为view在hitTest遍历自己的子View是按照加入的顺序倒序查找的
         */
 
-        blueChildView.addTapGesture { _ in
+//        blueChildView.addTapGesture { tap in
             //        tap.cancelsTouchesInView = false
-            //        tap.delaysTouchesBegan = true
+//                    tap.delaysTouchesBegan = true
             //        tap.delaysTouchesEnded = false
-            Log.d("blueChildView被点击、手势")
-        }
+//            Log.d("blueChildView被点击、手势")
+//        }
 
     }
 
@@ -110,6 +110,10 @@ class TapTestView: UIView {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         Log.d(point)
         return super.hitTest(point, with: event)
+    }
+
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        return super.point(inside: point, with: event)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

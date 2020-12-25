@@ -68,11 +68,11 @@ class HXFakeNavigationBar: UIView {
         if viewController.navigationBarBackgroundImage != nil {
             // 直接使用fakeBackgroundEffectView.alpha控制台会有提示
             // 这样使用避免警告
-            fakeBackgroundEffectView.subviews.forEach { (subview) in
+            fakeBackgroundEffectView.subviews.forEach { subview in
                 subview.alpha = 0
             }
         } else {
-            fakeBackgroundEffectView.subviews.forEach { (subview) in
+            fakeBackgroundEffectView.subviews.forEach { subview in
                 subview.alpha = viewController.navigationBarAlpha
             }
         }

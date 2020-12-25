@@ -255,10 +255,10 @@ extension DurationDatePickView {
 }
 
 // MARK: - 事件处理
-private extension DurationDatePickView {
+extension DurationDatePickView {
 
     @objc
-    func startBtnAction(btn: UIButton) {
+    private func startBtnAction(btn: UIButton) {
         btn.isSelected = true
         endBtn.isSelected = false
         if canLessNow {
@@ -275,7 +275,7 @@ private extension DurationDatePickView {
     }
 
     @objc
-    func endBtnAction(btn: UIButton) {
+    private func endBtnAction(btn: UIButton) {
         btn.isSelected = true
         startBtn.isSelected = false
         if dateType == .YMD, let date = startBtn.currentTitle?.tx.toDate(dateTypeStr: dateType.rawValue) {
@@ -292,7 +292,7 @@ private extension DurationDatePickView {
     }
 
     @objc
-    func cancelBtnAction() {
+    private func cancelBtnAction() {
         if let block = cancelBlock {
             block()
         }
@@ -300,7 +300,7 @@ private extension DurationDatePickView {
     }
 
     @objc
-    func confirmBtnAction() {
+    private func confirmBtnAction() {
         if let block = sureBlock {
             let startDate = startBtn.currentTitle?.replaceNewlineWithWhitespace() ?? ""
             let endDate = endBtn.currentTitle?.replaceNewlineWithWhitespace() ?? ""
@@ -310,7 +310,7 @@ private extension DurationDatePickView {
     }
 
     @objc
-    func datePicekerValueChanged(picker: UIDatePicker) {
+    private func datePicekerValueChanged(picker: UIDatePicker) {
         let date = picker.date
         let titleString = date.tx.formatDate(formatStr: dateType.rawValue)
 
@@ -424,17 +424,17 @@ extension DurationDatePickView {
 }
 
 // MARK: - 方法
-private extension DurationDatePickView {
-    static func appendTime(dateAndTime: String) -> String {
+extension DurationDatePickView {
+    private static func appendTime(dateAndTime: String) -> String {
         let date = dateAndTime.tx.getDateStr(dateType: .YMD)
         let time = dateAndTime.tx.getDateStr(dateType: .HM)
         return date + "\n" + time
     }
 }
 
-private extension String {
+extension String {
     /// 使用空格替换字符串中的换行
-    func replaceNewlineWithWhitespace() -> String {
+    fileprivate func replaceNewlineWithWhitespace() -> String {
         return self.replacingOccurrences(of: "\n", with: " ")
     }
 }

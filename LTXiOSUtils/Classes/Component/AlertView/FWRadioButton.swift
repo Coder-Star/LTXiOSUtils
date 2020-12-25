@@ -182,7 +182,7 @@ extension FWRadioButton {
             self.titleLabel.font = self.vProperty.titleFont
             self.titleLabel.textColor = self.vProperty.titleColor
             self.titleLabel.text = title
-            self.titleLabel.snp.makeConstraints { (make) in
+            self.titleLabel.snp.makeConstraints { make in
                 make.left.equalTo(self).offset(radioFrame.width + self.vProperty.radioViewEdgeInsets.left + self.vProperty.radioViewEdgeInsets.right)
                 make.top.bottom.right.equalTo(self)
             }

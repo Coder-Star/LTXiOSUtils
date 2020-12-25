@@ -11,6 +11,6 @@ extension Data {
 
     /// 16进制Data转字符串
     public var hexString: String {
-        return map { String(format: "%02x", $0) }.joined(separator: "")
+        return map { String(format: "%02x", $0) }.joined()
     }
 }

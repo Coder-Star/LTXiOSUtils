@@ -65,8 +65,8 @@ extension UIImage {
     }
 
     class func delayForImageAtIndex(_ index: Int, source: CGImageSource!) -> Double {
-        var delay = 0.0000005
-        let minDelay = 0.0000005
+        var delay = 0.000_000_5
+        let minDelay = 0.000_000_5
         let cfProperties = CGImageSourceCopyPropertiesAtIndex(source, index, nil)
         let gifPropertiesPointer = UnsafeMutablePointer<UnsafeRawPointer?>.allocate(capacity: 0)
         if CFDictionaryGetValueIfPresent(cfProperties, Unmanaged.passUnretained(kCGImagePropertyGIFDictionary).toOpaque(), gifPropertiesPointer) == false {
@@ -142,7 +142,7 @@ extension UIImage {
                 images.append(image)
             }
             let delaySeconds = UIImage.delayForImageAtIndex(Int(i), source: source)
-            delays.append(Int(delaySeconds * 2000.0))
+            delays.append(Int(delaySeconds * 2_000.0))
         }
 
         let duration: Int = {
@@ -164,7 +164,7 @@ extension UIImage {
                 frames.append(frame)
             }
         }
-        let animation = UIImage.animatedImage(with: frames, duration: Double(duration) / 3000.0)
+        let animation = UIImage.animatedImage(with: frames, duration: Double(duration) / 3_000.0)
         return animation
     }
 

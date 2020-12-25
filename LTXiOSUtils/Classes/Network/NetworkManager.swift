@@ -237,27 +237,27 @@ public struct RequestError {
 public enum RequestErrorCode: Int {
 // MARK: - response转换失败
     /// 返回数据无法转换为image
-    case responseImageMapping = -1000
+    case responseImageMapping = -1_000
     /// 返回数据无法转换为json
-    case responseJSONMapping = -1001
+    case responseJSONMapping = -1_001
     /// 返回数据无法转换为字符串
-    case responseStringMapping = -1002
+    case responseStringMapping = -1_002
     /// 返回数据无法转换为对象
-    case responseObjectMapping = -1003
+    case responseObjectMapping = -1_003
     /// 返回数据无法转换Data
-    case responseEncodableMapping = -1004
+    case responseEncodableMapping = -1_004
 
 // MARK: - 请求错误
     /// 端点到请求之间转换失败
-    case requestMapping = -1005
+    case requestMapping = -1_005
     /// 参数编码错误
-    case parameterEncoding = -1006
+    case parameterEncoding = -1_006
 
 // MARK: - 其他错误
     /// 无效状态码
-    case invalidStatusCode = -1007
+    case invalidStatusCode = -1_007
     /// 服务器连接失败
-    case serverConnectFailed = -1008
+    case serverConnectFailed = -1_008
     /// 无网络或网络连接失败
-    case noNetwork = -1009
+    case noNetwork = -1_009
 }

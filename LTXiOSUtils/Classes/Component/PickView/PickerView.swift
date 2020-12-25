@@ -175,7 +175,7 @@ public class PickerView: UIView {
                     }
                 }
             } else {
-                multipleColsData?.indices.forEach { (index) in
+                multipleColsData?.indices.forEach { index in
                     pickerView.selectRow(0, inComponent: index, animated: false)
                     selectedIndexs[index] = 0
                     selectedValues[index] = titleForRow(0, forComponent: index) ?? " "
@@ -345,9 +345,9 @@ public class PickerView: UIView {
 
 }
 
-fileprivate extension PickerView {
+extension PickerView {
 
-    func commonInit() {
+    private func commonInit() {
         addSubview(toolBar)
         if pickerStyle == PickerStyles.date {
             datePicker.addTarget(self, action: #selector(self.dateDidChange(_:)), for: UIControl.Event.valueChanged)
@@ -358,7 +358,7 @@ fileprivate extension PickerView {
     }
 
     @objc
-    func dateDidChange(_ datePic: UIDatePicker) {
+    private func dateDidChange(_ datePic: UIDatePicker) {
         selectedDate = datePic.date
     }
 }
@@ -571,7 +571,7 @@ extension PickerView {
                     defaultIndex = provincesArr.firstIndex(of: tempDefaultSelectedValues[0])
                 }
             }
-            pic = PickerView.singleColPicker(toolBarTitle, singleColData: provincesArr, defaultIndex: defaultIndex, cancelAction: cancelAction) { (index, value) in
+            pic = PickerView.singleColPicker(toolBarTitle, singleColData: provincesArr, defaultIndex: defaultIndex, cancelAction: cancelAction) { index, value in
                 doneAction?([index], [value])
             }
         case .city:

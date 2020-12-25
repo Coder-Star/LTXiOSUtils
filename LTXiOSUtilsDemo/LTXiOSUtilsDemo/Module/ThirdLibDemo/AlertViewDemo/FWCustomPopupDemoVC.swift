@@ -90,7 +90,7 @@ extension FWCustomPopupDemoVC {
             vProperty.animationDuration = 0.2
             customPopupView.vProperty = vProperty
 
-            customPopupView.show { (_, popupViewState) in
+            customPopupView.show { _, popupViewState in
                 Log.d("\(popupViewState.rawValue)")
             }
         case 1:
@@ -103,7 +103,7 @@ extension FWCustomPopupDemoVC {
             vProperty.animationDuration = 0.2
             customPopupView.vProperty = vProperty
 
-            customPopupView.show { (_) in
+            customPopupView.show { _ in
                 Log.d("popupDidAppearBlock")
             }
         case 2:
@@ -116,7 +116,7 @@ extension FWCustomPopupDemoVC {
             vProperty.animationDuration = 0.5
             customPopupView.vProperty = vProperty
 
-            customPopupView.show { (_, popupViewState) in
+            customPopupView.show { _, popupViewState in
                 Log.d("当前弹窗状态：\(popupViewState.rawValue)")
             }
         case 3:

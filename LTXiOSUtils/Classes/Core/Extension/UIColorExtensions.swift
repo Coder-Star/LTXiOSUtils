@@ -58,7 +58,7 @@ extension TxExtensionWrapper where Base: UIColor {
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
 
-        let multiplier = CGFloat(255.999999)
+        let multiplier = CGFloat(255.999_999)
 
         guard self.base.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
             return nil

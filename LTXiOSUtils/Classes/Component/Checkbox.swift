@@ -177,10 +177,10 @@ public class Checkbox: UIControl {
 
     private func crossCheckmark(rect: CGRect) {
         let bezier4Path = UIBezierPath()
-        bezier4Path.move(to: CGPoint(x: rect.minX + 0.06250 * rect.width, y: rect.minY + 0.06452 * rect.height))
-        bezier4Path.addLine(to: CGPoint(x: rect.minX + 0.93750 * rect.width, y: rect.minY + 0.93548 * rect.height))
-        bezier4Path.move(to: CGPoint(x: rect.minX + 0.93750 * rect.width, y: rect.minY + 0.06452 * rect.height))
-        bezier4Path.addLine(to: CGPoint(x: rect.minX + 0.06250 * rect.width, y: rect.minY + 0.93548 * rect.height))
+        bezier4Path.move(to: CGPoint(x: rect.minX + 0.062_50 * rect.width, y: rect.minY + 0.064_52 * rect.height))
+        bezier4Path.addLine(to: CGPoint(x: rect.minX + 0.937_50 * rect.width, y: rect.minY + 0.935_48 * rect.height))
+        bezier4Path.move(to: CGPoint(x: rect.minX + 0.937_50 * rect.width, y: rect.minY + 0.064_52 * rect.height))
+        bezier4Path.addLine(to: CGPoint(x: rect.minX + 0.062_50 * rect.width, y: rect.minY + 0.935_48 * rect.height))
         checkmarkColor.setStroke()
         bezier4Path.lineWidth = checkmarkSize * 2
         bezier4Path.stroke()
@@ -188,9 +188,9 @@ public class Checkbox: UIControl {
 
     private func tickCheckmark(rect: CGRect) {
         let bezierPath = UIBezierPath()
-        bezierPath.move(to: CGPoint(x: rect.minX + 0.04688 * rect.width, y: rect.minY + 0.63548 * rect.height))
-        bezierPath.addLine(to: CGPoint(x: rect.minX + 0.34896 * rect.width, y: rect.minY + 0.95161 * rect.height))
-        bezierPath.addLine(to: CGPoint(x: rect.minX + 0.95312 * rect.width, y: rect.minY + 0.04839 * rect.height))
+        bezierPath.move(to: CGPoint(x: rect.minX + 0.046_88 * rect.width, y: rect.minY + 0.635_48 * rect.height))
+        bezierPath.addLine(to: CGPoint(x: rect.minX + 0.348_96 * rect.width, y: rect.minY + 0.951_61 * rect.height))
+        bezierPath.addLine(to: CGPoint(x: rect.minX + 0.953_12 * rect.width, y: rect.minY + 0.048_39 * rect.height))
         checkmarkColor.setStroke()
         bezierPath.lineWidth = checkmarkSize * 2
         bezierPath.stroke()

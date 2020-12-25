@@ -18,6 +18,7 @@
 		DC03AE5223F433A3007739DD /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03AE5123F433A3007739DD /* AdModel.swift */; };
 		DC0567DC23CAF568008E7C02 /* GridMenuViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */; };
 		DC05CBC62453055A007A6240 /* ModuleArr.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC05CBC52453055A007A6240 /* ModuleArr.plist */; };
+		DC06AC88259586EC0091F391 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC06AC87259586EC0091F391 /* main.swift */; };
 		DC09415E2436E4D20052085F /* DemoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC09415D2436E4D20052085F /* DemoTest.swift */; };
 		DC0EC27A255955BA0046B46A /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC0EC279255955BA0046B46A /* 1.jpg */; };
 		DC0EC2F125597D660046B46A /* light.svg in Resources */ = {isa = PBXBuildFile; fileRef = DC0EC2F025597D660046B46A /* light.svg */; };
@@ -29,6 +30,7 @@
 		DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */; };
 		DC1AD82E23E83F2F0073CB97 /* TreeResource.json in Resources */ = {isa = PBXBuildFile; fileRef = DC1AD82D23E83F2F0073CB97 /* TreeResource.json */; };
 		DC1BE0B224B011D700745671 /* ViewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BE0B124B011D700745671 /* ViewEventViewController.swift */; };
+		DC1C1A642587893C005509D8 /* TempTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C1A632587893C005509D8 /* TempTest.swift */; };
 		DC2518D624A8277500A28595 /* OC-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2518D524A8277500A28595 /* OC-Swift.swift */; };
 		DC2A02B625064D6300BABEDB /* SandboxTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2A02B525064D6300BABEDB /* SandboxTest.swift */; };
 		DC2A02BA2506552200BABEDB /* WkWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2A02B92506552200BABEDB /* WkWebViewController.swift */; };
@@ -220,6 +222,7 @@
 		DC03AE5123F433A3007739DD /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
 		DC0567DB23CAF568008E7C02 /* GridMenuViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMenuViewExampleViewController.swift; sourceTree = "<group>"; };
 		DC05CBC52453055A007A6240 /* ModuleArr.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ModuleArr.plist; sourceTree = "<group>"; };
+		DC06AC87259586EC0091F391 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DC09415D2436E4D20052085F /* DemoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTest.swift; sourceTree = "<group>"; };
 		DC0EC279255955BA0046B46A /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		DC0EC2F025597D660046B46A /* light.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = light.svg; sourceTree = "<group>"; };
@@ -232,6 +235,7 @@
 		DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewDemoViewController.swift; sourceTree = "<group>"; };
 		DC1AD82D23E83F2F0073CB97 /* TreeResource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TreeResource.json; sourceTree = "<group>"; };
 		DC1BE0B124B011D700745671 /* ViewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEventViewController.swift; sourceTree = "<group>"; };
+		DC1C1A632587893C005509D8 /* TempTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTest.swift; sourceTree = "<group>"; };
 		DC2518D524A8277500A28595 /* OC-Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OC-Swift.swift"; sourceTree = "<group>"; };
 		DC2A02B525064D6300BABEDB /* SandboxTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxTest.swift; sourceTree = "<group>"; };
 		DC2A02B92506552200BABEDB /* WkWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewController.swift; sourceTree = "<group>"; };
@@ -737,6 +741,7 @@
 				DCEE982E250F865A00A19CF9 /* FlutterApplicationService.swift */,
 				DCCF3C3825245FF0008F0E29 /* NotificationApplicationService.swift */,
 				DC4610452550386D0018BBF5 /* OpenURLApplicationService.swift */,
+				DC06AC87259586EC0091F391 /* main.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -1075,6 +1080,7 @@
 				DC725FD8250B7EBC0091C807 /* FoundationTest.swift */,
 				DC4F88C52511BCCB00B68C72 /* ErrorTest.swift */,
 				DC46106025541E650018BBF5 /* Mirror&KVC&KVOTest.swift */,
+				DC1C1A632587893C005509D8 /* TempTest.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -1648,6 +1654,7 @@
 				DC83E7CD23F645E10030A9B4 /* FWMenuViewDemoVC.swift in Sources */,
 				DCB1C04723C4B41500D735BD /* ExtensionExampleMenuViewController.swift in Sources */,
 				DCF41B6223AA464100AEF70E /* NetworkDemoViewController.swift in Sources */,
+				DC06AC88259586EC0091F391 /* main.swift in Sources */,
 				DC82A29E25640155009966FD /* FlutterContentViewController.swift in Sources */,
 				DC32F1A823841359008D3D67 /* Constants.swift in Sources */,
 				DC7C935924EE658C005E0AAA /* LameUtil.m in Sources */,
@@ -1693,6 +1700,7 @@
 				DCCF3E5123C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift in Sources */,
 				DC4F88C62511BCCC00B68C72 /* ErrorTest.swift in Sources */,
 				DC3E62022424714E00105366 /* DoubleExtensionTest.swift in Sources */,
+				DC1C1A642587893C005509D8 /* TempTest.swift in Sources */,
 				DC09415E2436E4D20052085F /* DemoTest.swift in Sources */,
 				DCDBA7BB250528130073E293 /* FunctionTest.swift in Sources */,
 				DCE1457D24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift in Sources */,
@@ -1934,7 +1942,7 @@
 					"$(PROJECT_DIR)/LTXiOSUtilsDemo/Lib/lame",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xfrontend -warn-long-function-bodies=100 -Xfrontend -warn-long-expression-type-checking=100";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1969,7 +1977,7 @@
 					"$(PROJECT_DIR)/LTXiOSUtilsDemo/Lib/lame",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xfrontend -warn-long-function-bodies=100 -Xfrontend -warn-long-expression-type-checking=100";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2086,6 +2094,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils.NotificationContentExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2108,6 +2117,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils.NotificationContentExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2132,6 +2142,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2158,6 +2169,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

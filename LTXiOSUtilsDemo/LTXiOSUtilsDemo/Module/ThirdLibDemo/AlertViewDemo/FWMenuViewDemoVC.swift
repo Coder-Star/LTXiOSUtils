@@ -42,7 +42,7 @@ class FWMenuViewDemoVC: BaseUIViewController {
         vProperty.cornerRadius = 0
         vProperty.selectionStyle = .gray
         vProperty.maskViewColor = UIColor(white: 0, alpha: 0.3)
-        let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: vProperty) { (_, index, _) in
+        let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: vProperty) { _, index, _ in
             Log.d("Menu：点击了第\(index)个按钮")
         }
         menuView.attachedView = self.baseView
@@ -65,7 +65,7 @@ class FWMenuViewDemoVC: BaseUIViewController {
         vProperty.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.backgroundColor: UIColor.clear, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15.0)]
         vProperty.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 
-        let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images2 as? [UIImage], property: vProperty) { (_, index, _) in
+        let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images2 as? [UIImage], property: vProperty) { _, index, _ in
             Log.d("Menu：点击了第\(index)个按钮")
         }
         menuView.attachedView = self.baseView
@@ -95,14 +95,14 @@ class FWMenuViewDemoVC: BaseUIViewController {
 
         centerBtn = self.setupBtn(title: "中间按钮", tag: 1) as? UIButton
         self.baseView.addSubview(centerBtn)
-        centerBtn.snp.makeConstraints { (make) in
+        centerBtn.snp.makeConstraints { make in
             make.center.equalToSuperview().inset(UIEdgeInsets(top: -100, left: 0, bottom: 0, right: 0))
             make.size.equalTo(CGSize(width: 100, height: 50))
         }
 
         leftBottomBtn = self.setupBtn(title: "左下角按钮", tag: 2) as? UIButton
         self.baseView.addSubview(leftBottomBtn)
-        leftBottomBtn.snp.makeConstraints { (make) in
+        leftBottomBtn.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20)
             make.bottom.equalToSuperview().offset(-20)
             make.size.equalTo(CGSize(width: 200, height: 50))
@@ -110,7 +110,7 @@ class FWMenuViewDemoVC: BaseUIViewController {
 
         rightBottomBtn = self.setupBtn(title: "右下角按钮", tag: 3) as? UIButton
         self.baseView.addSubview(rightBottomBtn)
-        rightBottomBtn.snp.makeConstraints { (make) in
+        rightBottomBtn.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-20)
             make.size.equalTo(CGSize(width: 100, height: 50))
@@ -151,7 +151,7 @@ extension FWMenuViewDemoVC {
             property.popupArrowStyle = .round
             property.popupArrowVertexScaleX = 0.5
             property.cornerRadius = 5
-            let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: property, itemBlock: { (_, index, _) in
+            let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: property, itemBlock: { _, index, _ in
                 Log.d("Menu：点击了第\(index)个按钮")
             })
             menuView.show()
@@ -168,7 +168,7 @@ extension FWMenuViewDemoVC {
             property.popupViewMinWidth = 200
             property.popupViewMaxHeightRate = 0.7
             let titles = ["Menu011111", "Menu1", "Menu2", "Menu3", "Menu4", "Menu5", "Menu6", "Menu7", "Menu8", "Menu9", "Menu10", "Menu11", "Menu12", "Menu13", "Menu14", "Menu15", "Menu16"]
-            let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: property, itemBlock: { (_, index, _) in
+            let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: nil, property: property, itemBlock: { _, index, _ in
                 Log.d("Menu：点击了第\(index)个按钮")
             })
             menuView.attachedView = baseView
@@ -185,7 +185,7 @@ extension FWMenuViewDemoVC {
             property.popupArrowVertexScaleX = 0.8
             property.cornerRadius = 5
 
-            let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images as? [UIImage], property: property, itemBlock: { (_, index, _) in
+            let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images as? [UIImage], property: property, itemBlock: { _, index, _ in
                 Log.d("Menu：点击了第\(index)个按钮")
             })
             menuView.show()

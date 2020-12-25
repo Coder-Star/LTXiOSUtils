@@ -33,7 +33,7 @@ class JSAndNativeFountionViewController: WkWebViewController {
         let info = "Hello，JS，我是Native"
         /// 注意下面这个函数参数，加上单引号
         /// evaluateJavaScript是一个异步方法
-        webView.evaluateJavaScript("showJSInfo('\(info)')") { (result, error) in
+        webView.evaluateJavaScript("showJSInfo('\(info)')") { result, error in
             /// result是调用showJSInfo()这个js方法的返回值
             Log.d(result)
             Log.d(error)
@@ -48,7 +48,7 @@ class JSAndNativeFountionViewController: WkWebViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillDisappear(animated)
         webView.configuration.userContentController.removeScriptMessageHandler(forName: "showInfoFromNative")
     }
 

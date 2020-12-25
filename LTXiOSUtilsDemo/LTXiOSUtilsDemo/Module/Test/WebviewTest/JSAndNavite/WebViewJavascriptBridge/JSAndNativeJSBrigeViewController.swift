@@ -44,7 +44,7 @@ class JSAndNativeJSBrigeViewController: WkWebViewController {
     }
 
     private func iniNativeCall() {
-        self.webBridge?.registerHandler("callForJS") { (param, callBack) in
+        self.webBridge?.registerHandler("callForJS") { param, callBack in
             Log.d(param)
             Log.d(callBack)
             guard let callBack = callBack else {

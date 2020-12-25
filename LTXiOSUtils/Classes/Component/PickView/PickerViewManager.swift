@@ -36,7 +36,7 @@ public class PickerViewManager: UIView {
         pickerView = PickerView.singleColPicker(toolBarTitle, singleColData: singleColData, defaultIndex: defaultSelectedIndex, cancelAction: { [unowned self] in
             clearAction?()
             self.hidePicker()
-            }, doneAction: {[unowned self] (selectedIndex, selectedValue) in
+            }, doneAction: { [unowned self] selectedIndex, selectedValue in
                 doneAction?(selectedIndex, selectedValue)
                 self.hidePicker()
         })
@@ -53,7 +53,7 @@ public class PickerViewManager: UIView {
         pickerView = PickerView.multipleCosPicker(toolBarTitle, multipleColsData: multipleColsData, defaultSelectedIndexs: defaultSelectedIndexs, cancelAction: {[unowned self] in
             clearAction?()
             self.hidePicker()
-            }, doneAction: {[unowned self] (selectedIndexs, selectedValues) in
+            }, doneAction: { [unowned self] selectedIndexs, selectedValues in
                 doneAction?(selectedIndexs, selectedValues)
                 self.hidePicker()
         })
@@ -69,7 +69,7 @@ public class PickerViewManager: UIView {
         pickerView = PickerView.multipleAssociatedCosPicker(toolBarTitle, multipleAssociatedColsData: multipleAssociatedColsData, defaultSelectedValues: defaultSelectedValues, cancelAction: {[unowned self] in
             clearAction?()
             self.hidePicker()
-            }, doneAction: {[unowned self] (selectedIndexs, selectedValues) in
+            }, doneAction: { [unowned self] selectedIndexs, selectedValues in
                 doneAction?(selectedIndexs, selectedValues)
                 self.hidePicker()
         })
@@ -85,7 +85,7 @@ public class PickerViewManager: UIView {
         pickerView = PickerView.citiesPicker(toolBarTitle, type: type, defaultSelectedValues: defaultSelectedValues, cancelAction: {[unowned self] in
             clearAction?()
             self.hidePicker()
-            }, doneAction: {[unowned self] (selectedIndexs, selectedValues) in
+            }, doneAction: { [unowned self] selectedIndexs, selectedValues in
                 doneAction?(selectedIndexs, selectedValues)
                 self.hidePicker()
         })
@@ -100,7 +100,7 @@ public class PickerViewManager: UIView {
         pickerView = PickerView.datePicker(toolBarTitle, datePickerSetting: datePickerSetting, cancelAction: {[unowned self] in
             clearAction?()
             self.hidePicker()
-            }, doneAction: {[unowned self] (selectedDate) in
+            }, doneAction: {[unowned self] selectedDate in
                 doneAction?(selectedDate)
                 self.hidePicker()
         })
@@ -171,7 +171,7 @@ extension PickerViewManager {
             self.backgroundColor = UIColor.clear
             self.pickerView.frame = self.hideFrame
 
-        }, completion: {[unowned self] (_) in
+        }, completion: {[unowned self] _ in
             self.removeFromSuperview()
         })
     }

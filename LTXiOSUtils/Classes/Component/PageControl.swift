@@ -47,7 +47,7 @@ open class PageControl: UIView {
     /// 当前状态的尺寸
     private var currentSize = CGSize.zero
     /// 数字样式tag
-    private let curLabelTag = -100000
+    private let curLabelTag = -100_000
 
     private lazy var numberLabel: UILabel = {
         let numberLabel = UILabel(frame: CGRect.zero)
@@ -91,7 +91,7 @@ open class PageControl: UIView {
         case .ring(let circleSize):
             normalSize = CGSize(width: circleSize, height: circleSize)
             currentSize = CGSize(width: circleSize, height: circleSize)
-        case .number(let font, let color):
+        case let .number(font, color):
             numberLabel.font = font
             numberLabel.textColor = color
             numberLabel.tag = curLabelTag

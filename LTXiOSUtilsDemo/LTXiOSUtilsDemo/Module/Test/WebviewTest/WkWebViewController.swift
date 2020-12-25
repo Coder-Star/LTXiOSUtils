@@ -46,7 +46,7 @@ class WkWebViewController: BaseUIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillDisappear(animated)
         webView.configuration.userContentController.removeScriptMessageHandler(forName: "logHandler")
     }
 
@@ -99,7 +99,7 @@ extension WkWebViewController {
 
     private func setupWebview() {
         self.baseView.addSubview(webView)
-        webView.snp.makeConstraints { (make) in
+        webView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
@@ -108,7 +108,7 @@ extension WkWebViewController {
         progressView.tintColor = .red
         progressView.trackTintColor = .white
         baseView.addSubview(progressView)
-        progressView.snp.makeConstraints { (make) in
+        progressView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalToSuperview().offset(1)
             make.height.equalTo(1)

@@ -43,6 +43,6 @@ extension SuspensionButton {
     }
 }
 
-private extension SuspensionButton {
+extension SuspensionButton {
 
 }

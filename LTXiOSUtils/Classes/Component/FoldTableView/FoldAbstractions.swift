@@ -34,9 +34,9 @@ public protocol FoldTableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: FoldTableView, expandableCellForSection section: Int) -> UITableViewCell
 }
 
-public extension FoldTableViewDataSource {
+extension FoldTableViewDataSource {
     /// 是否允许展开协议默认实现，默认允许展开
-    func tableView(_ tableView: FoldTableView, canExpandSection section: Int) -> Bool {
+    public func tableView(_ tableView: FoldTableView, canExpandSection section: Int) -> Bool {
         return true
     }
 }
@@ -45,7 +45,7 @@ public protocol FoldTableViewDelegate: UITableViewDelegate {
     func tableView(_ tableView: FoldTableView, FoldState state: FoldState, changeForSection section: Int)
 }
 
-public extension FoldTableViewDelegate {
+extension FoldTableViewDelegate {
     /// cell折叠状态改变默认实现
-    func tableView(_ tableView: FoldTableView, FoldState state: FoldState, changeForSection section: Int) {}
+    public func tableView(_ tableView: FoldTableView, FoldState state: FoldState, changeForSection section: Int) {}
 }

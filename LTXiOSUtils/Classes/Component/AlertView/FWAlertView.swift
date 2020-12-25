@@ -166,7 +166,7 @@ extension FWAlertView {
         self.frame.origin.x = (UIScreen.main.bounds.width - property.alertViewWidth) / 2
         self.frame.size.width = CGFloat(property.alertViewWidth)
 
-        self.snp.makeConstraints { (make) in
+        self.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.width.equalTo(CGFloat(property.alertViewWidth))
         }
@@ -286,7 +286,7 @@ extension FWAlertView {
         let btnContrainerView = UIView()
         self.addSubview(btnContrainerView)
         btnContrainerView.backgroundColor = UIColor.clear
-        btnContrainerView.snp.makeConstraints { (make) in
+        btnContrainerView.snp.makeConstraints { make in
             make.top.equalTo(lastConstraintItem).offset((self.commponenetCount != 1) ? (property.topBottomMargin + property.commponentMargin) : singleCommponenetMargin)
             make.left.right.equalToSuperview()
         }
@@ -302,20 +302,20 @@ extension FWAlertView {
             btn.tag = tmpIndex
 
             if items.count == 1 {
-                btn.snp.makeConstraints { (make) in
+                btn.snp.makeConstraints { make in
                     make.top.left.right.equalTo(btnContrainerView).inset(UIEdgeInsets(top: 0, left: -self.vProperty.splitWidth, bottom: 0, right: -self.vProperty.splitWidth))
                     make.height.equalTo(property.buttonHeight + property.splitWidth)
                 }
             } else if items.count == 2 {
                 let btnW = (property.alertViewWidth + self.vProperty.splitWidth * 4) / 2
-                btn.snp.makeConstraints { (make) in
+                btn.snp.makeConstraints { make in
                     make.top.equalToSuperview()
                     make.left.equalToSuperview().offset(-property.splitWidth + btnW * CGFloat(tmpIndex))
                     make.width.equalTo(btnW)
                     make.height.equalTo(property.buttonHeight + property.splitWidth)
                 }
             } else {
-                btn.snp.makeConstraints { (make) in
+                btn.snp.makeConstraints { make in
                     make.left.right.equalTo(btnContrainerView).inset(UIEdgeInsets(top: 0, left: -self.vProperty.splitWidth, bottom: 0, right: -self.vProperty.splitWidth))
                     make.height.equalTo(property.buttonHeight + property.splitWidth)
                     make.width.equalTo(btnContrainerView).offset(property.splitWidth * 2)
@@ -361,11 +361,11 @@ extension FWAlertView {
 
             tmpIndex += 1
         }
-        lastBtn.snp.makeConstraints { (make) in
+        lastBtn.snp.makeConstraints { make in
             make.bottom.equalTo(btnContrainerView.snp.bottom)
         }
 
-        self.snp.makeConstraints { (make) in
+        self.snp.makeConstraints { make in
             make.bottom.equalTo(btnContrainerView.snp.bottom)
         }
     }
