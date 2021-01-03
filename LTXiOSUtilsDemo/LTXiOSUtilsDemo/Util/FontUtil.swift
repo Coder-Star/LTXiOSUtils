@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// 字体工具类
 public class FontUtil {
@@ -18,5 +19,7 @@ public class FontUtil {
                 Log.d("\(names)")
             }
         }
+        // 系统字体
+        Log.d(UIFont.preferredFont(forTextStyle: .body))
     }
 }

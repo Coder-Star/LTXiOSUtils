@@ -7,11 +7,16 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "CoderStar" => "1340529758@qq.com" }
 
-#  s.source       = { :git => "https://github.com/Coder-Star/LTXiOSUtils.git", :tag => s.version } # 发布时启用
-  s.source       = { :git => 'local', :tag => s.version} # 本地开发，local是随便起的名字
+  s.source       = { :git => "https://github.com/Coder-Star/LTXiOSUtils.git", :tag => s.version } # 发布时启用
+#  s.source       = { :git => 'local', :tag => s.version} # 本地开发，local是随便起的名字
 
   s.requires_arc = true
   s.swift_version = ["5","4.2"]
+  s.static_framework  =  true
+#  s.pod_target_xcconfig = {
+#    'DEFINES_MODULE' => 'YES'
+#  }
+
 
   # 核心类，其他子组件依赖该子组件
   s.subspec 'Core' do |core|

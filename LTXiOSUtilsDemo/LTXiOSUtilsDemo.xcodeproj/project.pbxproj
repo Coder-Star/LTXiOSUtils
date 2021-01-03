@@ -1391,7 +1391,7 @@
 			name = "[CP-User] Run Flutter Build flutter_module Script";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../Flutter/flutter_module/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build\n";
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../Flutter/flutter_module/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
 		35E644F936D76BEC4CC26FF6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1525,7 +1525,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/LTXiOSUtilsDemo/R.generated.swift,
+				"$SRCROOT/LTXiOSUtilsDemo/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -7,7 +7,7 @@
 //
 
 /*
- 当class是NSObject的子类时，这个类便可以在 "Product Name-Swift.h"中 找到，默认携带 init 构造方法,这个Product Name是在Build Settings 可以看到
+ 当class是NSObject的子类时，这个类便可以在 "Product Name-Swift.h"中 找到，默认携带 init 构造方法,这个Product Name是在Build Settings 可以看到，也就是说类必须继承NSObject
  当类中的 非private以及非fileprivate 方法以及变量被 @objc 修饰时，该变量或者方法便可以在 "Product Name-Swift.h"中 找到
  当在类上添加 @objcMembers 修饰时，该类中所有的 非private以及非fileprivate 方法以及变量 都可以在 "Product Name-Swift.h"中 找到
  如果需要OC与Swift中类、方法以及属性的名字不一致，可以在@objc(OCName)这种形式为OC单独定义名称，比如当swift中的类为中文时
@@ -63,7 +63,14 @@ enum OCSwiftEnum: Int {
     case left
 }
 
+/**
+ swift协议如果需要被oc调用，直接加上@objc修饰
+ */
 @objc
 protocol OCSwiftProtocol {
     func show()
 }
+
+/**
+ oc无法调用swift struct，可选值这种swift特有结构
+ */

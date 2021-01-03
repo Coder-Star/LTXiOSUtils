@@ -26,7 +26,7 @@ public class NetworkConstant: NSObject {
 
     }
 
-    // static let 是自动懒加载的，所以当initUrlInfo被调用之前没有访问OaUrl，逻辑没有问题，如果访问了OaUrl，就有问题了
+    // static 是自动懒加载的，所以当initUrlInfo被调用之前没有访问OaUrl，逻辑没有问题，如果访问了OaUrl，就有问题了
     static let OaUrl: String = NetworkConstant.oaUrlInfo
 
 }

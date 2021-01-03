@@ -24,7 +24,7 @@ class NSBaseUser: NSObject {
     private var sex = "私有性别"
 
     override func value(forUndefinedKey key: String) -> Any? {
-        return "进入KVO取值错误"
+        return "进入KVC取值错误"
     }
 
     override class func setNilValueForKey(_ key: String) {
@@ -32,7 +32,18 @@ class NSBaseUser: NSObject {
 
     }
 
+
+    // 禁止KVC
+//    override class var accessInstanceVariablesDirectly: Bool {
+//        return false
+//    }
+
     override var description: String {
         return "\(name) \(age) \(sex)"
     }
+
+    // 禁止KVO
+//    override class func automaticallyNotifiesObservers(forKey key: String) -> Bool {
+//        return false
+//    }
 }

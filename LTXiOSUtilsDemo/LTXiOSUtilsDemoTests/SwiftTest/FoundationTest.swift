@@ -13,6 +13,7 @@ import LTXiOSUtils
 class FoundationTest: XCTestCase {
 
     func testDic() {
+        //  zip 是将两个序列的元素，一一对应合并成元组，生成一个新序列
         let dic = Dictionary(uniqueKeysWithValues: zip(["name", "age"], ["张三"]))
         Log.d(dic)
 

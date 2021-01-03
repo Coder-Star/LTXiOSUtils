@@ -29,7 +29,7 @@ class BaseTest: NSObject {
 
     func test() {
         let user = getNSUser()
-        observation = user.observe(\NSBaseUser.name, options: [.new]) { user, change in
+        observation = user.observe(\NSBaseUser.name, options: [.old, .new]) { user, change in
             Log.d(user)
             Log.d(change.oldValue)
             Log.d(change.newValue)
@@ -38,8 +38,8 @@ class BaseTest: NSObject {
 //        observation.invalidate() // 释放观察器
         Log.d(user.value(forKey: "age1"))
         user.name = "李四"
-        user.setValue("kvc赋值私有属性keyPath", forKeyPath: #keyPath(NSBaseUser.name))
-//        user.setValue("kvc赋值私有属性key", forKeyPath: "name")
+//        user.setValue("kvc赋值私有属性keyPath", forKeyPath: #keyPath(NSBaseUser.name))
+        user.setValue("kvc赋值私有属性key", forKey: "name")
         user.setValue("kvc赋值私有属性", forKey: "sex")
         Log.d(user.value(forKey: "name"))
     }
