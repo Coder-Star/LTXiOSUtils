@@ -14,7 +14,7 @@
     "CoderStar": "1340529758@qq.com"
   },
   "source": {
-    "git": "local",
+    "git": "https://github.com/Coder-Star/LTXiOSUtils.git",
     "tag": "0.0.2"
   },
   "requires_arc": true,
@@ -22,6 +22,7 @@
     "5",
     "4.2"
   ],
+  "static_framework": true,
   "subspecs": [
     {
       "name": "Core",

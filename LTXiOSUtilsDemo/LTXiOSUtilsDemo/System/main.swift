@@ -11,9 +11,9 @@ import Foundation
 let kAppStartLaunchTimeInterval = Date().timeIntervalSince1970
 
 class MyApplication: UIApplication {
+    // 可以监听所有的事件
     override func sendEvent(_ event: UIEvent) {
         super.sendEvent(event)
-        Log.d("Event sent:\(event)")
     }
 }
 

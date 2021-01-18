@@ -97,9 +97,11 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
   install_resource "${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage/TPNSInAppMessageResource.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
   install_resource "${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage/TPNSInAppMessageResource.bundle"
 fi
 

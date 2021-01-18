@@ -40,7 +40,7 @@ extension NetworkConstant {
 
 // MARK: - APP自身相关url
 extension NetworkConstant {
-    static let appUrl = "http://121.36.20.56:8080/LTXiOSUtils/"
+    static let appUrl = "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock/"
     static let launchAdData = "LaunchAd/data.json"
-    static let bannerUrl = "PagerView/data.json"
+    static let bannerUrl = "pagerViewConfigInfo"
 }
