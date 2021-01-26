@@ -99,6 +99,8 @@ extension UIView {
     }
 
     /// 获取view所在的ViewController
+    ///
+    /// 利用UIResponder的next，即响应链机制
     public var firstViewController: UIViewController? {
         for view in sequence(first: self.superview, next: { $0?.superview }) {
             if let responder = view?.next, responder.isKind(of: UIViewController.self) {

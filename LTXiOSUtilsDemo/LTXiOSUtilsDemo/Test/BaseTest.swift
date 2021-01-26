@@ -10,7 +10,6 @@ import Foundation
 
 @objcMembers
 class BaseTest: NSObject {
-
     var observation: NSKeyValueObservation!
 
     func getUser() -> BaseUser {
@@ -43,5 +42,4 @@ class BaseTest: NSObject {
         user.setValue("kvc赋值私有属性", forKey: "sex")
         Log.d(user.value(forKey: "name"))
     }
-
 }

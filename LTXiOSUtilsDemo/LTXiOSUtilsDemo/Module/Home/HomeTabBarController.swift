@@ -36,6 +36,8 @@ class HomeTabBarController: UITabBarController {
 
         baseTest.test()
 
+        DeviceInfo.printDeviceInfo(window: (UIApplication.shared.delegate as? AppDelegate)?.window, viewController: demoListViewController)
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +56,7 @@ class HomeTabBarController: UITabBarController {
 
     private func initChildViewControllers() {
         let homeViewControllerTitle = "首页"
-        homeViewController.titleInfo = homeViewControllerTitle
+        homeViewController.title = homeViewControllerTitle
         let homeViewControllerWithNavigation = HomeNavigationController(rootViewController: homeViewController)
         homeViewControllerWithNavigation.tabBarItem.title = homeViewControllerTitle
         homeViewControllerWithNavigation.tabBarItem.badgeValue = "10"
@@ -62,8 +64,9 @@ class HomeTabBarController: UITabBarController {
         homeViewControllerWithNavigation.tabBarItem.image = R.image.home_tab()?.withRenderingMode(.alwaysOriginal)
         homeViewControllerWithNavigation.tabBarItem.selectedImage = R.image.home_tab_selected()?.withRenderingMode(.alwaysOriginal)
 
+        // title是一个快捷设置，实际会将所在VC的tabBarItem以及navigationItem设置title
         let demoListViewControllerTitle = "Demo列表".localized()
-        demoListViewController.titleInfo = demoListViewControllerTitle
+        demoListViewController.title = demoListViewControllerTitle
         let demoListViewControllerWithNavigation = HomeNavigationController(rootViewController: demoListViewController)
         demoListViewControllerWithNavigation.tabBarItem.title = demoListViewControllerTitle
         demoListViewControllerWithNavigation.tabBarItem.tx.addDot(color: .red)

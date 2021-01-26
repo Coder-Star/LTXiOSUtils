@@ -28,4 +28,8 @@ class TempTest: XCTestCase {
             }
         }
     }
+
+    func test() {
+        
+    }
 }

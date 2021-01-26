@@ -173,3 +173,26 @@ extension UIViewController {
         }
     }
 }
+
+extension TxExtensionWrapper where Base: UIViewController {
+    /// navigationBar高度
+    ///
+    /// 非刘海屏44；
+    public var navigationBarHeight: CGFloat? {
+        return base.navigationController?.navigationBar.frame.height
+    }
+
+    /// tabBar高度
+    ///
+    /// 49；
+    public var tabBarHeight: CGFloat? {
+        return base.tabBarController?.tabBar.frame.height
+    }
+
+    /// statusBar高度
+    ///
+    /// 状态栏高度，非刘海屏20；其余型号不一致，其中iPhone11 Pro 为44，iPhone12 Pro Max 47；
+    public var statusBarHeight: CGFloat {
+        return UIApplication.shared.statusBarFrame.height
+    }
+}

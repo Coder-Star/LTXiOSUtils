@@ -9,16 +9,7 @@
 import Foundation
 open class BaseViewController: UIViewController {
 
-    /// 状态栏高度
-    public private(set) var statusBarHeight: CGFloat?
-    /// 导航栏高度
-    public private(set) var navigationBarHeight: CGFloat?
-    /// tabBar高度
-    public private(set) var tabBarHeight: CGFloat?
-
-    /// 导航栏标题
-    public var titleInfo = ""
-    /// 计算属性 子类用于重写
+    /// 计算属性 子类用于重写，主要用于设置默认值
     open var currentTitleInfo: String {
         return ""
     }
@@ -26,7 +17,6 @@ open class BaseViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         setnNavigationItemTitle()
-        setupBarHeightData()
     }
 
     open func setnNavigationItemTitle() {
@@ -35,17 +25,9 @@ open class BaseViewController: UIViewController {
             if navigationItem.title?.isEmpty ?? true {
                 navigationItem.title = tempTitle
             }
-        } else if titleInfo.tx.isNotEmpty {
-            self.navigationItem.title = titleInfo
         } else if currentTitleInfo.tx.isNotEmpty {
             self.navigationItem.title = currentTitleInfo
         }
-    }
-
-    open func setupBarHeightData() {
-        statusBarHeight = UIApplication.shared.statusBarFrame.size.height
-        navigationBarHeight = navigationController?.navigationBar.frame.height
-        tabBarHeight = tabBarController?.tabBar.frame.size.height
     }
 
     open override var prefersStatusBarHidden: Bool {

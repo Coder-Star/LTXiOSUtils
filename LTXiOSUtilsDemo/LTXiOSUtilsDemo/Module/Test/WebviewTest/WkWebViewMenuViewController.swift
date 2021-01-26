@@ -34,25 +34,25 @@ class WkWebViewMenuViewController: BaseGroupTableMenuViewController {
         switch menuModel.code {
         case "Fountion":
             let viewController = JSAndNativeFountionViewController()
-            viewController.titleInfo = menuModel.title
+            viewController.title = menuModel.title
             navigationController?.pushViewController(viewController, animated: true)
         case "dsBrige":
             let viewController = JSAndNativeDSBrigeViewController()
-            viewController.titleInfo = menuModel.title
+            viewController.title = menuModel.title
             navigationController?.pushViewController(viewController, animated: true)
         case "WebViewJavascriptBridge":
             let viewController = JSAndNativeJSBrigeViewController()
-            viewController.titleInfo = menuModel.title
+            viewController.title = menuModel.title
             navigationController?.pushViewController(viewController, animated: true)
         case "WKURLSchemeHandler":
             let viewController = InterceptWkWebViewURLViewController()
             viewController.type = .wkURLSchemeHandler
-            viewController.titleInfo = menuModel.title
+            viewController.title = menuModel.title
             navigationController?.pushViewController(viewController, animated: true)
         case "CustomURLProtocol":
             let viewController = InterceptWkWebViewURLViewController()
             viewController.type = .customURLProtocol
-            viewController.titleInfo = menuModel.title
+            viewController.title = menuModel.title
             navigationController?.pushViewController(viewController, animated: true)
         default:
             HUD.showText("暂无此模块")

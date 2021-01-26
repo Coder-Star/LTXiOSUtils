@@ -64,6 +64,7 @@
 		DC5E25F72386A93900B18F51 /* DefaultsKeys+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */; };
 		DC6264E225483A2C0096530C /* PerformanceMonitorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6264E125483A2C0096530C /* PerformanceMonitorUtil.swift */; };
 		DC62A7C52384084A00DE7800 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC62A7C72384084A00DE7800 /* Localizable.strings */; };
+		DC6E3F2425C00A6D00ABB691 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E3F2325C00A6D00ABB691 /* DeviceInfo.swift */; };
 		DC6F4D3A24F68EF400B69A31 /* GCDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F4D3924F68EF400B69A31 /* GCDTest.swift */; };
 		DC6F4D4724F7CAAF00B69A31 /* ThreadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F4D4624F7CAAF00B69A31 /* ThreadTest.swift */; };
 		DC725FD7250B02120091C807 /* PtrotocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC725FD6250B02120091C807 /* PtrotocolTest.swift */; };
@@ -277,6 +278,7 @@
 		DC6264E125483A2C0096530C /* PerformanceMonitorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMonitorUtil.swift; sourceTree = "<group>"; };
 		DC62A7C62384084A00DE7800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC62A7C82384088400DE7800 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DC6E3F2325C00A6D00ABB691 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		DC6F4D3924F68EF400B69A31 /* GCDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTest.swift; sourceTree = "<group>"; };
 		DC6F4D4624F7CAAF00B69A31 /* ThreadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTest.swift; sourceTree = "<group>"; };
 		DC725FD6250B02120091C807 /* PtrotocolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PtrotocolTest.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				DCF6F54623BCC87500AC4850 /* ViewFactory.swift */,
 				DC3E61F724209F1600105366 /* TempUtils.swift */,
 				DCE1457724FA96B000E3B6B0 /* FontUtil.swift */,
+				DC6E3F2325C00A6D00ABB691 /* DeviceInfo.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1525,7 +1528,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/LTXiOSUtilsDemo/R.generated.swift",
+				$SRCROOT/LTXiOSUtilsDemo/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1666,6 +1669,7 @@
 				DC88A353250C9FC6000198AD /* InterceptWkWebViewURLViewController.swift in Sources */,
 				DCB1C05923C75B3900D735BD /* RootVCApplicationService.swift in Sources */,
 				DC88A34D250C6B51000198AD /* JSAndNativeJSBrigeViewController.swift in Sources */,
+				DC6E3F2425C00A6D00ABB691 /* DeviceInfo.swift in Sources */,
 				DC7C936124EE9DC6005E0AAA /* OC-Swift.m in Sources */,
 				DC83E7CF23F645E10030A9B4 /* FWCustomPopupDemoVC.swift in Sources */,
 				DC106D4A244F1F4E00494F45 /* MediatorAndRouterDemoViewController.swift in Sources */,
