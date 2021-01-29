@@ -10,8 +10,10 @@ import UIKit
 import UserNotifications
 import UserNotificationsUI
 
+// 自定义推送查看详情时展示的内容，会覆盖默认的展示内容，包括附件
+
 /**
- UNNotificationExtensionCategory 可以是一个数组，也可以是个字符串，定义成数组的时候就可以实现多个Category公用一个页面
+ UNNotificationExtensionCategory，定义在info.plist文件中 可以是一个数组，也可以是个字符串，定义成数组的时候就可以实现多个Category公用一个页面
 
  如果不想使用storyboard，也可以使用NSExtensionPrincipalClass（填对应ViewController的名称）代替 NSExtensionMainStoryboard 
  */

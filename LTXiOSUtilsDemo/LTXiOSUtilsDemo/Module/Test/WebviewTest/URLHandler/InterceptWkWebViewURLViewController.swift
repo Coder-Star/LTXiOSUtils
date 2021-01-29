@@ -72,6 +72,8 @@ extension WKWebView {
         let selector = Selector(("registerSchemeForCustomProtocol:"))
         let vc = WKWebView().value(forKey: "browsingContextController") as AnyObject
         let cls = type(of: vc) as AnyObject
+
+        // 拦截下列两个协议的请求
         _ = cls.perform(selector, with: "http")
         _ = cls.perform(selector, with: "https")
     }

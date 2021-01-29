@@ -35,9 +35,6 @@ class HomeTabBarController: UITabBarController {
         initChildViewControllers()
 
         baseTest.test()
-
-        DeviceInfo.printDeviceInfo(window: (UIApplication.shared.delegate as? AppDelegate)?.window, viewController: demoListViewController)
-
     }
 
     override func viewWillAppear(_ animated: Bool) {

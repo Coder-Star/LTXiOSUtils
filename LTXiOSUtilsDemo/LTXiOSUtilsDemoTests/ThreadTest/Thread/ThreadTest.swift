@@ -48,6 +48,14 @@ class MyThread: Thread {
     // 这种重写方法的方式比较适合代码较多，功能较复杂的操作
     override func main() {
         Log.d(Thread.isMainThread)
+
+        // 在非主线程中
+        DispatchQueue.main.sync {
+            Log.d(Thread.isMainThread) // true
+        }
+        DispatchQueue.main.async {
+            Log.d(Thread.isMainThread) // true
+        }
         Log.d("重写main方法的线程")
     }
 }

@@ -1,1 +1,0 @@
-../../../TPNS-iOS/XGVIPPush/XGForFreeVersion.h

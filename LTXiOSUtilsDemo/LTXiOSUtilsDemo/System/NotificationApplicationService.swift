@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import UIKit
 import SwiftyJSON
+import UIKit
 
 final class NotificationApplicationService: NSObject, ApplicationService {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-
         /// 当APP处于死亡状态，收到推送，点击推送消息启动APP，可以通过下面的方式获取到推送消息，
         /// 直接点击图标启动APP参数为空
         if let pushInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] {
@@ -22,9 +21,9 @@ final class NotificationApplicationService: NSObject, ApplicationService {
         requestAuthorization()
 
         // 向APNs请求token
-        //        UIApplication.shared.registerForRemoteNotifications()
+        UIApplication.shared.registerForRemoteNotifications()
 
-//        initXGPush()
+        initXGPush(launchOptions: launchOptions)
 
         return true
     }
@@ -63,6 +62,7 @@ final class NotificationApplicationService: NSObject, ApplicationService {
         completionHandler([.alert, .sound, .badge])
     }
 
+    /// 原生点击推送
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         Log.d("原生点击推送")
         Log.d(response)
@@ -83,9 +83,7 @@ final class NotificationApplicationService: NSObject, ApplicationService {
 
             let actionIdentifier = response.actionIdentifier
             Log.d(actionIdentifier)
-            if actionIdentifier == "action.look" {
-
-            }
+            if actionIdentifier == "action.look" {}
 
         } else if trigger.isKind(of: UNLocationNotificationTrigger.self) {
             /// 本地推送
@@ -100,7 +98,7 @@ extension NotificationApplicationService {
         let center = UNUserNotificationCenter.current()
         // 必须设置
         center.delegate = self
-        center.getNotificationSettings {[weak self] settings in
+        center.getNotificationSettings { [weak self] settings in
             switch settings.authorizationStatus {
             case .authorized:
                 // 权限通过
@@ -115,6 +113,7 @@ extension NotificationApplicationService {
                         self?.setNotificationCategories()
                     }
                 }
+                // 权限关闭
             case .denied:
                 DispatchQueue.main.async {
                     let alertController = UIAlertController.getAlert(style: .alert, title: "消息推送已关闭", message: "想要及时获取消息。点击“设置”，开启通知。", sureTitle: "设置", cancelTitle: "取消", cancelBlock: nil) {
@@ -130,8 +129,6 @@ extension NotificationApplicationService {
                 break
             case .ephemeral:
                 break
-            @unknown default:
-                break
             }
         }
     }
@@ -144,9 +141,9 @@ extension NotificationApplicationService {
          foreground：黑色文字，点击不会进app
          destructive：红色文字，点击不会进app
          */
-        let lookAction = UNNotificationAction.init(identifier: "action.look", title: "查看邀请", options: .authenticationRequired)
-        let joinAction = UNNotificationAction.init(identifier: "action.join", title: "接受邀请", options: .foreground)
-        let cancelAction = UNNotificationAction.init(identifier: "action.cancel", title: "取消邀请", options: .destructive)
+        let lookAction = UNNotificationAction(identifier: "action.look", title: "查看邀请", options: .authenticationRequired)
+        let joinAction = UNNotificationAction(identifier: "action.join", title: "接受邀请", options: .foreground)
+        let cancelAction = UNNotificationAction(identifier: "action.cancel", title: "取消邀请", options: .destructive)
 
         let inputAction = UNTextInputNotificationAction(identifier: "action.input", title: "输入", options: .foreground, textInputButtonTitle: "确定", textInputPlaceholder: "请输入接受邀请备注")
 
@@ -157,30 +154,32 @@ extension NotificationApplicationService {
 }
 
 // MARK: - TAPNs相关
-extension NotificationApplicationService {
 
-    func initXGPush() {
+extension NotificationApplicationService {
+    func initXGPush(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+
+        if let launchOptions = launchOptions as? NSMutableDictionary {
+            XGPush.defaultManager().launchOptions = launchOptions
+        }
         XGPush.defaultManager().isEnableDebug = true // 启用debug模式
 
         XGPush.defaultManager().deviceNotificationIsAllowed { _ in
-
         }
 
         // 设置成上海集群
         XGPush.defaultManager().configureClusterDomainName("tpns.sh.tencent.com")
 
         // swiftlint:disable number_separator
+        /// 内部流程已经申请权限以及获取token了，启动后，不再走原生的代理，通过原生设置的action也没有效果
         XGPush.defaultManager().startXG(withAccessID: 1680001375, accessKey: "IYBJPGFD2RRO", delegate: self)
     }
 
     func XGAPI() {
-        XGForFreeVersion.default()?.freeAccessId = 0 // 免费信鸽应用id，在启动之前调用
+        _ = XGPushTokenManager.default().deviceTokenString
     }
-
 }
 
 extension NotificationApplicationService: XGPushDelegate {
-
     func xgPushDidRegisteredDeviceToken(_ deviceToken: String?, error: Error?) {
         Log.d("deviceToken\(String(describing: deviceToken))")
     }
@@ -190,21 +189,41 @@ extension NotificationApplicationService: XGPushDelegate {
         Log.d("xgToken\(String(describing: xgToken))")
     }
 
-    /// 收到消息
+    /// 统一接收消息的回调
+    /// @param notification 消息对象(有2种类型NSDictionary和UNNotification具体解析参考示例代码)
+    /// @note 此回调为前台收到通知消息及所有状态下收到静默消息的回调（消息点击需使用统一点击回调）
+    /// 区分消息类型说明：xg字段里的msgtype为1则代表通知消息msgtype为2则代表静默消息
     func xgPushDidReceiveRemoteNotification(_ notification: Any, withCompletionHandler completionHandler: ((UInt) -> Void)? = nil) {
-        Log.d("收到通知 \(notification)")
-
+        Log.d("收到通知")
+        if let notification = notification as? UNNotification {
+            Log.d("时间 \(notification.date)")
+            Log.d("全部内容 \(notification.request.content.tx.getAllPropertysAndValue())")
+        } else if let notification = notification as? NSDictionary {
+            Log.d("全部内容 \(notification)")
+        }
         if let completion = completionHandler {
             completion(UNNotificationPresentationOptions.alert.rawValue | UNNotificationPresentationOptions.badge.rawValue | UNNotificationPresentationOptions.sound.rawValue)
         }
     }
 
-    // 统一点击回调
+    /// 统一点击回调
+    /// @param response 如果iOS 10+/macOS 10.14+则为UNNotificationResponse，低于目标版本则为NSDictionary
     func xgPushDidReceiveNotificationResponse(_ response: Any, withCompletionHandler completionHandler: @escaping () -> Void) {
         Log.d("统一点击回调 \(response)")
     }
+
+    /**
+     下面两个代理，如果上述两个统一入口方法没有被实现，就会走下面两个入口
+     */
+
+    func xgPush(_ center: UNUserNotificationCenter, willPresent notification: UNNotification?, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        Log.d(notification)
+        completionHandler([.alert, .sound, .badge])
+    }
+
+    func xgPush(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse?, withCompletionHandler completionHandler: @escaping () -> Void) {
+        Log.d("点击")
+    }
 }
 
-extension NotificationApplicationService: XGPushTokenManagerDelegate {
-
-}
+extension NotificationApplicationService: XGPushTokenManagerDelegate {}

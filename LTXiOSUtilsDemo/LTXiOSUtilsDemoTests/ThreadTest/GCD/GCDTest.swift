@@ -99,41 +99,58 @@ class GCDTest: XCTestCase {
     }
 
 
+    /// 串行队列
     func testDemo3() {
-        Log.d(Thread.isMainThread)
         let serialQueue = DispatchQueue(label: "serialQueue",qos: .userInteractive)
-
-        serialQueue.async {
-            for item in 0..<3 {
-                Log.d("串行队列1\(item)")
-            }
+        serialQueue.setSpecific(key: DispatchSpecificKey<String>, value: <#T##T?#>)
+        serialQueue.sync {
+            Log.d("串行队列同步任务")
+            Log.d(serialQueue.getSpecific(key: <#T##DispatchSpecificKey<T>#>))
         }
 
         serialQueue.async {
-            for item in 0..<3 {
-                Log.d("串行队列2\(item)")
-            }
+            Log.d("串行队列异步任务1-1")
+            Log.d("串行队列异步任务1-2")
+        }
+
+        serialQueue.async {
+            Log.d("串行队列异步任务2-1")
+            Log.d("串行队列异步任务2-2")
         }
 
         Log.d("函数结束")
+
+        /**
+         串行队列同步任务
+         函数结束
+         串行队列异步任务1-1
+         串行队列异步任务1-2
+         串行队列异步任务2-1
+         串行队列异步任务2-2
+         */
     }
 
+    /// 并行队列
     func testDemo4() {
-        Log.d(Thread.isMainThread)
         let concurrentQueue = DispatchQueue(label: "concurrentQueue", attributes: .concurrent)
 
-        concurrentQueue.async {
-            for item in 0..<3 {
-                Log.d("并行队列1\(item)")
-            }
+        concurrentQueue.sync {
+            Log.d("并行队列同步任务")
         }
 
         concurrentQueue.async {
-            for item in 0..<3 {
-                Log.d("并行队列2\(item)")
-            }
+            Log.d("并行队列异步任务1-1")
+            Log.d("并行队列异步任务1-2")
+        }
+
+        concurrentQueue.async {
+            Log.d("并行队列异步任务2-1")
+            Log.d("并行队列异步任务2-2")
         }
         Log.d("函数结束")
+        /**
+
+         */
     }
 
     /**

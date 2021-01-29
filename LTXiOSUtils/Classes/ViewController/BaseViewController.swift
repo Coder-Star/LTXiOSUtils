@@ -41,7 +41,7 @@ open class BaseViewController: UIViewController {
 
 extension BaseViewController {
     /// 状态栏是否隐藏
-    public static var statusBarHidden: Bool = false
+    public static var statusBarHidden = false
     /// 状态栏显示样式
     public static var statusBarStyle: UIStatusBarStyle = .lightContent
 }

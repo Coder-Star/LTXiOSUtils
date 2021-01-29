@@ -39,7 +39,7 @@ class LayoutMainViewController: BaseGroupTableMenuViewController {
             }
             navigationController?.pushViewController(viewController, animated: true)
         case "SwiftUI":
-            let viewController = UIHostingController(rootView: SwiftUIMainView())
+            let viewController = UIHostingController(rootView: ContentView())
             navigationController?.pushViewController(viewController, animated: true)
         default:
             HUD.showText("暂无此模块")

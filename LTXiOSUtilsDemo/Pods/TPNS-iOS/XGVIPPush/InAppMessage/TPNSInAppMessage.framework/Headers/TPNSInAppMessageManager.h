@@ -2,7 +2,7 @@
 //  TPNSInAppMessageManager.h
 //  TPNSInAppMessage
 //
-//  Created by zq on 2020/8/17.
+//  Created by rockzuo on 2020/8/17.
 //  Copyright © 2020 Tencent. All rights reserved.
 //
 
@@ -33,4 +33,3 @@
 - (void)dismissPopWindow;
 
 @end
-

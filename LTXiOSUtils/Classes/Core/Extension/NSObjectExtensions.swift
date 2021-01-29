@@ -165,7 +165,7 @@ extension TxExtensionWrapper where Base: NSObject {
     /// 获取对象的所有属性
     /// 注意:必须在获取类的class前添加@objcMembers，不然获取为空数组
     /// - Returns: 属性列表
-    public static func getAllProperties(ignoredProperties: [String] = [String]()) -> [String] {
+    public static func getAllProperties(ignoredProperties: [String] = []) -> [String] {
         var count: UInt32 = 0
         let properties = class_copyPropertyList(Base.classForCoder(), &count)
         var propertyNames: [String] = []

@@ -16,9 +16,13 @@
 #import <Bugly/Bugly.h>
 
 // TAPNs推送相关
+
+// 功能相关
 #import <XGPush.h>
+// 配置域名相关
 #import <XGPushPrivate.h>
-#import <XGForFreeVersion.h>
+// 本地通知相关
+#import <XGLocalNotification.h>
 
 // 将录音文件转码为mp3文件
 #import "LameUtil.h"

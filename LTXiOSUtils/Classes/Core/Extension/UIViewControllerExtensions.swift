@@ -188,11 +188,4 @@ extension TxExtensionWrapper where Base: UIViewController {
     public var tabBarHeight: CGFloat? {
         return base.tabBarController?.tabBar.frame.height
     }
-
-    /// statusBar高度
-    ///
-    /// 状态栏高度，非刘海屏20；其余型号不一致，其中iPhone11 Pro 为44，iPhone12 Pro Max 47；
-    public var statusBarHeight: CGFloat {
-        return UIApplication.shared.statusBarFrame.height
-    }
 }

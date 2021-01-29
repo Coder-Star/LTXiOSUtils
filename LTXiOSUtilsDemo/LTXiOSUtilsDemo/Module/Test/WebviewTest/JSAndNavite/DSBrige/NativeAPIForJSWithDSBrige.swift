@@ -32,6 +32,7 @@ class NativeAPIForJSWithDSBrige {
     static let nameSpace = "app.common"
 
     // js调用原生，同步
+    /// 函数不可以没有返回值，并且返回值不可以是swift独有的结构，如struct，Bool(可以使用CFBoolean)
     @objc
     func callNativeSync(_ arg: Any) -> Any {
         Log.d(arg)

@@ -59,6 +59,7 @@ class JSAndNativeDSBrigeViewController: WkWebViewController {
         (webView as? DWKWebView)?.addJavascriptObject(NativeAPIForJSWithDSBrige.shared, namespace: NativeAPIForJSWithDSBrige.nameSpace)
     }
 
+    /// 原生调用JS相关操作
     @objc
     func action() {
         let alertController = UIAlertController(title: "选项", message: "请选择", preferredStyle: .actionSheet)
@@ -76,7 +77,7 @@ class JSAndNativeDSBrigeViewController: WkWebViewController {
 
         let syncNameSpace = UIAlertAction(title: "同步调用JS(命名空间)", style: .default) { _ in
             // 可将下面 method1 改为 method2 以此调用 method2 方法
-            (self.webView as? DWKWebView)?.callHandler("js.callJSSyncNameSpace.method1", arguments: ["同步", "这是来自Native的同步信息"]) { result in
+            (self.webView as? DWKWebView)?.callHandler("js.callJSSyncNameSpace.method1", arguments: ["同步", "这是来自Native的同步信息", "第三个参数"]) { result in
                 Log.d(result)
             }
         }

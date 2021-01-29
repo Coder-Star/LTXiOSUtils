@@ -23,7 +23,7 @@ class DemoListViewController: BaseGroupTableMenuViewController {
         vProperty.popupCustomAlignment = .topRight
         vProperty.popupAnimationType = .scale
         vProperty.maskViewColor = .clear
-        vProperty.popupViewEdgeInsets = UIEdgeInsets(top: self.tx.statusBarHeight + self.tx.navigationBarHeight!, left: 0, bottom: 0, right: 6)
+        vProperty.popupViewEdgeInsets = UIEdgeInsets(top: DeviceInfo.statusBarHeight + self.tx.navigationBarHeight!, left: 0, bottom: 0, right: 6)
         vProperty.topBottomMargin = 0
         vProperty.animationDuration = 0.3
         vProperty.popupArrowStyle = .round
