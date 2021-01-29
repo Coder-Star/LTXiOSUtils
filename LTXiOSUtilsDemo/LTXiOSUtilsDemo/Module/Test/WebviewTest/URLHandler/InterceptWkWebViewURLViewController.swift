@@ -40,7 +40,7 @@ class InterceptWkWebViewURLViewController: WkWebViewController {
         // 利用KVO设置允许跨域
         config.setValue(true, forKey: "_allowUniversalAccessFromFileURLs")
         if #available(iOS 11.0, *) {
-            // 必须在创建WKWebView的时候设置，创建完成再设置无效果
+            // 必须在创建WKWebView的时候设置，创建完成再设置无效果，自定义的scheme不能包括常用的，如https、http、about、data、blob、ftp
             config.setURLSchemeHandler(CustomURLSchemeHandler(), forURLScheme: "coderstar")
         }
         return config
@@ -54,7 +54,7 @@ extension InterceptWkWebViewURLViewController: WKNavigationDelegate {
             return
         }
         Log.d(urlStr)
-        // 因为该方法是在请求之前回调，该url在还未发出请求之前就被修改了scheme，所以通过CustomURLProtocol拦截不到
+        // 因为该方法是在请求之前回调，该url在还未发出请求之前就被修改了scheme，不是http及https，所以不会被CustomURLProtocol拦截
         if urlStr == "http://schemehandler/" {
             webView.load(URLRequest(url: URL(string: urlStr.replacingOccurrences(of: "http", with: "coderstar"))!))
             decisionHandler(.cancel)

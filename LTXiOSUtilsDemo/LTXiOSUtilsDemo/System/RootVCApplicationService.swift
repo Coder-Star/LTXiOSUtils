@@ -78,7 +78,7 @@ extension RootVCApplicationService: XHLaunchAdDelegate {
     private func setLaunchAd() {
         XHLaunchAd.setLaunch(.launchScreen)
         XHLaunchAd.setWaitDataDuration(1) //如果这段时间没有取得json，就会直接跳过广告
-        var requestParam = RequestParam(baseUrl: NetworkConstant.appUrl, path: NetworkConstant.launchAdData)
+        var requestParam = RequestParam(path: NetworkConstant.launchAdData)
         requestParam.method = .get
         requestParam.hud.isShow = false
         NetworkManager.sendRequest(requestParam: requestParam, success: { data in

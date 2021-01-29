@@ -72,6 +72,7 @@ class WkWebViewController: BaseUIViewController {
     }
 
     func setLogHandler() {
+        // 将全局的console.log() 方法进行替换
         let source = "function captureLog(msg) { window.webkit.messageHandlers.logHandler.postMessage(msg); } window.console.log = captureLog;"
         let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
         // 执行自定义js

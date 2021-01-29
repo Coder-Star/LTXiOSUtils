@@ -8,6 +8,8 @@
 
 import Foundation
 
+// 这种方式会丢失post请求的Body
+
 class CustomURLProtocol: URLProtocol {
 
     // 判断请求是否进入自定义的NSURLProtocol加载器

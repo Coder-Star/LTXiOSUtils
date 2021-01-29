@@ -16,7 +16,7 @@ public class NetworkConstant: NSObject {
     private static var oaUrlInfo = ""
 
     class func initUrlInfo() {
-        NetworkConfig.baseURL = "http://172.20.3.53:8924/fms/"
+        NetworkConfig.baseURL = "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock"
 
         if NetworkConstant.isFormal {
             NetworkConstant.oaUrlInfo = "http://oa.topscomm.net:8932/"
@@ -40,7 +40,6 @@ extension NetworkConstant {
 
 // MARK: - APP自身相关url
 extension NetworkConstant {
-    static let appUrl = "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock/"
     static let launchAdData = "LaunchAd/data.json"
     static let bannerUrl = "pagerViewConfigInfo"
 }

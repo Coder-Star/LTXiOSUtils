@@ -10,10 +10,28 @@
 <body>
     <p>通过WKURLSchemeHandler进行拦截</p>
     <a href="http://schemeHandler">schemeHandler</a>
+    <p>调用Ajax</p>
+    <p>请求url的协议使用自定义的协议头</p>
+    <button onclick="action()">Ajax</button>
 </body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script>
+    // 注意coderstar作为协议头，这样才可以被拦截
     function action() {
-
+        console.log("按钮触发")
+        $.ajax({
+            type: 'get',
+            url: "coderstar://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock/pagerViewConfigInfo",
+            data: {
+            },
+            dataType: 'json',
+            success: function(data) {
+                console.log(JSON.stringify(data))
+            },
+            error: function(error){
+                console.log(error)
+            }
+        });
     }
 </script>
 
