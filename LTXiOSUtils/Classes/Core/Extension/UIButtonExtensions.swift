@@ -135,7 +135,7 @@ extension UIButton {
             let didAddMethod = class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod!), method_getTypeEncoding(swizzledMethod!))
 
             if didAddMethod {
-                // 添加成功，说明原SEL没有实现IMP，添加成功后将新的SEL的IMP替换成老IMPΩ
+                // 添加成功，说明原SEL没有实现IMP，添加成功后将新的SEL的IMP替换成老IMP
                 class_replaceMethod(self, swizzledSelector, method_getImplementation(originalMethod!), method_getTypeEncoding(originalMethod!))
             } else {
                 // 添加失败，说明原SEL已经实现了IMP，直接将两个SEL的IMP实现交换即可

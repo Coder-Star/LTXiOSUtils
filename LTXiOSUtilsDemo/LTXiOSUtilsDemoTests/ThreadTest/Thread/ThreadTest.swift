@@ -49,7 +49,7 @@ class MyThread: Thread {
     override func main() {
         Log.d(Thread.isMainThread)
 
-        // 在非主线程中
+        // 在非主线程中开启主队列同步或者异步任务，都会阻塞当前线程
         DispatchQueue.main.sync {
             Log.d(Thread.isMainThread) // true
         }

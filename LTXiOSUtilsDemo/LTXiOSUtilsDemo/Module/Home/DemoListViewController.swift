@@ -109,7 +109,8 @@ class DemoListViewController: BaseGroupTableMenuViewController {
         case "TreeView":
             navigationController?.pushViewController(TreeViewDemoViewController(), animated: true)
         case "AlertView":
-            navigationController?.pushViewController(FWDemoViewController(), animated: true)
+            let viewController = BaseNavigationController(rootViewController: FWDemoViewController())
+            present(viewController, animated: true, completion: nil)
         case "MaskPopup":
             navigationController?.pushViewController(MaskPopupViewController(), animated: true)
         case "PickImage":

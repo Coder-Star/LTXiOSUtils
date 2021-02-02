@@ -1,156 +1,194 @@
-/**
- _dsaf 异步
- _dsf 同步
-
- _obs 
- */
-
 var bridge = {
-    default: this,
-
-    // 调用原生方法
-    // b为方法名，a为参数，c为结果
-    call: function (b, a, c) {
-        var e = "";
-        "function" == typeof a && (c = a, a = {});
-        a = {
-            data: void 0 === a ? null : a
-        };
+	// 为typescript使用
+    default:this,
+    
+	/** 调用原生方法
+	 * @param {Object} method 原生方法名
+	 * @param {Object} args 参数
+	 * @param {Object} cb 异步方法回调函数
+	 */
+	call: function (method, args, cb) {
+        var ret = '';
         
-		//异步
-        if ("function" == typeof c) {
-            var g = "dscb" + window.dscb++;
-            window[g] = c;
-            // 异步标志
-            a._dscbstub = g
+		if (typeof args == 'function') {
+            cb = args;
+            args = {};
         }
-        a = JSON.stringify(a);
-        if (window._dsbridge) e = _dsbridge.call(b, a);
-        // window._dswk 给 iOS 使用, iOS端在Webview启动的时候会执行js代码，将window._dswk设为true
-        // navigator.userAgent.indexOf("_dsbridge")给Android使用
-        // 使用prompt弹出输入框，阻塞js
-        else if (window._dswk || -1 != navigator.userAgent.indexOf("_dsbridge")) e = prompt("_dsbridge=" + b, a);
-        return JSON.parse(e || "{}").data
-    },
+        
+		var arg={data:args===undefined?null:args}
+        
+		// js调用原生异步方法，将js端异步回调注册成全局函数，原生端每50毫秒调用一下这个全局函数
+		if (typeof cb == 'function') {
+            var cbName = 'dscb' + window.dscb++;
+            window[cbName] = cb;
+			// 异步id，原生调用js时，根据该id找到对应的全局函数
+            arg['_dscbstub'] = cbName;
+        }
+        
+		arg = JSON.stringify(arg)
 
-    // js方法注册，b为方法名，a为参数，c为是否异步
-    register: function (b, a, c) {
-        // 判断是同步还是异步，将方法放在不同的结构里面
-        c = c ? window._dsaf : window._dsf;
-        window._dsInit || (window._dsInit = !0, setTimeout(function () {
-                //  通知Native JS端注册方法完成，这是原生部分可以将存储的调用JS操作进行执行了
-				// 这样是保证JS方法还未注册成功，原生的操作可以等待JS方法注册完毕之后继续执行
-                bridge.call("_dsb.dsinit")
-            },0)
-            );
-         // 判断a是否是一个对象，以此判断是否内部具有多个方法
-        "object" == typeof a ? c._obs[b] = a : c[b] = a
-    },
+		// 供高版本Android使用，使用addJavascriptInterface的形式
+        if(window._dsbridge){
+           ret=  _dsbridge.call(method, arg)
+        }else if(window._dswk||navigator.userAgent.indexOf("_dsbridge")!=-1){
+			// window._dswk 给 iOS 使用, iOS端在Webview启动的时候会执行js代码，将window._dswk设为true
+			// navigator.userAgent.indexOf("_dsbridge") 给低版本SDKAndroid使用
+			// 使用prompt弹出输入框，阻塞js
+           ret = prompt("_dsbridge=" + method, arg);
+        }
 
-    // 注册异步方法
-    registerAsyn: function (b, a) {
-        this.register(b, a, !0)
+       return  JSON.parse(ret||'{}').data
     },
+    
+	/** js端注册方法，供原生调用
+	 * @param {Object} name 方法名
+	 * @param {Object} fun 参数
+	 * @param {Object} asyn 是否异步
+	 */
+	register: function (name, fun, asyn) {
+		// 判断是否异步，选择不同的数据结构
+        var q = asyn ? window._dsaf : window._dsf
+        
+		// 只调用一次，为的是调用一次native的dsinit方法
+		// 用来保证原生部分Webview还未初始化完成时，js调用原生也可以等到初始化完成后进行响应
+		if (!window._dsInit) {
+            window._dsInit = true;
+            setTimeout(function () {
+                bridge.call("_dsb.dsinit");
+            }, 0)
+        }
+        
+		if (typeof fun == "object") {
+			// 判断a是否是一个对象，以此判断是否内部具有多个方法，并将回调保存到对应位置
+			// 方便js端函数可以注册成命名空间的形式
+            q._obs[name] = fun;
+        } else {
+            q[name] = fun
+        }
+    },
+    
+	// 注册异步方法
+	registerAsyn: function (name, fun) {
+        this.register(name, fun, true);
+    },
+    
 	
-	// 原生端内部实现
-
-    // 判断是否有原生方法
-    hasNativeMethod: function (b, a) {
-        return this.call("_dsb.hasNativeMethod", {
-            name: b,
-            type: a || "all"
-        })
+	// 判断是否有原生方法
+	hasNativeMethod: function (name, type) {
+        return this.call("_dsb.hasNativeMethod", {name: name, type:type||"all"});
     },
-
-    // 禁止捕获alert、confirm、prompt等弹出框
-    disableJavascriptDialogBlock: function (b) {
+    
+	// 禁止捕获alert、confirm、prompt等弹出框
+	disableJavascriptDialogBlock: function (disable) {
         this.call("_dsb.disableJavascriptDialogBlock", {
-            disable: !1 !== b
+            disable: disable !== false
         })
     }
 };
-! function () {
-    if (!window._dsf) {
-        var b = {
-		        // 存储同步
-                _dsf: {
-                    // 存储多个js方法，命名空间方式
-                    _obs: {}
-                },
-				// 存储异步
-                _dsaf: {
-                    _obs: {}
-                },
-                dscb: 0,
-                dsBridge: bridge,
-                
-				// 关闭，原生端内部实现
-				close: function () {
-                    bridge.call("_dsb.closePage")
-                },
-                
-				// js定义的方法，供原生端通过callHandler调用
-                // 传递的参数包括 method、callbackId、data
-                _handleMessageFromNative: function (a) {
-					// a包含  method、 data、callbackId
-					// 定义数据
-                    var e = JSON.parse(a.data),
-                        
-						b = {
-                            id: a.callbackId,
-                            // 同步调用，complete传true时，Native端会将相应回调删除
-                            complete: !0
-                        },
-                        
-						// 获取js方法
-						// 同步方法
-                        c = this._dsf[a.method],
-						// 异步方法
-                        d = this._dsaf[a.method],
-                        
-						// 同步执行
-                        h = function (a, c) {
-                            // a为js方法，c为 _dsf， e为原生传递来的数据
-                            b.data = a.apply(c, e);
-                            bridge.call("_dsb.returnValue", b)
-                        },
-                        
-						// 异步
-                        k = function (a, c) {
-                            e.push(function (a, c) {
-                                b.data = a;
-								// 异步调用，动态调整
-                                b.complete = !1 !== c;
-                                bridge.call("_dsb.returnValue", b)
-                            });
-                            a.apply(c, e)
-                        };
-                    
-					if (c) h(c, this._dsf);
-                    else if (d) k(d, this._dsaf);
-                    // 处理命名空间
-                    else if (c = a.method.split("."), !(2 > c.length)) {
-                        a = c.pop();
-                        var c = c.join("."),
-                            d = this._dsf._obs,
-                            d = d[c] || {},
-                            f = d[a];
-                        f && "function" == typeof f ? h(f, d) : (d = this._dsaf._obs, d = d[c] || {}, (f = d[a]) && "function" == typeof f && k(f, d))
-                    }
+
+!function () {
+    
+	if (window._dsf) return;
+    
+	var ob = {
+        // 存储同步
+		_dsf: {
+			// 存储多个js方法，命名空间方式
+            _obs: {}
+        },
+		// 存储异步
+		_dsaf: {
+            _obs: {}
+        },
+        
+		// 计数标识，用来标识js调用原生异步方法 js端回调函数的id
+		dscb: 0,
+        
+		dsBridge: bridge,
+        
+		// 关闭，原生端内部实现
+		close: function () {
+            bridge.call("_dsb.closePage")
+        },
+        
+		/** 监听从原生传来的信息
+		 * @param {Object} info 包括 method、callbackId、data
+		 */
+		_handleMessageFromNative: function (info) {
+            var arg = JSON.parse(info.data);
+
+            // callbackId为原生端回调函数的id，原生端使用字典为id与回调函数闭包提供映射关系
+			var ret = {
+                id: info.callbackId,
+                complete: true
+            }
+            
+			// 同步方法
+			var f = this._dsf[info.method];
+            
+			// 异步方法
+			var af = this._dsaf[info.method]
+            
+			var callSyn = function (f, ob) {
+                ret.data = f.apply(ob, arg)
+                bridge.call("_dsb.returnValue", ret)
+            }
+            
+			var callAsyn = function (f, ob) {
+                arg.push(function (data, complete) {
+                    ret.data = data;
+                    ret.complete = complete!==false;
+                    bridge.call("_dsb.returnValue", ret)
+                })
+                f.apply(ob, arg)
+            }
+            
+			if (f) {
+                callSyn(f, this._dsf);
+            } else if (af) {
+                callAsyn(af, this._dsaf);
+            } else {
+                var name = info.method.split('.');
+                if (name.length<2) return;
+                var method=name.pop();
+                var namespace=name.join('.')
+                var obs = this._dsf._obs;
+                var ob = obs[namespace] || {};
+                var m = ob[method];
+                if (m && typeof m == "function") {
+                    callSyn(m, ob);
+                    return;
                 }
-            },
-            a;
-        
-		// 将所有方法注册到window
-        for (a in b) window[a] = b[a];
-        
-		// 注册判断是否有js方法
-        bridge.register("_hasJavascriptMethod", function (a, b) {
-            b = a.split(".");
-            if (2 > b.length) return !(!_dsf[b] && !_dsaf[b]);
-            a = b.pop();
-            b = b.join(".");
-            return (b = _dsf._obs[b] || _dsaf._obs[b]) && !!b[a]
-        })
+                obs = this._dsaf._obs;
+                ob = obs[namespace] || {};
+                m = ob[method];
+                if (m && typeof m == "function") {
+                    callAsyn(m, ob);
+                    return;
+                }
+            }
+        }
     }
+    
+	// 将所有方法注册到window
+	for (var attr in ob) {
+        window[attr] = ob[attr]
+    }
+    
+	// 注册判断是否有js方法
+	bridge.register("_hasJavascriptMethod", function (method, tag) {
+         var name = method.split('.')
+         if(name.length<2) {
+           return !!(_dsf[name]||_dsaf[name])
+         }else{
+           // with namespace
+           var method=name.pop()
+           var namespace=name.join('.')
+           var ob=_dsf._obs[namespace]||_dsaf._obs[namespace]
+           return ob&&!!ob[method]
+         }
+    })
+	
 }();
+
+module.exports = bridge;

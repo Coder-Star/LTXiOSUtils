@@ -102,10 +102,8 @@ class GCDTest: XCTestCase {
     /// 串行队列
     func testDemo3() {
         let serialQueue = DispatchQueue(label: "serialQueue",qos: .userInteractive)
-        serialQueue.setSpecific(key: DispatchSpecificKey<String>, value: <#T##T?#>)
         serialQueue.sync {
             Log.d("串行队列同步任务")
-            Log.d(serialQueue.getSpecific(key: <#T##DispatchSpecificKey<T>#>))
         }
 
         serialQueue.async {

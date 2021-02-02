@@ -11,7 +11,6 @@ import Foundation
 class HUDDemoViewController: BaseGroupTableMenuViewController {
 
     var hud: HUD?
-    var timer: Timer?
     var progresss: Float = 0
 
     override func viewDidLoad() {
@@ -45,19 +44,22 @@ class HUDDemoViewController: BaseGroupTableMenuViewController {
             }
         case "progress":
             hud = HUD.showProgress(title: "开始加载")
-            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerExecute), userInfo: nil, repeats: true)
-            timer?.fire()
+
+            let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+                guard let strongSelf = self else { return }
+                strongSelf.progresss += 0.1
+                strongSelf.hud?.updateProgress(progress: strongSelf.progresss, title: "当前进度:\(String(format: "%.2f", strongSelf.progresss))", successTitle: "完成")
+            }
+
+            // 手动触发一次
+            timer.fire()
         default:
             HUD.showText("暂无此模块")
         }
     }
 
-    @objc func timerExecute() {
-        progresss += 0.1
-        hud?.updateProgress(progress: progresss, title: "当前进度:\(String(format: "%.2f", progresss))", successTitle: "完成")
-        if progresss > 1 {
-            timer?.invalidate()
-        }
+    deinit {
+        Log.d("销毁")
     }
 
 }

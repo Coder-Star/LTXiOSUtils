@@ -125,6 +125,7 @@ extension NotificationApplicationService {
                         (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController?.present(alertController!, animated: true, completion: nil)
                     }
                 }
+                // 临时权限
             case .provisional:
                 break
             case .ephemeral:
@@ -171,7 +172,7 @@ extension NotificationApplicationService {
 
         // swiftlint:disable number_separator
         /// 内部流程已经申请权限以及获取token了，启动后，不再走原生的代理，通过原生设置的action也没有效果
-        XGPush.defaultManager().startXG(withAccessID: 1680001375, accessKey: "IYBJPGFD2RRO", delegate: self)
+//        XGPush.defaultManager().startXG(withAccessID: 1680001375, accessKey: "IYBJPGFD2RRO", delegate: self)
     }
 
     func XGAPI() {
@@ -193,6 +194,7 @@ extension NotificationApplicationService: XGPushDelegate {
     /// @param notification 消息对象(有2种类型NSDictionary和UNNotification具体解析参考示例代码)
     /// @note 此回调为前台收到通知消息及所有状态下收到静默消息的回调（消息点击需使用统一点击回调）
     /// 区分消息类型说明：xg字段里的msgtype为1则代表通知消息msgtype为2则代表静默消息
+    /// 如果是静默通知，在后台接收到时，会触发该回调，也会触发原生的静默通知回调，此时要注意不要多次completionHandler，否则会引发Crash，可以通过消息字典里面是否有xg字段判断是否是TPNS平台的消息
     func xgPushDidReceiveRemoteNotification(_ notification: Any, withCompletionHandler completionHandler: ((UInt) -> Void)? = nil) {
         Log.d("收到通知")
         if let notification = notification as? UNNotification {

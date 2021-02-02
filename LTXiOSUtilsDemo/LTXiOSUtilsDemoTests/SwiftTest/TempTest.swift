@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+import LTXiOSUtilsDemo
 
 
 class TempTest: XCTestCase {
@@ -30,6 +31,17 @@ class TempTest: XCTestCase {
     }
 
     func test() {
-        
+        Log.d(UserDefaultsConfig.username)
+        UserDefaultsConfig.username = "123"
+        Log.d(UserDefaults.standard.object(forKey: "username"))
     }
+}
+
+struct UserDefaultsConfig {
+    @UserDefaultWrapper("hadShownGuideView", defaultValue: true)
+    static var hadShownGuideView: Bool
+
+    ///保存用户名称
+    @UserDefaultWrapper("username", defaultValue: "unknown")
+    static var username: String
 }

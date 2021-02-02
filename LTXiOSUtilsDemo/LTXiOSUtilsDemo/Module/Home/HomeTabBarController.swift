@@ -54,7 +54,7 @@ class HomeTabBarController: UITabBarController {
     private func initChildViewControllers() {
         let homeViewControllerTitle = "首页"
         homeViewController.title = homeViewControllerTitle
-        let homeViewControllerWithNavigation = HomeNavigationController(rootViewController: homeViewController)
+        let homeViewControllerWithNavigation = BaseNavigationController(rootViewController: homeViewController)
         homeViewControllerWithNavigation.tabBarItem.title = homeViewControllerTitle
         homeViewControllerWithNavigation.tabBarItem.badgeValue = "10"
         homeViewControllerWithNavigation.tabBarItem.badgeColor = .black
@@ -64,7 +64,7 @@ class HomeTabBarController: UITabBarController {
         // title是一个快捷设置，实际会将所在VC的tabBarItem以及navigationItem设置title
         let demoListViewControllerTitle = "Demo列表".localized()
         demoListViewController.title = demoListViewControllerTitle
-        let demoListViewControllerWithNavigation = HomeNavigationController(rootViewController: demoListViewController)
+        let demoListViewControllerWithNavigation = BaseNavigationController(rootViewController: demoListViewController)
         demoListViewControllerWithNavigation.tabBarItem.title = demoListViewControllerTitle
         demoListViewControllerWithNavigation.tabBarItem.tx.addDot(color: .red)
         demoListViewControllerWithNavigation.tabBarItem.image = R.image.demoList_tab()?.withRenderingMode(.alwaysOriginal)

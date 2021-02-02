@@ -20,7 +20,7 @@ extension TxExtensionWrapper where Base: DispatchQueue {
 }
 
 extension TxExtensionWrapper where Base == DispatchQueue {
-    private static var onceTracker = [String]()
+    private static var onceTracker = Set<String>()
 
     /// 类似一个单例模式，保证只执行一次
     /// - Parameters:
@@ -34,7 +34,7 @@ extension TxExtensionWrapper where Base == DispatchQueue {
         if onceTracker.contains(token) {
             return
         }
-        onceTracker.append(token)
+        onceTracker.insert(token)
         block()
     }
 }

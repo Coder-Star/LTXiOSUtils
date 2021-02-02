@@ -169,17 +169,17 @@ extension UserDefaultsProtocol {
         return UserDefaults.standard.bool(forKey: key)
     }
 
-    /// 获取Bool值
+    /// 获取int值
     public var int: Int {
         return UserDefaults.standard.integer(forKey: key)
     }
 
-    /// 获取Bool值
+    /// 获取float值
     public var float: Float {
         return UserDefaults.standard.float(forKey: key)
     }
 
-    /// 获取Bool值
+    /// 获取double值
     public var double: Double {
         return UserDefaults.standard.double(forKey: key)
     }
