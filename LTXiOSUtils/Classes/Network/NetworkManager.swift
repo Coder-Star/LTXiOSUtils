@@ -18,6 +18,8 @@ import Reachability
 /// 默认的MoyaProvider
 var provider: MoyaProvider<APIManager>?
 
+let info = ""
+
 /// 网络请求工具类
 public class NetworkManager {
 

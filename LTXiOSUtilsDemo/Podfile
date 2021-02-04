@@ -19,6 +19,11 @@ target 'LTXiOSUtilsDemo' do
   # 安装flutter模块
   install_all_flutter_pods(flutter_application_path)
 
+  # 不显示所有pod的警告
+  inhibit_all_warnings!
+  # 控制单个pod库是否显示警告
+  #,:inhibit_warnings => false
+
   pod 'LTXiOSUtils',:path => '../' # 基础功能库
   #  pod 'LTXiOSUtils', :git => 'https://github.com/Coder-Star/LTXiOSUtils.git', :tag => '0.0.0' #直接从源代码托管仓库取
 
@@ -53,7 +58,7 @@ target 'LTXiOSUtilsDemo' do
   pod 'Bugly', '2.5.2' # 异常上报
   pod 'TPNS-iOS', '1.3.0.0' # 腾讯云推送
 
-  pod 'LookinServer', :configurations => ['Debug'] # 查看UI
+  pod 'LookinServer', :configurations => ['Debug'] # 查看UI，只编译进debug版本， :configurations => ['Debug','Test']
 
   #  pod 'SwiftyEventBus', '1.0.0' # 事件总线
   #  pod 'SwifterSwift', '5.1.0' # Swift相关扩展
@@ -109,18 +114,7 @@ end
 #'SnapKit',
 #]
 #
-#post_install do |installer|
-#  installer.pods_project.targets.each do |target|
-#    if swift_42.include?(target.name)
-#      target.build_configurations.each do |config|
-#        config.build_settings['SWIFT_VERSION'] = swift_version
-#      end
-#    end
-#  end
-#end
 
-# 将Flutter相关pod包的bitcode选项关掉，因为Flutter不支持bitcode
-# 也需要手动将APP的bitcode关掉
 disabled_bitcode = [
 'Flutter',
 'flutter_module',
@@ -129,10 +123,27 @@ disabled_bitcode = [
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
+
+    # Flutter相关pod包的bitcode选项关掉，因为Flutter不支持bitcode
+    # 也需要手动将APP的bitcode关掉
     if disabled_bitcode.include?(target.name)
       target.build_configurations.each do |config|
         config.build_settings['ENABLE_BITCODE'] = 'NO'
       end
     end
+
+    target.build_configurations.each do |config|
+      if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 9.0
+         config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      end
+    end
+
+    # 将部分指定pod包的swift版本设置为4.2
+    #    if swift_42.include?(target.name)
+    #      target.build_configurations.each do |config|
+    #        config.build_settings['SWIFT_VERSION'] = swift_version
+    #      end
+    #    end
+
   end
 end

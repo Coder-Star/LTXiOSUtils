@@ -25,4 +25,14 @@ class DemoTest: XCTestCase {
         let x = 1_11_11
         Log.d(x)
     }
+
+    func testAutoReleasePool() {
+        let num = 10 * 10 * 10 * 10 * 10 * 10 * 10 * 10 * 10 * 10
+        for i in 0...num {
+            // 这个地方如果不加上autoreleasepool，内存会保证一个增长的状态，加上之后会保持文档
+            autoreleasepool {
+                Log.d(i)
+            }
+        }
+    }
 }

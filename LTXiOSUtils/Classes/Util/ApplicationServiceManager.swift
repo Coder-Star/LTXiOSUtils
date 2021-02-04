@@ -298,6 +298,7 @@ extension ApplicationServiceManagerDelegate {
         return result
     }
 
+    /// 获取Universal link相关信息
     @available(iOS 8.0, *)
     open func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         let returns = apply({ (service, restorationHandler) -> Bool? in
