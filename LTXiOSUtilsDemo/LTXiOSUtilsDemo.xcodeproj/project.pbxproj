@@ -91,6 +91,7 @@
 		DC88A35D250CB318000198AD /* WKURLSchemeHandler.html in Resources */ = {isa = PBXBuildFile; fileRef = DC88A35C250CB318000198AD /* WKURLSchemeHandler.html */; };
 		DC88A35F250CB322000198AD /* CustomURLProtocol.html in Resources */ = {isa = PBXBuildFile; fileRef = DC88A35E250CB322000198AD /* CustomURLProtocol.html */; };
 		DC9619D925C91AE400F78537 /* dsbridge.js in Resources */ = {isa = PBXBuildFile; fileRef = DC9619D825C91AE400F78537 /* dsbridge.js */; };
+		DC961E6F25CC47BD00F78537 /* PatternMatchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC961E6E25CC47BD00F78537 /* PatternMatchTest.swift */; };
 		DC9D2C5625344FB500C83C79 /* SlideAdressTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5125344FB500C83C79 /* SlideAdressTool.m */; };
 		DC9D2C5825344FB500C83C79 /* CrashHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5425344FB500C83C79 /* CrashHandler.swift */; };
 		DC9F89CC24ED0E7500C0487F /* AudioAndRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */; };
@@ -311,6 +312,7 @@
 		DC88A35C250CB318000198AD /* WKURLSchemeHandler.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKURLSchemeHandler.html; sourceTree = "<group>"; };
 		DC88A35E250CB322000198AD /* CustomURLProtocol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CustomURLProtocol.html; sourceTree = "<group>"; };
 		DC9619D825C91AE400F78537 /* dsbridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dsbridge.js; sourceTree = "<group>"; };
+		DC961E6E25CC47BD00F78537 /* PatternMatchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternMatchTest.swift; sourceTree = "<group>"; };
 		DC9D2C5125344FB500C83C79 /* SlideAdressTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideAdressTool.m; sourceTree = "<group>"; };
 		DC9D2C5325344FB500C83C79 /* SlideAdressTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideAdressTool.h; sourceTree = "<group>"; };
 		DC9D2C5425344FB500C83C79 /* CrashHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashHandler.swift; sourceTree = "<group>"; };
@@ -1087,6 +1089,7 @@
 				DC4F88C52511BCCB00B68C72 /* ErrorTest.swift */,
 				DC46106025541E650018BBF5 /* Mirror&KVC&KVOTest.swift */,
 				DC1C1A632587893C005509D8 /* TempTest.swift */,
+				DC961E6E25CC47BD00F78537 /* PatternMatchTest.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -1711,6 +1714,7 @@
 				DC1C1A642587893C005509D8 /* TempTest.swift in Sources */,
 				DC09415E2436E4D20052085F /* DemoTest.swift in Sources */,
 				DCDBA7BB250528130073E293 /* FunctionTest.swift in Sources */,
+				DC961E6F25CC47BD00F78537 /* PatternMatchTest.swift in Sources */,
 				DCE1457D24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift in Sources */,
 				DCB1C06023C8006500D735BD /* NSObjectExtensionTest.swift in Sources */,
 				DC73E8252520C636009472A9 /* TaskGroupTest.swift in Sources */,

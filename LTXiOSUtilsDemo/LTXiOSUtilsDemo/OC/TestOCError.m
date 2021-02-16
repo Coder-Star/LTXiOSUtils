@@ -11,7 +11,7 @@
 @implementation TestOCError
 
 + (void)testArrayIndexOutOfExpection {
-    NSArray *a = [NSArray init];
+    NSArray *a = [[NSArray alloc] init];
     NSLog(@"%@",a[10]);
 }
 

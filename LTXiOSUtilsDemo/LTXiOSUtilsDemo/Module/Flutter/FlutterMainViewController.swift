@@ -9,6 +9,7 @@
 import Foundation
 import LTXiOSUtils
 import Flutter
+import SwiftyJSON
 
 class FlutterMainViewController: BaseGroupTableMenuViewController {
 
@@ -82,6 +83,8 @@ class FlutterMainViewController: BaseGroupTableMenuViewController {
 }
 
 extension FlutterMainViewController {
+
+    /// 注册插件
     func registerPlugins(viewController: FlutterViewController) {
         registerMethodChannel(viewController: viewController)
         registerEventChannel(viewController: viewController)
@@ -98,7 +101,7 @@ extension FlutterMainViewController {
             if call.method == "callNativeMethond" {
                 let para = call.arguments
                 Log.d(para)
-                result(["key": "原生数据"])
+                result(JSON(["key": "原生数据"]).description)
             } else {
                 result(FlutterMethodNotImplemented)
             }

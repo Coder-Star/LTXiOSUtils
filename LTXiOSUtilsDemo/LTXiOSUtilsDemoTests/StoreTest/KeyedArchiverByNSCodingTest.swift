@@ -19,6 +19,10 @@ class ArchiverUser:NSObject, NSCoding {
         self.phone = phone
     }
 
+    /**
+     下列两个方法是NSCoding规定的协议方法，用来映射关系，可以利用runtime统一映射。class_copyIvarList
+     */
+
     func encode(with coder: NSCoder) {
         coder.encode(name, forKey:"Name")
         coder.encode(phone, forKey:"Phone")
@@ -61,6 +65,9 @@ class ArchiverSecureUser: NSObject, NSSecureCoding {
 
 class KeyedArchiverByNSCodingTest: XCTestCase {
 
+    /**
+     ArchiverUser.archiver是无法被正常解压到，内部进行了加密
+     */
     func testSaveAndRead() {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!.appending("/ArchiverUser.archiver")
 

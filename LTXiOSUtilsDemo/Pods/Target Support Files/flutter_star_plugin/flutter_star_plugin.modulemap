@@ -1,0 +1,6 @@
+framework module flutter_star_plugin {
+  umbrella header "flutter_star_plugin-umbrella.h"
+
+  export *
+  module * { export * }
+}

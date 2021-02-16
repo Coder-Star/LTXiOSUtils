@@ -16,20 +16,29 @@ import LTXiOSUtils
 class PlistTest: XCTestCase {
 
     func test() {
-
+        let fileManager = FileManager.default
         let path = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!)
+        Log.d(path)
 
         // NSMutableArray、NSArray
         let listPath = path.appendingPathComponent("list").appendingPathExtension("plist")
         let list = NSMutableArray()
         let one = ["姓名": "张三", "年龄": 24] as [String : Any]
         list.add(one)
-        Log.d(list.write(toFile: listPath.path, atomically: true))
+        if !fileManager.fileExists(atPath: listPath.absoluteString) {
+            Log.d(list.write(toFile: listPath.path, atomically: true))
+        } else {
+            let fileHandle = FileHandle(forUpdatingAtPath: listPath.absoluteString)
+            fileHandle?.seekToEndOfFile()
+            let data = try? JSONSerialization.data(withJSONObject: list, options: [])
+            fileHandle?.write(data!)
+            fileHandle?.closeFile()
+        }
         Log.d(NSArray(contentsOf: listPath))
 
         // NSData、Data、NSMutableData
         let nsDataPath = path.appendingPathComponent("nsData").appendingPathExtension("plist")
-        let nsData = NSData(data: "这是NSData".data(using: .utf8)!)
+        let nsData = NSData(data: "这NSData".data(using: .utf8)!)
         nsData.write(to: nsDataPath, atomically: true)
         Log.d(String(data: NSData(contentsOf: nsDataPath)! as Data, encoding: .utf8))
 

@@ -1557,6 +1557,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## flutter_star_plugin
+
+TODO: Add your license here.
+
+
 ## flutter_webview_plugin
 
 // Copyright 2017 Hadrien Lejard. All rights reserved.

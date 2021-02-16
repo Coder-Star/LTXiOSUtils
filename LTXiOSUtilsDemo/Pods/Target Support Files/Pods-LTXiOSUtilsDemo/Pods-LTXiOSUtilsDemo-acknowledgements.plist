@@ -1814,6 +1814,15 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>TODO: Add your license here.
+</string>
+			<key>Title</key>
+			<string>flutter_star_plugin</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>// Copyright 2017 Hadrien Lejard. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without

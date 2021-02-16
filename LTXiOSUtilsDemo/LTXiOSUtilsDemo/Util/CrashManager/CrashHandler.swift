@@ -57,7 +57,10 @@ extension CrashHandler {
          2.一个失败的强制类型转换
          */
         signal(SIGTRAP, CrashHandler.signalHandler)
-
+        /**
+         1. 数组越界
+         2.
+         */
         signal(SIGABRT, CrashHandler.signalHandler)
         signal(SIGSEGV, CrashHandler.signalHandler)
         signal(SIGBUS, CrashHandler.signalHandler)

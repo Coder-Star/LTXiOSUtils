@@ -167,6 +167,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  flutter_star_plugin:
+    dependency: "direct main"
+    description:
+      path: "../flutter_star_plugin"
+      relative: true
+    source: path
+    version: "0.0.1"
   flutter_svg:
     dependency: transitive
     description:

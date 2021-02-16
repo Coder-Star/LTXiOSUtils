@@ -9,6 +9,11 @@
 import XCTest
 import LTXiOSUtils
 
+/**
+ 类方法创建的线程自动运行，利用类方法创建没有返回值，所以如果需要获取创建的thread，需要在相应的selector方法中调用获取当前线程的方法
+ 实例方法创建的线程需要手动调用start方法进行运行
+ */
+
 @testable import LTXiOSUtils
 
 class ThreadTest: XCTestCase {

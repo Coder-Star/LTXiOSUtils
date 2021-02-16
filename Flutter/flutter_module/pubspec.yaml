@@ -24,6 +24,8 @@ dependencies:
       ref: 1.17.1
   flutter_star:
     path: ../flutter_star
+  flutter_star_plugin:
+    path: ../flutter_star_plugin
   r_dart_library:
     git:
       url: https://github.com/YK-Unit/r_dart_library.git

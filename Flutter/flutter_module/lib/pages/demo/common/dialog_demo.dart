@@ -25,7 +25,7 @@ class _DialogDemoState extends State<DialogDemo> {
     return WillPopScope(
       // 拦截返回按钮事件
       onWillPop: () async {
-        return false;
+        return true;
       },
       child: Scaffold(
         appBar: AppBar(

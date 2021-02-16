@@ -12,11 +12,14 @@ PODS:
     - Flutter
   - flutter_module (0.0.1):
     - Flutter
+  - flutter_star_plugin (0.0.1):
+    - Flutter
   - flutter_webview_plugin (0.0.1):
     - Flutter
   - FlutterPluginRegistrant (0.0.1):
     - Flutter
     - flutter_boost
+    - flutter_star_plugin
     - flutter_webview_plugin
     - path_provider
     - shared_preferences
@@ -109,6 +112,7 @@ DEPENDENCIES:
   - Flutter (from `../Flutter/flutter_module/.ios/Flutter/engine`)
   - flutter_boost (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios`)
   - flutter_module (from `../Flutter/flutter_module/.ios/Flutter`)
+  - flutter_star_plugin (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/ios`)
   - flutter_webview_plugin (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios`)
   - FlutterPluginRegistrant (from `../Flutter/flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
   - FSPagerView (= 0.8.3)
@@ -198,6 +202,8 @@ EXTERNAL SOURCES:
     :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios"
   flutter_module:
     :path: "../Flutter/flutter_module/.ios/Flutter"
+  flutter_star_plugin:
+    :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/ios"
   flutter_webview_plugin:
     :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios"
   FlutterPluginRegistrant:
@@ -219,8 +225,9 @@ SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_boost: a7cfa776b75329d5e7d101d0cd33e75042bcde69
   flutter_module: d1e1ff44505640bd9aa37f23f63380c646272be4
+  flutter_star_plugin: cb746418e90ecd0f744e28116092921092061e92
   flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
-  FlutterPluginRegistrant: 4665bf49db19e9f2a69b63647e2d8d424001a648
+  FlutterPluginRegistrant: af8248296ac6f40ae8716d0814a215bde2a0f948
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GDPerformanceView-Swift: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414

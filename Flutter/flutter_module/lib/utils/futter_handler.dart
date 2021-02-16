@@ -2,12 +2,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_module/utils/channel_utils.dart';
 
-///
+/// 注册
 class FlutterHanlder {
   ///
   static void initFlutterHander() {
     initMethodHander();
-    initEventHander();
+    // initEventHander();
     initMessageHander();
   }
 

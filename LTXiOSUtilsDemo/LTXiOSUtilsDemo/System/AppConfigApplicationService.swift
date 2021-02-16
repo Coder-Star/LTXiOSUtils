@@ -60,6 +60,7 @@ extension AppConfigApplicationService: CrashHandlerDelegate {
 
     func didCatchCarsh(carshInfo: CrashInfoModel) {
         Log.d(carshInfo.name)
+        Log.d(carshInfo.reason)
         Log.d(carshInfo.callStack)
     }
 }

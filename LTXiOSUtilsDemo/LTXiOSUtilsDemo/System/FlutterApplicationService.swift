@@ -32,6 +32,7 @@ final class FlutterApplicationService: FlutterAppDelegate, ApplicationService {
 //        flutterEngine.run(withEntrypoint: "main1", libraryURI: "main1.dart")
 
         // 注册插件，使准备好的插件被加载
+        // 其中就是调用一次各个插件的registerWithRegistrar方法
         GeneratedPluginRegistrant.register(with: flutterEngine)
 
     }
