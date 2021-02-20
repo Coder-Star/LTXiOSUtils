@@ -20,7 +20,7 @@ public struct TxExtensionWrapper<Base> {
 }
 
 /// 引用类型协议
-public protocol TxExtensionWrapperCompatible { }
+public protocol TxExtensionWrapperCompatible: AnyObject { }
 
 /// 值类型协议
 public protocol TxExtensionWrapperCompatibleValue { }

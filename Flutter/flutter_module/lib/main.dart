@@ -20,12 +20,12 @@ void main() {
   runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
     runApp(MyApp());
-    FlutterHanlder.initFlutterHander();
+    FlutterHanlder.initMessageHander();
+    FlutterHanlder.initMethodHander();
   }, (Object error, StackTrace stack) async {
     print(error);
     print(stack);
   });
-
   // 捕获Flutter异常
   FlutterError.onError = (FlutterErrorDetails errorDetails) {
     print(errorDetails);

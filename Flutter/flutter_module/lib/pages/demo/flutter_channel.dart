@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_module/utils/futter_handler.dart';
 import 'package:flutter_module/utils/log_utils.dart';
 import 'package:flutter_module/utils/native_messager.dart';
 
@@ -7,12 +8,13 @@ import 'package:flutter_module/utils/native_messager.dart';
 class FlutterChannel extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
+
+    FlutterHanlder.initEventHander();
+
     var items = <Map>[];
     const item1 = {'code': 'methodChannel', 'title': 'methodChannel调用Native'};
-    const item2 = {'code': 'eventChannel', 'title': 'eventChannel调用Native'};
     const item3 = {'code': 'messageChannel', 'title': 'messageChannel调用Native'};
     items.add(item1);
-    items.add(item2);
     items.add(item3);
     return FunctionWidgetState(items);
   }
@@ -80,14 +82,6 @@ class FunctionWidgetState extends State<FlutterChannel> {
           {'key': 'flutter'},
         );
         await EasyLoading.showToast(message as String);
-        break;
-      case 'eventChannel':
-        await NativeMessager.callNativeMethod(
-          'testMethodChannel',
-          'callNativeMethond',
-          {'key': 'flutter'},
-        );
-        await EasyLoading.showToast(code);
         break;
       case 'messageChannel':
         final message = await NativeMessager.callNativeMessage(

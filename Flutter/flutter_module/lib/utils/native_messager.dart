@@ -2,7 +2,8 @@ import 'package:flutter/services.dart';
 
 import 'channel_utils.dart';
 
-///
+/// 调用原生的相关方法
+
 class NativeMessager {
   /// 调用原生方法
   ///

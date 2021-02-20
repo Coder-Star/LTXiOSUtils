@@ -13,8 +13,6 @@ class DialogDemo extends StatefulWidget {
 }
 
 class _DialogDemoState extends State<DialogDemo> {
-  //上次点击时间
-  DateTime _lastPressedAt;
   static final List _allList = [
     {'code': 'CupertinoAlertDialog', 'title': 'CupertinoAlertDialog'},
     {'code': 'CupertinoActionSheet', 'title': 'CupertinoActionSheet'},

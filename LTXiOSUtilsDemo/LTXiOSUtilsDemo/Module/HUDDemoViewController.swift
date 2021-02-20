@@ -80,6 +80,7 @@ class WeakProxy: NSObject {
         return WeakProxy(target)
     }
 
+    // 消息转发
     override func forwardingTarget(for aSelector: Selector!) -> Any? {
         Log.d(aSelector)
         if target?.responds(to: aSelector) == true {

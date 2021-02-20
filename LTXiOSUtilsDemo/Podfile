@@ -11,8 +11,11 @@ target 'LTXiOSUtilsDemo' do
   source 'https://github.com/Coder-Star/LTXSpecs.git' # 私有库地址
   platform :ios, '10.0'
 
-  use_frameworks! #使用动态库方式
-  # use_modular_headers! #使用静态库方式
+  # 使用动态库方式，这在pod 1.5.0之前Swift工程时是必须的，但在1.5之后就不采用这种方式，而是采用静态库的方式，这样可以使启动更快。
+  use_frameworks!
+
+#  use_modular_headers! #使用静态库方式, :modular_headers => true
+
   # 在ios 13.3.1系统真机上，苹果不再允许个人开发者使用嵌入式frameworks，
   # 需要use_modular_headers，不再use_frameworks
 
@@ -22,7 +25,7 @@ target 'LTXiOSUtilsDemo' do
   # 不显示所有pod的警告
   inhibit_all_warnings!
   # 控制单个pod库是否显示警告
-  #,:inhibit_warnings => false
+  # :inhibit_warnings => false
 
   pod 'LTXiOSUtils',:path => '../' # 基础功能库
   #  pod 'LTXiOSUtils', :git => 'https://github.com/Coder-Star/LTXiOSUtils.git', :tag => '0.0.0' #直接从源代码托管仓库取
@@ -99,6 +102,8 @@ end
 
 target 'NotificationServiceExtension' do
   use_frameworks!
+#use_modular_headers!
+
   pod 'TPNS-iOS-Extension', '1.2.8.0'
 end
 
