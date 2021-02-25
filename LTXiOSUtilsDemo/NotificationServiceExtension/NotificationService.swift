@@ -7,24 +7,23 @@
 //
 
 /**
- ServiceExtension目前只对远程通知生效，可以让我们有机会在收到远程推送通知后，展示之前对通知内容进行修改，APP在前台、后台以及被杀死都会执行
+  ServiceExtension目前只对远程通知生效，可以让我们有机会在收到远程推送通知后，展示之前对通知内容进行修改，APP在前台、后台以及被杀死都会执行
 
- 当使用腾讯推送时，在前台无法执行
+  当使用腾讯推送时，在前台没有执行
 
-后台推送需要设置 mutable-content = 1
+ 后台推送需要设置 mutable-content = 1
 
- 使用场景
- 1、可以实现push到达率统计功能
- 2、可以实现不启动APP，下载小文件功能
- 3、可以进行push信息脱敏处理功能
- 4、可以更改提示音功能
+  使用场景
+  1、可以实现push到达率统计功能
+  2、可以实现不启动APP，下载小文件功能
+  3、可以进行push信息脱敏处理功能
+  4、可以更改提示音功能
 
- */
+   */
 
 import UserNotifications
 
 class NotificationService: UNNotificationServiceExtension {
-
     var contentHandler: ((UNNotificationContent) -> Void)?
     var bestAttemptContent: UNMutableNotificationContent?
 
@@ -32,9 +31,8 @@ class NotificationService: UNNotificationServiceExtension {
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
-        
-        if let bestAttemptContent = bestAttemptContent {
 
+        if let bestAttemptContent = bestAttemptContent {
             bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
 
             // TAPNs统计上报
@@ -47,7 +45,6 @@ class NotificationService: UNNotificationServiceExtension {
                 }
                 contentHandler(bestAttemptContent)
             }
-
 
             // 显示自定义图片
 //            if let customData = (bestAttemptContent.userInfo["custom"] as? String)?.data(using: .utf8), let custom = try? JSONSerialization.jsonObject(with: customData, options: .allowFragments) as? [String: String] {
@@ -67,31 +64,28 @@ class NotificationService: UNNotificationServiceExtension {
 //                    }
 //                }
 //            }
-
         }
-
     }
 
     /// 在一小段的运行时间即将结束的时候，如果没有仍然没有成功的传入内容，会走到该方法
     /// 可以在该方法中设置肯定不会出错的内容或者传递默认内容
     override func serviceExtensionTimeWillExpire() {
-        if let contentHandler = contentHandler, let bestAttemptContent =  bestAttemptContent {
+        if let contentHandler = contentHandler, let bestAttemptContent = bestAttemptContent {
             contentHandler(bestAttemptContent)
         }
     }
-
 }
 
 extension NotificationService {
     private func downloadAndSave(url: URL, handler: @escaping (_ localURL: URL?) -> Void) {
         let task = URLSession.shared.dataTask(with: url, completionHandler: {
-            data, res, error in
-            var localURL: URL? = nil
+            data, _, _ in
+            var localURL: URL?
             if let data = data {
-                //取得当前时间的时间戳
+                // 取得当前时间的时间戳
                 let timeInterval = Date().timeIntervalSince1970
                 let timeStamp = Int(timeInterval)
-                //文件后缀
+                // 文件后缀
                 let ext = (url.absoluteString as NSString).pathExtension
                 let temporaryURL = FileManager.default.temporaryDirectory
                 let url = temporaryURL.appendingPathComponent("\(timeStamp)")
@@ -104,5 +98,13 @@ extension NotificationService {
             handler(localURL)
         })
         task.resume()
+    }
+}
+
+extension NotificationService {
+    private func getGroupInfo() {
+        let appGroupIdentifier = "group.com.star.LTXiOSUtils.extension"
+        let userDefaults = UserDefaults(suiteName: appGroupIdentifier)
+        print(userDefaults?.value(forKey: "123"))
     }
 }

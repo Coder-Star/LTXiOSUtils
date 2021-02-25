@@ -2,6 +2,66 @@
 
 TPNS iOS SDK ReleaseNote
 
+版本 1.3.0.0
+-------------------------------------------
+1. 修复：多线程时和低内存下的小概率crash的问题
+2. 优化：减少不必要的MQTT网络超时检测
+3. 优化："抵达"的上报支持更高性能的方式
+4. 优化：减少"应用内消息"插件包体积
+5. 优化：对获取TPNS token的请求进行加密
+6. 增加：账号、标签、用户属性接口的参数检查逻辑和错误回调
+7. 删除：账号类型枚举，由业务自己定义
+
+VERSION 1.3.0.0
+-------------------------------------------
+1.  FIX：Small probability of crash under multithreading or low memory
+2.  IMPROVEMENT：Reduce the count of detection for unnecessary MQTT network timeout
+3.  IMPROVEMENT：Take a higher performance approach for the "arrival" report
+4.  IMPROVEMENT：Reduce the size of the "In-App Messaging" plugin package
+5.  IMPROVEMENT：Encrypt the request to obtain TPNS token
+6.  NEW FEATURE：Add parameter check logic and error callback for account, tag, and user-attribute interfaces
+7.  DELETED FEATURE：Delete account type enumeration, let the business define itself
+
+版本 1.2.9.0
+-------------------------------------------
+1. 修复：富媒体通知可能下载图片失败的问题。
+2. 修复：在App后台时，TPNS通道可能在线的问题。
+3. 修复：1.2.5.2以前版本，可能出现TPNS token重复的问题。
+4. 修复：可能建立长连接失败的问题。
+5. 修复："应用内消息"和个别SDK命名冲突的问题。
+6. 优化：本地缓存的性能。
+7. 优化：App通知开关状态的上报时机。
+8. 优化：弱网下的长连接处理机制。
+9. 优化：账号相关接口。
+10. 优化：TPNS Demo的代码示例
+11. 增加：本地通知功能。
+12. 增加：对ipv6的支持。
+13. 删除：对免费版的兼容代码。
+
+VERSION 1.2.9.0
+-------------------------------------------
+1. FIX：Rich media notification may fail to download pictures.
+2. FIX：The TPNS channel may be online while the App is background.
+3. FIX：If sdk version is less than 1.2.5.2, TPNS token duplication may occur.
+4. FIX：It may fail to establish a long connection.
+5. FIX："In-Application Messages" and some individual SDK naming conflicts.
+6. IMPROVEMENT：Local cache performance.
+7. IMPROVEMENT：Reporting timing when app notification status switch.
+8. IMPROVEMENT：Long connection processing mechanism in weak network.
+9. IMPROVEMENT：Account related interface.
+10. IMPROVEMENT：TPNS Demo's code example.
+11. NEW FEATURE：Local notification function.
+12. NEW FEATURE：Ipv6 support.
+13. DELETED FEATURE: Compatible code for the XinGe's free version.
+
+
+VERSION 1.2.8.1
+-------------------------------------------
+1. 修复已知问题
+
+版本 1.2.8.1
+-------------------------------------------
+1. Fixed known issues
 VERSION 1.2.8.0
 -------------------------------------------
 1. Added  "user attributes"  for personalized push

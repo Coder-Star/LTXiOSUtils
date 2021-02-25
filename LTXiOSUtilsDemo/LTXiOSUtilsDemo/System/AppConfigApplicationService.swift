@@ -19,6 +19,11 @@ final class AppConfigApplicationService: NSObject, ApplicationService {
         initUrlInfo()
         initRegisterUrl()
         catchCrash()
+
+        // 存储group内容
+        let userDefaults = UserDefaults(suiteName: Constants.AppGroupIdentifier.common.rawValue)
+        userDefaults?.setValue("123", forKey: "123")
+
         return true
     }
 }

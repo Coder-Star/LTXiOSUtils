@@ -46,3 +46,9 @@ public struct Constants {
 
     }
 }
+
+extension Constants {
+    enum AppGroupIdentifier: String {
+        case common = "group.com.star.LTXiOSUtils.extension"
+    }
+}

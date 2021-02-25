@@ -173,13 +173,6 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
-  struct entitlements {
-    static let apsEnvironment = infoPlistString(path: [], key: "aps-environment") ?? "development"
-
-    fileprivate init() {}
-  }
-
   /// This `R.file` struct is generated, and contains static references to 16 files.
   struct file {
     /// Resource file `1.jpg`.

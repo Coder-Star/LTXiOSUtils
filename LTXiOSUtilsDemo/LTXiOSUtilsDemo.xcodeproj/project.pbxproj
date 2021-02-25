@@ -352,6 +352,11 @@
 		DCCF3E5023C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaultsTest.swift; sourceTree = "<group>"; };
 		DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStateApplicationService.swift; sourceTree = "<group>"; };
 		DCD12EA82537096E000A58C0 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		DCD757E525E656BC00C0793D /* LTXiOSUtilsDemoDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LTXiOSUtilsDemoDebug.entitlements; sourceTree = "<group>"; };
+		DCD757F525E6580400C0793D /* NotificationContentExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationContentExtensionDebug.entitlements; sourceTree = "<group>"; };
+		DCD757F625E6581300C0793D /* NotificationServiceExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationServiceExtensionDebug.entitlements; sourceTree = "<group>"; };
+		DCD7580725E6617900C0793D /* NotificationServiceExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationServiceExtensionRelease.entitlements; sourceTree = "<group>"; };
+		DCD7580825E6618100C0793D /* NotificationContentExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationContentExtensionRelease.entitlements; sourceTree = "<group>"; };
 		DCD8763C251AFC5000F50138 /* StoryboardMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardMainViewController.swift; sourceTree = "<group>"; };
 		DCD8763E251B25E600F50138 /* StoryboardSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSecondViewController.swift; sourceTree = "<group>"; };
 		DCD97BA9251CF798002E9C0A /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
@@ -702,6 +707,7 @@
 				DCC76E4823A782C40029590C /* Module */,
 				DC4AB9C822F4606100A5F003 /* Info.plist */,
 				DCDBA7B224FE9C7D0073E293 /* LTXiOSUtilsDemo.entitlements */,
+				DCD757E525E656BC00C0793D /* LTXiOSUtilsDemoDebug.entitlements */,
 				DC32F1A323840A3E008D3D67 /* R.generated.swift */,
 				DC7F38EE247CF07800783D65 /* LTXiOSUtilsDemo-Bridging-Header.h */,
 			);
@@ -928,6 +934,8 @@
 		DCAA754D25309C8100240398 /* NotificationContentExtension */ = {
 			isa = PBXGroup;
 			children = (
+				DCD7580825E6618100C0793D /* NotificationContentExtensionRelease.entitlements */,
+				DCD757F525E6580400C0793D /* NotificationContentExtensionDebug.entitlements */,
 				DCAA754E25309C8100240398 /* NotificationViewController.swift */,
 				DCAA755025309C8100240398 /* MainInterface.storyboard */,
 				DCAA755325309C8100240398 /* Info.plist */,
@@ -938,6 +946,8 @@
 		DCAA756425309CBD00240398 /* NotificationServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
+				DCD7580725E6617900C0793D /* NotificationServiceExtensionRelease.entitlements */,
+				DCD757F625E6581300C0793D /* NotificationServiceExtensionDebug.entitlements */,
 				DCAA756525309CBD00240398 /* NotificationService.swift */,
 				DCAA756725309CBD00240398 /* Info.plist */,
 				DC83C43A2533369200259A03 /* NotificationServiceExtension-Bridging-Header.h */,
@@ -1936,7 +1946,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = LTXiOSUtilsDemo/LTXiOSUtilsDemo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LTXiOSUtilsDemo/LTXiOSUtilsDemoDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -2098,6 +2108,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = NotificationContentExtension/NotificationContentExtensionDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4PJEY75E2;
@@ -2111,6 +2122,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils.NotificationContentExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2121,6 +2133,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = NotificationContentExtension/NotificationContentExtensionRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4PJEY75E2;
@@ -2146,6 +2159,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = NotificationServiceExtension/NotificationServiceExtensionDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4PJEY75E2;
@@ -2159,6 +2173,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtils.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "NotificationServiceExtension/NotificationServiceExtension-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2173,6 +2188,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = NotificationServiceExtension/NotificationServiceExtensionRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4PJEY75E2;

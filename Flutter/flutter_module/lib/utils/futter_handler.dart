@@ -1,11 +1,7 @@
 import 'package:flutter/services.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_module/utils/channel_utils.dart';
 
 /// flutte端相关实现，方便院原生调用
-
-final eventChannel = EventChannel(ChannelUtils.getChannelName(ChannelType.event,
-    channelName: 'testEventChannel'));
 
 /// 注册
 class FlutterHanlder {
@@ -48,8 +44,23 @@ class FlutterHanlder {
 
   /// Event类型实现
   static void initEventHander() {
-    eventChannel.receiveBroadcastStream().listen((event) {
-      EasyLoading.showToast(event as String);
-    });
+    final eventChannel = EventChannel(ChannelUtils.getChannelName(
+        ChannelType.event,
+        channelName: 'testEventChannel'));
+    eventChannel.receiveBroadcastStream("arguments").listen((event) {
+      _onEvent(event);
+    }, onError: _onError, onDone: _onDone);
+  }
+
+  static void _onEvent(Object event) {
+    print(event);
+  }
+
+  static void _onError(Object error) {
+    print(error);
+  }
+
+  static void _onDone() {
+    print('_onDone');
   }
 }

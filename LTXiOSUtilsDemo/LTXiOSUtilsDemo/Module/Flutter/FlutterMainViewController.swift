@@ -49,6 +49,8 @@ class FlutterMainViewController: BaseGroupTableMenuViewController {
             Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
                 Log.d("定时")
                 self.eventSink?("来自Native的Event")
+                self.eventSink?(FlutterError(code: "ErrorCode", message: "message", details: "details")) //输出错误
+//                self.eventSink?(FlutterEndOfEventStream) //输出结束
             }
             HUD.showText("已启动向Flutter发送消息，请进入Flutter->FlutterChannel")
         case "messageChannel":

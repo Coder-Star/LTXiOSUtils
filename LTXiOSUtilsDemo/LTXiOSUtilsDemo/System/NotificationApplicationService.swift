@@ -172,7 +172,7 @@ extension NotificationApplicationService {
 
         // swiftlint:disable number_separator
         /// 内部流程已经申请权限以及获取token了，启动后，不再走原生的代理，通过原生设置的action也没有效果
-//        XGPush.defaultManager().startXG(withAccessID: 1680001375, accessKey: "IYBJPGFD2RRO", delegate: self)
+        XGPush.defaultManager().startXG(withAccessID: 1680001375, accessKey: "IYBJPGFD2RRO", delegate: self)
     }
 
     func XGAPI() {

@@ -10,7 +10,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #if TARGET_OS_IPHONE
-#define kExtensionSDKVersion @"1.2.8.0"
+#define kExtensionSDKVersion @"1.3.0.0"
 #elif TARGET_OS_MAC
 #define kExtensionSDKVersion @"1.0.4.0"
 #endif
@@ -56,6 +56,7 @@ NS_AVAILABLE(10_14, 10_0)
  @param accessKey TPNS应用 accessKey
  @param handler 处理消息的回调，回调方法中处理关联的富媒体文件
  */
+
 - (void)handleNotificationRequest:(nonnull UNNotificationRequest *)request
                          accessID:(uint32_t)accessID
                         accessKey:(nonnull NSString *)accessKey
@@ -95,5 +96,35 @@ NS_AVAILABLE(10_14, 10_0)
                          accessID:(uint32_t)accessID
                         accessKey:(nonnull NSString *)accessKey
             replaceContentHandler:(nullable void (^)(UNNotificationContent *_Nullable, NSError *_Nullable, BOOL))handler;
+
+#pragma mark - 以下为1.2.7.1废弃方法, 新版本请勿使用
+
+/**
+ 1.2.7.1+请使用handleNotificationRequest:accessID:accessKey:contentHandler:方法
+*/
+- (void)handleNotificationRequest:(nonnull UNNotificationRequest *)request
+                            appID:(uint32_t)appID
+                           appKey:(nonnull NSString *)appKey
+                   contentHandler:(nullable void (^)(NSArray<UNNotificationAttachment *> *_Nullable attachments, NSError *_Nullable error))handler
+    __deprecated_msg("Please use handleNotificationRequest:accessID:accessKey:contentHandler:");
+
+/**
+ 1.2.7.1+请使用handleNotificationRequest:attachmentKey:accessID:accessKey:contentHandler:方法
+*/
+- (void)handleNotificationRequest:(nonnull UNNotificationRequest *)request
+                    attachmentKey:(nonnull NSString *)key
+                            appID:(uint32_t)appID
+                           appKey:(nonnull NSString *)appKey
+                   contentHandler:(nullable void (^)(NSArray<UNNotificationAttachment *> *_Nullable attachments, NSError *_Nullable error))handler
+    __deprecated_msg("Please use handleNotificationRequest:attachmentKey:accessID:accessKey:contentHandler:");
+
+/**
+ 1.2.7.1+请使用handleNotificationRequest:accessID:accessKey:replaceContentHandler:方法
+*/
+- (void)handleNotificationRequest:(nonnull UNNotificationRequest *)request
+                            appID:(uint32_t)appID
+                           appKey:(nonnull NSString *)appKey
+            replaceContentHandler:(nullable void (^)(UNNotificationContent *_Nullable, NSError *_Nullable, BOOL))handler
+    __deprecated_msg("Please use handleNotificationRequest:accessID:accessKey:replaceContentHandler:");
 
 @end
