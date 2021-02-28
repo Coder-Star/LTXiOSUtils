@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.1)
+  - AppOrderFiles (1.0.2)
   - Bugly (2.5.2)
   - CocoaLumberjack (3.6.2):
     - CocoaLumberjack/Core (= 3.6.2)
@@ -106,6 +107,7 @@ PODS:
   - ZYCornerRadius (1.0.2)
 
 DEPENDENCIES:
+  - AppOrderFiles (= 1.0.2)
   - Bugly (= 2.5.2)
   - CTMediator (= 28)
   - dsBridge (= 3.0.6)
@@ -151,6 +153,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - AppOrderFiles
     - Bugly
     - CocoaLumberjack
     - CTMediator
@@ -217,6 +220,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AppOrderFiles: ce8436cdae89e5831b93961ebc81415a3481c5a6
   Bugly: dbac48b55ad469a97cc4321045cd50df8f63d44f
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   CTMediator: 6a05e9f1098b2d2fbc9d19cc7f28e94c3a08b5d2
@@ -270,6 +274,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 9be143b0012e3ddae24f9d1d5c447f91fd3d52b9
+PODFILE CHECKSUM: 0ee36e18194d88168c7b486d5498c8c8c1a8fdbd
 
 COCOAPODS: 1.10.0

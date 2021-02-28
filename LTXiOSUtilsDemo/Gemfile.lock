@@ -1,4 +1,5 @@
 GEM
+  remote: https://gems.ruby-china.com/
   specs:
 
 PLATFORMS
@@ -7,4 +8,4 @@ PLATFORMS
 DEPENDENCIES
 
 BUNDLED WITH
-   1.14.6
+   2.1.4

@@ -14,7 +14,7 @@ target 'LTXiOSUtilsDemo' do
   # 使用动态库方式，这在pod 1.5.0之前Swift工程时是必须的，但在1.5之后就不采用这种方式，而是采用静态库的方式，这样可以使启动更快。
   use_frameworks!
 
-#  use_modular_headers! #使用静态库方式, :modular_headers => true
+#  use_modular_headers! #使用静态库方式,支持Moudle :modular_headers => true
 
   # 在ios 13.3.1系统真机上，苹果不再允许个人开发者使用嵌入式frameworks，
   # 需要use_modular_headers，不再use_frameworks
@@ -90,6 +90,8 @@ target 'LTXiOSUtilsDemo' do
 
   pod 'lottie-ios', "3.1.8" # 加载lottie动画
 
+  pod 'AppOrderFiles', "1.0.2" # clang插桩，获取方法
+
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths
   end
@@ -107,23 +109,21 @@ target 'NotificationServiceExtension' do
   pod 'TPNS-iOS-Extension', '1.3.0.0'
 end
 
-# 将部分指定pod包的swift版本设置为4.2
-#swift_42 = [
-#'SwifterSwift',
-#'SwiftyJSON',
-#'R.swift',
-#'R.swift.Library',
-#'Kingfisher',
-#'Alamofire',
-#'Moya',
-#'SnapKit',
-#]
-#
+# 将部分指定pod包的swift版本设置为5.0
+swift_5 = [
+'SKPhotoBrowser'
+]
+
 
 disabled_bitcode = [
 'Flutter',
+'flutter_boost',
 'flutter_module',
+'flutter_star_plugin',
+'flutter_webview_plugin',
 'FlutterPluginRegistrant',
+'path_provider',
+'shared_preferences',
 ]
 
 post_install do |installer|
@@ -143,12 +143,18 @@ post_install do |installer|
       end
     end
 
-    # 将部分指定pod包的swift版本设置为4.2
-    #    if swift_42.include?(target.name)
-    #      target.build_configurations.each do |config|
-    #        config.build_settings['SWIFT_VERSION'] = swift_version
-    #      end
-    #    end
+    # 将部分指定pod包的swift版本设置为5.0
+    if swift_5.include?(target.name)
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '5.0'
+      end
+    end
+
+    # clang插桩
+#    target.build_configurations.each do |config|
+#      config.build_settings['OTHER_CFLAGS'] = '-fsanitize-coverage=func,trace-pc-guard'
+#      config.build_settings['OTHER_SWIFT_FLAGS'] = '-sanitize-coverage=func -sanitize=undefined'
+#    end
 
   end
 end

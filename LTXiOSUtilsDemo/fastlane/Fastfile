@@ -14,8 +14,8 @@ platform :ios do
         output_name:"#{ipaName}", #输出的包名
         output_directory:"./build" #输出的位置
     )
-
-    firim(firim_api_token: '42657ebf5cc71b0f11d4101d2e6f6fab') #上传安装包到fir.im 
-    #pgyer(api_key: "", user_key: "")
+    # 上传安装包到fir.im 
+    fir_cli api_token: "42657ebf5cc71b0f11d4101d2e6f6fab",  changelog: "Hello fir.im"
+    # pgyer(api_key: "", user_key: "")
     end
 end

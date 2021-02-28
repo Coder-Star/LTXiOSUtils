@@ -20,6 +20,34 @@
                ReferencedContainer = "container:LTXiOSUtilsDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DC4AB9CC22F4606100A5F003"
+               BuildableName = "LTXiOSUtilsDemoTests.xctest"
+               BlueprintName = "LTXiOSUtilsDemoTests"
+               ReferencedContainer = "container:LTXiOSUtilsDemo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DC4AB9D722F4606100A5F003"
+               BuildableName = "LTXiOSUtilsDemoUITests.xctest"
+               BlueprintName = "LTXiOSUtilsDemoUITests"
+               ReferencedContainer = "container:LTXiOSUtilsDemo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -104,7 +132,7 @@
          <EnvironmentVariable
             key = "DYLD_PRINT_STATISTICS"
             value = "1"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
       <AdditionalOptions>

@@ -9,6 +9,7 @@
 import Foundation
 import XHLaunchAd
 import LTXiOSUtils
+import AppOrderFiles
 
 final class RootVCApplicationService: NSObject, ApplicationService {
 
@@ -19,6 +20,13 @@ final class RootVCApplicationService: NSObject, ApplicationService {
     let showGuide = false //是否启用引导页
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+
+        // 获取order文件路径
+        AppOrderFiles { orderFilePath in
+            Log.d(orderFilePath)
+
+        }
+
         window?.makeKeyAndVisible()
 
         if showAd {
