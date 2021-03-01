@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B970C98270151D2AD10AD14592DD0B7 /* NavigatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41811043C85912990E20444BF06F669 /* NavigatorType.swift */; };
+		0CEFFD58510DF578110316A4CDC99878 /* URLPatchComponentMatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955865BC34D0E6C7BC34639DE973DE64 /* URLPatchComponentMatchResult.swift */; };
+		3502D8EED4D44673A668A7B225499271 /* UIViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52DE92207889E67BB11B0492020FE1D /* UIViewControllerType.swift */; };
+		406B7E3C9BDB2239F36091E4E912F52E /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769D3020FE26796AE9886202558E5F74 /* URLConvertible.swift */; };
+		428BB96F0528ACDEEA05F2B37CF9C77A /* UIViewController+TopMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643E89792FBF53F9C0C24707F8A00A6 /* UIViewController+TopMostViewController.swift */; };
+		47BB6D06FB971C37AE6AC632396A8E55 /* URLMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71809022425923B8E0E8E9ABFC37990 /* URLMatcher.swift */; };
+		4CDBE52A683EACB1AFF58130F3003AFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4524128F4C0E26FA731A4119D6AC5356 /* UIKit.framework */; };
+		6EF8265D0D592C85A2186DDEF5961151 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED3E5A67550B26529FB2510F8518B2 /* Navigator.swift */; };
+		70A4DF6A58961EA872442660F6D7B8BB /* URLNavigator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0188E7214812094C13236BA7ADE5BA18 /* URLNavigator-dummy.m */; };
+		83B61EC63815EDACAFD12842DE3D169C /* URLPathComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797C8FAD810AF03021BA23B885952E0D /* URLPathComponent.swift */; };
+		920F13CE428E9C7D137AF0BC322F82B6 /* URLNavigator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 876DE21C3212893025DBC2375DAA3C88 /* URLNavigator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A37088A87F504CE7A8DE364EACE735BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B660E457E59D1CE4265CBB6B1414A0 /* Foundation.framework */; };
+		A8FEDFB7F60C7AE7CD9C2FBEAA5DBC59 /* NavigatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AFCD4B97624726AD2661F99CB3BFD9 /* NavigatorDelegate.swift */; };
+		CB2E178874CD8DE68D299B030C108028 /* URLMatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E1E43DC6334BA46F680676699DA75 /* URLMatchResult.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0188E7214812094C13236BA7ADE5BA18 /* URLNavigator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "URLNavigator-dummy.m"; sourceTree = "<group>"; };
+		1A1E1E43DC6334BA46F680676699DA75 /* URLMatchResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLMatchResult.swift; path = Sources/URLMatcher/URLMatchResult.swift; sourceTree = "<group>"; };
+		2643E89792FBF53F9C0C24707F8A00A6 /* UIViewController+TopMostViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+TopMostViewController.swift"; path = "Sources/URLNavigator/UIViewController+TopMostViewController.swift"; sourceTree = "<group>"; };
+		2CED3E5A67550B26529FB2510F8518B2 /* Navigator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Navigator.swift; path = Sources/URLNavigator/Navigator.swift; sourceTree = "<group>"; };
+		4524128F4C0E26FA731A4119D6AC5356 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		602C7031271E45BF9CD69DFF0A6C63FF /* URLNavigator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = URLNavigator.modulemap; sourceTree = "<group>"; };
+		6BEBA6F5C11E1C85C1EFEF079604CB1D /* URLNavigator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = URLNavigator.debug.xcconfig; sourceTree = "<group>"; };
+		769D3020FE26796AE9886202558E5F74 /* URLConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLConvertible.swift; path = Sources/URLMatcher/URLConvertible.swift; sourceTree = "<group>"; };
+		797C8FAD810AF03021BA23B885952E0D /* URLPathComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLPathComponent.swift; path = Sources/URLMatcher/URLPathComponent.swift; sourceTree = "<group>"; };
+		876DE21C3212893025DBC2375DAA3C88 /* URLNavigator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URLNavigator-umbrella.h"; sourceTree = "<group>"; };
+		955865BC34D0E6C7BC34639DE973DE64 /* URLPatchComponentMatchResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLPatchComponentMatchResult.swift; path = Sources/URLMatcher/URLPatchComponentMatchResult.swift; sourceTree = "<group>"; };
+		A5AFCD4B97624726AD2661F99CB3BFD9 /* NavigatorDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NavigatorDelegate.swift; path = Sources/URLNavigator/NavigatorDelegate.swift; sourceTree = "<group>"; };
+		A8B660E457E59D1CE4265CBB6B1414A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B2D2B6D9F4BADF96AF9DAE2C7DA19243 /* URLNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = URLNavigator.framework; path = URLNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C41811043C85912990E20444BF06F669 /* NavigatorType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NavigatorType.swift; path = Sources/URLNavigator/NavigatorType.swift; sourceTree = "<group>"; };
+		C52DE92207889E67BB11B0492020FE1D /* UIViewControllerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewControllerType.swift; path = Sources/URLNavigator/UIViewControllerType.swift; sourceTree = "<group>"; };
+		C880EC1A0C847BCC71FC2DFBFF3EC410 /* URLNavigator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URLNavigator-prefix.pch"; sourceTree = "<group>"; };
+		E71809022425923B8E0E8E9ABFC37990 /* URLMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLMatcher.swift; path = Sources/URLMatcher/URLMatcher.swift; sourceTree = "<group>"; };
+		F4A65C0C703013B1E6D47621AF06D294 /* URLNavigator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = URLNavigator.release.xcconfig; sourceTree = "<group>"; };
+		FAD1D460A81C0DA0439D81CADCD9B017 /* URLNavigator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "URLNavigator-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B8350E274B4A7E28120AE59D4725A84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A37088A87F504CE7A8DE364EACE735BA /* Foundation.framework in Frameworks */,
+				4CDBE52A683EACB1AFF58130F3003AFC /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5300AC835BF30B2425EFFE63C397E239 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2D2B6D9F4BADF96AF9DAE2C7DA19243 /* URLNavigator.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91B25D0662FFA6601769734AF9449C86 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A8B660E457E59D1CE4265CBB6B1414A0 /* Foundation.framework */,
+				4524128F4C0E26FA731A4119D6AC5356 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		939918673015F94171453B90D72B2849 /* URLNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				2CED3E5A67550B26529FB2510F8518B2 /* Navigator.swift */,
+				A5AFCD4B97624726AD2661F99CB3BFD9 /* NavigatorDelegate.swift */,
+				C41811043C85912990E20444BF06F669 /* NavigatorType.swift */,
+				2643E89792FBF53F9C0C24707F8A00A6 /* UIViewController+TopMostViewController.swift */,
+				C52DE92207889E67BB11B0492020FE1D /* UIViewControllerType.swift */,
+				769D3020FE26796AE9886202558E5F74 /* URLConvertible.swift */,
+				E71809022425923B8E0E8E9ABFC37990 /* URLMatcher.swift */,
+				1A1E1E43DC6334BA46F680676699DA75 /* URLMatchResult.swift */,
+				955865BC34D0E6C7BC34639DE973DE64 /* URLPatchComponentMatchResult.swift */,
+				797C8FAD810AF03021BA23B885952E0D /* URLPathComponent.swift */,
+				E07E4B1313AD27E35E7BFB3A9672EEEF /* Support Files */,
+			);
+			name = URLNavigator;
+			path = URLNavigator;
+			sourceTree = "<group>";
+		};
+		B729E07C05BE6AFB248D154BFE1B634A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91B25D0662FFA6601769734AF9449C86 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2CEB55B76EA45FE798FA076EF6A434E = {
+			isa = PBXGroup;
+			children = (
+				B729E07C05BE6AFB248D154BFE1B634A /* Frameworks */,
+				5300AC835BF30B2425EFFE63C397E239 /* Products */,
+				939918673015F94171453B90D72B2849 /* URLNavigator */,
+			);
+			sourceTree = "<group>";
+		};
+		E07E4B1313AD27E35E7BFB3A9672EEEF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				602C7031271E45BF9CD69DFF0A6C63FF /* URLNavigator.modulemap */,
+				0188E7214812094C13236BA7ADE5BA18 /* URLNavigator-dummy.m */,
+				FAD1D460A81C0DA0439D81CADCD9B017 /* URLNavigator-Info.plist */,
+				C880EC1A0C847BCC71FC2DFBFF3EC410 /* URLNavigator-prefix.pch */,
+				876DE21C3212893025DBC2375DAA3C88 /* URLNavigator-umbrella.h */,
+				6BEBA6F5C11E1C85C1EFEF079604CB1D /* URLNavigator.debug.xcconfig */,
+				F4A65C0C703013B1E6D47621AF06D294 /* URLNavigator.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/URLNavigator";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A8E5B30490951644412F24239BE65035 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				920F13CE428E9C7D137AF0BC322F82B6 /* URLNavigator-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B9750AA7029269BC5BF84F688110CF2E /* URLNavigator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A82BB6B6F7F13553244DE5D76C977E5 /* Build configuration list for PBXNativeTarget "URLNavigator" */;
+			buildPhases = (
+				A8E5B30490951644412F24239BE65035 /* Headers */,
+				C37204AA1AACF6BE2ED49E41F8795CF6 /* Sources */,
+				8B8350E274B4A7E28120AE59D4725A84 /* Frameworks */,
+				49AD29B6B6915F26E130DF411AC894BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = URLNavigator;
+			productName = URLNavigator;
+			productReference = B2D2B6D9F4BADF96AF9DAE2C7DA19243 /* URLNavigator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FE2960FDF6A0EA1016EE2FD11303E9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 52DB871E73BCDB26BB20B2E58FFC3508 /* Build configuration list for PBXProject "URLNavigator" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D2CEB55B76EA45FE798FA076EF6A434E;
+			productRefGroup = 5300AC835BF30B2425EFFE63C397E239 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B9750AA7029269BC5BF84F688110CF2E /* URLNavigator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49AD29B6B6915F26E130DF411AC894BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C37204AA1AACF6BE2ED49E41F8795CF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EF8265D0D592C85A2186DDEF5961151 /* Navigator.swift in Sources */,
+				A8FEDFB7F60C7AE7CD9C2FBEAA5DBC59 /* NavigatorDelegate.swift in Sources */,
+				0B970C98270151D2AD10AD14592DD0B7 /* NavigatorType.swift in Sources */,
+				428BB96F0528ACDEEA05F2B37CF9C77A /* UIViewController+TopMostViewController.swift in Sources */,
+				3502D8EED4D44673A668A7B225499271 /* UIViewControllerType.swift in Sources */,
+				406B7E3C9BDB2239F36091E4E912F52E /* URLConvertible.swift in Sources */,
+				47BB6D06FB971C37AE6AC632396A8E55 /* URLMatcher.swift in Sources */,
+				CB2E178874CD8DE68D299B030C108028 /* URLMatchResult.swift in Sources */,
+				70A4DF6A58961EA872442660F6D7B8BB /* URLNavigator-dummy.m in Sources */,
+				0CEFFD58510DF578110316A4CDC99878 /* URLPatchComponentMatchResult.swift in Sources */,
+				83B61EC63815EDACAFD12842DE3D169C /* URLPathComponent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		037DFA3BA4A5BA517A4199FA0E24F19B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4A65C0C703013B1E6D47621AF06D294 /* URLNavigator.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/URLNavigator/URLNavigator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/URLNavigator/URLNavigator-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/URLNavigator/URLNavigator.modulemap";
+				PRODUCT_MODULE_NAME = URLNavigator;
+				PRODUCT_NAME = URLNavigator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		525BF613E7F7571FD49923E33C022555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B3C4608D5C653CD667352CCCC4D75DDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BEBA6F5C11E1C85C1EFEF079604CB1D /* URLNavigator.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/URLNavigator/URLNavigator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/URLNavigator/URLNavigator-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/URLNavigator/URLNavigator.modulemap";
+				PRODUCT_MODULE_NAME = URLNavigator;
+				PRODUCT_NAME = URLNavigator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E52593A9690A3ABE9945D58325E33FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A82BB6B6F7F13553244DE5D76C977E5 /* Build configuration list for PBXNativeTarget "URLNavigator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3C4608D5C653CD667352CCCC4D75DDA /* Debug */,
+				037DFA3BA4A5BA517A4199FA0E24F19B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52DB871E73BCDB26BB20B2E58FFC3508 /* Build configuration list for PBXProject "URLNavigator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				525BF613E7F7571FD49923E33C022555 /* Debug */,
+				E52593A9690A3ABE9945D58325E33FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FE2960FDF6A0EA1016EE2FD11303E9B /* Project object */;
+}

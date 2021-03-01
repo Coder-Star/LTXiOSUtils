@@ -3,7 +3,6 @@ ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AppOrderFiles/AppOrderFiles.framework
 ${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework
 ${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
-${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework
 ${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework
 ${PODS_ROOT}/../../Flutter/flutter_module/.ios/Flutter/engine/Flutter.framework
 ${BUILT_PRODUCTS_DIR}/GDPerformanceView-Swift/GDPerformanceView_Swift.framework
@@ -34,7 +33,6 @@ ${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework
 ${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework
 ${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework
 ${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework
-${BUILT_PRODUCTS_DIR}/XHLaunchAd/XHLaunchAd.framework
 ${BUILT_PRODUCTS_DIR}/ZYCornerRadius/ZYCornerRadius.framework
 ${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework
 ${BUILT_PRODUCTS_DIR}/flutter_boost/flutter_boost.framework

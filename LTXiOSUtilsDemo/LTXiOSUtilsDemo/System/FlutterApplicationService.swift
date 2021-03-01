@@ -27,13 +27,13 @@ final class FlutterApplicationService: FlutterAppDelegate, ApplicationService {
         // initialRoute表示默认路由地址，即进入Flutter环境的第一个页面，如 "/component_list"
         /// 启动Flutter引擎
         flutterEngine.run(withEntrypoint: nil, initialRoute: nil)
-
+        HUD.showText("\(flutterEngine.description)")
         // 这样会启动会用lib/main1.dart 文件的 main1() 函数取代 lib/main.dart 的 main() 函数
 //        flutterEngine.run(withEntrypoint: "main1", libraryURI: "main1.dart")
 
         // 注册插件，使准备好的插件被加载
         // 其中就是调用一次各个插件的registerWithRegistrar方法
-        GeneratedPluginRegistrant.register(with: flutterEngine)
+//        GeneratedPluginRegistrant.register(with: flutterEngine)
 
     }
 

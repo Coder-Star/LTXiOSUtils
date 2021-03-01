@@ -1,0 +1,657 @@
+BUILD_CONFIGURATIONS:
+  Debug: :debug
+  Release: :release
+CACHE_KEYS:
+  Alamofire:
+    BUILD_SETTINGS_CHECKSUM:
+      Alamofire:
+        :debug: da3c4605dd952070c81d62633e4679b6
+        :release: da3c4605dd952070c81d62633e4679b6
+    CHECKSUM: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+    PROJECT_NAME: Alamofire
+    SPECS:
+      - Alamofire (5.4.1)
+  AppOrderFiles:
+    BUILD_SETTINGS_CHECKSUM:
+      AppOrderFiles:
+        :debug: 1e1320771912362c372f4dd83dae5d69
+        :release: 1e1320771912362c372f4dd83dae5d69
+    CHECKSUM: ce8436cdae89e5831b93961ebc81415a3481c5a6
+    PROJECT_NAME: AppOrderFiles
+    SPECS:
+      - AppOrderFiles (1.0.2)
+  Bugly:
+    BUILD_SETTINGS_CHECKSUM:
+      Bugly:
+        :debug: cb3d2218b23a1190fdbc7235d2b67233
+        :release: cb3d2218b23a1190fdbc7235d2b67233
+    CHECKSUM: dbac48b55ad469a97cc4321045cd50df8f63d44f
+    PROJECT_NAME: Bugly
+    SPECS:
+      - Bugly (2.5.2)
+  CocoaLumberjack:
+    BUILD_SETTINGS_CHECKSUM:
+      CocoaLumberjack:
+        :debug: a77b1c48612b7a0075efc735867aa0d7
+        :release: a77b1c48612b7a0075efc735867aa0d7
+    CHECKSUM: e8955b9d337ac307103b0a34fd141c32f27e53c5
+    PROJECT_NAME: CocoaLumberjack
+    SPECS:
+      - CocoaLumberjack (3.7.0)
+      - CocoaLumberjack/Core (3.7.0)
+  CTMediator:
+    BUILD_SETTINGS_CHECKSUM:
+      CTMediator:
+        :debug: a0f1715f375c4f0caab92254bce3fe91
+        :release: a0f1715f375c4f0caab92254bce3fe91
+    CHECKSUM: 6a05e9f1098b2d2fbc9d19cc7f28e94c3a08b5d2
+    PROJECT_NAME: CTMediator
+    SPECS:
+      - CTMediator (28)
+  dsBridge:
+    BUILD_SETTINGS_CHECKSUM:
+      dsBridge:
+        :debug: a12e73189e68874967796d94204d6615
+        :release: a12e73189e68874967796d94204d6615
+    CHECKSUM: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
+    PROJECT_NAME: dsBridge
+    SPECS:
+      - dsBridge (3.0.6)
+  Flutter:
+    BUILD_SETTINGS_CHECKSUM:
+      Flutter:
+        :debug: 0e32a1dd57944208cd05b07723fe34da
+        :release: 0e32a1dd57944208cd05b07723fe34da
+    CHECKSUM: 0e3d915762c693b495b44d77113d4970485de6ec
+    FILES:
+      - "../../Flutter/flutter_module/.ios/Flutter/engine/Flutter.framework"
+    PROJECT_NAME: Flutter
+    SPECS:
+      - Flutter (1.0.0)
+  flutter_boost:
+    BUILD_SETTINGS_CHECKSUM:
+      flutter_boost:
+        :debug: 3109a5222cc433c32592d01e192cf16c
+        :release: 3109a5222cc433c32592d01e192cf16c
+    CHECKSUM: a7cfa776b75329d5e7d101d0cd33e75042bcde69
+    FILES:
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/BoostChannel.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/BoostChannel.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBAbstractFactory.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBCollectionHelper.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBCollectionHelper.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterAppDelegate.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterAppDelegate.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterApplicationInterface.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterContainer.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterContainerManager.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterContainerManager.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterProvider.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBPlatform.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBTypes.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FlutterBoost.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FlutterBoostPlugin.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FlutterBoostPlugin.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FlutterBoostPlugin_private.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/container/FLBFlutterViewContainer.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/container/FLBFlutterViewContainer.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFactory.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFactory.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFlutterApplication.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFlutterApplication.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFlutterEngine.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFlutterEngine.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Messaging/BoostMessageChannel.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Messaging/BoostMessageChannel.mm"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/LICENSE.md"
+    PROJECT_NAME: flutter_boost
+    SPECS:
+      - flutter_boost (0.0.2)
+  flutter_module:
+    BUILD_SETTINGS_CHECKSUM:
+      flutter_module:
+        :debug: bbf6fe4841ca3028996128b5b2cc07b2
+        :release: bbf6fe4841ca3028996128b5b2cc07b2
+    CHECKSUM: d1e1ff44505640bd9aa37f23f63380c646272be4
+    FILES:
+      - "../../Flutter/flutter_module/.ios/Flutter/App.framework"
+      - "../../Flutter/flutter_module/.ios/Flutter/README.md"
+    PROJECT_NAME: flutter_module
+    SPECS:
+      - flutter_module (0.0.1)
+  flutter_star_plugin:
+    BUILD_SETTINGS_CHECKSUM:
+      flutter_star_plugin:
+        :debug: cea23ac18c745b0f845eba655f6afdac
+        :release: cea23ac18c745b0f845eba655f6afdac
+    CHECKSUM: cb746418e90ecd0f744e28116092921092061e92
+    FILES:
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/ios/Classes/FlutterStarPlugin.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/ios/Classes/FlutterStarPlugin.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/ios/Classes/SwiftFlutterStarPlugin.swift"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/LICENSE"
+    PROJECT_NAME: flutter_star_plugin
+    SPECS:
+      - flutter_star_plugin (0.0.1)
+  flutter_webview_plugin:
+    BUILD_SETTINGS_CHECKSUM:
+      flutter_webview_plugin:
+        :debug: 33481acc1177a5afb218d5008197af66
+        :release: 33481acc1177a5afb218d5008197af66
+    CHECKSUM: ed9e8a6a96baf0c867e90e1bce2673913eeac694
+    FILES:
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios/Classes/FlutterWebviewPlugin.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios/Classes/FlutterWebviewPlugin.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios/Classes/WebviewJavaScriptChannelHandler.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios/Classes/WebviewJavaScriptChannelHandler.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/LICENSE"
+    PROJECT_NAME: flutter_webview_plugin
+    SPECS:
+      - flutter_webview_plugin (0.0.1)
+  FlutterPluginRegistrant:
+    BUILD_SETTINGS_CHECKSUM:
+      FlutterPluginRegistrant:
+        :debug: 611720dc1d72fd55260143932220919f
+        :release: 611720dc1d72fd55260143932220919f
+    CHECKSUM: af8248296ac6f40ae8716d0814a215bde2a0f948
+    FILES:
+      - "../../Flutter/flutter_module/.ios/Flutter/FlutterPluginRegistrant/Classes/GeneratedPluginRegistrant.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/FlutterPluginRegistrant/Classes/GeneratedPluginRegistrant.m"
+    PROJECT_NAME: FlutterPluginRegistrant
+    SPECS:
+      - FlutterPluginRegistrant (0.0.1)
+  FSPagerView:
+    BUILD_SETTINGS_CHECKSUM:
+      FSPagerView:
+        :debug: 2104ad8c01ed77478bffb09bb5526e40
+        :release: 2104ad8c01ed77478bffb09bb5526e40
+    CHECKSUM: 670405b2f18e2a87fa37f20b00de783e562c25a8
+    PROJECT_NAME: FSPagerView
+    SPECS:
+      - FSPagerView (0.8.3)
+  GDPerformanceView-Swift:
+    BUILD_SETTINGS_CHECKSUM:
+      GDPerformanceView-Swift:
+        :debug: bc97b243aa2f278b36d2b8707c832f44
+        :release: bc97b243aa2f278b36d2b8707c832f44
+    CHECKSUM: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
+    PROJECT_NAME: GDPerformanceView-Swift
+    SPECS:
+      - GDPerformanceView-Swift (2.0.3)
+  IQKeyboardManagerSwift:
+    BUILD_SETTINGS_CHECKSUM:
+      IQKeyboardManagerSwift:
+        :debug: 33aabc303e87147caa4b00ad6d4de0e9
+        :release: 33aabc303e87147caa4b00ad6d4de0e9
+    CHECKSUM: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+    PROJECT_NAME: IQKeyboardManagerSwift
+    SPECS:
+      - IQKeyboardManagerSwift (6.5.4)
+  KeychainAccess:
+    BUILD_SETTINGS_CHECKSUM:
+      KeychainAccess:
+        :debug: 50e25302d427a01e629a84e933efe158
+        :release: 50e25302d427a01e629a84e933efe158
+    CHECKSUM: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
+    PROJECT_NAME: KeychainAccess
+    SPECS:
+      - KeychainAccess (4.1.0)
+  Kingfisher:
+    BUILD_SETTINGS_CHECKSUM:
+      Kingfisher:
+        :debug: 90731cf2a8006fccdc5eb422aab623c2
+        :release: 90731cf2a8006fccdc5eb422aab623c2
+    CHECKSUM: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
+    PROJECT_NAME: Kingfisher
+    SPECS:
+      - Kingfisher (5.12.0)
+      - Kingfisher/Core (5.12.0)
+  Localize-Swift:
+    BUILD_SETTINGS_CHECKSUM:
+      Localize-Swift:
+        :debug: b7b10dad3f1159f4b897bed20dd06bdc
+        :release: b7b10dad3f1159f4b897bed20dd06bdc
+    CHECKSUM: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
+    PROJECT_NAME: Localize-Swift
+    SPECS:
+      - Localize-Swift (3.1.0)
+  LookinServer:
+    BUILD_SETTINGS_CHECKSUM:
+      LookinServer:
+        :debug: 6129b31e9e2ee78422bd24a2a9a6fdd1
+        :release: 6129b31e9e2ee78422bd24a2a9a6fdd1
+    CHECKSUM: 0002891cd3cec5e082a910e897dfe71b4f06b89e
+    PROJECT_NAME: LookinServer
+    SPECS:
+      - LookinServer (1.0.0)
+  lottie-ios:
+    BUILD_SETTINGS_CHECKSUM:
+      lottie-ios:
+        :debug: 99a063a94e05f8bb4723fad2b2826544
+        :release: 99a063a94e05f8bb4723fad2b2826544
+    CHECKSUM: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+    PROJECT_NAME: lottie-ios
+    SPECS:
+      - lottie-ios (3.1.8)
+  LTXiOSUtils:
+    BUILD_SETTINGS_CHECKSUM:
+      LTXiOSUtils:
+        :debug: 5eb0466022c752e7fa0748403d807885
+        :release: 5eb0466022c752e7fa0748403d807885
+    CHECKSUM: 3e6fac3ff5d3ac28898e40d8e96b68fe87f77cbc
+    FILES:
+      - "../../LICENSE"
+      - "../../LTXiOSUtils/Classes/Component/AlertView/FWAlertView.swift"
+      - "../../LTXiOSUtils/Classes/Component/AlertView/FWCustomSheetView.swift"
+      - "../../LTXiOSUtils/Classes/Component/AlertView/FWMenuView.swift"
+      - "../../LTXiOSUtils/Classes/Component/AlertView/FWPopupCategory.swift"
+      - "../../LTXiOSUtils/Classes/Component/AlertView/FWPopupItem.swift"
+      - "../../LTXiOSUtils/Classes/Component/AlertView/FWPopupRootViewController.swift"
+      - "../../LTXiOSUtils/Classes/Component/AlertView/FWPopupView.swift"
+      - "../../LTXiOSUtils/Classes/Component/AlertView/FWPopupViewProperty.swift"
+      - "../../LTXiOSUtils/Classes/Component/AlertView/FWPopupWindow.swift"
+      - "../../LTXiOSUtils/Classes/Component/AlertView/FWRadioButton.swift"
+      - "../../LTXiOSUtils/Classes/Component/AlertView/FWSheetView.swift"
+      - "../../LTXiOSUtils/Classes/Component/BadgeView/BadgeControl.swift"
+      - "../../LTXiOSUtils/Classes/Component/BadgeView/UIBarButtonItem+BadgeView.swift"
+      - "../../LTXiOSUtils/Classes/Component/BadgeView/UITabBarItem+BadgeView.swift"
+      - "../../LTXiOSUtils/Classes/Component/BadgeView/UIView+BadgeView.swift"
+      - "../../LTXiOSUtils/Classes/Component/Checkbox.swift"
+      - "../../LTXiOSUtils/Classes/Component/CommonShowTextView.swift"
+      - "../../LTXiOSUtils/Classes/Component/FoldTableView/FoldAbstractions.swift"
+      - "../../LTXiOSUtils/Classes/Component/FoldTableView/FoldTableView.swift"
+      - "../../LTXiOSUtils/Classes/Component/GridMenuView/DefaultGridMenuCell.swift"
+      - "../../LTXiOSUtils/Classes/Component/GridMenuView/GridMenuItem.swift"
+      - "../../LTXiOSUtils/Classes/Component/GridMenuView/GridMenuView.swift"
+      - "../../LTXiOSUtils/Classes/Component/GridMenuView/ScrollPageControlView.swift"
+      - "../../LTXiOSUtils/Classes/Component/GrowingTextView.swift"
+      - "../../LTXiOSUtils/Classes/Component/ImagePickGridView.swift"
+      - "../../LTXiOSUtils/Classes/Component/MaskPopupView.swift"
+      - "../../LTXiOSUtils/Classes/Component/PageControl.swift"
+      - "../../LTXiOSUtils/Classes/Component/PickView/DurationDatePickView.swift"
+      - "../../LTXiOSUtils/Classes/Component/PickView/PickerView.swift"
+      - "../../LTXiOSUtils/Classes/Component/PickView/PickerViewManager.swift"
+      - "../../LTXiOSUtils/Classes/Component/PickView/SelectPickView.swift"
+      - "../../LTXiOSUtils/Classes/Component/PickView/ToolBarView.swift"
+      - "../../LTXiOSUtils/Classes/Component/RollingNoticeView.swift"
+      - "../../LTXiOSUtils/Classes/Component/SpinnerButton.swift"
+      - "../../LTXiOSUtils/Classes/Component/SuspensionButton.swift"
+      - "../../LTXiOSUtils/Classes/Component/TreeTableView/TreeData.swift"
+      - "../../LTXiOSUtils/Classes/Component/TreeTableView/TreeNode.swift"
+      - "../../LTXiOSUtils/Classes/Component/TreeTableView/TreeTableView.swift"
+      - "../../LTXiOSUtils/Classes/Component/TreeTableView/TreeTableViewCell.swift"
+      - "../../LTXiOSUtils/Classes/Component/TreeTableView/TreeTableViewSearchBar.swift"
+      - "../../LTXiOSUtils/Classes/Core/CoreUtil/HUD.swift"
+      - "../../LTXiOSUtils/Classes/Core/CoreUtil/Log.swift"
+      - "../../LTXiOSUtils/Classes/Core/CoreUtil/Then.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/BundleExtension.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/DataExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/DateExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/DispatchExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/DoubleExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/IntExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/NSMutableAttributedStringExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/NSObjectExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/OptionalExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/SequenceExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/StringExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/TxExtensionWrapper.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/UIButtonExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/UIColorExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/UIFontExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/UIImageExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/UIImageViewExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/UILabelExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/UINavigationControllerExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/UITextFieldExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/UITextViewExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/UIViewControllerExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/UIViewExtensions.swift"
+      - "../../LTXiOSUtils/Classes/Core/Extension/URLExtension.swift"
+      - "../../LTXiOSUtils/Classes/Network/APIManager.swift"
+      - "../../LTXiOSUtils/Classes/Network/AuthPlugin.swift"
+      - "../../LTXiOSUtils/Classes/Network/CustomizeTargetType.swift"
+      - "../../LTXiOSUtils/Classes/Network/LoadingPlugin.swift"
+      - "../../LTXiOSUtils/Classes/Network/NetworkConfig.swift"
+      - "../../LTXiOSUtils/Classes/Network/NetworkManager.swift"
+      - "../../LTXiOSUtils/Classes/Network/RequestParam.swift"
+      - "../../LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift"
+      - "../../LTXiOSUtils/Classes/Util/BackupUtils.swift"
+      - "../../LTXiOSUtils/Classes/Util/DeviceInfo.swift"
+      - "../../LTXiOSUtils/Classes/Util/Navigation/HXFakeNavigationBar.swift"
+      - "../../LTXiOSUtils/Classes/Util/Navigation/HXNavigationController.swift"
+      - "../../LTXiOSUtils/Classes/Util/Navigation/UIViewController+HXNavigationBar.swift"
+      - "../../LTXiOSUtils/Classes/Util/ResourceUtils.swift"
+      - "../../LTXiOSUtils/Classes/Util/UIFeedbackGeneratorUtils.swift"
+      - "../../LTXiOSUtils/Classes/Util/UserDefaultsProtocol.swift"
+      - "../../LTXiOSUtils/Classes/ViewController/BaseGroupTableMenuViewController.swift"
+      - "../../LTXiOSUtils/Classes/ViewController/BaseUIScrollViewController.swift"
+      - "../../LTXiOSUtils/Classes/ViewController/BaseUIViewController.swift"
+      - "../../LTXiOSUtils/Classes/ViewController/BaseViewController.swift"
+      - "../../LTXiOSUtils/Resources/LTXiOSUtilsResource.swift"
+      - "../../LTXiOSUtils/Resources/Resource/Address.plist"
+      - "../../LTXiOSUtils/Resources/Resource/Assets.xcassets"
+      - "../../LTXiOSUtils/Resources/Resource/en.lproj"
+      - "../../LTXiOSUtils/Resources/Resource/zh-Hans.lproj"
+      - "../../README.md"
+    PROJECT_NAME: LTXiOSUtils
+    SPECS:
+      - LTXiOSUtils (0.0.2)
+      - LTXiOSUtils/Component (0.0.2)
+      - LTXiOSUtils/Core (0.0.2)
+      - LTXiOSUtils/Core/CoreUtil (0.0.2)
+      - LTXiOSUtils/Core/Extension (0.0.2)
+      - LTXiOSUtils/Network (0.0.2)
+      - LTXiOSUtils/Resources (0.0.2)
+      - LTXiOSUtils/Util (0.0.2)
+      - LTXiOSUtils/ViewController (0.0.2)
+  Macaw:
+    BUILD_SETTINGS_CHECKSUM:
+      Macaw:
+        :debug: 4b690b0d8b948291e761104b6b98f007
+        :release: 4b690b0d8b948291e761104b6b98f007
+    CHECKSUM: 4a931baf9a9826b06d0d8ecf300014c962ab9d50
+    PROJECT_NAME: Macaw
+    SPECS:
+      - Macaw (0.9.7)
+  MBProgressHUD:
+    BUILD_SETTINGS_CHECKSUM:
+      MBProgressHUD:
+        :debug: ac3155e98ee3e26a56f9c8aaa08f0f9f
+        :release: ac3155e98ee3e26a56f9c8aaa08f0f9f
+    CHECKSUM: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+    PROJECT_NAME: MBProgressHUD
+    SPECS:
+      - MBProgressHUD (1.2.0)
+  MGJRouter:
+    BUILD_SETTINGS_CHECKSUM:
+      MGJRouter:
+        :debug: 7c6f01c8b8e8daee09c425d07dfc7cd6
+        :release: 7c6f01c8b8e8daee09c425d07dfc7cd6
+    CHECKSUM: 15d94541eb2cc81eff7d577337288feb7ae9575f
+    PROJECT_NAME: MGJRouter
+    SPECS:
+      - MGJRouter (0.10.0)
+  MJRefresh:
+    BUILD_SETTINGS_CHECKSUM:
+      MJRefresh:
+        :debug: 2f12f6ed2a208df7437e4e29e1226ad0
+        :release: 2f12f6ed2a208df7437e4e29e1226ad0
+    CHECKSUM: 6afc955813966afb08305477dd7a0d9ad5e79a16
+    PROJECT_NAME: MJRefresh
+    SPECS:
+      - MJRefresh (3.5.0)
+  Moya:
+    BUILD_SETTINGS_CHECKSUM:
+      Moya:
+        :debug: d090879cb53310d2511bae9a2d66bb0c
+        :release: d090879cb53310d2511bae9a2d66bb0c
+    CHECKSUM: 5b45dacb75adb009f97fde91c204c1e565d31916
+    PROJECT_NAME: Moya
+    SPECS:
+      - Moya (14.0.0)
+      - Moya/Core (14.0.0)
+  mp3lame-for-ios:
+    BUILD_SETTINGS_CHECKSUM:
+      mp3lame-for-ios:
+        :debug: 248ab357b5de07286f70303209bee079
+        :release: 248ab357b5de07286f70303209bee079
+    CHECKSUM: 4daeb5686885be66438154050e3fe975d4ee1f07
+    PROJECT_NAME: mp3lame-for-ios
+    SPECS:
+      - mp3lame-for-ios (0.1.1)
+  ObjectMapper:
+    BUILD_SETTINGS_CHECKSUM:
+      ObjectMapper:
+        :debug: 0502d5d0cf2c01a4864953f8d80e49f2
+        :release: 0502d5d0cf2c01a4864953f8d80e49f2
+    CHECKSUM: 70187b8941977c62ccfb423caf6b50be405cabf0
+    PROJECT_NAME: ObjectMapper
+    SPECS:
+      - ObjectMapper (3.5.1)
+  path_provider:
+    BUILD_SETTINGS_CHECKSUM:
+      path_provider:
+        :debug: ddf0b44e4ab7738250506dacd77992b5
+        :release: ddf0b44e4ab7738250506dacd77992b5
+    CHECKSUM: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+    FILES:
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/path_provider/ios/Classes/FLTPathProviderPlugin.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/path_provider/ios/Classes/FLTPathProviderPlugin.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/path_provider/LICENSE"
+    PROJECT_NAME: path_provider
+    SPECS:
+      - path_provider (0.0.1)
+  Pods-LTXiOSUtilsDemo:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 8b5ebec69f46cb222b1ebb86f6c68e83
+      Release: 5a2405601496747831cbc028bccaa2dc
+    FILES:
+      - "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
+      - "${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage/TPNSInAppMessageResource.bundle"
+  Pods-LTXiOSUtilsDemoTests:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 5ce844b7ad1e3390de1013efd633fcda
+      Release: bafb9d4c230a0f912f276cf233ea6320
+  Pods-LTXiOSUtilsDemoUITests:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 5ce844b7ad1e3390de1013efd633fcda
+      Release: bafb9d4c230a0f912f276cf233ea6320
+  Pods-NotificationServiceExtension:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 13e9b17c45addc423b1a0eeaae946dd3
+      Release: 13e9b17c45addc423b1a0eeaae946dd3
+  R.swift:
+    BUILD_SETTINGS_CHECKSUM:
+      R.swift:
+        :debug: c6f181d48bb56c1feb8ba1553b0b3099
+        :release: c6f181d48bb56c1feb8ba1553b0b3099
+    CHECKSUM: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
+    PROJECT_NAME: R.swift
+    SPECS:
+      - R.swift (5.1.0)
+  R.swift.Library:
+    BUILD_SETTINGS_CHECKSUM:
+      R.swift.Library:
+        :debug: 3b9d2d4dd4d0b284b0236ed75c514bde
+        :release: 3b9d2d4dd4d0b284b0236ed75c514bde
+    CHECKSUM: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+    PROJECT_NAME: R.swift.Library
+    SPECS:
+      - R.swift.Library (5.1.0)
+  ReachabilitySwift:
+    BUILD_SETTINGS_CHECKSUM:
+      ReachabilitySwift:
+        :debug: bd472d61768abdeedf4ef6d6332c2737
+        :release: bd472d61768abdeedf4ef6d6332c2737
+    CHECKSUM: 985039c6f7b23a1da463388634119492ff86c825
+    PROJECT_NAME: ReachabilitySwift
+    SPECS:
+      - ReachabilitySwift (5.0.0)
+  RxCocoa:
+    BUILD_SETTINGS_CHECKSUM:
+      RxCocoa:
+        :debug: c79753a5bb7ca1c2931ef2c4621556a0
+        :release: c79753a5bb7ca1c2931ef2c4621556a0
+    CHECKSUM: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+    PROJECT_NAME: RxCocoa
+    SPECS:
+      - RxCocoa (5.0.1)
+  RxRelay:
+    BUILD_SETTINGS_CHECKSUM:
+      RxRelay:
+        :debug: c66896be75f0944f65234d1455245499
+        :release: c66896be75f0944f65234d1455245499
+    CHECKSUM: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+    PROJECT_NAME: RxRelay
+    SPECS:
+      - RxRelay (5.1.1)
+  RxSwift:
+    BUILD_SETTINGS_CHECKSUM:
+      RxSwift:
+        :debug: 38832ea5e7b01382e947e0e4be31e73f
+        :release: 38832ea5e7b01382e947e0e4be31e73f
+    CHECKSUM: 81470a2074fa8780320ea5fe4102807cb7118178
+    PROJECT_NAME: RxSwift
+    SPECS:
+      - RxSwift (5.1.1)
+  shared_preferences:
+    BUILD_SETTINGS_CHECKSUM:
+      shared_preferences:
+        :debug: 02e07b9208e7e3679a389a116578ebd8
+        :release: 02e07b9208e7e3679a389a116578ebd8
+    CHECKSUM: af6bfa751691cdc24be3045c43ec037377ada40d
+    FILES:
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios/Classes/FLTSharedPreferencesPlugin.h"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios/Classes/FLTSharedPreferencesPlugin.m"
+      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/shared_preferences/LICENSE"
+    PROJECT_NAME: shared_preferences
+    SPECS:
+      - shared_preferences (0.0.1)
+  SKPhotoBrowser:
+    BUILD_SETTINGS_CHECKSUM:
+      SKPhotoBrowser:
+        :debug: 8c5d9c07e4e90330b306a1478abe1092
+        :release: 8c5d9c07e4e90330b306a1478abe1092
+    CHECKSUM: 343de95d89dc7913763c5dda243cc6e606e4a168
+    PROJECT_NAME: SKPhotoBrowser
+    SPECS:
+      - SKPhotoBrowser (6.1.0)
+  SnapKit:
+    BUILD_SETTINGS_CHECKSUM:
+      SnapKit:
+        :debug: c42d326c65512d5a06996842d8a5cf51
+        :release: c42d326c65512d5a06996842d8a5cf51
+    CHECKSUM: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+    PROJECT_NAME: SnapKit
+    SPECS:
+      - SnapKit (5.0.1)
+  SVGKit:
+    BUILD_SETTINGS_CHECKSUM:
+      SVGKit:
+        :debug: b1246de4c3152d2e2942097de52340cb
+        :release: b1246de4c3152d2e2942097de52340cb
+    CHECKSUM: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
+    PROJECT_NAME: SVGKit
+    SPECS:
+      - SVGKit (2.1.1)
+  SwiftDate:
+    BUILD_SETTINGS_CHECKSUM:
+      SwiftDate:
+        :debug: ae0a42cdbb7358e6d2492f92fb68ec60
+        :release: ae0a42cdbb7358e6d2492f92fb68ec60
+    CHECKSUM: fa2bb3962056bb44047b4b85a30044e5eae30b03
+    PROJECT_NAME: SwiftDate
+    SPECS:
+      - SwiftDate (6.1.0)
+  SwiftLint:
+    BUILD_SETTINGS_CHECKSUM:
+      SwiftLint:
+        :debug: 13b282e179d13e840c16a5405fcaf52d
+        :release: 13b282e179d13e840c16a5405fcaf52d
+    CHECKSUM: 4105f061f9812b214568b736dab580ab2c73a582
+    PROJECT_NAME: SwiftLint
+    SPECS:
+      - SwiftLint (0.38.0)
+  SwiftSVG:
+    BUILD_SETTINGS_CHECKSUM:
+      SwiftSVG:
+        :debug: ff831e4f4a6124a6877df8be56d12197
+        :release: ff831e4f4a6124a6877df8be56d12197
+    CHECKSUM: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
+    PROJECT_NAME: SwiftSVG
+    SPECS:
+      - SwiftSVG (2.3.2)
+  SwiftyJSON:
+    BUILD_SETTINGS_CHECKSUM:
+      SwiftyJSON:
+        :debug: c4d94dd0f0214390578cfa2c81e563cc
+        :release: c4d94dd0f0214390578cfa2c81e563cc
+    CHECKSUM: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+    PROJECT_NAME: SwiftyJSON
+    SPECS:
+      - SwiftyJSON (5.0.0)
+  SwiftyUserDefaults:
+    BUILD_SETTINGS_CHECKSUM:
+      SwiftyUserDefaults:
+        :debug: 5c04191d3e7d4bda636eb443186ccda9
+        :release: 5c04191d3e7d4bda636eb443186ccda9
+    CHECKSUM: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
+    PROJECT_NAME: SwiftyUserDefaults
+    SPECS:
+      - SwiftyUserDefaults (5.0.0)
+  SWXMLHash:
+    BUILD_SETTINGS_CHECKSUM:
+      SWXMLHash:
+        :debug: c12f0f707fd1f3eb6cbaeb4a134bdb7b
+        :release: c12f0f707fd1f3eb6cbaeb4a134bdb7b
+    CHECKSUM: 9cc0c2e4807926c74377724aa8722ee5707a0485
+    PROJECT_NAME: SWXMLHash
+    SPECS:
+      - SWXMLHash (5.0.1)
+  TPNS-iOS:
+    BUILD_SETTINGS_CHECKSUM:
+      TPNS-iOS:
+        :debug: db83e7c2651bacd18667083e00a0a7c1
+        :release: db83e7c2651bacd18667083e00a0a7c1
+    CHECKSUM: 4f61f76d71c8db1365763bb3a40b0c5ce9ce7b89
+    PROJECT_NAME: TPNS-iOS
+    SPECS:
+      - TPNS-iOS (1.3.0.0)
+  TPNS-iOS-Extension:
+    BUILD_SETTINGS_CHECKSUM:
+      TPNS-iOS-Extension:
+        :debug: 4851ebd1180f08248e4f2b03584fd2a4
+        :release: 4851ebd1180f08248e4f2b03584fd2a4
+    CHECKSUM: 6e00f3ffbf8b85b23974c2ca3604d2770c8887af
+    PROJECT_NAME: TPNS-iOS-Extension
+    SPECS:
+      - TPNS-iOS-Extension (1.3.0.0)
+  TZImagePickerController:
+    BUILD_SETTINGS_CHECKSUM:
+      TZImagePickerController:
+        :debug: c516b6e18f4f806e6d0dd9e383a0093c
+        :release: c516b6e18f4f806e6d0dd9e383a0093c
+    CHECKSUM: 99f03b64145a8c92c55b9b1b931410967d9be4cb
+    PROJECT_NAME: TZImagePickerController
+    SPECS:
+      - TZImagePickerController (3.3.1)
+  "UITableView+FDTemplateLayoutCell":
+    BUILD_SETTINGS_CHECKSUM:
+      "UITableView+FDTemplateLayoutCell":
+        :debug: 87df19b47df901d0b7a241b6453947d1
+        :release: 87df19b47df901d0b7a241b6453947d1
+    CHECKSUM: 5c949b4a5059c404b442926c0e80f81d10a2d66f
+    PROJECT_NAME: "UITableView+FDTemplateLayoutCell"
+    SPECS:
+      - "UITableView+FDTemplateLayoutCell (1.6)"
+  URLNavigator:
+    BUILD_SETTINGS_CHECKSUM:
+      URLNavigator:
+        :debug: 09273efa0451983dc7dbc30be0dcc2e7
+        :release: 09273efa0451983dc7dbc30be0dcc2e7
+    CHECKSUM: 2593c0e2d293732ec5c44503cf54dceba1a68085
+    PROJECT_NAME: URLNavigator
+    SPECS:
+      - URLNavigator (2.3.0)
+  WebViewJavascriptBridge:
+    BUILD_SETTINGS_CHECKSUM:
+      WebViewJavascriptBridge:
+        :debug: 29de646a669e8374ab554f065026ae8a
+        :release: 29de646a669e8374ab554f065026ae8a
+    CHECKSUM: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+    PROJECT_NAME: WebViewJavascriptBridge
+    SPECS:
+      - WebViewJavascriptBridge (6.0.3)
+  ZYCornerRadius:
+    BUILD_SETTINGS_CHECKSUM:
+      ZYCornerRadius:
+        :debug: 5d2e75428c867b12d0100eebe382f45f
+        :release: 5d2e75428c867b12d0100eebe382f45f
+    CHECKSUM: f0af817be7805b5c63d793042ca7a03f81e14069
+    PROJECT_NAME: ZYCornerRadius
+    SPECS:
+      - ZYCornerRadius (1.0.2)
+OBJECT_VERSION: 51
+PLUGINS:
+  {}

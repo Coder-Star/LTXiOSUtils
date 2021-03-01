@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import XHLaunchAd
+//import XHLaunchAd
 import LTXiOSUtils
 import AppOrderFiles
 
@@ -30,7 +30,7 @@ final class RootVCApplicationService: NSObject, ApplicationService {
         window?.makeKeyAndVisible()
 
         if showAd {
-            setLaunchAd()
+//            setLaunchAd()
         }
 
         if !showGuide {
@@ -81,44 +81,44 @@ extension RootVCApplicationService {
     }
 }
 
-extension RootVCApplicationService: XHLaunchAdDelegate {
-    /// 设置开屏广告
-    private func setLaunchAd() {
-        XHLaunchAd.setLaunch(.launchScreen)
-        XHLaunchAd.setWaitDataDuration(1) //如果这段时间没有取得json，就会直接跳过广告
-        var requestParam = RequestParam(path: NetworkConstant.launchAdData)
-        requestParam.method = .get
-        requestParam.hud.isShow = false
-        NetworkManager.sendRequest(requestParam: requestParam, success: { data in
-            let json = JSON(data)
-            Log.d(json)
-            if let adModel = AdModel(JSONString: json.description) {
-                let config = XHLaunchImageAdConfiguration()
-                config.duration = adModel.duration!
-                config.skipButtonType = adModel.skipBtnType!
-                config.imageNameOrURLString = adModel.imgUrl!
-                config.imageOption = .cacheInBackground
-                config.showFinishAnimate = adModel.animationType!
-                config.openModel = adModel.actionUrl!
-                XHLaunchAd.imageAd(with: config, delegate: self)
-            }
-        }, failure: { _ in
-            Log.d(XHLaunchAd.cacheImageURLString())
-            let url = XHLaunchAd.cacheImageURLString()
-            if url.tx.isNotEmpty {
-                let config = XHLaunchImageAdConfiguration()
-                config.duration = 5
-                config.skipButtonType = .timeText
-                config.imageNameOrURLString = url
-                config.imageOption = .cacheInBackground
-                config.showFinishAnimate = .fadein
-                XHLaunchAd.imageAd(with: config)
-            }
-        })
-    }
-
-    func xhLaunchAd(_ launchAd: XHLaunchAd, clickAtOpenModel openModel: Any, click clickPoint: CGPoint) -> Bool {
-        Log.d(openModel)
-        return true
-    }
-}
+//extension RootVCApplicationService: XHLaunchAdDelegate {
+//    /// 设置开屏广告
+//    private func setLaunchAd() {
+//        XHLaunchAd.setLaunch(.launchScreen)
+//        XHLaunchAd.setWaitDataDuration(1) //如果这段时间没有取得json，就会直接跳过广告
+//        var requestParam = RequestParam(path: NetworkConstant.launchAdData)
+//        requestParam.method = .get
+//        requestParam.hud.isShow = false
+//        NetworkManager.sendRequest(requestParam: requestParam, success: { data in
+//            let json = JSON(data)
+//            Log.d(json)
+//            if let adModel = AdModel(JSONString: json.description) {
+//                let config = XHLaunchImageAdConfiguration()
+//                config.duration = adModel.duration!
+//                config.skipButtonType = adModel.skipBtnType!
+//                config.imageNameOrURLString = adModel.imgUrl!
+//                config.imageOption = .cacheInBackground
+//                config.showFinishAnimate = adModel.animationType!
+//                config.openModel = adModel.actionUrl!
+//                XHLaunchAd.imageAd(with: config, delegate: self)
+//            }
+//        }, failure: { _ in
+//            Log.d(XHLaunchAd.cacheImageURLString())
+//            let url = XHLaunchAd.cacheImageURLString()
+//            if url.tx.isNotEmpty {
+//                let config = XHLaunchImageAdConfiguration()
+//                config.duration = 5
+//                config.skipButtonType = .timeText
+//                config.imageNameOrURLString = url
+//                config.imageOption = .cacheInBackground
+//                config.showFinishAnimate = .fadein
+//                XHLaunchAd.imageAd(with: config)
+//            }
+//        })
+//    }
+//
+//    func xhLaunchAd(_ launchAd: XHLaunchAd, clickAtOpenModel openModel: Any, click clickPoint: CGPoint) -> Bool {
+//        Log.d(openModel)
+//        return true
+//    }
+//}

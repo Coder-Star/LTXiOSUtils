@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		034EA3BD04F0514B4CFD43F30163FFBC /* Fillable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E919959CD51F68FD7CA175959AB344 /* Fillable.swift */; };
+		087D130475F4C91054EC77FF530E24C0 /* CALayer+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF700617311F3F0204DD9265C0F317C /* CALayer+SVG.swift */; };
+		10F6B493815051E8B212F3A99E2E4A8C /* SVGParserSupportedElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269526A80FCCC34AC17DB533C548B802 /* SVGParserSupportedElements.swift */; };
+		18358ABD72C2C1726CF2F730A2B01D98 /* SVGContainerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2E9541584055086380A5CB4874AFA /* SVGContainerElement.swift */; };
+		18DCA828400337016B18D66DDAC66096 /* SVGPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B344310F639BDBEBA20F8396732B0200 /* SVGPolyline.swift */; };
+		20F4FC958D4EBE1003F8A579296BEF6E /* SVGShapeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82784729DEE138B823FAB6E1FA93CBA /* SVGShapeElement.swift */; };
+		23DF5F94D7D85A5B84FCBC4B83A33055 /* ParsesAsynchronously.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA93A05E43617EF65926963398AC468 /* ParsesAsynchronously.swift */; };
+		2B07EFA11883D52703664ABBCFF794B0 /* Unown.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB363D2A78B49421B469B79B3F6D632A /* Unown.swift */; };
+		2B335555FDC26E63DD467288F8F6AFE4 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292283CF2B86C61F56D0BE373A8B556D /* Print.swift */; };
+		2F64077312AA78415DC401D974C5D05C /* Dictionary+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6105C2D4827A4A3CADE7BCDB113BB379 /* Dictionary+JSON.swift */; };
+		3C5187CB268F7A922F9730429ECF4717 /* Transformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DAFE407340EF33BB9E07BF1756D5F9 /* Transformable.swift */; };
+		469A38C05BB0C582C05C51259167FDC2 /* UIView+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE264C9BCFD686D24A7DF66EEAB12A /* UIView+SVG.swift */; };
+		50F665253F085963B23F3A48B20C15A6 /* UIBezierPath+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A2ED2063EBCA89872FC41F1A0D8067 /* UIBezierPath+SVG.swift */; };
+		547E89AAC94872B82E0543C8F72F7E60 /* SVGPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C62EADF00D9B8398CBC63FE59FB894 /* SVGPolygon.swift */; };
+		55128C78BCB8C6D6269DDE3392D24F7F /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD063156F696FB9BC1A89A8A6C6B7561 /* Stylable.swift */; };
+		55510A3F62BE3B41F37A0E91592947F8 /* Dictionary+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F106896D7C5FA2C21E4BCC858D6D04 /* Dictionary+Add.swift */; };
+		56EFC7264D0642B69917F795B14D2C6D /* CAShapeLayer+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7C0EDCF4155C0D86324F11EB29647 /* CAShapeLayer+SVG.swift */; };
+		579E04B4C0C39FA699DDCED6A980EC28 /* Strokable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81BEBB55D2E3E4ADD9FFF7DC8A0B3B /* Strokable.swift */; };
+		5C41B1CA8D05BB6C3BC2EA9D52864A8A /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B964790953F41D63D665E55992931 /* Stack.swift */; };
+		6362EDFED87B92A7C1A389EC8C60B911 /* BinaryFloatingPoint+ParseLengthString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880ABFA7A5F8A45D967E69536844356E /* BinaryFloatingPoint+ParseLengthString.swift */; };
+		6387BFC3E9C30E0088F3447BC7C5BCE8 /* SVGLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3A0E87A6B005C2C5386CC73924733 /* SVGLayer.swift */; };
+		65A2E5126A7F178170D014E6C559633E /* FloatingPoint+DegreesRadians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A08A53CBB04F337504B81E65BC82BB /* FloatingPoint+DegreesRadians.swift */; };
+		690463A8D3290CDFB47874140C65E1A4 /* Data+CacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27FB69865F7FCBDDF420F8EC25B3369 /* Data+CacheKey.swift */; };
+		6B4172E90559AD883D31DF04FD422585 /* DelaysApplyingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918D3FD03CC0F5B618C3A57BD560D140 /* DelaysApplyingAttributes.swift */; };
+		6BE6421BFE766320EBA00AB426ABA694 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C0C8060FF6B2B4D3B08DBCB847E425 /* UIColor+Extensions.swift */; };
+		6E114B6DEE7954A7CB6D8341D8DAD64B /* PathDLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF566ABF3308365092307BF19ACE0DD9 /* PathDLexer.swift */; };
+		72E0D60AF8A6D861614D4DF8B3E6EBD8 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D6138FF99F3039CD4B27BB3863827 /* SVGView.swift */; };
+		83DF1177578FF575CA08F8E94F20530C /* CALayer+Sublayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C695089A90CE9AE92E8E4B9E35B5D8FD /* CALayer+Sublayers.swift */; };
+		83EF7EBA374FB6B1F49E67214BF5291F /* SVGLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7834CB8F1B1C284002EDE1CCF66EA344 /* SVGLine.swift */; };
+		85475DB47C6E9B93214F8C65BF7FA262 /* PathCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50672C353EE27773A79C27707F4EA2C /* PathCommand.swift */; };
+		8872B0C000F7D25B97AE5BCB6FE8D470 /* SVGCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0014B2FE625C19246FF6F6B131A684 /* SVGCircle.swift */; };
+		89902996A5E6E5DECDC37C52F4B0EE28 /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD53A48673CD42B04112DB13604743 /* CrossPlatform.swift */; };
+		89CBCEB7AED9F6656ACF0384A39070AA /* SVGRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B34BCB3CEDA2E62AB2928F515C36B /* SVGRectangle.swift */; };
+		8A22FA96ACA8832B2D2EB612B1064F92 /* SVGEllipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4D11FF494235C2C5B594949B461FB6 /* SVGEllipse.swift */; };
+		8F773EEDDC8B1BC05D7868334C194181 /* SVGGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4B7947080F4974B6162BC94C04E76 /* SVGGroup.swift */; };
+		9D491BCB7915180D9C55F688552BA122 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCCD1EA33679062E63D617C45ED157 /* DispatchQueue+Extensions.swift */; };
+		B4BDE98C50399168296AD7ACA9FE271D /* NSBezierPath+CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F86280FB07B3AFB7CDC4283E49182 /* NSBezierPath+CrossPlatform.swift */; };
+		B576A46860D30AF56D94B69EDE4070A6 /* Scalar+FromByteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBB19F904680D7FEB13D61BF91876E /* Scalar+FromByteArray.swift */; };
+		B680CBB78C3CDC9C16757381E303CDF3 /* String+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8867DAB465AAB44947B3A14847D004 /* String+Subscript.swift */; };
+		BB0319A4B865ADD13928BAEB17938C49 /* SwiftSVG-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6696FA69F8581D8A24F3DB734DCFD9ED /* SwiftSVG-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD00F07E966F6B68667E1C5129EAF3F9 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9514DB764E93C3FD82EA4D7EAD1E03 /* SVGPath.swift */; };
+		C4F78F2C0B8024192632192D65AEA287 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AB298E9FCABF3343D2DA908CC31440 /* Identifiable.swift */; };
+		C74F95697ADFC004F69E3CAB831A7428 /* SVGRootElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59817503838441720DDD90B093DF3612 /* SVGRootElement.swift */; };
+		D01C1163D03262E9B06BE1E09E761D2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280340F0B183BBA63E5F197DD7595FA9 /* Foundation.framework */; };
+		D0C3E4DC3EBB82023271ACB24262B4BA /* NSXMLSVGParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C69710EFFD16D5FB6BB6926E7098E /* NSXMLSVGParser.swift */; };
+		D82A664E982E736E763A2589A60C2632 /* SVGParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9057399D659203DF7018AC21C35B852A /* SVGParser.swift */; };
+		E0ACA12B2A0A2861C367673C6C5F4F62 /* SwiftSVG-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B45FFB3593D7E8EA8DD8971002F0A373 /* SwiftSVG-dummy.m */; };
+		E2DBB04DACA17AA141A7CC8753FDFB81 /* CoordinateLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAB9BEE2905B6291C516905F328841B /* CoordinateLexer.swift */; };
+		E3B721D64A6EACF32F785D78630206C4 /* SVGCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432F637BF6C2D6381D847887F26B9FB1 /* SVGCache.swift */; };
+		F6C0D97DE13CDAA4AC103103F644FA9A /* SVGElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7F123AB0D6A01EE9B0963EEF4AE56 /* SVGElement.swift */; };
+		FCD84DAEB0378F6564DD3DB6590518FB /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E715C31EA5C53D01187E8840E0F2033 /* String+Trim.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D0AAB97958B33F272480B17F8DBDEC9 /* SwiftSVG-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSVG-prefix.pch"; sourceTree = "<group>"; };
+		130B34BCB3CEDA2E62AB2928F515C36B /* SVGRectangle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGRectangle.swift; path = SwiftSVG/SVG/Elements/SVGRectangle.swift; sourceTree = "<group>"; };
+		13C4B7947080F4974B6162BC94C04E76 /* SVGGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGGroup.swift; path = SwiftSVG/SVG/Elements/SVGGroup.swift; sourceTree = "<group>"; };
+		19A2ED2063EBCA89872FC41F1A0D8067 /* UIBezierPath+SVG.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIBezierPath+SVG.swift"; path = "SwiftSVG/SVG Extensions/UIBezierPath+SVG.swift"; sourceTree = "<group>"; };
+		1BA93A05E43617EF65926963398AC468 /* ParsesAsynchronously.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParsesAsynchronously.swift; path = SwiftSVG/SVG/Elements/ParsesAsynchronously.swift; sourceTree = "<group>"; };
+		1E4D11FF494235C2C5B594949B461FB6 /* SVGEllipse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGEllipse.swift; path = SwiftSVG/SVG/Elements/SVGEllipse.swift; sourceTree = "<group>"; };
+		1E715C31EA5C53D01187E8840E0F2033 /* String+Trim.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Trim.swift"; path = "SwiftSVG/SVG/Helpers/String+Trim.swift"; sourceTree = "<group>"; };
+		269526A80FCCC34AC17DB533C548B802 /* SVGParserSupportedElements.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGParserSupportedElements.swift; path = SwiftSVG/SVG/Parser/SVGParserSupportedElements.swift; sourceTree = "<group>"; };
+		280340F0B183BBA63E5F197DD7595FA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		292283CF2B86C61F56D0BE373A8B556D /* Print.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Print.swift; path = SwiftSVG/SVG/Helpers/Print.swift; sourceTree = "<group>"; };
+		2BFCCD1EA33679062E63D617C45ED157 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Extensions.swift"; path = "SwiftSVG/SVG/Helpers/DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
+		2F1C69710EFFD16D5FB6BB6926E7098E /* NSXMLSVGParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSXMLSVGParser.swift; path = SwiftSVG/SVG/Parser/NSXMLSVGParser.swift; sourceTree = "<group>"; };
+		36DAF0299CF6D9267F5172EC7A699D5E /* SwiftSVG-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftSVG-Info.plist"; sourceTree = "<group>"; };
+		3DFBB19F904680D7FEB13D61BF91876E /* Scalar+FromByteArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Scalar+FromByteArray.swift"; path = "SwiftSVG/SVG/Helpers/Scalar+FromByteArray.swift"; sourceTree = "<group>"; };
+		3E9514DB764E93C3FD82EA4D7EAD1E03 /* SVGPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGPath.swift; path = SwiftSVG/SVG/Elements/SVGPath.swift; sourceTree = "<group>"; };
+		432F637BF6C2D6381D847887F26B9FB1 /* SVGCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGCache.swift; path = SwiftSVG/SVG/Cache/SVGCache.swift; sourceTree = "<group>"; };
+		443D6138FF99F3039CD4B27BB3863827 /* SVGView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGView.swift; path = "SwiftSVG/SVG Extensions/SVGView.swift"; sourceTree = "<group>"; };
+		4CF7C0EDCF4155C0D86324F11EB29647 /* CAShapeLayer+SVG.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAShapeLayer+SVG.swift"; path = "SwiftSVG/SVG Extensions/CAShapeLayer+SVG.swift"; sourceTree = "<group>"; };
+		52F106896D7C5FA2C21E4BCC858D6D04 /* Dictionary+Add.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+Add.swift"; path = "SwiftSVG/SVG/Helpers/Dictionary+Add.swift"; sourceTree = "<group>"; };
+		57A08A53CBB04F337504B81E65BC82BB /* FloatingPoint+DegreesRadians.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FloatingPoint+DegreesRadians.swift"; path = "SwiftSVG/SVG/Helpers/FloatingPoint+DegreesRadians.swift"; sourceTree = "<group>"; };
+		59817503838441720DDD90B093DF3612 /* SVGRootElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGRootElement.swift; path = SwiftSVG/SVG/Elements/SVGRootElement.swift; sourceTree = "<group>"; };
+		5F0014B2FE625C19246FF6F6B131A684 /* SVGCircle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGCircle.swift; path = SwiftSVG/SVG/Elements/SVGCircle.swift; sourceTree = "<group>"; };
+		6105C2D4827A4A3CADE7BCDB113BB379 /* Dictionary+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+JSON.swift"; path = "SwiftSVG/SVG/Helpers/Dictionary+JSON.swift"; sourceTree = "<group>"; };
+		6696FA69F8581D8A24F3DB734DCFD9ED /* SwiftSVG-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSVG-umbrella.h"; sourceTree = "<group>"; };
+		68C0C8060FF6B2B4D3B08DBCB847E425 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "SwiftSVG/SVG/Helpers/UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		73DAFE407340EF33BB9E07BF1756D5F9 /* Transformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transformable.swift; path = SwiftSVG/SVG/Attributes/Transformable.swift; sourceTree = "<group>"; };
+		745F3C1EE4A6C5F6255F9713746B02F2 /* SwiftSVG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSVG.release.xcconfig; sourceTree = "<group>"; };
+		7834CB8F1B1C284002EDE1CCF66EA344 /* SVGLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGLine.swift; path = SwiftSVG/SVG/Elements/SVGLine.swift; sourceTree = "<group>"; };
+		81E2E9541584055086380A5CB4874AFA /* SVGContainerElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGContainerElement.swift; path = SwiftSVG/SVG/Elements/SVGContainerElement.swift; sourceTree = "<group>"; };
+		821B964790953F41D63D665E55992931 /* Stack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = SwiftSVG/SVG/Helpers/Stack.swift; sourceTree = "<group>"; };
+		880ABFA7A5F8A45D967E69536844356E /* BinaryFloatingPoint+ParseLengthString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BinaryFloatingPoint+ParseLengthString.swift"; path = "SwiftSVG/SVG/Helpers/BinaryFloatingPoint+ParseLengthString.swift"; sourceTree = "<group>"; };
+		9057399D659203DF7018AC21C35B852A /* SVGParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGParser.swift; path = SwiftSVG/SVG/Parser/SVGParser.swift; sourceTree = "<group>"; };
+		918D3FD03CC0F5B618C3A57BD560D140 /* DelaysApplyingAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelaysApplyingAttributes.swift; path = SwiftSVG/SVG/Attributes/DelaysApplyingAttributes.swift; sourceTree = "<group>"; };
+		96B3A0E87A6B005C2C5386CC73924733 /* SVGLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGLayer.swift; path = "SwiftSVG/SVG Extensions/SVGLayer.swift"; sourceTree = "<group>"; };
+		96E919959CD51F68FD7CA175959AB344 /* Fillable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fillable.swift; path = SwiftSVG/SVG/Attributes/Fillable.swift; sourceTree = "<group>"; };
+		9AF700617311F3F0204DD9265C0F317C /* CALayer+SVG.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+SVG.swift"; path = "SwiftSVG/SVG Extensions/CALayer+SVG.swift"; sourceTree = "<group>"; };
+		A9AE264C9BCFD686D24A7DF66EEAB12A /* UIView+SVG.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+SVG.swift"; path = "SwiftSVG/SVG Extensions/UIView+SVG.swift"; sourceTree = "<group>"; };
+		AB363D2A78B49421B469B79B3F6D632A /* Unown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Unown.swift; path = SwiftSVG/SVG/Helpers/Unown.swift; sourceTree = "<group>"; };
+		AE3F86280FB07B3AFB7CDC4283E49182 /* NSBezierPath+CrossPlatform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBezierPath+CrossPlatform.swift"; path = "SwiftSVG/NSBezierPath+CrossPlatform.swift"; sourceTree = "<group>"; };
+		AFB7F123AB0D6A01EE9B0963EEF4AE56 /* SVGElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGElement.swift; path = SwiftSVG/SVG/Elements/SVGElement.swift; sourceTree = "<group>"; };
+		B1AB298E9FCABF3343D2DA908CC31440 /* Identifiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Identifiable.swift; path = SwiftSVG/SVG/Attributes/Identifiable.swift; sourceTree = "<group>"; };
+		B344310F639BDBEBA20F8396732B0200 /* SVGPolyline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGPolyline.swift; path = SwiftSVG/SVG/Elements/SVGPolyline.swift; sourceTree = "<group>"; };
+		B45FFB3593D7E8EA8DD8971002F0A373 /* SwiftSVG-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSVG-dummy.m"; sourceTree = "<group>"; };
+		C4C62EADF00D9B8398CBC63FE59FB894 /* SVGPolygon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGPolygon.swift; path = SwiftSVG/SVG/Elements/SVGPolygon.swift; sourceTree = "<group>"; };
+		C50672C353EE27773A79C27707F4EA2C /* PathCommand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathCommand.swift; path = SwiftSVG/SVG/Iterators/PathCommand.swift; sourceTree = "<group>"; };
+		C695089A90CE9AE92E8E4B9E35B5D8FD /* CALayer+Sublayers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+Sublayers.swift"; path = "SwiftSVG/SVG/Helpers/CALayer+Sublayers.swift"; sourceTree = "<group>"; };
+		C82784729DEE138B823FAB6E1FA93CBA /* SVGShapeElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGShapeElement.swift; path = SwiftSVG/SVG/Elements/SVGShapeElement.swift; sourceTree = "<group>"; };
+		D27FB69865F7FCBDDF420F8EC25B3369 /* Data+CacheKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+CacheKey.swift"; path = "SwiftSVG/SVG/Helpers/Data+CacheKey.swift"; sourceTree = "<group>"; };
+		D2DE76E495725B2D210B5CFD0BA2EAD2 /* SwiftSVG.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftSVG.modulemap; sourceTree = "<group>"; };
+		D8AD53A48673CD42B04112DB13604743 /* CrossPlatform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrossPlatform.swift; path = SwiftSVG/CrossPlatform.swift; sourceTree = "<group>"; };
+		DB659E0051C95275EB3901AB371A5FF1 /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSVG.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD063156F696FB9BC1A89A8A6C6B7561 /* Stylable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stylable.swift; path = SwiftSVG/SVG/Attributes/Stylable.swift; sourceTree = "<group>"; };
+		DDAB9BEE2905B6291C516905F328841B /* CoordinateLexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoordinateLexer.swift; path = SwiftSVG/SVG/Iterators/CoordinateLexer.swift; sourceTree = "<group>"; };
+		DF81BEBB55D2E3E4ADD9FFF7DC8A0B3B /* Strokable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Strokable.swift; path = SwiftSVG/SVG/Attributes/Strokable.swift; sourceTree = "<group>"; };
+		F438AF9C55089D9F785E013FB96B2168 /* SwiftSVG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSVG.debug.xcconfig; sourceTree = "<group>"; };
+		FD8867DAB465AAB44947B3A14847D004 /* String+Subscript.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Subscript.swift"; path = "SwiftSVG/SVG/Helpers/String+Subscript.swift"; sourceTree = "<group>"; };
+		FF566ABF3308365092307BF19ACE0DD9 /* PathDLexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathDLexer.swift; path = SwiftSVG/SVG/Iterators/PathDLexer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA8993BC1E17722847B7EAE27CF386E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01C1163D03262E9B06BE1E09E761D2A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09B1C3845C3A3246D03F4F30D441907A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				280340F0B183BBA63E5F197DD7595FA9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		60FF8EEBE4770DFE75C5BC2762AD19E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09B1C3845C3A3246D03F4F30D441907A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A0CBEE4385A5AC313B8117F687AF435 /* SwiftSVG */ = {
+			isa = PBXGroup;
+			children = (
+				880ABFA7A5F8A45D967E69536844356E /* BinaryFloatingPoint+ParseLengthString.swift */,
+				C695089A90CE9AE92E8E4B9E35B5D8FD /* CALayer+Sublayers.swift */,
+				9AF700617311F3F0204DD9265C0F317C /* CALayer+SVG.swift */,
+				4CF7C0EDCF4155C0D86324F11EB29647 /* CAShapeLayer+SVG.swift */,
+				DDAB9BEE2905B6291C516905F328841B /* CoordinateLexer.swift */,
+				D8AD53A48673CD42B04112DB13604743 /* CrossPlatform.swift */,
+				D27FB69865F7FCBDDF420F8EC25B3369 /* Data+CacheKey.swift */,
+				918D3FD03CC0F5B618C3A57BD560D140 /* DelaysApplyingAttributes.swift */,
+				52F106896D7C5FA2C21E4BCC858D6D04 /* Dictionary+Add.swift */,
+				6105C2D4827A4A3CADE7BCDB113BB379 /* Dictionary+JSON.swift */,
+				2BFCCD1EA33679062E63D617C45ED157 /* DispatchQueue+Extensions.swift */,
+				96E919959CD51F68FD7CA175959AB344 /* Fillable.swift */,
+				57A08A53CBB04F337504B81E65BC82BB /* FloatingPoint+DegreesRadians.swift */,
+				B1AB298E9FCABF3343D2DA908CC31440 /* Identifiable.swift */,
+				AE3F86280FB07B3AFB7CDC4283E49182 /* NSBezierPath+CrossPlatform.swift */,
+				2F1C69710EFFD16D5FB6BB6926E7098E /* NSXMLSVGParser.swift */,
+				1BA93A05E43617EF65926963398AC468 /* ParsesAsynchronously.swift */,
+				C50672C353EE27773A79C27707F4EA2C /* PathCommand.swift */,
+				FF566ABF3308365092307BF19ACE0DD9 /* PathDLexer.swift */,
+				292283CF2B86C61F56D0BE373A8B556D /* Print.swift */,
+				3DFBB19F904680D7FEB13D61BF91876E /* Scalar+FromByteArray.swift */,
+				821B964790953F41D63D665E55992931 /* Stack.swift */,
+				FD8867DAB465AAB44947B3A14847D004 /* String+Subscript.swift */,
+				1E715C31EA5C53D01187E8840E0F2033 /* String+Trim.swift */,
+				DF81BEBB55D2E3E4ADD9FFF7DC8A0B3B /* Strokable.swift */,
+				DD063156F696FB9BC1A89A8A6C6B7561 /* Stylable.swift */,
+				432F637BF6C2D6381D847887F26B9FB1 /* SVGCache.swift */,
+				5F0014B2FE625C19246FF6F6B131A684 /* SVGCircle.swift */,
+				81E2E9541584055086380A5CB4874AFA /* SVGContainerElement.swift */,
+				AFB7F123AB0D6A01EE9B0963EEF4AE56 /* SVGElement.swift */,
+				1E4D11FF494235C2C5B594949B461FB6 /* SVGEllipse.swift */,
+				13C4B7947080F4974B6162BC94C04E76 /* SVGGroup.swift */,
+				96B3A0E87A6B005C2C5386CC73924733 /* SVGLayer.swift */,
+				7834CB8F1B1C284002EDE1CCF66EA344 /* SVGLine.swift */,
+				9057399D659203DF7018AC21C35B852A /* SVGParser.swift */,
+				269526A80FCCC34AC17DB533C548B802 /* SVGParserSupportedElements.swift */,
+				3E9514DB764E93C3FD82EA4D7EAD1E03 /* SVGPath.swift */,
+				C4C62EADF00D9B8398CBC63FE59FB894 /* SVGPolygon.swift */,
+				B344310F639BDBEBA20F8396732B0200 /* SVGPolyline.swift */,
+				130B34BCB3CEDA2E62AB2928F515C36B /* SVGRectangle.swift */,
+				59817503838441720DDD90B093DF3612 /* SVGRootElement.swift */,
+				C82784729DEE138B823FAB6E1FA93CBA /* SVGShapeElement.swift */,
+				443D6138FF99F3039CD4B27BB3863827 /* SVGView.swift */,
+				73DAFE407340EF33BB9E07BF1756D5F9 /* Transformable.swift */,
+				19A2ED2063EBCA89872FC41F1A0D8067 /* UIBezierPath+SVG.swift */,
+				68C0C8060FF6B2B4D3B08DBCB847E425 /* UIColor+Extensions.swift */,
+				A9AE264C9BCFD686D24A7DF66EEAB12A /* UIView+SVG.swift */,
+				AB363D2A78B49421B469B79B3F6D632A /* Unown.swift */,
+				A1613EC22113B9F7B4A17C99CA628428 /* Support Files */,
+			);
+			name = SwiftSVG;
+			path = SwiftSVG;
+			sourceTree = "<group>";
+		};
+		A1613EC22113B9F7B4A17C99CA628428 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2DE76E495725B2D210B5CFD0BA2EAD2 /* SwiftSVG.modulemap */,
+				B45FFB3593D7E8EA8DD8971002F0A373 /* SwiftSVG-dummy.m */,
+				36DAF0299CF6D9267F5172EC7A699D5E /* SwiftSVG-Info.plist */,
+				0D0AAB97958B33F272480B17F8DBDEC9 /* SwiftSVG-prefix.pch */,
+				6696FA69F8581D8A24F3DB734DCFD9ED /* SwiftSVG-umbrella.h */,
+				F438AF9C55089D9F785E013FB96B2168 /* SwiftSVG.debug.xcconfig */,
+				745F3C1EE4A6C5F6255F9713746B02F2 /* SwiftSVG.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftSVG";
+			sourceTree = "<group>";
+		};
+		A22BEC116C9364CDD00086F6EA354649 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB659E0051C95275EB3901AB371A5FF1 /* SwiftSVG.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9B5C8DAA8FC24857381B1D95E87580E = {
+			isa = PBXGroup;
+			children = (
+				60FF8EEBE4770DFE75C5BC2762AD19E0 /* Frameworks */,
+				A22BEC116C9364CDD00086F6EA354649 /* Products */,
+				8A0CBEE4385A5AC313B8117F687AF435 /* SwiftSVG */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		34F3B67C03D901B5C23C0805B75296D9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB0319A4B865ADD13928BAEB17938C49 /* SwiftSVG-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F8E5119586DCA1CA242860287E5DF99E /* SwiftSVG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F91FFF0F4A97228AF1D134E460CA486 /* Build configuration list for PBXNativeTarget "SwiftSVG" */;
+			buildPhases = (
+				34F3B67C03D901B5C23C0805B75296D9 /* Headers */,
+				B706F46BF80AC96C3960D6729C7755B1 /* Sources */,
+				BA8993BC1E17722847B7EAE27CF386E8 /* Frameworks */,
+				F80ECCBEF0817389B9F121981E549CFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftSVG;
+			productName = SwiftSVG;
+			productReference = DB659E0051C95275EB3901AB371A5FF1 /* SwiftSVG.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12A34CE29F8520BFA9E3B76B1063782F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = C12F51F1714F490BA09BF1FE08CBAA76 /* Build configuration list for PBXProject "SwiftSVG" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E9B5C8DAA8FC24857381B1D95E87580E;
+			productRefGroup = A22BEC116C9364CDD00086F6EA354649 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8E5119586DCA1CA242860287E5DF99E /* SwiftSVG */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F80ECCBEF0817389B9F121981E549CFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B706F46BF80AC96C3960D6729C7755B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6362EDFED87B92A7C1A389EC8C60B911 /* BinaryFloatingPoint+ParseLengthString.swift in Sources */,
+				83DF1177578FF575CA08F8E94F20530C /* CALayer+Sublayers.swift in Sources */,
+				087D130475F4C91054EC77FF530E24C0 /* CALayer+SVG.swift in Sources */,
+				56EFC7264D0642B69917F795B14D2C6D /* CAShapeLayer+SVG.swift in Sources */,
+				E2DBB04DACA17AA141A7CC8753FDFB81 /* CoordinateLexer.swift in Sources */,
+				89902996A5E6E5DECDC37C52F4B0EE28 /* CrossPlatform.swift in Sources */,
+				690463A8D3290CDFB47874140C65E1A4 /* Data+CacheKey.swift in Sources */,
+				6B4172E90559AD883D31DF04FD422585 /* DelaysApplyingAttributes.swift in Sources */,
+				55510A3F62BE3B41F37A0E91592947F8 /* Dictionary+Add.swift in Sources */,
+				2F64077312AA78415DC401D974C5D05C /* Dictionary+JSON.swift in Sources */,
+				9D491BCB7915180D9C55F688552BA122 /* DispatchQueue+Extensions.swift in Sources */,
+				034EA3BD04F0514B4CFD43F30163FFBC /* Fillable.swift in Sources */,
+				65A2E5126A7F178170D014E6C559633E /* FloatingPoint+DegreesRadians.swift in Sources */,
+				C4F78F2C0B8024192632192D65AEA287 /* Identifiable.swift in Sources */,
+				B4BDE98C50399168296AD7ACA9FE271D /* NSBezierPath+CrossPlatform.swift in Sources */,
+				D0C3E4DC3EBB82023271ACB24262B4BA /* NSXMLSVGParser.swift in Sources */,
+				23DF5F94D7D85A5B84FCBC4B83A33055 /* ParsesAsynchronously.swift in Sources */,
+				85475DB47C6E9B93214F8C65BF7FA262 /* PathCommand.swift in Sources */,
+				6E114B6DEE7954A7CB6D8341D8DAD64B /* PathDLexer.swift in Sources */,
+				2B335555FDC26E63DD467288F8F6AFE4 /* Print.swift in Sources */,
+				B576A46860D30AF56D94B69EDE4070A6 /* Scalar+FromByteArray.swift in Sources */,
+				5C41B1CA8D05BB6C3BC2EA9D52864A8A /* Stack.swift in Sources */,
+				B680CBB78C3CDC9C16757381E303CDF3 /* String+Subscript.swift in Sources */,
+				FCD84DAEB0378F6564DD3DB6590518FB /* String+Trim.swift in Sources */,
+				579E04B4C0C39FA699DDCED6A980EC28 /* Strokable.swift in Sources */,
+				55128C78BCB8C6D6269DDE3392D24F7F /* Stylable.swift in Sources */,
+				E3B721D64A6EACF32F785D78630206C4 /* SVGCache.swift in Sources */,
+				8872B0C000F7D25B97AE5BCB6FE8D470 /* SVGCircle.swift in Sources */,
+				18358ABD72C2C1726CF2F730A2B01D98 /* SVGContainerElement.swift in Sources */,
+				F6C0D97DE13CDAA4AC103103F644FA9A /* SVGElement.swift in Sources */,
+				8A22FA96ACA8832B2D2EB612B1064F92 /* SVGEllipse.swift in Sources */,
+				8F773EEDDC8B1BC05D7868334C194181 /* SVGGroup.swift in Sources */,
+				6387BFC3E9C30E0088F3447BC7C5BCE8 /* SVGLayer.swift in Sources */,
+				83EF7EBA374FB6B1F49E67214BF5291F /* SVGLine.swift in Sources */,
+				D82A664E982E736E763A2589A60C2632 /* SVGParser.swift in Sources */,
+				10F6B493815051E8B212F3A99E2E4A8C /* SVGParserSupportedElements.swift in Sources */,
+				BD00F07E966F6B68667E1C5129EAF3F9 /* SVGPath.swift in Sources */,
+				547E89AAC94872B82E0543C8F72F7E60 /* SVGPolygon.swift in Sources */,
+				18DCA828400337016B18D66DDAC66096 /* SVGPolyline.swift in Sources */,
+				89CBCEB7AED9F6656ACF0384A39070AA /* SVGRectangle.swift in Sources */,
+				C74F95697ADFC004F69E3CAB831A7428 /* SVGRootElement.swift in Sources */,
+				20F4FC958D4EBE1003F8A579296BEF6E /* SVGShapeElement.swift in Sources */,
+				72E0D60AF8A6D861614D4DF8B3E6EBD8 /* SVGView.swift in Sources */,
+				E0ACA12B2A0A2861C367673C6C5F4F62 /* SwiftSVG-dummy.m in Sources */,
+				3C5187CB268F7A922F9730429ECF4717 /* Transformable.swift in Sources */,
+				50F665253F085963B23F3A48B20C15A6 /* UIBezierPath+SVG.swift in Sources */,
+				6BE6421BFE766320EBA00AB426ABA694 /* UIColor+Extensions.swift in Sources */,
+				469A38C05BB0C582C05C51259167FDC2 /* UIView+SVG.swift in Sources */,
+				2B07EFA11883D52703664ABBCFF794B0 /* Unown.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		22534AB3C92CD2A56619D56E06ABF4F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		2CBE3A7881679AC624CBC369BDD91C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 745F3C1EE4A6C5F6255F9713746B02F2 /* SwiftSVG.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftSVG/SwiftSVG-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftSVG/SwiftSVG-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftSVG/SwiftSVG.modulemap";
+				PRODUCT_MODULE_NAME = SwiftSVG;
+				PRODUCT_NAME = SwiftSVG;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		647A792670C818DEB1EFE4FA7AAC099F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F438AF9C55089D9F785E013FB96B2168 /* SwiftSVG.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftSVG/SwiftSVG-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftSVG/SwiftSVG-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftSVG/SwiftSVG.modulemap";
+				PRODUCT_MODULE_NAME = SwiftSVG;
+				PRODUCT_NAME = SwiftSVG;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8BAAFC588BB70AD0BF56DCD393BBA77A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F91FFF0F4A97228AF1D134E460CA486 /* Build configuration list for PBXNativeTarget "SwiftSVG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				647A792670C818DEB1EFE4FA7AAC099F /* Debug */,
+				2CBE3A7881679AC624CBC369BDD91C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C12F51F1714F490BA09BF1FE08CBAA76 /* Build configuration list for PBXProject "SwiftSVG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BAAFC588BB70AD0BF56DCD393BBA77A /* Debug */,
+				22534AB3C92CD2A56619D56E06ABF4F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12A34CE29F8520BFA9E3B76B1063782F /* Project object */;
+}

@@ -1,0 +1,312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		685AF0112E7493A47BD57034A2EF084E /* TPNS-iOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6ADD3D9BAF04FB3282FB6BB08C5B6BBC /* Build configuration list for PBXAggregateTarget "TPNS-iOS" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = "TPNS-iOS";
+			productName = "TPNS-iOS";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXFileReference section */
+		3C01913CE8C27B212F81DB82678522A2 /* TPNS-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "TPNS-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		574EF52741924DF6D687E3E1F0DD4C6C /* TPNS-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "TPNS-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		599DD06E714BEBFDCD6F6DF144C86000 /* XGPush.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XGPush.h; path = XGVIPPush/XGPush.h; sourceTree = "<group>"; };
+		644B3B5B69FFA10E9FCBA2E09EF5D61D /* XGMTACloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XGMTACloud.framework; path = XGVIPPush/XGMTACloud.framework; sourceTree = "<group>"; };
+		64C4DDB94A6B092DC073C1425AD4FF8B /* XGLocalNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XGLocalNotification.h; path = XGVIPPush/XGLocalNotification.h; sourceTree = "<group>"; };
+		B57E101291BDAC5C722E2EA36456696A /* TPNSInAppMessage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPNSInAppMessage.framework; path = XGVIPPush/InAppMessage/TPNSInAppMessage.framework; sourceTree = "<group>"; };
+		BC34FF75B220FC76DDFE8842C22E2993 /* libXG-SDK-Cloud.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libXG-SDK-Cloud.a"; path = "XGVIPPush/libXG-SDK-Cloud.a"; sourceTree = "<group>"; };
+		E7D395F198303CFB4DF2DE3ACE2E2EDC /* TPNSInAppMessageResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TPNSInAppMessageResource.bundle; path = XGVIPPush/InAppMessage/TPNSInAppMessageResource.bundle; sourceTree = "<group>"; };
+		E827298635AB9753932C4995DDA769DA /* XGPushPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XGPushPrivate.h; path = XGVIPPush/XGPushPrivate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3428AF39666A52746656C4B3CDD30AC6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E7D395F198303CFB4DF2DE3ACE2E2EDC /* TPNSInAppMessageResource.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5682C4ED16FC0A5C8BCD1C326FCB6E5E /* TPNS-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				64C4DDB94A6B092DC073C1425AD4FF8B /* XGLocalNotification.h */,
+				599DD06E714BEBFDCD6F6DF144C86000 /* XGPush.h */,
+				E827298635AB9753932C4995DDA769DA /* XGPushPrivate.h */,
+				638390FBDB3971E4017E715A328C88E0 /* Frameworks */,
+				3428AF39666A52746656C4B3CDD30AC6 /* Resources */,
+				59857E823E615538A88A4A3257C264D7 /* Support Files */,
+			);
+			path = "TPNS-iOS";
+			sourceTree = "<group>";
+		};
+		59857E823E615538A88A4A3257C264D7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C01913CE8C27B212F81DB82678522A2 /* TPNS-iOS.debug.xcconfig */,
+				574EF52741924DF6D687E3E1F0DD4C6C /* TPNS-iOS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TPNS-iOS";
+			sourceTree = "<group>";
+		};
+		638390FBDB3971E4017E715A328C88E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC34FF75B220FC76DDFE8842C22E2993 /* libXG-SDK-Cloud.a */,
+				B57E101291BDAC5C722E2EA36456696A /* TPNSInAppMessage.framework */,
+				644B3B5B69FFA10E9FCBA2E09EF5D61D /* XGMTACloud.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9470ABAFEF8499ADCDF037F9D07DD9A6 = {
+			isa = PBXGroup;
+			children = (
+				FBCABCFED7C4B1602B07451FF31C5CC8 /* Frameworks */,
+				9F16C26EB2993CF723A9211BC6B48FED /* Products */,
+				5682C4ED16FC0A5C8BCD1C326FCB6E5E /* TPNS-iOS */,
+			);
+			sourceTree = "<group>";
+		};
+		9F16C26EB2993CF723A9211BC6B48FED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBCABCFED7C4B1602B07451FF31C5CC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		CC3E61C426128EC23C738B07E36C489D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1230;
+			};
+			buildConfigurationList = 1CEFD50DF034C5A1F47DBAEE9EF9E296 /* Build configuration list for PBXProject "TPNS-iOS" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9470ABAFEF8499ADCDF037F9D07DD9A6;
+			productRefGroup = 9F16C26EB2993CF723A9211BC6B48FED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				685AF0112E7493A47BD57034A2EF084E /* TPNS-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		25BF2E86A7E7A3325BB9AADA48B460EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		36FDF1F632BAEA540658B9491D0CDC70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 574EF52741924DF6D687E3E1F0DD4C6C /* TPNS-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D556C412D68429B28553EA3D02B2B2C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C01913CE8C27B212F81DB82678522A2 /* TPNS-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F55E6A0585F5E56BB59B944A8021210F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CEFD50DF034C5A1F47DBAEE9EF9E296 /* Build configuration list for PBXProject "TPNS-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55E6A0585F5E56BB59B944A8021210F /* Debug */,
+				25BF2E86A7E7A3325BB9AADA48B460EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ADD3D9BAF04FB3282FB6BB08C5B6BBC /* Build configuration list for PBXAggregateTarget "TPNS-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D556C412D68429B28553EA3D02B2B2C3 /* Debug */,
+				36FDF1F632BAEA540658B9491D0CDC70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CC3E61C426128EC23C738B07E36C489D /* Project object */;
+}

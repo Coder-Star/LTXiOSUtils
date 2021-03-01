@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F639CCE000D68023AFAAE9B15C29928 /* ZYCornerRadius-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EECF346CD9C3C2E13614D16AE6EE0AD /* ZYCornerRadius-dummy.m */; };
+		4736CA51FA93A8FDE896E2A088C83F01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784880C4E1B0176FE8B36FAA03224B9C /* UIKit.framework */; };
+		539FA256C606786FEA36A5DF96D185F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 723CDAEB2C62B11FBAB9B4E543C6B1B1 /* Foundation.framework */; };
+		A932D2C39E892D41AD95ED1DAEE73846 /* ZYCornerRadius-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 889AB54F9628592D0321C91D18218BB4 /* ZYCornerRadius-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFB8B9372508C5704611A1F79E1C2469 /* UIImageView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C11CCEAAFF165DFC0FCB9FF304557B /* UIImageView+CornerRadius.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FBFBEA8E2D0A79795A385CD1814B3842 /* UIImageView+CornerRadius.h in Headers */ = {isa = PBXBuildFile; fileRef = ADFEDE3F7F7694787ED640B7A5317F3A /* UIImageView+CornerRadius.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		09C5A451A1846CFE459762541093C241 /* ZYCornerRadius-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZYCornerRadius-Info.plist"; sourceTree = "<group>"; };
+		71C11CCEAAFF165DFC0FCB9FF304557B /* UIImageView+CornerRadius.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+CornerRadius.m"; path = "ZYCornerRadius/CornerRadiusCategory/UIImageView+CornerRadius.m"; sourceTree = "<group>"; };
+		723CDAEB2C62B11FBAB9B4E543C6B1B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		784880C4E1B0176FE8B36FAA03224B9C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		87F01773B5AB919EA4D637B751EF9DAE /* ZYCornerRadius-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZYCornerRadius-prefix.pch"; sourceTree = "<group>"; };
+		889AB54F9628592D0321C91D18218BB4 /* ZYCornerRadius-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZYCornerRadius-umbrella.h"; sourceTree = "<group>"; };
+		9A077FE292A0607729A2196B920CAFE1 /* ZYCornerRadius.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZYCornerRadius.debug.xcconfig; sourceTree = "<group>"; };
+		9EECF346CD9C3C2E13614D16AE6EE0AD /* ZYCornerRadius-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZYCornerRadius-dummy.m"; sourceTree = "<group>"; };
+		ADFEDE3F7F7694787ED640B7A5317F3A /* UIImageView+CornerRadius.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+CornerRadius.h"; path = "ZYCornerRadius/CornerRadiusCategory/UIImageView+CornerRadius.h"; sourceTree = "<group>"; };
+		DCDC8112B24154314984FE60F05C3137 /* ZYCornerRadius.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZYCornerRadius.modulemap; sourceTree = "<group>"; };
+		E788A7158E416DE506D9C1F631A73900 /* ZYCornerRadius.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZYCornerRadius.framework; path = ZYCornerRadius.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA72F47123554D70251D4859DC85A03 /* ZYCornerRadius.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZYCornerRadius.release.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D083CC69E08A1A86D8085D92422C9BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				539FA256C606786FEA36A5DF96D185F7 /* Foundation.framework in Frameworks */,
+				4736CA51FA93A8FDE896E2A088C83F01 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		202E12C7F4A7C1AE1F2D97E204F396F1 /* ZYCornerRadius */ = {
+			isa = PBXGroup;
+			children = (
+				ADFEDE3F7F7694787ED640B7A5317F3A /* UIImageView+CornerRadius.h */,
+				71C11CCEAAFF165DFC0FCB9FF304557B /* UIImageView+CornerRadius.m */,
+				9C4C78AD80182A3E2FF2E3AD429C930E /* Support Files */,
+			);
+			name = ZYCornerRadius;
+			path = ZYCornerRadius;
+			sourceTree = "<group>";
+		};
+		3E0124030C1E01B0F5454747E32B2CA5 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				723CDAEB2C62B11FBAB9B4E543C6B1B1 /* Foundation.framework */,
+				784880C4E1B0176FE8B36FAA03224B9C /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4109E8259F9F8619F59EBF7E9366C53D = {
+			isa = PBXGroup;
+			children = (
+				E164971E99E5F2BF7D4F298B1A7A7DF1 /* Frameworks */,
+				68D978F76CB05358CA805263760996D1 /* Products */,
+				202E12C7F4A7C1AE1F2D97E204F396F1 /* ZYCornerRadius */,
+			);
+			sourceTree = "<group>";
+		};
+		68D978F76CB05358CA805263760996D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E788A7158E416DE506D9C1F631A73900 /* ZYCornerRadius.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C4C78AD80182A3E2FF2E3AD429C930E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCDC8112B24154314984FE60F05C3137 /* ZYCornerRadius.modulemap */,
+				9EECF346CD9C3C2E13614D16AE6EE0AD /* ZYCornerRadius-dummy.m */,
+				09C5A451A1846CFE459762541093C241 /* ZYCornerRadius-Info.plist */,
+				87F01773B5AB919EA4D637B751EF9DAE /* ZYCornerRadius-prefix.pch */,
+				889AB54F9628592D0321C91D18218BB4 /* ZYCornerRadius-umbrella.h */,
+				9A077FE292A0607729A2196B920CAFE1 /* ZYCornerRadius.debug.xcconfig */,
+				EFA72F47123554D70251D4859DC85A03 /* ZYCornerRadius.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ZYCornerRadius";
+			sourceTree = "<group>";
+		};
+		E164971E99E5F2BF7D4F298B1A7A7DF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E0124030C1E01B0F5454747E32B2CA5 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8012BC71D093B74E996340EC69A35448 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBFBEA8E2D0A79795A385CD1814B3842 /* UIImageView+CornerRadius.h in Headers */,
+				A932D2C39E892D41AD95ED1DAEE73846 /* ZYCornerRadius-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		685CD19267D2ACF71401FE24F632308A /* ZYCornerRadius */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C90C714F5584B4D446B9722C78D4DFD3 /* Build configuration list for PBXNativeTarget "ZYCornerRadius" */;
+			buildPhases = (
+				8012BC71D093B74E996340EC69A35448 /* Headers */,
+				05434C1CC868E5507A79AF0F36A7C50E /* Sources */,
+				9D083CC69E08A1A86D8085D92422C9BB /* Frameworks */,
+				86E9B7FD965DD3C85D29D50793587590 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZYCornerRadius;
+			productName = ZYCornerRadius;
+			productReference = E788A7158E416DE506D9C1F631A73900 /* ZYCornerRadius.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97BD0745F49EAD52545AE56A17C8805B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 3CC63F31E25429558800E1BD2152A285 /* Build configuration list for PBXProject "ZYCornerRadius" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4109E8259F9F8619F59EBF7E9366C53D;
+			productRefGroup = 68D978F76CB05358CA805263760996D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				685CD19267D2ACF71401FE24F632308A /* ZYCornerRadius */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86E9B7FD965DD3C85D29D50793587590 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05434C1CC868E5507A79AF0F36A7C50E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFB8B9372508C5704611A1F79E1C2469 /* UIImageView+CornerRadius.m in Sources */,
+				2F639CCE000D68023AFAAE9B15C29928 /* ZYCornerRadius-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6670307BE6AD75623223908C86A583B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		7B84F7302C6CBB08853B859CBD3A4701 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D7E57469285A98978AC359FD2B0F8873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFA72F47123554D70251D4859DC85A03 /* ZYCornerRadius.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZYCornerRadius/ZYCornerRadius-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZYCornerRadius/ZYCornerRadius-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ZYCornerRadius/ZYCornerRadius.modulemap";
+				PRODUCT_MODULE_NAME = ZYCornerRadius;
+				PRODUCT_NAME = ZYCornerRadius;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FE61583CE67DE84B61470E456D07D2BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A077FE292A0607729A2196B920CAFE1 /* ZYCornerRadius.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZYCornerRadius/ZYCornerRadius-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZYCornerRadius/ZYCornerRadius-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ZYCornerRadius/ZYCornerRadius.modulemap";
+				PRODUCT_MODULE_NAME = ZYCornerRadius;
+				PRODUCT_NAME = ZYCornerRadius;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3CC63F31E25429558800E1BD2152A285 /* Build configuration list for PBXProject "ZYCornerRadius" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6670307BE6AD75623223908C86A583B6 /* Debug */,
+				7B84F7302C6CBB08853B859CBD3A4701 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90C714F5584B4D446B9722C78D4DFD3 /* Build configuration list for PBXNativeTarget "ZYCornerRadius" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE61583CE67DE84B61470E456D07D2BA /* Debug */,
+				D7E57469285A98978AC359FD2B0F8873 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97BD0745F49EAD52545AE56A17C8805B /* Project object */;
+}

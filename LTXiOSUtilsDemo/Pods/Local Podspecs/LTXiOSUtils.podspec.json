@@ -43,7 +43,7 @@
           ],
           "dependencies": {
             "MBProgressHUD": [
-              "1.1.0"
+              "1.2.0"
             ]
           },
           "source_files": "LTXiOSUtils/Classes/Core/CoreUtil/**/*.swift"
@@ -103,7 +103,7 @@
           "5.0.1"
         ],
         "MJRefresh": [
-
+          "3.5.0"
         ]
       },
       "source_files": "LTXiOSUtils/Classes/ViewController/**/*.swift"

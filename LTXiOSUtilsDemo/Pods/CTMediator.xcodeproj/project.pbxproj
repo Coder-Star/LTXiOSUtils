@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CA54231A1804F366BD166EA71098D23 /* CTMediator+HandyTools.h in Headers */ = {isa = PBXBuildFile; fileRef = EC92DEE7E54B8B75BC80AFED435BA615 /* CTMediator+HandyTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A45BB35D6745D2CEC4B25EDCD1274E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A085DE12CE50AC29D2E85D761FD4C0 /* Foundation.framework */; };
+		753D099F65C95B7A5880D4FB9FCA8E43 /* CTMediator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8038728235BE52613776A1BD1D9C9 /* CTMediator-dummy.m */; };
+		A129C3B502A4D7DB4BA19433D26D93C9 /* CTMediator+HandyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A02018E4BDEE59E7B4B275CC16D7D3FB /* CTMediator+HandyTools.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AA54CA79BDF387B24B820F1DBE2F0B1E /* CTMediator.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BD3FD9052279AF271FFD945195B651 /* CTMediator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3FBFDBA0384D36EA390A42E612428E4 /* CTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 400DCE14314B026F55691347876AAAA8 /* CTMediator.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D51550FDF9540EDA99324446E6DA4E8C /* CTMediator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AC5ACCC8639CB67B87BFE68DF4C2832 /* CTMediator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA922252A32D8CAD6191632855E337D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A640FFAB31E6B940535BBAD5565A0FE8 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		292403425D267B354DE8FC9D9CB51914 /* CTMediator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CTMediator.release.xcconfig; sourceTree = "<group>"; };
+		35975AEE9161E1155D34444D40507126 /* CTMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CTMediator.framework; path = CTMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		400DCE14314B026F55691347876AAAA8 /* CTMediator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CTMediator.m; path = CTMediator/CTMediator/CTMediator.m; sourceTree = "<group>"; };
+		480FC7D3FBFEAF163A6F4FAB4E49B586 /* CTMediator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CTMediator-prefix.pch"; sourceTree = "<group>"; };
+		4AC5ACCC8639CB67B87BFE68DF4C2832 /* CTMediator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CTMediator-umbrella.h"; sourceTree = "<group>"; };
+		5AE8038728235BE52613776A1BD1D9C9 /* CTMediator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CTMediator-dummy.m"; sourceTree = "<group>"; };
+		5DA8B2BB48847CAAE67D853AEB43B9EF /* CTMediator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CTMediator.debug.xcconfig; sourceTree = "<group>"; };
+		5F083537D051F09EC9325A5E2D4616C9 /* CTMediator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CTMediator.modulemap; sourceTree = "<group>"; };
+		79BD3FD9052279AF271FFD945195B651 /* CTMediator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CTMediator.h; path = CTMediator/CTMediator/CTMediator.h; sourceTree = "<group>"; };
+		A02018E4BDEE59E7B4B275CC16D7D3FB /* CTMediator+HandyTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CTMediator+HandyTools.m"; path = "CTMediator/CTMediator/CTMediator+HandyTools.m"; sourceTree = "<group>"; };
+		A640FFAB31E6B940535BBAD5565A0FE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B5CEBF432654851AE97E33F93F1BA518 /* CTMediator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CTMediator-Info.plist"; sourceTree = "<group>"; };
+		C8A085DE12CE50AC29D2E85D761FD4C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EC92DEE7E54B8B75BC80AFED435BA615 /* CTMediator+HandyTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CTMediator+HandyTools.h"; path = "CTMediator/CTMediator/CTMediator+HandyTools.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		536128375DD4FC9064004C349CDC3851 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A45BB35D6745D2CEC4B25EDCD1274E5 /* Foundation.framework in Frameworks */,
+				DA922252A32D8CAD6191632855E337D3 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		337EFCA85AB2F1BA9D88E3C41BED9505 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D1388931469E7FC82DDD099562F2017 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D1388931469E7FC82DDD099562F2017 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C8A085DE12CE50AC29D2E85D761FD4C0 /* Foundation.framework */,
+				A640FFAB31E6B940535BBAD5565A0FE8 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		679741A24F7C3CA4E07A9AA4D905DB10 = {
+			isa = PBXGroup;
+			children = (
+				FB2B3132C378963ADCF581BDE5D15B11 /* CTMediator */,
+				337EFCA85AB2F1BA9D88E3C41BED9505 /* Frameworks */,
+				B88864D0B32570082438463497A0E52D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B88864D0B32570082438463497A0E52D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35975AEE9161E1155D34444D40507126 /* CTMediator.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C63121FA69BB21EBC8375029C900EED5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F083537D051F09EC9325A5E2D4616C9 /* CTMediator.modulemap */,
+				5AE8038728235BE52613776A1BD1D9C9 /* CTMediator-dummy.m */,
+				B5CEBF432654851AE97E33F93F1BA518 /* CTMediator-Info.plist */,
+				480FC7D3FBFEAF163A6F4FAB4E49B586 /* CTMediator-prefix.pch */,
+				4AC5ACCC8639CB67B87BFE68DF4C2832 /* CTMediator-umbrella.h */,
+				5DA8B2BB48847CAAE67D853AEB43B9EF /* CTMediator.debug.xcconfig */,
+				292403425D267B354DE8FC9D9CB51914 /* CTMediator.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CTMediator";
+			sourceTree = "<group>";
+		};
+		FB2B3132C378963ADCF581BDE5D15B11 /* CTMediator */ = {
+			isa = PBXGroup;
+			children = (
+				79BD3FD9052279AF271FFD945195B651 /* CTMediator.h */,
+				400DCE14314B026F55691347876AAAA8 /* CTMediator.m */,
+				EC92DEE7E54B8B75BC80AFED435BA615 /* CTMediator+HandyTools.h */,
+				A02018E4BDEE59E7B4B275CC16D7D3FB /* CTMediator+HandyTools.m */,
+				C63121FA69BB21EBC8375029C900EED5 /* Support Files */,
+			);
+			name = CTMediator;
+			path = CTMediator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		82F598433121A18C8E82342245777338 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CA54231A1804F366BD166EA71098D23 /* CTMediator+HandyTools.h in Headers */,
+				D51550FDF9540EDA99324446E6DA4E8C /* CTMediator-umbrella.h in Headers */,
+				AA54CA79BDF387B24B820F1DBE2F0B1E /* CTMediator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		25A8A820563A6D0C57186119171800D2 /* CTMediator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8B05486C8CB61FA225A8E4370B3ABCE /* Build configuration list for PBXNativeTarget "CTMediator" */;
+			buildPhases = (
+				82F598433121A18C8E82342245777338 /* Headers */,
+				54937C9569D0E7BB5D8FD7FA938EB9E2 /* Sources */,
+				536128375DD4FC9064004C349CDC3851 /* Frameworks */,
+				E86ACC75CCF1B8B602649815138A4691 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CTMediator;
+			productName = CTMediator;
+			productReference = 35975AEE9161E1155D34444D40507126 /* CTMediator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D566C4E8C41017105E7B17C736E1E38C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = F89666C1C6633878A29D3F346807046F /* Build configuration list for PBXProject "CTMediator" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 679741A24F7C3CA4E07A9AA4D905DB10;
+			productRefGroup = B88864D0B32570082438463497A0E52D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25A8A820563A6D0C57186119171800D2 /* CTMediator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E86ACC75CCF1B8B602649815138A4691 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		54937C9569D0E7BB5D8FD7FA938EB9E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A129C3B502A4D7DB4BA19433D26D93C9 /* CTMediator+HandyTools.m in Sources */,
+				753D099F65C95B7A5880D4FB9FCA8E43 /* CTMediator-dummy.m in Sources */,
+				D3FBFDBA0384D36EA390A42E612428E4 /* CTMediator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		54FCD6B67776E4DB25B4B703FE16E253 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 292403425D267B354DE8FC9D9CB51914 /* CTMediator.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CTMediator/CTMediator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CTMediator/CTMediator-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CTMediator/CTMediator.modulemap";
+				PRODUCT_MODULE_NAME = CTMediator;
+				PRODUCT_NAME = CTMediator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9AFC8CDA7C112B1085B50B9D351F9748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		AA97982DCB492685BC4C8966508EC74B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DA8B2BB48847CAAE67D853AEB43B9EF /* CTMediator.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CTMediator/CTMediator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CTMediator/CTMediator-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CTMediator/CTMediator.modulemap";
+				PRODUCT_MODULE_NAME = CTMediator;
+				PRODUCT_NAME = CTMediator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED00BE7955618CD3C3CD57D6A36D7620 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8B05486C8CB61FA225A8E4370B3ABCE /* Build configuration list for PBXNativeTarget "CTMediator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA97982DCB492685BC4C8966508EC74B /* Debug */,
+				54FCD6B67776E4DB25B4B703FE16E253 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F89666C1C6633878A29D3F346807046F /* Build configuration list for PBXProject "CTMediator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AFC8CDA7C112B1085B50B9D351F9748 /* Debug */,
+				ED00BE7955618CD3C3CD57D6A36D7620 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D566C4E8C41017105E7B17C736E1E38C /* Project object */;
+}

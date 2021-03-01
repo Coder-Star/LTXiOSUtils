@@ -2,12 +2,11 @@ PODS:
   - Alamofire (5.4.1)
   - AppOrderFiles (1.0.2)
   - Bugly (2.5.2)
-  - CocoaLumberjack (3.6.2):
-    - CocoaLumberjack/Core (= 3.6.2)
-  - CocoaLumberjack/Core (3.6.2)
+  - CocoaLumberjack (3.7.0):
+    - CocoaLumberjack/Core (= 3.7.0)
+  - CocoaLumberjack/Core (3.7.0)
   - CTMediator (28)
   - dsBridge (3.0.6)
-  - FLAnimatedImage (1.0.12)
   - Flutter (1.0.0)
   - flutter_boost (0.0.2):
     - Flutter
@@ -48,7 +47,7 @@ PODS:
     - LTXiOSUtils/Core/CoreUtil (= 0.0.2)
     - LTXiOSUtils/Core/Extension (= 0.0.2)
   - LTXiOSUtils/Core/CoreUtil (0.0.2):
-    - MBProgressHUD (= 1.1.0)
+    - MBProgressHUD (= 1.2.0)
   - LTXiOSUtils/Core/Extension (0.0.2)
   - LTXiOSUtils/Network (0.0.2):
     - LTXiOSUtils/Core
@@ -59,11 +58,11 @@ PODS:
   - LTXiOSUtils/Util (0.0.2)
   - LTXiOSUtils/ViewController (0.0.2):
     - LTXiOSUtils/Core
-    - MJRefresh
+    - MJRefresh (= 3.5.0)
     - SnapKit (= 5.0.1)
   - Macaw (0.9.7):
     - SWXMLHash
-  - MBProgressHUD (1.1.0)
+  - MBProgressHUD (1.2.0)
   - MGJRouter (0.10.0)
   - MJRefresh (3.5.0)
   - Moya (14.0.0):
@@ -81,9 +80,9 @@ PODS:
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxRelay (5.0.1):
+  - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - RxSwift (5.1.1)
   - shared_preferences (0.0.1):
     - Flutter
   - SKPhotoBrowser (6.1.0)
@@ -102,8 +101,6 @@ PODS:
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - URLNavigator (2.3.0)
   - WebViewJavascriptBridge (6.0.3)
-  - XHLaunchAd (3.9.11):
-    - FLAnimatedImage (~> 1.0.12)
   - ZYCornerRadius (1.0.2)
 
 DEPENDENCIES:
@@ -147,7 +144,6 @@ DEPENDENCIES:
   - "UITableView+FDTemplateLayoutCell (= 1.6)"
   - URLNavigator (= 2.3.0)
   - WebViewJavascriptBridge (= 6.0.3)
-  - XHLaunchAd (= 3.9.11)
   - ZYCornerRadius (= 1.0.2)
 
 SPEC REPOS:
@@ -158,7 +154,6 @@ SPEC REPOS:
     - CocoaLumberjack
     - CTMediator
     - dsBridge
-    - FLAnimatedImage
     - FSPagerView
     - GDPerformanceView-Swift
     - IQKeyboardManagerSwift
@@ -195,7 +190,6 @@ SPEC REPOS:
     - "UITableView+FDTemplateLayoutCell"
     - URLNavigator
     - WebViewJavascriptBridge
-    - XHLaunchAd
     - ZYCornerRadius
 
 EXTERNAL SOURCES:
@@ -222,10 +216,9 @@ SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   AppOrderFiles: ce8436cdae89e5831b93961ebc81415a3481c5a6
   Bugly: dbac48b55ad469a97cc4321045cd50df8f63d44f
-  CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
+  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
   CTMediator: 6a05e9f1098b2d2fbc9d19cc7f28e94c3a08b5d2
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_boost: a7cfa776b75329d5e7d101d0cd33e75042bcde69
   flutter_module: d1e1ff44505640bd9aa37f23f63380c646272be4
@@ -240,9 +233,9 @@ SPEC CHECKSUMS:
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
-  LTXiOSUtils: e385cb082ff82568135b4ebe74b840560e1602c3
+  LTXiOSUtils: 3e6fac3ff5d3ac28898e40d8e96b68fe87f77cbc
   Macaw: 4a931baf9a9826b06d0d8ecf300014c962ab9d50
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MGJRouter: 15d94541eb2cc81eff7d577337288feb7ae9575f
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
@@ -253,8 +246,8 @@ SPEC CHECKSUMS:
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
@@ -271,9 +264,8 @@ SPEC CHECKSUMS:
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
-  XHLaunchAd: 9d4abeca598c4262e9df10dd3346b07b9fe40926
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 0ee36e18194d88168c7b486d5498c8c8c1a8fdbd
+PODFILE CHECKSUM: 50cd2f17398027867f4ec9bacc6679bdd1ee8125
 
 COCOAPODS: 1.10.0

@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
     # 核心工具
     core.subspec 'CoreUtil' do |coreUtil|
       coreUtil.frameworks = "UIKit","Foundation"
-      coreUtil.dependency 'MBProgressHUD','1.1.0' # 加载框，OC库
+      coreUtil.dependency 'MBProgressHUD','1.2.0' # 加载框，OC库
       coreUtil.source_files = 'LTXiOSUtils/Classes/Core/CoreUtil/**/*.swift'
     end
   end
@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
   s.subspec 'ViewController' do |viewController|
     viewController.dependency 'LTXiOSUtils/Core'
     viewController.dependency 'SnapKit','5.0.1' # 自动布局
-    viewController.dependency 'MJRefresh' # 下拉刷新、下拉加载，OC库
+    viewController.dependency 'MJRefresh','3.5.0' # 下拉刷新、下拉加载，OC库
     viewController.source_files = 'LTXiOSUtils/Classes/ViewController/**/*.swift'
   end
 

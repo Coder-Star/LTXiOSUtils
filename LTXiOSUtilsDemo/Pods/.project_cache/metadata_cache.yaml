@@ -1,0 +1,232 @@
+Alamofire:
+  LABEL: Alamofire
+  PROJECT_PATH: Alamofire.xcodeproj
+  UUID: 81B7E9B7CD0CADA087A4BB042FBA92E7
+AppOrderFiles:
+  LABEL: AppOrderFiles
+  PROJECT_PATH: AppOrderFiles.xcodeproj
+  UUID: F1CE73734A2E7789F728671F362C19CD
+Bugly:
+  LABEL: Bugly
+  PROJECT_PATH: Bugly.xcodeproj
+  UUID: 75E0D2EB2A5CB1517203552D2DE64F8E
+CocoaLumberjack:
+  LABEL: CocoaLumberjack
+  PROJECT_PATH: CocoaLumberjack.xcodeproj
+  UUID: 85392ABCB5967FC7F189FA544F4E883D
+CTMediator:
+  LABEL: CTMediator
+  PROJECT_PATH: CTMediator.xcodeproj
+  UUID: 25A8A820563A6D0C57186119171800D2
+dsBridge:
+  LABEL: dsBridge
+  PROJECT_PATH: dsBridge.xcodeproj
+  UUID: 8A08F72C4848F92E09E525DBE07FB96E
+FLAnimatedImage:
+  LABEL: FLAnimatedImage
+  PROJECT_PATH: FLAnimatedImage.xcodeproj
+  UUID: 81BB6A78B39B2F11BBB4BB89AB388BB1
+Flutter:
+  LABEL: Flutter
+  PROJECT_PATH: Flutter.xcodeproj
+  UUID: D40F1FD973363D8FE0BF347DCFCE2318
+flutter_boost:
+  LABEL: flutter_boost
+  PROJECT_PATH: flutter_boost.xcodeproj
+  UUID: F9760C9767C7B54EA1206E38B55240A4
+flutter_module:
+  LABEL: flutter_module
+  PROJECT_PATH: flutter_module.xcodeproj
+  UUID: 685CA42548BC62234CCE61E668A3E744
+flutter_star_plugin:
+  LABEL: flutter_star_plugin
+  PROJECT_PATH: flutter_star_plugin.xcodeproj
+  UUID: CC171C1F0DC522E083B1B8FE6114475C
+flutter_webview_plugin:
+  LABEL: flutter_webview_plugin
+  PROJECT_PATH: flutter_webview_plugin.xcodeproj
+  UUID: 779591877F18E1031AF7E6ED7852BCF0
+FlutterPluginRegistrant:
+  LABEL: FlutterPluginRegistrant
+  PROJECT_PATH: FlutterPluginRegistrant.xcodeproj
+  UUID: F2E948E76CD2597F86E3BF2377900FD5
+FSPagerView:
+  LABEL: FSPagerView
+  PROJECT_PATH: FSPagerView.xcodeproj
+  UUID: 0735A55589A2EF595F6CACF53EC1B573
+GDPerformanceView-Swift:
+  LABEL: GDPerformanceView-Swift
+  PROJECT_PATH: GDPerformanceView-Swift.xcodeproj
+  UUID: A779443155B60105D395B8482B651F2D
+IQKeyboardManagerSwift:
+  LABEL: IQKeyboardManagerSwift
+  PROJECT_PATH: IQKeyboardManagerSwift.xcodeproj
+  UUID: 29F73A40F1F145F65BBA049AC76AB585
+KeychainAccess:
+  LABEL: KeychainAccess
+  PROJECT_PATH: KeychainAccess.xcodeproj
+  UUID: BC484E8C0358E7E37631DD65459F2A17
+Kingfisher:
+  LABEL: Kingfisher
+  PROJECT_PATH: Kingfisher.xcodeproj
+  UUID: 05BB3BFEAA03766641420DCD88978468
+Localize-Swift:
+  LABEL: Localize-Swift
+  PROJECT_PATH: Localize-Swift.xcodeproj
+  UUID: 6C27EEC63FEC06A9DAB03531B0989F47
+LookinServer:
+  LABEL: LookinServer
+  PROJECT_PATH: LookinServer.xcodeproj
+  UUID: 648108237631EEA52299D347ABDCA30C
+lottie-ios:
+  LABEL: lottie-ios
+  PROJECT_PATH: lottie-ios.xcodeproj
+  UUID: 2FFD4CF15B40CE17E04F3BC6AAF7035A
+LTXiOSUtils:
+  LABEL: LTXiOSUtils
+  PROJECT_PATH: LTXiOSUtils.xcodeproj
+  UUID: 529C7BF4EEC0CF54F4C6DFAD3A9D0E8A
+Macaw:
+  LABEL: Macaw
+  PROJECT_PATH: Macaw.xcodeproj
+  UUID: 2CD6924D76199970A0A9989378A459A1
+MBProgressHUD:
+  LABEL: MBProgressHUD
+  PROJECT_PATH: MBProgressHUD.xcodeproj
+  UUID: 0F48A71D28991325602E8C8A19DF1F64
+MGJRouter:
+  LABEL: MGJRouter
+  PROJECT_PATH: MGJRouter.xcodeproj
+  UUID: DD898975010F80DD14B632D46910741E
+MJRefresh:
+  LABEL: MJRefresh
+  PROJECT_PATH: MJRefresh.xcodeproj
+  UUID: E94AEF767442EDAAAAB2129CDFA2C2ED
+Moya:
+  LABEL: Moya
+  PROJECT_PATH: Moya.xcodeproj
+  UUID: 42D4D39F3084C8EA060DE1C283323B37
+mp3lame-for-ios:
+  LABEL: mp3lame-for-ios
+  PROJECT_PATH: mp3lame-for-ios.xcodeproj
+  UUID: 4C83FFE9E924D05B735BACBC4273A4F6
+ObjectMapper:
+  LABEL: ObjectMapper
+  PROJECT_PATH: ObjectMapper.xcodeproj
+  UUID: 4F38DD1163EAAAC1A648D52404EA8805
+path_provider:
+  LABEL: path_provider
+  PROJECT_PATH: path_provider.xcodeproj
+  UUID: B18A829CA162A7A6E04B4FDBB3885F6C
+Pods-LTXiOSUtilsDemo:
+  LABEL: Pods-LTXiOSUtilsDemo
+  PROJECT_PATH: Pods.xcodeproj
+  UUID: 0CAA0CA95418937E5B8CB1E72F09F7DB
+Pods-LTXiOSUtilsDemoTests:
+  LABEL: Pods-LTXiOSUtilsDemoTests
+  PROJECT_PATH: Pods.xcodeproj
+  UUID: 05CD443A008E9B277CFAB967E0DDD9DB
+Pods-LTXiOSUtilsDemoUITests:
+  LABEL: Pods-LTXiOSUtilsDemoUITests
+  PROJECT_PATH: Pods.xcodeproj
+  UUID: 0C233682C2B53E927909D954169C8AE5
+Pods-NotificationServiceExtension:
+  LABEL: Pods-NotificationServiceExtension
+  PROJECT_PATH: Pods.xcodeproj
+  UUID: 419518C3BCA843A097A0EFF1021D6AB6
+R.swift:
+  LABEL: R.swift
+  PROJECT_PATH: R.swift.xcodeproj
+  UUID: FF6ED22E1CDAF83ADE98360601DC4DE5
+R.swift.Library:
+  LABEL: R.swift.Library
+  PROJECT_PATH: R.swift.Library.xcodeproj
+  UUID: 61AC8FF22886EA444144B44F9AC733B8
+ReachabilitySwift:
+  LABEL: ReachabilitySwift
+  PROJECT_PATH: ReachabilitySwift.xcodeproj
+  UUID: 02AAC45BCBE8F4C196016B6D96C7A992
+RxCocoa:
+  LABEL: RxCocoa
+  PROJECT_PATH: RxCocoa.xcodeproj
+  UUID: BC5183FBB16A06C1D86620B00CFE6269
+RxRelay:
+  LABEL: RxRelay
+  PROJECT_PATH: RxRelay.xcodeproj
+  UUID: 564FA919E05BFD512DA9163BAB640EEE
+RxSwift:
+  LABEL: RxSwift
+  PROJECT_PATH: RxSwift.xcodeproj
+  UUID: F0179EE061353B7A322F596E97844774
+shared_preferences:
+  LABEL: shared_preferences
+  PROJECT_PATH: shared_preferences.xcodeproj
+  UUID: 0FEDD780F6BC51C71EAF4CFB97A6E2FC
+SKPhotoBrowser:
+  LABEL: SKPhotoBrowser
+  PROJECT_PATH: SKPhotoBrowser.xcodeproj
+  UUID: 04AA5C1821C5D4D261BFDEC314891426
+SnapKit:
+  LABEL: SnapKit
+  PROJECT_PATH: SnapKit.xcodeproj
+  UUID: 6913FCF4B90C224E55FE5C821AFB90D2
+SVGKit:
+  LABEL: SVGKit
+  PROJECT_PATH: SVGKit.xcodeproj
+  UUID: 1A3836177B5D4E99F4E935D1479ECB0C
+SwiftDate:
+  LABEL: SwiftDate
+  PROJECT_PATH: SwiftDate.xcodeproj
+  UUID: 084C1733B4DEB4359B4EFB893E424972
+SwiftLint:
+  LABEL: SwiftLint
+  PROJECT_PATH: SwiftLint.xcodeproj
+  UUID: DF739ADE66FA54F9BBFF97A8CB609E34
+SwiftSVG:
+  LABEL: SwiftSVG
+  PROJECT_PATH: SwiftSVG.xcodeproj
+  UUID: F8E5119586DCA1CA242860287E5DF99E
+SwiftyJSON:
+  LABEL: SwiftyJSON
+  PROJECT_PATH: SwiftyJSON.xcodeproj
+  UUID: AD1A79042DA54FF6DCBF6C015B0E27B5
+SwiftyUserDefaults:
+  LABEL: SwiftyUserDefaults
+  PROJECT_PATH: SwiftyUserDefaults.xcodeproj
+  UUID: 39DEFC5DCB08596C1137C1183EBF13FF
+SWXMLHash:
+  LABEL: SWXMLHash
+  PROJECT_PATH: SWXMLHash.xcodeproj
+  UUID: 4C566E7DF193F43DD0CA7217D51FEAF9
+TPNS-iOS:
+  LABEL: TPNS-iOS
+  PROJECT_PATH: TPNS-iOS.xcodeproj
+  UUID: 685AF0112E7493A47BD57034A2EF084E
+TPNS-iOS-Extension:
+  LABEL: TPNS-iOS-Extension
+  PROJECT_PATH: TPNS-iOS-Extension.xcodeproj
+  UUID: 0552D6EB0E5857E1FFFCE50B6ABAF9E9
+TZImagePickerController:
+  LABEL: TZImagePickerController
+  PROJECT_PATH: TZImagePickerController.xcodeproj
+  UUID: 6090C91802307673CBF0A57EF1608978
+"UITableView+FDTemplateLayoutCell":
+  LABEL: "UITableView+FDTemplateLayoutCell"
+  PROJECT_PATH: "UITableView+FDTemplateLayoutCell.xcodeproj"
+  UUID: A5CF12962AE63218F7BCE07569CE36DE
+URLNavigator:
+  LABEL: URLNavigator
+  PROJECT_PATH: URLNavigator.xcodeproj
+  UUID: B9750AA7029269BC5BF84F688110CF2E
+WebViewJavascriptBridge:
+  LABEL: WebViewJavascriptBridge
+  PROJECT_PATH: WebViewJavascriptBridge.xcodeproj
+  UUID: 1F775F10B1A75431AFD845E2AF58AD82
+XHLaunchAd:
+  LABEL: XHLaunchAd
+  PROJECT_PATH: XHLaunchAd.xcodeproj
+  UUID: B3B9CB503FB3C016A6F2F0149389A3C5
+ZYCornerRadius:
+  LABEL: ZYCornerRadius
+  PROJECT_PATH: ZYCornerRadius.xcodeproj
+  UUID: 685CD19267D2ACF71401FE24F632308A
