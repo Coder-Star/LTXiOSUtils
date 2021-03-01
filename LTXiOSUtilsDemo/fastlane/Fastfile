@@ -3,7 +3,7 @@ default_platform(:ios)
 platform :ios do
     desc "正式包"
     lane :release do #函数名称，执行打包的时候使用 fastlane release
-    time = Time.new.strftime("%Y-%m-%d") #获取时间格式
+    time = Time.new.strftime("%Y-%m-%d %H:%M:%S") #获取时间格式
     version = get_version_number(xcodeproj: "LTXiOSUtilsDemo.xcodeproj") #获取版本号
     ipaName = "Release_#{version}_#{time}.ipa"
     gym(
@@ -14,8 +14,9 @@ platform :ios do
         output_name:"#{ipaName}", #输出的包名
         output_directory:"./build" #输出的位置
     )
-    # 上传安装包到fir.im 
-    fir_cli api_token: "42657ebf5cc71b0f11d4101d2e6f6fab",  changelog: "Hello fir.im"
+    # 一直没成功安装上插件，无法使用
+    # 上传安装包到fir.im
+    # fir_cli api_token: "42657ebf5cc71b0f11d4101d2e6f6fab",  changelog: "Hello fir.im"
     # pgyer(api_key: "", user_key: "")
     end
 end
