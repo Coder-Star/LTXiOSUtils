@@ -22,6 +22,11 @@ class LanguageMixDemoViewController: BaseGroupTableMenuViewController {
             BaseGroupTableMenuModel(code: "Swift-C++", title: "Swift调用C++")
         ]
         menu.append(fisrtMenu)
+
+        let secondMenu = [
+            BaseGroupTableMenuModel(code: "OC-Swift", title: "OC调用Swift")
+        ]
+        menu.append(secondMenu)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,13 +38,16 @@ class LanguageMixDemoViewController: BaseGroupTableMenuViewController {
     override func click(menuModel: BaseGroupTableMenuModel) {
         switch menuModel.code {
         case "Swift-OC":
-            break
+            OC_Swift().testOC()
         case "Swift-C":
             testCVoid()
             let result = testCInt(1)
             Log.d(result)
         case "Swift-C++":
             TestCPPWrapper().testCPP()
+        case "OC-Swift":
+            /// 实际上OC文件中定义的方法名为testSwift，不知道为什么直接变成了test
+            OC_Swift().test()
         default:
             HUD.showText("暂无此模块")
         }

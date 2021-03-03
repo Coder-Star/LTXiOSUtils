@@ -6,7 +6,6 @@
 //  Copyright © 2020 李天星. All rights reserved.
 //
 
-
 import Foundation
 
 @objcMembers
@@ -24,6 +23,7 @@ class OCSwiftClass: NSObject {
 
     // MARK: - 方法
     func show() {
+        Log.d("OCSwiftClass的show方法被调用")
     }
 
     /*

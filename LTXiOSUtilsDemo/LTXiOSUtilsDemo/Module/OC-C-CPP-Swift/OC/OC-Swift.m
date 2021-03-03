@@ -12,4 +12,13 @@
 
 @implementation OC_Swift
 
+- (void)testOC {
+    printf("OC被调用");
+}
+
+- (void)testSwift {
+    OCSwiftClassOCName *oc = [OCSwiftClassOCName alloc];
+    [oc show];
+}
+
 @end

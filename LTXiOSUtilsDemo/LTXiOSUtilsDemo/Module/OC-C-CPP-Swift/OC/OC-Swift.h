@@ -13,7 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OC_Swift : NSObject
 
+- (void) testOC;
 
+- (void) testSwift;
 
 @end
 
