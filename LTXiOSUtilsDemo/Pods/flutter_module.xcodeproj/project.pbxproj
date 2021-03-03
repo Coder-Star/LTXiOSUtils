@@ -13,17 +13,16 @@
 			buildPhases = (
 			);
 			dependencies = (
-				391382ADA9F2A47143B514AF0F045741 /* PBXTargetDependency */,
+				6BAC699EF409646DB73740546D64A79F /* PBXTargetDependency */,
 			);
 			name = flutter_module;
-			productName = flutter_module;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXContainerItemProxy section */
-		1D9132B6630F56ED344EE496550DD278 /* PBXContainerItemProxy */ = {
+		9F031EB45F508E8B6DFD0424044C1A1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B54D3581E0F1499736C4FD2E60719A5B /* Flutter */;
+			containerPortal = B54D3581E0F1499736C4FD2E60719A5B /* Flutter.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = D40F1FD973363D8FE0BF347DCFCE2318;
 			remoteInfo = Flutter;
@@ -31,15 +30,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C6608E2656371E5B154E81177042D2D /* flutter_module.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = flutter_module.release.xcconfig; sourceTree = "<group>"; };
-		AA46714A9A34289FA2A09EC8496B3AA3 /* flutter_module.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = flutter_module.debug.xcconfig; sourceTree = "<group>"; };
+		0D6D26114B6B67F663130F12D90A1089 /* flutter_module.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = flutter_module.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		24F32DCA24F797BC4C4BCC21D7ECC2AC /* flutter_module.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = flutter_module.release.xcconfig; sourceTree = "<group>"; };
 		B54D3581E0F1499736C4FD2E60719A5B /* Flutter */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Flutter; path = Flutter.xcodeproj; sourceTree = "<group>"; };
-		EA5DD09415ADCBE8609B707681D7313E /* flutter_module.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = flutter_module.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F15D39A7D1ACD223A5138AD3307694E9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F93FB16921F615C8A932D0C5B9416F23 /* App.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = App.framework; sourceTree = "<group>"; };
+		C7525D92EBFDF11E5338FD55FCD4BC55 /* flutter_module.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = flutter_module.debug.xcconfig; sourceTree = "<group>"; };
+		DA9875AAF567F8DD10663E7F54670C28 /* App.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = App.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		16ED9C6534F2B12F0AD81A11E2ADFB28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA9875AAF567F8DD10663E7F54670C28 /* App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AE9B19378980263A494A168FC2462EF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7525D92EBFDF11E5338FD55FCD4BC55 /* flutter_module.debug.xcconfig */,
+				24F32DCA24F797BC4C4BCC21D7ECC2AC /* flutter_module.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../../../../LTXiOSUtilsDemo/Pods/Target Support Files/flutter_module";
+			sourceTree = "<group>";
+		};
 		3CF2B20EE3912556C46366AE339183CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -55,14 +71,6 @@
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
-		8C8BF57F2123F95CA6491BF8E8F6E90A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F93FB16921F615C8A932D0C5B9416F23 /* App.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		9AB63269C906EC2250DD28BB84BAF45A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,44 +82,26 @@
 			isa = PBXGroup;
 			children = (
 				86CBD9795AA071926D442E8A8BCC88C8 /* Dependencies */,
-				DFA0B4224C144E6E531200C5503DBDD7 /* flutter_module */,
+				EFF63B8701F11100E4579D2D35E98D83 /* flutter_module */,
 				3CF2B20EE3912556C46366AE339183CE /* Frameworks */,
 				9AB63269C906EC2250DD28BB84BAF45A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		B001D6459987143EF5DA42A853B9FF65 /* Support Files */ = {
+		CE8C9C254CB82E357547F419EE08765B /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				AA46714A9A34289FA2A09EC8496B3AA3 /* flutter_module.debug.xcconfig */,
-				4C6608E2656371E5B154E81177042D2D /* flutter_module.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../../../../LTXiOSUtilsDemo/Pods/Target Support Files/flutter_module";
-			sourceTree = "<group>";
-		};
-		D00CD673D4CDD5DE3ED7A670737C4220 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				EA5DD09415ADCBE8609B707681D7313E /* flutter_module.podspec */,
-				F15D39A7D1ACD223A5138AD3307694E9 /* README.md */,
+				0D6D26114B6B67F663130F12D90A1089 /* flutter_module.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		DC45931E25ED05BE0073AB0E /* Products */ = {
+		EFF63B8701F11100E4579D2D35E98D83 /* flutter_module */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DFA0B4224C144E6E531200C5503DBDD7 /* flutter_module */ = {
-			isa = PBXGroup;
-			children = (
-				8C8BF57F2123F95CA6491BF8E8F6E90A /* Frameworks */,
-				D00CD673D4CDD5DE3ED7A670737C4220 /* Pod */,
-				B001D6459987143EF5DA42A853B9FF65 /* Support Files */,
+				16ED9C6534F2B12F0AD81A11E2ADFB28 /* Frameworks */,
+				CE8C9C254CB82E357547F419EE08765B /* Pod */,
+				1AE9B19378980263A494A168FC2462EF /* Support Files */,
 			);
 			name = flutter_module;
 			path = ../../Flutter/flutter_module/.ios/Flutter;
@@ -124,7 +114,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = F0143E082E6FA41A06CCAAF998E96491 /* Build configuration list for PBXProject "flutter_module" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -139,7 +129,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = DC45931E25ED05BE0073AB0E /* Products */;
 					ProjectRef = B54D3581E0F1499736C4FD2E60719A5B /* Flutter */;
 				},
 			);
@@ -151,20 +140,21 @@
 /* End PBXProject section */
 
 /* Begin PBXTargetDependency section */
-		391382ADA9F2A47143B514AF0F045741 /* PBXTargetDependency */ = {
+		6BAC699EF409646DB73740546D64A79F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Flutter;
-			targetProxy = 1D9132B6630F56ED344EE496550DD278 /* PBXContainerItemProxy */;
+			targetProxy = 9F031EB45F508E8B6DFD0424044C1A1E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0B77FF7D9FA32223E983D41D3780B5B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA46714A9A34289FA2A09EC8496B3AA3 /* flutter_module.debug.xcconfig */;
+			baseConfigurationReference = C7525D92EBFDF11E5338FD55FCD4BC55 /* flutter_module.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ENABLE_BITCODE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -243,10 +233,11 @@
 		};
 		68590EA9F92A8560D2B956F4427E62DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C6608E2656371E5B154E81177042D2D /* flutter_module.release.xcconfig */;
+			baseConfigurationReference = 24F32DCA24F797BC4C4BCC21D7ECC2AC /* flutter_module.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ENABLE_BITCODE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

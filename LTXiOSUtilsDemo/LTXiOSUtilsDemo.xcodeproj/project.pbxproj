@@ -85,6 +85,8 @@
 		DC83E7CF23F645E10030A9B4 /* FWCustomPopupDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7CA23F645E00030A9B4 /* FWCustomPopupDemoVC.swift */; };
 		DC83E7D023F645E10030A9B4 /* FWDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E7CB23F645E00030A9B4 /* FWDemoViewController.swift */; };
 		DC87277B25C31FEB001EFFB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC87277A25C31FEB001EFFB2 /* ContentView.swift */; };
+		DC87B39C25EF849100FE4746 /* TestC.c in Sources */ = {isa = PBXBuildFile; fileRef = DC87B39B25EF849100FE4746 /* TestC.c */; };
+		DC87B3A825EF85BA00FE4746 /* LanguageMixDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC87B3A725EF85BA00FE4746 /* LanguageMixDemoViewController.swift */; };
 		DC88A34D250C6B51000198AD /* JSAndNativeJSBrigeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88A34B250C6B51000198AD /* JSAndNativeJSBrigeViewController.swift */; };
 		DC88A34E250C6B51000198AD /* JSAndNativeJSBrige.html in Resources */ = {isa = PBXBuildFile; fileRef = DC88A34C250C6B51000198AD /* JSAndNativeJSBrige.html */; };
 		DC88A350250C97B1000198AD /* CustomURLSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88A34F250C97B1000198AD /* CustomURLSchemeHandler.swift */; };
@@ -140,6 +142,8 @@
 		DCE1457A24FA976100E3B6B0 /* FangZhengMiaoWu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCE1457924FA976100E3B6B0 /* FangZhengMiaoWu.ttf */; };
 		DCE1457D24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1457C24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift */; };
 		DCE1458124FBFD3700E3B6B0 /* PlistTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1458024FBFD3700E3B6B0 /* PlistTest.swift */; };
+		DCE72C4525EF911500F69005 /* TestCPP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCE72C4325EF911500F69005 /* TestCPP.cpp */; };
+		DCE72CF425EFA70B00F69005 /* TestCPPWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCE72CF225EFA70B00F69005 /* TestCPPWrapper.mm */; };
 		DCEE982D250F835C00A19CF9 /* FlutterMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE982C250F835C00A19CF9 /* FlutterMainViewController.swift */; };
 		DCEE982F250F865A00A19CF9 /* FlutterApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE982E250F865A00A19CF9 /* FlutterApplicationService.swift */; };
 		DCEE98302510DFAB00A19CF9 /* chinese_and_english.png in Resources */ = {isa = PBXBuildFile; fileRef = DCEE98322510DFAB00A19CF9 /* chinese_and_english.png */; };
@@ -304,6 +308,10 @@
 		DC83E7CA23F645E00030A9B4 /* FWCustomPopupDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWCustomPopupDemoVC.swift; sourceTree = "<group>"; };
 		DC83E7CB23F645E00030A9B4 /* FWDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWDemoViewController.swift; sourceTree = "<group>"; };
 		DC87277A25C31FEB001EFFB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC87B39925EF838B00FE4746 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DC87B39A25EF849100FE4746 /* TestC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestC.h; sourceTree = "<group>"; };
+		DC87B39B25EF849100FE4746 /* TestC.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TestC.c; sourceTree = "<group>"; };
+		DC87B3A725EF85BA00FE4746 /* LanguageMixDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageMixDemoViewController.swift; sourceTree = "<group>"; };
 		DC88A34B250C6B51000198AD /* JSAndNativeJSBrigeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSAndNativeJSBrigeViewController.swift; sourceTree = "<group>"; };
 		DC88A34C250C6B51000198AD /* JSAndNativeJSBrige.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JSAndNativeJSBrige.html; sourceTree = "<group>"; };
 		DC88A34F250C97B1000198AD /* CustomURLSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomURLSchemeHandler.swift; sourceTree = "<group>"; };
@@ -374,6 +382,10 @@
 		DCE1457C24FBAC0500E3B6B0 /* KeyedArchiverByNSCodingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedArchiverByNSCodingTest.swift; sourceTree = "<group>"; };
 		DCE1457E24FBB09000E3B6B0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DCE1458024FBFD3700E3B6B0 /* PlistTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistTest.swift; sourceTree = "<group>"; };
+		DCE72C4325EF911500F69005 /* TestCPP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestCPP.cpp; sourceTree = "<group>"; };
+		DCE72C4425EF911500F69005 /* TestCPP.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TestCPP.hpp; sourceTree = "<group>"; };
+		DCE72CF225EFA70B00F69005 /* TestCPPWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestCPPWrapper.mm; sourceTree = "<group>"; };
+		DCE72CF325EFA70B00F69005 /* TestCPPWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCPPWrapper.h; sourceTree = "<group>"; };
 		DCEE982C250F835C00A19CF9 /* FlutterMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterMainViewController.swift; sourceTree = "<group>"; };
 		DCEE982E250F865A00A19CF9 /* FlutterApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterApplicationService.swift; sourceTree = "<group>"; };
 		DCEE98312510DFAB00A19CF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/chinese_and_english.png; sourceTree = "<group>"; };
@@ -557,14 +569,17 @@
 			path = ViewTest;
 			sourceTree = "<group>";
 		};
-		DC2518CD24A8247200A28595 /* OC-Swift */ = {
+		DC2518CD24A8247200A28595 /* OC-C-CPP-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				DC2518D524A8277500A28595 /* OC-Swift.swift */,
-				DC7C935F24EE9DC6005E0AAA /* OC-Swift.h */,
-				DC7C936024EE9DC6005E0AAA /* OC-Swift.m */,
+				DC87B39825EF810900FE4746 /* C++ */,
+				DC87B39725EF810400FE4746 /* C */,
+				DC87B39625EF80F900FE4746 /* Swift */,
+				DC87B39525EF80EB00FE4746 /* OC */,
+				DC87B39925EF838B00FE4746 /* README.md */,
+				DC87B3A725EF85BA00FE4746 /* LanguageMixDemoViewController.swift */,
 			);
-			path = "OC-Swift";
+			path = "OC-C-CPP-Swift";
 			sourceTree = "<group>";
 		};
 		DC2A02B7250650E200BABEDB /* WebviewTest */ = {
@@ -864,6 +879,43 @@
 			path = AlertViewDemo;
 			sourceTree = "<group>";
 		};
+		DC87B39525EF80EB00FE4746 /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				DC7C935F24EE9DC6005E0AAA /* OC-Swift.h */,
+				DC7C936024EE9DC6005E0AAA /* OC-Swift.m */,
+			);
+			path = OC;
+			sourceTree = "<group>";
+		};
+		DC87B39625EF80F900FE4746 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				DC2518D524A8277500A28595 /* OC-Swift.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		DC87B39725EF810400FE4746 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				DC87B39A25EF849100FE4746 /* TestC.h */,
+				DC87B39B25EF849100FE4746 /* TestC.c */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		DC87B39825EF810900FE4746 /* C++ */ = {
+			isa = PBXGroup;
+			children = (
+				DCE72C4425EF911500F69005 /* TestCPP.hpp */,
+				DCE72C4325EF911500F69005 /* TestCPP.cpp */,
+				DCE72CF325EFA70B00F69005 /* TestCPPWrapper.h */,
+				DCE72CF225EFA70B00F69005 /* TestCPPWrapper.mm */,
+			);
+			path = "C++";
+			sourceTree = "<group>";
+		};
 		DC88A351250C97EF000198AD /* URLHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -1021,7 +1073,7 @@
 				DC03AE5023F43381007739DD /* Model */,
 				DC83E7C523F645A40030A9B4 /* ThirdLibDemo */,
 				DCF88150242F2D000084C940 /* View */,
-				DC2518CD24A8247200A28595 /* OC-Swift */,
+				DC2518CD24A8247200A28595 /* OC-C-CPP-Swift */,
 				DC1BE0AF24B0116F00745671 /* Test */,
 				DC03AE2423F3A802007739DD /* Home */,
 				DC0567DA23CAF545008E7C02 /* Menu */,
@@ -1410,7 +1462,7 @@
 			name = "[CP-User] Run Flutter Build flutter_module Script";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../Flutter/flutter_module/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../Flutter/flutter_module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
 		35E644F936D76BEC4CC26FF6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1627,13 +1679,16 @@
 				DC55E57223F7E6C8008C6941 /* AppThemeApplicationService.swift in Sources */,
 				DC4AB9BD22F4606000A5F003 /* AppDelegate.swift in Sources */,
 				DC0EC321255A76580046B46A /* OCExceptionCatch.m in Sources */,
+				DCE72C4525EF911500F69005 /* TestCPP.cpp in Sources */,
 				DC01C3CC2508C29C00C5AEC3 /* JSAndNativeDSBrigeViewController.swift in Sources */,
 				DC4610462550386D0018BBF5 /* OpenURLApplicationService.swift in Sources */,
 				DC4610712554F3ED0018BBF5 /* BaseTest.swift in Sources */,
+				DC87B39C25EF849100FE4746 /* TestC.c in Sources */,
 				DCD8763F251B25E600F50138 /* StoryboardSecondViewController.swift in Sources */,
 				DC3E62052425E8A200105366 /* WRNavigationBar.swift in Sources */,
 				DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */,
 				DCEE982D250F835C00A19CF9 /* FlutterMainViewController.swift in Sources */,
+				DCE72CF425EFA70B00F69005 /* TestCPPWrapper.mm in Sources */,
 				DC7C935624EE5837005E0AAA /* SystemNotificationService.swift in Sources */,
 				DC4610842557CC1B0018BBF5 /* TestOCError.m in Sources */,
 				DC88A350250C97B1000198AD /* CustomURLSchemeHandler.swift in Sources */,
@@ -1665,6 +1720,7 @@
 				DCA407882406AC0500F62769 /* WRCustomNavigationBar.swift in Sources */,
 				DCF6F54723BCC87500AC4850 /* ViewFactory.swift in Sources */,
 				DC03AE5223F433A3007739DD /* AdModel.swift in Sources */,
+				DC87B3A825EF85BA00FE4746 /* LanguageMixDemoViewController.swift in Sources */,
 				DC3E61F824209F1600105366 /* TempUtils.swift in Sources */,
 				DC83E7A423F550290030A9B4 /* BaseNavigationController.swift in Sources */,
 				DCEE983D2510FF6D00A19CF9 /* LayoutMainViewController.swift in Sources */,

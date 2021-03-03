@@ -60,58 +60,19 @@ CACHE_KEYS:
   Flutter:
     BUILD_SETTINGS_CHECKSUM:
       Flutter:
-        :debug: 0e32a1dd57944208cd05b07723fe34da
-        :release: 0e32a1dd57944208cd05b07723fe34da
-    CHECKSUM: 0e3d915762c693b495b44d77113d4970485de6ec
+        :debug: 8daa3834de5c6003ecf57dea36aa9c84
+        :release: 8daa3834de5c6003ecf57dea36aa9c84
+    CHECKSUM: ac41d61a47ae5bf8195a5598d2d63754888ec0d5
     FILES:
-      - "../../Flutter/flutter_module/.ios/Flutter/engine/Flutter.framework"
+      - "../../Flutter/flutter_module/.ios/Flutter/engine/Flutter.xcframework"
     PROJECT_NAME: Flutter
     SPECS:
       - Flutter (1.0.0)
-  flutter_boost:
-    BUILD_SETTINGS_CHECKSUM:
-      flutter_boost:
-        :debug: 3109a5222cc433c32592d01e192cf16c
-        :release: 3109a5222cc433c32592d01e192cf16c
-    CHECKSUM: a7cfa776b75329d5e7d101d0cd33e75042bcde69
-    FILES:
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/BoostChannel.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/BoostChannel.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBAbstractFactory.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBCollectionHelper.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBCollectionHelper.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterAppDelegate.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterAppDelegate.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterApplicationInterface.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterContainer.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterContainerManager.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterContainerManager.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBFlutterProvider.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBPlatform.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FLBTypes.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FlutterBoost.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FlutterBoostPlugin.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FlutterBoostPlugin.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Boost/FlutterBoostPlugin_private.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/container/FLBFlutterViewContainer.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/container/FLBFlutterViewContainer.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFactory.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFactory.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFlutterApplication.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFlutterApplication.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFlutterEngine.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Engine/FLBFlutterEngine.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Messaging/BoostMessageChannel.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios/Classes/Messaging/BoostMessageChannel.mm"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/LICENSE.md"
-    PROJECT_NAME: flutter_boost
-    SPECS:
-      - flutter_boost (0.0.2)
   flutter_module:
     BUILD_SETTINGS_CHECKSUM:
       flutter_module:
-        :debug: bbf6fe4841ca3028996128b5b2cc07b2
-        :release: bbf6fe4841ca3028996128b5b2cc07b2
+        :debug: 1e3a094ebcd8670fcd78be0ac135768a
+        :release: 1e3a094ebcd8670fcd78be0ac135768a
     CHECKSUM: d1e1ff44505640bd9aa37f23f63380c646272be4
     FILES:
       - "../../Flutter/flutter_module/.ios/Flutter/App.framework"
@@ -122,38 +83,38 @@ CACHE_KEYS:
   flutter_star_plugin:
     BUILD_SETTINGS_CHECKSUM:
       flutter_star_plugin:
-        :debug: cea23ac18c745b0f845eba655f6afdac
-        :release: cea23ac18c745b0f845eba655f6afdac
+        :debug: 55589a3858f2942bb9075e8422ab4421
+        :release: 55589a3858f2942bb9075e8422ab4421
     CHECKSUM: cb746418e90ecd0f744e28116092921092061e92
     FILES:
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/ios/Classes/FlutterStarPlugin.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/ios/Classes/FlutterStarPlugin.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/ios/Classes/SwiftFlutterStarPlugin.swift"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/LICENSE"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_star_plugin/ios/Classes/FlutterStarPlugin.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_star_plugin/ios/Classes/FlutterStarPlugin.m"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_star_plugin/ios/Classes/SwiftFlutterStarPlugin.swift"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_star_plugin/LICENSE"
     PROJECT_NAME: flutter_star_plugin
     SPECS:
       - flutter_star_plugin (0.0.1)
   flutter_webview_plugin:
     BUILD_SETTINGS_CHECKSUM:
       flutter_webview_plugin:
-        :debug: 33481acc1177a5afb218d5008197af66
-        :release: 33481acc1177a5afb218d5008197af66
+        :debug: 21d4946b157fee47852cedf73bf36dca
+        :release: 21d4946b157fee47852cedf73bf36dca
     CHECKSUM: ed9e8a6a96baf0c867e90e1bce2673913eeac694
     FILES:
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios/Classes/FlutterWebviewPlugin.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios/Classes/FlutterWebviewPlugin.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios/Classes/WebviewJavaScriptChannelHandler.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios/Classes/WebviewJavaScriptChannelHandler.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/LICENSE"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_webview_plugin/ios/Classes/FlutterWebviewPlugin.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_webview_plugin/ios/Classes/FlutterWebviewPlugin.m"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_webview_plugin/ios/Classes/WebviewJavaScriptChannelHandler.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_webview_plugin/ios/Classes/WebviewJavaScriptChannelHandler.m"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_webview_plugin/LICENSE"
     PROJECT_NAME: flutter_webview_plugin
     SPECS:
       - flutter_webview_plugin (0.0.1)
   FlutterPluginRegistrant:
     BUILD_SETTINGS_CHECKSUM:
       FlutterPluginRegistrant:
-        :debug: 611720dc1d72fd55260143932220919f
-        :release: 611720dc1d72fd55260143932220919f
-    CHECKSUM: af8248296ac6f40ae8716d0814a215bde2a0f948
+        :debug: d8102250dc1a7809febb00737d243144
+        :release: d8102250dc1a7809febb00737d243144
+    CHECKSUM: 57d9e3742bec5f8f4fbd4258d8cfef74f4005ef8
     FILES:
       - "../../Flutter/flutter_module/.ios/Flutter/FlutterPluginRegistrant/Classes/GeneratedPluginRegistrant.h"
       - "../../Flutter/flutter_module/.ios/Flutter/FlutterPluginRegistrant/Classes/GeneratedPluginRegistrant.m"
@@ -412,31 +373,31 @@ CACHE_KEYS:
   path_provider:
     BUILD_SETTINGS_CHECKSUM:
       path_provider:
-        :debug: ddf0b44e4ab7738250506dacd77992b5
-        :release: ddf0b44e4ab7738250506dacd77992b5
+        :debug: 2f0baadb343f2fcc65a3b2c08c82424d
+        :release: 2f0baadb343f2fcc65a3b2c08c82424d
     CHECKSUM: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
     FILES:
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/path_provider/ios/Classes/FLTPathProviderPlugin.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/path_provider/ios/Classes/FLTPathProviderPlugin.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/path_provider/LICENSE"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/path_provider/ios/Classes/FLTPathProviderPlugin.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/path_provider/ios/Classes/FLTPathProviderPlugin.m"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/path_provider/LICENSE"
     PROJECT_NAME: path_provider
     SPECS:
       - path_provider (0.0.1)
   Pods-LTXiOSUtilsDemo:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 8b5ebec69f46cb222b1ebb86f6c68e83
-      Release: 5a2405601496747831cbc028bccaa2dc
+      Debug: d91316336d02834f8fc0e8c1e2697008
+      Release: 039a500ac9eccdae50f5cd5b33c58ae7
     FILES:
       - "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
       - "${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage/TPNSInAppMessageResource.bundle"
   Pods-LTXiOSUtilsDemoTests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 5ce844b7ad1e3390de1013efd633fcda
-      Release: bafb9d4c230a0f912f276cf233ea6320
+      Debug: c3ced8d174da6d9839cac55a9125818c
+      Release: 35f5d465680d7c9ec751155d30cac520
   Pods-LTXiOSUtilsDemoUITests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 5ce844b7ad1e3390de1013efd633fcda
-      Release: bafb9d4c230a0f912f276cf233ea6320
+      Debug: c3ced8d174da6d9839cac55a9125818c
+      Release: 35f5d465680d7c9ec751155d30cac520
   Pods-NotificationServiceExtension:
     BUILD_SETTINGS_CHECKSUM:
       Debug: 13e9b17c45addc423b1a0eeaae946dd3
@@ -498,13 +459,13 @@ CACHE_KEYS:
   shared_preferences:
     BUILD_SETTINGS_CHECKSUM:
       shared_preferences:
-        :debug: 02e07b9208e7e3679a389a116578ebd8
-        :release: 02e07b9208e7e3679a389a116578ebd8
+        :debug: 52957b87699d775484327cba153724d3
+        :release: 52957b87699d775484327cba153724d3
     CHECKSUM: af6bfa751691cdc24be3045c43ec037377ada40d
     FILES:
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios/Classes/FLTSharedPreferencesPlugin.h"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios/Classes/FLTSharedPreferencesPlugin.m"
-      - "../../Flutter/flutter_module/.ios/Flutter/.symlinks/shared_preferences/LICENSE"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/shared_preferences/ios/Classes/FLTSharedPreferencesPlugin.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/shared_preferences/ios/Classes/FLTSharedPreferencesPlugin.m"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/shared_preferences/LICENSE"
     PROJECT_NAME: shared_preferences
     SPECS:
       - shared_preferences (0.0.1)

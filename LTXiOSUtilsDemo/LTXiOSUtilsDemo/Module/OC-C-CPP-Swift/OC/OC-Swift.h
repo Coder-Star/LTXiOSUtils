@@ -8,11 +8,12 @@
 
 #import <objc/runtime.h>
 #import <Foundation/Foundation.h>
-#import "LTXiOSUtilsDemo-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OC_Swift : NSObject
+
+
 
 @end
 

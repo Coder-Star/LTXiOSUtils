@@ -82,5 +82,12 @@
     <orderEntry type="library" name="Gradle: org.codehaus.mojo:animal-sniffer-annotations:1.18" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.13.1" level="project" />
     <orderEntry type="library" name="Dart Packages" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:arm64_v8a_debug:1.0.0-34236c98378da28f8a003b04bd4efede467f7a4c" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:armeabi_v7a_debug:1.0.0-34236c98378da28f8a003b04bd4efede467f7a4c" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:flutter_embedding_debug:1.0.0-34236c98378da28f8a003b04bd4efede467f7a4c" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:x86_64_debug:1.0.0-34236c98378da28f8a003b04bd4efede467f7a4c" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:x86_debug:1.0.0-34236c98378da28f8a003b04bd4efede467f7a4c" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.appcompat:appcompat:1.0.2@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.vectordrawable:vectordrawable:1.0.1@aar" level="project" />
   </component>
 </module>

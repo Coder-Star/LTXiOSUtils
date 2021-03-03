@@ -10,6 +10,7 @@ analyzer:
   enable-experiment:
       # 开启扩展方法
       - extension-methods
+      - non-nullable
 linter:
   rules:
     - camel_case_types

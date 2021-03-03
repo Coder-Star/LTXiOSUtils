@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		423DC9454F8C1E35B82D9415EB3678C7 /* flutter_star_plugin-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 82048FA127A3D6C0714D7AB9BFDAB8D1 /* flutter_star_plugin-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54294BCD82F77A9FD80E9E3A47BF272A /* flutter_star_plugin-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E42524F893BC598BE133970DAF225089 /* flutter_star_plugin-dummy.m */; };
-		55358C99FB61F9F64EE16BE4C8A53BFC /* FlutterStarPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = A167DF377ACEE9E603502B72A794BC16 /* FlutterStarPlugin.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		5690E8A6FD8AEC75D9EB2B72CFC96D44 /* FlutterStarPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 12F24E2BC76E11A3D490D28502949EEA /* FlutterStarPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99688E476CEBFC6F26680100DD76BADB /* SwiftFlutterStarPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C8A90C56ABC0B9FE61A8A9885008A /* SwiftFlutterStarPlugin.swift */; };
+		423DC9454F8C1E35B82D9415EB3678C7 /* flutter_star_plugin-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C8B9299D822DF8CED8BBC98F603165 /* flutter_star_plugin-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54294BCD82F77A9FD80E9E3A47BF272A /* flutter_star_plugin-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B221B76E203A8F55182E568B988BAF3 /* flutter_star_plugin-dummy.m */; };
+		55358C99FB61F9F64EE16BE4C8A53BFC /* FlutterStarPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 234A7EB3319EC9A41CB3B6B98C6590CC /* FlutterStarPlugin.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5690E8A6FD8AEC75D9EB2B72CFC96D44 /* FlutterStarPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 28D35F81402AC750D09FC0C1A48CBCDB /* FlutterStarPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99688E476CEBFC6F26680100DD76BADB /* SwiftFlutterStarPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9A6276BDF9AC2B02ABEE274789CB5 /* SwiftFlutterStarPlugin.swift */; };
 		FA3B38391063F10C9CED815D6778608C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80A6644966BF3F04243444B8F8F54A3 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,20 +27,20 @@
 
 /* Begin PBXFileReference section */
 		0ED27BA7E6EECC0820DE22C6FFF9F880 /* flutter_star_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = flutter_star_plugin.framework; path = flutter_star_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		12F24E2BC76E11A3D490D28502949EEA /* FlutterStarPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlutterStarPlugin.h; path = ../../../../../../../flutter_star_plugin/ios/Classes/FlutterStarPlugin.h; sourceTree = "<group>"; };
-		1A5B16FD8D35CBE0BE682B48B8A5CB42 /* flutter_star_plugin-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "flutter_star_plugin-prefix.pch"; sourceTree = "<group>"; };
-		1C1C8A90C56ABC0B9FE61A8A9885008A /* SwiftFlutterStarPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftFlutterStarPlugin.swift; path = ../../../../../../../flutter_star_plugin/ios/Classes/SwiftFlutterStarPlugin.swift; sourceTree = "<group>"; };
+		17F0AC10BA660170F015D1F37621F39D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../../../../../../flutter_star_plugin/LICENSE; sourceTree = "<group>"; };
 		1E416C198A8AD8C393F8F0BBBBB5D5BB /* Flutter */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Flutter; path = Flutter.xcodeproj; sourceTree = "<group>"; };
-		54D8E9EE87FF30DECA47E5F212D2512C /* flutter_star_plugin.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = flutter_star_plugin.modulemap; sourceTree = "<group>"; };
-		82048FA127A3D6C0714D7AB9BFDAB8D1 /* flutter_star_plugin-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "flutter_star_plugin-umbrella.h"; sourceTree = "<group>"; };
-		8D51BA1E14CA88CDFB8FC810D9C4F36D /* flutter_star_plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = flutter_star_plugin.release.xcconfig; sourceTree = "<group>"; };
-		8FC785A165208AC7F7ACC09E6A45DE87 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../../../../../../flutter_star_plugin/LICENSE; sourceTree = "<group>"; };
-		A167DF377ACEE9E603502B72A794BC16 /* FlutterStarPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlutterStarPlugin.m; path = ../../../../../../../flutter_star_plugin/ios/Classes/FlutterStarPlugin.m; sourceTree = "<group>"; };
+		234A7EB3319EC9A41CB3B6B98C6590CC /* FlutterStarPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlutterStarPlugin.m; path = ../../../../../../../flutter_star_plugin/ios/Classes/FlutterStarPlugin.m; sourceTree = "<group>"; };
+		28D35F81402AC750D09FC0C1A48CBCDB /* FlutterStarPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlutterStarPlugin.h; path = ../../../../../../../flutter_star_plugin/ios/Classes/FlutterStarPlugin.h; sourceTree = "<group>"; };
+		34DB57225E3EED13A0083863E9795E17 /* flutter_star_plugin.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = flutter_star_plugin.modulemap; sourceTree = "<group>"; };
+		56C41BDEDDA3E12A30A5C897E2780F25 /* flutter_star_plugin-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "flutter_star_plugin-prefix.pch"; sourceTree = "<group>"; };
+		574DCD6A7AB4E3EE53587EB8AFFB2FB5 /* flutter_star_plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = flutter_star_plugin.debug.xcconfig; sourceTree = "<group>"; };
+		9B221B76E203A8F55182E568B988BAF3 /* flutter_star_plugin-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "flutter_star_plugin-dummy.m"; sourceTree = "<group>"; };
+		9B48D7A39AFB2F180382356D5906784A /* flutter_star_plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = flutter_star_plugin.release.xcconfig; sourceTree = "<group>"; };
+		A5C8B9299D822DF8CED8BBC98F603165 /* flutter_star_plugin-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "flutter_star_plugin-umbrella.h"; sourceTree = "<group>"; };
+		BCB9A6276BDF9AC2B02ABEE274789CB5 /* SwiftFlutterStarPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftFlutterStarPlugin.swift; path = ../../../../../../../flutter_star_plugin/ios/Classes/SwiftFlutterStarPlugin.swift; sourceTree = "<group>"; };
+		BF61B1E3E2E9BFE0F0C736A5E7DEA412 /* flutter_star_plugin-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "flutter_star_plugin-Info.plist"; sourceTree = "<group>"; };
 		C80A6644966BF3F04243444B8F8F54A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E42524F893BC598BE133970DAF225089 /* flutter_star_plugin-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "flutter_star_plugin-dummy.m"; sourceTree = "<group>"; };
-		E5C7A56A02CFFF7BF2393EFF6627A030 /* flutter_star_plugin-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "flutter_star_plugin-Info.plist"; sourceTree = "<group>"; };
-		F0974AC807529CDF0B7E63B5F1A6DC13 /* flutter_star_plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = flutter_star_plugin.debug.xcconfig; sourceTree = "<group>"; };
-		F6A2D5F2AD530B0743884CF503FBC24E /* flutter_star_plugin.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = flutter_star_plugin.podspec; path = ../../../../../../flutter_star_plugin/ios/flutter_star_plugin.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C964C5AD4B29DEAB8D6AB8DC209A51B9 /* flutter_star_plugin.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = flutter_star_plugin.podspec; path = ../../../../../../flutter_star_plugin/ios/flutter_star_plugin.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,85 +55,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		284C9BC01CBACA932AEC7845CE8741D8 /* flutter_star_plugin */ = {
+		037C8994862A722B71668A988B54DB47 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				AABA122B2B961361202D98790C85A522 /* .. */,
-				8F9676D22489D57FE005A481B14613F4 /* Pod */,
-				46C051AD541A8AF90A12C2657D2177CC /* Support Files */,
+				43171F2BE629A83E9E03896BDED6D541 /* Classes */,
 			);
-			name = flutter_star_plugin;
-			path = ../../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/ios;
+			name = ios;
+			path = ios;
 			sourceTree = "<group>";
 		};
-		46C051AD541A8AF90A12C2657D2177CC /* Support Files */ = {
+		1980400F01524E06B4A42631988E9A60 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				54D8E9EE87FF30DECA47E5F212D2512C /* flutter_star_plugin.modulemap */,
-				E42524F893BC598BE133970DAF225089 /* flutter_star_plugin-dummy.m */,
-				E5C7A56A02CFFF7BF2393EFF6627A030 /* flutter_star_plugin-Info.plist */,
-				1A5B16FD8D35CBE0BE682B48B8A5CB42 /* flutter_star_plugin-prefix.pch */,
-				82048FA127A3D6C0714D7AB9BFDAB8D1 /* flutter_star_plugin-umbrella.h */,
-				F0974AC807529CDF0B7E63B5F1A6DC13 /* flutter_star_plugin.debug.xcconfig */,
-				8D51BA1E14CA88CDFB8FC810D9C4F36D /* flutter_star_plugin.release.xcconfig */,
+				C964C5AD4B29DEAB8D6AB8DC209A51B9 /* flutter_star_plugin.podspec */,
+				17F0AC10BA660170F015D1F37621F39D /* LICENSE */,
 			);
-			name = "Support Files";
-			path = "../../../../../../../LTXiOSUtilsDemo/Pods/Target Support Files/flutter_star_plugin";
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		6D9A5978E5E511FD07BB269DDCDD30DA /* flutter_star_plugin */ = {
+		2FF40C6908E9675FFFBF1C80959A1087 /* .ios */ = {
 			isa = PBXGroup;
 			children = (
-				DC805E5588D85F09C11E3E8075A78965 /* ios */,
+				48147DAF686DC96AC25C444E9FF89CC1 /* .symlinks */,
 			);
-			name = flutter_star_plugin;
-			path = flutter_star_plugin;
+			name = .ios;
+			path = .ios;
 			sourceTree = "<group>";
 		};
-		75231105278A44111018BDAC02C69ED5 /* Flutter */ = {
+		302C7DC4326F6E4526E748E52F94E1CC /* .. */ = {
 			isa = PBXGroup;
 			children = (
-				7C346137FC6F202B50EF9FA70AD1EBF8 /* .symlinks */,
+				50595A2DEFEC8F043D36202D9AF992F8 /* .. */,
 			);
-			name = Flutter;
-			path = Flutter;
+			name = ..;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		79DAD1615121A32273D247AF051683B0 /* flutter_module */ = {
+		43171F2BE629A83E9E03896BDED6D541 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E13BFD6027D691323A9E058FA01AE471 /* .ios */,
+				28D35F81402AC750D09FC0C1A48CBCDB /* FlutterStarPlugin.h */,
+				234A7EB3319EC9A41CB3B6B98C6590CC /* FlutterStarPlugin.m */,
+				BCB9A6276BDF9AC2B02ABEE274789CB5 /* SwiftFlutterStarPlugin.swift */,
 			);
-			name = flutter_module;
-			path = flutter_module;
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		7C346137FC6F202B50EF9FA70AD1EBF8 /* .symlinks */ = {
+		46FEE8B7F0FFC5FF3C54CCE4F047EA85 /* plugins */ = {
 			isa = PBXGroup;
 			children = (
-				6D9A5978E5E511FD07BB269DDCDD30DA /* flutter_star_plugin */,
+				82842EE24E893141B8D6062F07FE3101 /* flutter_star_plugin */,
+			);
+			name = plugins;
+			path = plugins;
+			sourceTree = "<group>";
+		};
+		48147DAF686DC96AC25C444E9FF89CC1 /* .symlinks */ = {
+			isa = PBXGroup;
+			children = (
+				46FEE8B7F0FFC5FF3C54CCE4F047EA85 /* plugins */,
 			);
 			name = .symlinks;
 			path = .symlinks;
+			sourceTree = "<group>";
+		};
+		50595A2DEFEC8F043D36202D9AF992F8 /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				A725CB631214B15B4A7D7A51E4EF5752 /* flutter_module */,
+			);
+			name = ..;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		82842EE24E893141B8D6062F07FE3101 /* flutter_star_plugin */ = {
+			isa = PBXGroup;
+			children = (
+				037C8994862A722B71668A988B54DB47 /* ios */,
+			);
+			name = flutter_star_plugin;
+			path = flutter_star_plugin;
 			sourceTree = "<group>";
 		};
 		861403695F95825553E2ADE5C3BA555B = {
 			isa = PBXGroup;
 			children = (
 				A401A4E2CAC0DCB32A21F37A5C5DD403 /* Dependencies */,
-				284C9BC01CBACA932AEC7845CE8741D8 /* flutter_star_plugin */,
+				F78C85153BCBCF05E9EA8D533B342880 /* flutter_star_plugin */,
 				DEC61CFF6E057DE66537ECA283492FAB /* Frameworks */,
 				A0CF91EFC61DB353DBC0C3F1C3612081 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		8F9676D22489D57FE005A481B14613F4 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				F6A2D5F2AD530B0743884CF503FBC24E /* flutter_star_plugin.podspec */,
-				8FC785A165208AC7F7ACC09E6A45DE87 /* LICENSE */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		A0CF91EFC61DB353DBC0C3F1C3612081 /* Products */ = {
@@ -152,42 +164,37 @@
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
-		AABA122B2B961361202D98790C85A522 /* .. */ = {
+		A725CB631214B15B4A7D7A51E4EF5752 /* flutter_module */ = {
 			isa = PBXGroup;
 			children = (
-				FC4F85ACC8BEE7BF195DDEC5AA48109A /* .. */,
+				2FF40C6908E9675FFFBF1C80959A1087 /* .ios */,
+			);
+			name = flutter_module;
+			path = flutter_module;
+			sourceTree = "<group>";
+		};
+		ABF6E75780C0B327F5D503241FCFA3FD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				34DB57225E3EED13A0083863E9795E17 /* flutter_star_plugin.modulemap */,
+				9B221B76E203A8F55182E568B988BAF3 /* flutter_star_plugin-dummy.m */,
+				BF61B1E3E2E9BFE0F0C736A5E7DEA412 /* flutter_star_plugin-Info.plist */,
+				56C41BDEDDA3E12A30A5C897E2780F25 /* flutter_star_plugin-prefix.pch */,
+				A5C8B9299D822DF8CED8BBC98F603165 /* flutter_star_plugin-umbrella.h */,
+				574DCD6A7AB4E3EE53587EB8AFFB2FB5 /* flutter_star_plugin.debug.xcconfig */,
+				9B48D7A39AFB2F180382356D5906784A /* flutter_star_plugin.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../../../../../../../LTXiOSUtilsDemo/Pods/Target Support Files/flutter_star_plugin";
+			sourceTree = "<group>";
+		};
+		BC1CFD6C53170F9C495D34795D3F763D /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				302C7DC4326F6E4526E748E52F94E1CC /* .. */,
 			);
 			name = ..;
 			path = ../../../../../../flutter_star_plugin/ios;
-			sourceTree = "<group>";
-		};
-		C6D78FAC89DBF50E5CDCE3669F507159 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				12F24E2BC76E11A3D490D28502949EEA /* FlutterStarPlugin.h */,
-				A167DF377ACEE9E603502B72A794BC16 /* FlutterStarPlugin.m */,
-				1C1C8A90C56ABC0B9FE61A8A9885008A /* SwiftFlutterStarPlugin.swift */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		D3062340B7E37F6618CCC8C734AB24F7 /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				79DAD1615121A32273D247AF051683B0 /* flutter_module */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		DC805E5588D85F09C11E3E8075A78965 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				C6D78FAC89DBF50E5CDCE3669F507159 /* Classes */,
-			);
-			name = ios;
-			path = ios;
 			sourceTree = "<group>";
 		};
 		DE7DAF7673614A1C320A78EBD4187180 /* iOS */ = {
@@ -206,22 +213,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E13BFD6027D691323A9E058FA01AE471 /* .ios */ = {
+		F78C85153BCBCF05E9EA8D533B342880 /* flutter_star_plugin */ = {
 			isa = PBXGroup;
 			children = (
-				75231105278A44111018BDAC02C69ED5 /* Flutter */,
+				BC1CFD6C53170F9C495D34795D3F763D /* .. */,
+				1980400F01524E06B4A42631988E9A60 /* Pod */,
+				ABF6E75780C0B327F5D503241FCFA3FD /* Support Files */,
 			);
-			name = .ios;
-			path = .ios;
-			sourceTree = "<group>";
-		};
-		FC4F85ACC8BEE7BF195DDEC5AA48109A /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				D3062340B7E37F6618CCC8C734AB24F7 /* .. */,
-			);
-			name = ..;
-			path = ..;
+			name = flutter_star_plugin;
+			path = ../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_star_plugin/ios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,7 +390,7 @@
 		};
 		6F948D497701C88A4D4BFE5B2E8538E1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D51BA1E14CA88CDFB8FC810D9C4F36D /* flutter_star_plugin.release.xcconfig */;
+			baseConfigurationReference = 9B48D7A39AFB2F180382356D5906784A /* flutter_star_plugin.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -399,10 +399,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/flutter_star_plugin/flutter_star_plugin-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/flutter_star_plugin/flutter_star_plugin-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -424,7 +425,7 @@
 		};
 		F35E81ECE722B19AE52785C5595D13EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0974AC807529CDF0B7E63B5F1A6DC13 /* flutter_star_plugin.debug.xcconfig */;
+			baseConfigurationReference = 574DCD6A7AB4E3EE53587EB8AFFB2FB5 /* flutter_star_plugin.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -433,10 +434,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/flutter_star_plugin/flutter_star_plugin-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/flutter_star_plugin/flutter_star_plugin-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

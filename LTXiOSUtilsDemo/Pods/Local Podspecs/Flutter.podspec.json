@@ -17,5 +17,5 @@
   "platforms": {
     "ios": "8.0"
   },
-  "vendored_frameworks": "Flutter.framework"
+  "vendored_frameworks": "Flutter.xcframework"
 }

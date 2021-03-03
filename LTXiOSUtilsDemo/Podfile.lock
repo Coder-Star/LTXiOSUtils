@@ -8,8 +8,6 @@ PODS:
   - CTMediator (28)
   - dsBridge (3.0.6)
   - Flutter (1.0.0)
-  - flutter_boost (0.0.2):
-    - Flutter
   - flutter_module (0.0.1):
     - Flutter
   - flutter_star_plugin (0.0.1):
@@ -18,7 +16,6 @@ PODS:
     - Flutter
   - FlutterPluginRegistrant (0.0.1):
     - Flutter
-    - flutter_boost
     - flutter_star_plugin
     - flutter_webview_plugin
     - path_provider
@@ -109,10 +106,9 @@ DEPENDENCIES:
   - CTMediator (= 28)
   - dsBridge (= 3.0.6)
   - Flutter (from `../Flutter/flutter_module/.ios/Flutter/engine`)
-  - flutter_boost (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios`)
   - flutter_module (from `../Flutter/flutter_module/.ios/Flutter`)
-  - flutter_star_plugin (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/ios`)
-  - flutter_webview_plugin (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios`)
+  - flutter_star_plugin (from `../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_star_plugin/ios`)
+  - flutter_webview_plugin (from `../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_webview_plugin/ios`)
   - FlutterPluginRegistrant (from `../Flutter/flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
   - FSPagerView (= 0.8.3)
   - GDPerformanceView-Swift (= 2.0.3)
@@ -127,10 +123,10 @@ DEPENDENCIES:
   - MGJRouter (= 0.10.0)
   - mp3lame-for-ios (= 0.1.1)
   - ObjectMapper (= 3.5.1)
-  - path_provider (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/path_provider/ios`)
+  - path_provider (from `../Flutter/flutter_module/.ios/.symlinks/plugins/path_provider/ios`)
   - R.swift (= 5.1.0)
   - RxCocoa (= 5.0.1)
-  - shared_preferences (from `../Flutter/flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios`)
+  - shared_preferences (from `../Flutter/flutter_module/.ios/.symlinks/plugins/shared_preferences/ios`)
   - SKPhotoBrowser (= 6.1.0)
   - SVGKit (= 2.1.1)
   - SwiftDate (= 6.1.0)
@@ -195,22 +191,20 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: "../Flutter/flutter_module/.ios/Flutter/engine"
-  flutter_boost:
-    :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_boost/ios"
   flutter_module:
     :path: "../Flutter/flutter_module/.ios/Flutter"
   flutter_star_plugin:
-    :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_star_plugin/ios"
+    :path: "../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_star_plugin/ios"
   flutter_webview_plugin:
-    :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/flutter_webview_plugin/ios"
+    :path: "../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_webview_plugin/ios"
   FlutterPluginRegistrant:
     :path: "../Flutter/flutter_module/.ios/Flutter/FlutterPluginRegistrant"
   LTXiOSUtils:
     :path: "../"
   path_provider:
-    :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/path_provider/ios"
+    :path: "../Flutter/flutter_module/.ios/.symlinks/plugins/path_provider/ios"
   shared_preferences:
-    :path: "../Flutter/flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios"
+    :path: "../Flutter/flutter_module/.ios/.symlinks/plugins/shared_preferences/ios"
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
@@ -219,12 +213,11 @@ SPEC CHECKSUMS:
   CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
   CTMediator: 6a05e9f1098b2d2fbc9d19cc7f28e94c3a08b5d2
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_boost: a7cfa776b75329d5e7d101d0cd33e75042bcde69
+  Flutter: ac41d61a47ae5bf8195a5598d2d63754888ec0d5
   flutter_module: d1e1ff44505640bd9aa37f23f63380c646272be4
   flutter_star_plugin: cb746418e90ecd0f744e28116092921092061e92
   flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
-  FlutterPluginRegistrant: af8248296ac6f40ae8716d0814a215bde2a0f948
+  FlutterPluginRegistrant: 57d9e3742bec5f8f4fbd4258d8cfef74f4005ef8
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GDPerformanceView-Swift: ef3d05deb103e472a5494d3f60aeca5a58b88a7d
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414

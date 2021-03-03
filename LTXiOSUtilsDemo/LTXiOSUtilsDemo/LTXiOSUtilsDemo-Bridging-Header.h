@@ -35,3 +35,12 @@
 
 // 捕获OC异常
 #import "OCExceptionCatch.h"
+
+// C语言头文件
+#include "TestC.h"
+
+// 为调用C++包装的OC文件
+#include "TestCPPWrapper.h"
+
+// OC语言头文件
+#include "OC-Swift.h"
