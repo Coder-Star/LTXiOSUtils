@@ -6,6 +6,15 @@
       <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_boost/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_boost/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_boost/build" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_boost/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_boost/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_boost/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_boost/example_swift/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_boost/example_swift/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_boost/example_swift/build" />
       <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_star_plugin/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_star_plugin/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/.ios/.symlinks/plugins/flutter_star_plugin/build" />
@@ -84,7 +93,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />
-    <orderEntry type="library" name="Dart Packages" level="project" />
     <orderEntry type="library" name="Flutter Plugins" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>

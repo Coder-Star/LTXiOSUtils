@@ -77,11 +77,6 @@ class DemoListViewController: BaseGroupTableMenuViewController {
         ]
         menu.append(extensionMenu)
 
-        let mediatorAndRouterMenu = [
-            BaseGroupTableMenuModel(code: "MediatorAndRouter", title: "组件通信")
-        ]
-        menu.append(mediatorAndRouterMenu)
-
         let testCrashMenu = [
             BaseGroupTableMenuModel(code: "OCCrash", title: "OC Crash触发"),
             BaseGroupTableMenuModel(code: "SwiftCrash", title: "Swift Crash触发")
@@ -115,8 +110,6 @@ class DemoListViewController: BaseGroupTableMenuViewController {
             navigationController?.pushViewController(MaskPopupViewController(), animated: true)
         case "PickImage":
             navigationController?.pushViewController(PickImageDemoViewController(), animated: true)
-        case "MediatorAndRouter":
-            navigationController?.pushViewController(MediatorAndRouterDemoViewController(), animated: true)
         case "OCCrash":
             TestOCError.testArrayIndexOutOfExpection()
         case "SwiftCrash":

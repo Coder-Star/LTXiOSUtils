@@ -1,6 +1,7 @@
 disabled_rules: # 关闭默认开启的规则
   - empty_count # 如果开启 会错误认为 int类型 == 0 为错误格式
   - implicit_getter # 如果开启，当计算既有set，也有get，也会提示警告
+  - number_separator # 关闭数字千分位需要_隔开
 
 opt_in_rules: # 启用指定的规则，有些默认的规则是关闭的，在此设置手动将规则启用
   - missing_docs #文档

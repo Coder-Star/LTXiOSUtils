@@ -17,7 +17,8 @@ var bridge = {
         
 		var arg={data:args===undefined?null:args}
         
-		// js调用原生异步方法，将js端异步回调注册成全局函数，原生端每50毫秒调用一下这个全局函数
+		// js调用原生异步方法，将js端异步回调注册成全局函数，原生端组成调用JS的队列，每50毫秒调用一下这个全局函数
+        // 之所以使用消息队列的原因是为了不频繁调用JS，防止JS卡死
 		if (typeof cb == 'function') {
             var cbName = 'dscb' + window.dscb++;
             window[cbName] = cb;

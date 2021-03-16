@@ -95,6 +95,9 @@
 		DC88A359250CA959000198AD /* CustomURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88A358250CA959000198AD /* CustomURLProtocol.swift */; };
 		DC88A35D250CB318000198AD /* WKURLSchemeHandler.html in Resources */ = {isa = PBXBuildFile; fileRef = DC88A35C250CB318000198AD /* WKURLSchemeHandler.html */; };
 		DC88A35F250CB322000198AD /* CustomURLProtocol.html in Resources */ = {isa = PBXBuildFile; fileRef = DC88A35E250CB322000198AD /* CustomURLProtocol.html */; };
+		DC95127F25FDAFA800EAAB57 /* FileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC95127E25FDAFA800EAAB57 /* FileTest.swift */; };
+		DC95128C25FDFA2C00EAAB57 /* ListNodeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC95128B25FDFA2C00EAAB57 /* ListNodeTest.swift */; };
+		DC95129E25FE158300EAAB57 /* ViewPrincipleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC95129D25FE158300EAAB57 /* ViewPrincipleViewController.swift */; };
 		DC9619D925C91AE400F78537 /* dsbridge.js in Resources */ = {isa = PBXBuildFile; fileRef = DC9619D825C91AE400F78537 /* dsbridge.js */; };
 		DC961E6F25CC47BD00F78537 /* PatternMatchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC961E6E25CC47BD00F78537 /* PatternMatchTest.swift */; };
 		DC9D2C5625344FB500C83C79 /* SlideAdressTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2C5125344FB500C83C79 /* SlideAdressTool.m */; };
@@ -320,6 +323,9 @@
 		DC88A358250CA959000198AD /* CustomURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomURLProtocol.swift; sourceTree = "<group>"; };
 		DC88A35C250CB318000198AD /* WKURLSchemeHandler.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKURLSchemeHandler.html; sourceTree = "<group>"; };
 		DC88A35E250CB322000198AD /* CustomURLProtocol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CustomURLProtocol.html; sourceTree = "<group>"; };
+		DC95127E25FDAFA800EAAB57 /* FileTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTest.swift; sourceTree = "<group>"; };
+		DC95128B25FDFA2C00EAAB57 /* ListNodeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNodeTest.swift; sourceTree = "<group>"; };
+		DC95129D25FE158300EAAB57 /* ViewPrincipleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPrincipleViewController.swift; sourceTree = "<group>"; };
 		DC9619D825C91AE400F78537 /* dsbridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dsbridge.js; sourceTree = "<group>"; };
 		DC961E6E25CC47BD00F78537 /* PatternMatchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternMatchTest.swift; sourceTree = "<group>"; };
 		DC9D2C5125344FB500C83C79 /* SlideAdressTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideAdressTool.m; sourceTree = "<group>"; };
@@ -545,6 +551,7 @@
 				DC3E61F724209F1600105366 /* TempUtils.swift */,
 				DCE1457724FA96B000E3B6B0 /* FontUtil.swift */,
 				DC7DFCCB25C55F0000910FB2 /* UserDefaultWrapper.swift */,
+				DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -552,6 +559,9 @@
 		DC1BE0AF24B0116F00745671 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				DC83E7C523F645A40030A9B4 /* ThirdLibDemo */,
+				DCEE982B250F834400A19CF9 /* Flutter */,
+				DC2518CD24A8247200A28595 /* OC-C-CPP-Swift */,
 				DCD12EA725370944000A58C0 /* Carousel */,
 				DCD97B67251CF55F002E9C0A /* DB */,
 				DCEE98352510FE1400A19CF9 /* Layout */,
@@ -565,6 +575,7 @@
 			isa = PBXGroup;
 			children = (
 				DC1BE0B124B011D700745671 /* ViewEventViewController.swift */,
+				DC95129D25FE158300EAAB57 /* ViewPrincipleViewController.swift */,
 			);
 			path = ViewTest;
 			sourceTree = "<group>";
@@ -732,6 +743,7 @@
 		DC4AB9D022F4606100A5F003 /* LTXiOSUtilsDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				DC95128A25FDF6B800EAAB57 /* Algorithm */,
 				DC3A281B256D46D500784A50 /* DesignPattern */,
 				DCDBA7AD24FE69DF0073E293 /* SwiftTest */,
 				DCE1457B24FBABCC00E3B6B0 /* StoreTest */,
@@ -838,6 +850,7 @@
 		DC6F4D4424F7CA8600B69A31 /* GCD */ = {
 			isa = PBXGroup;
 			children = (
+				DC95127E25FDAFA800EAAB57 /* FileTest.swift */,
 				DC6F4D3924F68EF400B69A31 /* GCDTest.swift */,
 				DC73E8242520C636009472A9 /* TaskGroupTest.swift */,
 			);
@@ -944,6 +957,31 @@
 				DC88A358250CA959000198AD /* CustomURLProtocol.swift */,
 			);
 			path = CustomURLProtocol;
+			sourceTree = "<group>";
+		};
+		DC95128A25FDF6B800EAAB57 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				DC95128B25FDFA2C00EAAB57 /* ListNodeTest.swift */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		DC9512A925FE15E400EAAB57 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */,
+				DCC76E4B23A783550029590C /* HUDDemoViewController.swift */,
+				DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */,
+				DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */,
+				DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */,
+				DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */,
+				DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */,
+				DC0EC2F72559855B0046B46A /* ShowImageViewController.swift */,
+				DCFE0922255EC43B00826344 /* MaskPopupViewController.swift */,
+				DC3A2814256D229700784A50 /* FoldViewDemoViewController.swift */,
+			);
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		DC9D2C4F25344FB500C83C79 /* CrashManager */ = {
@@ -1068,27 +1106,14 @@
 		DCC76E4823A782C40029590C /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				DCEE982B250F834400A19CF9 /* Flutter */,
+				DC9512A925FE15E400EAAB57 /* Demo */,
 				DCC5D27D2574799800D9BEB4 /* Pattern */,
 				DC03AE5023F43381007739DD /* Model */,
-				DC83E7C523F645A40030A9B4 /* ThirdLibDemo */,
 				DCF88150242F2D000084C940 /* View */,
-				DC2518CD24A8247200A28595 /* OC-C-CPP-Swift */,
 				DC1BE0AF24B0116F00745671 /* Test */,
 				DC03AE2423F3A802007739DD /* Home */,
 				DC0567DA23CAF545008E7C02 /* Menu */,
 				DCB1C04223C4B1FB00D735BD /* ExtensionsExample */,
-				DC5E25F62386A93900B18F51 /* DefaultsKeys+Extension.swift */,
-				DCF41B6123AA464100AEF70E /* NetworkDemoViewController.swift */,
-				DCC76E4B23A783550029590C /* HUDDemoViewController.swift */,
-				DCB22AB823AB6908004C63EF /* PickViewDemoViewController.swift */,
-				DCBF290B23BCA65B00EF365C /* ComponentCollectionsViewController.swift */,
-				DC1AD82923E839900073CB97 /* TreeViewDemoViewController.swift */,
-				DC3E61FD2423755F00105366 /* PickImageDemoViewController.swift */,
-				DC9F89CB24ED0E7500C0487F /* AudioAndRecordViewController.swift */,
-				DC0EC2F72559855B0046B46A /* ShowImageViewController.swift */,
-				DCFE0922255EC43B00826344 /* MaskPopupViewController.swift */,
-				DC3A2814256D229700784A50 /* FoldViewDemoViewController.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1687,6 +1712,7 @@
 				DCD8763F251B25E600F50138 /* StoryboardSecondViewController.swift in Sources */,
 				DC3E62052425E8A200105366 /* WRNavigationBar.swift in Sources */,
 				DC1AD82A23E839900073CB97 /* TreeViewDemoViewController.swift in Sources */,
+				DC95129E25FE158300EAAB57 /* ViewPrincipleViewController.swift in Sources */,
 				DCEE982D250F835C00A19CF9 /* FlutterMainViewController.swift in Sources */,
 				DCE72CF425EFA70B00F69005 /* TestCPPWrapper.mm in Sources */,
 				DC7C935624EE5837005E0AAA /* SystemNotificationService.swift in Sources */,
@@ -1764,6 +1790,7 @@
 			files = (
 				DCC67CFA2570C98B005515CF /* CopyTest.swift in Sources */,
 				DC4AB9D222F4606100A5F003 /* DateExtensionTest.swift in Sources */,
+				DC95128C25FDFA2C00EAAB57 /* ListNodeTest.swift in Sources */,
 				DC725FD9250B7EBC0091C807 /* FoundationTest.swift in Sources */,
 				DC2A02B625064D6300BABEDB /* SandboxTest.swift in Sources */,
 				DCDBA7B124FE94D10073E293 /* ExpressibleProtocolTest.swift in Sources */,
@@ -1777,6 +1804,7 @@
 				DCCF3E5123C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift in Sources */,
 				DC4F88C62511BCCC00B68C72 /* ErrorTest.swift in Sources */,
 				DC3E62022424714E00105366 /* DoubleExtensionTest.swift in Sources */,
+				DC95127F25FDAFA800EAAB57 /* FileTest.swift in Sources */,
 				DC1C1A642587893C005509D8 /* TempTest.swift in Sources */,
 				DC09415E2436E4D20052085F /* DemoTest.swift in Sources */,
 				DCDBA7BB250528130073E293 /* FunctionTest.swift in Sources */,

@@ -24,6 +24,11 @@ class LayoutMainViewController: BaseGroupTableMenuViewController {
             BaseGroupTableMenuModel(code: "SwiftUI", title: "SwiftUI")
         ]
         menu.append(fisrtMenu)
+
+        let secondMenu = [
+            BaseGroupTableMenuModel(code: "UIView", title: "UIView底层相关")
+        ]
+        menu.append(secondMenu)
     }
 
     override func click(menuModel: BaseGroupTableMenuModel) {
@@ -41,6 +46,8 @@ class LayoutMainViewController: BaseGroupTableMenuViewController {
         case "SwiftUI":
             let viewController = UIHostingController(rootView: ContentView())
             navigationController?.pushViewController(viewController, animated: true)
+        case "UIView":
+            break
         default:
             HUD.showText("暂无此模块")
         }

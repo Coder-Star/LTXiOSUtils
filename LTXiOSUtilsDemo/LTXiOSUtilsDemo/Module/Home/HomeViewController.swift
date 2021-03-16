@@ -52,7 +52,7 @@ class HomeViewController: BaseUIScrollViewController {
         GridMenuItem(code: "Flutter", title: "Flutter", image: R.image.home_button_nyq(), markType: .number(number: 7)),
         GridMenuItem(code: "Carousel", title: "轮播", image: R.image.home_button_schq(), markType: .number(number: 8)),
         GridMenuItem(code: "LanguageMix", title: "语言混编", image: R.image.home_button_shop(), markType: .number(number: 9)),
-        GridMenuItem(code: "10", title: "视频", image: R.image.home_button_xsp(), markType: .number(number: 10)),
+        GridMenuItem(code: "MediatorAndRouter", title: "组件通信", image: R.image.home_button_xsp(), markType: .number(number: 10)),
         GridMenuItem(code: "11", title: "阅读", image: R.image.home_button_xwzc(), markType: .number(number: 11))
     ]
 
@@ -216,6 +216,8 @@ extension HomeViewController: GridMenuViewItemDelegate {
             navigationController?.pushViewController(CarouselViewController(), animated: true)
         case "LanguageMix":
             navigationController?.pushViewController(LanguageMixDemoViewController(), animated: true)
+        case "MediatorAndRouter":
+            navigationController?.pushViewController(MediatorAndRouterDemoViewController(), animated: true)
         default:
             break
         }

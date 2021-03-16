@@ -145,20 +145,3 @@ extension FlutterMainViewController: FlutterStreamHandler {
         return nil
     }
 }
-
-extension FlutterMainViewController: FlutterPluginRegistry {
-    func registrar(forPlugin pluginKey: String) -> FlutterPluginRegistrar? {
-        Log.d(pluginKey)
-        return nil
-    }
-
-    func hasPlugin(_ pluginKey: String) -> Bool {
-        Log.d(pluginKey)
-        return true
-    }
-
-    func valuePublished(byPlugin pluginKey: String) -> NSObject? {
-        Log.d(pluginKey)
-        return nil
-    }
-}

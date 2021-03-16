@@ -68,6 +68,31 @@ CACHE_KEYS:
     PROJECT_NAME: Flutter
     SPECS:
       - Flutter (1.0.0)
+  flutter_boost:
+    BUILD_SETTINGS_CHECKSUM:
+      flutter_boost:
+        :debug: 96b90b029187bc29823c96010e7c2d47
+        :release: 96b90b029187bc29823c96010e7c2d47
+    CHECKSUM: 22d0c8fc40816397221041713e6e67acf41849ca
+    FILES:
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/container/FBFlutterContainer.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/container/FBFlutterContainerManager.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/container/FBFlutterContainerManager.m"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/container/FBFlutterViewContainer.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/container/FBFlutterViewContainer.m"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/container/FBLifecycle.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/container/FBLifecycle.m"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/FlutterBoost.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/FlutterBoost.m"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/FlutterBoostDelegate.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/FlutterBoostPlugin.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/FlutterBoostPlugin.m"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/messages.h"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/ios/Classes/messages.m"
+      - "../../Flutter/flutter_module/.ios/.symlinks/plugins/flutter_boost/LICENSE.md"
+    PROJECT_NAME: flutter_boost
+    SPECS:
+      - flutter_boost (0.0.2)
   flutter_module:
     BUILD_SETTINGS_CHECKSUM:
       flutter_module:
@@ -112,9 +137,9 @@ CACHE_KEYS:
   FlutterPluginRegistrant:
     BUILD_SETTINGS_CHECKSUM:
       FlutterPluginRegistrant:
-        :debug: d8102250dc1a7809febb00737d243144
-        :release: d8102250dc1a7809febb00737d243144
-    CHECKSUM: 57d9e3742bec5f8f4fbd4258d8cfef74f4005ef8
+        :debug: efc74cadd2ea8ccd44475943e947bccc
+        :release: efc74cadd2ea8ccd44475943e947bccc
+    CHECKSUM: af8248296ac6f40ae8716d0814a215bde2a0f948
     FILES:
       - "../../Flutter/flutter_module/.ios/Flutter/FlutterPluginRegistrant/Classes/GeneratedPluginRegistrant.h"
       - "../../Flutter/flutter_module/.ios/Flutter/FlutterPluginRegistrant/Classes/GeneratedPluginRegistrant.m"
@@ -385,19 +410,19 @@ CACHE_KEYS:
       - path_provider (0.0.1)
   Pods-LTXiOSUtilsDemo:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: d91316336d02834f8fc0e8c1e2697008
-      Release: 039a500ac9eccdae50f5cd5b33c58ae7
+      Debug: e1eb4c99df6211f0723885f176ffff97
+      Release: 6c4f55be4ef1b98da71fa9af507b104f
     FILES:
       - "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
       - "${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage/TPNSInAppMessageResource.bundle"
   Pods-LTXiOSUtilsDemoTests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: c3ced8d174da6d9839cac55a9125818c
-      Release: 35f5d465680d7c9ec751155d30cac520
+      Debug: 9bd5e816a90f24cc1a04fadb63baa25c
+      Release: b2798c8f6a41fc4f0291ee7c8489261a
   Pods-LTXiOSUtilsDemoUITests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: c3ced8d174da6d9839cac55a9125818c
-      Release: 35f5d465680d7c9ec751155d30cac520
+      Debug: 9bd5e816a90f24cc1a04fadb63baa25c
+      Release: b2798c8f6a41fc4f0291ee7c8489261a
   Pods-NotificationServiceExtension:
     BUILD_SETTINGS_CHECKSUM:
       Debug: 13e9b17c45addc423b1a0eeaae946dd3

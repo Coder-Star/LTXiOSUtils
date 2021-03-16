@@ -32,6 +32,7 @@ class _WidgetsListPageState extends State<WidgetsListPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Widgets'),
+        centerTitle: true,
       ),
       body: ListView.builder(
         scrollDirection: Axis.vertical,

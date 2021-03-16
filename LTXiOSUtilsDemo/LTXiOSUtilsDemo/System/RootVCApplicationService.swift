@@ -41,7 +41,7 @@ final class RootVCApplicationService: NSObject, ApplicationService {
 
         // 等待rootview加载完成
 //        self.perform(#selector(setSecondWindow), with: nil, afterDelay: 0.5)
-        launchAnimation()
+//        launchAnimation()
         return true
     }
 

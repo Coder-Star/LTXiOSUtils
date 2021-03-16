@@ -102,6 +102,7 @@ class GCDTest: XCTestCase {
     /// 串行队列
     func testDemo3() {
         let serialQueue = DispatchQueue(label: "serialQueue",qos: .userInteractive)
+        
         serialQueue.sync {
             Log.d("串行队列同步任务")
         }

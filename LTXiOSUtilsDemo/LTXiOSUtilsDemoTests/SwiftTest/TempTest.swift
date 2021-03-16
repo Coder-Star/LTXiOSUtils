@@ -10,6 +10,7 @@ import Foundation
 import XCTest
 import LTXiOSUtilsDemo
 
+var globalBlock: (_ info: String) -> Void = { info in }
 
 class TempTest: XCTestCase {
 
@@ -42,6 +43,10 @@ class TempTest: XCTestCase {
         Log.d(UserDefaultsConfig.username)
         UserDefaultsConfig.username = "123"
         Log.d(UserDefaults.standard.object(forKey: "username"))
+    }
+
+    func testBlock() {
+        Log.d(globalBlock) // 打印为 Function
     }
 }
 

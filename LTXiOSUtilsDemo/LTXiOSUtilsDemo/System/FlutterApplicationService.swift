@@ -11,6 +11,7 @@
  */
 
 import Foundation
+import flutter_boost
 
 final class FlutterApplicationService: FlutterAppDelegate, ApplicationService {
 
@@ -21,9 +22,18 @@ final class FlutterApplicationService: FlutterAppDelegate, ApplicationService {
 
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
-        runFlutter()
+//        runFlutter()
+
+        runFlutterBoost(application: application)
 
         return true
+    }
+
+
+    func runFlutterBoost(application: UIApplication) {
+        FlutterBoost.instance()?.setup(application, delegate: MyFlutterBoostDelegate()) { engine in
+
+        }
     }
 
     func runFlutter() {
@@ -40,4 +50,23 @@ final class FlutterApplicationService: FlutterAppDelegate, ApplicationService {
 
     }
 
+}
+
+class MyFlutterBoostDelegate: NSObject, FlutterBoostDelegate {
+    func pushNativeRoute(_ pageName: String!, arguments: [AnyHashable : Any]!) {
+
+    }
+
+    func pushFlutterRoute(_ pageName: String!, arguments: [AnyHashable : Any]!) {
+
+    }
+
+    func popRoute(_ uniqueId: String!) {
+
+    }
+
+    func engine() -> FlutterEngine! {
+        let flutterEngine = ((UIApplication.shared.delegate as? ApplicationServiceManagerDelegate)?.getService(by: FlutterApplicationService.self) as! FlutterApplicationService).flutterEngine
+        return flutterEngine
+    }
 }

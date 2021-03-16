@@ -94,6 +94,8 @@ target 'LTXiOSUtilsDemo' do
 
   pod 'AppOrderFiles', "1.0.2" # clang插桩，获取方法
 
+  pod "PromiseKit", "6.13.1" # promise语法
+
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths
   end

@@ -79,6 +79,9 @@ class OperationTest: XCTestCase {
         operation3.addDependency(operation1)
         operation3.addDependency(operation2)
 
+        // 进入准备就绪状态下的操作之间的开始执行顺序，并不能取代依赖关系，如果操作依赖的操作没有完成，是不会进入准备状态
+        operation3.queuePriority = .high
+
         queue.addOperation(operation1)
         queue.addOperation(operation2)
         queue.addOperation(operation3)

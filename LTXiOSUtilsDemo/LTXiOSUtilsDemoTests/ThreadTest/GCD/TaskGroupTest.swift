@@ -55,6 +55,9 @@ class TaskGroupTest: XCTestCase {
     }
 
 
+    /**
+     栅栏函数，栅栏函数不可以使用全局并发队列
+     */
     func testbBarrierDispatchWorkItem() {
         let expectationInfo = expectation(description: "thread")
         let queue = DispatchQueue(label: "􏴉􏱧􏱢􏱧􏱢􏲼􏱛􏱭􏱢􏴉􏱧􏱢􏱧􏱢􏲼􏱛􏱭􏱢queueName", attributes: [.concurrent])
@@ -79,8 +82,12 @@ class TaskGroupTest: XCTestCase {
          在它之后的加入的任务也必须等到栅栏任务执行完毕之后才能执行
 
          */
-        // 面对栅栏任务，使用async异步执行和使用sync同步执行效果一样
-        queue.async(execute: barrierTask)
+        queue.sync(execute: barrierTask)
+        
+
+//        queue.async(group: nil, qos: .default, flags: .barrier) {
+//
+//        }
 
         queue.async {
             Log.d("任务全部完成")

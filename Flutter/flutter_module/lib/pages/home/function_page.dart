@@ -32,6 +32,8 @@ class _FunctionWidgetState extends State<FunctionPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('功能'),
+        // 如果不设置该属性，title在iOS上为居中，Android为靠左；设置后两者都居中
+        centerTitle: true,
       ),
       body: ListView.builder(
         scrollDirection: Axis.vertical,
