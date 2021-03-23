@@ -39,6 +39,7 @@ class PlistTest: XCTestCase {
         // NSData、Data、NSMutableData
         let nsDataPath = path.appendingPathComponent("nsData").appendingPathExtension("plist")
         let nsData = NSData(data: "这NSData".data(using: .utf8)!)
+        NSData(contentsOf: <#T##URL#>)
         nsData.write(to: nsDataPath, atomically: true)
         Log.d(String(data: NSData(contentsOf: nsDataPath)! as Data, encoding: .utf8))
 

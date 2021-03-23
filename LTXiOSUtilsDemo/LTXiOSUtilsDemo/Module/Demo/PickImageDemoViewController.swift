@@ -64,17 +64,6 @@ extension PickImageDemoViewController {
             HUD.showText("请选择图片")
             return
         }
-
-        var requestParam = RequestParam(path: NetworkConstant.ER.erMobileCommonUploadFile)
-        requestParam.parameters = [
-            "sourceId": "20032300000001",
-            "sourceType": "ErTravel"
-        ]
-        requestParam.fileList = pickImageView.imageList.compactMap { FileInfo(name: $0.name ?? "", data: $0.image!.jpegData(compressionQuality: 1)!) }
-        Log.d(requestParam.fileList?[0].size)
-        Log.d(requestParam.fileList?[0].type)
-        NetworkManager.sendRequest(requestParam: requestParam) { _ in
-        }
     }
 }
 

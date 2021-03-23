@@ -5,11 +5,12 @@
 flutter_application_path = '../Flutter/flutter_module'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
-install! 'cocoapods', :generate_multiple_pod_projects => true, :incremental_installation => true
+# 多project模式，每一个pod包是一个project
+install! 'cocoapods', :generate_multiple_pod_projects => true, :incremental_installation => true, :warn_for_unused_master_specs_repo => false
 
 target 'LTXiOSUtilsDemo' do
-  source 'https://github.com/CocoaPods/Specs.git' # 公有库地址
-  # source 'https://cdn.cocoapods.org/' # 公有库地址,使用CDN，pod 1.7版本后
+#  source 'https://github.com/CocoaPods/Specs.git' # 公有库地址
+#  source 'https://cdn.cocoapods.org/' # 公有库地址,使用CDN，pod 1.7版本后
   source 'https://github.com/Coder-Star/LTXSpecs.git' # 私有库地址
   platform :ios, '10.0'
 
@@ -94,7 +95,7 @@ target 'LTXiOSUtilsDemo' do
 
   pod 'AppOrderFiles', "1.0.2" # clang插桩，获取方法
 
-  pod "PromiseKit", "6.13.1" # promise语法
+  # pod "PromiseKit", "6.13.1" # promise语法
 
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths
@@ -107,6 +108,7 @@ target 'LTXiOSUtilsDemo' do
 end
 
 target 'NotificationServiceExtension' do
+  platform :ios, '10.0'
   use_frameworks!
 #use_modular_headers!
 
@@ -121,7 +123,7 @@ swift_5 = [
 
 disabled_bitcode = [
 'Flutter',
-'flutter_boost',
+'flutter_boost', # 使用的CLANG_CXX_LANGUAGE_STANDARD是 C++ 11，一般的三方库是GNU++ 14
 'flutter_module',
 'flutter_star_plugin',
 'flutter_webview_plugin',

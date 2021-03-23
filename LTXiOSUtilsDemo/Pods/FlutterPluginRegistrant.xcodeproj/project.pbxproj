@@ -15,40 +15,40 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		24EE0BADCC8CECD10984EDDBDD303A7E /* PBXContainerItemProxy */ = {
+		0BF03E128BE8139F11C755D4D090E5B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EE0330A4A97851CD913B3D83DC82752 /* flutter_webview_plugin.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 779591877F18E1031AF7E6ED7852BCF0;
+			remoteInfo = flutter_webview_plugin;
+		};
+		167B71BFAB78B26FC63EA8372E24F393 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41C3FD99D6272A50C34956B182666DD /* shared_preferences.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 0FEDD780F6BC51C71EAF4CFB97A6E2FC;
 			remoteInfo = shared_preferences;
 		};
-		78381C70DA9476153590CEDE616BAAC4 /* PBXContainerItemProxy */ = {
+		A33E7CA3BB4F7F69EA5A7CAAFC0EDF16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0A1FBE945FC41B14D4556C4CA5525357 /* path_provider.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = B18A829CA162A7A6E04B4FDBB3885F6C;
 			remoteInfo = path_provider;
 		};
-		7FBAE6E0B4AD0C1538EE10EBFAF0C8D9 /* PBXContainerItemProxy */ = {
+		CCA58A4868569954D80A697DCE151EAB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4729EEBFB4741C70A1388CE0681A3FD1 /* Flutter.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = D40F1FD973363D8FE0BF347DCFCE2318;
 			remoteInfo = Flutter;
 		};
-		A51759BAAD28D5D89E8C2C3409954D2E /* PBXContainerItemProxy */ = {
+		DE6F0E18897C343340E951359A662025 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9BEEEF650B69B357EB4D465A9AD15CA4 /* flutter_star_plugin.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = CC171C1F0DC522E083B1B8FE6114475C;
 			remoteInfo = flutter_star_plugin;
-		};
-		AC3E6F915E117826F909E2F7E6B7C9C5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9EE0330A4A97851CD913B3D83DC82752 /* flutter_webview_plugin.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 779591877F18E1031AF7E6ED7852BCF0;
-			remoteInfo = flutter_webview_plugin;
 		};
 		E175B2F668A6BEED260DC1F82E8FF088 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -201,12 +201,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				6C504378CAB7F650B177D57183250A7E /* PBXTargetDependency */,
+				2DA8EA3E07E105D1BE43192FF2805E48 /* PBXTargetDependency */,
 				3A6E7924D1C02702A6B7C3D0DD887F41 /* PBXTargetDependency */,
-				1AA1711D57DE887F5DB28149F51ABC36 /* PBXTargetDependency */,
-				80B41DAA4B5C4313E2E7EF1107FA0AD0 /* PBXTargetDependency */,
-				5D19E500C3F96E84A8CB912F51C012E4 /* PBXTargetDependency */,
-				29E6303BDDBA4A762784A078A1C72190 /* PBXTargetDependency */,
+				CA67F3E49EFEC9C41212A2E2A865BF13 /* PBXTargetDependency */,
+				7992E0599A629AB78048D970089E247E /* PBXTargetDependency */,
+				CED35F370141FD8419EE2AC8D267C20A /* PBXTargetDependency */,
+				FEC8F492AB831B30F795DC3EF707905F /* PBXTargetDependency */,
 			);
 			name = FlutterPluginRegistrant;
 			productName = FlutterPluginRegistrant;
@@ -283,35 +283,35 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1AA1711D57DE887F5DB28149F51ABC36 /* PBXTargetDependency */ = {
+		2DA8EA3E07E105D1BE43192FF2805E48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = flutter_star_plugin;
-			targetProxy = A51759BAAD28D5D89E8C2C3409954D2E /* PBXContainerItemProxy */;
-		};
-		29E6303BDDBA4A762784A078A1C72190 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = shared_preferences;
-			targetProxy = 24EE0BADCC8CECD10984EDDBDD303A7E /* PBXContainerItemProxy */;
+			name = Flutter;
+			targetProxy = CCA58A4868569954D80A697DCE151EAB /* PBXContainerItemProxy */;
 		};
 		3A6E7924D1C02702A6B7C3D0DD887F41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = flutter_boost;
 			targetProxy = E175B2F668A6BEED260DC1F82E8FF088 /* PBXContainerItemProxy */;
 		};
-		5D19E500C3F96E84A8CB912F51C012E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = path_provider;
-			targetProxy = 78381C70DA9476153590CEDE616BAAC4 /* PBXContainerItemProxy */;
-		};
-		6C504378CAB7F650B177D57183250A7E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Flutter;
-			targetProxy = 7FBAE6E0B4AD0C1538EE10EBFAF0C8D9 /* PBXContainerItemProxy */;
-		};
-		80B41DAA4B5C4313E2E7EF1107FA0AD0 /* PBXTargetDependency */ = {
+		7992E0599A629AB78048D970089E247E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = flutter_webview_plugin;
-			targetProxy = AC3E6F915E117826F909E2F7E6B7C9C5 /* PBXContainerItemProxy */;
+			targetProxy = 0BF03E128BE8139F11C755D4D090E5B4 /* PBXContainerItemProxy */;
+		};
+		CA67F3E49EFEC9C41212A2E2A865BF13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = flutter_star_plugin;
+			targetProxy = DE6F0E18897C343340E951359A662025 /* PBXContainerItemProxy */;
+		};
+		CED35F370141FD8419EE2AC8D267C20A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = path_provider;
+			targetProxy = A33E7CA3BB4F7F69EA5A7CAAFC0EDF16 /* PBXContainerItemProxy */;
+		};
+		FEC8F492AB831B30F795DC3EF707905F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = shared_preferences;
+			targetProxy = 167B71BFAB78B26FC63EA8372E24F393 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

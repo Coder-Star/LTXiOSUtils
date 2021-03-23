@@ -9,32 +9,12 @@
 import Foundation
 
 /// 网络请求常量
-public class NetworkConstant: NSObject {
+public struct NetworkConstant {
 
     static let isFormal = false //是否正式,正式版为true,测试版为false
 
-    private static var oaUrlInfo = ""
-
-    class func initUrlInfo() {
+    static func initUrlInfo() {
         NetworkConfig.baseURL = "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock"
-
-        if NetworkConstant.isFormal {
-            NetworkConstant.oaUrlInfo = "http://oa.topscomm.net:8932/"
-        } else {
-            NetworkConstant.oaUrlInfo = "http://172.20.3.53:8919/toa/"
-        }
-
-    }
-
-    // static 是自动懒加载的，所以当initUrlInfo被调用之前没有访问OaUrl，逻辑没有问题，如果访问了OaUrl，就有问题了
-    static let OaUrl: String = NetworkConstant.oaUrlInfo
-
-}
-
-extension NetworkConstant {
-    struct ER {
-        static let loginUrl = "toa/toaMobileLogin_login.json"
-        static let erMobileCommonUploadFile = "er/erMobileCommon_uploadFile.json"
     }
 }
 

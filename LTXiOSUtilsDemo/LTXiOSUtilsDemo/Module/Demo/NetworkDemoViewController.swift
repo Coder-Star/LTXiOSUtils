@@ -13,8 +13,6 @@ class NetworkDemoViewController: BaseGroupTableMenuViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "网络请求"
-
-        Log.d(NetworkConstant.OaUrl)
     }
 
     override func setMenu() {
@@ -48,11 +46,7 @@ class NetworkDemoViewController: BaseGroupTableMenuViewController {
 
 extension NetworkDemoViewController {
     func request() {
-        let parameters: Parameters = ["loginname": "6918", "password": "ltx123456", "uuid": "", "ismobile": "1"]
-        let requestParam = RequestParam(path: NetworkConstant.ER.loginUrl, parameters: parameters)
-        NetworkManager.sendRequest(requestParam: requestParam) { data in
-            _ = JSON(data)
-        }
+       
     }
 }
 

@@ -32,7 +32,6 @@ class NSBaseUser: NSObject {
 
     }
 
-
     // 禁止KVC
 //    override class var accessInstanceVariablesDirectly: Bool {
 //        return false

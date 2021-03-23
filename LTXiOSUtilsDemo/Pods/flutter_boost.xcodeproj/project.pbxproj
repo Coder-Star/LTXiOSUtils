@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B13525A46742EA45ED6507DC5E245F88 /* PBXContainerItemProxy */ = {
+		0F3E41DC8FF30C3B2C3998103CBD9F63 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5AA164015EC42B505D0C05F4712F0D58 /* Flutter.xcodeproj */;
 			proxyType = 1;
@@ -354,7 +354,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D96FC8DA4DF6FD041082A98C19611F6D /* PBXTargetDependency */,
+				46131286A0B78E58720FEDDE89A98681 /* PBXTargetDependency */,
 			);
 			name = flutter_boost;
 			productName = flutter_boost;
@@ -421,10 +421,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D96FC8DA4DF6FD041082A98C19611F6D /* PBXTargetDependency */ = {
+		46131286A0B78E58720FEDDE89A98681 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Flutter;
-			targetProxy = B13525A46742EA45ED6507DC5E245F88 /* PBXContainerItemProxy */;
+			targetProxy = 0F3E41DC8FF30C3B2C3998103CBD9F63 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
