@@ -9,18 +9,18 @@
 /* Begin PBXAggregateTarget section */
 		685CA42548BC62234CCE61E668A3E744 /* flutter_module */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 55C47BEC3E2A4B13A548B84888EAE757 /* Build configuration list for PBXAggregateTarget "flutter_module" */;
+			buildConfigurationList = 21FE738E1BCF8DBA6528EBD20DE4F091 /* Build configuration list for PBXAggregateTarget "flutter_module" */;
 			buildPhases = (
 			);
 			dependencies = (
-				6BAC699EF409646DB73740546D64A79F /* PBXTargetDependency */,
+				A802D2159F419CF8A16305B91EDDE331 /* PBXTargetDependency */,
 			);
 			name = flutter_module;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXContainerItemProxy section */
-		9F031EB45F508E8B6DFD0424044C1A1E /* PBXContainerItemProxy */ = {
+		A66ABFA500E13B541910879F46AB2803 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B54D3581E0F1499736C4FD2E60719A5B /* Flutter.xcodeproj */;
 			proxyType = 1;
@@ -140,17 +140,17 @@
 /* End PBXProject section */
 
 /* Begin PBXTargetDependency section */
-		6BAC699EF409646DB73740546D64A79F /* PBXTargetDependency */ = {
+		A802D2159F419CF8A16305B91EDDE331 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Flutter;
-			targetProxy = 9F031EB45F508E8B6DFD0424044C1A1E /* PBXContainerItemProxy */;
+			targetProxy = A66ABFA500E13B541910879F46AB2803 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B77FF7D9FA32223E983D41D3780B5B0 /* Debug */ = {
+		035564E0656BCC5A9A24B1BF4187160A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7525D92EBFDF11E5338FD55FCD4BC55 /* flutter_module.debug.xcconfig */;
+			baseConfigurationReference = 24F32DCA24F797BC4C4BCC21D7ECC2AC /* flutter_module.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -162,8 +162,71 @@
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
+		};
+		1B134AE71566352985561CBE11E6E65A /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release_Test;
 		};
 		568B519E20F3C526D2F7D4D803865538 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -231,7 +294,24 @@
 			};
 			name = Debug;
 		};
-		68590EA9F92A8560D2B956F4427E62DB /* Release */ = {
+		665B14D73A92AFFDA28E101112D3CE89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7525D92EBFDF11E5338FD55FCD4BC55 /* flutter_module.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ENABLE_BITCODE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7C4FC7254DBE4297284E67E2AF5F24BF /* Debug_Test */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24F32DCA24F797BC4C4BCC21D7ECC2AC /* flutter_module.release.xcconfig */;
 			buildSettings = {
@@ -247,7 +327,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug_Test;
 		};
 		89E76C2AECE077BD24BEFAA28E026211 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -311,14 +391,96 @@
 			};
 			name = Release;
 		};
+		D6EB73D62839F311EFB78C3434821E07 /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug_Test;
+		};
+		DE4C43FC95B2708FDEF4B20364A8A2DF /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F32DCA24F797BC4C4BCC21D7ECC2AC /* flutter_module.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ENABLE_BITCODE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release_Test;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		55C47BEC3E2A4B13A548B84888EAE757 /* Build configuration list for PBXAggregateTarget "flutter_module" */ = {
+		21FE738E1BCF8DBA6528EBD20DE4F091 /* Build configuration list for PBXAggregateTarget "flutter_module" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B77FF7D9FA32223E983D41D3780B5B0 /* Debug */,
-				68590EA9F92A8560D2B956F4427E62DB /* Release */,
+				665B14D73A92AFFDA28E101112D3CE89 /* Debug */,
+				7C4FC7254DBE4297284E67E2AF5F24BF /* Debug_Test */,
+				035564E0656BCC5A9A24B1BF4187160A /* Release */,
+				DE4C43FC95B2708FDEF4B20364A8A2DF /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -327,7 +489,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				568B519E20F3C526D2F7D4D803865538 /* Debug */,
+				D6EB73D62839F311EFB78C3434821E07 /* Debug_Test */,
 				89E76C2AECE077BD24BEFAA28E026211 /* Release */,
+				1B134AE71566352985561CBE11E6E65A /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

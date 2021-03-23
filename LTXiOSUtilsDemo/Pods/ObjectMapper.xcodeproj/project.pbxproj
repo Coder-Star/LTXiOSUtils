@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02E2F2D684ABF0D9510A674345E0847A /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4397279B358CDDDD92D27F737875C /* ISO8601DateTransform.swift */; };
-		06D096CED450FDE36A3D6349BB27F11C /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39A70CE1C24E1EDEFEE9C04B8ED8A8 /* DateFormatterTransform.swift */; };
-		0BF768BCDA51AC330AFA2CB67AA20FAB /* IntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6810167A301948F7E6A930E997308DDE /* IntegerOperators.swift */; };
-		1680A24B0740D9BB6A112342CBF53BDD /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE1D4C8C3ED56386A6D0FCB9FA5622 /* URLTransform.swift */; };
-		315CACA18DA75D94B567418A0437ED31 /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1584BB8CE7874555877EA3BF86C6F /* DataTransform.swift */; };
-		372FE28175296F9BD38E2572AD442B9D /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992ECEE7D9545FC6CC059DA83D44399 /* HexColorTransform.swift */; };
-		37655028D2A1EB07337E1C7C5FCB930D /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A58A32D0F493633588D3A2CCCBF41D /* Map.swift */; };
-		4294C2BA88918DCDE93BD60BBC890A1C /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79DE5F24A9A5F39620CEA773F61A348 /* ToJSON.swift */; };
-		4DB5C672EEF86DBA5ACDCD941B0F372E /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B5A16B0043EB6FBF9087AEA4031B9 /* FromJSON.swift */; };
-		5842DC0B958E852CAE04490154C91A28 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C13853FE45F6BA80A2BDB5DB0AC7D /* MapError.swift */; };
-		5E8F026A61F31EED4D3AAF6591919259 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEF3BBDA58FA2F44B6D6E3BEC637D0 /* Mappable.swift */; };
-		608B4B1D5CF2D4B7B7C0D3B38C238C89 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E82FD460F5E680E1883AA0D3FB19E8 /* Mapper.swift */; };
-		7F15190EBBC83B03062988A4B8F8CB40 /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED86E98734A89FA2D357AF616B664E /* CodableTransform.swift */; };
-		87DA887ADAA22C1F10B916FAAE1D22B2 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AD8DE3D8DD9E3F1FB36B1975562D4 /* ImmutableMappable.swift */; };
-		898B021C8EEA9123A288B71EE2C6EA7B /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6660AA212F1486BEDF31DF611A1F75B1 /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		924FCEB9B7DFB71284D59C485FFB7BAC /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12F3802312EEDB45C2200CB3EDE83B8 /* EnumTransform.swift */; };
-		9328FBB6E1D0A00097999D0457697941 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11AF71A16C781AF9CB405C361587B1D3 /* Foundation.framework */; };
-		9626DC9E67834CE0F6520725C1A97ADC /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF438191DC169A756882D259AB88CB1 /* CustomDateFormatTransform.swift */; };
-		9E9873039E3F4E67092CF4D488EA982B /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC2B88BEE7B084557D723F94BF853C /* DateTransform.swift */; };
-		9FEC15603752A33684BF0FACB25E8E66 /* ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 116CDC2E84F9A0D333AA23F70FC00F95 /* ObjectMapper-dummy.m */; };
-		B9F7C9B6A1CFB141EE4163698430F325 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32841A08959180E8712CA099E6D7E4C /* Operators.swift */; };
-		BC6BCCC636045808D3DE5A2D149066B2 /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DB4774781590049035295CDCA8E14 /* TransformOperators.swift */; };
-		D3DE75C20B5FEAE845165E159A9DFA1F /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C68E9C7E4E90C2E5AA5E2B44CC0FE9 /* EnumOperators.swift */; };
-		D600A3019AC7AFA38D34CC3F9FBD35D6 /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F73F9AD60AFC78F3655214C7A8B0302 /* NSDecimalNumberTransform.swift */; };
-		E33B09AA0B06F5EB5CC27811D4794BD4 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1AEDFAFA0B8C76625BF4BC21FBCEF /* TransformOf.swift */; };
-		ECEB2E8A9BB2F7DBE20904371D3FF1C9 /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA2C5A0B511102ECBC9B8D503F3BD /* DictionaryTransform.swift */; };
-		EE8C221BD9905E2D7108E3F66541FE9A /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE121B7C0172424414655948AB7771 /* TransformType.swift */; };
+		013F4478FA73CCAF3A09BC0881666452 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEF3BBDA58FA2F44B6D6E3BEC637D0 /* Mappable.swift */; };
+		041B85FFA4533A19B1088908AD685008 /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992ECEE7D9545FC6CC059DA83D44399 /* HexColorTransform.swift */; };
+		1AEFDEE4F8FFDE29A855507F0D5B2F0D /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE1D4C8C3ED56386A6D0FCB9FA5622 /* URLTransform.swift */; };
+		20A9C909902F396B9C8A26C5D48F4362 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11AF71A16C781AF9CB405C361587B1D3 /* Foundation.framework */; };
+		23AFC25B49146AF62CAF14018A17A5BB /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AD8DE3D8DD9E3F1FB36B1975562D4 /* ImmutableMappable.swift */; };
+		2C166C81AF078237E077AC5A1073336E /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12F3802312EEDB45C2200CB3EDE83B8 /* EnumTransform.swift */; };
+		30BE14ED8D6B2D03441CF753467494B7 /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C68E9C7E4E90C2E5AA5E2B44CC0FE9 /* EnumOperators.swift */; };
+		540CC20C05CD1FFB479BBD852B16BF71 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1AEDFAFA0B8C76625BF4BC21FBCEF /* TransformOf.swift */; };
+		648B6D26C5C2128173A98A640DD2D929 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4397279B358CDDDD92D27F737875C /* ISO8601DateTransform.swift */; };
+		90547A9E2E83E019FB2E92C86254D589 /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39A70CE1C24E1EDEFEE9C04B8ED8A8 /* DateFormatterTransform.swift */; };
+		93D42C782421F96203A4A77BC1885F39 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE121B7C0172424414655948AB7771 /* TransformType.swift */; };
+		9BDCB9D8C74E58FD0B87B6E43AF15DC7 /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC2B88BEE7B084557D723F94BF853C /* DateTransform.swift */; };
+		A062A6E50C16934EA20E3344C42D99AF /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F73F9AD60AFC78F3655214C7A8B0302 /* NSDecimalNumberTransform.swift */; };
+		AA3BADB529DA833B927441736AA506E8 /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED86E98734A89FA2D357AF616B664E /* CodableTransform.swift */; };
+		AD606B80E2C71F64C1069CF28A73C35E /* IntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6810167A301948F7E6A930E997308DDE /* IntegerOperators.swift */; };
+		CD6E7E5BD74BCE27A1ADB7B4431F153E /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A58A32D0F493633588D3A2CCCBF41D /* Map.swift */; };
+		DADA850430CE19001DFE3C8995DAAD32 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF438191DC169A756882D259AB88CB1 /* CustomDateFormatTransform.swift */; };
+		DC8B8A8C62EAE0CAC0FB5676CAD1BAE6 /* ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 116CDC2E84F9A0D333AA23F70FC00F95 /* ObjectMapper-dummy.m */; };
+		E30A071B802C64275FAD7092D49F7037 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79DE5F24A9A5F39620CEA773F61A348 /* ToJSON.swift */; };
+		E69565288897B19AD8128E4785D33DAC /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6660AA212F1486BEDF31DF611A1F75B1 /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7AA95BD2A48F26D8118E1E26DB65073 /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DB4774781590049035295CDCA8E14 /* TransformOperators.swift */; };
+		E7B9BC185943D7112E6F3F9481C1D531 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E82FD460F5E680E1883AA0D3FB19E8 /* Mapper.swift */; };
+		E8589A6021F8A2A6623B9093B065DC20 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C13853FE45F6BA80A2BDB5DB0AC7D /* MapError.swift */; };
+		E88DB8C09C6009E7F0990028B4CBB28B /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA2C5A0B511102ECBC9B8D503F3BD /* DictionaryTransform.swift */; };
+		EC7FC79711EDA8FE6B90626F65DDD947 /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1584BB8CE7874555877EA3BF86C6F /* DataTransform.swift */; };
+		F15E1274525D84A5231A190419BA41AF /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32841A08959180E8712CA099E6D7E4C /* Operators.swift */; };
+		FDDE2E695C7CB21DFE2BD894FDE59D10 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B5A16B0043EB6FBF9087AEA4031B9 /* FromJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,11 +73,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D010445489FFC7DD8C1A7F38DF3AF1F7 /* Frameworks */ = {
+		6E38E298CBDB709CFC567C15D8389802 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9328FBB6E1D0A00097999D0457697941 /* Foundation.framework in Frameworks */,
+				20A9C909902F396B9C8A26C5D48F4362 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,11 +168,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4432A504B5B0F970E6354AEA0ECA8A60 /* Headers */ = {
+		3394A2DCDAD6C0B4244A4F26F72A4576 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				898B021C8EEA9123A288B71EE2C6EA7B /* ObjectMapper-umbrella.h in Headers */,
+				E69565288897B19AD8128E4785D33DAC /* ObjectMapper-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,12 +181,12 @@
 /* Begin PBXNativeTarget section */
 		4F38DD1163EAAAC1A648D52404EA8805 /* ObjectMapper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 453D2CC1800EE0DD180FA2648DB066BB /* Build configuration list for PBXNativeTarget "ObjectMapper" */;
+			buildConfigurationList = 1DC152B59AC405039490F6534116D93C /* Build configuration list for PBXNativeTarget "ObjectMapper" */;
 			buildPhases = (
-				4432A504B5B0F970E6354AEA0ECA8A60 /* Headers */,
-				9C081FCB65A4E336C8DA678AF3561887 /* Sources */,
-				D010445489FFC7DD8C1A7F38DF3AF1F7 /* Frameworks */,
-				FCA436AA100F6815F67C94F2D1737C46 /* Resources */,
+				3394A2DCDAD6C0B4244A4F26F72A4576 /* Headers */,
+				FC983EEF20A8ABBAFBC160694AA600E1 /* Sources */,
+				6E38E298CBDB709CFC567C15D8389802 /* Frameworks */,
+				41E59A0DFFED9457CE0118E1EBD650E8 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -225,7 +225,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FCA436AA100F6815F67C94F2D1737C46 /* Resources */ = {
+		41E59A0DFFED9457CE0118E1EBD650E8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -235,35 +235,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9C081FCB65A4E336C8DA678AF3561887 /* Sources */ = {
+		FC983EEF20A8ABBAFBC160694AA600E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F15190EBBC83B03062988A4B8F8CB40 /* CodableTransform.swift in Sources */,
-				9626DC9E67834CE0F6520725C1A97ADC /* CustomDateFormatTransform.swift in Sources */,
-				315CACA18DA75D94B567418A0437ED31 /* DataTransform.swift in Sources */,
-				06D096CED450FDE36A3D6349BB27F11C /* DateFormatterTransform.swift in Sources */,
-				9E9873039E3F4E67092CF4D488EA982B /* DateTransform.swift in Sources */,
-				ECEB2E8A9BB2F7DBE20904371D3FF1C9 /* DictionaryTransform.swift in Sources */,
-				D3DE75C20B5FEAE845165E159A9DFA1F /* EnumOperators.swift in Sources */,
-				924FCEB9B7DFB71284D59C485FFB7BAC /* EnumTransform.swift in Sources */,
-				4DB5C672EEF86DBA5ACDCD941B0F372E /* FromJSON.swift in Sources */,
-				372FE28175296F9BD38E2572AD442B9D /* HexColorTransform.swift in Sources */,
-				87DA887ADAA22C1F10B916FAAE1D22B2 /* ImmutableMappable.swift in Sources */,
-				0BF768BCDA51AC330AFA2CB67AA20FAB /* IntegerOperators.swift in Sources */,
-				02E2F2D684ABF0D9510A674345E0847A /* ISO8601DateTransform.swift in Sources */,
-				37655028D2A1EB07337E1C7C5FCB930D /* Map.swift in Sources */,
-				5842DC0B958E852CAE04490154C91A28 /* MapError.swift in Sources */,
-				5E8F026A61F31EED4D3AAF6591919259 /* Mappable.swift in Sources */,
-				608B4B1D5CF2D4B7B7C0D3B38C238C89 /* Mapper.swift in Sources */,
-				D600A3019AC7AFA38D34CC3F9FBD35D6 /* NSDecimalNumberTransform.swift in Sources */,
-				9FEC15603752A33684BF0FACB25E8E66 /* ObjectMapper-dummy.m in Sources */,
-				B9F7C9B6A1CFB141EE4163698430F325 /* Operators.swift in Sources */,
-				4294C2BA88918DCDE93BD60BBC890A1C /* ToJSON.swift in Sources */,
-				E33B09AA0B06F5EB5CC27811D4794BD4 /* TransformOf.swift in Sources */,
-				BC6BCCC636045808D3DE5A2D149066B2 /* TransformOperators.swift in Sources */,
-				EE8C221BD9905E2D7108E3F66541FE9A /* TransformType.swift in Sources */,
-				1680A24B0740D9BB6A112342CBF53BDD /* URLTransform.swift in Sources */,
+				AA3BADB529DA833B927441736AA506E8 /* CodableTransform.swift in Sources */,
+				DADA850430CE19001DFE3C8995DAAD32 /* CustomDateFormatTransform.swift in Sources */,
+				EC7FC79711EDA8FE6B90626F65DDD947 /* DataTransform.swift in Sources */,
+				90547A9E2E83E019FB2E92C86254D589 /* DateFormatterTransform.swift in Sources */,
+				9BDCB9D8C74E58FD0B87B6E43AF15DC7 /* DateTransform.swift in Sources */,
+				E88DB8C09C6009E7F0990028B4CBB28B /* DictionaryTransform.swift in Sources */,
+				30BE14ED8D6B2D03441CF753467494B7 /* EnumOperators.swift in Sources */,
+				2C166C81AF078237E077AC5A1073336E /* EnumTransform.swift in Sources */,
+				FDDE2E695C7CB21DFE2BD894FDE59D10 /* FromJSON.swift in Sources */,
+				041B85FFA4533A19B1088908AD685008 /* HexColorTransform.swift in Sources */,
+				23AFC25B49146AF62CAF14018A17A5BB /* ImmutableMappable.swift in Sources */,
+				AD606B80E2C71F64C1069CF28A73C35E /* IntegerOperators.swift in Sources */,
+				648B6D26C5C2128173A98A640DD2D929 /* ISO8601DateTransform.swift in Sources */,
+				CD6E7E5BD74BCE27A1ADB7B4431F153E /* Map.swift in Sources */,
+				E8589A6021F8A2A6623B9093B065DC20 /* MapError.swift in Sources */,
+				013F4478FA73CCAF3A09BC0881666452 /* Mappable.swift in Sources */,
+				E7B9BC185943D7112E6F3F9481C1D531 /* Mapper.swift in Sources */,
+				A062A6E50C16934EA20E3344C42D99AF /* NSDecimalNumberTransform.swift in Sources */,
+				DC8B8A8C62EAE0CAC0FB5676CAD1BAE6 /* ObjectMapper-dummy.m in Sources */,
+				F15E1274525D84A5231A190419BA41AF /* Operators.swift in Sources */,
+				E30A071B802C64275FAD7092D49F7037 /* ToJSON.swift in Sources */,
+				540CC20C05CD1FFB479BBD852B16BF71 /* TransformOf.swift in Sources */,
+				E7AA95BD2A48F26D8118E1E26DB65073 /* TransformOperators.swift in Sources */,
+				93D42C782421F96203A4A77BC1885F39 /* TransformType.swift in Sources */,
+				1AEFDEE4F8FFDE29A855507F0D5B2F0D /* URLTransform.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +336,68 @@
 			};
 			name = Debug;
 		};
+		3A0E7BF9FFB1CCB156AF29C65C115408 /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug_Test;
+		};
 		4A6CFFB4CF302F0372AD755DEDD23967 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -398,7 +460,7 @@
 			};
 			name = Release;
 		};
-		9B262AFAD4FF3A1D93AB00AE810CF335 /* Debug */ = {
+		4BC8D2220C012F4077CBF0682F2BCA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 160657B16047867FC5AE6872BD4320E9 /* ObjectMapper.debug.xcconfig */;
 			buildSettings = {
@@ -432,7 +494,7 @@
 			};
 			name = Debug;
 		};
-		D3BE544E6F9759479AF8AE2431BBACD5 /* Release */ = {
+		5E433E66BE410129F9BB0875249E22F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F6152071870CF49C187D8B8BB080F023 /* ObjectMapper.release.xcconfig */;
 			buildSettings = {
@@ -467,14 +529,148 @@
 			};
 			name = Release;
 		};
+		6DBFA230052A819BAB1EA36DF5FC69EE /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6152071870CF49C187D8B8BB080F023 /* ObjectMapper.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ObjectMapper/ObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ObjectMapper/ObjectMapper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ObjectMapper/ObjectMapper.modulemap";
+				PRODUCT_MODULE_NAME = ObjectMapper;
+				PRODUCT_NAME = ObjectMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug_Test;
+		};
+		A8F82A5025AA9FF2238C799F3A43E3F9 /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release_Test;
+		};
+		D90CED116E7B0AFEE4C893B79C9052E4 /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6152071870CF49C187D8B8BB080F023 /* ObjectMapper.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ObjectMapper/ObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ObjectMapper/ObjectMapper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ObjectMapper/ObjectMapper.modulemap";
+				PRODUCT_MODULE_NAME = ObjectMapper;
+				PRODUCT_NAME = ObjectMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release_Test;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		453D2CC1800EE0DD180FA2648DB066BB /* Build configuration list for PBXNativeTarget "ObjectMapper" */ = {
+		1DC152B59AC405039490F6534116D93C /* Build configuration list for PBXNativeTarget "ObjectMapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9B262AFAD4FF3A1D93AB00AE810CF335 /* Debug */,
-				D3BE544E6F9759479AF8AE2431BBACD5 /* Release */,
+				4BC8D2220C012F4077CBF0682F2BCA75 /* Debug */,
+				6DBFA230052A819BAB1EA36DF5FC69EE /* Debug_Test */,
+				5E433E66BE410129F9BB0875249E22F4 /* Release */,
+				D90CED116E7B0AFEE4C893B79C9052E4 /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -483,7 +679,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				269DFFBAA09C3FBD9A9E76F509FFEDE7 /* Debug */,
+				3A0E7BF9FFB1CCB156AF29C65C115408 /* Debug_Test */,
 				4A6CFFB4CF302F0372AD755DEDD23967 /* Release */,
+				A8F82A5025AA9FF2238C799F3A43E3F9 /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

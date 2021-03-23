@@ -1,6 +1,8 @@
 BUILD_CONFIGURATIONS:
   Debug: :debug
+  Debug_Test: :release
   Release: :release
+  Release_Test: :release
 CACHE_KEYS:
   Alamofire:
     BUILD_SETTINGS_CHECKSUM:
@@ -411,22 +413,30 @@ CACHE_KEYS:
   Pods-LTXiOSUtilsDemo:
     BUILD_SETTINGS_CHECKSUM:
       Debug: e1eb4c99df6211f0723885f176ffff97
+      Debug_Test: 6c4f55be4ef1b98da71fa9af507b104f
       Release: 6c4f55be4ef1b98da71fa9af507b104f
+      Release_Test: 6c4f55be4ef1b98da71fa9af507b104f
     FILES:
       - "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
       - "${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage/TPNSInAppMessageResource.bundle"
   Pods-LTXiOSUtilsDemoTests:
     BUILD_SETTINGS_CHECKSUM:
       Debug: 9bd5e816a90f24cc1a04fadb63baa25c
+      Debug_Test: b2798c8f6a41fc4f0291ee7c8489261a
       Release: b2798c8f6a41fc4f0291ee7c8489261a
+      Release_Test: b2798c8f6a41fc4f0291ee7c8489261a
   Pods-LTXiOSUtilsDemoUITests:
     BUILD_SETTINGS_CHECKSUM:
       Debug: 9bd5e816a90f24cc1a04fadb63baa25c
+      Debug_Test: b2798c8f6a41fc4f0291ee7c8489261a
       Release: b2798c8f6a41fc4f0291ee7c8489261a
+      Release_Test: b2798c8f6a41fc4f0291ee7c8489261a
   Pods-NotificationServiceExtension:
     BUILD_SETTINGS_CHECKSUM:
       Debug: 13e9b17c45addc423b1a0eeaae946dd3
+      Debug_Test: 13e9b17c45addc423b1a0eeaae946dd3
       Release: 13e9b17c45addc423b1a0eeaae946dd3
+      Release_Test: 13e9b17c45addc423b1a0eeaae946dd3
   R.swift:
     BUILD_SETTINGS_CHECKSUM:
       R.swift:

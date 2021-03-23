@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A462230E8239A6613B412D673CFD32E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B871EE76375656181F36A66DF40085 /* Foundation.framework */; };
-		45A5E96C592A3659A4085DA5489106C2 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FC50497B601DC18B15EF1B5E059AC /* SwiftyJSON-dummy.m */; };
-		62132EEB6E0B7275D75AF73AEC1E026F /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 23DC0335E1CC01DA864D845DF1AD1003 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		89CFDF10E1875AAED5CA18D5F9E8C938 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0484E03EF57BE6DA621E12219052A /* SwiftyJSON.swift */; };
+		CE2B21AC0158B440F85228F44EC44762 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B871EE76375656181F36A66DF40085 /* Foundation.framework */; };
+		ED4E41D12009D77A6E782F07A9374A27 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 23DC0335E1CC01DA864D845DF1AD1003 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFF0E64F50E0A8965CB3B1EEE4D7D3E2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0484E03EF57BE6DA621E12219052A /* SwiftyJSON.swift */; };
+		F6D64CE03A4C516AF38A5E51B1F93B26 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FC50497B601DC18B15EF1B5E059AC /* SwiftyJSON-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +27,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AAFC2A31487419B3C67D482E7DA2CF2B /* Frameworks */ = {
+		F055EEF70895EA99D2B2EAEC8CEDFBE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A462230E8239A6613B412D673CFD32E /* Foundation.framework in Frameworks */,
+				CE2B21AC0158B440F85228F44EC44762 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,11 +99,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4ADAB299DA7AE76870E2B077DFA5100A /* Headers */ = {
+		8835BCFE21B801673BDEF9AF3E00F2F5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62132EEB6E0B7275D75AF73AEC1E026F /* SwiftyJSON-umbrella.h in Headers */,
+				ED4E41D12009D77A6E782F07A9374A27 /* SwiftyJSON-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,12 +112,12 @@
 /* Begin PBXNativeTarget section */
 		AD1A79042DA54FF6DCBF6C015B0E27B5 /* SwiftyJSON */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0602AD423DC495FA07B34623B4706FB9 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildConfigurationList = 5A947FD6AB8DBB6AF02EE0F4D45815B8 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
 			buildPhases = (
-				4ADAB299DA7AE76870E2B077DFA5100A /* Headers */,
-				8371E440EC0550ACE6BD30EED3B0C7C7 /* Sources */,
-				AAFC2A31487419B3C67D482E7DA2CF2B /* Frameworks */,
-				2BCC156463CA77336847EAC77CD4FFD9 /* Resources */,
+				8835BCFE21B801673BDEF9AF3E00F2F5 /* Headers */,
+				429571043B2F32571027A00284718E42 /* Sources */,
+				F055EEF70895EA99D2B2EAEC8CEDFBE0 /* Frameworks */,
+				535245C6CB17229C8FE79B24B59D8296 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -156,7 +156,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2BCC156463CA77336847EAC77CD4FFD9 /* Resources */ = {
+		535245C6CB17229C8FE79B24B59D8296 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,18 +166,88 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8371E440EC0550ACE6BD30EED3B0C7C7 /* Sources */ = {
+		429571043B2F32571027A00284718E42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45A5E96C592A3659A4085DA5489106C2 /* SwiftyJSON-dummy.m in Sources */,
-				89CFDF10E1875AAED5CA18D5F9E8C938 /* SwiftyJSON.swift in Sources */,
+				F6D64CE03A4C516AF38A5E51B1F93B26 /* SwiftyJSON-dummy.m in Sources */,
+				EFF0E64F50E0A8965CB3B1EEE4D7D3E2 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0CA67366A7819ACA8E59C01AB53092B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC01D1DC392A1FBD20641873F9903BA4 /* SwiftyJSON.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyJSON;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1C1AF0102236DD821064251C4A041839 /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC01D1DC392A1FBD20641873F9903BA4 /* SwiftyJSON.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyJSON;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug_Test;
+		};
 		1C581E8B971BB683E26D0628E399E5D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -244,7 +314,7 @@
 			};
 			name = Debug;
 		};
-		A0C5A1A61610F14D373DD6ABA46BC15E /* Release */ = {
+		45CE123E33B05F14095C009D0478BDEB /* Release_Test */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC01D1DC392A1FBD20641873F9903BA4 /* SwiftyJSON.release.xcconfig */;
 			buildSettings = {
@@ -277,9 +347,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Release_Test;
 		};
-		BDE23E235BBC5CB12B898DC77B78E4C1 /* Debug */ = {
+		75CAB526DC2D3BB2B5640B63259C7D74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89F94BFC621046BB1741819EE8325060 /* SwiftyJSON.debug.xcconfig */;
 			buildSettings = {
@@ -312,6 +382,68 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		B7ACB20BDD783DF367CE43FD75CCF91F /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug_Test;
 		};
 		DAC1C6455526CB1FF7D3AF95AB582030 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -375,14 +507,78 @@
 			};
 			name = Release;
 		};
+		E76B7E18AF3971F50FB759B4CE03D905 /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release_Test;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0602AD423DC495FA07B34623B4706FB9 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+		5A947FD6AB8DBB6AF02EE0F4D45815B8 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BDE23E235BBC5CB12B898DC77B78E4C1 /* Debug */,
-				A0C5A1A61610F14D373DD6ABA46BC15E /* Release */,
+				75CAB526DC2D3BB2B5640B63259C7D74 /* Debug */,
+				1C1AF0102236DD821064251C4A041839 /* Debug_Test */,
+				0CA67366A7819ACA8E59C01AB53092B9 /* Release */,
+				45CE123E33B05F14095C009D0478BDEB /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -391,7 +587,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1C581E8B971BB683E26D0628E399E5D3 /* Debug */,
+				B7ACB20BDD783DF367CE43FD75CCF91F /* Debug_Test */,
 				DAC1C6455526CB1FF7D3AF95AB582030 /* Release */,
+				E76B7E18AF3971F50FB759B4CE03D905 /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

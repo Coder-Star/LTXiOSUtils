@@ -14,7 +14,11 @@ public struct NetworkConstant {
     static let isFormal = false //是否正式,正式版为true,测试版为false
 
     static func initUrlInfo() {
+        #if TEST
         NetworkConfig.baseURL = "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock"
+        #else
+        NetworkConfig.baseURL = "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock"
+        #endif
     }
 }
 

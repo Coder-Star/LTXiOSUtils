@@ -216,12 +216,20 @@
 		1011A01BF2B588F7713E3CAE /* Pods-NotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		1DC9762AE5CB5B668AFE2C45 /* Pods-LTXiOSUtilsDemoTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.test.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.test.xcconfig"; sourceTree = "<group>"; };
 		36C4FD638EFAAAF61197BFC0 /* Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemo-LTXiOSUtilsDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3E808A7CFBFF5CBC4965E22A /* Pods-NotificationServiceExtension.release_test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.release_test.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.release_test.xcconfig"; sourceTree = "<group>"; };
+		4593CC14E6B64899F481747E /* Pods-LTXiOSUtilsDemoUITests.debug_test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.debug_test.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.debug_test.xcconfig"; sourceTree = "<group>"; };
 		471AC36F8D0E033490BC8CC3 /* Pods_LTXiOSUtilsDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTXiOSUtilsDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C69EFBC8200F3382DF3C87 /* Pods-LTXiOSUtilsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		5F8883D7E47964A86FFC24AC /* Pods-LTXiOSUtilsDemoUITests.release_test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.release_test.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.release_test.xcconfig"; sourceTree = "<group>"; };
+		698D31D5E555F8D07195C592 /* Pods-LTXiOSUtilsDemo.debug_test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug_test.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug_test.xcconfig"; sourceTree = "<group>"; };
 		728D8E2235C330A124AF1910 /* Pods-LTXiOSUtilsDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C535CB34889F2B5F3CE8C14 /* Pods-LTXiOSUtilsDemoUITests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoUITests.test.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoUITests/Pods-LTXiOSUtilsDemoUITests.test.xcconfig"; sourceTree = "<group>"; };
 		7E69F21B8737A1842F9552D7 /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		87E2891347397D196843BCCE /* Pods-NotificationServiceExtension.debug_test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.debug_test.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.debug_test.xcconfig"; sourceTree = "<group>"; };
+		9580C50398046DEDE204B45E /* Pods-LTXiOSUtilsDemoTests.release_test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.release_test.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.release_test.xcconfig"; sourceTree = "<group>"; };
+		AC47F6729829B77152CE0DBA /* Pods-LTXiOSUtilsDemoTests.debug_test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.debug_test.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.debug_test.xcconfig"; sourceTree = "<group>"; };
 		AD67ACF215A9491588139413 /* Pods-NotificationServiceExtension.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.test.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.test.xcconfig"; sourceTree = "<group>"; };
+		B4C06C744E881DE7EAC325AF /* Pods-LTXiOSUtilsDemo.release_test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.release_test.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.release_test.xcconfig"; sourceTree = "<group>"; };
 		B7DE29899117D25AFAF72C33 /* Pods_NotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94D39D73C90A84C93A55928 /* Pods-LTXiOSUtilsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemoTests/Pods-LTXiOSUtilsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD375FDA7A97CA6E50C9EB37 /* Pods-LTXiOSUtilsDemo.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.test.xcconfig"; path = "Pods/Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.test.xcconfig"; sourceTree = "<group>"; };
@@ -370,6 +378,12 @@
 		DCCF3E5023C8AC46000E65E1 /* SwiftyUserDefaultsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaultsTest.swift; sourceTree = "<group>"; };
 		DCCF3E5223C96B0F000E65E1 /* NetworkStateApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStateApplicationService.swift; sourceTree = "<group>"; };
 		DCD12EA82537096E000A58C0 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		DCD4364B260A1D81008B4BED /* LTXiOSUtilsDemoDebug_Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LTXiOSUtilsDemoDebug_Test.entitlements; sourceTree = "<group>"; };
+		DCD43651260A1D96008B4BED /* LTXiOSUtilsDemoRelease_Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LTXiOSUtilsDemoRelease_Test.entitlements; sourceTree = "<group>"; };
+		DCD43657260A1DAB008B4BED /* NotificationContentExtensionRelease_Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationContentExtensionRelease_Test.entitlements; sourceTree = "<group>"; };
+		DCD43658260A1DB2008B4BED /* NotificationContentExtensionDebug_Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationContentExtensionDebug_Test.entitlements; sourceTree = "<group>"; };
+		DCD43659260A1DBD008B4BED /* NotificationServiceExtensionDebug_Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationServiceExtensionDebug_Test.entitlements; sourceTree = "<group>"; };
+		DCD4365F260A1DC2008B4BED /* NotificationServiceExtensionRelease_Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationServiceExtensionRelease_Test.entitlements; sourceTree = "<group>"; };
 		DCD757E525E656BC00C0793D /* LTXiOSUtilsDemoDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LTXiOSUtilsDemoDebug.entitlements; sourceTree = "<group>"; };
 		DCD757F525E6580400C0793D /* NotificationContentExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationContentExtensionDebug.entitlements; sourceTree = "<group>"; };
 		DCD757F625E6581300C0793D /* NotificationServiceExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationServiceExtensionDebug.entitlements; sourceTree = "<group>"; };
@@ -496,6 +510,14 @@
 				1DC9762AE5CB5B668AFE2C45 /* Pods-LTXiOSUtilsDemoTests.test.xcconfig */,
 				7C535CB34889F2B5F3CE8C14 /* Pods-LTXiOSUtilsDemoUITests.test.xcconfig */,
 				AD67ACF215A9491588139413 /* Pods-NotificationServiceExtension.test.xcconfig */,
+				698D31D5E555F8D07195C592 /* Pods-LTXiOSUtilsDemo.debug_test.xcconfig */,
+				AC47F6729829B77152CE0DBA /* Pods-LTXiOSUtilsDemoTests.debug_test.xcconfig */,
+				4593CC14E6B64899F481747E /* Pods-LTXiOSUtilsDemoUITests.debug_test.xcconfig */,
+				87E2891347397D196843BCCE /* Pods-NotificationServiceExtension.debug_test.xcconfig */,
+				B4C06C744E881DE7EAC325AF /* Pods-LTXiOSUtilsDemo.release_test.xcconfig */,
+				9580C50398046DEDE204B45E /* Pods-LTXiOSUtilsDemoTests.release_test.xcconfig */,
+				5F8883D7E47964A86FFC24AC /* Pods-LTXiOSUtilsDemoUITests.release_test.xcconfig */,
+				3E808A7CFBFF5CBC4965E22A /* Pods-NotificationServiceExtension.release_test.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -742,6 +764,8 @@
 				DC4AB9C822F4606100A5F003 /* Info.plist */,
 				DCDBA7B224FE9C7D0073E293 /* LTXiOSUtilsDemo.entitlements */,
 				DCD757E525E656BC00C0793D /* LTXiOSUtilsDemoDebug.entitlements */,
+				DCD4364B260A1D81008B4BED /* LTXiOSUtilsDemoDebug_Test.entitlements */,
+				DCD43651260A1D96008B4BED /* LTXiOSUtilsDemoRelease_Test.entitlements */,
 				DC32F1A323840A3E008D3D67 /* R.generated.swift */,
 				DC7F38EE247CF07800783D65 /* LTXiOSUtilsDemo-Bridging-Header.h */,
 			);
@@ -1032,6 +1056,8 @@
 		DCAA754D25309C8100240398 /* NotificationContentExtension */ = {
 			isa = PBXGroup;
 			children = (
+				DCD43658260A1DB2008B4BED /* NotificationContentExtensionDebug_Test.entitlements */,
+				DCD43657260A1DAB008B4BED /* NotificationContentExtensionRelease_Test.entitlements */,
 				DCD7580825E6618100C0793D /* NotificationContentExtensionRelease.entitlements */,
 				DCD757F525E6580400C0793D /* NotificationContentExtensionDebug.entitlements */,
 				DCAA754E25309C8100240398 /* NotificationViewController.swift */,
@@ -1044,6 +1070,8 @@
 		DCAA756425309CBD00240398 /* NotificationServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
+				DCD4365F260A1DC2008B4BED /* NotificationServiceExtensionRelease_Test.entitlements */,
+				DCD43659260A1DBD008B4BED /* NotificationServiceExtensionDebug_Test.entitlements */,
 				DCD7580725E6617900C0793D /* NotificationServiceExtensionRelease.entitlements */,
 				DCD757F625E6581300C0793D /* NotificationServiceExtensionDebug.entitlements */,
 				DCAA756525309CBD00240398 /* NotificationService.swift */,
@@ -1277,7 +1305,7 @@
 				DC62A7C92384093900DE7800 /* R.swift */,
 				DC55E58923FBE7BB008C6941 /* Update App Version 自动替换故事板上的APP版本 */,
 				DCF41C2D2382282D00D7B13D /* SwiftLint配置检测脚本路径 */,
-				2F290A8B7D3E5348398F85FE /* [CP-User] Run Flutter Build flutter_module Script */,
+				A52B2AE4723CC01B62EBC2D0 /* [CP-User] Run Flutter Build flutter_module Script */,
 				DC4AB9B522F4606000A5F003 /* Sources */,
 				DC4AB9B622F4606000A5F003 /* Frameworks */,
 				DC4AB9B722F4606000A5F003 /* Resources */,
@@ -1487,16 +1515,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2F290A8B7D3E5348398F85FE /* [CP-User] Run Flutter Build flutter_module Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "[CP-User] Run Flutter Build flutter_module Script";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../Flutter/flutter_module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
-		};
 		35E644F936D76BEC4CC26FF6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1552,6 +1570,16 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A52B2AE4723CC01B62EBC2D0 /* [CP-User] Run Flutter Build flutter_module Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Run Flutter Build flutter_module Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../Flutter/flutter_module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build\n";
 		};
 		C0B05217F7247966D6BF26D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1913,6 +1941,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_DISPALY_NAME = "LTX基础iOS项目";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1977,6 +2006,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_DISPALY_NAME = "LTX基础iOS项目";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2695,6 +2725,799 @@
 			};
 			name = Release;
 		};
+		DCD43386260A1816008B4BED /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_DISPALY_NAME = "LTX基础iOS项目(Test)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug_Test;
+		};
+		DCD43387260A1816008B4BED /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 698D31D5E555F8D07195C592 /* Pods-LTXiOSUtilsDemo.debug_test.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconTest;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LTXiOSUtilsDemo/LTXiOSUtilsDemoDebug_Test.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Q4PJEY75E2;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_GENERATE_MAP_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LTXiOSUtilsDemo/Lib/lame",
+				);
+				MARKETING_VERSION = 1.0.0;
+				ORDER_FILE = "${SRCROOT}/lib.order";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CTMediator/CTMediator.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack/CocoaLumberjack.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FSPagerView/FSPagerView.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GDPerformanceView-Swift/GDPerformanceView_Swift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess/KeychainAccess.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Localize-Swift/Localize_Swift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MGJRouter/MGJRouter.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Macaw/Macaw.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Moya/Moya.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper/ObjectMapper.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift/Reachability.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVGKit/SVGKit.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SWXMLHash/SWXMLHash.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftDate/SwiftDate.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftSVG/SwiftSVG.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController/TZImagePickerController.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/URLNavigator/URLNavigator.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/XHLaunchAd/XHLaunchAd.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ZYCornerRadius/ZYCornerRadius.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/dsBridge/dsBridge.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_boost/flutter_boost.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_star_plugin/flutter_star_plugin.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_webview_plugin/flutter_webview_plugin.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios/Lottie.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/path_provider/path_provider.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences/shared_preferences.framework/Headers\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"-iframework",
+					"\"${PODS_ROOT}/Bugly\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CTMediator\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FSPagerView\"",
+					"-iframework",
+					"\"${PODS_ROOT}/../../Flutter/flutter_module/.ios/Flutter/engine\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GDPerformanceView-Swift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Localize-Swift\"",
+					"-iframework",
+					"\"${PODS_ROOT}/LookinServer\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MGJRouter\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Macaw\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Moya\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SKPhotoBrowser\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVGKit\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SWXMLHash\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftDate\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftSVG\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyUserDefaults\"",
+					"-iframework",
+					"\"${PODS_ROOT}/TPNS-iOS/XGVIPPush\"",
+					"-iframework",
+					"\"${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/UITableView+FDTemplateLayoutCell\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/URLNavigator\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/WebViewJavascriptBridge\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/XHLaunchAd\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ZYCornerRadius\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/dsBridge\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_boost\"",
+					"-iframework",
+					"\"${PODS_ROOT}/../../Flutter/flutter_module/.ios/Flutter\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_star_plugin\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_webview_plugin\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios\"",
+					"-iframework",
+					"\"${PODS_ROOT}/mp3lame-for-ios\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/path_provider\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences\"",
+					"-fsanitize-coverage=func,trace-pc-guard",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -sanitize-coverage=func -sanitize=undefined";
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TEST";
+				SWIFT_OBJC_BRIDGING_HEADER = "LTXiOSUtilsDemo/LTXiOSUtilsDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
+			};
+			name = Debug_Test;
+		};
+		DCD43388260A1816008B4BED /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC47F6729829B77152CE0DBA /* Pods-LTXiOSUtilsDemoTests.debug_test.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6C67KJ54CD;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = LTXiOSUtilsDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LTXiOSUtilsDemo.app/LTXiOSUtilsDemo";
+			};
+			name = Debug_Test;
+		};
+		DCD43389260A1816008B4BED /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4593CC14E6B64899F481747E /* Pods-LTXiOSUtilsDemoUITests.debug_test.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6C67KJ54CD;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = LTXiOSUtilsDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LTXiOSUtilsDemo;
+			};
+			name = Debug_Test;
+		};
+		DCD4338A260A1816008B4BED /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = NotificationContentExtension/NotificationContentExtensionDebug_Test.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4PJEY75E2;
+				INFOPLIST_FILE = NotificationContentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsTest.NotificationContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TEST";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug_Test;
+		};
+		DCD4338B260A1816008B4BED /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87E2891347397D196843BCCE /* Pods-NotificationServiceExtension.debug_test.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = NotificationServiceExtension/NotificationServiceExtensionDebug_Test.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4PJEY75E2;
+				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsTest.NotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TEST";
+				SWIFT_OBJC_BRIDGING_HEADER = "NotificationServiceExtension/NotificationServiceExtension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug_Test;
+		};
+		DCD4354E260A19AB008B4BED /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_DISPALY_NAME = "LTX基础iOS项目(Test)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release_Test;
+		};
+		DCD4354F260A19AB008B4BED /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4C06C744E881DE7EAC325AF /* Pods-LTXiOSUtilsDemo.release_test.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconTest;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LTXiOSUtilsDemo/LTXiOSUtilsDemoRelease_Test.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4PJEY75E2;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LTXiOSUtilsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_GENERATE_MAP_FILE = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LTXiOSUtilsDemo/Lib/lame",
+				);
+				MARKETING_VERSION = 1.0.0;
+				ORDER_FILE = "${SRCROOT}/lib.order";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CTMediator/CTMediator.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack/CocoaLumberjack.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FSPagerView/FSPagerView.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GDPerformanceView-Swift/GDPerformanceView_Swift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess/KeychainAccess.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Localize-Swift/Localize_Swift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MGJRouter/MGJRouter.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Macaw/Macaw.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Moya/Moya.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper/ObjectMapper.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift/Reachability.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVGKit/SVGKit.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SWXMLHash/SWXMLHash.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftDate/SwiftDate.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftSVG/SwiftSVG.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController/TZImagePickerController.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/URLNavigator/URLNavigator.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/XHLaunchAd/XHLaunchAd.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ZYCornerRadius/ZYCornerRadius.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/dsBridge/dsBridge.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_boost/flutter_boost.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_star_plugin/flutter_star_plugin.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_webview_plugin/flutter_webview_plugin.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios/Lottie.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/path_provider/path_provider.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences/shared_preferences.framework/Headers\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"-iframework",
+					"\"${PODS_ROOT}/Bugly\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CTMediator\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FSPagerView\"",
+					"-iframework",
+					"\"${PODS_ROOT}/../../Flutter/flutter_module/.ios/Flutter/engine\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GDPerformanceView-Swift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Localize-Swift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MGJRouter\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Macaw\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Moya\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SKPhotoBrowser\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVGKit\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SWXMLHash\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftDate\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftSVG\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyUserDefaults\"",
+					"-iframework",
+					"\"${PODS_ROOT}/TPNS-iOS/XGVIPPush\"",
+					"-iframework",
+					"\"${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/UITableView+FDTemplateLayoutCell\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/URLNavigator\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/WebViewJavascriptBridge\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/XHLaunchAd\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ZYCornerRadius\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/dsBridge\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_boost\"",
+					"-iframework",
+					"\"${PODS_ROOT}/../../Flutter/flutter_module/.ios/Flutter\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_star_plugin\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_webview_plugin\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios\"",
+					"-iframework",
+					"\"${PODS_ROOT}/mp3lame-for-ios\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/path_provider\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences\"",
+					"-fsanitize-coverage=func,trace-pc-guard",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -sanitize-coverage=func -sanitize=undefined";
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TEST;
+				SWIFT_OBJC_BRIDGING_HEADER = "LTXiOSUtilsDemo/LTXiOSUtilsDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
+			};
+			name = Release_Test;
+		};
+		DCD43550260A19AB008B4BED /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9580C50398046DEDE204B45E /* Pods-LTXiOSUtilsDemoTests.release_test.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6C67KJ54CD;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = LTXiOSUtilsDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LTXiOSUtilsDemo.app/LTXiOSUtilsDemo";
+			};
+			name = Release_Test;
+		};
+		DCD43551260A19AB008B4BED /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F8883D7E47964A86FFC24AC /* Pods-LTXiOSUtilsDemoUITests.release_test.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6C67KJ54CD;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = LTXiOSUtilsDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LTXiOSUtilsDemo;
+			};
+			name = Release_Test;
+		};
+		DCD43552260A19AB008B4BED /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = NotificationContentExtension/NotificationContentExtensionRelease_Test.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4PJEY75E2;
+				INFOPLIST_FILE = NotificationContentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsTest.NotificationContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TEST;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release_Test;
+		};
+		DCD43553260A19AB008B4BED /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E808A7CFBFF5CBC4965E22A /* Pods-NotificationServiceExtension.release_test.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = NotificationServiceExtension/NotificationServiceExtensionRelease_Test.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4PJEY75E2;
+				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.star.LTXiOSUtilsTest.NotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TEST;
+				SWIFT_OBJC_BRIDGING_HEADER = "NotificationServiceExtension/NotificationServiceExtension-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release_Test;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2702,7 +3525,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC4AB9DF22F4606100A5F003 /* Debug */,
+				DCD43386260A1816008B4BED /* Debug_Test */,
 				DC4AB9E022F4606100A5F003 /* Release */,
+				DCD4354E260A19AB008B4BED /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2711,7 +3536,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC4AB9E222F4606100A5F003 /* Debug */,
+				DCD43387260A1816008B4BED /* Debug_Test */,
 				DC4AB9E322F4606100A5F003 /* Release */,
+				DCD4354F260A19AB008B4BED /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2720,7 +3547,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC4AB9E522F4606100A5F003 /* Debug */,
+				DCD43388260A1816008B4BED /* Debug_Test */,
 				DC4AB9E622F4606100A5F003 /* Release */,
+				DCD43550260A19AB008B4BED /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2729,7 +3558,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC4AB9E822F4606100A5F003 /* Debug */,
+				DCD43389260A1816008B4BED /* Debug_Test */,
 				DC4AB9E922F4606100A5F003 /* Release */,
+				DCD43551260A19AB008B4BED /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2738,7 +3569,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCAA755825309C8200240398 /* Debug */,
+				DCD4338A260A1816008B4BED /* Debug_Test */,
 				DCAA755925309C8200240398 /* Release */,
+				DCD43552260A19AB008B4BED /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2747,7 +3580,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCAA756C25309CBD00240398 /* Debug */,
+				DCD4338B260A1816008B4BED /* Debug_Test */,
 				DCAA756D25309CBD00240398 /* Release */,
+				DCD43553260A19AB008B4BED /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

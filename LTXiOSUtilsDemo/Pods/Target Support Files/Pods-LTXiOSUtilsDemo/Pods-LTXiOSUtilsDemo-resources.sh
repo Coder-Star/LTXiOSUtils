@@ -100,7 +100,15 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
   install_resource "${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage/TPNSInAppMessageResource.bundle"
 fi
+if [[ "$CONFIGURATION" == "Debug_Test" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
+  install_resource "${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage/TPNSInAppMessageResource.bundle"
+fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
+  install_resource "${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage/TPNSInAppMessageResource.bundle"
+fi
+if [[ "$CONFIGURATION" == "Release_Test" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils/LTXiOSUtils.bundle"
   install_resource "${PODS_ROOT}/TPNS-iOS/XGVIPPush/InAppMessage/TPNSInAppMessageResource.bundle"
 fi

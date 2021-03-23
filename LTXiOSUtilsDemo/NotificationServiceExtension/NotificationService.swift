@@ -103,7 +103,11 @@ extension NotificationService {
 
 extension NotificationService {
     private func getGroupInfo() {
+        #if TEST
+        let appGroupIdentifier = "group.com.star.LTXiOSUtilsTest.extension"
+        #else
         let appGroupIdentifier = "group.com.star.LTXiOSUtils.extension"
+        #endif
         let userDefaults = UserDefaults(suiteName: appGroupIdentifier)
         print(userDefaults?.value(forKey: "123") as Any)
     }

@@ -49,6 +49,11 @@ public struct Constants {
 
 extension Constants {
     enum AppGroupIdentifier: String {
+        #if TEST
+        // swiftlint:disable duplicate_enum_cases
+        case common = "group.com.star.LTXiOSUtilsTest.extension"
+        #else
         case common = "group.com.star.LTXiOSUtils.extension"
+        #endif
     }
 }

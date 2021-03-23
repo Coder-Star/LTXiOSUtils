@@ -6,7 +6,7 @@ flutter_application_path = '../Flutter/flutter_module'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 # 多project模式，每一个pod包是一个project
-install! 'cocoapods', :generate_multiple_pod_projects => true, :incremental_installation => true, :warn_for_unused_master_specs_repo => false
+#install! 'cocoapods', :generate_multiple_pod_projects => true, :incremental_installation => true, :warn_for_unused_master_specs_repo => false
 
 target 'LTXiOSUtilsDemo' do
 #  source 'https://github.com/CocoaPods/Specs.git' # 公有库地址

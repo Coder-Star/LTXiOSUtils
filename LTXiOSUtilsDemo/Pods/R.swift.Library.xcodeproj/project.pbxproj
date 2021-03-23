@@ -7,36 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04C84930A1666CB31E4AA29C78BF5422 /* UINib+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA2DF16AF41EEAF3D192317F4CB8FD /* UINib+NibResource.swift */; };
-		066D6903E32FD375F61563D3FD135586 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6345E58BA358AE234137F8649BB47E0 /* Identifier.swift */; };
-		0791BB9877C0695ADAC33907E864469C /* NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2669DF823AC7148ACC6995A6BC2CAD5D /* NibResource.swift */; };
-		1229E61FD55D7FA09D8C6EA584472236 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E86EFB28CE1FDAC538CC87BA85AFE0 /* Validatable.swift */; };
-		12B4726A2F374A384550670F587C1765 /* ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3AF7420033891FE325E22BF08CF46 /* ColorResource.swift */; };
-		133D58DA76390C4815A21898874BC025 /* StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EFD9BAE662D567150C610DB558709 /* StoryboardResource.swift */; };
-		17D3C19C75FE9BD19616E32A6C822542 /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE830BC62069D8306382C4B4EC279834 /* StringResource.swift */; };
-		19276ED8FAF77DE770A143CA818DA90F /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D35D43CE7071E6A0413834D9A02964 /* ImageResource.swift */; };
-		289640D4FC3FE9864E909EBF8F0F2051 /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9D902025BE9976A24616DBA7D08F3A /* UIViewController+StoryboardSegueIdentifierProtocol.swift */; };
-		2EB8E98C2D9DCDC7C030B2A32A1119A3 /* FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A082CC0C4276FC2C5302AD09AB6700BD /* FileResource.swift */; };
-		37CCBADB8DB0735ADA69ABE8D19879B5 /* StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBE4BAE53D934DB55228EDC721FF79 /* StoryboardViewControllerResource.swift */; };
-		4E067A622B89A8F23DCE44B0057F76E9 /* UIFont+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C39B2E711E276B2D126EF242DD982 /* UIFont+FontResource.swift */; };
-		6C1629F75DAA1BC61962DFECCD55872E /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2985B8304D310B87F3A02632595E69A /* UIStoryboard+StoryboardViewControllerResource.swift */; };
-		810BC920F593D19F50EC7046948E6C73 /* StoryboardResourceWithInitialController+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266E5651CC84B1071D707AEDB5DB1945 /* StoryboardResourceWithInitialController+UIKit.swift */; };
-		8B756849731AF70DF86F26BB387FE345 /* UIStoryboard+StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C411A1FD05163B4A9F300AC428C26CF2 /* UIStoryboard+StoryboardResource.swift */; };
-		8D96B5CA70DC4D7375B7DC4A638FCC3B /* NibResource+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543FB18DD737F2D7DEAAF3DB67F582E /* NibResource+UIKit.swift */; };
-		937C610128B15706FFEBE254F6DDDED0 /* R.swift.Library-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5863C260841B827CD6DAF3EFBDF63C78 /* R.swift.Library-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AF859EFBDE2FEDD0ECE219C2B6AE7EE4 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F17BB1DD05264547C1615E7CCC84BA /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */; };
-		C28F2A58740626996DAA8B7D2B55FAFF /* Bundle+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AA3E281812FBE3BCAE65081B7F1C59 /* Bundle+FileResource.swift */; };
-		C2985CA4F188B5DABF28746EC7E428D2 /* Data+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A0D6FE6B14AEC444352733B74E7620 /* Data+FileResource.swift */; };
-		C611ACF6000FE9B19089CDF6DC72E162 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE17BA66F3F0333EE62DFAA8B512C9C /* Foundation.framework */; };
-		D32FDF7E1A7D7ADFA3497D8DE42D5CEE /* UIViewController+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AE537895379CBE833189C9A4FA127 /* UIViewController+NibResource.swift */; };
-		D392699838E40A17CD2A47624DB52CAC /* StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D868A4318827ECCF8582C4F549BE0472 /* StoryboardSegueIdentifierProtocol.swift */; };
-		D4C8C8175885954675B49C00EA67F8F6 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FFF574DA865FFE4A38141EA3C0552 /* ReuseIdentifierProtocol.swift */; };
-		E07CE8CA2CD9D4E7FCC61D651E641541 /* UITableView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EEB92F64982D56632206A7D19F4C2F /* UITableView+ReuseIdentifierProtocol.swift */; };
-		E25E6E76525ABDB08407DCDFD11CB870 /* UIColor+ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2628B93B8AFA10A0EC55DA4CE2BCBB /* UIColor+ColorResource.swift */; };
-		E2D3967552589AB136AFF0DF056ECD4F /* UIImage+ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916EEF0BE2CEE80B92E1DEC528ABE162 /* UIImage+ImageResource.swift */; };
-		E5458C1353C215858FA56FBBC3D2A7D2 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB623CD96D0DA2D748EB71A1086CA2A /* FontResource.swift */; };
-		EA0799DE42A7B58B069B4D88894203AC /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF2A8F8DBE5CCC0E46AE3DCCC8F6E0 /* UICollectionView+ReuseIdentifierProtocol.swift */; };
-		F916EEA632BDA5DD9C232559E7B7F391 /* R.swift.Library-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 241C64CE32764417C660E090E4681BE7 /* R.swift.Library-dummy.m */; };
+		147F82A140B8BC1BE7136D1EBC3CD4AF /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9D902025BE9976A24616DBA7D08F3A /* UIViewController+StoryboardSegueIdentifierProtocol.swift */; };
+		1F9113A4094101EE06CE124A2A571674 /* ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3AF7420033891FE325E22BF08CF46 /* ColorResource.swift */; };
+		2BF6D6AC267FA0DF843098D011BE4B32 /* Data+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A0D6FE6B14AEC444352733B74E7620 /* Data+FileResource.swift */; };
+		2CC359D411FE33C1F1681A74C7E22E98 /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2985B8304D310B87F3A02632595E69A /* UIStoryboard+StoryboardViewControllerResource.swift */; };
+		2EED008094DE87B179DCF328EE53AE0E /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB623CD96D0DA2D748EB71A1086CA2A /* FontResource.swift */; };
+		499A3B46B6B0E2F0BEA76169EF00C840 /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF2A8F8DBE5CCC0E46AE3DCCC8F6E0 /* UICollectionView+ReuseIdentifierProtocol.swift */; };
+		4B8C53856402156881D38A82C5F270CD /* UIStoryboard+StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C411A1FD05163B4A9F300AC428C26CF2 /* UIStoryboard+StoryboardResource.swift */; };
+		4CB0E12732DF6FD3801DB24C6B1F663C /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E86EFB28CE1FDAC538CC87BA85AFE0 /* Validatable.swift */; };
+		5681BC45C283744EB485EE8AF2A134E7 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F17BB1DD05264547C1615E7CCC84BA /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */; };
+		61B7FC93AAF37427FACE3C6E77A0A52B /* R.swift.Library-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5863C260841B827CD6DAF3EFBDF63C78 /* R.swift.Library-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6509CC3F8C4942E82B26300ABD94C43B /* UIFont+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C39B2E711E276B2D126EF242DD982 /* UIFont+FontResource.swift */; };
+		6C80C5D735B02D26812EE0EF441782AE /* R.swift.Library-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 241C64CE32764417C660E090E4681BE7 /* R.swift.Library-dummy.m */; };
+		6F19A4A7692EEBD10C5D77E9AB64E1EE /* NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2669DF823AC7148ACC6995A6BC2CAD5D /* NibResource.swift */; };
+		890BFB00B5F34C95413E74EC9C73E3A0 /* FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A082CC0C4276FC2C5302AD09AB6700BD /* FileResource.swift */; };
+		97777ADD9B8907C20A9B42F9E0633749 /* UIImage+ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916EEF0BE2CEE80B92E1DEC528ABE162 /* UIImage+ImageResource.swift */; };
+		A8BCB2CF68D45769FCE4C6D34CE12B2C /* UIColor+ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2628B93B8AFA10A0EC55DA4CE2BCBB /* UIColor+ColorResource.swift */; };
+		A8DCB0AD108E9A3814B0924690D6589C /* UIViewController+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AE537895379CBE833189C9A4FA127 /* UIViewController+NibResource.swift */; };
+		AC8B1AAF4E6278C30DCB4EE454E305AE /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FFF574DA865FFE4A38141EA3C0552 /* ReuseIdentifierProtocol.swift */; };
+		AD84D4E40C9857655C693BC721E57D9F /* Bundle+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AA3E281812FBE3BCAE65081B7F1C59 /* Bundle+FileResource.swift */; };
+		B436286163EB5CEB5DF695F806BBC200 /* StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EFD9BAE662D567150C610DB558709 /* StoryboardResource.swift */; };
+		BC41FEC533D8F256A0E11247BFA4D720 /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D35D43CE7071E6A0413834D9A02964 /* ImageResource.swift */; };
+		C2B6A8D48F93082ADAC9AC4BD37251BE /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6345E58BA358AE234137F8649BB47E0 /* Identifier.swift */; };
+		CEE946EFBAB5CE9C183B08DCC1C190E5 /* NibResource+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543FB18DD737F2D7DEAAF3DB67F582E /* NibResource+UIKit.swift */; };
+		D028BFA13F49FB26FDE2001ECBBB5F54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE17BA66F3F0333EE62DFAA8B512C9C /* Foundation.framework */; };
+		D7473A55C8CF994434FE94728B2CD1FF /* StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBE4BAE53D934DB55228EDC721FF79 /* StoryboardViewControllerResource.swift */; };
+		DEEF2AC8E1D24AD868EB64BD2A78AFE2 /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE830BC62069D8306382C4B4EC279834 /* StringResource.swift */; };
+		EA346D1A600D3780E9F53E2B425CB4A8 /* StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D868A4318827ECCF8582C4F549BE0472 /* StoryboardSegueIdentifierProtocol.swift */; };
+		EBBBBC66E7C4B4848326835927574D3C /* StoryboardResourceWithInitialController+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266E5651CC84B1071D707AEDB5DB1945 /* StoryboardResourceWithInitialController+UIKit.swift */; };
+		F052810B0B5E792999B30C67CB18F11A /* UITableView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EEB92F64982D56632206A7D19F4C2F /* UITableView+ReuseIdentifierProtocol.swift */; };
+		FF80F6EA78F2115D2DAFECDF6DA3A96A /* UINib+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA2DF16AF41EEAF3D192317F4CB8FD /* UINib+NibResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,11 +79,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0D3FF50E167DEFDEDB8A72ECABEF2E49 /* Frameworks */ = {
+		6DCD047783CD148C84A38C05F735AFB1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C611ACF6000FE9B19089CDF6DC72E162 /* Foundation.framework in Frameworks */,
+				D028BFA13F49FB26FDE2001ECBBB5F54 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,11 +177,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2948AD6BE1738FCC9A66803436A56176 /* Headers */ = {
+		FAE07F62FC9884F5A07B8C36DFA895D1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				937C610128B15706FFEBE254F6DDDED0 /* R.swift.Library-umbrella.h in Headers */,
+				61B7FC93AAF37427FACE3C6E77A0A52B /* R.swift.Library-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,12 +190,12 @@
 /* Begin PBXNativeTarget section */
 		61AC8FF22886EA444144B44F9AC733B8 /* R.swift.Library */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6021AAB81D1FE71F48A75CF12682FD86 /* Build configuration list for PBXNativeTarget "R.swift.Library" */;
+			buildConfigurationList = B7893BF1989B6FF9CCFBA035D0777846 /* Build configuration list for PBXNativeTarget "R.swift.Library" */;
 			buildPhases = (
-				2948AD6BE1738FCC9A66803436A56176 /* Headers */,
-				2AE40146F6E7129785DF8E5325548619 /* Sources */,
-				0D3FF50E167DEFDEDB8A72ECABEF2E49 /* Frameworks */,
-				5A3EFD901F937DD6CB6E983F4480B6F9 /* Resources */,
+				FAE07F62FC9884F5A07B8C36DFA895D1 /* Headers */,
+				A454E53DA0AE122666707E4DC4230943 /* Sources */,
+				6DCD047783CD148C84A38C05F735AFB1 /* Frameworks */,
+				B2EA9A8D18ED443199905367FE396432 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -234,7 +234,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5A3EFD901F937DD6CB6E983F4480B6F9 /* Resources */ = {
+		B2EA9A8D18ED443199905367FE396432 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -244,38 +244,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2AE40146F6E7129785DF8E5325548619 /* Sources */ = {
+		A454E53DA0AE122666707E4DC4230943 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C28F2A58740626996DAA8B7D2B55FAFF /* Bundle+FileResource.swift in Sources */,
-				12B4726A2F374A384550670F587C1765 /* ColorResource.swift in Sources */,
-				C2985CA4F188B5DABF28746EC7E428D2 /* Data+FileResource.swift in Sources */,
-				2EB8E98C2D9DCDC7C030B2A32A1119A3 /* FileResource.swift in Sources */,
-				E5458C1353C215858FA56FBBC3D2A7D2 /* FontResource.swift in Sources */,
-				066D6903E32FD375F61563D3FD135586 /* Identifier.swift in Sources */,
-				19276ED8FAF77DE770A143CA818DA90F /* ImageResource.swift in Sources */,
-				8D96B5CA70DC4D7375B7DC4A638FCC3B /* NibResource+UIKit.swift in Sources */,
-				0791BB9877C0695ADAC33907E864469C /* NibResource.swift in Sources */,
-				F916EEA632BDA5DD9C232559E7B7F391 /* R.swift.Library-dummy.m in Sources */,
-				D4C8C8175885954675B49C00EA67F8F6 /* ReuseIdentifierProtocol.swift in Sources */,
-				133D58DA76390C4815A21898874BC025 /* StoryboardResource.swift in Sources */,
-				810BC920F593D19F50EC7046948E6C73 /* StoryboardResourceWithInitialController+UIKit.swift in Sources */,
-				D392699838E40A17CD2A47624DB52CAC /* StoryboardSegueIdentifierProtocol.swift in Sources */,
-				37CCBADB8DB0735ADA69ABE8D19879B5 /* StoryboardViewControllerResource.swift in Sources */,
-				17D3C19C75FE9BD19616E32A6C822542 /* StringResource.swift in Sources */,
-				AF859EFBDE2FEDD0ECE219C2B6AE7EE4 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift in Sources */,
-				EA0799DE42A7B58B069B4D88894203AC /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */,
-				E25E6E76525ABDB08407DCDFD11CB870 /* UIColor+ColorResource.swift in Sources */,
-				4E067A622B89A8F23DCE44B0057F76E9 /* UIFont+FontResource.swift in Sources */,
-				E2D3967552589AB136AFF0DF056ECD4F /* UIImage+ImageResource.swift in Sources */,
-				04C84930A1666CB31E4AA29C78BF5422 /* UINib+NibResource.swift in Sources */,
-				8B756849731AF70DF86F26BB387FE345 /* UIStoryboard+StoryboardResource.swift in Sources */,
-				6C1629F75DAA1BC61962DFECCD55872E /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */,
-				E07CE8CA2CD9D4E7FCC61D651E641541 /* UITableView+ReuseIdentifierProtocol.swift in Sources */,
-				D32FDF7E1A7D7ADFA3497D8DE42D5CEE /* UIViewController+NibResource.swift in Sources */,
-				289640D4FC3FE9864E909EBF8F0F2051 /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */,
-				1229E61FD55D7FA09D8C6EA584472236 /* Validatable.swift in Sources */,
+				AD84D4E40C9857655C693BC721E57D9F /* Bundle+FileResource.swift in Sources */,
+				1F9113A4094101EE06CE124A2A571674 /* ColorResource.swift in Sources */,
+				2BF6D6AC267FA0DF843098D011BE4B32 /* Data+FileResource.swift in Sources */,
+				890BFB00B5F34C95413E74EC9C73E3A0 /* FileResource.swift in Sources */,
+				2EED008094DE87B179DCF328EE53AE0E /* FontResource.swift in Sources */,
+				C2B6A8D48F93082ADAC9AC4BD37251BE /* Identifier.swift in Sources */,
+				BC41FEC533D8F256A0E11247BFA4D720 /* ImageResource.swift in Sources */,
+				CEE946EFBAB5CE9C183B08DCC1C190E5 /* NibResource+UIKit.swift in Sources */,
+				6F19A4A7692EEBD10C5D77E9AB64E1EE /* NibResource.swift in Sources */,
+				6C80C5D735B02D26812EE0EF441782AE /* R.swift.Library-dummy.m in Sources */,
+				AC8B1AAF4E6278C30DCB4EE454E305AE /* ReuseIdentifierProtocol.swift in Sources */,
+				B436286163EB5CEB5DF695F806BBC200 /* StoryboardResource.swift in Sources */,
+				EBBBBC66E7C4B4848326835927574D3C /* StoryboardResourceWithInitialController+UIKit.swift in Sources */,
+				EA346D1A600D3780E9F53E2B425CB4A8 /* StoryboardSegueIdentifierProtocol.swift in Sources */,
+				D7473A55C8CF994434FE94728B2CD1FF /* StoryboardViewControllerResource.swift in Sources */,
+				DEEF2AC8E1D24AD868EB64BD2A78AFE2 /* StringResource.swift in Sources */,
+				5681BC45C283744EB485EE8AF2A134E7 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift in Sources */,
+				499A3B46B6B0E2F0BEA76169EF00C840 /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */,
+				A8BCB2CF68D45769FCE4C6D34CE12B2C /* UIColor+ColorResource.swift in Sources */,
+				6509CC3F8C4942E82B26300ABD94C43B /* UIFont+FontResource.swift in Sources */,
+				97777ADD9B8907C20A9B42F9E0633749 /* UIImage+ImageResource.swift in Sources */,
+				FF80F6EA78F2115D2DAFECDF6DA3A96A /* UINib+NibResource.swift in Sources */,
+				4B8C53856402156881D38A82C5F270CD /* UIStoryboard+StoryboardResource.swift in Sources */,
+				2CC359D411FE33C1F1681A74C7E22E98 /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */,
+				F052810B0B5E792999B30C67CB18F11A /* UITableView+ReuseIdentifierProtocol.swift in Sources */,
+				A8DCB0AD108E9A3814B0924690D6589C /* UIViewController+NibResource.swift in Sources */,
+				147F82A140B8BC1BE7136D1EBC3CD4AF /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */,
+				4CB0E12732DF6FD3801DB24C6B1F663C /* Validatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +348,172 @@
 			};
 			name = Debug;
 		};
+		14A8446BE15D9DBFAE5A96B5C7F3680B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA7C479A8FB69F0F707E933476011DBB /* R.swift.Library.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/R.swift.Library/R.swift.Library-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
+				PRODUCT_MODULE_NAME = Rswift;
+				PRODUCT_NAME = Rswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1BA8E9C71CF97F65AB9C9287F3F1721B /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06A4C248292207C3A8654DF0F5819F5B /* R.swift.Library.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/R.swift.Library/R.swift.Library-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
+				PRODUCT_MODULE_NAME = Rswift;
+				PRODUCT_NAME = Rswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug_Test;
+		};
+		547998EE5A40EE3BC9B03334F9CCDB00 /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release_Test;
+		};
+		6436059F825480535DE5536F7F56AE50 /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06A4C248292207C3A8654DF0F5819F5B /* R.swift.Library.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/R.swift.Library/R.swift.Library-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
+				PRODUCT_MODULE_NAME = Rswift;
+				PRODUCT_NAME = Rswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release_Test;
+		};
 		6A61F86A1A524A2B61564547030EE8C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -410,7 +576,69 @@
 			};
 			name = Release;
 		};
-		C54C8C0E9BA89CBEDB8DEB11522624FE /* Release */ = {
+		6DAE16A995DB339275772F9AF0BF8645 /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug_Test;
+		};
+		EB7C489E7686DE840329320D9AC44ADB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06A4C248292207C3A8654DF0F5819F5B /* R.swift.Library.release.xcconfig */;
 			buildSettings = {
@@ -445,48 +673,16 @@
 			};
 			name = Release;
 		};
-		E2BAF177080856180F75F4C2CDA5AA0E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA7C479A8FB69F0F707E933476011DBB /* R.swift.Library.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/R.swift.Library/R.swift.Library-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
-				PRODUCT_MODULE_NAME = Rswift;
-				PRODUCT_NAME = Rswift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6021AAB81D1FE71F48A75CF12682FD86 /* Build configuration list for PBXNativeTarget "R.swift.Library" */ = {
+		B7893BF1989B6FF9CCFBA035D0777846 /* Build configuration list for PBXNativeTarget "R.swift.Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E2BAF177080856180F75F4C2CDA5AA0E /* Debug */,
-				C54C8C0E9BA89CBEDB8DEB11522624FE /* Release */,
+				14A8446BE15D9DBFAE5A96B5C7F3680B /* Debug */,
+				1BA8E9C71CF97F65AB9C9287F3F1721B /* Debug_Test */,
+				EB7C489E7686DE840329320D9AC44ADB /* Release */,
+				6436059F825480535DE5536F7F56AE50 /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -495,7 +691,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01C4E6A1A43D86615BAA615931EF5F3E /* Debug */,
+				6DAE16A995DB339275772F9AF0BF8645 /* Debug_Test */,
 				6A61F86A1A524A2B61564547030EE8C4 /* Release */,
+				547998EE5A40EE3BC9B03334F9CCDB00 /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09D0CAF8B37B7E0CF21E47550BE667A6 /* SKCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2172CBE6B62FD290BC6FE529AB9A2D70 /* SKCacheable.swift */; };
-		15A1F5994B7CCBD6DE39CE8226EAE889 /* SKZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99AC5D3744EACE7FA3296F4D9518A69 /* SKZoomingScrollView.swift */; };
-		1C50EEB37D020450B6B41D0134B325B6 /* SKPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4D4DE3A9662B35D8D3051F63F52C6 /* SKPhotoBrowser.swift */; };
-		225104E51D16343CBDB9AFCCB293DB89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41809B7391489D42409D8CE715869C0 /* Foundation.framework */; };
-		25EEB2EC398A4D6D63FEF6AAE00BDBD8 /* UIView+Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F7D40AEF22CDE334A7317AE912E2AE /* UIView+Radius.swift */; };
-		372BAF30F8DF12D10EAF9C7EBACC2DD3 /* SKPaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3319CC3CB5D8A805D9E8C3672C347 /* SKPaginationView.swift */; };
-		3D6E4C309E70FEAEAF0D4E05A338E491 /* SKActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754692558E6DF7D0C4C7E4B53535C2F /* SKActionView.swift */; };
-		44BFF4A0322721C890B8DACB61D5CB7F /* SKButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DABD3F0CC6884E8F00BB2DE0C7434 /* SKButtons.swift */; };
-		4CE06AFFA59F18714658CA23067E32CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788DA23FDD78D36EE7F7C1FD5EB091C8 /* UIKit.framework */; };
-		4EFF915E3401F098962E014717E3CA4D /* SKPhotoBrowser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 488576F5BC0A3AD43AB8C0D426EC77CE /* SKPhotoBrowser-dummy.m */; };
-		5C470510C32307D884EF5F21E4E75B89 /* SKPagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C358BB7B75432499006223DD1586F8A /* SKPagingScrollView.swift */; };
-		664A4F9F56AAACA7453556AB6C223714 /* SKPhotoBrowser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0419FF52473824BF562E4B34335C6B2 /* SKPhotoBrowser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6CA2D107ABAE3EC7AFF7D954AB1D4148 /* SKToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA3C87506A9B575F15A17C785A6329B /* SKToolbar.swift */; };
-		6D66858CE0C841EA81FA2611CC0B13AF /* SKPhotoBrowserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402BAAF8958D0ADE96D133BE7AE25141 /* SKPhotoBrowserOptions.swift */; };
-		741947041A32A455C3EF5DB553E555A0 /* SKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230E42CC7ABA043D631399F6D30823E /* SKPhoto.swift */; };
-		8CC0059CB927149F04007572EBF7B9EF /* UIApplication+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB8C6800396AE506AAA6E8F6D1340B /* UIApplication+UIWindow.swift */; };
-		9CAE5EEA1541EA8E8079B5521E1B89F4 /* SKLocalPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719EED60F8BF2426D5E7523371D9BE76 /* SKLocalPhoto.swift */; };
-		B46F9B6AF1351E06B132E1593063BC6E /* SKDetectingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6FEFD876A99547E1190EC9645148F /* SKDetectingImageView.swift */; };
-		C089DD3D7D0632BAC817395305F4AEC9 /* UIImage+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37CD75233D252BB5EDF9A0E9CC2214 /* UIImage+Rotation.swift */; };
-		C0E21B77E790A37644D6AB7091781A98 /* SKCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F24C2FCF3A8BD8FAA0D191C0B4AE8 /* SKCache.swift */; };
-		C30F52C4F4414E1988BC6A6442D138B8 /* SKMesurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ADBC9A949F13489CE4C9C48576F6D5 /* SKMesurement.swift */; };
-		D25D74B45B8ABD3C6FAC98AA8F768915 /* SKPhotoBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E2E3272AB5E28E5456F156CA31698B /* SKPhotoBrowserDelegate.swift */; };
-		DAD8BFD1B6B5289D48E135ACF3FF35FF /* SKIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F798222BF40F52E93F5DD6A1DA49E1B /* SKIndicatorView.swift */; };
-		DC1E6230087EF00815412B1582718F79 /* SKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71B4E8A16565432E2B4EE77B8BBB22CD /* SKPhotoBrowser.bundle */; };
-		DCAC4C4A9A72011423D61B983AE81A1A /* SKDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D6AEC96158D0D87384A435640BAFB9 /* SKDetectingView.swift */; };
-		DEEACC77AECAD6416172C45858B532D0 /* SKPhotoBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F59943232DD39B8F48B989262691F0 /* SKPhotoBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DF9FDBC7D50F91DD02E98691B6FF51E4 /* SKCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3069434F542A9A605253B83532C6F4 /* SKCaptionView.swift */; };
-		FDB6AF0EDA635A62E6C9DC3A1E81E2F4 /* SKAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18612A8E8B173DDA6C962E672EF4E4F /* SKAnimator.swift */; };
+		15E3ED1A84E5560AF3BEE95809BEB5DD /* SKActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754692558E6DF7D0C4C7E4B53535C2F /* SKActionView.swift */; };
+		173484EFC182AC5767CB4A5488CF9E56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41809B7391489D42409D8CE715869C0 /* Foundation.framework */; };
+		18B2C7CD081E9413AEE1B1A87C1FBC03 /* SKZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99AC5D3744EACE7FA3296F4D9518A69 /* SKZoomingScrollView.swift */; };
+		1C4C3910613231ACFEDF95DC76E49872 /* SKDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D6AEC96158D0D87384A435640BAFB9 /* SKDetectingView.swift */; };
+		2B7928A9AE7D7C80206363B73660ABAF /* SKPagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C358BB7B75432499006223DD1586F8A /* SKPagingScrollView.swift */; };
+		2E16952FBAE9B4596ACBBE2021834A88 /* SKCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F24C2FCF3A8BD8FAA0D191C0B4AE8 /* SKCache.swift */; };
+		327E11A88CEDD1E0DBD26FF2BCB96219 /* SKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71B4E8A16565432E2B4EE77B8BBB22CD /* SKPhotoBrowser.bundle */; };
+		45A2BA0D5734413632E0B6F42C0CD577 /* SKPaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3319CC3CB5D8A805D9E8C3672C347 /* SKPaginationView.swift */; };
+		4613E278A9CE62605C0A77DC63211BAF /* SKCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3069434F542A9A605253B83532C6F4 /* SKCaptionView.swift */; };
+		48D429880276AF224435DFC4DF504EF6 /* SKPhotoBrowser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0419FF52473824BF562E4B34335C6B2 /* SKPhotoBrowser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		537F1ED7B0E3BA003FD48A161646F334 /* UIImage+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37CD75233D252BB5EDF9A0E9CC2214 /* UIImage+Rotation.swift */; };
+		6683B27E53F627C2132DE89031FCF0E2 /* SKPhotoBrowser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 488576F5BC0A3AD43AB8C0D426EC77CE /* SKPhotoBrowser-dummy.m */; };
+		72A3F880E765549AF6C74677E85DF4C6 /* SKAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18612A8E8B173DDA6C962E672EF4E4F /* SKAnimator.swift */; };
+		7CD634EEDF72AA7D1B14B6B26FF761C8 /* SKPhotoBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F59943232DD39B8F48B989262691F0 /* SKPhotoBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A150882611F640934D045AE06F9A64FC /* UIApplication+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB8C6800396AE506AAA6E8F6D1340B /* UIApplication+UIWindow.swift */; };
+		A19F7EB5C401D494FBC8280B959DEE6B /* SKIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F798222BF40F52E93F5DD6A1DA49E1B /* SKIndicatorView.swift */; };
+		AE343FF64450FA34C64B0F6A9199A14D /* SKDetectingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6FEFD876A99547E1190EC9645148F /* SKDetectingImageView.swift */; };
+		AEDEFD48B5E6B73E34A3B7D023040B57 /* SKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230E42CC7ABA043D631399F6D30823E /* SKPhoto.swift */; };
+		BA274221F0E12D5543EEDB9AD6A20931 /* SKPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4D4DE3A9662B35D8D3051F63F52C6 /* SKPhotoBrowser.swift */; };
+		BECE3DFA653133D1F8E2EDFAF37BD90E /* SKPhotoBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E2E3272AB5E28E5456F156CA31698B /* SKPhotoBrowserDelegate.swift */; };
+		E67B0DB8EBAD62CA6FB566B696AC2778 /* SKCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2172CBE6B62FD290BC6FE529AB9A2D70 /* SKCacheable.swift */; };
+		EB7BCA796952F671304072CBB4297195 /* SKPhotoBrowserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402BAAF8958D0ADE96D133BE7AE25141 /* SKPhotoBrowserOptions.swift */; };
+		EDF83851B16CCF4495CCD393F06B6833 /* UIView+Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F7D40AEF22CDE334A7317AE912E2AE /* UIView+Radius.swift */; };
+		F73A7F2E074A9086927F4B31F1C8C935 /* SKMesurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ADBC9A949F13489CE4C9C48576F6D5 /* SKMesurement.swift */; };
+		F894FBCA56348DB5FD166A0E7B108989 /* SKLocalPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719EED60F8BF2426D5E7523371D9BE76 /* SKLocalPhoto.swift */; };
+		F8FDE66F91848ECD4FB2B45B2CF6B87C /* SKButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DABD3F0CC6884E8F00BB2DE0C7434 /* SKButtons.swift */; };
+		FC3E36101B3FAAB40044D141B2178BAE /* SKToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA3C87506A9B575F15A17C785A6329B /* SKToolbar.swift */; };
+		FF98D250D2DA636CE03758F3ECA2ED07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788DA23FDD78D36EE7F7C1FD5EB091C8 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,12 +75,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		908A8B2101426015ED88861611320E42 /* Frameworks */ = {
+		03806C04AFF059D2D15D9AAFC0531894 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				225104E51D16343CBDB9AFCCB293DB89 /* Foundation.framework in Frameworks */,
-				4CE06AFFA59F18714658CA23067E32CB /* UIKit.framework in Frameworks */,
+				173484EFC182AC5767CB4A5488CF9E56 /* Foundation.framework in Frameworks */,
+				FF98D250D2DA636CE03758F3ECA2ED07 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,12 +180,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F282A4DACDE64BE34F4D2C71F87AD61F /* Headers */ = {
+		B91737A727613F2A7C8237B477366B71 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				664A4F9F56AAACA7453556AB6C223714 /* SKPhotoBrowser-umbrella.h in Headers */,
-				DEEACC77AECAD6416172C45858B532D0 /* SKPhotoBrowser.h in Headers */,
+				48D429880276AF224435DFC4DF504EF6 /* SKPhotoBrowser-umbrella.h in Headers */,
+				7CD634EEDF72AA7D1B14B6B26FF761C8 /* SKPhotoBrowser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,12 +194,12 @@
 /* Begin PBXNativeTarget section */
 		04AA5C1821C5D4D261BFDEC314891426 /* SKPhotoBrowser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0B3F4091845B9A47E5F0ADF72D1488E /* Build configuration list for PBXNativeTarget "SKPhotoBrowser" */;
+			buildConfigurationList = 9236D18F1D30335BCB0C7393755B00D6 /* Build configuration list for PBXNativeTarget "SKPhotoBrowser" */;
 			buildPhases = (
-				F282A4DACDE64BE34F4D2C71F87AD61F /* Headers */,
-				7194ECDB0C559270AB7D1E0B70693025 /* Sources */,
-				908A8B2101426015ED88861611320E42 /* Frameworks */,
-				1418B4F2D22A950345C89F1A7BAA89AA /* Resources */,
+				B91737A727613F2A7C8237B477366B71 /* Headers */,
+				B7E60F6D8F5B1353E33F85AB4666B549 /* Sources */,
+				03806C04AFF059D2D15D9AAFC0531894 /* Frameworks */,
+				3E90F95883E5B4159F8BDB9B4E2BF6A3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -238,50 +238,85 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1418B4F2D22A950345C89F1A7BAA89AA /* Resources */ = {
+		3E90F95883E5B4159F8BDB9B4E2BF6A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC1E6230087EF00815412B1582718F79 /* SKPhotoBrowser.bundle in Resources */,
+				327E11A88CEDD1E0DBD26FF2BCB96219 /* SKPhotoBrowser.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7194ECDB0C559270AB7D1E0B70693025 /* Sources */ = {
+		B7E60F6D8F5B1353E33F85AB4666B549 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D6E4C309E70FEAEAF0D4E05A338E491 /* SKActionView.swift in Sources */,
-				FDB6AF0EDA635A62E6C9DC3A1E81E2F4 /* SKAnimator.swift in Sources */,
-				44BFF4A0322721C890B8DACB61D5CB7F /* SKButtons.swift in Sources */,
-				C0E21B77E790A37644D6AB7091781A98 /* SKCache.swift in Sources */,
-				09D0CAF8B37B7E0CF21E47550BE667A6 /* SKCacheable.swift in Sources */,
-				DF9FDBC7D50F91DD02E98691B6FF51E4 /* SKCaptionView.swift in Sources */,
-				B46F9B6AF1351E06B132E1593063BC6E /* SKDetectingImageView.swift in Sources */,
-				DCAC4C4A9A72011423D61B983AE81A1A /* SKDetectingView.swift in Sources */,
-				DAD8BFD1B6B5289D48E135ACF3FF35FF /* SKIndicatorView.swift in Sources */,
-				9CAE5EEA1541EA8E8079B5521E1B89F4 /* SKLocalPhoto.swift in Sources */,
-				C30F52C4F4414E1988BC6A6442D138B8 /* SKMesurement.swift in Sources */,
-				372BAF30F8DF12D10EAF9C7EBACC2DD3 /* SKPaginationView.swift in Sources */,
-				5C470510C32307D884EF5F21E4E75B89 /* SKPagingScrollView.swift in Sources */,
-				741947041A32A455C3EF5DB553E555A0 /* SKPhoto.swift in Sources */,
-				4EFF915E3401F098962E014717E3CA4D /* SKPhotoBrowser-dummy.m in Sources */,
-				1C50EEB37D020450B6B41D0134B325B6 /* SKPhotoBrowser.swift in Sources */,
-				D25D74B45B8ABD3C6FAC98AA8F768915 /* SKPhotoBrowserDelegate.swift in Sources */,
-				6D66858CE0C841EA81FA2611CC0B13AF /* SKPhotoBrowserOptions.swift in Sources */,
-				6CA2D107ABAE3EC7AFF7D954AB1D4148 /* SKToolbar.swift in Sources */,
-				15A1F5994B7CCBD6DE39CE8226EAE889 /* SKZoomingScrollView.swift in Sources */,
-				8CC0059CB927149F04007572EBF7B9EF /* UIApplication+UIWindow.swift in Sources */,
-				C089DD3D7D0632BAC817395305F4AEC9 /* UIImage+Rotation.swift in Sources */,
-				25EEB2EC398A4D6D63FEF6AAE00BDBD8 /* UIView+Radius.swift in Sources */,
+				15E3ED1A84E5560AF3BEE95809BEB5DD /* SKActionView.swift in Sources */,
+				72A3F880E765549AF6C74677E85DF4C6 /* SKAnimator.swift in Sources */,
+				F8FDE66F91848ECD4FB2B45B2CF6B87C /* SKButtons.swift in Sources */,
+				2E16952FBAE9B4596ACBBE2021834A88 /* SKCache.swift in Sources */,
+				E67B0DB8EBAD62CA6FB566B696AC2778 /* SKCacheable.swift in Sources */,
+				4613E278A9CE62605C0A77DC63211BAF /* SKCaptionView.swift in Sources */,
+				AE343FF64450FA34C64B0F6A9199A14D /* SKDetectingImageView.swift in Sources */,
+				1C4C3910613231ACFEDF95DC76E49872 /* SKDetectingView.swift in Sources */,
+				A19F7EB5C401D494FBC8280B959DEE6B /* SKIndicatorView.swift in Sources */,
+				F894FBCA56348DB5FD166A0E7B108989 /* SKLocalPhoto.swift in Sources */,
+				F73A7F2E074A9086927F4B31F1C8C935 /* SKMesurement.swift in Sources */,
+				45A2BA0D5734413632E0B6F42C0CD577 /* SKPaginationView.swift in Sources */,
+				2B7928A9AE7D7C80206363B73660ABAF /* SKPagingScrollView.swift in Sources */,
+				AEDEFD48B5E6B73E34A3B7D023040B57 /* SKPhoto.swift in Sources */,
+				6683B27E53F627C2132DE89031FCF0E2 /* SKPhotoBrowser-dummy.m in Sources */,
+				BA274221F0E12D5543EEDB9AD6A20931 /* SKPhotoBrowser.swift in Sources */,
+				BECE3DFA653133D1F8E2EDFAF37BD90E /* SKPhotoBrowserDelegate.swift in Sources */,
+				EB7BCA796952F671304072CBB4297195 /* SKPhotoBrowserOptions.swift in Sources */,
+				FC3E36101B3FAAB40044D141B2178BAE /* SKToolbar.swift in Sources */,
+				18B2C7CD081E9413AEE1B1A87C1FBC03 /* SKZoomingScrollView.swift in Sources */,
+				A150882611F640934D045AE06F9A64FC /* UIApplication+UIWindow.swift in Sources */,
+				537F1ED7B0E3BA003FD48A161646F334 /* UIImage+Rotation.swift in Sources */,
+				EDF83851B16CCF4495CCD393F06B6833 /* UIView+Radius.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		131ED235C65B364FC458145CF2DFC277 /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 879008D0755CB9ECC85978ED0BB8C4FF /* SKPhotoBrowser.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SKPhotoBrowser/SKPhotoBrowser-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SKPhotoBrowser/SKPhotoBrowser-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SKPhotoBrowser/SKPhotoBrowser.modulemap";
+				PRODUCT_MODULE_NAME = SKPhotoBrowser;
+				PRODUCT_NAME = SKPhotoBrowser;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release_Test;
+		};
 		172E0471455EAADE5FF9BEE0F54F64A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -344,7 +379,7 @@
 			};
 			name = Release;
 		};
-		2DF42DD7DBFDAD1A614462F06996CE2B /* Release */ = {
+		61E5416FA398881C55142B6230965276 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 879008D0755CB9ECC85978ED0BB8C4FF /* SKPhotoBrowser.release.xcconfig */;
 			buildSettings = {
@@ -379,7 +414,104 @@
 			};
 			name = Release;
 		};
-		71A21A62D8D41705D762EDB12EB515D1 /* Debug */ = {
+		6B694DDD67CF2E7BBE00F8E022FCB286 /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug_Test;
+		};
+		8BDA5B0238B1F9AB384FBBFF367DE729 /* Debug_Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 879008D0755CB9ECC85978ED0BB8C4FF /* SKPhotoBrowser.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SKPhotoBrowser/SKPhotoBrowser-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SKPhotoBrowser/SKPhotoBrowser-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SKPhotoBrowser/SKPhotoBrowser.modulemap";
+				PRODUCT_MODULE_NAME = SKPhotoBrowser;
+				PRODUCT_NAME = SKPhotoBrowser;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug_Test;
+		};
+		AF9D3F7BF47D85EA5E925DAD19E6890A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E2C485C83F26164D21FABD2DCFD54B5F /* SKPhotoBrowser.debug.xcconfig */;
 			buildSettings = {
@@ -479,6 +611,68 @@
 			};
 			name = Debug;
 		};
+		F608CFBCE413AA03AFDC4D9F64B5FC8B /* Release_Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release_Test;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -486,16 +680,20 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEBDEC459D87589FABF399EE418E0B97 /* Debug */,
+				6B694DDD67CF2E7BBE00F8E022FCB286 /* Debug_Test */,
 				172E0471455EAADE5FF9BEE0F54F64A3 /* Release */,
+				F608CFBCE413AA03AFDC4D9F64B5FC8B /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0B3F4091845B9A47E5F0ADF72D1488E /* Build configuration list for PBXNativeTarget "SKPhotoBrowser" */ = {
+		9236D18F1D30335BCB0C7393755B00D6 /* Build configuration list for PBXNativeTarget "SKPhotoBrowser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				71A21A62D8D41705D762EDB12EB515D1 /* Debug */,
-				2DF42DD7DBFDAD1A614462F06996CE2B /* Release */,
+				AF9D3F7BF47D85EA5E925DAD19E6890A /* Debug */,
+				8BDA5B0238B1F9AB384FBBFF367DE729 /* Debug_Test */,
+				61E5416FA398881C55142B6230965276 /* Release */,
+				131ED235C65B364FC458145CF2DFC277 /* Release_Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

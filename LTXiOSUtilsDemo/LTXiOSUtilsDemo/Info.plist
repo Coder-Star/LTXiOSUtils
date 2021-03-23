@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>LTX基础iOS项目</string>
+	<string>$(APP_DISPALY_NAME)</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
