@@ -105,6 +105,6 @@ extension NotificationService {
     private func getGroupInfo() {
         let appGroupIdentifier = "group.com.star.LTXiOSUtils.extension"
         let userDefaults = UserDefaults(suiteName: appGroupIdentifier)
-        print(userDefaults?.value(forKey: "123"))
+        print(userDefaults?.value(forKey: "123") as Any)
     }
 }
