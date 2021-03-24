@@ -1305,7 +1305,7 @@
 				DC62A7C92384093900DE7800 /* R.swift */,
 				DC55E58923FBE7BB008C6941 /* Update App Version 自动替换故事板上的APP版本 */,
 				DCF41C2D2382282D00D7B13D /* SwiftLint配置检测脚本路径 */,
-				A52B2AE4723CC01B62EBC2D0 /* [CP-User] Run Flutter Build flutter_module Script */,
+				DD1BFDCA7883777F507CFD45 /* [CP-User] Run Flutter Build flutter_module Script */,
 				DC4AB9B522F4606000A5F003 /* Sources */,
 				DC4AB9B622F4606000A5F003 /* Frameworks */,
 				DC4AB9B722F4606000A5F003 /* Resources */,
@@ -1571,16 +1571,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A52B2AE4723CC01B62EBC2D0 /* [CP-User] Run Flutter Build flutter_module Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "[CP-User] Run Flutter Build flutter_module Script";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../Flutter/flutter_module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build\n";
-		};
 		C0B05217F7247966D6BF26D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1657,7 +1647,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/LTXiOSUtilsDemo/R.generated.swift,
+				"$SRCROOT/LTXiOSUtilsDemo/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1698,6 +1688,16 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		DD1BFDCA7883777F507CFD45 /* [CP-User] Run Flutter Build flutter_module Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Run Flutter Build flutter_module Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../Flutter/flutter_module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
 		E30AA3D124A6ECF1235C504F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2795,6 +2795,7 @@
 			baseConfigurationReference = 698D31D5E555F8D07195C592 /* Pods-LTXiOSUtilsDemo.debug_test.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APP_DISPALY_NAME = "LTX基础iOS(Test)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconTest;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = LTXiOSUtilsDemo/LTXiOSUtilsDemoDebug_Test.entitlements;
@@ -3192,6 +3193,7 @@
 			baseConfigurationReference = B4C06C744E881DE7EAC325AF /* Pods-LTXiOSUtilsDemo.release_test.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APP_DISPALY_NAME = "LTX基础iOS(Test)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconTest;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = LTXiOSUtilsDemo/LTXiOSUtilsDemoRelease_Test.entitlements;

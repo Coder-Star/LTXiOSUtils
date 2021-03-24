@@ -6,112 +6,113 @@ flutter_application_path = '../Flutter/flutter_module'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 # 多project模式，每一个pod包是一个project
+# 这种方式如果在Podfile中统一处理target有问题
 #install! 'cocoapods', :generate_multiple_pod_projects => true, :incremental_installation => true, :warn_for_unused_master_specs_repo => false
 
 target 'LTXiOSUtilsDemo' do
-#  source 'https://github.com/CocoaPods/Specs.git' # 公有库地址
-#  source 'https://cdn.cocoapods.org/' # 公有库地址,使用CDN，pod 1.7版本后
+  #  source 'https://github.com/CocoaPods/Specs.git' # 公有库地址
+  #  source 'https://cdn.cocoapods.org/' # 公有库地址,使用CDN，pod 1.7版本后
   source 'https://github.com/Coder-Star/LTXSpecs.git' # 私有库地址
   platform :ios, '10.0'
-
+  
   # 使用动态库方式，这在pod 1.5.0之前Swift工程时是必须的，但在1.5之后就不采用这种方式，而是采用静态库的方式，这样可以使启动更快。
   use_frameworks!
-
-#  use_modular_headers! #使用静态库方式,支持Moudle :modular_headers => true  优先级高于全局
-
+  
+  #  use_modular_headers! #使用静态库方式,支持Moudle :modular_headers => true  优先级高于全局
+  
   # 在ios 13.3.1系统真机上，苹果不再允许个人开发者使用嵌入式frameworks，
   # 需要use_modular_headers，不再use_frameworks
-
+  
   # 安装flutter模块
   install_all_flutter_pods(flutter_application_path)
-
+  
   # 不显示所有pod的警告
   inhibit_all_warnings!
   # 控制单个pod库是否显示警告
   # :inhibit_warnings => false
-
+  
   pod 'LTXiOSUtils',:path => '../' # 基础功能库
   #  pod 'LTXiOSUtils', :git => 'https://github.com/Coder-Star/LTXiOSUtils.git', :tag => '0.0.0' #直接从源代码托管仓库取
-
+  
   # 本地配置
   pod 'R.swift', '5.1.0' # 资源映射
   pod 'SwiftLint', '0.38.0' # 代码规范限制，使用swiftlint autocorrect 可自动修复一部分格式问题
   pod 'Localize-Swift','3.1.0' # 国际化文件工具
-
+  
   # 图片相关
   pod 'Kingfisher', '5.12.0' # 远程图片预览
   pod 'SKPhotoBrowser', '6.1.0' # 图片浏览
   pod 'TZImagePickerController', '3.3.1' # 图片选择
-
+  
   # 工具类
   pod 'SwiftyUserDefaults', '5.0.0' # UserDefaults存储
   pod 'KeychainAccess', '4.1.0' # 钥匙串存储
-
+  
   pod 'SwiftDate', '6.1.0' #时间工具
   pod 'IQKeyboardManagerSwift', '6.5.4' # 键盘控制
   pod 'GDPerformanceView-Swift', '2.0.3' # 显示屏幕FPS
   pod 'ZYCornerRadius', '1.0.2' # UIImageView高性能设置圆角，OC库
   pod 'UITableView+FDTemplateLayoutCell', '1.6' # UITableView缓存高度，OC库
-
+  
   pod 'SwiftyJSON', '5.0.0' # 处理JSON
   pod 'ObjectMapper', '3.5.1' # model与json互转
-
-
+  
+  
   pod "dsBridge", '3.0.6' # 与JS通信
   pod 'WebViewJavascriptBridge', '6.0.3' # 与JS通信
-
-
+  
+  
   pod 'Bugly', '2.5.2' # 异常上报
   pod 'TPNS-iOS', '1.3.0.0' # 腾讯云推送
-
+  
   pod 'LookinServer', :configurations => ['Debug'] # 查看UI，只编译进debug版本， :configurations => ['Debug','Test']
-
+  
   #  pod 'SwiftyEventBus', '1.0.0' # 事件总线
   #  pod 'SwifterSwift', '5.1.0' # Swift相关扩展
-
-#  pod 'RealmSwift', '5.0.0' # Realm数据库
-
+  
+  #  pod 'RealmSwift', '5.0.0' # Realm数据库
+  
   # 解耦
   pod 'CTMediator', '28' # Runtime路由方案
   pod 'MGJRouter', '0.10.0' # 蘑菇街URl路由方案
   pod 'URLNavigator', '2.3.0' # URL路由，跟MGJRouter实现思想相同，只不过MGJRouter是OC，这个是Swift
-
+  
   # UI组件等
   pod 'FSPagerView', '0.8.3' # 轮播组件
   # pod 'XHLaunchAd', '3.9.11' # 广告页，依赖 'FLAnimatedImage' ,对开启generate_multiple_pod_projects选项有影响，所以暂时关闭
   #  pod 'Onboard','2.3.3' # 引导页
-
+  
   # Rx
   pod 'RxCocoa', '5.0.1' # RxSwift是通用RxAPI的实现，并不涉及任何任何 Cocoa 或 UIKit 类，RxCocoa依赖RxSwift
-
+  
   # 音视频相关
   pod "mp3lame-for-ios", "0.1.1" # 将录音文件格式修改为mp3格式
-
+  
   pod 'SVGKit', '2.1.1' # SVG加载，OC
   pod 'SwiftSVG' # SVG加载，Swift
   pod "Macaw", "0.9.7" # SVG，Swift
-
+  
   pod 'lottie-ios', "3.1.8" # 加载lottie动画
-
+  
   pod 'AppOrderFiles', "1.0.2" # clang插桩，获取方法
-
+  
   # pod "PromiseKit", "6.13.1" # promise语法
-
+  
   target 'LTXiOSUtilsDemoTests' do
     inherit! :search_paths
   end
-
+  
   target 'LTXiOSUtilsDemoUITests' do
     inherit! :search_paths
   end
-
+  
 end
 
 target 'NotificationServiceExtension' do
   platform :ios, '10.0'
   use_frameworks!
-#use_modular_headers!
-
+  #use_modular_headers!
+  
   pod 'TPNS-iOS-Extension', '1.3.0.0'
 end
 
@@ -133,9 +134,10 @@ disabled_bitcode = [
 ]
 
 post_install do |installer|
-  installer.pod_target_subprojects.flat_map { |p| p.targets }.each do |target|
-#  installer.pods_project.targets.each do |target|
-
+  
+  #  installer.pod_target_subprojects.flat_map { |p| p.targets }.each do |target|  # 多project模式使用
+  installer.pods_project.targets.each do |target|
+    
     # Flutter相关pod包的bitcode选项关掉，因为Flutter不支持bitcode
     # 也需要手动将APP的bitcode关掉
     if disabled_bitcode.include?(target.name)
@@ -143,25 +145,39 @@ post_install do |installer|
         config.build_settings['ENABLE_BITCODE'] = 'NO'
       end
     end
-
+    
     target.build_configurations.each do |config|
       if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 9.0
-         config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
       end
     end
-
+    
     # 将部分指定pod包的swift版本设置为5.0
     if swift_5.include?(target.name)
       target.build_configurations.each do |config|
         config.build_settings['SWIFT_VERSION'] = '5.0'
       end
     end
-
+    
     # clang插桩
-#    target.build_configurations.each do |config|
-#      config.build_settings['OTHER_CFLAGS'] = '-fsanitize-coverage=func,trace-pc-guard'
-#      config.build_settings['OTHER_SWIFT_FLAGS'] = '-sanitize-coverage=func -sanitize=undefined'
-#    end
-
+    #    target.build_configurations.each do |config|
+    #      config.build_settings['OTHER_CFLAGS'] = '-fsanitize-coverage=func,trace-pc-guard'
+    #      config.build_settings['OTHER_SWIFT_FLAGS'] = '-sanitize-coverage=func -sanitize=undefined'
+    #    end
+    
+    target.build_configurations.each do |config|
+      config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = 'YES'
+      if config.name.include?("Release_Test")
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'SCHEMEAPPTESTRELEASE=3'
+      end
+      if config.name.include?("Debug_Test")
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'SCHEMEAPPTESTDEBUG=2'
+        config.build_settings['GCC_OPTIMIZATION_LEVEL'] = '0'
+        config.build_settings['ONLY_ACTIVE_ARCH'] = 'YES'
+      end
+    end
+    
   end
 end
