@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   s.swift_version = ["5","4.2"]
-  s.static_framework  =  true
+#  s.static_framework  =  true
 
 #  s.pod_target_xcconfig = {
 #    'DEFINES_MODULE' => 'YES'

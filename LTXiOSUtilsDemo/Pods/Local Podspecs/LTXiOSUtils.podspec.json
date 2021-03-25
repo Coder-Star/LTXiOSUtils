@@ -22,7 +22,6 @@
     "5",
     "4.2"
   ],
-  "static_framework": true,
   "subspecs": [
     {
       "name": "Core",
