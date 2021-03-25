@@ -9,6 +9,7 @@
 import Foundation
 import IQKeyboardManagerSwift
 import GDPerformanceView_Swift
+import Bugly
 
 final class ThirdLibApplicationService: NSObject, ApplicationService {
 

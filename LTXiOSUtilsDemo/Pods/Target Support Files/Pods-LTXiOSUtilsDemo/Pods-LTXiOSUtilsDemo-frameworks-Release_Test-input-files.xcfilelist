@@ -12,7 +12,6 @@ ${BUILT_PRODUCTS_DIR}/LTXiOSUtils/LTXiOSUtils.framework
 ${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework
-${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
 ${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework

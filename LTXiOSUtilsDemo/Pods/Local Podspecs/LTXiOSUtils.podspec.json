@@ -22,6 +22,9 @@
     "5",
     "4.2"
   ],
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  },
   "subspecs": [
     {
       "name": "Core",
@@ -85,27 +88,9 @@
       "dependencies": {
         "LTXiOSUtils/Resources": [
 
-        ],
-        "SnapKit": [
-          "5.0.1"
         ]
       },
       "source_files": "LTXiOSUtils/Classes/Component/**/*.swift"
-    },
-    {
-      "name": "ViewController",
-      "dependencies": {
-        "LTXiOSUtils/Core": [
-
-        ],
-        "SnapKit": [
-          "5.0.1"
-        ],
-        "MJRefresh": [
-          "3.5.0"
-        ]
-      },
-      "source_files": "LTXiOSUtils/Classes/ViewController/**/*.swift"
     }
   ],
   "swift_version": "5"

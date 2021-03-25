@@ -14,10 +14,12 @@ Pod::Spec.new do |s|
   s.swift_version = ["5","4.2"]
 #  s.static_framework  =  true
 
-#  s.pod_target_xcconfig = {
-#    'DEFINES_MODULE' => 'YES'
-#  }
+# 模块化，假如项目中有OC代码，需要模块化，就需要进行开启，并且配合public_header_files使用
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES'
+  }
 
+# 架构第一层；包含Swift扩展、核心工具
 
   # 核心类，其他子组件依赖该子组件
   s.subspec 'Core' do |core|
@@ -57,18 +59,8 @@ Pod::Spec.new do |s|
   # 自定义Component组件，包含各种基础view
   s.subspec 'Component' do |component|
     component.dependency 'LTXiOSUtils/Resources'
-    component.dependency 'SnapKit','5.0.1' # 自动布局
     component.source_files = 'LTXiOSUtils/Classes/Component/**/*.swift'
   end
-
-  # 基础ViewController
-  s.subspec 'ViewController' do |viewController|
-    viewController.dependency 'LTXiOSUtils/Core'
-    viewController.dependency 'SnapKit','5.0.1' # 自动布局
-    viewController.dependency 'MJRefresh','3.5.0' # 下拉刷新、下拉加载，OC库
-    viewController.source_files = 'LTXiOSUtils/Classes/ViewController/**/*.swift'
-  end
-
 end
 
 

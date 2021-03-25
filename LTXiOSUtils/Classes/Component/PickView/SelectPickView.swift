@@ -319,9 +319,12 @@ class SelectPickViewTableCell: UITableViewCell {
         separatorInset = .zero
         selectionStyle = .none
         self.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 50))
-        }
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        let topConstraint = NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: titleLabel.superview!, attribute: .top, multiplier: 1.0, constant: 10)
+        let leftConstraint = NSLayoutConstraint(item: titleLabel, attribute: .left, relatedBy: .equal, toItem: titleLabel.superview!, attribute: .left, multiplier: 1.0, constant: 10)
+        let bottomConstraint = NSLayoutConstraint(item: titleLabel, attribute: .bottom, relatedBy: .equal, toItem: titleLabel.superview!, attribute: .bottom, multiplier: 1.0, constant: -10)
+        let rightConstraint = NSLayoutConstraint(item: titleLabel, attribute: .right, relatedBy: .equal, toItem: titleLabel.superview!, attribute: .right, multiplier: 1.0, constant: -50)
+        addConstraints([topConstraint, leftConstraint, bottomConstraint, rightConstraint])
     }
 
     required init?(coder: NSCoder) {

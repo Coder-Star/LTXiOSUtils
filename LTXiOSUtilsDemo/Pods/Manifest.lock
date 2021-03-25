@@ -39,10 +39,8 @@ PODS:
     - LTXiOSUtils/Network (= 0.0.2)
     - LTXiOSUtils/Resources (= 0.0.2)
     - LTXiOSUtils/Util (= 0.0.2)
-    - LTXiOSUtils/ViewController (= 0.0.2)
   - LTXiOSUtils/Component (0.0.2):
     - LTXiOSUtils/Resources
-    - SnapKit (= 5.0.1)
   - LTXiOSUtils/Core (0.0.2):
     - LTXiOSUtils/Core/CoreUtil (= 0.0.2)
     - LTXiOSUtils/Core/Extension (= 0.0.2)
@@ -56,15 +54,10 @@ PODS:
   - LTXiOSUtils/Resources (0.0.2):
     - LTXiOSUtils/Core
   - LTXiOSUtils/Util (0.0.2)
-  - LTXiOSUtils/ViewController (0.0.2):
-    - LTXiOSUtils/Core
-    - MJRefresh (= 3.5.0)
-    - SnapKit (= 5.0.1)
   - Macaw (0.9.7):
     - SWXMLHash
   - MBProgressHUD (1.2.0)
   - MGJRouter (0.10.0)
-  - MJRefresh (3.5.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -132,6 +125,7 @@ DEPENDENCIES:
   - RxCocoa (= 5.0.1)
   - shared_preferences (from `../Flutter/flutter_module/.ios/.symlinks/plugins/shared_preferences/ios`)
   - SKPhotoBrowser (= 6.1.0)
+  - SnapKit (= 5.0.1)
   - SVGKit (= 2.1.1)
   - SwiftDate (= 6.1.0)
   - SwiftLint (= 0.38.0)
@@ -165,7 +159,6 @@ SPEC REPOS:
     - Macaw
     - MBProgressHUD
     - MGJRouter
-    - MJRefresh
     - Moya
     - mp3lame-for-ios
     - ObjectMapper
@@ -176,7 +169,6 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SKPhotoBrowser
-    - SnapKit
     - SVGKit
     - SwiftDate
     - SwiftLint
@@ -191,6 +183,8 @@ SPEC REPOS:
     - URLNavigator
     - WebViewJavascriptBridge
     - ZYCornerRadius
+  trunk:
+    - SnapKit
 
 EXTERNAL SOURCES:
   Flutter:
@@ -233,11 +227,10 @@ SPEC CHECKSUMS:
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
-  LTXiOSUtils: 39eb1097e869edc6237c073891749780c4751532
+  LTXiOSUtils: fafeb7c09fa2b650ab8fee1b7e32d8e53104cafe
   Macaw: 4a931baf9a9826b06d0d8ecf300014c962ab9d50
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MGJRouter: 15d94541eb2cc81eff7d577337288feb7ae9575f
-  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   mp3lame-for-ios: 4daeb5686885be66438154050e3fe975d4ee1f07
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
@@ -266,6 +259,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: a660cce2bf091f0cd131e11ac975d5e01e2259a0
+PODFILE CHECKSUM: ba93ba84b61b302c0d9b77596248e86b17bfab5a
 
 COCOAPODS: 1.10.0

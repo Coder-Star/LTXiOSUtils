@@ -12,9 +12,6 @@
 
 #endif /* LTXiOSUtilsDemo_Bridging_Header_h */
 
-// bugly
-#import <Bugly/Bugly.h>
-
 // TAPNs推送相关
 
 // 功能相关
