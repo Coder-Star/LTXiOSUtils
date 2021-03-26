@@ -88,7 +88,7 @@ open class DurationDatePickView: UIView {
     public lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.frame = CGRect.init(x: 0, y: 0, width: popupView.frame.width, height: 50)
-        titleLabel.text = "DurationDatePickView.topTitle".localizedOfLTXiOSUtils()
+        titleLabel.text = "DurationDatePickView.topTitle".localizedOfLTXiOSUtilsComponent
         titleLabel.font = UIFont.systemFont(ofSize: 16)
         titleLabel.textColor = UIColor.black.tx.adapt()
         titleLabel.textAlignment = .center
@@ -126,7 +126,7 @@ open class DurationDatePickView: UIView {
     public lazy var cancelBtn: UIButton = {
         let btn = UIButton.init(type: .custom)
         btn.frame = CGRect.init(x: 0, y: self.popupView.frame.height - 49, width: (self.popupView.frame.width - 1) / 2.0, height: 49)
-        btn.setTitle("cancel".localizedOfLTXiOSUtils(), for: .normal)
+        btn.setTitle("cancel".localizedOfLTXiOSUtilsComponent, for: .normal)
         btn.setTitleColor(UIColor(hexString: "#0F9CFE"), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         btn.addTarget(self, action: #selector(cancelBtnAction), for: .touchUpInside)
@@ -140,7 +140,7 @@ open class DurationDatePickView: UIView {
         let w: CGFloat = (self.popupView.frame.width - 1) / 2.0
         let h: CGFloat = 49
         btn.frame = CGRect.init(x: x, y: y, width: w, height: h)
-        btn.setTitle("sure".localizedOfLTXiOSUtils(), for: .normal)
+        btn.setTitle("sure".localizedOfLTXiOSUtilsComponent, for: .normal)
         btn.setTitleColor(.red, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         btn.addTarget(self, action: #selector(confirmBtnAction), for: .touchUpInside)
@@ -176,7 +176,7 @@ extension DurationDatePickView {
     ///   - sureBlock: 确定闭包
     ///   - cancelBlock: 取消闭包
 
-    public class func showPopupView(title: String = "DurationDatePickView.topTitle".localizedOfLTXiOSUtils(),
+    public class func showPopupView(title: String = "DurationDatePickView.topTitle".localizedOfLTXiOSUtilsComponent,
                                     startDate: Date,
                                     endDate: Date,
                                     canGreatNow: Bool = true,
@@ -395,7 +395,7 @@ extension DurationDatePickView {
         let tempLabel = UILabel()
         tempLabel.frame = CGRect.init(x: self.startBtn.frame.maxX, y: self.startBtn.frame.minY, width: 20, height: self.startBtn.frame.height)
         tempLabel.textAlignment = .center
-        tempLabel.text = "DurationDatePickView.to".localizedOfLTXiOSUtils()
+        tempLabel.text = "DurationDatePickView.to".localizedOfLTXiOSUtilsComponent
         tempLabel.font = UIFont.systemFont(ofSize: 14)
         tempLabel.textColor = UIColor(hexString: "#999999")
         popupView.addSubview(tempLabel)

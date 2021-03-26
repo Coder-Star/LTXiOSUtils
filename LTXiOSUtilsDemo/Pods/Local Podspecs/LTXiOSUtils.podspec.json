@@ -43,11 +43,6 @@
             "UIKit",
             "Foundation"
           ],
-          "dependencies": {
-            "MBProgressHUD": [
-              "1.2.0"
-            ]
-          },
           "source_files": "LTXiOSUtils/Classes/Core/CoreUtil/**/*.swift"
         }
       ]
@@ -72,25 +67,24 @@
       "source_files": "LTXiOSUtils/Classes/Util/**/*.swift"
     },
     {
-      "name": "Resources",
+      "name": "Component",
       "dependencies": {
         "LTXiOSUtils/Core": [
 
+        ],
+        "MBProgressHUD": [
+          "1.2.0"
         ]
       },
-      "source_files": "LTXiOSUtils/Resources/*.swift",
-      "resource_bundles": {
-        "LTXiOSUtils": "LTXiOSUtils/Resources/Resource/*"
-      }
-    },
-    {
-      "name": "Component",
-      "dependencies": {
-        "LTXiOSUtils/Resources": [
-
-        ]
-      },
-      "source_files": "LTXiOSUtils/Classes/Component/**/*.swift"
+      "source_files": "LTXiOSUtils/Classes/Component/**/*.swift",
+      "subspecs": [
+        {
+          "name": "Resources",
+          "resource_bundles": {
+            "LTXiOSUtilsComponent": "LTXiOSUtils/Classes/Component/Resources/Resource/*"
+          }
+        }
+      ]
     }
   ],
   "swift_version": "5"

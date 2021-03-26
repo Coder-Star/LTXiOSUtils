@@ -198,7 +198,7 @@ extension ImagePickGridView: UICollectionViewDataSource {
                 }
             }
         } else if indexPath.item == imageList.count {
-            cell?.imageView.image = "ImagePickGridView_addImage".imageOfLTXiOSUtils()
+            cell?.imageView.image = "ImagePickGridView_addImage".imageOfLTXiOSUtilsComponent
             cell?.deleteButton.isHidden = true
         }
         return cell!
@@ -272,7 +272,7 @@ public class ImagePickGridViewCell: UICollectionViewCell {
     public lazy var deleteButton: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.image = "ImagePickGridView_deleteImage".imageOfLTXiOSUtils()
+        imageView.image = "ImagePickGridView_deleteImage".imageOfLTXiOSUtilsComponent
         return imageView
     }()
 

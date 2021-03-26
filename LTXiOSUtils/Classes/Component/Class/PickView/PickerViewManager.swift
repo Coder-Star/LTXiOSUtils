@@ -187,7 +187,7 @@ extension PickerViewManager {
     ///  - parameter doneAction:                 响应完成的Closure
     public class func showSingleColPicker(_ toolBarTitle: String, data: [String], defaultSelectedIndex: Int?, clearAction: BtnAction?, doneAction: SingleDoneAction?) {
         if data.isEmpty {
-            HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtils())
+            HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtilsComponent)
             return
         }
         let window = UIApplication.shared.keyWindow
@@ -204,7 +204,7 @@ extension PickerViewManager {
     /// - Parameter doneAction: 响应完成的Closure
     public class func showMultipleColsPicker(_ toolBarTitle: String, data: [[String]], defaultSelectedIndexs: [Int]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
         if data.isEmpty {
-            HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtils())
+            HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtilsComponent)
             return
         }
         let window = UIApplication.shared.keyWindow
@@ -221,7 +221,7 @@ extension PickerViewManager {
     /// - Parameter doneAction: 响应完成的Closure
     public class func showMultipleAssociatedColsPicker(_ toolBarTitle: String, data: MultipleAssociatedDataType, defaultSelectedValues: [String]?, clearAction: BtnAction?, doneAction: MultipleDoneAction?) {
         if data.isEmpty {
-            HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtils())
+            HUD.showText("PickerViewManager.emptyData".localizedOfLTXiOSUtilsComponent)
             return
         }
         let window = UIApplication.shared.keyWindow

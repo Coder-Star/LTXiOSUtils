@@ -324,10 +324,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 46 images.
+  /// This `R.image` struct is generated, and contains static references to 49 images.
   struct image {
     /// Image `1.jpg`.
     static let jpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "1.jpg")
+    /// Image `AlertView_close`.
+    static let alertView_close = Rswift.ImageResource(bundle: R.hostingBundle, name: "AlertView_close")
+    /// Image `AlertView_selected`.
+    static let alertView_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "AlertView_selected")
+    /// Image `AlertView_unselected`.
+    static let alertView_unselected = Rswift.ImageResource(bundle: R.hostingBundle, name: "AlertView_unselected")
     /// Image `add-white`.
     static let addWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "add-white")
     /// Image `add`.
@@ -423,6 +429,27 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "1.jpg", bundle: ..., traitCollection: ...)`
     static func jpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.jpg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "AlertView_close", bundle: ..., traitCollection: ...)`
+    static func alertView_close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.alertView_close, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "AlertView_selected", bundle: ..., traitCollection: ...)`
+    static func alertView_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.alertView_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "AlertView_unselected", bundle: ..., traitCollection: ...)`
+    static func alertView_unselected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.alertView_unselected, compatibleWith: traitCollection)
     }
     #endif
 

@@ -70,8 +70,8 @@ extension CodecModel: CustomStringConvertible {
 }
 
 /**
- 对数据进行编解码的工具包含 PropertyList、JSON以及NSKeyed
- 同样的对象，生成的文件大小从小到达依次为 JSON < PropertyList < NSKeyed
+ 对数据进行编解码的工具包含 PropertyList、JSON以及NSKeyedArchiver
+ 同样的对象，生成的文件大小从小到达依次为 JSON < PropertyList < NSKeyedArchiver
  JSON、PropertyList只能编码实现Codable协议的模型
  虽然网上都说实现Coable的模型也可以无缝使用归解档，但是经过我实际的测试，发现根本不行，除非先使用PropertyList或者JSON先将模型转换为data，然后再将data进行归档，接档时先解档成data，然后再将data转为模型，但是这样完全是多此一举
  */

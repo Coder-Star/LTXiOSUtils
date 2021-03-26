@@ -62,7 +62,7 @@ public class TreeTableViewSearchBar: UIView {
         button.isUserInteractionEnabled = false
         button.frame = CGRect(x: 0, y: 0, width: height, height: height)
         button.contentEdgeInsets = UIEdgeInsets(top: height / 4, left: height / 4, bottom: height / 4, right: height / 4)
-        button.setImage("TreeTableView_search".imageOfLTXiOSUtils(), for: .normal)
+        button.setImage("TreeTableView_search".imageOfLTXiOSUtilsComponent, for: .normal)
         return button
     }
 

@@ -212,7 +212,7 @@ extension FWRadioButton {
             if self.vProperty.selectedImage != nil && self.vProperty.unSelectedImage != nil {
                 self.radioImageView.image = selected ? self.vProperty.selectedImage : self.vProperty.unSelectedImage
             } else {
-                self.radioImageView.image = selected ? "AlertView_selected".imageOfLTXiOSUtils() : "AlertView_unselected".imageOfLTXiOSUtils()
+                self.radioImageView.image = selected ? UIImage(named: "AlertView_selected") : UIImage(named: "AlertView_unselected")
             }
         } else {
             if self.vProperty.isBorderColorNeedChanged {

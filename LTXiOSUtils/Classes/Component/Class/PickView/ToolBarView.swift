@@ -47,7 +47,7 @@ open class ToolBarView: UIView {
     // 取消按钮
     fileprivate lazy var clearBtn: UIButton = {
         let btn = UIButton()
-        btn.setTitle("clear".localizedOfLTXiOSUtils(), for: UIControl.State())
+        btn.setTitle("clear".localizedOfLTXiOSUtilsComponent, for: UIControl.State())
         btn.setTitleColor(ToolBarView.clearButtonColor, for: UIControl.State())
         return btn
     }()
@@ -55,7 +55,7 @@ open class ToolBarView: UIView {
     // 完成按钮
     fileprivate lazy var doneBtn: UIButton = {
         let donebtn = UIButton()
-        donebtn.setTitle("complete".localizedOfLTXiOSUtils(), for: UIControl.State())
+        donebtn.setTitle("complete".localizedOfLTXiOSUtilsComponent, for: UIControl.State())
         donebtn.setTitleColor(ToolBarView.doneButtonColor, for: UIControl.State())
         return donebtn
     }()

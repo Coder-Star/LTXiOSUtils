@@ -223,7 +223,7 @@ extension FWCustomSheetView {
             if property.closeImage != nil {
                 closeBtn.setImage(property.choiceImage!, for: .normal)
             } else {
-                closeBtn.setImage("AlertView_close".imageOfLTXiOSUtils(), for: .normal)
+                closeBtn.setImage(UIImage(named: "AlertView_close"), for: .normal)
             }
         } else {
             property.headerViewHeight = 0

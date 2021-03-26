@@ -31,10 +31,12 @@ Pod::Spec.new do |s|
     # 核心工具
     core.subspec 'CoreUtil' do |coreUtil|
       coreUtil.frameworks = "UIKit","Foundation"
-      coreUtil.dependency 'MBProgressHUD','1.2.0' # 加载框，OC库
       coreUtil.source_files = 'LTXiOSUtils/Classes/Core/CoreUtil/**/*.swift'
     end
   end
+
+
+# 架构第二层；包含UI组件、网络请求
 
   # 网络请求
   s.subspec 'Network' do |network|
@@ -49,17 +51,15 @@ Pod::Spec.new do |s|
     util.source_files = 'LTXiOSUtils/Classes/Util/**/*.swift'
   end
 
-  # 资源
-  s.subspec 'Resources' do |resources|
-    resources.dependency 'LTXiOSUtils/Core'
-    resources.source_files = 'LTXiOSUtils/Resources/*.swift'
-    resources.resource_bundle = { "LTXiOSUtils" => "LTXiOSUtils/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
-  end
-
   # 自定义Component组件，包含各种基础view
   s.subspec 'Component' do |component|
-    component.dependency 'LTXiOSUtils/Resources'
+    component.dependency 'LTXiOSUtils/Core'
+    component.dependency 'MBProgressHUD','1.2.0' # 加载框，OC库
     component.source_files = 'LTXiOSUtils/Classes/Component/**/*.swift'
+
+    component.subspec 'Resources' do |resources|
+      resources.resource_bundle = { "LTXiOSUtilsComponent" => "LTXiOSUtils/Classes/Component/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
+    end
   end
 end
 

@@ -116,7 +116,7 @@ extension TreeTableViewCell {
         self.indentationLevel = self.treeNode.level
         self.textLabel?.text = self.treeNode.name
         if treeNode.childNodes.count > 0 {
-            self.imageView?.image = "TreeTableView_arrow".imageOfLTXiOSUtils()
+            self.imageView?.image = "TreeTableView_arrow".imageOfLTXiOSUtilsComponent
         } else {
             self.imageView?.image = nil
         }
@@ -127,11 +127,11 @@ extension TreeTableViewCell {
     private func getCheckImage() -> UIImage? {
         switch treeNode.checkState {
         case .uncheckd:
-            return "TreeTableView_checkbox_uncheck".imageOfLTXiOSUtils()
+            return "TreeTableView_checkbox_uncheck".imageOfLTXiOSUtilsComponent
         case .checked:
-            return "TreeTableView_checkbox_checked".imageOfLTXiOSUtils()
+            return "TreeTableView_checkbox_checked".imageOfLTXiOSUtilsComponent
         case .halfChecked:
-            return "TreeTableView_checkbox_halfchecked".imageOfLTXiOSUtils()
+            return "TreeTableView_checkbox_halfchecked".imageOfLTXiOSUtilsComponent
         }
     }
 

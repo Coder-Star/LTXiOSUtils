@@ -120,11 +120,11 @@ public class SelectPickView: UIView {
                     self.singleSureBlock?(tempIndex, self.titleArr[tempIndex])
                     self.dismiss()
                 } else {
-                    HUD.showText("SelectPickView.selectOne".localizedOfLTXiOSUtils())
+                    HUD.showText("SelectPickView.selectOne".localizedOfLTXiOSUtilsComponent)
                 }
             } else {
                 if self.selectIndexArr.isEmpty {
-                    HUD.showText("SelectPickView.selectAtLeastOne".localizedOfLTXiOSUtils())
+                    HUD.showText("SelectPickView.selectAtLeastOne".localizedOfLTXiOSUtilsComponent)
                 } else {
                     let indexArr = self.selectIndexArr.sorted()
                     var valueArr = [String]()
@@ -171,7 +171,7 @@ extension SelectPickView {
     ///   - defaultSelectedIndexs: 默认选中索引,如果为nil，表示都不选中
     public class func getView(title: String, data: [String], defaultSelectedIndexs: [Int]?) -> SelectPickView? {
         if data.isEmpty {
-            HUD.showText("SelectPickView.emptyData".localizedOfLTXiOSUtils())
+            HUD.showText("SelectPickView.emptyData".localizedOfLTXiOSUtilsComponent)
             return nil
         }
         UIApplication.shared.keyWindow?.endEditing(true)
@@ -208,7 +208,7 @@ extension SelectPickView {
     ///   - defaultSelectedIndexs: 默认选中索引,如果为nil，表示都不选中
     public class func getSingleView(title: String, data: [String], defaultSelectedIndex: Int?) -> SelectPickView? {
         if data.isEmpty {
-            HUD.showText("SelectPickView.emptyData".localizedOfLTXiOSUtils())
+            HUD.showText("SelectPickView.emptyData".localizedOfLTXiOSUtilsComponent)
             return nil
         }
         UIApplication.shared.keyWindow?.endEditing(true)

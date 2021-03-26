@@ -37,22 +37,23 @@ PODS:
     - LTXiOSUtils/Component (= 0.0.2)
     - LTXiOSUtils/Core (= 0.0.2)
     - LTXiOSUtils/Network (= 0.0.2)
-    - LTXiOSUtils/Resources (= 0.0.2)
     - LTXiOSUtils/Util (= 0.0.2)
   - LTXiOSUtils/Component (0.0.2):
-    - LTXiOSUtils/Resources
+    - LTXiOSUtils/Component/Resources (= 0.0.2)
+    - LTXiOSUtils/Core
+    - MBProgressHUD (= 1.2.0)
+  - LTXiOSUtils/Component/Resources (0.0.2):
+    - LTXiOSUtils/Core
+    - MBProgressHUD (= 1.2.0)
   - LTXiOSUtils/Core (0.0.2):
     - LTXiOSUtils/Core/CoreUtil (= 0.0.2)
     - LTXiOSUtils/Core/Extension (= 0.0.2)
-  - LTXiOSUtils/Core/CoreUtil (0.0.2):
-    - MBProgressHUD (= 1.2.0)
+  - LTXiOSUtils/Core/CoreUtil (0.0.2)
   - LTXiOSUtils/Core/Extension (0.0.2)
   - LTXiOSUtils/Network (0.0.2):
     - LTXiOSUtils/Core
     - Moya (= 14.0.0)
     - ReachabilitySwift (= 5.0.0)
-  - LTXiOSUtils/Resources (0.0.2):
-    - LTXiOSUtils/Core
   - LTXiOSUtils/Util (0.0.2)
   - Macaw (0.9.7):
     - SWXMLHash
@@ -227,7 +228,7 @@ SPEC CHECKSUMS:
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
-  LTXiOSUtils: fafeb7c09fa2b650ab8fee1b7e32d8e53104cafe
+  LTXiOSUtils: 1361c0631f057f633c5f5964ee228bb6d3d8f7fb
   Macaw: 4a931baf9a9826b06d0d8ecf300014c962ab9d50
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MGJRouter: 15d94541eb2cc81eff7d577337288feb7ae9575f
@@ -259,6 +260,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: ba93ba84b61b302c0d9b77596248e86b17bfab5a
+PODFILE CHECKSUM: 1d40cc12da89ccdca4600dadba99ed71d1e53d4a
 
 COCOAPODS: 1.10.0
