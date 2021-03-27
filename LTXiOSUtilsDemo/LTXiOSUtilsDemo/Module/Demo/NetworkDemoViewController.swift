@@ -46,7 +46,9 @@ class NetworkDemoViewController: BaseGroupTableMenuViewController {
 
 extension NetworkDemoViewController {
     func request() {
-       
+        NetworkManager.sendRequest(requestParam: RequestParam(path: NetworkConstant.bannerUrl)) { data in
+            Log.d(JSON(data))
+        }
     }
 }
 

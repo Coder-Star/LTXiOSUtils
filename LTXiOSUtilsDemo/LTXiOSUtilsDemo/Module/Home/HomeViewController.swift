@@ -149,7 +149,6 @@ extension HomeViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
     private func getPagerViewData() {
         var requestParam = RequestParam(path: NetworkConstant.bannerUrl)
-        requestParam.hud.isShow = false
         requestParam.ignoreError = true
         requestParam.method = .get
         NetworkManager.sendRequest(requestParam: requestParam) { data in

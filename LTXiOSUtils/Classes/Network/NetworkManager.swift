@@ -28,6 +28,9 @@ public class NetworkManager {
      /// 失败回调闭包
     public typealias FailureBlock = (_ requestError: RequestError) -> Void
 
+}
+
+extension NetworkManager {
     /// 网络请求
     /// 成功时进行回调，错误统一处理
     /// - Parameters:
@@ -89,11 +92,14 @@ public class NetworkManager {
     ///   - progress: 进度回调
     ///   - success: 成功回调
     ///   - failure: 失败回调
-    public class func sendRequest(requestParam: RequestParam, progress: @escaping ProgressBlock, success: @escaping SuccessBlock, failure: @escaping FailureBlock) {
+    public class func sendRequest(requestParam: RequestParam,
+                                  progress: @escaping ProgressBlock,
+                                  success: @escaping SuccessBlock,
+                                  failure: @escaping FailureBlock) {
         Log.d("请求url详细信息")
         requestParam.printInfo()
 
-        provider = MoyaProvider<APIManager>(requestClosure: getRequestTimeoutClosure(timeoutInterval: requestParam.timeOut), plugins: [LoadingPlugin(), AuthPlugin(token: requestParam.token)])
+        provider = MoyaProvider<APIManager>(requestClosure: getRequestTimeoutClosure(timeoutInterval: requestParam.timeOut), plugins: [AuthPlugin(token: requestParam.token)])
 
         provider?.request(.getData(requestParam:requestParam), progress: { resultProgress in
             progress(resultProgress)
@@ -116,7 +122,9 @@ public class NetworkManager {
         }
         )
     }
+}
 
+extension NetworkManager {
     /// 取消所有网络请求
     public class func cancelAllRequests() {
         provider?.session.cancelAllRequests()
@@ -201,11 +209,10 @@ public class NetworkManager {
             errorInfo = "似乎已断开与网络的连接"
         }
         errorInfo += "(\(errorCode))"
-        HUD.showText(errorInfo)
     }
 
     /// 生成请求闭包，将一个Endpoint分解成一个实际的URLRequest，并对URLRequest进行最后的编辑
-    private class func getRequestTimeoutClosure(timeoutInterval: TimeInterval = NetworkConfig.requestTimeOut) -> MoyaProvider<APIManager>.RequestClosure {
+    private class func getRequestTimeoutClosure(timeoutInterval: TimeInterval = NetworkDefaultConfig.requestTimeOut) -> MoyaProvider<APIManager>.RequestClosure {
         let requestTimeoutClosure = { (endpoint: Endpoint, closure: @escaping MoyaProvider<APIManager>.RequestResultClosure) in
             do {
                 var urlRequest = try endpoint.urlRequest()

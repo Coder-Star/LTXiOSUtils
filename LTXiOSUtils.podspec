@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
   end
 
 
-# 架构第二层；包含UI组件、网络请求
+# 架构第二层；包含UI组件、网络请求、工具类
 
   # 网络请求
   s.subspec 'Network' do |network|
@@ -51,7 +51,7 @@ Pod::Spec.new do |s|
     util.source_files = 'LTXiOSUtils/Classes/Util/**/*.swift'
   end
 
-  # 自定义Component组件，包含各种基础view
+  # UI组件
   s.subspec 'Component' do |component|
     component.dependency 'LTXiOSUtils/Core'
     component.dependency 'MBProgressHUD','1.2.0' # 加载框，OC库

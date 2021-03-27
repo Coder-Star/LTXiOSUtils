@@ -11,7 +11,4 @@ import Moya
 
 public protocol CustomizeTargetType: TargetType {
 
-    ///等待框相关
-    var hudConfig: HudConfig { get }
-
 }

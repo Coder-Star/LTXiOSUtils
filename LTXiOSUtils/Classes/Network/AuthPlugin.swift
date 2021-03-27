@@ -25,7 +25,7 @@ public struct AuthPlugin: PluginType {
             return request
         }
         var request = request
-        request.addValue(token, forHTTPHeaderField: NetworkConfig.Authorization) //将token添加到请求头中
+        request.addValue(token, forHTTPHeaderField: NetworkDefaultConfig.Authorization) //将token添加到请求头中
         return request
     }
 

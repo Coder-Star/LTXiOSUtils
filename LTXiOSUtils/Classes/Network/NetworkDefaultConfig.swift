@@ -10,7 +10,10 @@ import Foundation
 import Moya
 
 /// 网络请求配置类
-public struct NetworkConfig {
+public struct NetworkDefaultConfig {
+
+    private init() {}
+
     /// 默认超时时间,单位为秒
     public static var requestTimeOut: Double = 30.0
 
@@ -24,6 +27,6 @@ public struct NetworkConfig {
     public static var baseURL = ""
 
     /// 请求默认method
-    public static var method: Moya.Method = .post
+    public static var method: Moya.Method = .get
 
 }

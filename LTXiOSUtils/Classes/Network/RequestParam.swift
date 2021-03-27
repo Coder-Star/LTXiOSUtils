@@ -12,19 +12,17 @@ import Moya
 /// 网络请求参数类
 public struct RequestParam {
     /// 基础url
-    public var baseUrl: String = NetworkConfig.baseURL
+    public var baseUrl: String = NetworkDefaultConfig.baseURL
     /// 请求路径
     public var path: String
     /// 传递参数
-    public var parameters: [String: Any] = [String: Any]()
-    /// 等待框相关配置
-    public var hud: HudConfig = HudConfig()
+    public var parameters = [String: Any]()
     /// token
-    public var token: String = NetworkConfig.token
+    public var token: String = NetworkDefaultConfig.token
     /// 超时时间
-    public var timeOut: Double = NetworkConfig.requestTimeOut
+    public var timeOut: Double = NetworkDefaultConfig.requestTimeOut
     /// 请求方法
-    public var method: Moya.Method = NetworkConfig.method
+    public var method: Moya.Method = NetworkDefaultConfig.method
     /// header设置
     public var header: [String: String]?
     /// 上传文件数组
@@ -131,43 +129,4 @@ public struct FileInfo {
         }
         self.data = data
     }
-}
-
-/// 菊花框相关配置
-public struct HudConfig {
-    /// 是否显示，默认显示
-    public var isShow: Bool = true
-    /// 是否可以点击停止，默认不可以
-    public var clickCancel: Bool = false
-    /// 显示title，默认为空
-    public var title = ""
-
-    /// 构造函数
-    public init() {
-
-    }
-
-    /// 构造函数
-    /// - Parameter isShow: 是否显示
-    public init(isShow: Bool) {
-        self.isShow = isShow
-    }
-
-    /// 构造函数
-    /// - Parameter title: 标题内容
-    public init(title: String) {
-        self.title = title
-    }
-
-    /// 构造函数
-    /// - Parameters:
-    ///   - isShow: 是否显示
-    ///   - clickCancel: 是否可以点击停止
-    ///   - title: 标题内容
-    public init(isShow: Bool, clickCancel: Bool, title: String) {
-        self.isShow = isShow
-        self.clickCancel = clickCancel
-        self.title = title
-    }
-
 }

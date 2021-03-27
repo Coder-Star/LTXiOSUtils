@@ -85,14 +85,4 @@ extension APIManager: CustomizeTargetType {
     public var validate: Bool {
         return false
     }
-
-    /// 是否显示等待框
-    public var hudConfig: HudConfig {
-        switch self {
-        case .getData(let requestParam):
-            return requestParam.hud
-        default:
-            return HudConfig()
-        }
-    }
 }

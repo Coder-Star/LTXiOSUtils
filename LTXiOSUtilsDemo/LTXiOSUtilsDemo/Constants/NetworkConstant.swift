@@ -11,19 +11,18 @@ import Foundation
 /// 网络请求常量
 public struct NetworkConstant {
 
-    static let isFormal = false //是否正式,正式版为true,测试版为false
-
     static func initUrlInfo() {
         #if TEST
-        NetworkConfig.baseURL = "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock"
+        NetworkDefaultConfig.baseURL = "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock"
         #else
-        NetworkConfig.baseURL = "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock"
+        NetworkDefaultConfig.baseURL = "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock"
         #endif
     }
 }
 
 // MARK: - APP自身相关url
 extension NetworkConstant {
-    static let launchAdData = "LaunchAd/data.json"
+
+    /// 轮播图配置地址
     static let bannerUrl = "pagerViewConfigInfo"
 }
