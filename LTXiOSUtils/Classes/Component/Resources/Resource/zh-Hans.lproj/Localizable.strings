@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Pods
+  中文语言资源
+  Created by CoderStar on 2019/12/20.
+*/
+
+// 通用
+sure = "确定";
+cancel = "取消";
+confirm = "确认";
+complete = "完成";
+clear = "清空";
+
+// 起止时间选择
+DurationDatePickView.topTitle = "请选择起止时间";
+DurationDatePickView.to = "至";
+

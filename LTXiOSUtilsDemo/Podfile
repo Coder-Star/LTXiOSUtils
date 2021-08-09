@@ -1,0 +1,7 @@
+
+target 'LTXiOSUtilsDemo' do
+
+  pod 'LTXiOSUtils', :path => '../'
+  pod 'SwiftFormat/CLI', '0.47.13', :configurations => ['Debug'] # 代码规范限制与自动纠正
+
+end
