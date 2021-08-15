@@ -133,6 +133,7 @@ extension UIButton {
             // 现有方法
             let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
             // 先尝试給原有SEL添加新IMP，这里是为了避免原有SEL没有实现IMP的情况
+            // 比如说子类替换父类的方法，父类调用原方法时，因为实现已经变成子类的了，父类没有实现，就会出问题
             let didAddMethod = class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod!), method_getTypeEncoding(swizzledMethod!))
 
             if didAddMethod {
