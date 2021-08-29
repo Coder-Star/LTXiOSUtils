@@ -700,7 +700,7 @@ extension UIView {
             layer.borderColor = newValue.cgColor
         }
         get {
-            return UIColor(cgColor: layer.borderColor ?? UIColor.black.cgColor)
+            return UIColor(cgColor: layer.borderColor ?? UIColor.clear.cgColor)
         }
     }
 }

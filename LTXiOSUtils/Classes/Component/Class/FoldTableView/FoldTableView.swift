@@ -1,16 +1,16 @@
 import UIKit
 
 open class FoldTableView: UITableView {
-    // MARK: - private
 
+    // MARK: - private
     private weak var foldDataSource: FoldTableViewDataSource?
     private weak var foldDelegate: FoldTableViewDelegate?
 
     // MARK: - public
-
     public private(set) var expandedSections: [Int: Bool] = [:]
     open var expandingAnimation: UITableView.RowAnimation = .fade
     open var collapsingAnimation: UITableView.RowAnimation = .fade
+    open var animationDuration: CFTimeInterval = 0.3
 
     open override var dataSource: UITableViewDataSource? {
         get { return super.dataSource }
@@ -62,32 +62,33 @@ extension FoldTableView {
     private func animate(with type: FoldActionType, forSection section: Int) {
         guard canExpand(section) else { return }
         let sectionIsExpanded = didExpand(section)
-        if ((type == .expand) && sectionIsExpanded) || ((type == .collapse) && (!sectionIsExpanded)) { return }
-        assign(section, asExpanded: type == .expand)
+        if ((type == .expand) && (sectionIsExpanded)) || ((type == .collapse) && (!sectionIsExpanded)) { return }
+        assign(section, asExpanded: (type == .expand))
         startAnimating(self, with: type, forSection: section)
     }
 
     private func startAnimating(_ tableView: FoldTableView, with type: FoldActionType, forSection section: Int) {
-        let headerCell = self.cellForRow(at: IndexPath(row: 0, section: section))
+        let headerCell = (self.cellForRow(at: IndexPath(row: 0, section: section)))
         let headerCellConformant = headerCell as? FoldTableViewHeaderCell
 
         CATransaction.begin()
+        CATransaction.setAnimationDuration(animationDuration)
         headerCell?.isUserInteractionEnabled = false
 
-        headerCellConformant?.changeState(type == .expand ? .willExpand : .willCollapse, cellReuseStatus: false)
-        foldDelegate?.tableView(tableView, FoldState: type == .expand ? .willExpand : .willCollapse, changeForSection: section)
+        headerCellConformant?.changeState((type == .expand ? .willExpand : .willCollapse), cellReuseStatus: false)
+        foldDelegate?.tableView(tableView, FoldState: (type == .expand ? .willExpand : .willCollapse), changeForSection: section)
 
         CATransaction.setCompletionBlock {
-            headerCellConformant?.changeState(type == .expand ? .didExpand : .didCollapse, cellReuseStatus: false)
-            self.foldDelegate?.tableView(tableView, FoldState: type == .expand ? .didExpand : .didCollapse, changeForSection: section)
+            headerCellConformant?.changeState((type == .expand ? .didExpand : .didCollapse), cellReuseStatus: false)
+            self.foldDelegate?.tableView(tableView, FoldState: (type == .expand ? .didExpand : .didCollapse), changeForSection: section)
             headerCell?.isUserInteractionEnabled = true
         }
 
         self.beginUpdates()
 
-        if let sectionRowCount = foldDataSource?.tableView(tableView, numberOfRowsInSection: section), sectionRowCount > 1 {
+        if let sectionRowCount = foldDataSource?.tableView(tableView, numberOfRowsInSection: section), sectionRowCount >= 1 {
             var indexesToProcess: [IndexPath] = []
-            for row in 1 ..< sectionRowCount {
+            for row in 1...sectionRowCount {
                 indexesToProcess.append(IndexPath(row: row, section: section))
             }
             if type == .expand {
@@ -105,16 +106,16 @@ extension FoldTableView: UITableViewDataSource {
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRows = foldDataSource?.tableView(self, numberOfRowsInSection: section) ?? 0
 
-        guard canExpand(section) else { return numberOfRows }
-        guard numberOfRows != 0 else { return 0 }
+        guard canExpand(section) else { return numberOfRows + 1 }
+        guard numberOfRows != 0 else { return 1 }
 
-        return didExpand(section) ? numberOfRows : 1
+        return didExpand(section) ? numberOfRows + 1 : 1
     }
 
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /// 每个section的第一个cell为折叠的cell
         guard canExpand(indexPath.section), indexPath.row == 0 else {
-            return foldDataSource!.tableView(tableView, cellForRowAt: indexPath)
+            return foldDataSource!.tableView(tableView, cellForRowAt: IndexPath(row: indexPath.row - 1, section: indexPath.section))
         }
 
         let headerCell = foldDataSource!.tableView(self, expandableCellForSection: indexPath.section)
@@ -124,14 +125,12 @@ extension FoldTableView: UITableViewDataSource {
         }
 
         // cell复用时，需要重新刷新折叠状态
-        DispatchQueue.main.async {
-            if self.didExpand(indexPath.section) {
-                headerCellConformant.changeState(.willExpand, cellReuseStatus: true)
-                headerCellConformant.changeState(.didExpand, cellReuseStatus: true)
-            } else {
-                headerCellConformant.changeState(.willCollapse, cellReuseStatus: true)
-                headerCellConformant.changeState(.didCollapse, cellReuseStatus: true)
-            }
+        if self.didExpand(indexPath.section) {
+            headerCellConformant.changeState(.willExpand, cellReuseStatus: true)
+            headerCellConformant.changeState(.didExpand, cellReuseStatus: true)
+        } else {
+            headerCellConformant.changeState(.willCollapse, cellReuseStatus: true)
+            headerCellConformant.changeState(.didCollapse, cellReuseStatus: true)
         }
         return headerCell
     }
@@ -139,8 +138,10 @@ extension FoldTableView: UITableViewDataSource {
 
 extension FoldTableView: UITableViewDelegate {
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        foldDelegate?.tableView?(tableView, didSelectRowAt: indexPath)
-        guard canExpand(indexPath.section), indexPath.row == 0 else { return }
+        guard canExpand(indexPath.section), indexPath.row == 0 else {
+            foldDelegate?.tableView?(tableView, didSelectRowAt: IndexPath(row: indexPath.row - 1, section: indexPath.section))
+            return
+        }
         didExpand(indexPath.section) ? collapse(indexPath.section) : expand(indexPath.section)
     }
 }

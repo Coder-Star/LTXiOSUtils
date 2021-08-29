@@ -21,7 +21,11 @@ public enum PageControlStyle {
 
 open class PageControl: UIView {
     /// 总共有多少页(默认0页)
-    open var numberOfPages = 0
+    open var numberOfPages = 0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
     /// 当前是第几页
     open var currentPage = 0 {
         didSet {

@@ -17,11 +17,14 @@ extension TxExtensionWrapper where Base: UIViewController {
         if let nav = base as? UINavigationController {
             return topViewController(of: nav.visibleViewController)
         }
+        if let split = base as? UISplitViewController, split.viewControllers.count >= 1 {
+            return topViewController(of: split.viewControllers.last)
+        }
         if let tab = base as? UITabBarController {
             return topViewController(of: tab.selectedViewController)
         }
-        if let page = base as? UIPageViewController, page.viewControllers?.count == 1 {
-            return topViewController(of: page.viewControllers?.first)
+        if let page = base as? UIPageViewController, page.viewControllers?.count ?? 0 >= 1 {
+            return topViewController(of: page.viewControllers?.last)
         }
         for subview in base?.view?.subviews ?? [] {
             if let childViewController = subview.next as? UIViewController {

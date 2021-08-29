@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D65D3C926CF6B9E007D0254 /* LibExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D65D3C826CF6B9E007D0254 /* LibExport.swift */; };
 		2D717B5526C1664000483384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5426C1664000483384 /* AppDelegate.swift */; };
 		2D717B5926C1664000483384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5826C1664000483384 /* ViewController.swift */; };
 		2D717B5E26C1664A00483384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D717B5D26C1664A00483384 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		26706580C142E61B3680F4B8 /* libPods-LTXiOSUtilsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTXiOSUtilsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D65D3C826CF6B9E007D0254 /* LibExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibExport.swift; sourceTree = "<group>"; };
 		2D717B5126C1664000483384 /* LTXiOSUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTXiOSUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D717B5426C1664000483384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D717B5826C1664000483384 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				2D717B5D26C1664A00483384 /* Assets.xcassets */,
 				2D717B5F26C1664A00483384 /* LaunchScreen.storyboard */,
 				2D717B6226C1664A00483384 /* Info.plist */,
+				2D65D3C826CF6B9E007D0254 /* LibExport.swift */,
 			);
 			path = LTXiOSUtilsDemo;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			files = (
 				2D717B5926C1664000483384 /* ViewController.swift in Sources */,
 				2D717B5526C1664000483384 /* AppDelegate.swift in Sources */,
+				2D65D3C926CF6B9E007D0254 /* LibExport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
