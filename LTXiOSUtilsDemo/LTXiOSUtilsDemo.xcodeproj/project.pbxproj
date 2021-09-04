@@ -11,7 +11,7 @@
 		2D717B5526C1664000483384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5426C1664000483384 /* AppDelegate.swift */; };
 		2D717B5926C1664000483384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5826C1664000483384 /* ViewController.swift */; };
 		2D717B5E26C1664A00483384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D717B5D26C1664A00483384 /* Assets.xcassets */; };
-		2D717B6126C1664A00483384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D717B5F26C1664A00483384 /* LaunchScreen.storyboard */; };
+		2DBB624E26E333B700C87475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */; };
 		E20E5B4C55138D74098C5F20 /* libPods-LTXiOSUtilsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26706580C142E61B3680F4B8 /* libPods-LTXiOSUtilsDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -22,8 +22,8 @@
 		2D717B5426C1664000483384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D717B5826C1664000483384 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D717B5D26C1664A00483384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2D717B6026C1664A00483384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D717B6226C1664A00483384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50BEB760F2BA6CF4047B54ED /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6087D293740FC52D9A19863D /* Pods-LTXiOSUtilsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.release.xcconfig"; path = "Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,14 +69,22 @@
 		2D717B5326C1664000483384 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2DBB625026E333E800C87475 /* Resources */,
 				2D717B5426C1664000483384 /* AppDelegate.swift */,
 				2D717B5826C1664000483384 /* ViewController.swift */,
 				2D717B5D26C1664A00483384 /* Assets.xcassets */,
-				2D717B5F26C1664A00483384 /* LaunchScreen.storyboard */,
 				2D717B6226C1664A00483384 /* Info.plist */,
 				2D65D3C826CF6B9E007D0254 /* LibExport.swift */,
 			);
 			path = LTXiOSUtilsDemo;
+			sourceTree = "<group>";
+		};
+		2DBB625026E333E800C87475 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		C8E05001D0DC788DB3D2B408 /* Pods */ = {
@@ -97,6 +105,7 @@
 			buildPhases = (
 				B1EAFE5ED9E8386D97526C60 /* [CP] Check Pods Manifest.lock */,
 				2DE2439526C17C6100F87CA7 /* SwiftFormat */,
+				2DBB624A26E3334900C87475 /* Update LaunchScreen APP Version */,
 				2D717B4D26C1664000483384 /* Sources */,
 				2D717B4E26C1664000483384 /* Frameworks */,
 				2D717B4F26C1664000483384 /* Resources */,
@@ -131,7 +140,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 2D717B4826C1664000483384;
 			productRefGroup = 2D717B5226C1664000483384 /* Products */;
@@ -148,14 +156,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D717B6126C1664A00483384 /* LaunchScreen.storyboard in Resources */,
 				2D717B5E26C1664A00483384 /* Assets.xcassets in Resources */,
+				2DBB624E26E333B700C87475 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2DBB624A26E3334900C87475 /* Update LaunchScreen APP Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update LaunchScreen APP Version";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "version=${MARKETING_VERSION}\nsed -i bak -e \"/userLabel=\\\"AppVersion\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"版本号:$version\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Resources/LaunchScreen.storyboard\n";
+		};
 		2DE2439526C17C6100F87CA7 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,17 +253,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		2D717B5F26C1664A00483384 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D717B6026C1664A00483384 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2D717B6326C1664A00483384 /* Debug */ = {
@@ -370,6 +385,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderstar.LTXiOSUtilsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -391,6 +407,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderstar.LTXiOSUtilsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

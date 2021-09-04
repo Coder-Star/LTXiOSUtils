@@ -3,7 +3,7 @@ CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/LTXiOSUtils
 DEFINES_MODULE = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Moya/Moya.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift/Reachability.modulemap"
-OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Moya/Moya.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift/Reachability.modulemap" -import-underlying-module -Xcc -fmodule-map-file="${SRCROOT}/${MODULEMAP_FILE}"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Moya/Moya.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift/Reachability.modulemap" -suppress-warnings -import-underlying-module -Xcc -fmodule-map-file="${SRCROOT}/${MODULEMAP_FILE}"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}

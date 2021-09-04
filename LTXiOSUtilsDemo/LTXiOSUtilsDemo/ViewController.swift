@@ -11,12 +11,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        title = "首页"
+        setupUI()
+    }
 
-        Log.d(ClassUtils.subclasses(of: XXX.self))
-        Log.d("11")
+    private func setupUI() {
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.systemFont(ofSize: 20)
+        titleLabel.text = "Welcome"
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(titleLabel)
+        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }
-
-class XXX {}
-
-class YYY: XXX {}
