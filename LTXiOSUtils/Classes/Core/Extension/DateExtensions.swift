@@ -94,9 +94,9 @@ extension TxExtensionWrapper where Base == Date {
     }
 
     /// 获取毫秒级时间戳 - 13位
-    public var milliTimeStamp: CLongLong {
+    public var milliTimeStamp: Int {
         let timeInterval = self.base.timeIntervalSince1970
-        let millisecond = CLongLong(round(timeInterval * 1_000))
+        let millisecond = Int(round(timeInterval * 1_000))
         return millisecond
     }
 
