@@ -672,7 +672,7 @@ extension UIButton {
 extension UIView {
     /// 圆角
     @IBInspectable
-    public var cornerRadius: CGFloat {
+    public var csCornerRadius: CGFloat {
         set {
             layer.masksToBounds = true
             layer.cornerRadius = newValue
@@ -684,7 +684,7 @@ extension UIView {
 
     /// 边框宽度
     @IBInspectable
-    public var borderWidth: CGFloat {
+    public var csBorderWidth: CGFloat {
         set {
             layer.borderWidth = newValue
         }
@@ -695,7 +695,7 @@ extension UIView {
 
     /// 边框颜色
     @IBInspectable
-    public var borderColor: UIColor {
+    public var csBorderColor: UIColor {
         set {
             layer.borderColor = newValue.cgColor
         }

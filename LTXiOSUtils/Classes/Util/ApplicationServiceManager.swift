@@ -42,6 +42,7 @@ extension ApplicationService {
  }
  */
 
+// MARK: - AppDelegate继承
 open class ApplicationServiceManagerDelegate: UIResponder, UIApplicationDelegate {
     /// 子类需要在构造函数中对其进行赋值
     public var window: UIWindow?
@@ -77,6 +78,7 @@ open class ApplicationServiceManagerDelegate: UIResponder, UIApplicationDelegate
         return nil
     }
 
+    /// 懒加载获取计算属性services，使其只计算一次
     private lazy var applicationServices: [ApplicationService] = {
         self.services
     }()

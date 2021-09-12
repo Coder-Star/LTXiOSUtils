@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Bundle {
+extension TxExtensionWrapper where Base: Bundle {
     /// 获取指定pod的指定Bundle，pod以resource_bundle方式引入资源
     /// - Parameters:
     ///   - bundleName: bundleName

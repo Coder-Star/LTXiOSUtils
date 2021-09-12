@@ -111,6 +111,22 @@ extension TxExtensionWrapper where Base: UIImage {
     public func rotate(orientation: UIImage.Orientation) -> UIImage {
         return UIImage(cgImage: self.base.cgImage!, scale: self.base.scale, orientation: orientation)
     }
+
+    /// 修改UIImage的颜色
+    ///
+    /// - Parameter color: 修改成的颜色
+    /// - Returns: 修改颜色后的UIImage
+    public func withTintColor(color: UIColor) -> UIImage? {
+        // 第二个参数为 opaque ，将其设置为false，避免图片重绘后导致图片四周出现边框
+        UIGraphicsBeginImageContextWithOptions(base.size, false, 0)
+        color.setFill()
+        let bounds = CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height)
+        UIRectFill(bounds)
+        base.draw(in: bounds, blendMode: CGBlendMode.destinationIn, alpha: 1.0)
+        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tintedImage
+    }
 }
 
 extension TxExtensionWrapper where Base: UIImage {
@@ -123,7 +139,7 @@ extension TxExtensionWrapper where Base: UIImage {
     /// - Note: 当使用framework方式引用三方库时，每一个三方库都会在Frameworks下面以一个单独的framework存在
     @available(iOS 8.0, *)
     public static func getImage(named: String, bundleName: String, podName: String? = nil) -> UIImage? {
-        let bundle = Bundle.getBundle(bundleName: bundleName, podName: podName)
+        let bundle = Bundle.tx.getBundle(bundleName: bundleName, podName: podName)
         return UIImage(named: named, in: bundle, compatibleWith: nil)
     }
 }

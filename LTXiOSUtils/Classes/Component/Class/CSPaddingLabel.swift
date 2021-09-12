@@ -27,6 +27,19 @@ open class CSPaddingLabel: UILabel {
     @IBInspectable
     open var rightInset: CGFloat = 0.0
 
+    @IBInspectable
+    open var edgeInsets: UIEdgeInsets {
+        set {
+            topInset = newValue.top
+            bottomInset = newValue.bottom
+            leftInset = newValue.left
+            rightInset = newValue.right
+        }
+        get {
+            return UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
+        }
+    }
+
     open override func drawText(in rect: CGRect) {
         let insets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
         super.drawText(in: rect.inset(by: insets))
@@ -34,6 +47,11 @@ open class CSPaddingLabel: UILabel {
 
     open override var intrinsicContentSize: CGSize {
         let size = super.intrinsicContentSize
+        return CGSize(width: size.width + leftInset + rightInset, height: size.height + topInset + bottomInset)
+    }
+
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        let size = super.sizeThatFits(size)
         return CGSize(width: size.width + leftInset + rightInset, height: size.height + topInset + bottomInset)
     }
 }

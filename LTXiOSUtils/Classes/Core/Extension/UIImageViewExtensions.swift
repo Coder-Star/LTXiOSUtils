@@ -7,4 +7,6 @@
 
 import Foundation
 
-extension UIImageView {}
+extension TxExtensionWrapper where Base: UIImageView {
+
+}

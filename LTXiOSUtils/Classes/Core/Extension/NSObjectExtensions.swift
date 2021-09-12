@@ -23,6 +23,83 @@ extension TxExtensionWrapper where Base: NSObject {
     }
 }
 
+// MARK: - 获取NSObject子类的所有属性值，使用这个需要类是NSObject的子类，且前面加上@objcMembers，否则为空数组
+
+extension TxExtensionWrapper where Base: NSObject {
+    /// 获取指定属性的值
+    ///
+    /// - Parameter property: 属性
+    /// - Returns: 属性值
+    public func getValueOfProperty(property: String) -> AnyObject? {
+        let allPropertys = self.getAllProperties()
+        if allPropertys.contains(property) {
+            return self.base.value(forKey: property) as AnyObject
+        } else {
+            return nil
+        }
+    }
+
+    /// 设置指定属性的值
+    ///
+    /// - Parameters:
+    ///   - property: 属性
+    ///   - value: 属性新值
+    public func setValueOfProperty(property: String, value: AnyObject) {
+        let allPropertys = self.getAllProperties()
+        if allPropertys.contains(property) {
+            self.base.setValue(value, forKey: property)
+        }
+    }
+
+    /// 获取所有属性还有值
+    ///
+    /// - Returns: 属性以及对应的值
+    public func getAllPropertysAndValue() -> [String: Any] {
+        var result = [String: Any]()
+        for item in getAllProperties() {
+            result[item] = getValueOfProperty(property: item)
+        }
+        return result
+    }
+
+    /// 静态方法，获取对象的所有属性名称
+    /// 获取对象的所有属性
+    /// 注意:必须在获取类的class前添加@objcMembers，不然获取为空数组
+    /// - Returns: 属性列表
+    public static func getAllProperties(ignoredProperties: [String] = []) -> [String] {
+        var count: UInt32 = 0
+        let properties = class_copyPropertyList(Base.classForCoder(), &count)
+        var propertyNames: [String] = []
+        for i in 0 ..< Int(count) {
+            let property = properties![i]
+            let name = property_getName(property)
+            let strName = String(cString: name)
+            propertyNames.append(strName)
+        }
+        free(properties) // 释放内存
+
+        return propertyNames.filter { !ignoredProperties.contains($0) }
+    }
+
+    /// 获取对象的所有属性名称
+    /// 获取对象的所有属性
+    /// 注意:必须在获取类的class前添加 @objcMembers，不然获取为空数组
+    /// - Returns: 属性列表
+    private func getAllProperties() -> [String] {
+        var count: UInt32 = 0
+        let properties = class_copyPropertyList(self.base.classForCoder, &count)
+        var propertyNames: [String] = []
+        for i in 0 ..< Int(count) {
+            let property = properties![i]
+            let name = property_getName(property)
+            let strName = String(cString: name)
+            propertyNames.append(strName)
+        }
+        free(properties) // 释放内存
+        return propertyNames
+    }
+}
+
 // MARK: - 通知闭包链式调用
 
 extension NSObject {
@@ -119,82 +196,5 @@ extension NSObject {
         } else if let notificationClosures = notificationVoidClosuresDict, let closures = notificationClosures[notify.name] {
             closures()
         }
-    }
-}
-
-// MARK: - 获取NSObject子类的所有属性值，使用这个需要类是NSObject的子类，且前面加上@objcMembers，否则为空数组
-
-extension TxExtensionWrapper where Base: NSObject {
-    /// 获取指定属性的值
-    ///
-    /// - Parameter property: 属性
-    /// - Returns: 属性值
-    public func getValueOfProperty(property: String) -> AnyObject? {
-        let allPropertys = self.getAllProperties()
-        if allPropertys.contains(property) {
-            return self.base.value(forKey: property) as AnyObject
-        } else {
-            return nil
-        }
-    }
-
-    /// 设置指定属性的值
-    ///
-    /// - Parameters:
-    ///   - property: 属性
-    ///   - value: 属性新值
-    public func setValueOfProperty(property: String, value: AnyObject) {
-        let allPropertys = self.getAllProperties()
-        if allPropertys.contains(property) {
-            self.base.setValue(value, forKey: property)
-        }
-    }
-
-    /// 获取所有属性还有值
-    ///
-    /// - Returns: 属性以及对应的值
-    public func getAllPropertysAndValue() -> [String: Any] {
-        var result = [String: Any]()
-        for item in getAllProperties() {
-            result[item] = getValueOfProperty(property: item)
-        }
-        return result
-    }
-
-    /// 静态方法，获取对象的所有属性名称
-    /// 获取对象的所有属性
-    /// 注意:必须在获取类的class前添加@objcMembers，不然获取为空数组
-    /// - Returns: 属性列表
-    public static func getAllProperties(ignoredProperties: [String] = []) -> [String] {
-        var count: UInt32 = 0
-        let properties = class_copyPropertyList(Base.classForCoder(), &count)
-        var propertyNames: [String] = []
-        for i in 0 ..< Int(count) {
-            let property = properties![i]
-            let name = property_getName(property)
-            let strName = String(cString: name)
-            propertyNames.append(strName)
-        }
-        free(properties) // 释放内存
-
-        return propertyNames.filter { !ignoredProperties.contains($0) }
-    }
-
-    /// 获取对象的所有属性名称
-    /// 获取对象的所有属性
-    /// 注意:必须在获取类的class前添加 @objcMembers，不然获取为空数组
-    /// - Returns: 属性列表
-    private func getAllProperties() -> [String] {
-        var count: UInt32 = 0
-        let properties = class_copyPropertyList(self.base.classForCoder, &count)
-        var propertyNames: [String] = []
-        for i in 0 ..< Int(count) {
-            let property = properties![i]
-            let name = property_getName(property)
-            let strName = String(cString: name)
-            propertyNames.append(strName)
-        }
-        free(properties) // 释放内存
-        return propertyNames
     }
 }

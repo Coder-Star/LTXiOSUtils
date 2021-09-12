@@ -8,7 +8,7 @@
 import Foundation
 import WebKit
 
-extension WKWebView {
+extension TxExtensionWrapper where Base: WKWebView {
     private class WKWebViewInputAccessoryView {
         @objc
         var inputAccessoryView: AnyObject? {
@@ -18,7 +18,7 @@ extension WKWebView {
 
     /// 移除键盘inputAccessoryView
     public func removeInputAccessoryView() {
-        guard let target = scrollView.subviews.first(where: {
+        guard let target = base.scrollView.subviews.first(where: {
             String(describing: type(of: $0)).hasPrefix("WKContent")
         }), let superclass = target.superclass else {
             return

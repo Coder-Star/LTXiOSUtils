@@ -59,7 +59,7 @@ extension TxExtensionWrapper where Base: UIViewController {
     }
 }
 
-extension UIViewController {
+extension TxExtensionWrapper where Base: UIViewController {
     /// 生成提示框，一个按钮回调
     /// - Parameters:
     ///   - style: 样式
@@ -98,8 +98,8 @@ extension UIViewController {
                           message: String,
                           cancelTitle: String = "好的",
                           sureBlock: (() -> Void)? = nil) {
-        if let alertController = UIViewController.getAlert(style: style, title: title, message: message, cancelTitle: cancelTitle, sureBlock: sureBlock) {
-            self.present(alertController, animated: true, completion: nil)
+        if let alertController = UIViewController.tx.getAlert(style: style, title: title, message: message, cancelTitle: cancelTitle, sureBlock: sureBlock) {
+            self.base.present(alertController, animated: true, completion: nil)
         }
     }
 
@@ -153,18 +153,18 @@ extension UIViewController {
                           cancelTitle: String = "取消",
                           cancelBlock: (() -> Void)? = nil,
                           sureBlock: @escaping () -> Void) {
-        if let alertController = UIViewController.getAlert(style: style, title: title, message: message, sureTitle: sureTitle, cancelTitle: cancelTitle, cancelBlock: cancelBlock, sureBlock: sureBlock) {
-            self.present(alertController, animated: true, completion: nil)
+        if let alertController = UIViewController.tx.getAlert(style: style, title: title, message: message, sureTitle: sureTitle, cancelTitle: cancelTitle, cancelBlock: cancelBlock, sureBlock: sureBlock) {
+            self.base.present(alertController, animated: true, completion: nil)
         }
     }
 }
 
-extension UIViewController {
+extension TxExtensionWrapper where Base: UIViewController {
     /// 点击空白处取消键盘
     public func hideKeyboardWhenTappedAround() {
-        self.view.addTapGesture { tap in
+        self.base.view.addTapGesture { tap in
             tap.cancelsTouchesInView = false
-            self.view.endEditing(true)
+            self.base.view.endEditing(true)
         }
     }
 }
