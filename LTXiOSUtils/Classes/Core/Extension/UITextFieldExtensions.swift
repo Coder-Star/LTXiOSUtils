@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension TxExtensionWrapper where Base: UITextField {
     /// 取值时去除了空格符以及换行符

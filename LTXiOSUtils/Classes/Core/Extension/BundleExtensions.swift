@@ -1,5 +1,5 @@
 //
-//  BundleExtension.swift
+//  BundleExtensions.swift
 //  LTXiOSUtils
 //
 //  Created by CoderStar on 2020/11/9.

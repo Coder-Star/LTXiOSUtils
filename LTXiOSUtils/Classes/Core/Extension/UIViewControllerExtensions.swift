@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension TxExtensionWrapper where Base: UIViewController {
     /// 获取当前屏幕顶层ViewController
@@ -182,5 +183,10 @@ extension TxExtensionWrapper where Base: UIViewController {
     /// 49；
     public var tabBarHeight: CGFloat? {
         return base.tabBarController?.tabBar.frame.height
+    }
+
+    /// 标识符
+    public var identifier: String {
+        return String(describing: self.base)
     }
 }

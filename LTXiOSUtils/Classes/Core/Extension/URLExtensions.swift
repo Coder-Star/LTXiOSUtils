@@ -1,5 +1,5 @@
 //
-//  URLExtension.swift
+//  URLExtensions.swift
 //  LTXiOSUtils
 //
 //  Created by CoderStar on 2020/9/9.

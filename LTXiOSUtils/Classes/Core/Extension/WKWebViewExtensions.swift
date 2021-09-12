@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 import WebKit
 
 extension TxExtensionWrapper where Base: WKWebView {

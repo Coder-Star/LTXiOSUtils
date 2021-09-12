@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension TxExtensionWrapper where Base: UINavigationController {
     /// 关闭当前页面并跳转到新页面
