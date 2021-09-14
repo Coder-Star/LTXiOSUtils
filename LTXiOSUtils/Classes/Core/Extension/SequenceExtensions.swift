@@ -33,4 +33,21 @@ extension TxExtensionWrapper where Base: Sequence {
             return $0[keyPath: keyPath] < $1[keyPath: keyPath]
         }
     }
+
+    /// 将集合分组
+    ///
+    /// - Parameter key: 分组依据
+    /// - Returns: 分组后结果
+    public func group<GroupingType: Hashable>(by key: (Base.Iterator.Element) -> GroupingType) -> [[Base.Iterator.Element]] {
+        var groups: [GroupingType: [Base.Iterator.Element]] = [:]
+        var groupsOrder: [GroupingType] = []
+        base.forEach { element in
+            let key = key(element)
+            if case nil = groups[key]?.append(element) {
+                groups[key] = [element]
+                groupsOrder.append(key)
+            }
+        }
+        return groupsOrder.map { groups[$0]! }
+    }
 }

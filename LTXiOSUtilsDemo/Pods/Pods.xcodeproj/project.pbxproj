@@ -39,6 +39,7 @@
 		2B58A4ECE824BA3F68891E5412C4A97F /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62741EFD0B56B7EBFBF8828FE5EE7666 /* URLEncodedFormEncoder.swift */; };
 		2BEE7AA647C7CD67256E34EBD2AEA2DD /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B8250BC4D1684141B2AB4C1DED987 /* Notifications.swift */; };
 		2C4D548C8CDA0326F69E32560920D89B /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 52C65A87C0CAC153E292DA914C6608AD /* en.lproj */; };
+		2D51495726F0C6B8004DE5FB /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D51495626F0C6B8004DE5FB /* CollectionExtensions.swift */; };
 		2DEF52BA26EDD24B006D5D74 /* DispatchTimeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF52B926EDD24B006D5D74 /* DispatchTimeExtensions.swift */; };
 		2DEF52C326EDD27D006D5D74 /* UITapGestureRecognizerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF52C226EDD27D006D5D74 /* UITapGestureRecognizerExtensions.swift */; };
 		2DEF52E126EDD2D8006D5D74 /* UICollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF52E026EDD2D8006D5D74 /* UICollectionViewCellExtensions.swift */; };
@@ -266,6 +267,7 @@
 		24C9CA561869B34F94BD1E1D25BDD791 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
 		2600CAC076FDC543AF68560677762A89 /* CSPaddingLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CSPaddingLabel.swift; sourceTree = "<group>"; };
 		2BB4D9030EA84E0F58F15486A5D3885D /* LTXiOSUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LTXiOSUtils-prefix.pch"; sourceTree = "<group>"; };
+		2D51495626F0C6B8004DE5FB /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionExtensions.swift; path = LTXiOSUtils/Classes/Core/Extension/CollectionExtensions.swift; sourceTree = "<group>"; };
 		2DDC2BFA7E9B707553C5A1C299089686 /* LTXiOSUtilsComponent.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTXiOSUtilsComponent.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DEF52B926EDD24B006D5D74 /* DispatchTimeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DispatchTimeExtensions.swift; path = LTXiOSUtils/Classes/Core/Extension/DispatchTimeExtensions.swift; sourceTree = "<group>"; };
 		2DEF52C226EDD27D006D5D74 /* UITapGestureRecognizerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UITapGestureRecognizerExtensions.swift; path = LTXiOSUtils/Classes/Core/Extension/UITapGestureRecognizerExtensions.swift; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 				2DEF52C226EDD27D006D5D74 /* UITapGestureRecognizerExtensions.swift */,
 				2DEF52E026EDD2D8006D5D74 /* UICollectionViewCellExtensions.swift */,
 				2DEF52E926EDD2ED006D5D74 /* UITableViewCellExtensions.swift */,
+				2D51495626F0C6B8004DE5FB /* CollectionExtensions.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -1335,6 +1338,7 @@
 				4D978D77620108AE0F8B6DDDF7832BE2 /* GrowingTextView.swift in Sources */,
 				66598CCB2A51CFFA6A60945A23DCC0BC /* ImagePickGridView.swift in Sources */,
 				9B00C32BAF700040E5CC14A1A7020716 /* IntExtensions.swift in Sources */,
+				2D51495726F0C6B8004DE5FB /* CollectionExtensions.swift in Sources */,
 				8638252D4F161036AC0785882872B64F /* Log.swift in Sources */,
 				460E310B3EE87BCBBA2CDAB21E8ED38D /* LTXiOSUtils-dummy.m in Sources */,
 				A7319B434D384AA7AF60E45A330AC397 /* LTXiOSUtilsResource.swift in Sources */,
