@@ -7,16 +7,19 @@
 
 import UIKit
 
-@objc
-public protocol RollingNoticeViewDataSource: NSObjectProtocol {
+public protocol RollingNoticeViewDataSource: AnyObject {
     func numberOfRowsFor(roolingView: RollingNoticeView) -> Int
     func rollingNoticeView(roolingView: RollingNoticeView, cellAtIndex index: Int) -> RollingNoticeCell
 }
 
-@objc
-public protocol RollingNoticeViewDelegate: NSObjectProtocol {
-    @objc
-    optional func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int)
+public protocol RollingNoticeViewDelegate: AnyObject  {
+    func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int)
+}
+
+extension RollingNoticeViewDelegate {
+    public func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int) {
+
+    }
 }
 
 open class RollingNoticeView: UIView {
@@ -207,7 +210,7 @@ extension RollingNoticeView {
             if strongSelf.currentIndex > count - 1 {
                 strongSelf.currentIndex = 0
             }
-            strongSelf.delegate?.rollingNoticeView?(strongSelf, didClickAt: strongSelf.currentIndex)
+            strongSelf.delegate?.rollingNoticeView(strongSelf, didClickAt: strongSelf.currentIndex)
         }
     }
 }
