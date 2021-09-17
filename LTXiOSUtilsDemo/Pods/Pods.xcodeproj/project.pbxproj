@@ -164,7 +164,7 @@
 		F7346C6E0B45120A380D95BB4A3A8DE0 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5C9D8A29C50A2DC9EDEF5F001F3F9 /* DoubleExtensions.swift */; };
 		F7417616C3A7675BBA6B9FD074544C00 /* CredentialsPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9349B1BCBCFFD22A666437A276678E6 /* CredentialsPlugin.swift */; };
 		F8774C1FC71EEA51529FFFFD1CAAA6EF /* SuspensionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA527E1D911181ED5D723BA944B09FA /* SuspensionButton.swift */; };
-		FA779AB9E9B633D487C10AF8395D2FCD /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2E636FC3D8A794D595192E8A7075D /* Then.swift */; };
+		FA779AB9E9B633D487C10AF8395D2FCD /* ChainGrammar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2E636FC3D8A794D595192E8A7075D /* ChainGrammar.swift */; };
 		FB57A0F0F2910735FF27F1FA34DE864C /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F036B49DDD3F282D02C5C7E562E4AE /* RequestTaskMap.swift */; };
 		FF00E3E2EC1A1160B3F8DC38EB219D20 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6FBE833B5404D478921F3075F3E859 /* Response.swift */; };
 /* End PBXBuildFile section */
@@ -243,7 +243,7 @@
 		080569970B819AFF6E4EC27B4EFF620B /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserDefaultsProtocol.swift; path = LTXiOSUtils/Classes/Util/UserDefaultsProtocol.swift; sourceTree = "<group>"; };
 		084C66D9940E249BE4F796FF96E0CD95 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		08B18BCD7E3B3ED8E53634AF9D71F592 /* URL+Moya.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+Moya.swift"; path = "Sources/Moya/URL+Moya.swift"; sourceTree = "<group>"; };
-		09D2E636FC3D8A794D595192E8A7075D /* Then.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Then.swift; path = LTXiOSUtils/Classes/Core/CoreUtil/Then.swift; sourceTree = "<group>"; };
+		09D2E636FC3D8A794D595192E8A7075D /* ChainGrammar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChainGrammar.swift; path = LTXiOSUtils/Classes/Core/CoreUtil/ChainGrammar.swift; sourceTree = "<group>"; };
 		0C3B552D11D30A03A4815E8A05BF2771 /* Endpoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = Sources/Moya/Endpoint.swift; sourceTree = "<group>"; };
 		0C91878C69E4070B8947E76C5BCD051E /* ResourceUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResourceUtils.swift; path = LTXiOSUtils/Classes/Util/ResourceUtils.swift; sourceTree = "<group>"; };
 		0DAAFA883ED8C44240AFDB777D9FCEA0 /* libPods-LTXiOSUtilsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTXiOSUtilsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -520,7 +520,7 @@
 			isa = PBXGroup;
 			children = (
 				46C8E56CA85A3C75D8C615A4A53CA3F2 /* Log.swift */,
-				09D2E636FC3D8A794D595192E8A7075D /* Then.swift */,
+				09D2E636FC3D8A794D595192E8A7075D /* ChainGrammar.swift */,
 			);
 			name = CoreUtil;
 			sourceTree = "<group>";
@@ -1071,7 +1071,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -1359,7 +1359,7 @@
 				5A28DF3CB0E46FF236CB764C4C477623 /* StringExtensions.swift in Sources */,
 				2DEF52C326EDD27D006D5D74 /* UITapGestureRecognizerExtensions.swift in Sources */,
 				F8774C1FC71EEA51529FFFFD1CAAA6EF /* SuspensionButton.swift in Sources */,
-				FA779AB9E9B633D487C10AF8395D2FCD /* Then.swift in Sources */,
+				FA779AB9E9B633D487C10AF8395D2FCD /* ChainGrammar.swift in Sources */,
 				090E84A8D5F945CC5E5809BD7F9FC88C /* TreeData.swift in Sources */,
 				3F8A31B18108796FEAE6CFC343F93F5B /* TreeNode.swift in Sources */,
 				C0BE2E77FE10B2FF8132F9A776162865 /* TreeTableView.swift in Sources */,
@@ -1460,7 +1460,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MODULEMAP_FILE = Headers/Public/Alamofire/Alamofire.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -1579,7 +1579,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/LTXiOSUtils/LTXiOSUtils-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MODULEMAP_FILE = Headers/Public/LTXiOSUtils/LTXiOSUtils.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -1604,7 +1604,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MODULEMAP_FILE = Headers/Public/Alamofire/Alamofire.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -1691,7 +1691,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Moya/Moya-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MODULEMAP_FILE = Headers/Public/Moya/Moya.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -1783,7 +1783,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/LTXiOSUtils/LTXiOSUtils-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MODULEMAP_FILE = Headers/Public/LTXiOSUtils/LTXiOSUtils.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -1808,7 +1808,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MODULEMAP_FILE = Headers/Public/Reachability/ReachabilitySwift.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -1850,7 +1850,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Moya/Moya-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MODULEMAP_FILE = Headers/Public/Moya/Moya.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -1874,7 +1874,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MODULEMAP_FILE = Headers/Public/Reachability/ReachabilitySwift.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";

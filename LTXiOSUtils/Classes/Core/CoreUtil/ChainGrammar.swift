@@ -1,11 +1,13 @@
 //
-//  Then.swift
+//  ChainGrammar.swift
 //  LTXiOSUtils
-//  语法糖，用于属性初始化
+//  链式语法
 //  Created by CoderStar on 2020/2/20.
 //
 
 import Foundation
+
+// MARK: - Then
 
 /// 接口
 public protocol Then {}
@@ -60,3 +62,32 @@ extension Set: Then {}
 extension UIEdgeInsets: Then {}
 extension UIOffset: Then {}
 extension UIRectEdge: Then {}
+
+
+
+/// dynamicMemberLookup实现链式语法
+///
+/// - Note: 使用方式
+/// ```
+///     Setter(subject: UIView())
+///     .frame(CGRect(x: 0, y: 0, width: 100, height: 100))
+///     .backgroundColor(.white)
+///     .alpha(0.5)
+///     .subject
+///  ```
+@dynamicMemberLookup
+public struct Setter<Subject> {
+    let subject: Subject
+
+    subscript<Value>(dynamicMember keyPath: WritableKeyPath<Subject, Value>) -> ((Value) -> Setter<Subject>) {
+        // 获取到真正的对象
+        var subject = self.subject
+        return { value in
+            // 把 value 指派给 subject
+            subject[keyPath: keyPath] = value
+            // 回传的类型是 Setter 而不是 Subject
+            // 因为使用Setter来链式，而不是 Subject 本身
+            return Setter(subject: subject)
+        }
+    }
+}
