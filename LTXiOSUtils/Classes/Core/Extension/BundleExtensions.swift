@@ -8,7 +8,7 @@
 import Foundation
 
 extension TxExtensionWrapper where Base: Bundle {
-    /// 获取指定pod的指定Bundle，pod以resource_bundle方式引入资源
+    /// 获取指定pod的指定Bundle，前提是pod以resource_bundle方式引入资源
     /// - Parameters:
     ///   - bundleName: bundleName
     ///   - podName: podName,当使用framwork时使用，如果为nil，赋值为bundleName
@@ -16,11 +16,14 @@ extension TxExtensionWrapper where Base: Bundle {
     public static func getBundle(bundleName: String, podName: String? = nil) -> Bundle? {
         var podNameStr = podName
         var bundleNameStr = bundleName
+
         if bundleNameStr.contains(".bundle") {
             bundleNameStr = bundleNameStr.components(separatedBy: ".bundle").first!
         }
+
         // 不使用framwork
         var url = Bundle.main.url(forResource: bundleNameStr, withExtension: "bundle")
+
         // 使用framwork,拼接路径
         if url == nil {
             if podNameStr == nil {
@@ -33,6 +36,7 @@ extension TxExtensionWrapper where Base: Bundle {
             }
             url = Bundle(url: url!)?.url(forResource: bundleNameStr, withExtension: "bundle")
         }
+
         guard let bundleUrl = url else {
             return nil
         }
