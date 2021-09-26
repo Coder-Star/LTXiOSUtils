@@ -26,6 +26,7 @@ open class PageControl: UIView {
             setNeedsLayout()
         }
     }
+
     /// 当前是第几页
     open var currentPage = 0 {
         didSet {
@@ -46,6 +47,16 @@ open class PageControl: UIView {
 
     /// 间距
     open var margin: CGFloat = 5
+
+    open override var intrinsicContentSize: CGSize {
+        if numberLabel.frame != .zero {
+            return numberLabel.frame.size
+        }
+        let tempValue = CGFloat(numberOfPages - 1) * normalSize.width
+        let frameWidth = currentSize.width + tempValue + CGFloat(numberOfPages + 1) * margin
+        let frameHeight = max(currentSize.height, normalSize.height) + 5
+        return CGSize(width: frameWidth, height: frameHeight)
+    }
 
     /// 普通状态的尺寸
     private var normalSize = CGSize.zero
@@ -74,6 +85,14 @@ open class PageControl: UIView {
         setCurrentAndNormalSize()
         self.tag = -999
         backgroundColor = UIColor.clear
+    }
+
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        self.backgroundColor = UIColor.clear
+        if self.subviews.isEmpty {
+            layoutPages()
+        }
     }
 
     private func layoutPages() {
@@ -216,24 +235,5 @@ open class PageControl: UIView {
                 label.text = "\(currentPage + 1) / \(numberOfPages)"
             }
         }
-    }
-
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-        self.backgroundColor = UIColor.clear
-        if self.subviews.isEmpty {
-            layoutPages()
-        }
-    }
-}
-
-extension PageControl {
-    var frameSize: CGSize {
-        if numberLabel.frame != .zero {
-            return numberLabel.frame.size
-        }
-        let frameWidth = currentSize.width + (numberOfPages - 1).tx.cgFloatValue * normalSize.width + (numberOfPages + 1).tx.cgFloatValue * margin
-        let frameHeight = max(currentSize.height, normalSize.height) + 5
-        return CGSize(width: frameWidth, height: frameHeight)
     }
 }

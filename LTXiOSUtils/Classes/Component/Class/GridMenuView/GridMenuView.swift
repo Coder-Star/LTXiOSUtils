@@ -145,9 +145,9 @@ public class GridMenuView: UIView {
                 viewHeight = collectionView!.frame.height
             } else {
                 pageControl.numberOfPages = pageControlCount
-                pageControl.frame = CGRect(x: (viewWidth - pageControl.frameSize.width) / 2, y: collectionView!.frame.height + 5, width: pageControl.frameSize.width, height: pageControl.frameSize.height)
+                pageControl.frame = CGRect(x: (viewWidth - pageControl.intrinsicContentSize.width) / 2, y: collectionView!.frame.height + 5, width: pageControl.intrinsicContentSize.width, height: pageControl.intrinsicContentSize.height)
                 self.addSubview(pageControl)
-                viewHeight = collectionView!.frame.height + pageControl.frameSize.height + 10
+                viewHeight = collectionView!.frame.height + pageControl.intrinsicContentSize.height + 10
             }
         case .horizontalScroll:
             collectionView?.isPagingEnabled = false
