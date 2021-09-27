@@ -1,6 +1,0 @@
-module LTXiOSUtils {
-  umbrella header "LTXiOSUtils-umbrella.h"
-
-  export *
-  module * { export * }
-}
