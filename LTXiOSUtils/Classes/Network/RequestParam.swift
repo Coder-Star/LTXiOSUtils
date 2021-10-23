@@ -62,18 +62,18 @@ public struct RequestParam {
 
     /// 打印信息
     public func printInfo() {
-        Log.d("url: \(self.baseUrl + self.path)")
-        Log.d("parameters: \(self.parameters)")
-        Log.d("method: \(self.method)")
-        if self.token.tx.isNotEmpty {
-            Log.d("token: \(self.token)")
+        Log.d("url: \(baseUrl + path)")
+        Log.d("parameters: \(parameters)")
+        Log.d("method: \(method)")
+        if token.tx.isNotEmpty {
+            Log.d("token: \(token)")
         }
-        if self.header.isNotNil {
-            Log.d("header: \(String(describing: self.header?.description))")
+        if header.isNotNil {
+            Log.d("header: \(String(describing: header?.description))")
         }
-        if self.fileList.isNotNil {
-            Log.d("file: \(String(describing: self.fileList?.compactMap { $0.name }.description))")
-            Log.d("file: \(String(describing: self.fileList?.compactMap { $0.data }.description))")
+        if fileList.isNotNil {
+            Log.d("file: \(String(describing: fileList?.compactMap { $0.name }.description))")
+            Log.d("file: \(String(describing: fileList?.compactMap { $0.data }.description))")
         }
     }
 }
@@ -109,7 +109,7 @@ public struct FileInfo {
     ///   - data: 文件数据
     public init(name: String, type: String, data: Data) {
         self.name = name
-        self.size = String(format: "%.2f", Double(data.count) / 1_024.0) + "KB"
+        size = String(format: "%.2f", Double(data.count) / 1_024.0) + "KB"
         self.type = type
         self.data = data
     }
@@ -121,11 +121,11 @@ public struct FileInfo {
     ///   - data: 文件数据
     public init(name: String, data: Data) {
         self.name = name
-        self.size = String(format: "%.2f", Double(data.count) / 1_024.0) + "KB"
+        size = String(format: "%.2f", Double(data.count) / 1_024.0) + "KB"
         if let tempType = name.split(separator: ".").last {
-            self.type = ".\(tempType)"
+            type = ".\(tempType)"
         } else {
-            self.type = ""
+            type = ""
         }
         self.data = data
     }

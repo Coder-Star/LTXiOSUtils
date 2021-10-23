@@ -109,7 +109,7 @@ public class TreeTableView: UIView {
     }
 
     private func initView() {
-        self.addSubview(tableView)
+        addSubview(tableView)
         if isNeedRefresh {
             tableView.addSubview(refreshControl)
         }

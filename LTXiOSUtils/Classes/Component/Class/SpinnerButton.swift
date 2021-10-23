@@ -59,7 +59,7 @@ open class SpinnerButton: UIButton {
             return self.title(for: .normal)
         }
         set {
-            self.setTitle(newValue, for: .normal)
+            setTitle(newValue, for: .normal)
         }
     }
 
@@ -69,7 +69,7 @@ open class SpinnerButton: UIButton {
             return self.titleColor(for: .normal)
         }
         set {
-            self.setTitleColor(newValue, for: .normal)
+            setTitleColor(newValue, for: .normal)
         }
     }
 
@@ -109,14 +109,14 @@ open class SpinnerButton: UIButton {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
-        gradientLayer.frame = self.bounds
+        gradientLayer.frame = bounds
         clipsToBounds = true
     }
 
     private func setUp() {
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        self.backgroundColor = UIColor(red: 49 / 255, green: 177 / 255, blue: 229 / 255, alpha: 1.0)
-        self.titleColor = .white
+        titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        backgroundColor = UIColor(red: 49 / 255, green: 177 / 255, blue: 229 / 255, alpha: 1.0)
+        titleColor = .white
     }
 }
 
@@ -234,7 +234,7 @@ private class SpinnerLayer: CAShapeLayer {
         lineWidth = 2.0
         strokeColor = color
         fillColor = UIColor.clear.cgColor
-        self.isHidden = true
+        isHidden = true
     }
 
     fileprivate func startAnimation() {

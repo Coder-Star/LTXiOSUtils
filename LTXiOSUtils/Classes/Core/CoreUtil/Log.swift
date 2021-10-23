@@ -230,7 +230,7 @@ extension String {
                 }
             }
         }
-        let tempStr = self.replacingOccurrences(of: "\\u", with: "\\U").replacingOccurrences(of: "\"", with: "\\\"")
+        let tempStr = replacingOccurrences(of: "\\u", with: "\\U").replacingOccurrences(of: "\"", with: "\\\"")
         let tempData = "\"".appending(tempStr).appending("\"").data(using: .utf8)
         var returnStr = ""
         do {

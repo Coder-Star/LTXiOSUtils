@@ -83,14 +83,14 @@ open class PageControl: UIView {
 
     private func setupView() {
         setCurrentAndNormalSize()
-        self.tag = -999
+        tag = -999
         backgroundColor = UIColor.clear
     }
 
     override open func layoutSubviews() {
         super.layoutSubviews()
-        self.backgroundColor = UIColor.clear
-        if self.subviews.isEmpty {
+        backgroundColor = UIColor.clear
+        if subviews.isEmpty {
             layoutPages()
         }
     }
@@ -126,7 +126,7 @@ open class PageControl: UIView {
 
     // 布局默认样式 ring样式 square样式
     private func layoutOrgPages() {
-        let y: CGFloat = (self.frame.height - normalSize.height) * 0.5
+        let y: CGFloat = (frame.height - normalSize.height) * 0.5
         for i in 0 ..< numberOfPages {
             let point = UIView(frame: CGRect(x: CGFloat(i) * (margin + normalSize.width) + margin, y: y, width: normalSize.width, height: normalSize.height))
             point.tag = i
@@ -159,14 +159,14 @@ open class PageControl: UIView {
             default:
                 break
             }
-            self.addSubview(point)
+            addSubview(point)
         }
     }
 
     // 布局bigSmall样式
     private func layoutBigSmallPages() {
-        let y1: CGFloat = (self.frame.height - normalSize.height) * 0.5
-        let y2: CGFloat = (self.frame.height - currentSize.height) * 0.5
+        let y1: CGFloat = (frame.height - normalSize.height) * 0.5
+        let y2: CGFloat = (frame.height - currentSize.height) * 0.5
         for i in 0 ..< numberOfPages {
             var pointX = 0.tx.cgFloatValue
             if i <= currentPage {
@@ -182,23 +182,23 @@ open class PageControl: UIView {
             point.backgroundColor = i == currentPage ? currentColor : normorlColor
             point.layer.cornerRadius = i == currentPage ? currentSize.height * 0.5 : normalSize.height * 0.5
             point.layer.masksToBounds = true
-            self.addSubview(point)
+            addSubview(point)
         }
     }
 
     // 布局number样式
     private func layoutNumberPages() {
         numberLabel.text = "\(currentPage + 1) / \(numberOfPages)"
-        self.addSubview(numberLabel)
+        addSubview(numberLabel)
     }
 
     // 页码切换
     private func setPage() {
-        if self.subviews.isEmpty { return }
+        if subviews.isEmpty { return }
         if currentPage > numberOfPages, currentPage < 0 { return }
         switch style {
         case .original, .square:
-            for view in self.subviews {
+            for view in subviews {
                 view.backgroundColor = normorlColor
                 switch style {
                 case .square:
@@ -211,7 +211,7 @@ open class PageControl: UIView {
                     break
                 }
             }
-            if let curView = self.viewWithTag(currentPage) {
+            if let curView = viewWithTag(currentPage) {
                 curView.backgroundColor = currentColor
                 switch style {
                 case .square:
@@ -221,17 +221,17 @@ open class PageControl: UIView {
                 }
             }
         case .ring:
-            for view in self.subviews {
+            for view in subviews {
                 view.backgroundColor = UIColor.clear
                 view.layer.borderWidth = 1.0
                 view.layer.borderColor = normorlColor.cgColor
             }
-            if let curView = self.viewWithTag(currentPage) {
+            if let curView = viewWithTag(currentPage) {
                 curView.backgroundColor = currentColor
                 curView.layer.borderWidth = 0
             }
         case .number:
-            if let label = self.viewWithTag(curLabelTag) as? UILabel {
+            if let label = viewWithTag(curLabelTag) as? UILabel {
                 label.text = "\(currentPage + 1) / \(numberOfPages)"
             }
         }

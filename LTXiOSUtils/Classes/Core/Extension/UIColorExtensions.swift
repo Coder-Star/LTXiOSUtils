@@ -59,7 +59,7 @@ extension TxExtensionWrapper where Base: UIColor {
 
         let multiplier = CGFloat(255.999_999)
 
-        guard self.base.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
+        guard base.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
             return nil
         }
 
@@ -84,28 +84,28 @@ extension TxExtensionWrapper where Base: UIColor {
     /// 颜色的反色
     public var invertColor: UIColor {
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0
-        self.base.getRed(&r, green: &g, blue: &b, alpha: nil)
+        base.getRed(&r, green: &g, blue: &b, alpha: nil)
         return UIColor(red: 1.0 - r, green: 1.0 - g, blue: 1.0 - b, alpha: 1)
     }
 
     /// 红色值
     public var redColor: Int {
         var red: CGFloat = 0
-        self.base.getRed(&red, green: nil, blue: nil, alpha: nil)
+        base.getRed(&red, green: nil, blue: nil, alpha: nil)
         return Int(red * 255)
     }
 
     /// 绿色值
     public var greenColor: Int {
         var green: CGFloat = 0
-        self.base.getRed(nil, green: &green, blue: nil, alpha: nil)
+        base.getRed(nil, green: &green, blue: nil, alpha: nil)
         return Int(green * 255)
     }
 
     /// 蓝色值
     public var blueColor: Int {
         var blue: CGFloat = 0
-        self.base.getRed(nil, green: nil, blue: &blue, alpha: nil)
+        base.getRed(nil, green: nil, blue: &blue, alpha: nil)
         return Int(blue * 255)
     }
 }
@@ -123,7 +123,7 @@ extension TxExtensionWrapper where Base: UIColor {
         guard let context = UIGraphicsGetCurrentContext() else {
             return nil
         }
-        context.setFillColor(self.base.cgColor)
+        context.setFillColor(base.cgColor)
         context.fill(rect)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsGetCurrentContext()
@@ -143,14 +143,14 @@ extension TxExtensionWrapper where Base: UIColor {
                 return darkColor
             }
         } else {
-            return self.base
+            return base
         }
-        return self.base
+        return base
     }
 
     /// 适配各种模式
     /// - Parameter colorWithDark: 暗黑模式颜色
     public func adapt(colorWithDark: UIColor? = nil) -> UIColor {
-        return self.adaptDark(colorWithDark)
+        return adaptDark(colorWithDark)
     }
 }

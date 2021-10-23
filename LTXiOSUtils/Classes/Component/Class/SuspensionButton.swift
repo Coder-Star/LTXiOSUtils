@@ -24,7 +24,7 @@ open class SuspensionButton: UIView {
     }
 
     private func setupView() {
-        self.addTapGesture { [weak self] _ in
+        addTapGesture { [weak self] _ in
             self?.clickCallBack?()
         }
     }

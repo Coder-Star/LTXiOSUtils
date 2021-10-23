@@ -132,7 +132,7 @@ public class GridMenuView: UIView {
         collectionView?.backgroundColor = .clear
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.showsHorizontalScrollIndicator = false
-        self.addSubview(collectionView!)
+        addSubview(collectionView!)
         setModeStyle()
     }
 
@@ -146,7 +146,7 @@ public class GridMenuView: UIView {
             } else {
                 pageControl.numberOfPages = pageControlCount
                 pageControl.frame = CGRect(x: (viewWidth - pageControl.intrinsicContentSize.width) / 2, y: collectionView!.frame.height + 5, width: pageControl.intrinsicContentSize.width, height: pageControl.intrinsicContentSize.height)
-                self.addSubview(pageControl)
+                addSubview(pageControl)
                 viewHeight = collectionView!.frame.height + pageControl.intrinsicContentSize.height + 10
             }
         case .horizontalScroll:
@@ -157,7 +157,7 @@ public class GridMenuView: UIView {
             } else {
                 let scrollPageControlViewWidth: CGFloat = 50
                 scrollPageControlView.frame = CGRect(x: (viewWidth - scrollPageControlViewWidth) / 2, y: collectionView!.frame.height + 5, width: scrollPageControlViewWidth, height: 3)
-                self.addSubview(scrollPageControlView)
+                addSubview(scrollPageControlView)
                 scrollPageControlView.currentIndicatorWidth = colCount.tx.cgFloatValue / realColCount.tx.cgFloatValue * scrollPageControlViewWidth
                 viewHeight = collectionView!.frame.height + scrollPageControlView.frame.height + 10
             }
@@ -326,7 +326,7 @@ extension GridMenuView: UICollectionViewDelegate {
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if let view = collectionView {
             if mode == .horizontalPage {
-                let index = Int(view.contentOffset.x / self.bounds.width)
+                let index = Int(view.contentOffset.x / bounds.width)
                 pageControl.currentPage = index
             }
         }
@@ -341,7 +341,7 @@ extension GridMenuView: UICollectionViewDelegate {
                 } else if offsetX > view.contentSize.width - view.frame.width {
                     offsetX = view.contentSize.width - view.frame.width
                 }
-                self.scrollPageControlView.progrss = offsetX * self.scrollPageControlView.offsetWidth / (view.contentSize.width - view.frame.width)
+                scrollPageControlView.progrss = offsetX * scrollPageControlView.offsetWidth / (view.contentSize.width - view.frame.width)
             }
         }
     }

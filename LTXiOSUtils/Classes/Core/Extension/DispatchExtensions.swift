@@ -25,7 +25,7 @@ extension TxExtensionWrapper where Base: DispatchQueue {
     /// 同时避免切换队列造成的执行时序问题
     /// - Parameter block: 代码块
     public func safeAsync(_ block: @escaping () -> Void) {
-        if base === DispatchQueue.main && Thread.isMainThread {
+        if base === DispatchQueue.main, Thread.isMainThread {
             block()
         } else {
             base.async { block() }
@@ -53,4 +53,3 @@ extension TxExtensionWrapper where Base == DispatchQueue {
         block()
     }
 }
-

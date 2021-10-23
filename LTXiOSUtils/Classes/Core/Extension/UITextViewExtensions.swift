@@ -13,10 +13,10 @@ extension TxExtensionWrapper where Base: UITextView {
     /// 可用于提交表单前用来判断值是否不为空
     public var contentText: String? {
         set {
-            self.base.text = newValue
+            base.text = newValue
         }
         get {
-            return self.base.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            return base.text.trimmingCharacters(in: .whitespacesAndNewlines)
         }
     }
 }
@@ -32,7 +32,7 @@ extension UITextView {
     private static let observingKeys = [
         "attributedText",
         "text",
-        "bounds"
+        "bounds",
     ]
 
     private struct RuntimeKey {
@@ -63,7 +63,7 @@ extension UITextView {
     public var placeholdFont: UIFont {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.placeholdFont!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            self.placeholderLabel?.font = placeholdFont
+            placeholderLabel?.font = placeholdFont
         }
         get {
             return objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholdFont!) as? UIFont ?? UIFont.systemFont(ofSize: 17)
@@ -74,7 +74,7 @@ extension UITextView {
     public var placeholdColor: UIColor {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.placeholdColor!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            self.placeholderLabel?.textColor = placeholdColor
+            placeholderLabel?.textColor = placeholdColor
         }
         get {
             return objc_getAssociatedObject(self, UITextView.RuntimeKey.placeholdColor!) as? UIColor ?? UIColor.lightGray
@@ -97,7 +97,7 @@ extension UITextView {
     public var limitLabelFont: UIFont {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.limitLabelFont!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            self.wordCountLabel?.font = limitLabelFont
+            wordCountLabel?.font = limitLabelFont
         }
         get {
             return objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLabelFont!) as? UIFont ?? UIFont.systemFont(ofSize: 13)
@@ -108,7 +108,7 @@ extension UITextView {
     public var limitLabelColor: UIColor {
         set {
             objc_setAssociatedObject(self, UITextView.RuntimeKey.limitLabelColor!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            self.wordCountLabel?.textColor = limitLabelColor
+            wordCountLabel?.textColor = limitLabelColor
         }
         get {
             return objc_getAssociatedObject(self, UITextView.RuntimeKey.limitLabelColor!) as? UIColor ?? UIColor.lightGray
@@ -133,7 +133,7 @@ extension UITextView {
         if #available(iOS 11, *) {
         } else {
             for key in UITextView.observingKeys {
-                self.removeObserver(self, forKeyPath: key)
+                removeObserver(self, forKeyPath: key)
             }
         }
     }
@@ -162,7 +162,7 @@ extension UITextView {
     private func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: self)
         for key in UITextView.observingKeys {
-            self.addObserver(self, forKeyPath: key, options: .new, context: nil)
+            addObserver(self, forKeyPath: key, options: .new, context: nil)
         }
         setupSubviews()
     }
@@ -175,13 +175,13 @@ extension UITextView {
 
     private func initPlaceholder(_ placeholder: String) {
         placeholderLabel = UILabel()
-        placeholderLabel?.font = self.placeholdFont
+        placeholderLabel?.font = placeholdFont
         placeholderLabel?.text = placeholder
         placeholderLabel?.numberOfLines = 0
         placeholderLabel?.lineBreakMode = .byCharWrapping
-        placeholderLabel?.textColor = self.placeholdColor
-        addSubview(self.placeholderLabel!)
-        placeholderLabel?.isHidden = self.text.count > 0 ? true : false
+        placeholderLabel?.textColor = placeholdColor
+        addSubview(placeholderLabel!)
+        placeholderLabel?.isHidden = text.count > 0 ? true : false
     }
 
     private func initWordCountLabel(_ limitLength: Int) {
@@ -189,40 +189,40 @@ extension UITextView {
         wordCountLabel = UILabel()
         wordCountLabel?.textAlignment = .right
         wordCountLabel?.adjustsFontSizeToFitWidth = true
-        wordCountLabel?.textColor = self.limitLabelColor
-        wordCountLabel?.font = self.limitLabelFont
-        if self.text.count > limitLength {
-            self.text = (self.text as NSString).substring(to: limitLength)
+        wordCountLabel?.textColor = limitLabelColor
+        wordCountLabel?.font = limitLabelFont
+        if text.count > limitLength {
+            text = (text as NSString).substring(to: limitLength)
         }
-        wordCountLabel?.backgroundColor = self.backgroundColor
-        wordCountLabel?.text = "\(self.text.count)/\(limitLength)"
+        wordCountLabel?.backgroundColor = backgroundColor
+        wordCountLabel?.text = "\(text.count)/\(limitLength)"
         addSubview(wordCountLabel!)
-        self.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: UITextView.wordCountLabelHeight + self.textContainerInset.bottom, right: 0)
+        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: UITextView.wordCountLabelHeight + textContainerInset.bottom, right: 0)
     }
 
     @objc
     private func textChange() {
         if placeholder.tx.isNotEmpty {
-            if self.text.count == 0 {
+            if text.count == 0 {
                 placeholderLabel?.isHidden = false
             } else {
                 placeholderLabel?.isHidden = true
             }
         }
         if limitLength > 0 {
-            if self.markedTextRange == nil {
-                if self.text.count > limitLength {
-                    self.text = (self.text as NSString).substring(to: limitLength)
+            if markedTextRange == nil {
+                if text.count > limitLength {
+                    text = (text as NSString).substring(to: limitLength)
                 }
-                wordCountLabel?.text = "\(self.text.count)/\(limitLength)"
+                wordCountLabel?.text = "\(text.count)/\(limitLength)"
             }
         } else if limitLines > 0 {
-            var size = getStringPlaceSize(self.text, textFont: self.font!)
-            let height = self.font!.lineHeight * CGFloat(limitLines)
+            var size = getStringPlaceSize(text, textFont: font!)
+            let height = font!.lineHeight * CGFloat(limitLines)
             if size.height > height {
                 while size.height > height {
-                    self.text = (self.text as NSString).substring(to: self.text.count - 1)
-                    size = getStringPlaceSize(self.text, textFont: self.font!)
+                    text = (text as NSString).substring(to: text.count - 1)
+                    size = getStringPlaceSize(text, textFont: font!)
                 }
             }
         }
@@ -232,7 +232,7 @@ extension UITextView {
     private func getStringPlaceSize(_ string: String, textFont: UIFont) -> CGSize {
         let attribute = [NSAttributedString.Key.font: textFont]
         let options = NSStringDrawingOptions.usesLineFragmentOrigin
-        let size = string.boundingRect(with: CGSize(width: self.contentSize.width - self.textContainer.lineFragmentPadding * 2, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: attribute, context: nil).size
+        let size = string.boundingRect(with: CGSize(width: contentSize.width - textContainer.lineFragmentPadding * 2, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: attribute, context: nil).size
         return size
     }
 
@@ -240,19 +240,19 @@ extension UITextView {
         if limitLength > 0, wordCountLabel != nil {
             wordCountLabel!.frame = CGRect(x: 0,
                                            y: bounds.height - UITextView.wordCountLabelHeight + contentOffset.y,
-                                           width: bounds.width - self.textContainer.lineFragmentPadding,
+                                           width: bounds.width - textContainer.lineFragmentPadding,
                                            height: UITextView.wordCountLabelHeight)
         }
 
         if placeholder.tx.isNotEmpty, placeholderLabel != nil {
-            let width = bounds.width - self.textContainer.lineFragmentPadding * 2
+            let width = bounds.width - textContainer.lineFragmentPadding * 2
             let size = placeholderLabel!.sizeThatFits(CGSize(width: width, height: .zero))
-            placeholderLabel!.frame = CGRect(x: self.textContainer.lineFragmentPadding,
-                                             y: self.textContainerInset.top,
+            placeholderLabel!.frame = CGRect(x: textContainer.lineFragmentPadding,
+                                             y: textContainerInset.top,
                                              width: size.width,
                                              height: size.height)
         }
 
-        wordCountLabel?.backgroundColor = self.backgroundColor
+        wordCountLabel?.backgroundColor = backgroundColor
     }
 }

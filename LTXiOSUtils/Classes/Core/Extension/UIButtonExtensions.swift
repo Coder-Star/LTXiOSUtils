@@ -90,8 +90,8 @@ extension UIButton {
     ///   - event: 事件
     @objc
     private func sendActionWithRepeatClick(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
-        if self.isKind(of: UIButton.self) {
-            switch self.repeatButtonClickType {
+        if isKind(of: UIButton.self) {
+            switch repeatButtonClickType {
             case .durationTime:
                 clickDurationTime = clickDurationTime == 0 ? UIButton.RepeatClickDefaultDuration : clickDurationTime
                 if isIgnoreEvent {
@@ -175,7 +175,7 @@ extension UIButton {
     /// - Parameter action: 回调
     @discardableResult
     public func addTouchUpInsideAction(_ action: @escaping ButtonAction) -> UIButton {
-        self.addAction(action: action, for: .touchUpInside)
+        addAction(action: action, for: .touchUpInside)
         return self
     }
 
@@ -185,7 +185,7 @@ extension UIButton {
     ///   - action: 回调
     @discardableResult
     public func addAction(event: UIControl.Event, _ action: @escaping ButtonAction) -> UIButton {
-        self.addAction(action: action, for: event)
+        addAction(action: action, for: event)
         return self
     }
 
@@ -197,9 +197,9 @@ extension UIButton {
             actionDict.updateValue(action, forKey: eventKey)
             self.actionDict = actionDict
         } else {
-            self.actionDict = [eventKey: action]
+            actionDict = [eventKey: action]
         }
-        self.dataStr = "\(controlEvents.rawValue)"
+        dataStr = "\(controlEvents.rawValue)"
         addTarget(self, action: #selector(respondControlEvent(button:)), for: controlEvents)
     }
 

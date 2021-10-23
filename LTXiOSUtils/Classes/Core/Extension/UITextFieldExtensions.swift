@@ -13,18 +13,16 @@ extension TxExtensionWrapper where Base: UITextField {
     /// 可用于提交表单前用来判断值是否不为空
     public var contentText: String? {
         set {
-            self.base.text = newValue
+            base.text = newValue
         }
         get {
-            return self.base.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            return base.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         }
     }
 }
 
-
 @IBDesignable
 extension UITextField {
-
     @IBInspectable
     public var csLeftPaddingWidth: CGFloat {
         get {

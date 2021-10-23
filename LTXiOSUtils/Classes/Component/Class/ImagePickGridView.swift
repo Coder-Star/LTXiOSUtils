@@ -90,13 +90,13 @@ open class ImagePickGridView: UIView {
 
     open override func layoutSubviews() {
         super.layoutSubviews()
-        Log.d(self.frame)
-        itemWidth = self.frame.width / colCount.tx.cgFloatValue
+        Log.d(frame)
+        itemWidth = frame.width / colCount.tx.cgFloatValue
         if layout.itemSize == .zero {
             layout.itemSize = CGSize(width: itemWidth ?? 0, height: itemWidth ?? 0)
         }
-        collectionView?.tx.height = self.frame.height
-        collectionView?.tx.width = self.frame.width
+        collectionView?.tx.height = frame.height
+        collectionView?.tx.width = frame.width
         reloadDataAndFrame()
     }
 
@@ -107,10 +107,10 @@ open class ImagePickGridView: UIView {
         collectionView?.register(ImagePickGridViewCell.self, forCellWithReuseIdentifier: ImagePickGridViewCell.description())
         collectionView?.dataSource = self
         collectionView?.delegate = self
-        collectionView?.backgroundColor = self.backgroundColor
+        collectionView?.backgroundColor = backgroundColor
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.showsHorizontalScrollIndicator = false
-        self.addSubview(collectionView!)
+        addSubview(collectionView!)
     }
 
     private func reloadDataAndFrame() {
@@ -123,7 +123,7 @@ open class ImagePickGridView: UIView {
         if heightInfo != heightConstraint?.constant {
             heightConstraint!.constant = heightInfo
             setNeedsLayout()
-            self.superview?.layoutIfNeeded()
+            superview?.layoutIfNeeded()
             delegte?.frameChange?(imagePickGridView: self)
         }
     }
@@ -211,10 +211,10 @@ extension ImagePickGridView: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         Log.d(indexPath.item)
         if indexPath.item < imageList.count {
-            self.delegte?.clickImage?(imagePickGridView: self, index: indexPath.item)
+            delegte?.clickImage?(imagePickGridView: self, index: indexPath.item)
         } else if indexPath.item == imageList.count {
             Log.d("点击添加")
-            self.delegte?.addImage?(imagePickGridView: self)
+            delegte?.addImage?(imagePickGridView: self)
         }
     }
 }
@@ -286,15 +286,15 @@ public class ImagePickGridViewCell: UICollectionViewCell {
     }
 
     private func setupView() {
-        self.addSubview(imageView)
+        addSubview(imageView)
         let margin = ImagePickGridViewCell.deleteButtonWidth / 2
         imageView.frame = CGRect(x: margin,
                                  y: margin,
-                                 width: self.frame.width - margin * 2,
-                                 height: self.frame.height - margin * 2)
+                                 width: frame.width - margin * 2,
+                                 height: frame.height - margin * 2)
 
-        self.addSubview(deleteButton)
-        deleteButton.frame = CGRect(x: self.frame.width - ImagePickGridViewCell.deleteButtonWidth,
+        addSubview(deleteButton)
+        deleteButton.frame = CGRect(x: frame.width - ImagePickGridViewCell.deleteButtonWidth,
                                     y: 0,
                                     width: ImagePickGridViewCell.deleteButtonWidth,
                                     height: ImagePickGridViewCell.deleteButtonWidth)

@@ -59,8 +59,8 @@ final public class RuntimeUtils {
     }
 }
 
-
 // MARK: - 协议相关
+
 extension RuntimeUtils {
     /// 判断一个类是否符合一个协议
     ///
@@ -115,6 +115,5 @@ extension RuntimeUtils {
 }
 
 // MARK: - 方法相关
-extension RuntimeUtils {
-    
-}
+
+extension RuntimeUtils {}

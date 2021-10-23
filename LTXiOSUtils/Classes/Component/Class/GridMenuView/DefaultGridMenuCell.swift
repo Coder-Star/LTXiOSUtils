@@ -70,37 +70,37 @@ open class DefaultGridMenuCell: UICollectionViewCell {
         imageView.frame = CGRect(x: (frame.width - imageWidth) / 2, y: 10, width: imageWidth, height: imageHeight)
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
-        self.addSubview(imageView)
+        addSubview(imageView)
         label.frame = CGRect(x: 5, y: imageHeight + 15, width: frame.width - 10.tx.cgFloatValue, height: labelHeight)
-        self.addSubview(label)
-        self.tx.setBadge(flexMode: .middle)
-        self.tx.moveBadge(x: -1 * imageView.frame.origin.x, y: imageView.frame.origin.y)
+        addSubview(label)
+        tx.setBadge(flexMode: .middle)
+        tx.moveBadge(x: -1 * imageView.frame.origin.x, y: imageView.frame.origin.y)
     }
 
     private func setBadge() {
         switch markType {
         case .none:
-            self.tx.hiddenBadge()
+            tx.hiddenBadge()
         case let .number(number):
             if let maxNumber = DefaultGridMenuCell.maxNumber, number > maxNumber {
-                self.tx.setBadge(height: 18)
-                self.tx.addBadge(text: "\(maxNumber)+")
+                tx.setBadge(height: 18)
+                tx.addBadge(text: "\(maxNumber)+")
             } else if number <= 0 {
-                self.tx.hiddenBadge()
+                tx.hiddenBadge()
             } else {
-                self.tx.setBadge(height: 18)
-                self.tx.addBadge(number: number)
+                tx.setBadge(height: 18)
+                tx.addBadge(number: number)
             }
         case let .point(isShow):
             if isShow {
-                self.tx.addDot(color: .red)
-                self.tx.setBadge(height: 12)
+                tx.addDot(color: .red)
+                tx.setBadge(height: 12)
             } else {
-                self.tx.hiddenBadge()
+                tx.hiddenBadge()
             }
         case let .text(text):
-            self.tx.setBadge(height: 18)
-            self.tx.addBadge(text: text)
+            tx.setBadge(height: 18)
+            tx.addBadge(text: text)
         }
     }
 

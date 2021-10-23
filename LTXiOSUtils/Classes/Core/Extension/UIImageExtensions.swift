@@ -24,15 +24,15 @@ extension TxExtensionWrapper where Base: UIImage {
     /// - Parameter type: 压缩类型
     /// - Returns: 压缩后的图片
     public func compress(type: ImageCompressType = .timeline) -> UIImage {
-        let size = self.wxImageSize(type: type)
+        let size = wxImageSize(type: type)
         let reImage = resizedImage(size: size)
         let data = reImage.jpegData(compressionQuality: 0.5)!
         return UIImage(data: data)!
     }
 
     private func wxImageSize(type: ImageCompressType) -> CGSize {
-        var width = self.base.size.width
-        var height = self.base.size.height
+        var width = base.size.width
+        var height = base.size.height
         var boundary: CGFloat = 1_280
 
         guard width > boundary || height > boundary else {
@@ -69,7 +69,7 @@ extension TxExtensionWrapper where Base: UIImage {
         let newRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         var newImage: UIImage!
         UIGraphicsBeginImageContext(newRect.size)
-        newImage = UIImage(cgImage: self.base.cgImage!, scale: 1, orientation: self.base.imageOrientation)
+        newImage = UIImage(cgImage: base.cgImage!, scale: 1, orientation: base.imageOrientation)
         newImage.draw(in: newRect)
         newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -86,7 +86,7 @@ extension TxExtensionWrapper where Base: UIImage {
     /// - Returns: 处理后的图片
     public func setSize(reSize: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(reSize, false, UIScreen.main.scale)
-        self.base.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height))
+        base.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height))
         let reSizeImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return reSizeImage
@@ -97,8 +97,8 @@ extension TxExtensionWrapper where Base: UIImage {
     /// - Parameter scaleSize: 缩放比例
     /// - Returns: 缩放后的图片
     public func scaleImage(scaleSize: CGFloat) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.base.size.width * scaleSize, height: self.base.size.height * scaleSize), false, UIScreen.main.scale)
-        self.base.draw(in: CGRect(x: 0, y: 0, width: self.base.size.width * scaleSize, height: self.base.size.height * scaleSize))
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: base.size.width * scaleSize, height: base.size.height * scaleSize), false, UIScreen.main.scale)
+        base.draw(in: CGRect(x: 0, y: 0, width: base.size.width * scaleSize, height: base.size.height * scaleSize))
         let reSizeImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return reSizeImage
@@ -109,7 +109,7 @@ extension TxExtensionWrapper where Base: UIImage {
     /// - Parameter orientation: 旋转方向
     /// - Returns: 旋转后的图片
     public func rotate(orientation: UIImage.Orientation) -> UIImage {
-        return UIImage(cgImage: self.base.cgImage!, scale: self.base.scale, orientation: orientation)
+        return UIImage(cgImage: base.cgImage!, scale: base.scale, orientation: orientation)
     }
 
     /// 修改UIImage的颜色

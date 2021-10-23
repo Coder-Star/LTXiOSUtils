@@ -114,7 +114,7 @@ extension TxExtensionWrapper where Base: UITabBarItem {
 
     /// 通过Xcode视图调试工具找到UITabBarItem原生Badge所在父视图
     private var _bottomView: UIView {
-        let tabBarButton = (self.base.value(forKey: "_view") as? UIView) ?? UIView()
+        let tabBarButton = (base.value(forKey: "_view") as? UIView) ?? UIView()
         for subView in tabBarButton.subviews {
             guard let superclass = subView.superclass else { return tabBarButton }
             if superclass == NSClassFromString("UIImageView") {

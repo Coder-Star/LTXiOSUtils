@@ -120,12 +120,12 @@ extension UIView {
     ///   - size: 圆角大小
     ///   - roundingCorners: 圆角位置
     public func setCorner(size: CGFloat, roundingCorners: UIRectCorner) {
-        self.layoutIfNeeded()
-        let fieldPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: roundingCorners, cornerRadii: CGSize(width: size, height: size))
+        layoutIfNeeded()
+        let fieldPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: roundingCorners, cornerRadii: CGSize(width: size, height: size))
         let fieldLayer = CAShapeLayer()
-        fieldLayer.frame = self.bounds
+        fieldLayer.frame = bounds
         fieldLayer.path = fieldPath.cgPath
-        self.layer.mask = fieldLayer
+        layer.mask = fieldLayer
     }
 
     /// 转为Image
@@ -152,30 +152,30 @@ extension UIView {
         let lineShape = CAShapeLayer()
         lineShape.path = line.cgPath
         lineShape.fillColor = color.cgColor
-        self.layer.addSublayer(lineShape)
+        layer.addSublayer(lineShape)
     }
 
     // 设置右边框
     public func rightBorder(width: CGFloat, borderColor: UIColor) {
-        let rect = CGRect(x: 0, y: self.frame.size.width - width, width: width, height: self.frame.size.height)
+        let rect = CGRect(x: 0, y: frame.size.width - width, width: width, height: frame.size.height)
         drawBorder(rect: rect, color: borderColor)
     }
 
     // 设置左边框
     public func leftBorder(width: CGFloat, borderColor: UIColor) {
-        let rect = CGRect(x: 0, y: 0, width: width, height: self.frame.size.height)
+        let rect = CGRect(x: 0, y: 0, width: width, height: frame.size.height)
         drawBorder(rect: rect, color: borderColor)
     }
 
     // 设置上边框
     public func topBorder(width: CGFloat, borderColor: UIColor) {
-        let rect = CGRect(x: 0, y: 0, width: self.frame.size.width, height: width)
+        let rect = CGRect(x: 0, y: 0, width: frame.size.width, height: width)
         drawBorder(rect: rect, color: borderColor)
     }
 
     // 设置底边框
     public func buttomBorder(width: CGFloat, borderColor: UIColor) {
-        let rect = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
+        let rect = CGRect(x: 0, y: frame.size.height - width, width: frame.size.width, height: width)
         drawBorder(rect: rect, color: borderColor)
     }
 }
@@ -303,7 +303,7 @@ extension UIView {
             gestureDict.updateValue(gesture, forKey: gestureKey)
             self.gestureDict = gestureDict
         } else {
-            self.gestureDict = [gestureKey: gesture]
+            gestureDict = [gestureKey: gesture]
         }
         isUserInteractionEnabled = true
         switch gestureType {
@@ -575,7 +575,7 @@ extension UIView {
 
 extension UIImageView {
     open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        if !self.isUserInteractionEnabled || self.alpha <= 0.01 || self.isHidden {
+        if !isUserInteractionEnabled || alpha <= 0.01 || isHidden {
             return nil
         }
         if let isEnlarge = checkEnlargeEdge(point) {
@@ -593,7 +593,7 @@ extension UIImageView {
 
 extension UILabel {
     open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        if !self.isUserInteractionEnabled || self.alpha <= 0.01 || self.isHidden {
+        if !isUserInteractionEnabled || alpha <= 0.01 || isHidden {
             return nil
         }
         if let isEnlarge = checkEnlargeEdge(point) {
@@ -613,7 +613,7 @@ extension UILabel {
 
 extension UIButton {
     open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        if !self.isUserInteractionEnabled || self.alpha <= 0.01 || self.isHidden || !self.isEnabled {
+        if !isUserInteractionEnabled || alpha <= 0.01 || isHidden || !isEnabled {
             return nil
         }
         if let isEnlarge = checkEnlargeEdge(point) {

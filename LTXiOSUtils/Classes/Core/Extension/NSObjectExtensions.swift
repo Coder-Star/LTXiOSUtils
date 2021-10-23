@@ -14,7 +14,7 @@ extension NSObject: TxExtensionWrapperCompatible {}
 extension TxExtensionWrapper where Base: NSObject {
     /// 根据对象获取类名
     public var className: String {
-        let name = type(of: self.base).description()
+        let name = type(of: base).description()
         if name.contains(".") {
             return name.components(separatedBy: ".")[1]
         } else {
@@ -31,9 +31,9 @@ extension TxExtensionWrapper where Base: NSObject {
     /// - Parameter property: 属性
     /// - Returns: 属性值
     public func getValueOfProperty(property: String) -> AnyObject? {
-        let allPropertys = self.getAllProperties()
+        let allPropertys = getAllProperties()
         if allPropertys.contains(property) {
-            return self.base.value(forKey: property) as AnyObject
+            return base.value(forKey: property) as AnyObject
         } else {
             return nil
         }
@@ -45,9 +45,9 @@ extension TxExtensionWrapper where Base: NSObject {
     ///   - property: 属性
     ///   - value: 属性新值
     public func setValueOfProperty(property: String, value: AnyObject) {
-        let allPropertys = self.getAllProperties()
+        let allPropertys = getAllProperties()
         if allPropertys.contains(property) {
-            self.base.setValue(value, forKey: property)
+            base.setValue(value, forKey: property)
         }
     }
 
@@ -87,7 +87,7 @@ extension TxExtensionWrapper where Base: NSObject {
     /// - Returns: 属性列表
     private func getAllProperties() -> [String] {
         var count: UInt32 = 0
-        let properties = class_copyPropertyList(self.base.classForCoder, &count)
+        let properties = class_copyPropertyList(base.classForCoder, &count)
         var propertyNames: [String] = []
         for i in 0 ..< Int(count) {
             let property = properties![i]
@@ -151,9 +151,9 @@ extension NSObject {
                 return
             }
             dict.updateValue(action, forKey: name)
-            self.notificationClosuresDict = dict
+            notificationClosuresDict = dict
         } else {
-            self.notificationClosuresDict = [name: action]
+            notificationClosuresDict = [name: action]
         }
         NotificationCenter.default.addObserver(self, selector: #selector(notificationAction), name: name, object: object)
     }
@@ -169,9 +169,9 @@ extension NSObject {
                 return
             }
             dict.updateValue(action, forKey: name)
-            self.notificationVoidClosuresDict = dict
+            notificationVoidClosuresDict = dict
         } else {
-            self.notificationVoidClosuresDict = [name: action]
+            notificationVoidClosuresDict = [name: action]
         }
         NotificationCenter.default.addObserver(self, selector: #selector(notificationAction), name: name, object: object)
     }

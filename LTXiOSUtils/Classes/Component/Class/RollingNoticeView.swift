@@ -12,14 +12,12 @@ public protocol RollingNoticeViewDataSource: AnyObject {
     func rollingNoticeView(roolingView: RollingNoticeView, cellAtIndex index: Int) -> RollingNoticeCell
 }
 
-public protocol RollingNoticeViewDelegate: AnyObject  {
+public protocol RollingNoticeViewDelegate: AnyObject {
     func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int)
 }
 
 extension RollingNoticeViewDelegate {
-    public func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int) {
-
-    }
+    public func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int) {}
 }
 
 open class RollingNoticeView: UIView {
@@ -49,26 +47,26 @@ open class RollingNoticeView: UIView {
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        self.setupNoticeViews()
+        setupNoticeViews()
     }
 
     open func register(_ nib: UINib?, forCellReuseIdentifier identifier: String) {
-        self.cellClsDict[identifier] = nib
+        cellClsDict[identifier] = nib
     }
 
     open func register(_ cellClass: RollingNoticeCell.Type, forCellReuseIdentifier identifier: String) {
-        self.cellClsDict[identifier] = cellClass
+        cellClsDict[identifier] = cellClass
     }
 
     open func dequeueReusableCell(withIdentifier identifier: String) -> RollingNoticeCell? {
-        for cell in self.reuseCells {
+        for cell in reuseCells {
             guard let reuseIdentifier = cell.reuseIdentifier else { return nil }
             if reuseIdentifier.elementsEqual(identifier) {
                 return cell
             }
         }
 
-        if let cellCls = self.cellClsDict[identifier] {
+        if let cellCls = cellClsDict[identifier] {
             if let nib = cellCls as? UINib {
                 let arr = nib.instantiate(withOwner: nil, options: nil)
                 if let cell = arr.first as? RollingNoticeCell {
@@ -89,7 +87,7 @@ open class RollingNoticeView: UIView {
     /// 刷新数据并开始滚动
     open func reloadDataAndStartRoll() {
         stopRoll()
-        guard let count = self.dataSource?.numberOfRowsFor(roolingView: self), count > 0 else {
+        guard let count = dataSource?.numberOfRowsFor(roolingView: self), count > 0 else {
             return
         }
         layoutCurrentCellAndWillShowCell()
@@ -117,12 +115,12 @@ open class RollingNoticeView: UIView {
         willShowCell?.removeFromSuperview()
         currentCell = nil
         willShowCell = nil
-        self.reuseCells.removeAll()
+        reuseCells.removeAll()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.setupNoticeViews()
+        setupNoticeViews()
     }
 
     deinit {
@@ -138,8 +136,8 @@ extension RollingNoticeView {
         }
         layoutCurrentCellAndWillShowCell()
         currentIndex += 1
-        let w = self.frame.size.width
-        let h = self.frame.size.height
+        let w = frame.size.width
+        let h = frame.size.height
 
         isAnimating = true
         UIView.animate(withDuration: 0.5, animations: {
@@ -156,7 +154,7 @@ extension RollingNoticeView {
     }
 
     private func layoutCurrentCellAndWillShowCell() {
-        guard let count = (self.dataSource?.numberOfRowsFor(roolingView: self)) else { return }
+        guard let count = (dataSource?.numberOfRowsFor(roolingView: self)) else { return }
 
         if currentIndex > count - 1 {
             currentIndex = 0
@@ -167,42 +165,42 @@ extension RollingNoticeView {
             willShowIndex = 0
         }
         // 及时刷新页面，避免不显示子view
-        self.layoutIfNeeded()
-        let w = self.frame.size.width
-        let h = self.frame.size.height
+        layoutIfNeeded()
+        let w = frame.size.width
+        let h = frame.size.height
         if currentCell == nil {
-            if let cell = self.dataSource?.rollingNoticeView(roolingView: self, cellAtIndex: currentIndex) {
+            if let cell = dataSource?.rollingNoticeView(roolingView: self, cellAtIndex: currentIndex) {
                 currentCell = cell
                 cell.frame = CGRect(x: 0, y: 0, width: w, height: h)
-                self.addSubview(cell)
+                addSubview(cell)
             }
             return
         }
 
-        if let cell = self.dataSource?.rollingNoticeView(roolingView: self, cellAtIndex: willShowIndex) {
+        if let cell = dataSource?.rollingNoticeView(roolingView: self, cellAtIndex: willShowIndex) {
             willShowCell = cell
             cell.frame = CGRect(x: 0, y: h, width: w, height: h)
-            self.addSubview(cell)
+            addSubview(cell)
         }
 
         guard let notNilCurrentCell = currentCell, let notNilWillShowCell = willShowCell else {
             return
         }
-        let currentCellIdx = self.reuseCells.firstIndex(of: notNilCurrentCell)
-        let willShowCellIdx = self.reuseCells.firstIndex(of: notNilWillShowCell)
+        let currentCellIdx = reuseCells.firstIndex(of: notNilCurrentCell)
+        let willShowCellIdx = reuseCells.firstIndex(of: notNilWillShowCell)
 
         if let index = currentCellIdx {
-            self.reuseCells.remove(at: index)
+            reuseCells.remove(at: index)
         }
 
         if let index = willShowCellIdx {
-            self.reuseCells.remove(at: index)
+            reuseCells.remove(at: index)
         }
     }
 
     private func setupNoticeViews() {
-        self.clipsToBounds = true
-        self.addTapGesture { [weak self] _ in
+        clipsToBounds = true
+        addTapGesture { [weak self] _ in
             guard let strongSelf = self else { return }
             guard let count = strongSelf.dataSource?.numberOfRowsFor(roolingView: strongSelf) else {
                 return
@@ -229,7 +227,7 @@ open class RollingNoticeCell: UIView {
     public required init(reuseIdentifier: String?) {
         self.reuseIdentifier = reuseIdentifier
         super.init(frame: .zero)
-        self.addSubview(titleLabel)
+        addSubview(titleLabel)
     }
 
     public required init?(coder aDecoder: NSCoder) {

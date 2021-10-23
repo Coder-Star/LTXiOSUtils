@@ -24,7 +24,7 @@ import Foundation
 
 /// UserDefaults存储协议，建议用枚举去实现该协议
 public protocol UserDefaultsProtocol {
-// MARK: - 配置
+    // MARK: - 配置
 
     /// 存储key
     var key: String { get }
@@ -33,7 +33,7 @@ public protocol UserDefaultsProtocol {
     /// 默认为 UserDefaults.standard
     var userDefaults: UserDefaults { get }
 
-// MARK: - 取值
+    // MARK: - 取值
 
     /// 获取值
     var object: Any? { get }
@@ -86,7 +86,7 @@ public protocol UserDefaultsProtocol {
     /// 获取double值,默认值为0
     var doubleValue: Double { get }
 
-// MARK: - 存值
+    // MARK: - 存值
 
     /// 存储
     /// - Parameter object: 存储object型
@@ -119,7 +119,6 @@ public protocol UserDefaultsProtocol {
 // MARK: - 协议默认实现
 
 extension UserDefaultsProtocol {
-
     /// 默认userDefaults对象，默认为UserDefaults.standard
     var userDefaults: UserDefaults {
         return UserDefaults.standard
@@ -139,6 +138,7 @@ extension UserDefaultsProtocol {
     public var string: String? {
         return userDefaults.string(forKey: key)
     }
+
     /// 获取字符串值,默认值为空
     public var stringValue: String {
         return userDefaults.string(forKey: key) ?? ""
@@ -148,6 +148,7 @@ extension UserDefaultsProtocol {
     public var dictionary: [String: Any]? {
         return userDefaults.dictionary(forKey: key)
     }
+
     /// 获取字典值,默认值为空
     public var dictionaryValue: [String: Any] {
         return userDefaults.dictionary(forKey: key) ?? [String: Any]()
@@ -157,6 +158,7 @@ extension UserDefaultsProtocol {
     public var array: [Any]? {
         return userDefaults.array(forKey: key)
     }
+
     /// 获取列表值,默认值为空
     public var arrayValue: [Any] {
         return userDefaults.array(forKey: key) ?? [Any]()
@@ -166,6 +168,7 @@ extension UserDefaultsProtocol {
     public var stringArray: [String]? {
         return userDefaults.stringArray(forKey: key)
     }
+
     /// 获取字符串列表值,默认值为空
     public var stringArrayValue: [String] {
         return userDefaults.stringArray(forKey: key) ?? [String]()
@@ -175,6 +178,7 @@ extension UserDefaultsProtocol {
     public var data: Data? {
         return userDefaults.data(forKey: key)
     }
+
     /// 获取Data值,默认值为空
     public var dataValue: Data {
         return userDefaults.data(forKey: key) ?? Data()
@@ -184,6 +188,7 @@ extension UserDefaultsProtocol {
     public var bool: Bool? {
         return userDefaults.object(forKey: key) as? Bool
     }
+
     /// 获取Bool值,默认值false
     public var boolValue: Bool {
         return userDefaults.bool(forKey: key)
@@ -193,6 +198,7 @@ extension UserDefaultsProtocol {
     public var int: Int? {
         return userDefaults.object(forKey: key) as? Int
     }
+
     /// 获取int值，默认值0
     public var intValue: Int {
         return userDefaults.integer(forKey: key)
@@ -202,6 +208,7 @@ extension UserDefaultsProtocol {
     public var float: Float? {
         return userDefaults.object(forKey: key) as? Float
     }
+
     /// 获取float值，默认值0
     public var floatValue: Float {
         return userDefaults.float(forKey: key)
@@ -211,6 +218,7 @@ extension UserDefaultsProtocol {
     public var double: Double? {
         return userDefaults.object(forKey: key) as? Double
     }
+
     /// 获取double值，默认值0
     public var doubleValue: Double {
         return userDefaults.double(forKey: key)

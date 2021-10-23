@@ -209,10 +209,10 @@ extension UIView {
                 return aValue
             } else {
                 let badgeControl = BadgeControl.default()
-                self.addSubview(badgeControl)
-                self.bringSubviewToFront(badgeControl)
+                addSubview(badgeControl)
+                bringSubviewToFront(badgeControl)
                 self.badgeView = badgeControl
-                self.addBadgeViewLayoutConstraint()
+                addBadgeViewLayoutConstraint()
                 return badgeControl
             }
         }

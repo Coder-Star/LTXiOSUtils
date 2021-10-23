@@ -1,12 +1,13 @@
 import UIKit
 
 open class FoldTableView: UITableView {
-
     // MARK: - private
+
     private weak var foldDataSource: FoldTableViewDataSource?
     private weak var foldDelegate: FoldTableViewDelegate?
 
     // MARK: - public
+
     public private(set) var expandedSections: [Int: Bool] = [:]
     open var expandingAnimation: UITableView.RowAnimation = .fade
     open var collapsingAnimation: UITableView.RowAnimation = .fade
@@ -62,42 +63,42 @@ extension FoldTableView {
     private func animate(with type: FoldActionType, forSection section: Int) {
         guard canExpand(section) else { return }
         let sectionIsExpanded = didExpand(section)
-        if ((type == .expand) && (sectionIsExpanded)) || ((type == .collapse) && (!sectionIsExpanded)) { return }
-        assign(section, asExpanded: (type == .expand))
+        if ((type == .expand) && sectionIsExpanded) || ((type == .collapse) && (!sectionIsExpanded)) { return }
+        assign(section, asExpanded: type == .expand)
         startAnimating(self, with: type, forSection: section)
     }
 
     private func startAnimating(_ tableView: FoldTableView, with type: FoldActionType, forSection section: Int) {
-        let headerCell = (self.cellForRow(at: IndexPath(row: 0, section: section)))
+        let headerCell = cellForRow(at: IndexPath(row: 0, section: section))
         let headerCellConformant = headerCell as? FoldTableViewHeaderCell
 
         CATransaction.begin()
         CATransaction.setAnimationDuration(animationDuration)
         headerCell?.isUserInteractionEnabled = false
 
-        headerCellConformant?.changeState((type == .expand ? .willExpand : .willCollapse), cellReuseStatus: false)
-        foldDelegate?.tableView(tableView, FoldState: (type == .expand ? .willExpand : .willCollapse), changeForSection: section)
+        headerCellConformant?.changeState(type == .expand ? .willExpand : .willCollapse, cellReuseStatus: false)
+        foldDelegate?.tableView(tableView, FoldState: type == .expand ? .willExpand : .willCollapse, changeForSection: section)
 
         CATransaction.setCompletionBlock {
-            headerCellConformant?.changeState((type == .expand ? .didExpand : .didCollapse), cellReuseStatus: false)
-            self.foldDelegate?.tableView(tableView, FoldState: (type == .expand ? .didExpand : .didCollapse), changeForSection: section)
+            headerCellConformant?.changeState(type == .expand ? .didExpand : .didCollapse, cellReuseStatus: false)
+            self.foldDelegate?.tableView(tableView, FoldState: type == .expand ? .didExpand : .didCollapse, changeForSection: section)
             headerCell?.isUserInteractionEnabled = true
         }
 
-        self.beginUpdates()
+        beginUpdates()
 
         if let sectionRowCount = foldDataSource?.tableView(tableView, numberOfRowsInSection: section), sectionRowCount >= 1 {
             var indexesToProcess: [IndexPath] = []
-            for row in 1...sectionRowCount {
+            for row in 1 ... sectionRowCount {
                 indexesToProcess.append(IndexPath(row: row, section: section))
             }
             if type == .expand {
-                self.insertRows(at: indexesToProcess, with: expandingAnimation)
+                insertRows(at: indexesToProcess, with: expandingAnimation)
             } else if type == .collapse {
-                self.deleteRows(at: indexesToProcess, with: collapsingAnimation)
+                deleteRows(at: indexesToProcess, with: collapsingAnimation)
             }
         }
-        self.endUpdates()
+        endUpdates()
         CATransaction.commit()
     }
 }
@@ -125,7 +126,7 @@ extension FoldTableView: UITableViewDataSource {
         }
 
         // cell复用时，需要重新刷新折叠状态
-        if self.didExpand(indexPath.section) {
+        if didExpand(indexPath.section) {
             headerCellConformant.changeState(.willExpand, cellReuseStatus: true)
             headerCellConformant.changeState(.didExpand, cellReuseStatus: true)
         } else {

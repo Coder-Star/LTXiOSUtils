@@ -22,7 +22,7 @@ public class CommonShowTextView: UITextView {
     public var checkType: [CommonShowTextViewUrlType: UIColor] = [
         CommonShowTextViewUrlType.mobile: UIColor.blue,
         CommonShowTextViewUrlType.email: UIColor.blue,
-        CommonShowTextViewUrlType.networkUrl: UIColor.blue
+        CommonShowTextViewUrlType.networkUrl: UIColor.blue,
     ] {
         didSet {
             setEvent()
@@ -52,13 +52,13 @@ public class CommonShowTextView: UITextView {
     }
 
     private func setupView() {
-        self.textContainerInset = .zero
-        self.textContainer.lineFragmentPadding = 0
-        self.isScrollEnabled = false
-        self.isEditable = false
-        self.isSelectable = true
-        self.font = UIFont.systemFont(ofSize: 17)
-        self.textContainer.lineBreakMode = .byCharWrapping
+        textContainerInset = .zero
+        textContainer.lineFragmentPadding = 0
+        isScrollEnabled = false
+        isEditable = false
+        isSelectable = true
+        font = UIFont.systemFont(ofSize: 17)
+        textContainer.lineBreakMode = .byCharWrapping
     }
 
     deinit {
@@ -69,23 +69,23 @@ public class CommonShowTextView: UITextView {
 extension CommonShowTextView {
     @objc
     private func setEvent() {
-        guard let str = self.text else {
+        guard let str = text else {
             return
         }
         let typeList = Array(checkType.keys)
 
         if str.tx.isMobile, typeList.contains(.mobile) {
-            self.textColor = checkType[.mobile]
+            textColor = checkType[.mobile]
             setTapGesture(type: .mobile, str: str)
         } else if str.tx.isEmail, typeList.contains(.email) {
-            self.textColor = checkType[.email]
+            textColor = checkType[.email]
             setTapGesture(type: .email, str: str)
         } else if str.tx.isNetworkUrl, typeList.contains(.networkUrl) {
-            self.textColor = checkType[.networkUrl]
+            textColor = checkType[.networkUrl]
             setTapGesture(type: .networkUrl, str: str)
         } else {
-            self.textColor = nil
-            self.addTapGesture { _ in
+            textColor = nil
+            addTapGesture { _ in
                 Log.d("点击")
             }
         }
@@ -93,7 +93,7 @@ extension CommonShowTextView {
 
     private func setTapGesture(type: CommonShowTextViewUrlType, str: String) {
         /// 使点击手势只在点击文字时生效
-        self.addTapGesture { tap in
+        addTapGesture { tap in
             let size = self.sizeThatFits(.zero)
             let tapPoint = tap.location(in: self)
             if tapPoint.x > size.width || tapPoint.y > size.height {

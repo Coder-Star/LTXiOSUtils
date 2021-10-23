@@ -111,7 +111,7 @@ extension TreeData {
         expandLevel = min(maxLevel, expandLevel)
         var tempNodes = [TreeNode]()
         for node in topNodes {
-            let addNodes = self.addNode(node: node, showNodes: [TreeNode]())
+            let addNodes = addNode(node: node, showNodes: [TreeNode]())
             tempNodes.append(contentsOf: addNodes)
         }
         showNodes = tempNodes
@@ -130,7 +130,7 @@ extension TreeData {
         }
         node.childNodes = sortNode(nodes: node.childNodes)
         for childNode in node.childNodes {
-            nodes = self.addNode(node: childNode, showNodes: nodes)
+            nodes = addNode(node: childNode, showNodes: nodes)
         }
         return nodes
     }
@@ -172,7 +172,7 @@ extension TreeData {
                 nodes = addNode(node: childNode, nodes: nodes)
             }
             if let index = showNodes.firstIndex(of: node) {
-                self.showNodes.insert(contentsOf: nodes, at: index + 1)
+                showNodes.insert(contentsOf: nodes, at: index + 1)
             }
         } else {
             for showNode in showNodes {
@@ -189,7 +189,7 @@ extension TreeData {
                     nodes.append(showNode)
                 }
             }
-            self.showNodes = self.showNodes.filter { !nodes.contains($0) }
+            showNodes = showNodes.filter { !nodes.contains($0) }
         }
         return nodes.count
     }
@@ -205,7 +205,7 @@ extension TreeData {
         if node.isExpand {
             node.childNodes = sortNode(nodes: node.childNodes)
             for childNode in node.childNodes {
-                tempNodes = self.addNode(node: childNode, nodes: tempNodes)
+                tempNodes = addNode(node: childNode, nodes: tempNodes)
             }
         }
         return tempNodes
@@ -279,9 +279,9 @@ extension TreeData {
         node.checkState = isCheck ? TreeNodeCheckState.checked : TreeNodeCheckState.uncheckd
         for childNode in node.childNodes {
             if isChildNodesCheck {
-                self.checkChildNodes(node: childNode, isCheck: isCheck, isChildNodesCheck: isChildNodesCheck)
+                checkChildNodes(node: childNode, isCheck: isCheck, isChildNodesCheck: isChildNodesCheck)
             } else {
-                self.checkChildNodes(node: childNode, isCheck: false, isChildNodesCheck: isChildNodesCheck)
+                checkChildNodes(node: childNode, isCheck: false, isChildNodesCheck: isChildNodesCheck)
             }
         }
     }
@@ -357,7 +357,7 @@ extension TreeData {
             for node in topNodes {
                 tempShowNodes = addNode(node: node, filterNodes: tempShowNodes)
             }
-            self.showNodes = tempShowNodes
+            showNodes = tempShowNodes
         } else {
             setupShowNodes()
         }
@@ -465,7 +465,7 @@ extension TreeData {
         node.childNodes = sortNode(nodes: node.childNodes)
         for childNode in node.childNodes {
             tempNodes.append(childNode)
-            tempNodes = self.addNode(node: childNode, childNodes: tempNodes)
+            tempNodes = addNode(node: childNode, childNodes: tempNodes)
         }
         return tempNodes
     }

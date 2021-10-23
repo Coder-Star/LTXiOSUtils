@@ -49,8 +49,8 @@ public class TreeTableViewSearchBar: UIView {
     }
 
     private func setupView() {
-        self.backgroundColor = UIColor(hexString: "#eeeeee")
-        self.addSubview(searchTextField)
+        backgroundColor = UIColor(hexString: "#eeeeee")
+        addSubview(searchTextField)
 
         searchTextField.frame = CGRect(x: 5, y: 5, width: frame.size.width - 10, height: frame.size.height - 10)
         searchTextField.leftView = getLeftView(height: frame.size.height - 10)

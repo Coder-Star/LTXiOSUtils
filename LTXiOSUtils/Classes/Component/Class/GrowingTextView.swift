@@ -110,7 +110,7 @@ open class GrowingTextView: UITextView {
             heightChangeCallBack?(height)
             growingTextViewDelegate?.heightChange(growingTextView: self, height: height)
             setNeedsDisplay()
-            self.superview?.layoutIfNeeded()
+            superview?.layoutIfNeeded()
         } else if shouldScrollAfterHeightChanged {
             shouldScrollAfterHeightChanged = false
             scrollToCorrectPosition()
@@ -118,12 +118,12 @@ open class GrowingTextView: UITextView {
     }
 
     private func scrollToCorrectPosition() {
-        if self.isFirstResponder {
+        if isFirstResponder {
             /// 滚动到底部
-            self.scrollRangeToVisible(NSRange(location: -1, length: 0))
+            scrollRangeToVisible(NSRange(location: -1, length: 0))
         } else {
             /// 滚动到顶部
-            self.scrollRangeToVisible(NSRange(location: 0, length: 0))
+            scrollRangeToVisible(NSRange(location: 0, length: 0))
         }
     }
 

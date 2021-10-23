@@ -23,7 +23,7 @@ public enum FontStyle {
 
 extension TxExtensionWrapper where Base: NSMutableAttributedString {
     private var allRange: NSRange {
-        let str = self.base.string
+        let str = base.string
         let theRange = NSString(string: str).range(of: str)
         return theRange
     }
@@ -45,8 +45,8 @@ extension TxExtensionWrapper where Base: NSMutableAttributedString {
         case .boldItalic:
             font = UIFont.tx.boldItalicFont(name: fontName, size: fontSize)
         }
-        self.base.addAttribute(NSMutableAttributedString.Key.font, value: font, range: self.allRange)
-        return self.base
+        base.addAttribute(NSMutableAttributedString.Key.font, value: font, range: allRange)
+        return base
     }
 
     /// 添加下划线
@@ -54,11 +54,11 @@ extension TxExtensionWrapper where Base: NSMutableAttributedString {
     ///   - underlineStyle: 下划线样式，默认为single
     ///   - underlineColor: 下划线颜色，默认为nil,nil时跟字体颜色保持相同
     public func addUnderline(style underlineStyle: NSUnderlineStyle = .single, color underlineColor: UIColor? = nil) -> NSMutableAttributedString {
-        self.base.addAttribute(NSMutableAttributedString.Key.underlineStyle, value: underlineStyle, range: self.allRange)
+        base.addAttribute(NSMutableAttributedString.Key.underlineStyle, value: underlineStyle, range: allRange)
         if let tempColor = underlineColor {
-            self.base.addAttribute(NSMutableAttributedString.Key.underlineColor, value: tempColor, range: self.allRange)
+            base.addAttribute(NSMutableAttributedString.Key.underlineColor, value: tempColor, range: allRange)
         }
-        return self.base
+        return base
     }
 
     /// 添加删除线
@@ -66,10 +66,10 @@ extension TxExtensionWrapper where Base: NSMutableAttributedString {
     ///   - strikethroughStyle: 删除线样式，默认为single
     ///   - strikethroughColor: 删除线样式，默认为nil,nil时跟字体颜色保持相同
     public func addStrikethrough(style strikethroughStyle: NSUnderlineStyle = .single, color strikethroughColor: UIColor? = nil) -> NSMutableAttributedString {
-        self.base.addAttribute(NSMutableAttributedString.Key.strikethroughStyle, value: strikethroughStyle, range: self.allRange)
+        base.addAttribute(NSMutableAttributedString.Key.strikethroughStyle, value: strikethroughStyle, range: allRange)
         if let tempColor = strikethroughColor {
-            self.base.addAttribute(NSMutableAttributedString.Key.strikethroughColor, value: tempColor, range: self.allRange)
+            base.addAttribute(NSMutableAttributedString.Key.strikethroughColor, value: tempColor, range: allRange)
         }
-        return self.base
+        return base
     }
 }

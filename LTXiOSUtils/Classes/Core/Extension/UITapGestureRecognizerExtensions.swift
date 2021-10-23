@@ -33,7 +33,7 @@ extension UITapGestureRecognizer: UIGestureRecognizerDelegate {
     public convenience init(target: Any?, action: Selector?, disEnabledtimeInterval: CGFloat) {
         self.init(target: target, action: action)
         self.disEnabledtimeInterval = disEnabledtimeInterval
-        self.delegate = self
+        delegate = self
     }
 
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {

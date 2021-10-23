@@ -12,6 +12,6 @@ extension Int: TxExtensionWrapperCompatibleValue {}
 extension TxExtensionWrapper where Base == Int {
     /// 将int转为CGFloat
     public var cgFloatValue: CGFloat {
-        return CGFloat(self.base)
+        return CGFloat(base)
     }
 }

@@ -33,7 +33,7 @@ public class TreeTableViewCell: UITableViewCell {
     public var isSingleCheck: Bool = true {
         didSet {
             if treeNode != nil {
-                self.accessoryView = getCheckButton(isSingleCheck: isSingleCheck)
+                accessoryView = getCheckButton(isSingleCheck: isSingleCheck)
             }
         }
     }
@@ -81,21 +81,21 @@ public class TreeTableViewCell: UITableViewCell {
 
     public override func layoutSubviews() {
         super.layoutSubviews()
-        let minX = leftMargin + self.indentationLevel.tx.cgFloatValue * self.indentationWidth
+        let minX = leftMargin + indentationLevel.tx.cgFloatValue * indentationWidth
         var imageViewFrame = imageView?.frame
         imageViewFrame?.origin.x = minX
-        self.imageView?.frame = imageViewFrame!
+        imageView?.frame = imageViewFrame!
         var textLabelFrame = textLabel?.frame
-        textLabelFrame?.origin.x = minX + max(self.imageView!.bounds.size.width, leftMargin) + 2
+        textLabelFrame?.origin.x = minX + max(imageView!.bounds.size.width, leftMargin) + 2
         let textLabelX = textLabelFrame?.origin.x
         textLabelFrame?.size.width = (accessoryView?.frame.origin.x)! - textLabelX! - 5
-        self.textLabel?.frame = textLabelFrame!
+        textLabel?.frame = textLabelFrame!
     }
 
     private func setupView() {
-        self.textLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        self.selectionStyle = .none
-        self.indentationWidth = leftMargin
+        textLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        selectionStyle = .none
+        indentationWidth = leftMargin
     }
 }
 
@@ -114,14 +114,14 @@ extension TreeTableViewCell {
 
 extension TreeTableViewCell {
     private func setCellView() {
-        self.indentationLevel = self.treeNode.level
-        self.textLabel?.text = self.treeNode.name
+        indentationLevel = treeNode.level
+        textLabel?.text = treeNode.name
         if treeNode.childNodes.count > 0 {
-            self.imageView?.image = "TreeTableView_arrow".imageOfLTXiOSUtilsComponent
+            imageView?.image = "TreeTableView_arrow".imageOfLTXiOSUtilsComponent
         } else {
-            self.imageView?.image = nil
+            imageView?.image = nil
         }
-        self.accessoryView = getCheckButton(isSingleCheck: isSingleCheck)
+        accessoryView = getCheckButton(isSingleCheck: isSingleCheck)
         updateArrow()
     }
 
@@ -145,7 +145,7 @@ extension TreeTableViewCell {
         if isSingleCheck {
             let buttonWidth: CGFloat = 50
             let buttonHeight: CGFloat = 25
-            button.frame = CGRect(x: 0, y: (self.contentView.bounds.size.height - buttonHeight) / 2, width: buttonWidth, height: buttonHeight)
+            button.frame = CGRect(x: 0, y: (contentView.bounds.size.height - buttonHeight) / 2, width: buttonWidth, height: buttonHeight)
             button.setTitle("选择", for: .normal)
             button.backgroundColor = .white
             button.setTitleColor(.blue, for: .normal)
@@ -154,7 +154,7 @@ extension TreeTableViewCell {
             button.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
             button.layer.borderWidth = 0.5
         } else {
-            button.frame = CGRect(x: 0, y: 0, width: self.contentView.bounds.size.height, height: self.contentView.bounds.size.height)
+            button.frame = CGRect(x: 0, y: 0, width: contentView.bounds.size.height, height: contentView.bounds.size.height)
             let checkImage = getCheckImage()
             button.setImage(checkImage, for: .normal)
             let margin = (button.frame.height - button.imageView!.frame.height) / 2
@@ -166,9 +166,9 @@ extension TreeTableViewCell {
     /// 更新cell前面箭头
     private func updateArrow() {
         if treeNode.isExpand {
-            self.imageView?.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
+            imageView?.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
         } else {
-            self.imageView?.transform = CGAffineTransform(rotationAngle: 0)
+            imageView?.transform = CGAffineTransform(rotationAngle: 0)
         }
     }
 }

@@ -156,7 +156,7 @@ public class MaskPopupView: UIView {
     override public func layoutSubviews() {
         super.layoutSubviews()
 
-        backgroundView.frame = self.bounds
+        backgroundView.frame = bounds
     }
 
     /// 蒙版显示
@@ -210,8 +210,8 @@ public class MaskPopupView: UIView {
 extension UIView {
     /// 获取view父View中的MaskPopupView
     public var maskPopupView: MaskPopupView? {
-        if self.superview?.isKind(of: MaskPopupView.classForCoder()) == true {
-            return self.superview as? MaskPopupView
+        if superview?.isKind(of: MaskPopupView.classForCoder()) == true {
+            return superview as? MaskPopupView
         }
         return nil
     }
@@ -266,7 +266,7 @@ public class MaskBackgroundView: UIControl {
     public override func layoutSubviews() {
         super.layoutSubviews()
 
-        effectView?.frame = self.bounds
+        effectView?.frame = bounds
     }
 
     func refreshBackgroundStyle() {
@@ -274,7 +274,7 @@ public class MaskBackgroundView: UIControl {
             effectView?.removeFromSuperview()
             effectView = nil
         } else {
-            effectView = UIVisualEffectView(effect: UIBlurEffect(style: self.blurEffectStyle))
+            effectView = UIVisualEffectView(effect: UIBlurEffect(style: blurEffectStyle))
             addSubview(effectView!)
         }
     }
@@ -305,7 +305,7 @@ open class MaskPopupViewBaseAnimator: MaskPopupViewAnimationProtocol {
                 completion()
             })
         } else {
-            self.displayAnimateBlock?()
+            displayAnimateBlock?()
             completion()
         }
     }
@@ -318,7 +318,7 @@ open class MaskPopupViewBaseAnimator: MaskPopupViewAnimationProtocol {
                 completion()
             })
         } else {
-            self.dismissAnimateBlock?()
+            dismissAnimateBlock?()
             completion()
         }
     }
@@ -455,7 +455,7 @@ open class MaskPopupViewSpringDownwardAnimator: MaskPopupViewDownwardAnimator {
                 completion()
             })
         } else {
-            self.displayAnimateBlock?()
+            displayAnimateBlock?()
             completion()
         }
     }

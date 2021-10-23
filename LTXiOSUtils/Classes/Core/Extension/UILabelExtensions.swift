@@ -8,6 +8,4 @@
 import Foundation
 import UIKit
 
-extension TxExtensionWrapper where Base: UILabel {
-
-}
+extension TxExtensionWrapper where Base: UILabel {}

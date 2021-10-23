@@ -37,12 +37,12 @@ extension TxExtensionWrapper where Base: UIViewController {
 
     /// 是否可见
     public var isVisible: Bool {
-        return self.base.isViewLoaded && self.base.view.window != nil
+        return base.isViewLoaded && base.view.window != nil
     }
 
     /// 删除所有子ViewController
     public func removeAllChildren() {
-        self.base.children.forEach {
+        base.children.forEach {
             $0.removeFromParent()
         }
     }
@@ -52,8 +52,8 @@ extension TxExtensionWrapper where Base: UIViewController {
     ///   - animated: 是否显示动画
     ///   - completion: 完成dismiss闭包回调
     public func dismissToRootViewController(animated: Bool = true, completion: (() -> Void)? = nil) {
-        var tempPresentingViewController = self.base
-        while let viewController = self.base.presentingViewController as? Base {
+        var tempPresentingViewController = base
+        while let viewController = base.presentingViewController as? Base {
             tempPresentingViewController = viewController
         }
         tempPresentingViewController.dismiss(animated: animated, completion: completion)
@@ -100,7 +100,7 @@ extension TxExtensionWrapper where Base: UIViewController {
                           cancelTitle: String = "好的",
                           sureBlock: (() -> Void)? = nil) {
         if let alertController = UIViewController.tx.getAlert(style: style, title: title, message: message, cancelTitle: cancelTitle, sureBlock: sureBlock) {
-            self.base.present(alertController, animated: true, completion: nil)
+            base.present(alertController, animated: true, completion: nil)
         }
     }
 
@@ -155,7 +155,7 @@ extension TxExtensionWrapper where Base: UIViewController {
                           cancelBlock: (() -> Void)? = nil,
                           sureBlock: @escaping () -> Void) {
         if let alertController = UIViewController.tx.getAlert(style: style, title: title, message: message, sureTitle: sureTitle, cancelTitle: cancelTitle, cancelBlock: cancelBlock, sureBlock: sureBlock) {
-            self.base.present(alertController, animated: true, completion: nil)
+            base.present(alertController, animated: true, completion: nil)
         }
     }
 }
@@ -163,7 +163,7 @@ extension TxExtensionWrapper where Base: UIViewController {
 extension TxExtensionWrapper where Base: UIViewController {
     /// 点击空白处取消键盘
     public func hideKeyboardWhenTappedAround() {
-        self.base.view.addTapGesture { tap in
+        base.view.addTapGesture { tap in
             tap.cancelsTouchesInView = false
             self.base.view.endEditing(true)
         }
@@ -187,6 +187,6 @@ extension TxExtensionWrapper where Base: UIViewController {
 
     /// 标识符
     public var identifier: String {
-        return String(describing: self.base)
+        return String(describing: base)
     }
 }

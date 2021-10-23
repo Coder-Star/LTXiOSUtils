@@ -112,7 +112,7 @@ extension TxExtensionWrapper where Base: UIBarButtonItem {
 
     /// 通过Xcode视图调试工具找到UIBarButtonItem的Badge所在父视图为:UIImageView
     private var _bottomView: UIView {
-        let navigationButton = (self.base.value(forKey: "_view") as? UIView) ?? UIView()
+        let navigationButton = (base.value(forKey: "_view") as? UIView) ?? UIView()
         let systemVersion = (UIDevice.current.systemVersion as NSString).doubleValue
         let controlName = systemVersion < 11.0 ? "UIImageView" : "UIButton"
         for subView in navigationButton.subviews {

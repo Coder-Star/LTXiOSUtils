@@ -8,6 +8,4 @@
 import Foundation
 import UIKit
 
-extension TxExtensionWrapper where Base: UIImageView {
-
-}
+extension TxExtensionWrapper where Base: UIImageView {}

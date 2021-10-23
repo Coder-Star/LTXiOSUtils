@@ -40,7 +40,7 @@ extension TxExtensionWrapper where Base == Date {
     /// - Parameter format: 格式化类型
     /// - Returns: 格式化后的字符串
     public func formatDate(format: DateFormateType) -> String {
-        return self.formatDate(formatStr: format.rawValue)
+        return formatDate(formatStr: format.rawValue)
     }
 
     /// Date格式化
@@ -52,7 +52,7 @@ extension TxExtensionWrapper where Base == Date {
         dateFormatter.calendar = Calendar.current
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = formatStr
-        let dateString = dateFormatter.string(from: self.base)
+        let dateString = dateFormatter.string(from: base)
         return dateString
     }
 
@@ -63,7 +63,7 @@ extension TxExtensionWrapper where Base == Date {
         let timeZone = TimeZone.current
         calendar?.timeZone = timeZone
         let calendarUnit = NSCalendar.Unit.weekday
-        let theComponents = calendar?.components(calendarUnit, from: self.base)
+        let theComponents = calendar?.components(calendarUnit, from: base)
         if let index = theComponents?.weekday, weekDays.count > index, let weekday = weekDays[index] as? String {
             return weekday
         }
@@ -73,7 +73,7 @@ extension TxExtensionWrapper where Base == Date {
     /// 获取相对指定时间之前几天或者之后几天的日期，之前的填入负数
     /// - Parameter days: 日期，单位为天
     public func getDateByDays(days: Int) -> Date {
-        let date = Date(timeInterval: TimeInterval(days * 24 * 60 * 60), since: self.base)
+        let date = Date(timeInterval: TimeInterval(days * 24 * 60 * 60), since: base)
         return date
     }
 }
@@ -83,7 +83,7 @@ extension TxExtensionWrapper where Base == Date {
 extension TxExtensionWrapper where Base == Date {
     /// 秒级时间戳 - 10位
     public var timeStamp: Int {
-        let timeInterval = self.base.timeIntervalSince1970
+        let timeInterval = base.timeIntervalSince1970
         let timeStamp = Int(timeInterval)
         return timeStamp
     }
@@ -95,7 +95,7 @@ extension TxExtensionWrapper where Base == Date {
 
     /// 获取毫秒级时间戳 - 13位
     public var milliTimeStamp: Int {
-        let timeInterval = self.base.timeIntervalSince1970
+        let timeInterval = base.timeIntervalSince1970
         let millisecond = Int(round(timeInterval * 1_000))
         return millisecond
     }
@@ -121,7 +121,7 @@ extension TxExtensionWrapper where Base == Date {
 extension TxExtensionWrapper where Base == TimeInterval {
     /// 时间戳(毫秒)转时间
     public var dateAsMilliStamp: Date {
-        let timeInterval = self.base / 1_000
+        let timeInterval = base / 1_000
         return Date(timeIntervalSince1970: timeInterval)
     }
 
@@ -134,7 +134,7 @@ extension TxExtensionWrapper where Base == TimeInterval {
 
     /// 时间戳(秒)转时间
     public var dateAsTimeStamp: Date {
-        return Date(timeIntervalSince1970: self.base)
+        return Date(timeIntervalSince1970: base)
     }
 
     /// 时间戳(秒)转时间字符串

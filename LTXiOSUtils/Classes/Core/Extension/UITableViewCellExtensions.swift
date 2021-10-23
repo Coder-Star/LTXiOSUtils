@@ -13,6 +13,6 @@ extension TxExtensionWrapper where Base: UITableViewCell {
     ///
     /// - Note: 重用时可使用
     public var identifier: String {
-        return String(describing: self.base)
+        return String(describing: base)
     }
 }
