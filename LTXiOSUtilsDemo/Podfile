@@ -7,7 +7,10 @@ target 'LTXiOSUtilsDemo' do
   inhibit_all_warnings!
 
   pod 'LTXiOSUtils', :path => '../'
-  pod 'SwiftFormat/CLI', '0.47.13', :configurations => ['Debug'] # 代码规范限制与自动纠正
+
+
+  # 代码规范限制与自动纠正，嵌入到Build流程中
+  pod 'SwiftFormat/CLI', '0.47.13', :configurations => ['Debug']
 
 end
 

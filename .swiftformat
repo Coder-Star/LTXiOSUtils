@@ -1,3 +1,6 @@
+--exclude LTXiOSUtilsDemo/Pods
+
+
 --allman false
 --assetliterals visual-width
 --beforemarks 
@@ -49,6 +52,7 @@
 --smarttabs enabled
 --stripunusedargs closure-only
 --structthreshold 0
+--swiftversion 5.0
 --tabwidth unspecified
 --trailingclosures 
 --trimwhitespace always
@@ -63,5 +67,5 @@
 --wrapreturntype preserve
 --xcodeindentation disabled
 --yodaswap always
---disable enumNamespaces,modifierOrder,strongOutlets,wrapMultilineStatementBraces
+--disable enumNamespaces,initCoderUnavailable,modifierOrder,strongOutlets,wrapMultilineStatementBraces
 --enable wrapEnumCases
