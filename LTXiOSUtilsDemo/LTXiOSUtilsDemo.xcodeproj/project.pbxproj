@@ -104,6 +104,7 @@
 			buildConfigurationList = 2D717B6526C1664A00483384 /* Build configuration list for PBXNativeTarget "LTXiOSUtilsDemo" */;
 			buildPhases = (
 				B1EAFE5ED9E8386D97526C60 /* [CP] Check Pods Manifest.lock */,
+				2DAD43B82724652B00A5F711 /* GitHooks */,
 				2DE2439526C17C6100F87CA7 /* SwiftFormat */,
 				2DBB624A26E3334900C87475 /* Update LaunchScreen APP Version */,
 				2D717B4D26C1664000483384 /* Sources */,
@@ -165,6 +166,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2DAD43B82724652B00A5F711 /* GitHooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = GitHooks;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git config core.hooksPath .githooks\n";
+		};
 		2DBB624A26E3334900C87475 /* Update LaunchScreen APP Version */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

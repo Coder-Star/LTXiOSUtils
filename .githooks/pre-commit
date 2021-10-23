@@ -1,0 +1,5 @@
+#!/bin/sh
+
+CURRENT_PATH=$(cd "$(dirname "$0")";pwd) || exit
+PROJECT_PATH=$(dirname "$CURRENT_PATH")
+"${PROJECT_PATH}"/LTXiOSUtilsDemo/Pods/SwiftFormat/CommandLineTool/swiftformat --lint "${PROJECT_PATH}"
