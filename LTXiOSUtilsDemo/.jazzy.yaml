@@ -1,0 +1,20 @@
+clean: true
+sdk: iphone
+author: CoderStar
+author_url: https://coder-star.github.io/
+github_url: https://github.com/Coder-Star/LTXiOSUtils
+
+module: LTXiOSUtils # 模块名称
+module_version: 1.0.0 # 文档版本号
+
+readme: ../README.md # readme路径
+output: ../docs # 输出路径
+
+#xcodebuild_arguments: [clean,build,-project,CSPickerView.xcodeproj,-scheme,CSPickerView]
+xcodebuild_arguments: [clean,build,-workspace,LTXiOSUtilsDemo.xcworkspace,-scheme,LTXiOSUtilsDemo]
+
+min_acl: public # 最小权限
+
+theme: Doc/jazzy-theme
+
+
