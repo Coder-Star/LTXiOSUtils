@@ -182,7 +182,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git config core.hooksPath .githooks\n";
+			shellScript = "RESULT=$(git rev-parse --is-inside-work-tree 2>&1)\nif [ \"${RESULT}\" = \"true\" ]; then\n    git config core.hooksPath .githooks\nfi\n";
 		};
 		2DBB624A26E3334900C87475 /* Update LaunchScreen APP Version */ = {
 			isa = PBXShellScriptBuildPhase;
