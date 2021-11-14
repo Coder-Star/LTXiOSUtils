@@ -73,6 +73,7 @@ public struct UserDefaultsWrapper<T: UserDefaultsStoreValue> {
     }
 }
 
+/// 观察UserDefaults变化
 public class UserDefaultsObservation: NSObject {
     let key: String
     let userDefaults: UserDefaults

@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Class相关
 
-final public class RuntimeUtils {
+public struct RuntimeUtils {
     /// 获取所有的class
     public static var allClasses: [AnyClass] {
         let numberOfClasses = Int(objc_getClassList(nil, 0))

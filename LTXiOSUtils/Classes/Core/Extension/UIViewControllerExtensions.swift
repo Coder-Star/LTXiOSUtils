@@ -58,6 +58,30 @@ extension TxExtensionWrapper where Base: UIViewController {
         }
         tempPresentingViewController.dismiss(animated: animated, completion: completion)
     }
+
+    /// 添加子VC
+    ///
+    /// 如果简单的使用`addSubview` 和 `addChildViewController`，会导致部分子vc的 `viewWillAppear` 不执行
+    ///
+    /// - Parameters:
+    ///   - childVC: 子VC
+    ///   - toView: 添加到指定view
+    func addChildViewController(_ childController: UIViewController, toView: UIView) {
+        /// 该方法调用之前会先调用 `open func willMove(toParent parent: UIViewController?)`
+        base.addChild(childController)
+        childController.beginAppearanceTransition(true, animated: false)
+        toView.addSubview(childController.view)
+        childController.endAppearanceTransition()
+        childController.didMove(toParent: base)
+    }
+
+    /// 从父VC中移除
+    func removeFromParent() {
+        base.beginAppearanceTransition(false, animated: true)
+        base.removeFromParent()
+        base.view.removeFromSuperview()
+        base.endAppearanceTransition()
+    }
 }
 
 extension TxExtensionWrapper where Base: UIViewController {

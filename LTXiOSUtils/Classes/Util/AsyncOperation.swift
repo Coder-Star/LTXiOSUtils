@@ -94,11 +94,14 @@ public class AsyncOperation: Operation {
 // MARK: - 公开方法
 
 extension AsyncOperation {
+    /// 创建AsyncOperation
+    /// - Parameter block: 执行闭包，在main方法内部执行，如果传入为nil，则自动结束，如果不为nil，则由自己调用`finish()`手动结束
     public convenience init(block: ((_ operation: AsyncOperation) -> Void)?) {
         self.init()
         self.block = block
     }
 
+    /// 手动
     public func finish() {
         isExecuting = false
         isFinished = true
