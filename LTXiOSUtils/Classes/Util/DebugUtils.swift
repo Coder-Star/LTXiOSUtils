@@ -11,28 +11,20 @@ import Foundation
 public struct DebugUtils {}
 
 extension DebugUtils {
-    /// 打印结构体地址，转为16进制
-    /// - Parameter values: 结构体，使用`&`符号
-    public static func printAddressForStruct(_ values: UnsafeRawPointer...) {
-        values.forEach { point in
-            Log.d(String(Int(bitPattern: point), radix: 16))
-        }
+    /// 获取内存地址
+    /// - Parameter values:
+    /// - Parameter o: 地址，使用`&`符号
+    /// - Returns: 地址
+    public static func address(_ o: UnsafePointer<Void>) -> String {
+        let addr = unsafeBitCast(o, to: Int.self)
+        return NSString(format: "%p", addr) as String
     }
 
-    /// 打印class的地址，16进制
-    /// - Parameter values: 类实例
-    public static func printAddressForClass(_ values: Any...) {
-        // 将地址转为16进制数
-        values.forEach { value in
-            Log.d(String(unsafeBitCast(value as AnyObject, to: Int.self), radix: 16))
-        }
-    }
-
-    /// 打印class的地址，直接打印pointer
-    /// - Parameter values: 类实例
-    public static func printAddressForClassWithPointer(_ values: Any...) {
-        values.forEach { value in
-            Log.d(Unmanaged.passUnretained(value as AnyObject).toOpaque())
-        }
+    /// 获取class的地址
+    /// - Parameter o: 类实例
+    /// - Returns: 地址
+    public static func address<T: AnyObject>(_ o: T) -> String {
+        let addr = unsafeBitCast(o, to: Int.self)
+        return NSString(format: "%p", addr) as String
     }
 }
