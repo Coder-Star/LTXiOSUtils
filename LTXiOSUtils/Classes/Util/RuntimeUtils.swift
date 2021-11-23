@@ -106,8 +106,12 @@ extension RuntimeUtils {
         let buffer = AutoreleasingUnsafeMutablePointer<AnyClass>(classes)
         for i in 0 ..< Int(objc_getClassList(buffer, count)) {
             let someclass: AnyClass = classes[i]
-            if confirm(someclass, confirm: baseProtocol) {
-                proResult.append(someclass)
+            // 这个判断是防止oc调用该方式时出现`methodSignatureForSelector`以及`doesNotRecognizeSelector` does not implement问题
+            if class_getInstanceMethod(someclass, NSSelectorFromString("methodSignatureForSelector:")) != nil,
+               class_getInstanceMethod(someclass, NSSelectorFromString("doesNotRecognizeSelector:")) != nil {
+                if confirm(someclass, confirm: baseProtocol) {
+                    proResult.append(someclass)
+                }
             }
         }
         return proResult
