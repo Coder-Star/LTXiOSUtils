@@ -118,16 +118,34 @@ extension TxExtensionWrapper where Base: UIColor {
     /// - Parameter size: 图片尺寸
     /// - Returns: 图片
     public func toImage(size: CGSize) -> UIImage? {
-        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        UIGraphicsBeginImageContext(rect.size)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return nil
+        let createImage = { (_: UIColor) -> UIImage? in
+            let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+            UIGraphicsBeginImageContext(rect.size)
+            guard let context = UIGraphicsGetCurrentContext() else {
+                return nil
+            }
+            context.setFillColor(base.cgColor)
+            context.fill(rect)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsGetCurrentContext()
+            return image
         }
-        context.setFillColor(base.cgColor)
-        context.fill(rect)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsGetCurrentContext()
-        return image
+
+        // 兼容暗黑模式
+        if #available(iOS 13.0, *) {
+            let image = UIImage()
+            let appearances: [UIUserInterfaceStyle] = [.light, .dark]
+            for item in appearances {
+                let traitCollection = UITraitCollection(userInterfaceStyle: item)
+                guard let eachImage = createImage(base.resolvedColor(with: traitCollection)) else {
+                    return nil
+                }
+                image.imageAsset?.register(eachImage, with: traitCollection)
+            }
+            return image
+        } else {
+            return createImage(base)
+        }
     }
 }
 

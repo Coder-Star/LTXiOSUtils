@@ -663,4 +663,14 @@ extension UIView {
             return UIColor(cgColor: layer.borderColor ?? UIColor.clear.cgColor)
         }
     }
+
+    /// 加载 xib view 类方法
+    @objc
+    public class func initByNib(bundle: Bundle = Bundle.main) -> Self? {
+        guard let view = bundle.loadNibNamed(String(describing: Self.self), owner: nil, options: [:])?.last as? Self else {
+            assertionFailure("Failed to load a view with nibName \(String(describing: Self.self)) Check that the nibName of your XIB/Storyboard")
+            return nil
+        }
+        return view
+    }
 }
