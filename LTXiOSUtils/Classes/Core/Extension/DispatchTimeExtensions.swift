@@ -7,7 +7,9 @@
 
 import Foundation
 
-// MARK: - DispatchTime扩展，构造函数
+// MARK: - DispatchTime扩展，遍历构造函数
+
+// MARK: - 未使用命名空间
 
 extension DispatchTime: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
     public init(integerLiteral value: Int) {

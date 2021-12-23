@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+// MARK: - 未使用命名空间
+
 // MARK: - UITapGestureRecognizer添加不可用时间间隔
 
 extension UITapGestureRecognizer: UIGestureRecognizerDelegate {

@@ -10,6 +10,8 @@ import UIKit
 
 // MARK: - 按钮防重复点击处理
 
+// MARK: - 未使用命名空间
+
 // app启动时需要调用一下UIButton.initRepeatClickMethod()
 // 分为两种模式，一种是时间等候模式，一种事件完成模式，事件完成之后需要重新将isFinishEvent赋值为false才可以让按钮再进行响应
 extension UIButton {

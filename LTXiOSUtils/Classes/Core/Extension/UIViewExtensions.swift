@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+// MARK: - 未使用命名空间
+
 // MARK: - view绑定数据
 
 extension UIView {
@@ -626,6 +628,8 @@ extension UIButton {
         return super.hitTest(point, with: event)
     }
 }
+
+// MARK: - 未使用命名空间
 
 // MARK: - IB支持配置动态属性
 

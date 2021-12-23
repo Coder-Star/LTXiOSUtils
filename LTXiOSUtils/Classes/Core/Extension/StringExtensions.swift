@@ -270,6 +270,8 @@ extension TxExtensionWrapper where Base == String {
 
 // MARK: - 字符串插值相关
 
+// MARK: - 未使用命名空间
+
 extension String.StringInterpolation {
     /// 字符串插值，提供设置默认值方法
     public mutating func appendInterpolation<T>(_ value: T?, _ defaultValue: T) {
