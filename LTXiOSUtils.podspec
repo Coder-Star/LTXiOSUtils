@@ -26,12 +26,12 @@ Pod::Spec.new do |s|
     # 扩展
     core.subspec 'Extension' do |extension|
       extension.frameworks = "UIKit","Foundation"
-      extension.source_files = 'LTXiOSUtils/Classes/Core/Extension/*.swift'
+      extension.source_files = 'Sources/LTXiOSUtils/Classes/Core/Extension/*.swift'
     end
     # 核心工具
     core.subspec 'CoreUtil' do |coreUtil|
       coreUtil.frameworks = "UIKit","Foundation"
-      coreUtil.source_files = 'LTXiOSUtils/Classes/Core/CoreUtil/**/*.swift'
+      coreUtil.source_files = 'Sources/LTXiOSUtils/Classes/Core/CoreUtil/**/*.swift'
     end
   end
 
@@ -43,21 +43,21 @@ Pod::Spec.new do |s|
     network.dependency 'LTXiOSUtils/Core'
     network.dependency 'ReachabilitySwift','5.0.0'  # 网络监听
     network.dependency 'Moya','14.0.0' # 网络抽象层，其依赖了Alamofire和Result
-    network.source_files = 'LTXiOSUtils/Classes/Network/*.swift'
+    network.source_files = 'Sources/LTXiOSUtils/Classes/Network/*.swift'
   end
 
   # 工具类
   s.subspec 'Util' do |util|
-    util.source_files = 'LTXiOSUtils/Classes/Util/**/*.swift'
+    util.source_files = 'Sources/LTXiOSUtils/Classes/Util/**/*.swift'
   end
 
   # UI组件
   s.subspec 'Component' do |component|
     component.dependency 'LTXiOSUtils/Core'
-    component.source_files = 'LTXiOSUtils/Classes/Component/**/*.swift'
+    component.source_files = 'Sources/LTXiOSUtils/Classes/Component/**/*.swift'
 
     component.subspec 'Resources' do |resources|
-      resources.resource_bundle = { "LTXiOSUtilsComponent" => "LTXiOSUtils/Classes/Component/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
+      resources.resource_bundle = { "LTXiOSUtilsComponent" => "Sources/LTXiOSUtils/Classes/Component/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
     end
   end
 end
