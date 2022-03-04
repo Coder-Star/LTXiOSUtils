@@ -202,7 +202,7 @@ extension UITextView {
 
     @objc
     private func textChange() {
-        if placeholder.tx.isNotEmpty {
+        if !placeholder.isEmpty {
             if text.count == 0 {
                 placeholderLabel?.isHidden = false
             } else {
@@ -244,7 +244,7 @@ extension UITextView {
                                            height: UITextView.wordCountLabelHeight)
         }
 
-        if placeholder.tx.isNotEmpty, placeholderLabel != nil {
+        if !placeholder.isEmpty, placeholderLabel != nil {
             let width = bounds.width - textContainer.lineFragmentPadding * 2
             let size = placeholderLabel!.sizeThatFits(CGSize(width: width, height: .zero))
             placeholderLabel!.frame = CGRect(x: textContainer.lineFragmentPadding,

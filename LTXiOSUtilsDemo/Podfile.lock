@@ -16,15 +16,9 @@ PODS:
   - LTXiOSUtils/Core/CoreUtil (0.0.3)
   - LTXiOSUtils/Core/Extension (0.0.3)
   - LTXiOSUtils/Network (0.0.3):
+    - Alamofire (= 5.4.3)
     - LTXiOSUtils/Core
-    - Moya (= 14.0.0)
-    - ReachabilitySwift (= 5.0.0)
   - LTXiOSUtils/Util (0.0.3)
-  - Moya (14.0.0):
-    - Moya/Core (= 14.0.0)
-  - Moya/Core (14.0.0):
-    - Alamofire (~> 5.0)
-  - ReachabilitySwift (5.0.0)
   - SwiftFormat/CLI (0.47.13)
 
 DEPENDENCIES:
@@ -34,8 +28,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Moya
-    - ReachabilitySwift
     - SwiftFormat
 
 EXTERNAL SOURCES:
@@ -44,9 +36,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  LTXiOSUtils: 486301ef61e20d900f793bfe836e5f08015ac498
-  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  LTXiOSUtils: 002df9c07b7c5e288f16b48b35b77700ecd51238
   SwiftFormat: 73573b89257437c550b03d934889725fbf8f75e5
 
 PODFILE CHECKSUM: 46b6f6d11579fbaf1e1602c483c9022eef365624

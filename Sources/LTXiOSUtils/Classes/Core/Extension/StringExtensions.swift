@@ -180,31 +180,21 @@ extension TxExtensionWrapper where Base == String {
     }
 }
 
-// MARK: - 判断是否为空
-
-extension TxExtensionWrapper where Base == String {
-    /// 字符串是否不为空
-    public var isNotEmpty: Bool {
-        return !base.isEmpty
-    }
-
-    /// 字符串是否为空(去除空格符以及换行符)
-    public var isContentEmpty: Bool {
-        return base.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-    }
-
-    /// 字符串是否不为空(去除空格符以及换行符)
-    public var isNotContentEmpty: Bool {
-        return !isContentEmpty
-    }
-}
-
 // MARK: - 编码
 
 extension TxExtensionWrapper where Base == String {
     /// url编码
+    /// 对特殊符号编码
     public var urlEncode: String? {
         return base.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    }
+
+    /// url编码
+    /// 对特殊符号不编码
+    public var urlEncodeWithoutCharacters: String? {
+        var charSet = CharacterSet.urlQueryAllowed
+        charSet.insert(charactersIn: "!*'();:@&=+$,/?%#[]")
+        return base.addingPercentEncoding(withAllowedCharacters: charSet)
     }
 
     /// url解码
@@ -242,7 +232,7 @@ extension TxExtensionWrapper where Base == String {
         let attribute = [NSAttributedString.Key.font: font]
         let options = NSStringDrawingOptions.usesLineFragmentOrigin
         let size = base.boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude), options: options, attributes: attribute, context: nil).size
-        return size.height
+        return ceil(size.height)
     }
 
     /// 获取指定高度、字体的字符串宽度
@@ -255,7 +245,7 @@ extension TxExtensionWrapper where Base == String {
         let attribute = [NSAttributedString.Key.font: font]
         let options = NSStringDrawingOptions.usesLineFragmentOrigin
         let size = base.boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: height), options: options, attributes: attribute, context: nil).size
-        return size.width
+        return ceil(size.width)
     }
 }
 

@@ -5,48 +5,23 @@
 //  Created by CoderStar on 2021/11/28.
 //
 
-import Alamofire
 import Foundation
 
-protocol APIServiceDelegate {
-    func beforeSendRequest()
-    func afterSendRequest()
-    func afterResponse()
+public enum APIError: Error {
+    case unknown
+
+    case invalidURL
 }
 
-class APIServiceDelegateManager: APIServiceDelegate {
-    public static let shared = APIServiceDelegateManager()
-    func beforeSendRequest() {}
-
-    func afterSendRequest() {}
-
-    func afterResponse() {}
-}
-
-public struct BaseResponse<T> {
-    public var data: T
-    public var code: Int
-}
-
-public protocol APIResponseModel {
-    associatedtype Response: Decodable
+public enum APIResult<T> {
+    case success(T)
+    case failure(Error)
 }
 
 public struct APIService {
-    /// 成功回调闭包
-    public typealias SuccessClosure<T> = (_ data: T) -> Void
-}
-
-extension APIService {
-    public static func sendRequest<T>(url: String, success: @escaping SuccessClosure<T>) {
-        AF.request(url).validate().responseJSON { reponse in
-            switch reponse.result {
-            case let .success(data):
-
-                break
-            case let .failure(error):
-                break
-            }
-        }
+    /// 每次都会生成一个新的实例
+    /// 对外提供的API收口到APIService，后续想更换实现只需要替换 Client实现就ok
+    public static var `default`: APIClient {
+        return AlamofireAPIClient()
     }
 }

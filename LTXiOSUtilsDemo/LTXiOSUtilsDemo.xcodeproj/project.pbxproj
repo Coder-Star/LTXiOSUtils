@@ -11,6 +11,7 @@
 		2D717B5526C1664000483384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5426C1664000483384 /* AppDelegate.swift */; };
 		2D717B5926C1664000483384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5826C1664000483384 /* ViewController.swift */; };
 		2D717B5E26C1664A00483384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D717B5D26C1664A00483384 /* Assets.xcassets */; };
+		2D9454D227CFCB7200D71BD3 /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9454D127CFCB7200D71BD3 /* PropertyWrapper.swift */; };
 		2DBB624E26E333B700C87475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */; };
 		2DE71EBC27ABC81300309E24 /* SwiftDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE71EBB27ABC81300309E24 /* SwiftDemangle.swift */; };
 		E20E5B4C55138D74098C5F20 /* libPods-LTXiOSUtilsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26706580C142E61B3680F4B8 /* libPods-LTXiOSUtilsDemo.a */; };
@@ -24,6 +25,7 @@
 		2D717B5826C1664000483384 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D717B5D26C1664A00483384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D717B6226C1664A00483384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D9454D127CFCB7200D71BD3 /* PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapper.swift; sourceTree = "<group>"; };
 		2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DE71EBB27ABC81300309E24 /* SwiftDemangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemangle.swift; sourceTree = "<group>"; };
 		50BEB760F2BA6CF4047B54ED /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +73,8 @@
 		2D717B5326C1664000483384 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2D9454E427D23C6C00D71BD3 /* Demo */,
+				2D9454D027CFCB5D00D71BD3 /* Model */,
 				2DE71EBA27ABC7F600309E24 /* SwiftRuntime */,
 				2DBB625026E333E800C87475 /* Resources */,
 				2D717B5426C1664000483384 /* AppDelegate.swift */,
@@ -80,6 +84,21 @@
 				2D65D3C826CF6B9E007D0254 /* LibExport.swift */,
 			);
 			path = LTXiOSUtilsDemo;
+			sourceTree = "<group>";
+		};
+		2D9454D027CFCB5D00D71BD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D9454D127CFCB7200D71BD3 /* PropertyWrapper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D9454E427D23C6C00D71BD3 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		2DBB625026E333E800C87475 /* Resources */ = {
@@ -278,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DE71EBC27ABC81300309E24 /* SwiftDemangle.swift in Sources */,
+				2D9454D227CFCB7200D71BD3 /* PropertyWrapper.swift in Sources */,
 				2D717B5926C1664000483384 /* ViewController.swift in Sources */,
 				2D717B5526C1664000483384 /* AppDelegate.swift in Sources */,
 				2D65D3C926CF6B9E007D0254 /* LibExport.swift in Sources */,
