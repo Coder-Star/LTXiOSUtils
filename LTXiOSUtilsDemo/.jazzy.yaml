@@ -8,7 +8,7 @@ module: LTXiOSUtils # 模块名称
 module_version: 1.0.0 # 文档版本号
 
 readme: ../README.md # readme路径
-output: ../Jazzy # 输出路径
+output: ../docs # 输出路径
 
 #xcodebuild_arguments: [clean,build,-project,CSPickerView.xcodeproj,-scheme,CSPickerView]
 xcodebuild_arguments: [clean,build,-workspace,LTXiOSUtilsDemo.xcworkspace,-scheme,LTXiOSUtilsDemo]
