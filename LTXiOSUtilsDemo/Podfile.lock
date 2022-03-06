@@ -4,6 +4,7 @@ PODS:
     - LTXiOSUtils/Component (= 0.0.3)
     - LTXiOSUtils/Core (= 0.0.3)
     - LTXiOSUtils/Network (= 0.0.3)
+    - LTXiOSUtils/PropertyWrapper (= 0.0.3)
     - LTXiOSUtils/Util (= 0.0.3)
   - LTXiOSUtils/Component (0.0.3):
     - LTXiOSUtils/Component/Resources (= 0.0.3)
@@ -18,6 +19,7 @@ PODS:
   - LTXiOSUtils/Network (0.0.3):
     - Alamofire (= 5.4.3)
     - LTXiOSUtils/Core
+  - LTXiOSUtils/PropertyWrapper (0.0.3)
   - LTXiOSUtils/Util (0.0.3)
   - SwiftFormat/CLI (0.47.13)
 
@@ -36,9 +38,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  LTXiOSUtils: 002df9c07b7c5e288f16b48b35b77700ecd51238
+  LTXiOSUtils: cb508b14155be622c11667c3463ca150b1695c12
   SwiftFormat: 73573b89257437c550b03d934889725fbf8f75e5
 
-PODFILE CHECKSUM: 46b6f6d11579fbaf1e1602c483c9022eef365624
+PODFILE CHECKSUM: d8f4b40e42dc8a591dbe4680a5f200c57a40ae50
 
 COCOAPODS: 1.11.2

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// 设置相关信息
 public struct DeviceInfo {

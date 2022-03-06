@@ -7,19 +7,20 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "CoderStar" => "1340529758@qq.com" }
 
-  s.source       = { :git => "https://github.com/Coder-Star/LTXiOSUtils.git", :tag => s.version } # 发布时启用
-#  s.source       = { :git => 'local', :tag => s.version} # 本地开发，local是随便起的名字
+  #  s.source       = { :git => "https://github.com/Coder-Star/LTXiOSUtils.git", :tag => s.version } # 发布时启用
+  s.source       = { :git => 'local', :tag => s.version} # 本地开发，local是随便起的名字
 
   s.requires_arc = true
   s.swift_version = ["5","4.2"]
-#  s.static_framework  =  true
+  #  s.static_framework  =  true
 
-# 模块化，假如组件中有OC代码，需要模块化，就需要进行开启，并且配合public_header_files使用，其中public_header_files加入的.h文件会反映到umbrella.h文件中去，如果自己创建framework，就需要自己创建umbrella.h文件，将自己想要保留的oc .h文件加入进去
+  # 模块化，假如组件中有OC代码，需要模块化，就需要进行开启，并且配合public_header_files使用，其中public_header_files加入的.h文件会反映到umbrella.h文件中去，如果自己创建framework，就需要自己创建umbrella.h文件，将自己想要保留的oc .h文件加入进去
   s.pod_target_xcconfig = {
-    'DEFINES_MODULE' => 'YES'
+    'DEFINES_MODULE' => 'YES',
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
-
-# 架构第一层；包含Swift扩展、核心工具
+  
+  # 架构第一层；包含Swift扩展、核心工具
 
   # 核心类，其他子组件依赖该子组件
   s.subspec 'Core' do |core|
@@ -36,7 +37,7 @@ Pod::Spec.new do |s|
   end
 
 
-# 架构第二层；包含UI组件、网络请求、工具类
+  # 架构第二层；包含UI组件、网络请求、工具类等
 
   # 网络请求
   s.subspec 'Network' do |network|
@@ -48,6 +49,11 @@ Pod::Spec.new do |s|
   # 工具类
   s.subspec 'Util' do |util|
     util.source_files = 'Sources/LTXiOSUtils/Classes/Util/**/*.swift'
+  end
+
+  # PropertyWrapper
+  s.subspec 'PropertyWrapper' do |util|
+    util.source_files = 'Sources/LTXiOSUtils/Classes/PropertyWrapper/**/*.swift'
   end
 
   # UI组件

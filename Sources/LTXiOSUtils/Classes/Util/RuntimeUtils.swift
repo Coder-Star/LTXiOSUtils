@@ -48,7 +48,7 @@ public struct RuntimeUtils {
     ///   - superclass: 父类
     /// - Returns: 结果
     public static func isSubclass(_ subclass: AnyClass, superclass: AnyClass) -> Bool {
-        var eachSubclass = subclass
+        var eachSubclass: AnyClass = subclass
         while let eachSuperclass: AnyClass = class_getSuperclass(eachSubclass) {
             if ObjectIdentifier(eachSuperclass) == ObjectIdentifier(superclass) {
                 return true

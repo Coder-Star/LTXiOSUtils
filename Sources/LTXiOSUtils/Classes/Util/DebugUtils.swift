@@ -15,8 +15,8 @@ extension DebugUtils {
     /// - Parameter values:
     /// - Parameter o: 地址，使用`&`符号
     /// - Returns: 地址
-    public static func address(_ o: UnsafePointer<Void>) -> String {
-        let addr = unsafeBitCast(o, to: Int.self)
+    public static func address(_ o: UnsafeRawPointer) -> String {
+        let addr = Int(bitPattern: o)
         return NSString(format: "%p", addr) as String
     }
 

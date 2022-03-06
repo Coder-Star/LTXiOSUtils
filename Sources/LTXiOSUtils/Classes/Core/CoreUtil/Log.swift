@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 /**
  #column: 列号
