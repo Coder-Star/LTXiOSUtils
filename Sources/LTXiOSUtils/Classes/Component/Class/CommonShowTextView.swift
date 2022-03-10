@@ -86,7 +86,6 @@ extension CommonShowTextView {
         } else {
             textColor = nil
             addTapGesture { _ in
-                Log.d("点击")
             }
         }
     }

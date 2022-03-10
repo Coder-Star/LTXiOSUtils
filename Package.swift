@@ -12,15 +12,13 @@ let package = Package(
         .library(
             name: "LTXiOSUtils",
             targets: [
-                "LTXiOSUtilsCoreExtension",
-                "LTXiOSUtilsCoreUtil",
+                "LTXiOSUtilsExtension",
                 "LTXiOSUtilsUtil",
                 "LTXiOSUtilsPropertyWrapper",
                 "LTXiOSUtilsNetwork",
             ]
         ),
-        .library(name: "LTXiOSUtilsCoreExtension", type: .static, targets: ["LTXiOSUtilsCoreExtension"]),
-        .library(name: "LTXiOSUtilsCoreUtil", type: .static, targets: ["LTXiOSUtilsCoreUtil"]),
+        .library(name: "LTXiOSUtilsExtension", type: .static, targets: ["LTXiOSUtilsExtension"]),
         .library(name: "LTXiOSUtilsUtil", type: .static, targets: ["LTXiOSUtilsUtil"]),
         .library(name: "LTXiOSUtilsPropertyWrapper", type: .static, targets: ["LTXiOSUtilsPropertyWrapper"]),
         .library(name: "LTXiOSUtilsNetwork", type: .static, targets: ["LTXiOSUtilsNetwork"]),
@@ -30,12 +28,8 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "LTXiOSUtilsCoreExtension",
-            path: "Sources/LTXiOSUtils/Classes/Core/Extension"
-        ),
-        .target(
-            name: "LTXiOSUtilsCoreUtil",
-            path: "Sources/LTXiOSUtils/Classes/Core/CoreUtil"
+            name: "LTXiOSUtilsExtension",
+            path: "Sources/LTXiOSUtils/Classes/Extension"
         ),
         .target(
             name: "LTXiOSUtilsUtil",

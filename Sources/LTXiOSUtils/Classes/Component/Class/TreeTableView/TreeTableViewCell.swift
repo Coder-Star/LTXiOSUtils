@@ -81,7 +81,7 @@ public class TreeTableViewCell: UITableViewCell {
 
     public override func layoutSubviews() {
         super.layoutSubviews()
-        let minX = leftMargin + indentationLevel.tx.cgFloatValue * indentationWidth
+        let minX = leftMargin + CGFloat(indentationLevel) * indentationWidth
         var imageViewFrame = imageView?.frame
         imageViewFrame?.origin.x = minX
         imageView?.frame = imageViewFrame!

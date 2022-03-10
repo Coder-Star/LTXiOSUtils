@@ -576,56 +576,56 @@
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
-      "line": 188,
+      "line": 187,
       "symbol": "ImagePickGridView.collectionView(_:numberOfItemsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
-      "line": 192,
+      "line": 191,
       "symbol": "ImagePickGridView.collectionView(_:cellForItemAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
-      "line": 211,
+      "line": 210,
       "symbol": "ImagePickGridView.collectionView(_:didSelectItemAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
-      "line": 263,
+      "line": 260,
       "symbol": "ImagePickGridViewCell",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
-      "line": 264,
+      "line": 261,
       "symbol": "ImagePickGridViewCell.deleteButtonWidth",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
-      "line": 266,
+      "line": 263,
       "symbol": "ImagePickGridViewCell.imageView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
-      "line": 271,
+      "line": 268,
       "symbol": "ImagePickGridViewCell.deleteButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
-      "line": 278,
+      "line": 275,
       "symbol": "ImagePickGridViewCell.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -1170,84 +1170,77 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/CoreUtil/Log.swift",
-      "line": 19,
-      "symbol": "LogLevel",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/Extension/UITapGestureRecognizerExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UITapGestureRecognizerExtensions.swift",
       "line": 41,
       "symbol": "UITapGestureRecognizer.gestureRecognizerShouldBegin(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/Extension/UITextFieldExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UITextFieldExtensions.swift",
       "line": 27,
       "symbol": "UITextField.csLeftPaddingWidth",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/Extension/UITextFieldExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UITextFieldExtensions.swift",
       "line": 39,
       "symbol": "UITextField.csRigthPaddingWidth",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/Extension/UITextViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UITextViewExtensions.swift",
       "line": 171,
       "symbol": "UITextView.observeValue(forKeyPath:of:change:context:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
       "line": 161,
       "symbol": "UIView.rightBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
       "line": 167,
       "symbol": "UIView.leftBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
       "line": 173,
       "symbol": "UIView.topBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
       "line": 179,
       "symbol": "UIView.buttomBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
       "line": 579,
       "symbol": "UIImageView.hitTest(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
       "line": 597,
       "symbol": "UILabel.hitTest(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Core/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
       "line": 617,
       "symbol": "UIButton.hitTest(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
@@ -1611,6 +1604,34 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
+      "line": 26,
+      "symbol": "UserDefaultsStoreValue",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
+      "line": 40,
+      "symbol": "UserDefaultsWrapper",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
+      "line": 69,
+      "symbol": "UserDefaultsWrapper.observe(change:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
+      "line": 91,
+      "symbol": "UserDefaultsObservation.observeValue(forKeyPath:of:change:context:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
       "line": 47,
       "symbol": "ApplicationServiceManagerDelegate",
@@ -1947,6 +1968,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/Log/Log.swift",
+      "line": 18,
+      "symbol": "LogLevel",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/NotificationToken.swift",
       "line": 10,
       "symbol": "NotificationToken",
@@ -1965,34 +1993,6 @@
       "line": 64,
       "symbol": "RuntimeUtils",
       "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/UserDefaultWrapper.swift",
-      "line": 26,
-      "symbol": "UserDefaultsStoreValue",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/UserDefaultWrapper.swift",
-      "line": 40,
-      "symbol": "UserDefaultsWrapper",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/UserDefaultWrapper.swift",
-      "line": 69,
-      "symbol": "UserDefaultsWrapper.observe(change:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/UserDefaultWrapper.swift",
-      "line": 91,
-      "symbol": "UserDefaultsObservation.observeValue(forKeyPath:of:change:context:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {

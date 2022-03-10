@@ -19,29 +19,13 @@ Pod::Spec.new do |s|
     'DEFINES_MODULE' => 'YES',
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
-  
-  # 架构第一层；包含Swift扩展、核心工具
 
-  # 核心类，其他子组件依赖该子组件
-  s.subspec 'Core' do |core|
-    # 扩展
-    core.subspec 'Extension' do |extension|
-      extension.frameworks = "UIKit","Foundation"
-      extension.source_files = 'Sources/LTXiOSUtils/Classes/Core/Extension/*.swift'
-    end
-    # 核心工具
-    core.subspec 'CoreUtil' do |coreUtil|
-      coreUtil.frameworks = "UIKit","Foundation"
-      coreUtil.source_files = 'Sources/LTXiOSUtils/Classes/Core/CoreUtil/**/*.swift'
-    end
+  s.subspec 'Extension' do |extension|
+    extension.source_files = 'Sources/LTXiOSUtils/Classes/Extension/*.swift'
   end
-
-
-  # 架构第二层；包含UI组件、网络请求、工具类等
 
   # 网络请求
   s.subspec 'Network' do |network|
-    network.dependency 'LTXiOSUtils/Core'
     network.dependency 'Alamofire','5.4.3'
     network.source_files = 'Sources/LTXiOSUtils/Classes/Network/*.swift'
   end
@@ -49,6 +33,9 @@ Pod::Spec.new do |s|
   # 工具类
   s.subspec 'Util' do |util|
     util.source_files = 'Sources/LTXiOSUtils/Classes/Util/**/*.swift'
+    util.subspec 'Log' do |log|
+      log.source_files = 'Sources/LTXiOSUtils/Classes/Util/Log/*.swift'
+    end
   end
 
   # PropertyWrapper
@@ -58,7 +45,6 @@ Pod::Spec.new do |s|
 
   # UI组件
   s.subspec 'Component' do |component|
-    component.dependency 'LTXiOSUtils/Core'
     component.source_files = 'Sources/LTXiOSUtils/Classes/Component/**/*.swift'
 
     component.subspec 'Resources' do |resources|

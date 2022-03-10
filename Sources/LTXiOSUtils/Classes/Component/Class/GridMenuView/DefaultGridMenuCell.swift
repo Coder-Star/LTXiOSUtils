@@ -64,14 +64,14 @@ open class DefaultGridMenuCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let labelHeight = 20.tx.cgFloatValue
-        let imageHeight = frame.height - labelHeight - 20.tx.cgFloatValue
+        let labelHeight: CGFloat = 20
+        let imageHeight = frame.height - labelHeight - 20
         let imageWidth = imageHeight
         imageView.frame = CGRect(x: (frame.width - imageWidth) / 2, y: 10, width: imageWidth, height: imageHeight)
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         addSubview(imageView)
-        label.frame = CGRect(x: 5, y: imageHeight + 15, width: frame.width - 10.tx.cgFloatValue, height: labelHeight)
+        label.frame = CGRect(x: 5, y: imageHeight + 15, width: frame.width - 10, height: labelHeight)
         addSubview(label)
         tx.setBadge(flexMode: .middle)
         tx.moveBadge(x: -1 * imageView.frame.origin.x, y: imageView.frame.origin.y)

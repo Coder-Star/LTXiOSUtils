@@ -121,10 +121,10 @@ public class GridMenuView: UIView {
     }
 
     private func initView() {
-        let itemWidth = viewWidth / colCount.tx.cgFloatValue
+        let itemWidth = viewWidth / CGFloat(colCount)
         let itemHeight = itemWidth
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: itemHeight * rowCount.tx.cgFloatValue), collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: itemHeight * CGFloat(rowCount)), collectionViewLayout: layout)
         collectionView?.register(DefaultGridMenuCell.self, forCellWithReuseIdentifier: DefaultGridMenuCell.description())
         collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "emptyCell")
         collectionView?.dataSource = self
@@ -158,7 +158,7 @@ public class GridMenuView: UIView {
                 let scrollPageControlViewWidth: CGFloat = 50
                 scrollPageControlView.frame = CGRect(x: (viewWidth - scrollPageControlViewWidth) / 2, y: collectionView!.frame.height + 5, width: scrollPageControlViewWidth, height: 3)
                 addSubview(scrollPageControlView)
-                scrollPageControlView.currentIndicatorWidth = colCount.tx.cgFloatValue / realColCount.tx.cgFloatValue * scrollPageControlViewWidth
+                scrollPageControlView.currentIndicatorWidth = CGFloat(colCount) / CGFloat(realColCount) * scrollPageControlViewWidth
                 viewHeight = collectionView!.frame.height + scrollPageControlView.frame.height + 10
             }
         }

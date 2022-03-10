@@ -90,8 +90,7 @@ open class ImagePickGridView: UIView {
 
     open override func layoutSubviews() {
         super.layoutSubviews()
-        Log.d(frame)
-        itemWidth = frame.width / colCount.tx.cgFloatValue
+        itemWidth = frame.width / CGFloat(colCount)
         if layout.itemSize == .zero {
             layout.itemSize = CGSize(width: itemWidth ?? 0, height: itemWidth ?? 0)
         }
@@ -114,7 +113,7 @@ open class ImagePickGridView: UIView {
     }
 
     private func reloadDataAndFrame() {
-        let heightInfo = (itemWidth ?? 0) * Int(ceil(Float(showImageCount) / Float(colCount))).tx.cgFloatValue
+        let heightInfo = (itemWidth ?? 0) * CGFloat(Int(ceil(Float(showImageCount) / Float(colCount))))
         if heightConstraint == nil {
             heightConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0.0, constant: heightInfo)
             addConstraint(heightConstraint!)
@@ -209,11 +208,9 @@ extension ImagePickGridView: UICollectionViewDataSource {
 
 extension ImagePickGridView: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        Log.d(indexPath.item)
         if indexPath.item < imageList.count {
             delegte?.clickImage?(imagePickGridView: self, index: indexPath.item)
         } else if indexPath.item == imageList.count {
-            Log.d("点击添加")
             delegte?.addImage?(imagePickGridView: self)
         }
     }
