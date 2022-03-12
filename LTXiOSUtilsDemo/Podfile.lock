@@ -9,7 +9,19 @@ PODS:
   - LTXiOSUtils/Component (0.0.3):
     - LTXiOSUtils/Component/Resources (= 0.0.3)
   - LTXiOSUtils/Component/Resources (0.0.3)
-  - LTXiOSUtils/Extension (0.0.3)
+  - LTXiOSUtils/Extension (0.0.3):
+    - LTXiOSUtils/Extension/Core (= 0.0.3)
+    - LTXiOSUtils/Extension/Dispatch (= 0.0.3)
+    - LTXiOSUtils/Extension/Foundation (= 0.0.3)
+    - LTXiOSUtils/Extension/SwiftStdlib (= 0.0.3)
+    - LTXiOSUtils/Extension/UIKit (= 0.0.3)
+    - LTXiOSUtils/Extension/WebKit (= 0.0.3)
+  - LTXiOSUtils/Extension/Core (0.0.3)
+  - LTXiOSUtils/Extension/Dispatch (0.0.3)
+  - LTXiOSUtils/Extension/Foundation (0.0.3)
+  - LTXiOSUtils/Extension/SwiftStdlib (0.0.3)
+  - LTXiOSUtils/Extension/UIKit (0.0.3)
+  - LTXiOSUtils/Extension/WebKit (0.0.3)
   - LTXiOSUtils/Network (0.0.3):
     - Alamofire (= 5.4.3)
   - LTXiOSUtils/PropertyWrapper (0.0.3)
@@ -33,7 +45,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  LTXiOSUtils: e68237d2f86e27da03fb6825327786879ba1c6cf
+  LTXiOSUtils: ed60e95594c9f4d192cd4cbe46814fcafc56015d
   SwiftFormat: 73573b89257437c550b03d934889725fbf8f75e5
 
 PODFILE CHECKSUM: d8f4b40e42dc8a591dbe4680a5f200c57a40ae50

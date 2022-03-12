@@ -22,6 +22,32 @@ Pod::Spec.new do |s|
 
   s.subspec 'Extension' do |extension|
     extension.source_files = 'Sources/LTXiOSUtils/Classes/Extension/*.swift'
+
+    extension.subspec 'Core' do |core|
+      core.source_files = 'Sources/LTXiOSUtils/Classes/Extension/Core/*.swift'
+    end
+
+    extension.subspec 'SwiftStdlib' do |swift|
+      swift.source_files = 'Sources/LTXiOSUtils/Classes/Extension/SwiftStdlib/*.swift'
+    end
+
+    extension.subspec 'Foundation' do |foundation|
+      foundation.source_files = 'Sources/LTXiOSUtils/Classes/Extension/Foundation/*.swift'
+    end
+
+
+    extension.subspec 'UIKit' do |uiKit|
+      uiKit.source_files = 'Sources/LTXiOSUtils/Classes/Extension/UIKit/*.swift'
+    end
+
+    extension.subspec 'WebKit' do |webKit|
+      webKit.source_files = 'Sources/LTXiOSUtils/Classes/Extension/WebKit/*.swift'
+    end
+
+    extension.subspec 'Dispatch' do |dispatch|
+      dispatch.source_files = 'Sources/LTXiOSUtils/Classes/Extension/Dispatch/*.swift'
+    end
+
   end
 
   # 网络请求
@@ -48,7 +74,8 @@ Pod::Spec.new do |s|
     component.source_files = 'Sources/LTXiOSUtils/Classes/Component/**/*.swift'
 
     component.subspec 'Resources' do |resources|
-      resources.resource_bundle = { "LTXiOSUtilsComponent" => "Sources/LTXiOSUtils/Classes/Component/Resources/Resource/*" } # LTXiOSUtil是bundle的名称
+      # LTXiOSUtilsComponent是bundle的名称
+      resources.resource_bundle = { "LTXiOSUtilsComponent" => "Sources/LTXiOSUtils/Classes/Component/Resources/Resource/*" }
     end
   end
 end
