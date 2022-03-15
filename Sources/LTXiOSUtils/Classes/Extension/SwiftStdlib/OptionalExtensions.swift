@@ -5,8 +5,6 @@
 //  Created by CoderStar on 2019/11/21.
 //
 
-import Foundation
-
 extension Optional {
     /// 判断是否为空
     public var isNil: Bool {

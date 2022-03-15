@@ -5,8 +5,6 @@
 //  Created by CoderStar on 2020/1/8.
 //
 
-import Foundation
-
 extension Array: TxExtensionWrapperCompatibleValue {}
 
 extension TxExtensionWrapper where Base: Sequence {

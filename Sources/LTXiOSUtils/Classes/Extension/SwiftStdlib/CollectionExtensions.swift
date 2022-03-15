@@ -5,8 +5,6 @@
 //  Created by CoderStar on 2021/9/14.
 //
 
-import Foundation
-
 extension Collection {
     /// 安全取指定索引数据
     ///

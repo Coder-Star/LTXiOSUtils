@@ -5,8 +5,6 @@
 //  Created by CoderStar on 2020/3/20.
 //
 
-import Foundation
-
 extension Double: TxExtensionWrapperCompatibleValue {}
 
 extension TxExtensionWrapper where Base == Double {
