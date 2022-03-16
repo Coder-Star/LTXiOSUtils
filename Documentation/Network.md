@@ -10,7 +10,7 @@ Network里面定义的是一层网络抽象层，包含发送、接收、JSON转
 
 负责发送一个`Request`请求，我们可以调整`APIClient`的实现方式；
 
-目前默认实现方式为`Alamofire`;我们最终
+目前默认实现方式为`Alamofire`;
 
 ### APIParsable协议
 
