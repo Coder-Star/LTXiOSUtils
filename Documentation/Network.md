@@ -78,7 +78,7 @@ extension DomainOneNetRequest {
 
 这样每对应一个`domain`我们就定义这样一个`NetRequest`，我们在访问不同域名的API后台时，选择对应的`NetRequest`即可，并且我们可以把站点的域名收敛到构造函数里面，避免外面多次传入；
 
-同时我们可以通过定义多个构造函数的方式给调用方提供是直接返回最外层数据结构的Model而是真正数据对应的Model。
+同时我们可以通过定义多个构造函数的方式给调用方提供是直接返回最外层数据结构的Model 或者 真正数据对应的Model。
 
 ```swift
 extension DomainOneNetRequest {
