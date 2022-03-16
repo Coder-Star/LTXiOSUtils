@@ -7,32 +7,13 @@
 
 import Foundation
 
-protocol APIResponseModel: APIParsable {
-    var code: Int { get set }
-    var msg: String { get set }
-    var data: DataType { get set }
-
-    var isSuccess: Bool { get }
-
-    associatedtype DataType
-}
-
-public struct DefaultAPIResponseModel<T>: APIResponseModel & APIParsable & Decodable where T: APIParsable & Decodable {
+public struct DefaultAPIResponseModel<T>: APIParsable & Decodable where T: APIParsable & Decodable {
     public var code: Int
     public var msg: String
     public var data: T?
 
-    var isSuccess: Bool {
+    public var isSuccess: Bool {
         return code == 200
-    }
-
-    public static func parse(data: Data) -> APIResult<DefaultAPIResponseModel<T>> {
-        do {
-            let model = try JSONDecoder().decode(self, from: data)
-            return .success(model)
-        } catch {
-            return .failure(error)
-        }
     }
 }
 

@@ -24,8 +24,8 @@ extension APIParsable where Self: Decodable {
     }
 }
 
-// extension Parsable where Self: SwiftProtobuf.Message {
-//    public static func parse(data: Data) -> Result<Self> {
+// extension APIParsable where Self: SwiftProtobuf.Message {
+//    public static func parse(data: Data) -> APIResult<Self> {
 //        do {
 //            let model = try self.init(serializedData: data)
 //            return .success(model)

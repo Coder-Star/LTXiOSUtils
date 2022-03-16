@@ -21,7 +21,7 @@ public protocol APIRequest {
     associatedtype Response: APIParsable
 }
 
-public struct DefaultNetRequest<T: APIParsable>: APIRequest {
+public struct DefaultAPIRequest<T: APIParsable>: APIRequest {
     public var url: String
 
     public var method: NetRequestMethod
@@ -35,16 +35,15 @@ public struct DefaultNetRequest<T: APIParsable>: APIRequest {
     public typealias Response = T
 }
 
-extension DefaultNetRequest {
+extension DefaultAPIRequest {
     public init(responseType: Response.Type, url: String, method: NetRequestMethod = .get) {
         self.url = url
         self.method = method
     }
 }
 
-extension DefaultNetRequest {
-    public init<S>(defaultDataType: S.Type, url: String, method: NetRequestMethod = .get) where DefaultAPIResponseModel<S> == T {
-        self.url = url
-        self.method = method
+extension DefaultAPIRequest {
+    public init<S>(dataType: S.Type, url: String, method: NetRequestMethod = .get) where DefaultAPIResponseModel<S> == T {
+        self.init(responseType: DefaultAPIResponseModel<S>.self, url: url, method: method)
     }
 }
