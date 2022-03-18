@@ -7,21 +7,49 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+import UIKit
+
+class ViewController: BaseViewController {
+    private var demoList: [[String: Any]] = [
+        ["title": "网络请求", "vc": NetworkDemoViewController()],
+    ]
+
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.tableFooterView = UIView()
+        tableView.dataSource = self
+        tableView.delegate = self
+        return tableView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = "首页"
-        setupUI()
+        title = "功能列表"
+
+        view.addSubview(tableView)
+        tableView.frame = view.frame
+    }
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return demoList.count
     }
 
-    private func setupUI() {
-        let titleLabel = UILabel()
-        titleLabel.font = UIFont.systemFont(ofSize: 20)
-        titleLabel.text = "Welcome"
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(titleLabel)
-        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.selectionStyle = .none
+        cell.textLabel?.text = demoList[indexPath.row]["title"] as? String
+        return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewController = demoList[indexPath.row]["vc"] as? UIViewController else {
+            return
+        }
+        viewController.title = demoList[indexPath.row]["title"] as? String
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

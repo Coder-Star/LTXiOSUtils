@@ -23,7 +23,7 @@ public struct CSApiRequest<T: APIParsable>: APIRequest {
 
 extension CSApiRequest {
     public init(responseType: Response.Type, url: String, method: NetRequestMethod = .get) {
-        self.url = url
+        self.url = NetworkConstants.baseURL + "/" + (url.hasPrefix("/") ? String(url.dropFirst()) : url)
         self.method = method
     }
 }

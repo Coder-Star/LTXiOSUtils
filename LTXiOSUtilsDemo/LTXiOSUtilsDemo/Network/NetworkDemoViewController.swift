@@ -7,15 +7,14 @@
 
 import Foundation
 
-class NetworkDemoViewController: UIViewController {
+class NetworkDemoViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        getData()
     }
 
-    private func setupUI() {
-        let request = CSApiRequest(dataType: HomeBanner.self, url: "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock/config/homeBanner")
-
+    private func getData() {
+        let request = CSApiRequest(dataType: HomeBanner.self, url: "/config/homeBanner")
         let defaultAPIService = APIService.default
 
         defaultAPIService.send(request: request) { result in
