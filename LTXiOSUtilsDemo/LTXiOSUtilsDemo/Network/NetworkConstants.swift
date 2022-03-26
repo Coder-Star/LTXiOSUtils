@@ -8,5 +8,5 @@
 import Foundation
 
 struct NetworkConstants {
-    static let baseURL = "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock"
+    static let baseURL = URL(string: "https://www.fastmock.site/mock/5abd18409d0a2270b34088a07457e68f/LTXMock")!
 }

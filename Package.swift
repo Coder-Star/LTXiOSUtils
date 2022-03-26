@@ -15,13 +15,13 @@ let package = Package(
                 "LTXiOSUtilsExtension",
                 "LTXiOSUtilsUtil",
                 "LTXiOSUtilsPropertyWrapper",
-                "LTXiOSUtilsNetwork",
+                "LTXiOSUtilsAPIService",
             ]
         ),
         .library(name: "LTXiOSUtilsExtension", type: .static, targets: ["LTXiOSUtilsExtension"]),
         .library(name: "LTXiOSUtilsUtil", type: .static, targets: ["LTXiOSUtilsUtil"]),
         .library(name: "LTXiOSUtilsPropertyWrapper", type: .static, targets: ["LTXiOSUtilsPropertyWrapper"]),
-        .library(name: "LTXiOSUtilsNetwork", type: .static, targets: ["LTXiOSUtilsNetwork"]),
+        .library(name: "LTXiOSUtilsAPIService", type: .static, targets: ["LTXiOSUtilsAPIService"]),
     ],
     dependencies: [
         .package(name: "Alamofire", url: "https://github.com/Alamofire/Alamofire.git", .exact("5.4.3")),
@@ -40,9 +40,9 @@ let package = Package(
             path: "Sources/LTXiOSUtils/Classes/PropertyWrapper"
         ),
         .target(
-            name: "LTXiOSUtilsNetwork",
+            name: "LTXiOSUtilsAPIService",
             dependencies: ["Alamofire"],
-            path: "Sources/LTXiOSUtils/Classes/Network"
+            path: "Sources/LTXiOSUtils/Classes/APIService"
         ),
     ]
 )

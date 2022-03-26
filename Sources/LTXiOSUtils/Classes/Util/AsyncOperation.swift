@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class AsyncOperation: Operation {
+final public class AsyncOperation: Operation {
     private var block: ((_ operation: AsyncOperation) -> Void)?
 
     private let queue = DispatchQueue(label: "async.operation.queue")

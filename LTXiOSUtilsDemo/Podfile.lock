@@ -1,11 +1,13 @@
 PODS:
-  - Alamofire (5.4.3)
+  - Alamofire (4.9.1)
   - LTXiOSUtils (0.0.3):
+    - LTXiOSUtils/APIService (= 0.0.3)
     - LTXiOSUtils/Component (= 0.0.3)
     - LTXiOSUtils/Extension (= 0.0.3)
-    - LTXiOSUtils/Network (= 0.0.3)
     - LTXiOSUtils/PropertyWrapper (= 0.0.3)
     - LTXiOSUtils/Util (= 0.0.3)
+  - LTXiOSUtils/APIService (0.0.3):
+    - Alamofire (= 4.9.1)
   - LTXiOSUtils/Component (0.0.3):
     - LTXiOSUtils/Component/Resources (= 0.0.3)
   - LTXiOSUtils/Component/Resources (0.0.3)
@@ -22,8 +24,6 @@ PODS:
   - LTXiOSUtils/Extension/SwiftStdlib (0.0.3)
   - LTXiOSUtils/Extension/UIKit (0.0.3)
   - LTXiOSUtils/Extension/WebKit (0.0.3)
-  - LTXiOSUtils/Network (0.0.3):
-    - Alamofire (= 5.4.3)
   - LTXiOSUtils/PropertyWrapper (0.0.3)
   - LTXiOSUtils/Util (0.0.3):
     - LTXiOSUtils/Util/Log (= 0.0.3)
@@ -35,8 +35,9 @@ DEPENDENCIES:
   - SwiftFormat/CLI (= 0.47.13)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
+  trunk:
     - SwiftFormat
 
 EXTERNAL SOURCES:
@@ -44,10 +45,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  LTXiOSUtils: ed60e95594c9f4d192cd4cbe46814fcafc56015d
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  LTXiOSUtils: 1d693dfb72f43b12b74f8f27368ceefeb680b106
   SwiftFormat: 73573b89257437c550b03d934889725fbf8f75e5
 
-PODFILE CHECKSUM: d8f4b40e42dc8a591dbe4680a5f200c57a40ae50
+PODFILE CHECKSUM: 7699c61d9a6203d25ec2a50188be2e03054d94b0
 
 COCOAPODS: 1.11.2

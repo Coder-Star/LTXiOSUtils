@@ -27,4 +27,14 @@ extension DebugUtils {
         let addr = unsafeBitCast(o, to: Int.self)
         return NSString(format: "%p", addr) as String
     }
+
+    /// 计算执行时长
+    /// - Parameter f: 执行体
+    /// - Returns: 时长
+    public static func measureTime(f: () -> Void) -> CFTimeInterval {
+        let start = CACurrentMediaTime()
+        f()
+        let end = CACurrentMediaTime()
+        return end - start
+    }
 }

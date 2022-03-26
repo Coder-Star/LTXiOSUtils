@@ -51,9 +51,9 @@ Pod::Spec.new do |s|
   end
 
   # 网络请求
-  s.subspec 'Network' do |network|
-    network.dependency 'Alamofire','5.4.3'
-    network.source_files = 'Sources/LTXiOSUtils/Classes/Network/*.swift'
+  s.subspec 'APIService' do |apiservice|
+    apiservice.dependency 'Alamofire','4.9.1'
+    apiservice.source_files = 'Sources/LTXiOSUtils/Classes/APIService/*.swift'
   end
 
   # 工具类

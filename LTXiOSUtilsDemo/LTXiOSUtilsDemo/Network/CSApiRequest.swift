@@ -6,30 +6,40 @@
 //
 
 import Foundation
+import LTXiOSUtils
 
 public struct CSApiRequest<T: APIParsable>: APIRequest {
-    public var url: String
+    public var baseURL: URL = NetworkConstants.baseURL
 
-    public var method: NetRequestMethod
+    public var path: String
+
+    public var method: APIRequestMethod = .get
 
     public var parameters: [String: Any]?
 
-    public var headers: NetRequestHeaders?
+    public var headers: APIRequestHeaders?
 
-    public var httpBody: Data?
+    public var taskType: APIRequestTaskType = .request
+
+    public var encoding: APIParameterEncoding {
+        if method == .get {
+            return APIURLEncoding.default
+        } else {
+            return APIJSONEncoding.default
+        }
+    }
 
     public typealias Response = T
 }
 
 extension CSApiRequest {
-    public init(responseType: Response.Type, url: String, method: NetRequestMethod = .get) {
-        self.url = NetworkConstants.baseURL + "/" + (url.hasPrefix("/") ? String(url.dropFirst()) : url)
-        self.method = method
+    public init(path: String, responseType: Response.Type) {
+        self.path = path
     }
 }
 
 extension CSApiRequest {
-    public init<S>(dataType: S.Type, url: String, method: NetRequestMethod = .get) where CSBaseResponseModel<S> == T {
-        self.init(responseType: CSBaseResponseModel<S>.self, url: url, method: method)
+    public init<S>(path: String, dataType: S.Type) where CSBaseResponseModel<S> == T {
+        self.init(path: path, responseType: CSBaseResponseModel<S>.self)
     }
 }

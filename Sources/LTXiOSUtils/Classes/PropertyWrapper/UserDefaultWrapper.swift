@@ -7,19 +7,21 @@
 
 import Foundation
 
-/// Example
-///
-/// enum UserDefaultsConfig {
-///    @UserDefaultsWrapper("hadShownGuideView", defaultValue: false)
-///    static var hadShownGuideView: Bool
-/// }
-///
-///  var observation: UserDefaultsObservation?
-///
-///  observation = UserDefaultsConfig.$hadShownGuideView.observe { old, new in  }
-///
-///  UserDefaultsConfig.hadShownGuideView = true
-///  let hadShownGuideView = UserDefaultsConfig.hadShownGuideView
+/* Example
+
+ enum UserDefaultsConfig {
+     @UserDefaultsWrapper("hadShownGuideView", defaultValue: false)
+     static var hadShownGuideView: Bool
+ }
+
+ var observation: UserDefaultsObservation?
+
+ observation = UserDefaultsConfig.$hadShownGuideView.observe { _, _ in }
+
+ UserDefaultsConfig.hadShownGuideView = true
+ let hadShownGuideView = UserDefaultsConfig.hadShownGuideView
+
+ **/
 
 // MARK: - 定义可以被UserDefaults存储的类型
 

@@ -14,10 +14,10 @@ class NetworkDemoViewController: BaseViewController {
     }
 
     private func getData() {
-        let request = CSApiRequest(dataType: HomeBanner.self, url: "/config/homeBanner")
-        let defaultAPIService = APIService.default
+        let request = CSApiRequest(path: "/config/homeBanner", dataType: HomeBanner.self)
+        let defaultAPIService = APIService.shared
 
-        defaultAPIService.send(request: request) { result in
+        defaultAPIService.sendRequest(request) { result in
             switch result.result {
             case let .success(model):
                 Log.d(model)

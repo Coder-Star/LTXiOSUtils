@@ -7,20 +7,17 @@
 
 import Foundation
 
-public struct DefaultAPIResponseModel<T>: APIParsable & Decodable where T: APIParsable & Decodable {
-    public var code: Int
-    public var msg: String
-    public var data: T?
-
-    public var isSuccess: Bool {
-        return code == 200
-    }
-}
-
 public struct APIResponse<T> {
+    /// 请求
     public var request: URLRequest?
+
+    /// 回调
     public var response: HTTPURLResponse?
+
+    /// 数据
     public var data: Data?
+
+    /// 解析后数据
     public var result: APIResult<T>
 
     public init(request: URLRequest?,
