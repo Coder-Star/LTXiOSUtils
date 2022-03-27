@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import LTXiOSUtils
 
 class NetworkDemoViewController: BaseViewController {
     override func viewDidLoad() {
@@ -14,13 +15,13 @@ class NetworkDemoViewController: BaseViewController {
     }
 
     private func getData() {
-        let request = CSApiRequest(path: "/config/homeBanner", dataType: HomeBanner.self)
+        let request = DefaultAPIRequest(path: "/config/homeBanner", dataType: HomeBanner.self)
         let defaultAPIService = APIService.shared
 
         defaultAPIService.sendRequest(request) { result in
             switch result.result {
             case let .success(model):
-                Log.d(model)
+                Log.d(model.data?.interval)
             case let .failure(error):
                 Log.d(error)
             }
@@ -28,6 +29,6 @@ class NetworkDemoViewController: BaseViewController {
     }
 }
 
-struct HomeBanner: APIParsable, Codable {
+struct HomeBanner: APIDefaultJSONParsable {
     var interval: Int = 0
 }

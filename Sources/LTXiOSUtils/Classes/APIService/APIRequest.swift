@@ -7,12 +7,17 @@
 
 import Foundation
 
+/// 任务类型
 public enum APIRequestTaskType {
     case request
     case upload
     case download
 }
 
+// MARK: - 请求协议
+
+/// 请求协议
+/// 每一个域名一个
 public protocol APIRequest {
     /// 回调实体
     associatedtype Response: APIParsable
@@ -32,14 +37,17 @@ public protocol APIRequest {
     /// header
     var headers: APIRequestHeaders? { get }
 
+    /// 任务类型
     var taskType: APIRequestTaskType { get }
 
+    /// 参数编码处理
     var encoding: APIParameterEncoding { get }
 
-    /// 拦截urlRequest
+    /// 拦截urlRequest，在传给client之前
     /// 对其加上额外的统一参数，比如token等
     func intercept(urlRequest: URLRequest) throws -> URLRequest
 
+    /// 拦截回调，在回调给接收方之前
     func intercept(response: APIResponse<Response>)
 }
 
@@ -49,6 +57,12 @@ extension APIRequest {
     }
 
     public func intercept(response: APIResponse<Response>) {}
+}
+
+extension APIRequest {
+    public var cURLDescription: String {
+        return ""
+    }
 }
 
 extension APIRequest {
@@ -67,7 +81,7 @@ extension APIRequest {
     }
 }
 
-// MARK: - 默认实现
+// MARK: - 请求默认实现
 
 public struct DefaultAPIRequest<T: APIParsable>: APIRequest {
     public var baseURL: URL
@@ -94,22 +108,30 @@ extension DefaultAPIRequest {
         self.baseURL = baseURL
         self.path = path
     }
+
+    public init<S>(baseURL: URL, path: String, dataType: S.Type) where T: APIModelWrapper, T.DataType == S {
+        self.init(baseURL: baseURL, path: path, responseType: T.self)
+    }
 }
 
 // MARK: 默认最外层Model
 
-public struct DefaultAPIResponseModel<T>: APIParsable & Decodable where T: APIParsable & Decodable {
+public protocol APIModelWrapper {
+    associatedtype DataType: APIParsable
+
+    var code: Int { get }
+
+    var msg: String { get }
+
+    var data: DataType? { get }
+}
+
+public struct DefaultAPIResponseModel<T>: APIModelWrapper, APIDefaultJSONParsable where T: APIJSONParsable & Decodable {
     public var code: Int
     public var msg: String
     public var data: T?
 
-    public var isSuccess: Bool {
-        return code == 200
-    }
-}
-
-extension DefaultAPIRequest {
-    public init<S>(baseURL: URL, path: String, dataType: S.Type) where DefaultAPIResponseModel<S> == T {
-        self.init(baseURL: baseURL, path: path, responseType: DefaultAPIResponseModel<S>.self)
-    }
+//    public var isSuccess: Bool {
+//        return code == 200
+//    }
 }

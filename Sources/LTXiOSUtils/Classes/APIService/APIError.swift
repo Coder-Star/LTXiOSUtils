@@ -8,19 +8,22 @@
 import Foundation
 
 public enum APIError: Error {
-    /// 连接错误
-    case connectionError(Error)
-
     /// 发送错误
     case requestError(Error)
 
-    /// 接收错误
-    case responseError(Error)
+    /// 连接错误
+    case connectionError(Error)
 
-    /// 解析错误
-    case parseError(Error)
+    /// 接收错误
+    /// 解析等步骤
+    case responseError(Error)
 }
 
 public enum APIRequestError: Error {
     case invalidURLRequest
+}
+
+public enum APIResponseError: Error {
+    case invalidParseResponse(Error)
+    case invalidParseResponseData
 }

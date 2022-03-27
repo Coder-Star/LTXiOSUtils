@@ -19,6 +19,7 @@ public typealias APIRequestAdapter = RequestAdapter
 public typealias APIParameterEncoding = ParameterEncoding
 public typealias APIJSONEncoding = JSONEncoding
 public typealias APIURLEncoding = URLEncoding
+public typealias APINetworkReachabilityManager = NetworkReachabilityManager
 
 struct AlamofireAPIClient: APIClient {
     let sessionManager: SessionManager = {

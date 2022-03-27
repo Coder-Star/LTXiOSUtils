@@ -11,10 +11,12 @@ public typealias APICompletionHandler<T> = (APIResponse<T>) -> Void
 
 public enum APIResult<T> {
     case success(T)
-    case failure(APIError)
+    case failure(Error)
 }
 
 open class APIService {
+    private let reachabilityManager = APINetworkReachabilityManager()
+
     public let clinet: APIClient
 
     public init(clinet: APIClient) {
@@ -23,6 +25,8 @@ open class APIService {
 
     public static let shared = APIService(clinet: AlamofireAPIClient())
 }
+
+extension APIService {}
 
 extension APIService {
     @discardableResult
@@ -37,7 +41,7 @@ extension APIService {
             urlRequest = try request.buildURLRequest()
             urlRequest = plugins.reduce(urlRequest) { $1.prepare($0, targetRequest: request) }
         } catch {
-            let apiResult: APIResult<T.Response> = .failure(.requestError(error))
+            let apiResult: APIResult<T.Response> = .failure(APIError.requestError(error))
             let apiResponse = APIResponse<T.Response>(request: nil, response: nil, data: nil, result: apiResult)
             completionHandler(apiResponse)
             return nil
@@ -47,9 +51,14 @@ extension APIService {
             let apiResult: APIResult<T.Response>
             switch response.result {
             case let .success(data):
-                apiResult = T.Response.parse(data: data)
+                do {
+                    let responseModel = try T.Response.parse(data: data)
+                    apiResult = .success(responseModel)
+                } catch {
+                    apiResult = .failure(APIError.requestError(error))
+                }
             case let .failure(error):
-                apiResult = .failure(.responseError(error))
+                apiResult = .failure(APIError.responseError(error))
             }
 
             let apiResponse = APIResponse<T.Response>(request: response.request, response: response.response, data: response.data, result: apiResult)

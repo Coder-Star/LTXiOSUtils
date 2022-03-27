@@ -9,37 +9,51 @@ import Foundation
 
 /// 数据解析协议
 public protocol APIParsable {
-    static func parse(data: Data) -> APIResult<Self>
+    static func parse(data: Data) throws -> Self
 }
 
 extension Data: APIParsable {
-    public static func parse(data: Data) -> APIResult<Self> {
-        return .success(data)
+    public static func parse(data: Data) throws -> Self {
+        return data
     }
 }
 
+public protocol APIJSONParsable: APIParsable {}
+
 /// 当Mode实现了Decodable时，为其自动提供实现
-extension APIParsable where Self: Decodable {
-    public static func parse(data: Data) -> APIResult<Self> {
+extension APIJSONParsable where Self: Decodable {
+    public static func parse(data: Data) throws -> Self {
         do {
             let model = try JSONDecoder().decode(self, from: data)
-            return .success(model)
+            return model
         } catch {
-            return .failure(.parseError(error))
+            throw APIResponseError.invalidParseResponse(error)
         }
     }
 }
 
-/// 为数组自动实现
-extension Array: APIParsable where Array.Element: APIParsable & Decodable {}
+public protocol APIDefaultJSONParsable: APIJSONParsable & Decodable {
+    static var jsonDecoder: JSONDecoder { get }
+}
 
-// extension APIParsable where Self: SwiftProtobuf.Message {
-//    public static func parse(data: Data) -> APIResult<Self> {
-//        do {
-//            let model = try self.init(serializedData: data)
-//            return .success(model)
-//        } catch {
-//            return .failure(error)
-//        }
-//    }
-// }
+extension APIDefaultJSONParsable {
+    public static func parse(data: Data) throws -> Self {
+        do {
+            let model = try JSONDecoder().decode(self, from: data)
+            return model
+        } catch {
+            throw APIResponseError.invalidParseResponse(error)
+        }
+    }
+
+    public static var jsonDecoder: JSONDecoder {
+        return JSONDecoder()
+    }
+}
+
+/// 为数组自动实现
+extension Array: APIParsable where Array.Element: APIDefaultJSONParsable {}
+
+extension Array: APIJSONParsable where Element: APIDefaultJSONParsable {}
+
+extension Array: APIDefaultJSONParsable where Array.Element: APIDefaultJSONParsable {}
