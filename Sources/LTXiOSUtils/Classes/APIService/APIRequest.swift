@@ -51,6 +51,8 @@ public protocol APIRequest {
     func intercept(response: APIResponse<Response>) -> Bool
 }
 
+// MARK: - 默认实现
+
 extension APIRequest {
     public func intercept(urlRequest: URLRequest) throws -> URLRequest {
         return urlRequest
@@ -60,6 +62,8 @@ extension APIRequest {
         return true
     }
 }
+
+// MARK: - 计算属性
 
 extension APIRequest {
     var completeURL: URL {
@@ -77,7 +81,7 @@ extension APIRequest {
     }
 }
 
-// MARK: - 请求默认实现
+// MARK: - 默认请求
 
 public struct DefaultAPIRequest<T: APIParsable>: APIRequest {
     public var baseURL: URL

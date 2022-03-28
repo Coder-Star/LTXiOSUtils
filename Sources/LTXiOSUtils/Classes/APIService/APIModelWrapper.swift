@@ -16,9 +16,3 @@ public protocol APIModelWrapper {
 
     var data: DataType? { get }
 }
-
-// public struct DefaultAPIResponseModel<T>: APIModelWrapper, APIDefaultJSONParsable where T: APIJSONParsable & Decodable {
-//    public var code: Int
-//    public var msg: String
-//    public var data: T?
-// }

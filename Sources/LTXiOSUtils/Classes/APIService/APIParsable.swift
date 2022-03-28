@@ -7,7 +7,8 @@
 
 import Foundation
 
-/// 数据解析协议
+// MARK: - APIParsable
+
 public protocol APIParsable {
     static func parse(data: Data) throws -> Self
 }
@@ -17,6 +18,8 @@ extension Data: APIParsable {
         return data
     }
 }
+
+// MARK: - APIJSONParsable
 
 public protocol APIJSONParsable: APIParsable {}
 
@@ -30,6 +33,8 @@ extension APIJSONParsable where Self: Decodable {
         }
     }
 }
+
+// MARK: - APIDefaultJSONParsable
 
 public protocol APIDefaultJSONParsable: APIJSONParsable & Decodable {
     static var jsonDecoder: JSONDecoder { get }
@@ -50,7 +55,14 @@ extension APIDefaultJSONParsable {
     }
 }
 
-/// 为数组自动实现
+// MARK: - 默认实现
+
+extension String: APIParsable {}
+
+extension String: APIJSONParsable {}
+
+extension String: APIDefaultJSONParsable {}
+
 extension Array: APIParsable where Array.Element: APIDefaultJSONParsable {}
 
 extension Array: APIJSONParsable where Element: APIDefaultJSONParsable {}

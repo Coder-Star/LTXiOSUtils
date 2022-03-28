@@ -11,10 +11,23 @@ public typealias APIDataResponseCompletionHandler = (APIDataResponse<Data>) -> V
 public typealias APIProgressHandler = (Progress) -> Void
 
 public protocol APIRequestTask {
+    /// 发送
     func resume()
+    /// 取消
     func cancel()
 }
 
 public protocol APIClient {
-    func createDataRequest(request: URLRequest, progressHandler: APIProgressHandler?, completionHandler: @escaping APIDataResponseCompletionHandler) -> APIRequestTask
+    /// 创建数据请求
+    ///
+    /// - Parameters:
+    ///   - request: 请求
+    ///   - progressHandler: 进度回调
+    ///   - completionHandler: 结果回调
+    /// - Returns: 请求任务
+    func createDataRequest(
+        request: URLRequest,
+        progressHandler: APIProgressHandler?,
+        completionHandler: @escaping APIDataResponseCompletionHandler
+    ) -> APIRequestTask
 }

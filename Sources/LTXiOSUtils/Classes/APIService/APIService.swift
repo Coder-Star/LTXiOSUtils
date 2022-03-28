@@ -9,17 +9,25 @@ import Foundation
 
 public typealias APICompletionHandler<T> = (APIResponse<T>) -> Void
 
+/// 网络状态
 public enum NetworkStatus {
+    /// 未知
     case unknown
+    /// 不可用
     case notReachable
+    /// wifi
     case wifi
+    /// 数据
     case wwan
 }
 
+/// 结果
 public enum APIResult<T> {
     case success(T)
     case failure(APIError)
 }
+
+// MARK: - APIService
 
 open class APIService {
     private let reachabilityManager = APINetworkReachabilityManager()
@@ -30,12 +38,22 @@ open class APIService {
         self.clinet = clinet
     }
 
+    /// 单例
     public static let shared = APIService(clinet: AlamofireAPIClient())
 }
 
 // MARK: - 私有方法
 
 extension APIService {
+    /// 回调数据给调用方
+    ///
+    /// - Parameters:
+    ///   - request: 请求
+    ///   - response: 上层回来的数据
+    ///   - result: 结果
+    ///   - plugins: 插件
+    ///   - completionHandler: 结果回调
+    /// - Returns: 请求任务
     private func performdData<T: APIRequest>(
         request: T,
         response: APIDataResponse<Data>,
@@ -58,6 +76,7 @@ extension APIService {
 // MARK: - 公开属性
 
 extension APIService {
+    /// 网络状态
     public var networkStatus: NetworkStatus {
         guard let status = reachabilityManager?.networkReachabilityStatus else {
             return .unknown
@@ -77,6 +96,7 @@ extension APIService {
         }
     }
 
+    /// 网络是否可用
     public var isNetworkReachable: Bool {
         return networkStatus == .wifi || networkStatus == .wwan
     }
@@ -85,6 +105,15 @@ extension APIService {
 // MARK: - 公开方法
 
 extension APIService {
+    /// 创建数据请求
+    /// 这种方式使用为 Alamofire 作为底层实现
+    ///
+    /// - Parameters:
+    ///   - request: 请求
+    ///   - plugins: 插件
+    ///   - progressHandler: 进度回调
+    ///   - completionHandler: 结果回调
+    /// - Returns: 请求任务
     @discardableResult
     public static func sendRequest<T: APIRequest>(
         _ request: T,
@@ -95,6 +124,14 @@ extension APIService {
         shared.sendRequest(request, plugins: plugins, progressHandler: progressHandler, completionHandler: completionHandler)
     }
 
+    /// 创建数据请求
+    ///
+    /// - Parameters:
+    ///   - request: 请求
+    ///   - plugins: 插件
+    ///   - progressHandler: 进度回调
+    ///   - completionHandler: 结果回调
+    /// - Returns: 请求任务
     @discardableResult
     public func sendRequest<T: APIRequest>(
         _ request: T,

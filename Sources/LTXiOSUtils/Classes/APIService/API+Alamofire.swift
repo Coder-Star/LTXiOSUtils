@@ -8,7 +8,7 @@
 import Alamofire
 import Foundation
 
-// MARK: - 别名，隔离Alamofire依赖
+// MARK: - 别名
 
 public typealias APIRequestMethod = HTTPMethod
 public typealias APIRequestHeaders = HTTPHeaders
@@ -22,6 +22,8 @@ public typealias APIURLEncoding = URLEncoding
 public typealias APINetworkReachabilityManager = NetworkReachabilityManager
 
 extension APIDataRequest: APIRequestTask {}
+
+// MARK: - AlamofireAPIClient
 
 struct AlamofireAPIClient: APIClient {
     let sessionManager: SessionManager = {

@@ -11,7 +11,7 @@ import UIKit
 
 class ViewController: BaseViewController {
     private var demoList: [[String: Any]] = [
-        ["title": "网络请求", "vc": NetworkDemoViewController()],
+        ["title": "网络请求", "vc": NetworkDemoViewController.self],
     ]
 
     private lazy var tableView: UITableView = {
@@ -46,9 +46,10 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let viewController = demoList[indexPath.row]["vc"] as? UIViewController else {
+        guard let viewControllerType = demoList[indexPath.row]["vc"] as? UIViewController.Type else {
             return
         }
+        let viewController = viewControllerType.init()
         viewController.title = demoList[indexPath.row]["title"] as? String
         navigationController?.pushViewController(viewController, animated: true)
     }

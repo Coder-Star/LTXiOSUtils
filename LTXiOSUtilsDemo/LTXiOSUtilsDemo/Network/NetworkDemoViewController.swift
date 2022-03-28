@@ -25,13 +25,13 @@ extension APIResult where T: APIModelWrapper {
         case let .success(reponse):
             if reponse.code == 200 {
                 isRight = true
-                data = reponse.data
             }
+            data = reponse.data
             message = reponse.msg
 
         case let .failure(apiError):
             if apiError == APIError.networkError {
-                message = "当前网络不可用"
+                message = apiError.localizedDescription
             }
         }
 
@@ -47,13 +47,16 @@ class NetworkDemoViewController: BaseViewController {
     }
 
     private func getHomeBannerData(callback: @escaping BannerDataCallback) {
-        let request = DefaultAPIRequest(path: "/config/homeBanner", dataType: HomeBanner.self)
+        let request1 = DefaultAPIRequest(csPath: "/config/homeBanner", dataType: String.self)
 
-        APIService.sendRequest(request) { reponse in
+        APIService.sendRequest(request1) { reponse in
             let validateResult = reponse.result.validateResult
-            if validateResult.isRight {
-                Log.d(validateResult.data)
-            }
+            Log.d(validateResult)
+        }
+
+        let request2 = DefaultAPIRequest(csPath: "/config/homeBanner", responseType: Data.self)
+        APIService.sendRequest(request2) { reponse in
+            Log.d(reponse)
         }
     }
 }

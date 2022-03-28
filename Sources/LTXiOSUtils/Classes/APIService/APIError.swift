@@ -7,7 +7,8 @@
 
 import Foundation
 
-public enum APIError: LocalizedError, Equatable {
+public enum APIError: LocalizedError {
+    /// 网络错误
     case networkError
 
     /// 发送错误
@@ -19,10 +20,6 @@ public enum APIError: LocalizedError, Equatable {
     /// 接收错误
     /// 解析等步骤
     case responseError(Error)
-
-    public static func == (lhs: APIError, rhs: APIError) -> Bool {
-        return lhs.errorCode == rhs.errorCode
-    }
 
     public var errorDescription: String? {
         switch self {
@@ -48,6 +45,12 @@ public enum APIError: LocalizedError, Equatable {
         case .networkError:
             return 4
         }
+    }
+}
+
+extension APIError: Equatable {
+    public static func == (lhs: APIError, rhs: APIError) -> Bool {
+        return lhs.errorCode == rhs.errorCode
     }
 }
 
