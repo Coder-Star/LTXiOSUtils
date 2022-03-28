@@ -21,6 +21,8 @@ public typealias APIJSONEncoding = JSONEncoding
 public typealias APIURLEncoding = URLEncoding
 public typealias APINetworkReachabilityManager = NetworkReachabilityManager
 
+extension APIDataRequest: APIRequestTask {}
+
 struct AlamofireAPIClient: APIClient {
     let sessionManager: SessionManager = {
         let configuration = URLSessionConfiguration.default
@@ -30,12 +32,13 @@ struct AlamofireAPIClient: APIClient {
         return sessionManager
     }()
 
-    func createRequest(request: URLRequest, completionHandler: @escaping APIDataResponseCompletionHandler) -> APIDataRequest {
+    func createDataRequest(request: URLRequest, progressHandler: APIProgressHandler?, completionHandler: @escaping APIDataResponseCompletionHandler) -> APIRequestTask {
         let request = sessionManager.request(request).validate().responseData { response in
-
             completionHandler(response)
         }
-
+        if let tempProgressHandler = progressHandler {
+            request.downloadProgress(closure: tempProgressHandler)
+        }
         return request
     }
 }

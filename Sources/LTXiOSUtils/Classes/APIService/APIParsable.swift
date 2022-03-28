@@ -20,7 +20,6 @@ extension Data: APIParsable {
 
 public protocol APIJSONParsable: APIParsable {}
 
-/// 当Mode实现了Decodable时，为其自动提供实现
 extension APIJSONParsable where Self: Decodable {
     public static func parse(data: Data) throws -> Self {
         do {

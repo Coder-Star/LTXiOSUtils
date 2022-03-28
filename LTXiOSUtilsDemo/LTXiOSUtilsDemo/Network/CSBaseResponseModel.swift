@@ -20,6 +20,8 @@ public struct CSBaseResponseModel<T>: APIModelWrapper, APIDefaultJSONParsable wh
     }
 }
 
+extension CSBaseResponseModel {}
+
 extension DefaultAPIRequest {
     public init<S>(path: String, dataType: S.Type) where CSBaseResponseModel<S> == T {
         self.init(baseURL: NetworkConstants.baseURL, path: path, dataType: dataType)

@@ -48,7 +48,7 @@ public protocol APIRequest {
     func intercept(urlRequest: URLRequest) throws -> URLRequest
 
     /// 拦截回调，在回调给接收方之前
-    func intercept(response: APIResponse<Response>)
+    func intercept(response: APIResponse<Response>) -> Bool
 }
 
 extension APIRequest {
@@ -56,12 +56,8 @@ extension APIRequest {
         return urlRequest
     }
 
-    public func intercept(response: APIResponse<Response>) {}
-}
-
-extension APIRequest {
-    public var cURLDescription: String {
-        return ""
+    public func intercept(response: APIResponse<Response>) -> Bool {
+        return true
     }
 }
 
@@ -112,26 +108,4 @@ extension DefaultAPIRequest {
     public init<S>(baseURL: URL, path: String, dataType: S.Type) where T: APIModelWrapper, T.DataType == S {
         self.init(baseURL: baseURL, path: path, responseType: T.self)
     }
-}
-
-// MARK: 默认最外层Model
-
-public protocol APIModelWrapper {
-    associatedtype DataType: APIParsable
-
-    var code: Int { get }
-
-    var msg: String { get }
-
-    var data: DataType? { get }
-}
-
-public struct DefaultAPIResponseModel<T>: APIModelWrapper, APIDefaultJSONParsable where T: APIJSONParsable & Decodable {
-    public var code: Int
-    public var msg: String
-    public var data: T?
-
-//    public var isSuccess: Bool {
-//        return code == 200
-//    }
 }
