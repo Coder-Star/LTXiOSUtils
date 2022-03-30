@@ -52,6 +52,7 @@ extension TxExtensionWrapper where Base == Date {
         dateFormatter.calendar = Calendar.current
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = formatStr
+        dateFormatter.locale = Locale.current
         let dateString = dateFormatter.string(from: base)
         return dateString
     }

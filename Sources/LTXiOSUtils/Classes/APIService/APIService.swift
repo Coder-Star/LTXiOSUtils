@@ -39,7 +39,7 @@ open class APIService {
     }
 
     /// 单例
-    public static let shared = APIService(clinet: AlamofireAPIClient())
+    public static let `default` = APIService(clinet: AlamofireAPIClient())
 }
 
 // MARK: - 私有方法
@@ -63,13 +63,15 @@ extension APIService {
     ) {
         let apiResponse = APIResponse<T.Response>(request: response.request, response: response.response, data: response.data, result: result)
 
-        plugins.forEach { $0.didReceive(apiResponse, targetRequest: request) }
+        plugins.forEach { $0.willReceive(apiResponse, targetRequest: request) }
 
-        let isAllowCallback = request.intercept(response: apiResponse)
+        let isAllowCallback = request.intercept(request: request, response: apiResponse)
 
         if isAllowCallback {
             completionHandler(apiResponse)
         }
+
+        plugins.forEach { $0.didReceive(apiResponse, targetRequest: request) }
     }
 }
 
@@ -121,7 +123,7 @@ extension APIService {
         progressHandler: APIProgressHandler? = nil,
         completionHandler: @escaping APICompletionHandler<T.Response>
     ) -> APIRequestTask? {
-        shared.sendRequest(request, plugins: plugins, progressHandler: progressHandler, completionHandler: completionHandler)
+        `default`.sendRequest(request, plugins: plugins, progressHandler: progressHandler, completionHandler: completionHandler)
     }
 
     /// 创建数据请求
@@ -140,6 +142,7 @@ extension APIService {
         completionHandler: @escaping APICompletionHandler<T.Response>
     ) -> APIRequestTask? {
         var urlRequest: URLRequest
+
         do {
             urlRequest = try request.buildURLRequest()
             urlRequest = plugins.reduce(urlRequest) { $1.prepare($0, targetRequest: request) }
@@ -156,7 +159,9 @@ extension APIService {
             completionHandler(apiResponse)
             return nil
         }
+
         let clinetRequest: APIRequestTask
+
         switch request.taskType {
         // TODO: - 需要对三个case分别处理
         case .request, .upload, .download:

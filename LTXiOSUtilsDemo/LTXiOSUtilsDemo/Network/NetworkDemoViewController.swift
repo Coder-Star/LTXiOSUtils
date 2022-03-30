@@ -5,37 +5,39 @@
 //  Created by CoderStar on 2022/3/16.
 //
 
+import BetterCodable
 import Foundation
 import LTXiOSUtils
 
 typealias BannerDataCallback = ((HomeBanner?, Error?) -> Void)
 
-struct APIValidateResult<T> {
-    var isRight: Bool
-    var message: String
-    var data: T?
+public enum APIValidateResult<T> {
+    case success(T, String)
+    case failure(String, APIError)
+}
+
+public enum CSDataError: Error {
+    case invalidParseResponse
 }
 
 extension APIResult where T: APIModelWrapper {
     var validateResult: APIValidateResult<T.DataType> {
         var message = "出现错误，请稍后重试"
-        var data: T.DataType?
-        var isRight = false
         switch self {
         case let .success(reponse):
-            if reponse.code == 200 {
-                isRight = true
+            if reponse.code == 200, reponse.data != nil {
+                return .success(reponse.data!, reponse.msg)
+            } else {
+                return .failure(message, APIError.responseError(APIResponseError.invalidParseResponse(CSDataError.invalidParseResponse)))
             }
-            data = reponse.data
-            message = reponse.msg
-
         case let .failure(apiError):
             if apiError == APIError.networkError {
                 message = apiError.localizedDescription
             }
-        }
 
-        return APIValidateResult(isRight: isRight, message: message, data: data)
+            assertionFailure(apiError.localizedDescription)
+            return .failure(message, apiError)
+        }
     }
 }
 
@@ -47,20 +49,44 @@ class NetworkDemoViewController: BaseViewController {
     }
 
     private func getHomeBannerData(callback: @escaping BannerDataCallback) {
-        let request1 = DefaultAPIRequest(csPath: "/config/homeBanner", dataType: String.self)
+        let request = DefaultAPIRequest(csPath: "/config/homeBanner", dataType: HomeBanner.self)
 
-        APIService.sendRequest(request1) { reponse in
-            let validateResult = reponse.result.validateResult
-            Log.d(validateResult)
-        }
+        APIService.sendRequest(request) { reponse in
+            Log.d(reponse.result)
 
-        let request2 = DefaultAPIRequest(csPath: "/config/homeBanner", responseType: Data.self)
-        APIService.sendRequest(request2) { reponse in
-            Log.d(reponse)
+            switch reponse.result.validateResult {
+            case let .success(info, _):
+                Log.d(info)
+            case let .failure(_, error):
+                Log.d(error)
+            }
         }
     }
 }
 
 struct HomeBanner: APIDefaultJSONParsable {
-    var interval: Int = 0
+    var interval: Int
+
+    @DefaultCodable<DefaultEmptyString>
+    var info: String
+
+    @DefaultCodable<DefaultEmptyArray>
+    var imageList: [ImageList]
+}
+
+struct ImageList: Decodable {
+    var imgUrl: String
+    var actionUrl: String
+}
+
+public struct DefaultEmptyString: DefaultCodableStrategy {
+    public static var defaultValue: String { "" }
+}
+
+public struct DefaultEmptyArray<T>: DefaultCodableStrategy where T: Decodable {
+    public static var defaultValue: [T] { [] }
+}
+
+public struct DefaultEmptyDict<K, V>: DefaultCodableStrategy where K: Hashable & Codable, V: Codable {
+    public static var defaultValue: [K: V] { [:] }
 }

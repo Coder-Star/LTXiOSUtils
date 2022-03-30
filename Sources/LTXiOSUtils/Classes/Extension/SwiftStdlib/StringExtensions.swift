@@ -75,6 +75,7 @@ extension TxExtensionWrapper where Base == String {
     public func toDate(dateTypeStr: String) -> Date? {
         let selfLowercased = base.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().replacingOccurrences(of: "T", with: " ")
         let formatter = DateFormatter()
+        formatter.locale = Locale.current
         formatter.timeZone = TimeZone.current
         formatter.calendar = Calendar.current
         formatter.dateFormat = dateTypeStr

@@ -8,7 +8,7 @@
 import Foundation
 import LTXiOSUtils
 
-public struct CSBaseResponseModel<T>: APIModelWrapper, APIDefaultJSONParsable where T: APIJSONParsable & Decodable {
+public struct CSBaseResponseModel<T>: APIModelWrapper, APIDefaultJSONParsable where T: APIDefaultJSONParsable {
     public var code: Int
     public var msg: String
     public var data: T?

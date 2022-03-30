@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
+  - BetterCodable (0.4.0)
   - LTXiOSUtils (0.0.3):
     - LTXiOSUtils/APIService (= 0.0.3)
     - LTXiOSUtils/Component (= 0.0.3)
@@ -31,12 +32,14 @@ PODS:
   - SwiftFormat/CLI (0.47.13)
 
 DEPENDENCIES:
+  - BetterCodable (= 0.4.0)
   - LTXiOSUtils (from `../`)
   - SwiftFormat/CLI (= 0.47.13)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - BetterCodable
   trunk:
     - SwiftFormat
 
@@ -46,9 +49,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  BetterCodable: 3f2a765c9f4089b19debd2a7b904a69fca0a5fda
   LTXiOSUtils: 1d693dfb72f43b12b74f8f27368ceefeb680b106
   SwiftFormat: 73573b89257437c550b03d934889725fbf8f75e5
 
-PODFILE CHECKSUM: 7699c61d9a6203d25ec2a50188be2e03054d94b0
+PODFILE CHECKSUM: 5e95969b85b2d21cf9a5e6f26232c85b253273b6
 
 COCOAPODS: 1.11.2

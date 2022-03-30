@@ -48,7 +48,7 @@ public protocol APIRequest {
     func intercept(urlRequest: URLRequest) throws -> URLRequest
 
     /// 拦截回调，在回调给接收方之前
-    func intercept(response: APIResponse<Response>) -> Bool
+    func intercept<T: APIRequest>(request: T, response: APIResponse<Response>) -> Bool
 }
 
 // MARK: - 默认实现
@@ -58,12 +58,10 @@ extension APIRequest {
         return urlRequest
     }
 
-    public func intercept(response: APIResponse<Response>) -> Bool {
+    public func intercept<T: APIRequest>(request: T, response: APIResponse<Response>) -> Bool {
         return true
     }
 }
-
-// MARK: - 计算属性
 
 extension APIRequest {
     var completeURL: URL {
@@ -76,12 +74,12 @@ extension APIRequest {
             let encodedURLRequest = try encoding.encode(originalRequest, with: parameters)
             return try intercept(urlRequest: encodedURLRequest)
         } catch {
-            throw (APIRequestError.invalidURLRequest)
+            throw APIRequestError.invalidURLRequest
         }
     }
 }
 
-// MARK: - 默认请求
+// MARK: - 请求默认实现
 
 public struct DefaultAPIRequest<T: APIParsable>: APIRequest {
     public var baseURL: URL

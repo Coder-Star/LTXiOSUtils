@@ -30,3 +30,9 @@ public struct APIResponse<T> {
         self.result = result
     }
 }
+
+extension APIResponse {
+    public var statusCode: Int? {
+        return response?.statusCode
+    }
+}
