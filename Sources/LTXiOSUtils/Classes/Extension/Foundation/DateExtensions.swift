@@ -49,10 +49,10 @@ extension TxExtensionWrapper where Base == Date {
     /// - Returns: 格式化后的字符串
     public func formatDate(formatStr: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar.current
-        dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = formatStr
-        dateFormatter.locale = Locale.current
+        dateFormatter.calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         let dateString = dateFormatter.string(from: base)
         return dateString
     }

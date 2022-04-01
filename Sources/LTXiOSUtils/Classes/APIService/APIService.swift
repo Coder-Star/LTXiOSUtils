@@ -120,10 +120,11 @@ extension APIService {
     public static func sendRequest<T: APIRequest>(
         _ request: T,
         plugins: [APIPlugin] = [],
+        encoding: APIParameterEncoding? = nil,
         progressHandler: APIProgressHandler? = nil,
         completionHandler: @escaping APICompletionHandler<T.Response>
     ) -> APIRequestTask? {
-        `default`.sendRequest(request, plugins: plugins, progressHandler: progressHandler, completionHandler: completionHandler)
+        `default`.sendRequest(request, plugins: plugins, encoding: encoding, progressHandler: progressHandler, completionHandler: completionHandler)
     }
 
     /// 创建数据请求
@@ -138,13 +139,14 @@ extension APIService {
     public func sendRequest<T: APIRequest>(
         _ request: T,
         plugins: [APIPlugin] = [],
+        encoding: APIParameterEncoding? = nil,
         progressHandler: APIProgressHandler? = nil,
         completionHandler: @escaping APICompletionHandler<T.Response>
     ) -> APIRequestTask? {
         var urlRequest: URLRequest
 
         do {
-            urlRequest = try request.buildURLRequest()
+            urlRequest = try request.buildURLRequest(encoding: encoding)
             urlRequest = plugins.reduce(urlRequest) { $1.prepare($0, targetRequest: request) }
         } catch {
             let apiResult: APIResult<T.Response> = .failure(.requestError(error))

@@ -68,10 +68,11 @@ extension APIRequest {
         return path.isEmpty ? baseURL : baseURL.appendingPathComponent(path)
     }
 
-    func buildURLRequest() throws -> URLRequest {
+    func buildURLRequest(encoding: APIParameterEncoding?) throws -> URLRequest {
         do {
             let originalRequest = try URLRequest(url: completeURL, method: method, headers: headers)
-            let encodedURLRequest = try encoding.encode(originalRequest, with: parameters)
+            /// 优先使用单个API的编码方式，其次使用Request级别的编码方式
+            let encodedURLRequest = try (encoding ?? self.encoding).encode(originalRequest, with: parameters)
             return try intercept(urlRequest: encodedURLRequest)
         } catch {
             throw APIRequestError.invalidURLRequest
