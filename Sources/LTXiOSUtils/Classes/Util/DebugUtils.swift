@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// 调试工具类
 public struct DebugUtils {}

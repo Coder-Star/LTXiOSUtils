@@ -1,14 +1,10 @@
 PODS:
-  - Alamofire (4.9.1)
   - BetterCodable (0.4.0)
   - LTXiOSUtils (0.0.3):
-    - LTXiOSUtils/APIService (= 0.0.3)
     - LTXiOSUtils/Component (= 0.0.3)
     - LTXiOSUtils/Extension (= 0.0.3)
     - LTXiOSUtils/PropertyWrapper (= 0.0.3)
     - LTXiOSUtils/Util (= 0.0.3)
-  - LTXiOSUtils/APIService (0.0.3):
-    - Alamofire (= 4.9.1)
   - LTXiOSUtils/Component (0.0.3):
     - LTXiOSUtils/Component/Resources (= 0.0.3)
   - LTXiOSUtils/Component/Resources (0.0.3)
@@ -38,7 +34,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - Alamofire
     - BetterCodable
   trunk:
     - SwiftFormat
@@ -48,9 +43,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   BetterCodable: 3f2a765c9f4089b19debd2a7b904a69fca0a5fda
-  LTXiOSUtils: 1d693dfb72f43b12b74f8f27368ceefeb680b106
+  LTXiOSUtils: 712cdc0a2199f594c470bda32b90498de79623bb
   SwiftFormat: 73573b89257437c550b03d934889725fbf8f75e5
 
 PODFILE CHECKSUM: 5e95969b85b2d21cf9a5e6f26232c85b253273b6

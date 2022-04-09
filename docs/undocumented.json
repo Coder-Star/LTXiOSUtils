@@ -932,48 +932,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SuspensionButton.swift",
-      "line": 10,
-      "symbol": "SuspensionButton",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SuspensionButton.swift",
-      "line": 11,
-      "symbol": "SuspensionButton.ClickCallBack",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SuspensionButton.swift",
-      "line": 12,
-      "symbol": "SuspensionButton.clickCallBack",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SuspensionButton.swift",
-      "line": 16,
-      "symbol": "SuspensionButton.init(frame:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SuspensionButton.swift",
-      "line": 21,
-      "symbol": "SuspensionButton.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SuspensionButton.swift",
-      "line": 33,
-      "symbol": "SuspensionButton",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeNode.swift",
       "line": 55,
       "symbol": "TreeNode.init(name:filterName:ID:parentID:sordCode:type:isTop:isLeaf:data:)",
@@ -1170,463 +1128,120 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UITapGestureRecognizerExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITapGestureRecognizerExtensions.swift",
       "line": 41,
       "symbol": "UITapGestureRecognizer.gestureRecognizerShouldBegin(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UITextFieldExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITextFieldExtensions.swift",
       "line": 27,
       "symbol": "UITextField.csLeftPaddingWidth",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UITextFieldExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITextFieldExtensions.swift",
       "line": 39,
       "symbol": "UITextField.csRigthPaddingWidth",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UITextViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITextViewExtensions.swift",
       "line": 171,
       "symbol": "UITextView.observeValue(forKeyPath:of:change:context:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
       "line": 161,
       "symbol": "UIView.rightBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
       "line": 167,
       "symbol": "UIView.leftBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
       "line": 173,
       "symbol": "UIView.topBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
       "line": 179,
       "symbol": "UIView.buttomBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
       "line": 579,
       "symbol": "UIImageView.hitTest(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
       "line": 597,
       "symbol": "UILabel.hitTest(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIViewExtensions.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
       "line": 617,
       "symbol": "UIButton.hitTest(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIClient.swift",
-      "line": 11,
-      "symbol": "APICompletionHandler",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIClient.swift",
-      "line": 13,
-      "symbol": "APIClient",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIClient.swift",
-      "line": 14,
-      "symbol": "APIClient.delegate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIClient.swift",
-      "line": 16,
-      "symbol": "APIClient.send(request:completionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIClientDelegate.swift",
-      "line": 10,
-      "symbol": "APIClientDelegate",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIClientDelegate.swift",
-      "line": 24,
-      "symbol": "APIClientDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIClientDelegate.swift",
-      "line": 44,
-      "symbol": "APIClientDelegateManager.shared",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIClientDelegate.swift",
-      "line": 52,
-      "symbol": "APIClientDelegateManager.addDelegate(delegate:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIClientDelegate.swift",
-      "line": 56,
-      "symbol": "APIClientDelegateManager.removeDelegate(delegate:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIParsable.swift",
-      "line": 10,
-      "symbol": "APIParsable",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIParsable.swift",
-      "line": 11,
-      "symbol": "APIParsable.parse(data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIParsable.swift",
-      "line": 16,
-      "symbol": "APIParsable",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIParsable.swift",
-      "line": 17,
-      "symbol": "APIParsable.parse(data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 11,
-      "symbol": "NetRequestMethod",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 12,
-      "symbol": "NetRequestHeaders",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 14,
-      "symbol": "APIRequest",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 15,
-      "symbol": "APIRequest.url",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 16,
-      "symbol": "APIRequest.method",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 17,
-      "symbol": "APIRequest.parameters",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 18,
-      "symbol": "APIRequest.headers",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 19,
-      "symbol": "APIRequest.httpBody",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 21,
-      "symbol": "APIRequest.Response",
-      "symbol_kind": "source.lang.swift.decl.associatedtype",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 24,
-      "symbol": "DefaultNetRequest",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 25,
-      "symbol": "DefaultNetRequest.url",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 27,
-      "symbol": "DefaultNetRequest.method",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 29,
-      "symbol": "DefaultNetRequest.parameters",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 31,
-      "symbol": "DefaultNetRequest.headers",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/Atomic.swift",
       "line": 33,
-      "symbol": "DefaultNetRequest.httpBody",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 35,
-      "symbol": "DefaultNetRequest.Response",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 38,
-      "symbol": "DefaultNetRequest",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 39,
-      "symbol": "DefaultNetRequest.init(responseType:url:method:)",
+      "symbol": "Atomic.init(wrappedValue:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 45,
-      "symbol": "DefaultNetRequest",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIRequest.swift",
-      "line": 46,
-      "symbol": "DefaultNetRequest.init(defaultDataType:url:method:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIResponseModel.swift",
-      "line": 20,
-      "symbol": "DefaultAPIResponseModel",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIResponseModel.swift",
-      "line": 21,
-      "symbol": "DefaultAPIResponseModel.code",
+      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/Atomic.swift",
+      "line": 47,
+      "symbol": "Atomic.projectedValue",
       "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIResponseModel.swift",
-      "line": 22,
-      "symbol": "DefaultAPIResponseModel.msg",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIResponseModel.swift",
-      "line": 23,
-      "symbol": "DefaultAPIResponseModel.data",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIResponseModel.swift",
-      "line": 29,
-      "symbol": "DefaultAPIResponseModel.parse(data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIResponseModel.swift",
-      "line": 39,
-      "symbol": "APIResponse",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIResponseModel.swift",
-      "line": 40,
-      "symbol": "APIResponse.request",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIResponseModel.swift",
-      "line": 41,
-      "symbol": "APIResponse.response",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIResponseModel.swift",
-      "line": 42,
-      "symbol": "APIResponse.data",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIResponseModel.swift",
-      "line": 43,
-      "symbol": "APIResponse.result",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIResponseModel.swift",
-      "line": 45,
-      "symbol": "APIResponse.init(request:response:data:result:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIService.swift",
-      "line": 10,
-      "symbol": "APIError",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIService.swift",
-      "line": 11,
-      "symbol": "APIError.unknown",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIService.swift",
-      "line": 13,
-      "symbol": "APIError.invalidURL",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIService.swift",
-      "line": 16,
-      "symbol": "APIResult",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIService.swift",
-      "line": 17,
-      "symbol": "APIResult.success(_:)",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIService.swift",
-      "line": 18,
-      "symbol": "APIResult.failure(_:)",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Network/APIService.swift",
-      "line": 21,
-      "symbol": "APIService",
-      "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
-      "line": 26,
+      "line": 28,
       "symbol": "UserDefaultsStoreValue",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
-      "line": 40,
+      "line": 42,
       "symbol": "UserDefaultsWrapper",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
-      "line": 69,
+      "line": 71,
       "symbol": "UserDefaultsWrapper.observe(change:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
-      "line": 91,
+      "line": 93,
       "symbol": "UserDefaultsObservation.observeValue(forKeyPath:of:change:context:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -1993,27 +1608,6 @@
       "line": 64,
       "symbol": "RuntimeUtils",
       "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakClousureUtils.swift",
-      "line": 33,
-      "symbol": "WeakClousure.delegate(on:block:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakClousureUtils.swift",
-      "line": 41,
-      "symbol": "WeakClousure.callAsFunction(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakClousureUtils.swift",
-      "line": 45,
-      "symbol": "WeakClousure.call(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {

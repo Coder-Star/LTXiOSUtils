@@ -12,10 +12,7 @@
 		2D717B5926C1664000483384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5826C1664000483384 /* ViewController.swift */; };
 		2D717B5E26C1664A00483384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D717B5D26C1664A00483384 /* Assets.xcassets */; };
 		2D9454D227CFCB7200D71BD3 /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9454D127CFCB7200D71BD3 /* PropertyWrapper.swift */; };
-		2DA53B0C27E1C2CC0001313E /* NetworkDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA53B0B27E1C2CC0001313E /* NetworkDemoViewController.swift */; };
-		2DA53B0E27E1D3EC0001313E /* CSBaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA53B0D27E1D3EC0001313E /* CSBaseResponseModel.swift */; };
 		2DAA827327E4A50100CB7F03 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA827227E4A50100CB7F03 /* BaseViewController.swift */; };
-		2DAA827527E4A55300CB7F03 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA827427E4A55300CB7F03 /* NetworkConstants.swift */; };
 		2DBB624E26E333B700C87475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */; };
 		2DE71EBC27ABC81300309E24 /* SwiftDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE71EBB27ABC81300309E24 /* SwiftDemangle.swift */; };
 		E20E5B4C55138D74098C5F20 /* libPods-LTXiOSUtilsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26706580C142E61B3680F4B8 /* libPods-LTXiOSUtilsDemo.a */; };
@@ -30,10 +27,7 @@
 		2D717B5D26C1664A00483384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D717B6226C1664A00483384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D9454D127CFCB7200D71BD3 /* PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapper.swift; sourceTree = "<group>"; };
-		2DA53B0B27E1C2CC0001313E /* NetworkDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDemoViewController.swift; sourceTree = "<group>"; };
-		2DA53B0D27E1D3EC0001313E /* CSBaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSBaseResponseModel.swift; sourceTree = "<group>"; };
 		2DAA827227E4A50100CB7F03 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		2DAA827427E4A55300CB7F03 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DE71EBB27ABC81300309E24 /* SwiftDemangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemangle.swift; sourceTree = "<group>"; };
 		50BEB760F2BA6CF4047B54ED /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,7 +75,6 @@
 		2D717B5326C1664000483384 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2DA53B0927E1C2930001313E /* Network */,
 				2D9454E427D23C6C00D71BD3 /* Demo */,
 				2D9454D027CFCB5D00D71BD3 /* Model */,
 				2DE71EBA27ABC7F600309E24 /* SwiftRuntime */,
@@ -109,16 +102,6 @@
 			children = (
 			);
 			path = Demo;
-			sourceTree = "<group>";
-		};
-		2DA53B0927E1C2930001313E /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				2DA53B0B27E1C2CC0001313E /* NetworkDemoViewController.swift */,
-				2DA53B0D27E1D3EC0001313E /* CSBaseResponseModel.swift */,
-				2DAA827427E4A55300CB7F03 /* NetworkConstants.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		2DBB625026E333E800C87475 /* Resources */ = {
@@ -316,11 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DA53B0C27E1C2CC0001313E /* NetworkDemoViewController.swift in Sources */,
 				2DE71EBC27ABC81300309E24 /* SwiftDemangle.swift in Sources */,
-				2DAA827527E4A55300CB7F03 /* NetworkConstants.swift in Sources */,
 				2D9454D227CFCB7200D71BD3 /* PropertyWrapper.swift in Sources */,
-				2DA53B0E27E1D3EC0001313E /* CSBaseResponseModel.swift in Sources */,
 				2D717B5926C1664000483384 /* ViewController.swift in Sources */,
 				2DAA827327E4A50100CB7F03 /* BaseViewController.swift in Sources */,
 				2D717B5526C1664000483384 /* AppDelegate.swift in Sources */,

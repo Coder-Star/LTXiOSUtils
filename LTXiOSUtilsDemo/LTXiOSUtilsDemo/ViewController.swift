@@ -11,7 +11,6 @@ import UIKit
 
 class ViewController: BaseViewController {
     private var demoList: [[String: Any]] = [
-        ["title": "网络请求", "vc": NetworkDemoViewController.self],
     ]
 
     private lazy var tableView: UITableView = {
