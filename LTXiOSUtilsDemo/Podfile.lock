@@ -1,5 +1,4 @@
 PODS:
-  - BetterCodable (0.4.0)
   - LTXiOSUtils (0.0.3):
     - LTXiOSUtils/Component (= 0.0.3)
     - LTXiOSUtils/Extension (= 0.0.3)
@@ -28,13 +27,10 @@ PODS:
   - SwiftFormat/CLI (0.47.13)
 
 DEPENDENCIES:
-  - BetterCodable (= 0.4.0)
   - LTXiOSUtils (from `../`)
   - SwiftFormat/CLI (= 0.47.13)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - BetterCodable
   trunk:
     - SwiftFormat
 
@@ -43,10 +39,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BetterCodable: 3f2a765c9f4089b19debd2a7b904a69fca0a5fda
   LTXiOSUtils: 712cdc0a2199f594c470bda32b90498de79623bb
   SwiftFormat: 73573b89257437c550b03d934889725fbf8f75e5
 
-PODFILE CHECKSUM: 5e95969b85b2d21cf9a5e6f26232c85b253273b6
+PODFILE CHECKSUM: 208dad81e4feec90746b8dc53e890a3b26445f09
 
 COCOAPODS: 1.11.2
