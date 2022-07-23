@@ -6,8 +6,7 @@
 //
 
 import UIKit
-
-import UIKit
+import WebKit
 
 class ViewController: BaseViewController {
     private var demoList: [[String: Any]] = [
@@ -27,6 +26,8 @@ class ViewController: BaseViewController {
 
         view.addSubview(tableView)
         tableView.frame = view.frame
+
+        WKWebView(frame: .zero).tx.keyboardDisplayRequiresUserAction = true
     }
 }
 

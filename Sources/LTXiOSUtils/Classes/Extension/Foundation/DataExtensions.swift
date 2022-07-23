@@ -7,6 +7,8 @@
 
 import Foundation
 
+extension Data: TxExtensionWrapperCompatibleValue {}
+
 extension TxExtensionWrapper where Base == Data {
     /// 16进制Data转字符串
     ///

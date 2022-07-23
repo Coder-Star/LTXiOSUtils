@@ -74,3 +74,5 @@ extension TxExtensionWrapperCompatibleValue {
         }
     }
 }
+
+extension NSObject: TxExtensionWrapperCompatible {}

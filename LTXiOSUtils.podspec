@@ -28,23 +28,28 @@ Pod::Spec.new do |s|
     end
 
     extension.subspec 'SwiftStdlib' do |swift|
+      swift.dependency "LTXiOSUtils/Extension/Core"
       swift.source_files = 'Sources/LTXiOSUtils/Classes/Extension/SwiftStdlib/*.swift'
     end
 
     extension.subspec 'Foundation' do |foundation|
+      foundation.dependency "LTXiOSUtils/Extension/Core"
       foundation.source_files = 'Sources/LTXiOSUtils/Classes/Extension/Foundation/*.swift'
     end
 
 
     extension.subspec 'UIKit' do |uiKit|
+      uiKit.dependency "LTXiOSUtils/Extension/Core"
       uiKit.source_files = 'Sources/LTXiOSUtils/Classes/Extension/UIKit/*.swift'
     end
 
     extension.subspec 'WebKit' do |webKit|
+      webKit.dependency "LTXiOSUtils/Extension/Core"
       webKit.source_files = 'Sources/LTXiOSUtils/Classes/Extension/WebKit/*.swift'
     end
 
     extension.subspec 'Dispatch' do |dispatch|
+      dispatch.dependency "LTXiOSUtils/Extension/Core"
       dispatch.source_files = 'Sources/LTXiOSUtils/Classes/Extension/Dispatch/*.swift'
     end
 

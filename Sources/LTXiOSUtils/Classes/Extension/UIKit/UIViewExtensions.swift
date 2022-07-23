@@ -130,6 +130,67 @@ extension UIView {
         layer.mask = fieldLayer
     }
 
+    /// 添加4个不同大小的圆角
+    public func setCorner(cornerRadii: CornerRadii) {
+        layoutIfNeeded()
+        let path = createPathWithRoundedRect(bounds: bounds, cornerRadii: cornerRadii)
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.frame = bounds
+        shapeLayer.path = path
+        layer.mask = shapeLayer
+    }
+
+    /// 移除CAShapeLayer画的圆角
+    public func removeCorner() {
+        if let mask = layer.mask, mask.isKind(of: CAShapeLayer.self) {
+            layer.mask = nil
+        }
+    }
+
+    /// 各圆角大小
+    public struct CornerRadii {
+        var topLeft: CGFloat = 0
+        var topRight: CGFloat = 0
+        var bottomLeft: CGFloat = 0
+        var bottomRight: CGFloat = 0
+    }
+
+    /// 切圆角函数绘制线条
+    private func createPathWithRoundedRect(bounds: CGRect, cornerRadii: CornerRadii) -> CGPath {
+        let minX = bounds.minX
+        let minY = bounds.minY
+        let maxX = bounds.maxX
+        let maxY = bounds.maxY
+
+        // 获取四个圆心
+        let topLeftCenterX = minX + cornerRadii.topLeft
+        let topLeftCenterY = minY + cornerRadii.topLeft
+
+        let topRightCenterX = maxX - cornerRadii.topRight
+        let topRightCenterY = minY + cornerRadii.topRight
+
+        let bottomLeftCenterX = minX + cornerRadii.bottomLeft
+        let bottomLeftCenterY = maxY - cornerRadii.bottomLeft
+
+        let bottomRightCenterX = maxX - cornerRadii.bottomRight
+        let bottomRightCenterY = maxY - cornerRadii.bottomRight
+
+        // 虽然顺时针参数是YES，在iOS中的UIView中，这里实际是逆时针
+        let path = CGMutablePath()
+        // 顶 左
+        path.addArc(center: CGPoint(x: topLeftCenterX, y: topLeftCenterY), radius: cornerRadii.topLeft, startAngle: CGFloat.pi, endAngle: CGFloat.pi * 3 / 2, clockwise: false)
+        // 顶右
+        path.addArc(center: CGPoint(x: topRightCenterX, y: topRightCenterY), radius: cornerRadii.topRight, startAngle: CGFloat.pi * 3 / 2, endAngle: 0, clockwise: false)
+        // 底右
+        path.addArc(center: CGPoint(x: bottomRightCenterX, y: bottomRightCenterY), radius: cornerRadii.bottomRight, startAngle: 0, endAngle: CGFloat.pi / 2, clockwise: false)
+        // 底左
+        path.addArc(center: CGPoint(x: bottomLeftCenterX, y: bottomLeftCenterY), radius: cornerRadii.bottomLeft, startAngle: CGFloat.pi / 2, endAngle: CGFloat.pi, clockwise: false)
+        path.closeSubpath()
+        return path
+    }
+}
+
+extension UIView {
     /// 转为Image
     /// - Returns: UIImage
     public func toImage() -> UIImage? {
@@ -146,7 +207,8 @@ extension UIView {
     }
 }
 
-// 为 uiview 扩展添加边框功能
+// MARK: - 边框功能
+
 extension UIView {
     // 画线
     private func drawBorder(rect: CGRect, color: UIColor) {

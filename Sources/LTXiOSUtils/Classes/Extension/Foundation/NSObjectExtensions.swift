@@ -7,8 +7,6 @@
 
 import Foundation
 
-extension NSObject: TxExtensionWrapperCompatible {}
-
 // MARK: - 基础
 
 extension TxExtensionWrapper where Base: NSObject {
@@ -31,8 +29,8 @@ extension TxExtensionWrapper where Base: NSObject {
     /// - Parameter property: 属性
     /// - Returns: 属性值
     public func getValueOfProperty(property: String) -> AnyObject? {
-        let allPropertys = getAllProperties()
-        if allPropertys.contains(property) {
+        let allProperties = getAllProperties()
+        if allProperties.contains(property) {
             return base.value(forKey: property) as AnyObject
         } else {
             return nil
@@ -45,8 +43,8 @@ extension TxExtensionWrapper where Base: NSObject {
     ///   - property: 属性
     ///   - value: 属性新值
     public func setValueOfProperty(property: String, value: AnyObject) {
-        let allPropertys = getAllProperties()
-        if allPropertys.contains(property) {
+        let allProperties = getAllProperties()
+        if allProperties.contains(property) {
             base.setValue(value, forKey: property)
         }
     }
