@@ -29,13 +29,17 @@ PODS:
   - LTXiOSUtils/Util (0.0.3):
     - LTXiOSUtils/Util/Log (= 0.0.3)
   - LTXiOSUtils/Util/Log (0.0.3)
+  - SnapKit (5.6.0)
   - SwiftFormat/CLI (0.47.13)
 
 DEPENDENCIES:
   - LTXiOSUtils (from `../`)
+  - SnapKit (= 5.6.0)
   - SwiftFormat/CLI (= 0.47.13)
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - SnapKit
   trunk:
     - SwiftFormat
 
@@ -45,8 +49,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   LTXiOSUtils: 20da6ce91237847d659fe5431b816ffc37b30bd2
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftFormat: 73573b89257437c550b03d934889725fbf8f75e5
 
-PODFILE CHECKSUM: 208dad81e4feec90746b8dc53e890a3b26445f09
+PODFILE CHECKSUM: 9acee200325158542d364c76f5c353dfa6ad6406
 
 COCOAPODS: 1.11.2

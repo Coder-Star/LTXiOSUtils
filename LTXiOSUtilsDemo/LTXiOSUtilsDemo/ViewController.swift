@@ -5,11 +5,15 @@
 //  Created by CoderStar on 2021/8/9.
 //
 
+import SnapKit
 import UIKit
 import WebKit
 
 class ViewController: BaseViewController {
-    private var demoList: [[String: Any]] = [
+    private var demoList: [String: [[String: Any]]] = [
+        "UI组件": [
+            ["title": "ClickableLabel", "subTitle": "可点击Label", "vc": ClickableLabelDemoViewController.self],
+        ],
     ]
 
     private lazy var tableView: UITableView = {
@@ -30,25 +34,35 @@ class ViewController: BaseViewController {
 }
 
 extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return demoList.count
     }
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return Array(demoList.keys)[section]
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Array(demoList.values)[section].count
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.selectionStyle = .none
-        cell.textLabel?.text = demoList[indexPath.row]["title"] as? String
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = Array(demoList.values)[indexPath.section][indexPath.row]["title"] as? String
+        cell.detailTextLabel?.text = Array(demoList.values)[indexPath.section][indexPath.row]["subTitle"] as? String
         return cell
     }
 }
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let viewControllerType = demoList[indexPath.row]["vc"] as? UIViewController.Type else {
+        guard let viewControllerType = Array(demoList.values)[indexPath.section][indexPath.row]["vc"] as? UIViewController.Type else {
             return
         }
         let viewController = viewControllerType.init()
-        viewController.title = demoList[indexPath.row]["title"] as? String
+        viewController.title = Array(demoList.values)[indexPath.section][indexPath.row]["title"] as? String
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

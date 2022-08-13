@@ -5,6 +5,7 @@
 //  Created by CoderStar on 2021/8/9.
 //
 
+@_exported import LTXiOSUtils
 import UIKit
 
 @UIApplicationMain

@@ -7,6 +7,7 @@ target 'LTXiOSUtilsDemo' do
 
   inhibit_all_warnings!
 
+  pod 'SnapKit', '5.6.0'
   pod 'LTXiOSUtils', :path => '../'
 
   # 代码规范限制与自动纠正，嵌入到Build流程中

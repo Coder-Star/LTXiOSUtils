@@ -18,7 +18,7 @@ import Foundation
  /// 写
  value.x = 1
 
- /// 边读编写
+ /// 边读边写
  value.$x.mutate { $0 += 1 }
 
  **/

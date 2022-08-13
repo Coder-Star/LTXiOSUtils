@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D12FB4E28A746F6002BEE4B /* ClickableLabelDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12FB4D28A746F6002BEE4B /* ClickableLabelDemoViewController.swift */; };
 		2D65D3C926CF6B9E007D0254 /* LibExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D65D3C826CF6B9E007D0254 /* LibExport.swift */; };
 		2D717B5526C1664000483384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5426C1664000483384 /* AppDelegate.swift */; };
 		2D717B5926C1664000483384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5826C1664000483384 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		26706580C142E61B3680F4B8 /* libPods-LTXiOSUtilsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTXiOSUtilsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D12FB4D28A746F6002BEE4B /* ClickableLabelDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableLabelDemoViewController.swift; sourceTree = "<group>"; };
 		2D65D3C826CF6B9E007D0254 /* LibExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibExport.swift; sourceTree = "<group>"; };
 		2D717B5126C1664000483384 /* LTXiOSUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTXiOSUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D717B5426C1664000483384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2D12FB4B28A746BE002BEE4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2D12FB4D28A746F6002BEE4B /* ClickableLabelDemoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D12FB4C28A746CD002BEE4B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2DE71EBA27ABC7F600309E24 /* SwiftRuntime */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		2D717B4826C1664000483384 = {
 			isa = PBXGroup;
 			children = (
@@ -75,9 +93,9 @@
 		2D717B5326C1664000483384 /* LTXiOSUtilsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2D12FB4C28A746CD002BEE4B /* Util */,
 				2D9454E427D23C6C00D71BD3 /* Demo */,
 				2D9454D027CFCB5D00D71BD3 /* Model */,
-				2DE71EBA27ABC7F600309E24 /* SwiftRuntime */,
 				2DBB625026E333E800C87475 /* Resources */,
 				2D717B5426C1664000483384 /* AppDelegate.swift */,
 				2D717B5826C1664000483384 /* ViewController.swift */,
@@ -100,6 +118,7 @@
 		2D9454E427D23C6C00D71BD3 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				2D12FB4B28A746BE002BEE4B /* View */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -308,6 +327,7 @@
 				2DAA827327E4A50100CB7F03 /* BaseViewController.swift in Sources */,
 				2D717B5526C1664000483384 /* AppDelegate.swift in Sources */,
 				2D65D3C926CF6B9E007D0254 /* LibExport.swift in Sources */,
+				2D12FB4E28A746F6002BEE4B /* ClickableLabelDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
