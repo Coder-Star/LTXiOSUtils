@@ -23,14 +23,16 @@ class ClickableLabelDemoViewController: BaseViewController {
 
         let label = ClickableLabel()
 
-        label.text = "111#你好#111高亮"
+        label.text = "111#你好#111高亮高亮高亮高亮高亮高亮高亮"
         label.clickTextColor = .red
+        label.numberOfLines = 2
         label.clickBackgroundColor = .blue
         label.clickTextArr = ["#你好#"]
         label.delegate = self
         labelBackgroundView.addSubviews(label)
         label.snp.makeConstraints { make in
             make.center.equalToSuperview()
+            make.width.equalTo(100)
         }
     }
 }

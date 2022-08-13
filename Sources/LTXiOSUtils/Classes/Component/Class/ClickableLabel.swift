@@ -53,6 +53,7 @@ public class ClickableLabel: UILabel {
     private lazy var textStorage = NSTextStorage()
     private lazy var layoutManager = NSLayoutManager()
     private lazy var textContainer = NSTextContainer()
+    private lazy var textLineBreakMode: NSLineBreakMode = .byTruncatingTail
 
     override public var text: String? {
         didSet {
@@ -75,6 +76,12 @@ public class ClickableLabel: UILabel {
     override public var textColor: UIColor! {
         didSet {
             updateTextStorage()
+        }
+    }
+
+    public override var lineBreakMode: NSLineBreakMode {
+        didSet {
+            textLineBreakMode = lineBreakMode
         }
     }
 
@@ -110,8 +117,21 @@ public class ClickableLabel: UILabel {
 }
 
 extension ClickableLabel {
+    private var glyphsRange: NSRange {
+        return NSRange(location: 0, length: textStorage.length)
+    }
+
+    private func glyphsOffset(_ range: NSRange) -> CGPoint {
+        let rect = layoutManager.boundingRect(forGlyphRange: range, in: textContainer)
+        let height = (bounds.height - rect.height) * 0.5
+
+        return CGPoint(x: 0, y: height)
+    }
+}
+
+extension ClickableLabel {
     private func updateTextStorage() {
-        guard let attributedText = attributedText else {
+        guard let attributedText = attributedText, !attributedText.string.isEmpty else {
             return
         }
 
@@ -120,8 +140,47 @@ extension ClickableLabel {
         addLinkAttribute(attrStringM)
 
         textStorage.setAttributedString(attrStringM)
+        textContainer.lineBreakMode = textLineBreakMode
 
         setNeedsDisplay()
+    }
+
+    /// lineBreakMode为换行，解决设置 text 属性时不换行的问题
+    private func addLineBreak(_ attrString: NSAttributedString) -> NSMutableAttributedString {
+        let attrStringM = NSMutableAttributedString(attributedString: attrString)
+        var range = NSRange(location: 0, length: 0)
+        var attributes = attrStringM.attributes(at: 0, effectiveRange: &range)
+        var paragraphStyle = attributes[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle
+
+        if paragraphStyle != nil {
+            paragraphStyle!.lineBreakMode = .byWordWrapping
+        } else {
+            paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle!.lineBreakMode = .byWordWrapping
+            attributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
+            attrStringM.setAttributes(attributes, range: range)
+        }
+
+        return attrStringM
+    }
+
+    private func regexLinkRanges(_ attrString: NSAttributedString) {
+        linkRanges.removeAll()
+        let regexRange = NSRange(location: 0, length: attrString.length)
+
+        for clickText in clickTextArr {
+            linkRanges.append(NSString(string: attrString.string).range(of: clickText))
+        }
+
+        clickTextPatterns.forEach { pattern in
+            do {
+                let regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.dotMatchesLineSeparators)
+                let results = regex.matches(in: attrString.string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: regexRange)
+                for r in results {
+                    linkRanges.append(r.range(at: 0))
+                }
+            } catch {}
+        }
     }
 
     private func addLinkAttribute(_ attrStringM: NSMutableAttributedString) {
@@ -137,63 +196,9 @@ extension ClickableLabel {
         attrStringM.addAttributes(attributes, range: range)
 
         attributes[NSAttributedString.Key.foregroundColor] = clickTextColor ?? textColor
-
         for r in linkRanges {
             attrStringM.setAttributes(attributes, range: r)
         }
-    }
-
-    private func regexLinkRanges(_ attrString: NSAttributedString) {
-        linkRanges.removeAll()
-        let regexRange = NSRange(location: 0, length: attrString.length)
-
-        for clickText in clickTextArr {
-            linkRanges.append(NSString(string: attrString.string).range(of: clickText))
-        }
-
-        for pattern in clickTextPatterns {
-            do {
-                let regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.dotMatchesLineSeparators)
-                let results = regex.matches(in: attrString.string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: regexRange)
-                for r in results {
-                    linkRanges.append(r.range(at: 0))
-                }
-            } catch {}
-        }
-    }
-
-    private func addLineBreak(_ attrString: NSAttributedString) -> NSMutableAttributedString {
-        let attrStringM = NSMutableAttributedString(attributedString: attrString)
-
-        if attrStringM.length == 0 {
-            return attrStringM
-        }
-
-        var range = NSRange(location: 0, length: 0)
-        var attributes = attrStringM.attributes(at: 0, effectiveRange: &range)
-        var paragraphStyle = attributes[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle
-
-        if paragraphStyle != nil {
-            paragraphStyle!.lineBreakMode = NSLineBreakMode.byWordWrapping
-        } else {
-            paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle!.lineBreakMode = NSLineBreakMode.byWordWrapping
-            attributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
-            attrStringM.setAttributes(attributes, range: range)
-        }
-
-        return attrStringM
-    }
-
-    private var glyphsRange: NSRange {
-        return NSRange(location: 0, length: textStorage.length)
-    }
-
-    private func glyphsOffset(_ range: NSRange) -> CGPoint {
-        let rect = layoutManager.boundingRect(forGlyphRange: range, in: textContainer)
-        let height = (bounds.height - rect.height) * 0.5
-
-        return CGPoint(x: 0, y: height)
     }
 }
 
@@ -247,6 +252,10 @@ extension ClickableLabel {
 
     private func modifySelectedAttribute(_ isSet: Bool) {
         guard let range = selectedRange else {
+            return
+        }
+
+        guard let clickBackgroundColor = clickBackgroundColor else {
             return
         }
 
