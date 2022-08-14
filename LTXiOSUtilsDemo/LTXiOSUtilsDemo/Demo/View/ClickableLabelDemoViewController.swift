@@ -27,7 +27,7 @@ class ClickableLabelDemoViewController: BaseViewController {
         label.clickTextColor = .red
         label.numberOfLines = 2
         label.clickBackgroundColor = .blue
-        label.clickTextArr = ["#你好#"]
+        label.clickTextPatterns = ["#你好#"]
         label.delegate = self
         labelBackgroundView.addSubviews(label)
         label.snp.makeConstraints { make in

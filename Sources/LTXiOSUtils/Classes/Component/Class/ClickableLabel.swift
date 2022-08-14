@@ -30,13 +30,6 @@ public class ClickableLabel: UILabel {
         }
     }
 
-    /// 精确匹配
-    public var clickTextArr: [String] = [] {
-        didSet {
-            updateTextStorage()
-        }
-    }
-
     /// 通配
     /// 筛选可点击文本正则表达式
     /// "#.+?#"：两个 # # 之间不为空
@@ -85,6 +78,12 @@ public class ClickableLabel: UILabel {
         }
     }
 
+    open override var numberOfLines: Int {
+        didSet {
+            textContainer.maximumNumberOfLines = numberOfLines
+        }
+    }
+
     override public init(frame: CGRect) {
         super.init(frame: frame)
         prepareLabel()
@@ -113,6 +112,15 @@ public class ClickableLabel: UILabel {
 
         layoutManager.drawBackground(forGlyphRange: range, at: offset)
         layoutManager.drawGlyphs(forGlyphRange: range, at: CGPoint.zero)
+    }
+
+    /// 自动布局使用
+    /// 如果不添加这个，自动布局时部分文本会出现最后一行显示不出的问题
+    open override var intrinsicContentSize: CGSize {
+        let superSize = super.intrinsicContentSize
+        textContainer.size = CGSize(width: superSize.width, height: CGFloat.greatestFiniteMagnitude)
+        let size = layoutManager.usedRect(for: textContainer)
+        return CGSize(width: ceil(size.width), height: ceil(size.height))
     }
 }
 
@@ -167,10 +175,6 @@ extension ClickableLabel {
     private func regexLinkRanges(_ attrString: NSAttributedString) {
         linkRanges.removeAll()
         let regexRange = NSRange(location: 0, length: attrString.length)
-
-        for clickText in clickTextArr {
-            linkRanges.append(NSString(string: attrString.string).range(of: clickText))
-        }
 
         clickTextPatterns.forEach { pattern in
             do {
