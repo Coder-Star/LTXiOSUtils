@@ -48,7 +48,7 @@ final public class Atomic<Value> {
         return self
     }
 
-    /// 保证边读编写安全
+    /// 保证边读边写安全
     public func mutate(_ mutation: (inout Value) -> Void) {
         return queue.sync {
             mutation(&value)
