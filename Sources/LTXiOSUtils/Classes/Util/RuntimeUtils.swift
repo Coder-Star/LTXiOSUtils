@@ -57,6 +57,25 @@ public struct RuntimeUtils {
         }
         return false
     }
+
+    /// 获取指定类所遵循的协议
+    public static func getProtocolArray(_ clazz: AnyClass) -> [Protocol] {
+        var protocolCount: UInt32 = 0
+        let protocolList = class_copyProtocolList(clazz, &protocolCount)
+        return (0 ..< protocolCount).compactMap { protocolList?[Int($0)] }
+    }
+
+    /// 获取指定类所遵循的协议名称
+    public static func getProtocolStringArray(_ clazz: AnyClass) -> [String] {
+        var protocolCount: UInt32 = 0
+        let protocolList = class_copyProtocolList(clazz, &protocolCount)
+        return (0 ..< protocolCount).compactMap {
+            guard let protocolInfo = protocolList?[Int($0)] else {
+                return nil
+            }
+            return String(cString: protocol_getName(protocolInfo))
+        }
+    }
 }
 
 // MARK: - 协议相关

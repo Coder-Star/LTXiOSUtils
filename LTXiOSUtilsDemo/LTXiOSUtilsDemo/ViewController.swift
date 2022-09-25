@@ -5,11 +5,15 @@
 //  Created by CoderStar on 2021/8/9.
 //
 
+import LTXiOSUtils
 import SnapKit
 import UIKit
 import WebKit
 
-class ViewController: BaseViewController {
+@objc
+protocol Info1: AnyObject {}
+
+class ViewController: BaseViewController, Info1 {
     private var demoList: [String: [[String: Any]]] = [
         "UI组件": [
             ["title": "ClickableLabel", "subTitle": "可点击Label", "vc": ClickableLabelDemoViewController.self],

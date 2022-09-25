@@ -162,7 +162,7 @@ extension TxExtensionWrapper where Base == String {
     /// 中文转拼音
     /// 会有多音字问题，并且效率较低，不适合大批量数据
     /// - Returns: 拼音
-    public func toPinYin() -> String {
+    public var pinyin: String {
         let mutableString = NSMutableString(string: base)
         CFStringTransform(mutableString, nil, kCFStringTransformToLatin, false)
         CFStringTransform(mutableString, nil, kCFStringTransformStripDiacritics, false)
@@ -182,6 +182,17 @@ extension TxExtensionWrapper where Base == String {
         }
         let className = nameSpace.replacingOccurrences(of: " ", with: "_").replacingOccurrences(of: "-", with: "_") + "." + base
         return NSClassFromString(className)
+    }
+
+    /// 转为编码类型
+    public var encodingType: String.Encoding? {
+        let cfString = CFStringConvertIANACharSetNameToEncoding(base as CFString)
+        if cfString != kCFStringEncodingInvalidId {
+            let encodingRawValue = CFStringConvertEncodingToNSStringEncoding(cfString)
+            let encodingType = String.Encoding(rawValue: encodingRawValue)
+            return encodingType
+        }
+        return nil
     }
 }
 

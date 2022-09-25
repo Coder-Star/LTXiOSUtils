@@ -12,6 +12,7 @@
 		2D717B5526C1664000483384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5426C1664000483384 /* AppDelegate.swift */; };
 		2D717B5926C1664000483384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5826C1664000483384 /* ViewController.swift */; };
 		2D717B5E26C1664A00483384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D717B5D26C1664A00483384 /* Assets.xcassets */; };
+		2D885B5D28E0284300F1608F /* LockUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D885B5C28E0284300F1608F /* LockUtils.swift */; };
 		2D9454D227CFCB7200D71BD3 /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9454D127CFCB7200D71BD3 /* PropertyWrapper.swift */; };
 		2DAA827327E4A50100CB7F03 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA827227E4A50100CB7F03 /* BaseViewController.swift */; };
 		2DBB624E26E333B700C87475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */; };
@@ -28,6 +29,7 @@
 		2D717B5826C1664000483384 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D717B5D26C1664A00483384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D717B6226C1664A00483384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D885B5C28E0284300F1608F /* LockUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockUtils.swift; sourceTree = "<group>"; };
 		2D9454D127CFCB7200D71BD3 /* PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapper.swift; sourceTree = "<group>"; };
 		2DAA827227E4A50100CB7F03 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,7 +69,8 @@
 		2D12FB4C28A746CD002BEE4B /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				2DE71EBA27ABC7F600309E24 /* SwiftRuntime */,
+				2DE71EBB27ABC81300309E24 /* SwiftDemangle.swift */,
+				2D885B5C28E0284300F1608F /* LockUtils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -129,14 +132,6 @@
 				2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		2DE71EBA27ABC7F600309E24 /* SwiftRuntime */ = {
-			isa = PBXGroup;
-			children = (
-				2DE71EBB27ABC81300309E24 /* SwiftDemangle.swift */,
-			);
-			path = SwiftRuntime;
 			sourceTree = "<group>";
 		};
 		C8E05001D0DC788DB3D2B408 /* Pods */ = {
@@ -325,6 +320,7 @@
 				2D9454D227CFCB7200D71BD3 /* PropertyWrapper.swift in Sources */,
 				2D717B5926C1664000483384 /* ViewController.swift in Sources */,
 				2DAA827327E4A50100CB7F03 /* BaseViewController.swift in Sources */,
+				2D885B5D28E0284300F1608F /* LockUtils.swift in Sources */,
 				2D717B5526C1664000483384 /* AppDelegate.swift in Sources */,
 				2D65D3C926CF6B9E007D0254 /* LibExport.swift in Sources */,
 				2D12FB4E28A746F6002BEE4B /* ClickableLabelDemoViewController.swift in Sources */,
