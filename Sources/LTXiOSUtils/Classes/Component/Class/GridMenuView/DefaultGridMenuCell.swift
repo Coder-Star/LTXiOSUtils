@@ -73,34 +73,34 @@ open class DefaultGridMenuCell: UICollectionViewCell {
         addSubview(imageView)
         label.frame = CGRect(x: 5, y: imageHeight + 15, width: frame.width - 10, height: labelHeight)
         addSubview(label)
-        tx.setBadge(flexMode: .middle)
-        tx.moveBadge(x: -1 * imageView.frame.origin.x, y: imageView.frame.origin.y)
+        tx.set(flexMode: .middle)
+        tx.move(x: -1 * imageView.frame.origin.x, y: imageView.frame.origin.y)
     }
 
     private func setBadge() {
         switch markType {
         case .none:
-            tx.hiddenBadge()
+            tx.set(type: .none)
         case let .number(number):
             if let maxNumber = DefaultGridMenuCell.maxNumber, number > maxNumber {
-                tx.setBadge(height: 18)
-                tx.addBadge(text: "\(maxNumber)+")
+                tx.set(height: 18)
+                tx.set(type: .text(value: "\(maxNumber)+"))
             } else if number <= 0 {
-                tx.hiddenBadge()
+                tx.set(type: .none)
             } else {
-                tx.setBadge(height: 18)
-                tx.addBadge(number: number)
+                tx.set(height: 18)
+                tx.set(type: .number(value: number))
             }
         case let .point(isShow):
             if isShow {
-                tx.addDot(color: .red)
-                tx.setBadge(height: 12)
+                tx.set(type: .dot)
+                tx.set(height: 12)
             } else {
-                tx.hiddenBadge()
+                tx.set(type: .none)
             }
         case let .text(text):
-            tx.setBadge(height: 18)
-            tx.addBadge(text: text)
+            tx.set(height: 18)
+            tx.set(type: .text(value: text))
         }
     }
 
