@@ -8,16 +8,16 @@
 import UIKit
 
 public protocol RollingNoticeViewDataSource: AnyObject {
-    func numberOfRowsFor(roolingView: RollingNoticeView) -> Int
-    func rollingNoticeView(roolingView: RollingNoticeView, cellAtIndex index: Int) -> RollingNoticeCell
+    func numberOfRowsFor(rollingView: RollingNoticeView) -> Int
+    func rollingNoticeView(rollingView: RollingNoticeView, cellAtIndex index: Int) -> RollingNoticeCell
 }
 
 public protocol RollingNoticeViewDelegate: AnyObject {
-    func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int)
+    func rollingNoticeView(_ rollingView: RollingNoticeView, didClickAt index: Int)
 }
 
 extension RollingNoticeViewDelegate {
-    public func rollingNoticeView(_ roolingView: RollingNoticeView, didClickAt index: Int) {}
+    public func rollingNoticeView(_ rollingView: RollingNoticeView, didClickAt index: Int) {}
 }
 
 open class RollingNoticeView: UIView {
@@ -87,7 +87,7 @@ open class RollingNoticeView: UIView {
     /// 刷新数据并开始滚动
     open func reloadDataAndStartRoll() {
         stopRoll()
-        guard let count = dataSource?.numberOfRowsFor(roolingView: self), count > 0 else {
+        guard let count = dataSource?.numberOfRowsFor(rollingView: self), count > 0 else {
             return
         }
         layoutCurrentCellAndWillShowCell()
@@ -154,7 +154,7 @@ extension RollingNoticeView {
     }
 
     private func layoutCurrentCellAndWillShowCell() {
-        guard let count = (dataSource?.numberOfRowsFor(roolingView: self)) else { return }
+        guard let count = (dataSource?.numberOfRowsFor(rollingView: self)) else { return }
 
         if currentIndex > count - 1 {
             currentIndex = 0
@@ -169,7 +169,7 @@ extension RollingNoticeView {
         let w = frame.size.width
         let h = frame.size.height
         if currentCell == nil {
-            if let cell = dataSource?.rollingNoticeView(roolingView: self, cellAtIndex: currentIndex) {
+            if let cell = dataSource?.rollingNoticeView(rollingView: self, cellAtIndex: currentIndex) {
                 currentCell = cell
                 cell.frame = CGRect(x: 0, y: 0, width: w, height: h)
                 addSubview(cell)
@@ -177,7 +177,7 @@ extension RollingNoticeView {
             return
         }
 
-        if let cell = dataSource?.rollingNoticeView(roolingView: self, cellAtIndex: willShowIndex) {
+        if let cell = dataSource?.rollingNoticeView(rollingView: self, cellAtIndex: willShowIndex) {
             willShowCell = cell
             cell.frame = CGRect(x: 0, y: h, width: w, height: h)
             addSubview(cell)
@@ -202,7 +202,7 @@ extension RollingNoticeView {
         clipsToBounds = true
         addTapGesture { [weak self] _ in
             guard let strongSelf = self else { return }
-            guard let count = strongSelf.dataSource?.numberOfRowsFor(roolingView: strongSelf) else {
+            guard let count = strongSelf.dataSource?.numberOfRowsFor(rollingView: strongSelf) else {
                 return
             }
             if strongSelf.currentIndex > count - 1 {
