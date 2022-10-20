@@ -11,17 +11,6 @@ import Intents
 import UIKit
 import UserNotifications
 
-/// 空协议，各组件模块去实现该协议
-public protocol ApplicationService: UIApplicationDelegate, UNUserNotificationCenterDelegate {}
-
-extension ApplicationService {
-    /// window
-    public var window: UIWindow? {
-        // swiftlint:disable:next redundant_nil_coalescing
-        return UIApplication.shared.delegate?.window ?? nil
-    }
-}
-
 /*
  示例AppDelegate
  @UIApplicationMain
@@ -42,9 +31,33 @@ extension ApplicationService {
  }
  */
 
+/// 空协议，各组件模块去实现该协议
+public protocol ApplicationService: UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    /// 自定义事件
+    func application(_ application: UIApplication, customEvent event: String, with param: [String: Any])
+}
+
+extension ApplicationService {
+    public func application(_ application: UIApplication, customEvent event: String, with param: [String: Any]) {}
+}
+
+extension ApplicationService {
+    /// window
+    public var window: UIWindow? {
+        // swiftlint:disable:next redundant_nil_coalescing
+        return UIApplication.shared.delegate?.window ?? nil
+    }
+}
+
+extension UIApplication {
+    public var managerDelegate: ApplicationServiceManagerDelegate? {
+        return UIApplication.shared.delegate as? ApplicationServiceManagerDelegate
+    }
+}
+
 // MARK: - AppDelegate继承
 
-open class ApplicationServiceManagerDelegate: UIResponder, UIApplicationDelegate {
+open class ApplicationServiceManagerDelegate: UIResponder, ApplicationService {
     /// 子类需要在构造函数中对其进行赋值
     public var window: UIWindow?
 
@@ -70,13 +83,6 @@ open class ApplicationServiceManagerDelegate: UIResponder, UIApplicationDelegate
             }
         }
         return applicationServiceArr
-    }
-
-    public func getService(by type: ApplicationService.Type) -> ApplicationService? {
-        for service in applicationServices where service.isMember(of: type) {
-            return service
-        }
-        return nil
     }
 
     /// 懒加载获取计算属性services，使其只计算一次
@@ -108,6 +114,14 @@ open class ApplicationServiceManagerDelegate: UIResponder, UIApplicationDelegate
         }
 
         return returns
+    }
+}
+
+extension ApplicationServiceManagerDelegate {
+    public func application(_ application: UIApplication, customEvent event: String, param: [String: Any]) {
+        for service in applicationServices {
+            service.application(application, customEvent: event, with: param)
+        }
     }
 }
 
@@ -464,7 +478,7 @@ extension ApplicationServiceManagerDelegate: UNUserNotificationCenterDelegate {
 // MARK: - RemoteNotification
 
 extension ApplicationServiceManagerDelegate {
-    /// APP获取token回调
+    /// APP获取token回调，返回数据为16进制的Data
     @available(iOS 3.0, *)
     open func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         for service in applicationServices {
@@ -472,7 +486,7 @@ extension ApplicationServiceManagerDelegate {
         }
     }
 
-    /// APP获取token失败回调，返回数据为16进制的Data
+    /// APP获取token失败回调
     @available(iOS 3.0, *)
     open func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         for service in applicationServices {
@@ -492,89 +506,6 @@ extension ApplicationServiceManagerDelegate {
         }, completionHandler: { results in
             let result = results.min { $0.rawValue < $1.rawValue } ?? .noData
             completionHandler(result)
-        })
-    }
-
-    @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotification UNNotification Settings instead")
-    open func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
-        for service in applicationServices {
-            service.application?(application, didRegister: notificationSettings)
-        }
-    }
-
-    @available(iOS, introduced: 3.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenterDelegate willPresentNotification:withCompletionHandler:] or -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:] for user visible notifications and -[UIApplicationDelegate application:didReceiveRemoteNotification:fetchCompletionHandler:] for silent remote notifications")
-    open func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        for service in applicationServices {
-            service.application?(application, didReceiveRemoteNotification: userInfo)
-        }
-    }
-
-    @available(iOS, introduced: 4.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenterDelegate willPresentNotification:withCompletionHandler:] or -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:]")
-    open func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        for service in applicationServices {
-            service.application?(application, didReceive: notification)
-        }
-    }
-
-    @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:]")
-    open func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, for notification: UILocalNotification, completionHandler: @escaping () -> Void) {
-        apply({ service, completion -> Void? in
-            service.application?(
-                application,
-                handleActionWithIdentifier: identifier,
-                for: notification
-            ) {
-                completion(())
-            }
-        }, completionHandler: { _ in
-            completionHandler()
-        })
-    }
-
-    @available(iOS, introduced: 9.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:]")
-    open func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [AnyHashable: Any], withResponseInfo responseInfo: [AnyHashable: Any], completionHandler: @escaping () -> Void) {
-        apply({ service, completionHandler -> Void? in
-            service.application?(
-                application,
-                handleActionWithIdentifier: identifier,
-                forRemoteNotification: userInfo,
-                withResponseInfo: responseInfo
-            ) {
-                completionHandler(())
-            }
-        }, completionHandler: { _ in
-            completionHandler()
-        })
-    }
-
-    @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:]")
-    open func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [AnyHashable: Any], completionHandler: @escaping () -> Void) {
-        apply({ service, completionHandler -> Void? in
-            service.application?(
-                application,
-                handleActionWithIdentifier: identifier,
-                forRemoteNotification: userInfo
-            ) {
-                completionHandler(())
-            }
-        }, completionHandler: { _ in
-            completionHandler()
-        })
-    }
-
-    @available(iOS, introduced: 9.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:]")
-    open func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, for notification: UILocalNotification, withResponseInfo responseInfo: [AnyHashable: Any], completionHandler: @escaping () -> Void) {
-        apply({ service, completionHandler -> Void? in
-            service.application?(
-                application,
-                handleActionWithIdentifier: identifier,
-                for: notification,
-                withResponseInfo: responseInfo
-            ) {
-                completionHandler(())
-            }
-        }, completionHandler: { _ in
-            completionHandler()
         })
     }
 }

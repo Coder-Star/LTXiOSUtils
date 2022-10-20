@@ -1,26 +1,24 @@
 //
-//  AppDelegate.swift
+//  AppConfigApplicationService.swift
 //  LTXiOSUtilsDemo
 //
-//  Created by CoderStar on 2021/8/9.
+//  Created by CoderStar on 2022/10/17.
 //
 
-@_exported import LTXiOSUtils
-import UIKit
+import Foundation
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
-
+class AppConfigApplicationService: NSObject, ApplicationService {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         initConfig()
-
-        window = UIWindow(frame: UIScreen.main.bounds)
 
         let rootViewController = UINavigationController(rootViewController: ViewController())
         window?.rootViewController = rootViewController
 
         window?.makeKeyAndVisible()
+
+        if let delegate = UIApplication.shared.managerDelegate {
+            Log.d(delegate)
+        }
 
         return true
     }
