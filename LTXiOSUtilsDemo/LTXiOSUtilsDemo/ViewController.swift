@@ -10,10 +10,7 @@ import SnapKit
 import UIKit
 import WebKit
 
-@objc
-protocol Info1: AnyObject {}
-
-class ViewController: BaseViewController, Info1 {
+class ViewController: BaseViewController {
     private var demoList: [String: [[String: Any]]] = [
         "UI组件": [
             ["title": "ClickableLabel", "subTitle": "可点击Label", "vc": ClickableLabelDemoViewController.self],

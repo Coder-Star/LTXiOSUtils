@@ -120,7 +120,7 @@ public protocol UserDefaultsProtocol {
 
 extension UserDefaultsProtocol {
     /// 默认userDefaults对象，默认为UserDefaults.standard
-    var userDefaults: UserDefaults {
+    public var userDefaults: UserDefaults {
         return UserDefaults.standard
     }
 
