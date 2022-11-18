@@ -8,6 +8,8 @@
 import Foundation
 
 class AppConfigApplicationService: NSObject, ApplicationService {
+    required public override init() {}
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         initConfig()
 

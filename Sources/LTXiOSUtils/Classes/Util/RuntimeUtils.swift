@@ -107,29 +107,26 @@ extension RuntimeUtils {
     /// - Returns: 类数组
     public static func getAllClasses(confirm baseProtocol: Protocol) -> [AnyClass] {
         var proResult = [AnyClass]()
-
-        let count: Int32 = objc_getClassList(nil, 0)
-
-        guard count > 0 else {
-            return proResult
-        }
-
-        let classes = UnsafeMutablePointer<AnyClass>.allocate(
-            capacity: Int(count)
-        )
-
-        defer {
-            classes.deallocate()
-        }
-
-        let buffer = AutoreleasingUnsafeMutablePointer<AnyClass>(classes)
-        for i in 0 ..< Int(objc_getClassList(buffer, count)) {
-            let someclass: AnyClass = classes[i]
+        for item in allClasses {
             // 这个判断是防止oc调用该方式时出现`methodSignatureForSelector`以及`doesNotRecognizeSelector` does not implement问题
-            if class_getInstanceMethod(someclass, NSSelectorFromString("methodSignatureForSelector:")) != nil,
-               class_getInstanceMethod(someclass, NSSelectorFromString("doesNotRecognizeSelector:")) != nil {
-                if confirm(someclass, confirm: baseProtocol) {
-                    proResult.append(someclass)
+            if class_getInstanceMethod(item, NSSelectorFromString("methodSignatureForSelector:")) != nil,
+               class_getInstanceMethod(item, NSSelectorFromString("doesNotRecognizeSelector:")) != nil {
+                if confirm(item, confirm: baseProtocol) {
+                    proResult.append(item)
+                }
+            }
+        }
+        return proResult
+    }
+
+    public static func getAllClasses<ElementOfResult>(transform: (_ clazz: AnyClass) -> ElementOfResult?) -> [ElementOfResult] {
+        var proResult = [ElementOfResult]()
+        for item in allClasses {
+            // 这个判断是防止oc调用该方式时出现`methodSignatureForSelector`以及`doesNotRecognizeSelector` does not implement问题
+            if class_getInstanceMethod(item, NSSelectorFromString("methodSignatureForSelector:")) != nil,
+               class_getInstanceMethod(item, NSSelectorFromString("doesNotRecognizeSelector:")) != nil {
+                if let result = transform(item) {
+                    proResult.append(result)
                 }
             }
         }

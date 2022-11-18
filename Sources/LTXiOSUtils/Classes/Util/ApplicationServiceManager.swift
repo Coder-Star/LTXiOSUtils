@@ -32,7 +32,11 @@ import UserNotifications
  */
 
 /// 空协议，各组件模块去实现该协议
+
 public protocol ApplicationService: UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    /// 初始化方法，保证初始化
+    init()
+
     /// 自定义事件
     func application(_ application: UIApplication, customEvent event: String, with param: [String: Any])
 }
@@ -58,6 +62,8 @@ extension UIApplication {
 // MARK: - AppDelegate继承
 
 open class ApplicationServiceManagerDelegate: UIResponder, ApplicationService {
+    required public override init() {}
+
     /// 子类需要在构造函数中对其进行赋值
     public var window: UIWindow?
 
