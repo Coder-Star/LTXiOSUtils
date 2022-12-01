@@ -11,6 +11,7 @@ import Foundation
 
 public struct RuntimeUtils {
     /// 获取所有的class
+    /// 只能找到继承于 NSObject 的类
     public static var allClasses: [AnyClass] {
         let numberOfClasses = Int(objc_getClassList(nil, 0))
         if numberOfClasses > 0 {
@@ -108,26 +109,13 @@ extension RuntimeUtils {
     public static func getAllClasses(confirm baseProtocol: Protocol) -> [AnyClass] {
         var proResult = [AnyClass]()
         for item in allClasses {
-            // 这个判断是防止oc调用该方式时出现`methodSignatureForSelector`以及`doesNotRecognizeSelector` does not implement问题
-            if class_getInstanceMethod(item, NSSelectorFromString("methodSignatureForSelector:")) != nil,
-               class_getInstanceMethod(item, NSSelectorFromString("doesNotRecognizeSelector:")) != nil {
-                if confirm(item, confirm: baseProtocol) {
-                    proResult.append(item)
-                }
-            }
-        }
-        return proResult
-    }
+            // 这个判断是防止 oc调用 该方式时出现`methodSignatureForSelector`以及`doesNotRecognizeSelector` does not implement问题
+//            if class_getInstanceMethod(item, NSSelectorFromString("methodSignatureForSelector:")) != nil,
+//               class_getInstanceMethod(item, NSSelectorFromString("doesNotRecognizeSelector:")) != nil {
+//            }
 
-    public static func getAllClasses<ElementOfResult>(transform: (_ clazz: AnyClass) -> ElementOfResult?) -> [ElementOfResult] {
-        var proResult = [ElementOfResult]()
-        for item in allClasses {
-            // 这个判断是防止oc调用该方式时出现`methodSignatureForSelector`以及`doesNotRecognizeSelector` does not implement问题
-            if class_getInstanceMethod(item, NSSelectorFromString("methodSignatureForSelector:")) != nil,
-               class_getInstanceMethod(item, NSSelectorFromString("doesNotRecognizeSelector:")) != nil {
-                if let result = transform(item) {
-                    proResult.append(result)
-                }
+            if confirm(item, confirm: baseProtocol) {
+                proResult.append(item)
             }
         }
         return proResult

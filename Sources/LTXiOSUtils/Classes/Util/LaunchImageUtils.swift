@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LaunchImageUtils {
+public struct LaunchImageUtils {
     public static func clearLaunchScreenCache() {
         let version = 1
         let key = "UpdateLaunchScreen_\(version)"

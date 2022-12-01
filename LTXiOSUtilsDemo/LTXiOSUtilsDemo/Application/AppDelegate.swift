@@ -9,22 +9,23 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: ApplicationServiceManagerDelegate {
-    override var services: [ApplicationService] {
+class AppDelegate: ModuleAppDelegate {
+    override var services: [ModuleService] {
         let filterClasses: [AnyClass] = [
             AppDelegate.self,
-            ApplicationServiceManagerDelegate.self,
+            ModuleAppDelegate.self,
         ]
 
-        let resultClasses: [ApplicationService] = RuntimeUtils.getAllClasses { item in
+        let allClasses = RuntimeUtils.allClasses
+
+        let resultClasses: [ModuleService] = allClasses.compactMap { item in
             if !filterClasses.compactMap({ "\($0)" }).contains("\(item)"),
-               let clazz = item as? ApplicationService.Type {
+               let clazz = item as? ModuleService.Type {
                 return clazz.init()
             } else {
                 return nil
             }
         }
-        print(resultClasses.count)
         return resultClasses
     }
 

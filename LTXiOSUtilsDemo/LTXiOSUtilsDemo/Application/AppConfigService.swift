@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import LTXiOSUtils
 
-class AppConfigApplicationService: NSObject, ApplicationService {
+class AppConfigService: NSObject, ModuleService {
     required public override init() {}
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -21,7 +22,6 @@ class AppConfigApplicationService: NSObject, ApplicationService {
         if let delegate = UIApplication.shared.managerDelegate {
             Log.d(delegate)
         }
-
         return true
     }
 

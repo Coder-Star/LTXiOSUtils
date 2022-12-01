@@ -1,5 +1,5 @@
 //
-//  ApplicationServiceManager.swift
+//  ModuleServiceManager.swift
 //  LTXiOSUtils
 //  AppDelegate解耦
 //  Created by CoderStar on 2020/4/24.
@@ -14,11 +14,11 @@ import UserNotifications
 /*
  示例AppDelegate
  @UIApplicationMain
- class AppDelegate: ApplicationServiceManagerDelegate {
+ class AppDelegate: ModuleAppDelegate {
 
-     override var services: [ApplicationService] {
-         return [AppConfigApplicationService(),
-                 AppThemeApplicationService(),
+     override var services: [ModuleService] {
+         return [AppConfigModuleService(),
+                 AppThemeModuleService(),
          ]
      }
 
@@ -33,7 +33,7 @@ import UserNotifications
 
 /// 空协议，各组件模块去实现该协议
 
-public protocol ApplicationService: UIApplicationDelegate, UNUserNotificationCenterDelegate {
+public protocol ModuleService: UIApplicationDelegate, UNUserNotificationCenterDelegate {
     /// 初始化方法，保证初始化
     init()
 
@@ -41,11 +41,11 @@ public protocol ApplicationService: UIApplicationDelegate, UNUserNotificationCen
     func application(_ application: UIApplication, customEvent event: String, with param: [String: Any])
 }
 
-extension ApplicationService {
+extension ModuleService {
     public func application(_ application: UIApplication, customEvent event: String, with param: [String: Any]) {}
 }
 
-extension ApplicationService {
+extension ModuleService {
     /// window
     public var window: UIWindow? {
         // swiftlint:disable:next redundant_nil_coalescing
@@ -54,55 +54,55 @@ extension ApplicationService {
 }
 
 extension UIApplication {
-    public var managerDelegate: ApplicationServiceManagerDelegate? {
-        return UIApplication.shared.delegate as? ApplicationServiceManagerDelegate
+    public var managerDelegate: ModuleAppDelegate? {
+        return UIApplication.shared.delegate as? ModuleAppDelegate
     }
 }
 
 // MARK: - AppDelegate继承
 
-open class ApplicationServiceManagerDelegate: UIResponder, ApplicationService {
+open class ModuleAppDelegate: UIResponder, ModuleService {
     required public override init() {}
 
     /// 子类需要在构造函数中对其进行赋值
     public var window: UIWindow?
 
-    /// 交由子类去重写，返回含有各模块实现ApplicationService的类名称的plist文件地址
+    /// 交由子类去重写，返回含有各模块实现ModuleService的类名称的plist文件地址
     /// plist文件需要是NSArray类型
     open var plistPath: String? { return nil }
 
-    /// 交由子类去重写，返回各模块实现ApplicationService的类
-    open var services: [ApplicationService] {
+    /// 交由子类去重写，返回各模块实现ModuleService的类
+    open var services: [ModuleService] {
         guard let path = plistPath else {
             return []
         }
-        guard let applicationServiceNameArr = NSArray(contentsOfFile: path) else {
+        guard let ModuleServiceNameArr = NSArray(contentsOfFile: path) else {
             return []
         }
-        var applicationServiceArr = [ApplicationService]()
-        for applicationServiceName in applicationServiceNameArr {
-            if let applicationServiceNameStr = applicationServiceName as? String, let applicationService = NSClassFromString(applicationServiceNameStr), let module = applicationService as? NSObject.Type {
+        var ModuleServiceArr = [ModuleService]()
+        for ModuleServiceName in ModuleServiceNameArr {
+            if let ModuleServiceNameStr = ModuleServiceName as? String, let ModuleService = NSClassFromString(ModuleServiceNameStr), let module = ModuleService as? NSObject.Type {
                 let service = module.init()
-                if let result = service as? ApplicationService {
-                    applicationServiceArr.append(result)
+                if let result = service as? ModuleService {
+                    ModuleServiceArr.append(result)
                 }
             }
         }
-        return applicationServiceArr
+        return ModuleServiceArr
     }
 
     /// 懒加载获取计算属性services，使其只计算一次
-    private lazy var applicationServices: [ApplicationService] = {
+    private lazy var ModuleServices: [ModuleService] = {
         self.services
     }()
 
     @discardableResult
-    private func apply<T, S>(_ work: (ApplicationService, @escaping (T) -> Void) -> S?, completionHandler: @escaping ([T]) -> Void) -> [S] {
+    private func apply<T, S>(_ work: (ModuleService, @escaping (T) -> Void) -> S?, completionHandler: @escaping ([T]) -> Void) -> [S] {
         let dispatchGroup = DispatchGroup()
         var results: [T] = []
         var returns: [S] = []
 
-        for service in applicationServices {
+        for service in ModuleServices {
             dispatchGroup.enter()
             let returned = work(service) { result in
                 results.append(result)
@@ -123,9 +123,9 @@ open class ApplicationServiceManagerDelegate: UIResponder, ApplicationService {
     }
 }
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     public func application(_ application: UIApplication, customEvent event: String, param: [String: Any]) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application(application, customEvent: event, with: param)
         }
     }
@@ -137,12 +137,12 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - AppInitializing APP启动时回调
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     /// 进程启动还未进入状态保存
     @available(iOS 6.0, *)
     open func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         var result = false
-        for service in applicationServices {
+        for service in ModuleServices {
             if service.application?(application, willFinishLaunchingWithOptions: launchOptions) ?? false {
                 result = true
             }
@@ -154,7 +154,7 @@ extension ApplicationServiceManagerDelegate {
     @available(iOS 3.0, *)
     open func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         var result = false
-        for service in applicationServices {
+        for service in ModuleServices {
             if service.application?(application, didFinishLaunchingWithOptions: launchOptions) ?? false {
                 result = true
             }
@@ -165,17 +165,17 @@ extension ApplicationServiceManagerDelegate {
     /// 程序载入后执行
     @available(iOS 2.0, *)
     open func applicationDidFinishLaunching(_ application: UIApplication) {
-        applicationServices.forEach { $0.applicationDidFinishLaunching?(application) }
+        ModuleServices.forEach { $0.applicationDidFinishLaunching?(application) }
     }
 }
 
 // MARK: - AppStateAndSystemEvents，APP生命周期
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     /// APP在前台
     @available(iOS 2.0, *)
     open func applicationDidBecomeActive(_ application: UIApplication) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.applicationDidBecomeActive?(application)
         }
     }
@@ -183,7 +183,7 @@ extension ApplicationServiceManagerDelegate {
     /// APP即将从前台切换到后台，在此期间，APP不接收消息及事件，比如来电话时
     @available(iOS 2.0, *)
     open func applicationWillResignActive(_ application: UIApplication) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.applicationWillResignActive?(application)
         }
     }
@@ -191,7 +191,7 @@ extension ApplicationServiceManagerDelegate {
     /// APP进入后台
     @available(iOS 4.0, *)
     open func applicationDidEnterBackground(_ application: UIApplication) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.applicationDidEnterBackground?(application)
         }
     }
@@ -199,7 +199,7 @@ extension ApplicationServiceManagerDelegate {
     /// APP即将从后台进入前台
     @available(iOS 4.0, *)
     open func applicationWillEnterForeground(_ application: UIApplication) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.applicationWillEnterForeground?(application)
         }
     }
@@ -207,7 +207,7 @@ extension ApplicationServiceManagerDelegate {
     /// APP即将退出，用于保存数据以及推出前的清理工作
     @available(iOS 2.0, *)
     open func applicationWillTerminate(_ application: UIApplication) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.applicationWillTerminate?(application)
         }
     }
@@ -215,7 +215,7 @@ extension ApplicationServiceManagerDelegate {
     /// APP即将锁屏
     @available(iOS 4.0, *)
     open func applicationProtectedDataWillBecomeUnavailable(_ application: UIApplication) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.applicationProtectedDataWillBecomeUnavailable?(application)
         }
     }
@@ -223,7 +223,7 @@ extension ApplicationServiceManagerDelegate {
     /// APP已经锁屏
     @available(iOS 4.0, *)
     open func applicationProtectedDataDidBecomeAvailable(_ application: UIApplication) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.applicationProtectedDataDidBecomeAvailable?(application)
         }
     }
@@ -231,7 +231,7 @@ extension ApplicationServiceManagerDelegate {
     /// APP内存警告
     @available(iOS 2.0, *)
     open func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.applicationDidReceiveMemoryWarning?(application)
         }
     }
@@ -239,7 +239,7 @@ extension ApplicationServiceManagerDelegate {
     /// 手动改变手机的系统日期与时间以及切换24小时、12小时制的时候也会触发该回调
     @available(iOS 2.0, *)
     open func applicationSignificantTimeChange(_ application: UIApplication) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.applicationSignificantTimeChange?(application)
         }
     }
@@ -247,11 +247,11 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - AppStateRestoration，APP数据状态保存
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     @available(iOS 6.0, *)
     open func application(_ application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
         var result = false
-        for service in applicationServices {
+        for service in ModuleServices {
             if service.application?(application, shouldSaveApplicationState: coder) ?? false {
                 result = true
             }
@@ -262,7 +262,7 @@ extension ApplicationServiceManagerDelegate {
     @available(iOS 6.0, *)
     open func application(_ application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
         var result = false
-        for service in applicationServices {
+        for service in ModuleServices {
             if service.application?(application, shouldRestoreApplicationState: coder) ?? false {
                 result = true
             }
@@ -272,7 +272,7 @@ extension ApplicationServiceManagerDelegate {
 
     @available(iOS 6.0, *)
     open func application(_ application: UIApplication, viewControllerWithRestorationIdentifierPath identifierComponents: [String], coder: NSCoder) -> UIViewController? {
-        for service in applicationServices {
+        for service in ModuleServices {
             if let viewController = service.application?(application, viewControllerWithRestorationIdentifierPath: identifierComponents, coder: coder) {
                 return viewController
             }
@@ -283,14 +283,14 @@ extension ApplicationServiceManagerDelegate {
 
     @available(iOS 6.0, *)
     open func application(_ application: UIApplication, willEncodeRestorableStateWith coder: NSCoder) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, willEncodeRestorableStateWith: coder)
         }
     }
 
     @available(iOS 6.0, *)
     open func application(_ application: UIApplication, didDecodeRestorableStateWith coder: NSCoder) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, didDecodeRestorableStateWith: coder)
         }
     }
@@ -298,10 +298,10 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - CloudKitHandling
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     @available(iOS 10.0, *)
     open func application(_ application: UIApplication, userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShare.Metadata) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, userDidAcceptCloudKitShareWith: cloudKitShareMetadata)
         }
     }
@@ -309,11 +309,11 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - Continuing
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     @available(iOS 8.0, *)
     open func application(_ application: UIApplication, willContinueUserActivityWithType userActivityType: String) -> Bool {
         var result = false
-        for service in applicationServices {
+        for service in ModuleServices {
             if service.application?(application, willContinueUserActivityWithType: userActivityType) ?? false {
                 result = true
             }
@@ -336,14 +336,14 @@ extension ApplicationServiceManagerDelegate {
 
     @available(iOS 8.0, *)
     open func application(_ application: UIApplication, didUpdate userActivity: NSUserActivity) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, didUpdate: userActivity)
         }
     }
 
     @available(iOS 8.0, *)
     open func application(_ application: UIApplication, didFailToContinueUserActivityWithType userActivityType: String, error: Error) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, didFailToContinueUserActivityWithType: userActivityType, error: error)
         }
     }
@@ -351,7 +351,7 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - DownloadingData
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     // 开启Background Fetch后台模式后的回调
     // 如果实现了该方法，但没有开启Background Fetch后台模式则会出现警告信息
     @available(iOS 7.0, *)
@@ -381,12 +381,12 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - ExtensionTypes
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     /// 是否允许第三方键盘
     @available(iOS 8.0, *)
     open func application(_ application: UIApplication, shouldAllowExtensionPointIdentifier extensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool {
         var result = false
-        for service in applicationServices {
+        for service in ModuleServices {
             if service.application?(application, shouldAllowExtensionPointIdentifier: extensionPointIdentifier) ?? true {
                 result = true
             }
@@ -397,7 +397,7 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - HandlingActions
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     /// 3D touch点击回调
     @available(iOS 9.0, *)
     open func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
@@ -413,10 +413,10 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - HealthKitInteracting
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     @available(iOS 9.0, *)
     open func applicationShouldRequestHealthAuthorization(_ application: UIApplication) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.applicationShouldRequestHealthAuthorization?(application)
         }
     }
@@ -424,31 +424,31 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - InterfaceGeometry，APP屏幕转换
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     @available(iOS 2.0, *)
     open func application(_ application: UIApplication, willChangeStatusBarOrientation newStatusBarOrientation: UIInterfaceOrientation, duration: TimeInterval) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, willChangeStatusBarOrientation: newStatusBarOrientation, duration: duration)
         }
     }
 
     @available(iOS 2.0, *)
     open func application(_ application: UIApplication, didChangeStatusBarOrientation oldStatusBarOrientation: UIInterfaceOrientation) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, didChangeStatusBarOrientation: oldStatusBarOrientation)
         }
     }
 
     @available(iOS 2.0, *)
     open func application(_ application: UIApplication, willChangeStatusBarFrame newStatusBarFrame: CGRect) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, willChangeStatusBarFrame: newStatusBarFrame)
         }
     }
 
     @available(iOS 2.0, *)
     open func application(_ application: UIApplication, didChangeStatusBarFrame oldStatusBarFrame: CGRect) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, didChangeStatusBarFrame: oldStatusBarFrame)
         }
     }
@@ -456,11 +456,11 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - UNUserNotification，推送通知相关
 
-extension ApplicationServiceManagerDelegate: UNUserNotificationCenterDelegate {
+extension ModuleAppDelegate: UNUserNotificationCenterDelegate {
     /// 后台发送通知时，APP处于前台时会回调该方法
     @available(iOS 10.0, *)
     public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.userNotificationCenter?(center, willPresent: notification, withCompletionHandler: completionHandler)
         }
     }
@@ -468,14 +468,14 @@ extension ApplicationServiceManagerDelegate: UNUserNotificationCenterDelegate {
     /// 点击推送横幅时，启动APP并回调该方法
     @available(iOS 10.0, *)
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.userNotificationCenter?(center, didReceive: response, withCompletionHandler: completionHandler)
         }
     }
 
     @available(iOS 12.0, *)
     public func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.userNotificationCenter?(center, openSettingsFor: notification)
         }
     }
@@ -483,11 +483,11 @@ extension ApplicationServiceManagerDelegate: UNUserNotificationCenterDelegate {
 
 // MARK: - RemoteNotification
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     /// APP获取token回调，返回数据为16进制的Data
     @available(iOS 3.0, *)
     open func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
         }
     }
@@ -495,7 +495,7 @@ extension ApplicationServiceManagerDelegate {
     /// APP获取token失败回调
     @available(iOS 3.0, *)
     open func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, didFailToRegisterForRemoteNotificationsWithError: error)
         }
     }
@@ -518,7 +518,7 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - SiriKitHandling
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     @available(iOS 11.0, *)
     open func application(_ application: UIApplication, handle intent: INIntent, completionHandler: @escaping (INIntentResponse) -> Void) {
         apply({ service, completionHandler -> Void? in
@@ -532,11 +532,11 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - URLOpening，外部调用URL打开此应用
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     @available(iOS 9.0, *)
     open func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         var result = false
-        for service in applicationServices {
+        for service in ModuleServices {
             if service.application?(app, open: url, options: options) ?? false {
                 result = true
             }
@@ -547,10 +547,10 @@ extension ApplicationServiceManagerDelegate {
 
 // MARK: - WatchKitInteracting
 
-extension ApplicationServiceManagerDelegate {
+extension ModuleAppDelegate {
     @available(iOS 8.2, *)
     open func application(_ application: UIApplication, handleWatchKitExtensionRequest userInfo: [AnyHashable: Any]?, reply: @escaping ([AnyHashable: Any]?) -> Void) {
-        for service in applicationServices {
+        for service in ModuleServices {
             service.application?(application, handleWatchKitExtensionRequest: userInfo, reply: reply)
         }
         apply({ service, reply -> Void? in

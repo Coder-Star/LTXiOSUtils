@@ -8,36 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		2D12FB4E28A746F6002BEE4B /* ClickableLabelDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12FB4D28A746F6002BEE4B /* ClickableLabelDemoViewController.swift */; };
-		2D235D0D28FD85820098488B /* AppConfigApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D235D0C28FD85820098488B /* AppConfigApplicationService.swift */; };
+		2D235D0D28FD85820098488B /* AppConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D235D0C28FD85820098488B /* AppConfigService.swift */; };
 		2D65D3C926CF6B9E007D0254 /* LibExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D65D3C826CF6B9E007D0254 /* LibExport.swift */; };
 		2D717B5526C1664000483384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5426C1664000483384 /* AppDelegate.swift */; };
 		2D717B5926C1664000483384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D717B5826C1664000483384 /* ViewController.swift */; };
 		2D717B5E26C1664A00483384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D717B5D26C1664A00483384 /* Assets.xcassets */; };
-		2D885B5D28E0284300F1608F /* LockUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D885B5C28E0284300F1608F /* LockUtils.swift */; };
 		2D9454D227CFCB7200D71BD3 /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9454D127CFCB7200D71BD3 /* PropertyWrapper.swift */; };
 		2DAA827327E4A50100CB7F03 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA827227E4A50100CB7F03 /* BaseViewController.swift */; };
 		2DBB624E26E333B700C87475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */; };
-		2DC6F52928E335C200834B6B /* LaunchImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F52828E335C200834B6B /* LaunchImageUtils.swift */; };
-		2DE71EBC27ABC81300309E24 /* SwiftDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE71EBB27ABC81300309E24 /* SwiftDemangle.swift */; };
 		E20E5B4C55138D74098C5F20 /* libPods-LTXiOSUtilsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26706580C142E61B3680F4B8 /* libPods-LTXiOSUtilsDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		26706580C142E61B3680F4B8 /* libPods-LTXiOSUtilsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTXiOSUtilsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D12FB4D28A746F6002BEE4B /* ClickableLabelDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableLabelDemoViewController.swift; sourceTree = "<group>"; };
-		2D235D0C28FD85820098488B /* AppConfigApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigApplicationService.swift; sourceTree = "<group>"; };
+		2D235D0C28FD85820098488B /* AppConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigService.swift; sourceTree = "<group>"; };
 		2D65D3C826CF6B9E007D0254 /* LibExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibExport.swift; sourceTree = "<group>"; };
 		2D717B5126C1664000483384 /* LTXiOSUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTXiOSUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D717B5426C1664000483384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D717B5826C1664000483384 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D717B5D26C1664A00483384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D717B6226C1664A00483384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D885B5C28E0284300F1608F /* LockUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockUtils.swift; sourceTree = "<group>"; };
 		2D9454D127CFCB7200D71BD3 /* PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapper.swift; sourceTree = "<group>"; };
 		2DAA827227E4A50100CB7F03 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2DBB624D26E333B700C87475 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2DC6F52828E335C200834B6B /* LaunchImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchImageUtils.swift; sourceTree = "<group>"; };
-		2DE71EBB27ABC81300309E24 /* SwiftDemangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemangle.swift; sourceTree = "<group>"; };
 		50BEB760F2BA6CF4047B54ED /* Pods-LTXiOSUtilsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.debug.xcconfig"; path = "Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6087D293740FC52D9A19863D /* Pods-LTXiOSUtilsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTXiOSUtilsDemo.release.xcconfig"; path = "Target Support Files/Pods-LTXiOSUtilsDemo/Pods-LTXiOSUtilsDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,21 +64,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		2D12FB4C28A746CD002BEE4B /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				2DE71EBB27ABC81300309E24 /* SwiftDemangle.swift */,
-				2D885B5C28E0284300F1608F /* LockUtils.swift */,
-				2DC6F52828E335C200834B6B /* LaunchImageUtils.swift */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
 		2D235D0E28FD85880098488B /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				2D717B5426C1664000483384 /* AppDelegate.swift */,
-				2D235D0C28FD85820098488B /* AppConfigApplicationService.swift */,
+				2D235D0C28FD85820098488B /* AppConfigService.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -111,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				2D235D0E28FD85880098488B /* Application */,
-				2D12FB4C28A746CD002BEE4B /* Util */,
 				2D9454E427D23C6C00D71BD3 /* Demo */,
 				2D9454D027CFCB5D00D71BD3 /* Model */,
 				2DBB625026E333E800C87475 /* Resources */,
@@ -330,15 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DE71EBC27ABC81300309E24 /* SwiftDemangle.swift in Sources */,
 				2D9454D227CFCB7200D71BD3 /* PropertyWrapper.swift in Sources */,
 				2D717B5926C1664000483384 /* ViewController.swift in Sources */,
 				2DAA827327E4A50100CB7F03 /* BaseViewController.swift in Sources */,
-				2D885B5D28E0284300F1608F /* LockUtils.swift in Sources */,
-				2DC6F52928E335C200834B6B /* LaunchImageUtils.swift in Sources */,
 				2D717B5526C1664000483384 /* AppDelegate.swift in Sources */,
 				2D65D3C926CF6B9E007D0254 /* LibExport.swift in Sources */,
-				2D235D0D28FD85820098488B /* AppConfigApplicationService.swift in Sources */,
+				2D235D0D28FD85820098488B /* AppConfigService.swift in Sources */,
 				2D12FB4E28A746F6002BEE4B /* ClickableLabelDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

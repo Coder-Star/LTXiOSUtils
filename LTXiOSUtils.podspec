@@ -57,7 +57,7 @@ Pod::Spec.new do |s|
 
   # 工具类
   s.subspec 'Util' do |util|
-    util.source_files = 'Sources/LTXiOSUtils/Classes/Util/**/*.swift'
+    util.source_files = 'Sources/LTXiOSUtils/Classes/Util/**/*'
     util.subspec 'Log' do |log|
       log.source_files = 'Sources/LTXiOSUtils/Classes/Util/Log/*.swift'
     end
