@@ -153,6 +153,13 @@ extension UIView {
         var topRight: CGFloat = 0
         var bottomLeft: CGFloat = 0
         var bottomRight: CGFloat = 0
+        
+        public init(topLeft: CGFloat, topRight: CGFloat, bottomLeft: CGFloat, bottomRight: CGFloat) {
+            self.topLeft = topLeft
+            self.topRight = topRight
+            self.bottomLeft = bottomLeft
+            self.bottomRight = bottomRight
+        }
     }
 
     /// 切圆角函数绘制线条
