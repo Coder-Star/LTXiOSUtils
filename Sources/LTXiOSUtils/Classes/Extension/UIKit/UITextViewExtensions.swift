@@ -249,7 +249,7 @@ extension UITextView {
             let size = placeholderLabel!.sizeThatFits(CGSize(width: width, height: .zero))
             placeholderLabel!.frame = CGRect(x: textContainer.lineFragmentPadding,
                                              y: textContainerInset.top,
-                                             width: size.width,
+                                             width: size.width - contentInset.left - contentInset.right,
                                              height: size.height)
         }
 
