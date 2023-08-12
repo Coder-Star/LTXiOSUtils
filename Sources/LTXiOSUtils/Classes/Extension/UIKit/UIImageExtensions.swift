@@ -104,6 +104,67 @@ extension TxExtensionWrapper where Base: UIImage {
         return reSizeImage
     }
 
+    /// 设置图片尺寸
+    /// 宽度固定，高度按照原始尺寸
+    /// - Parameter width: 宽度
+    /// - Parameter scale: 放大倍数，0表示使用当前屏幕像素
+    /// - Returns: 处理好的图片
+    public func resize(width: CGFloat, scale: CGFloat = 0) -> UIImage {
+        var result: UIImage?
+        let size = base.size
+        if width != size.width, size.width != 0 {
+            let height = width / size.width * size.height
+            UIGraphicsBeginImageContextWithOptions(CGSize(width: Int(width), height: Int(height)), false, scale)
+            base.draw(in: CGRect(x: 0, y: 0, width: Int(width), height: Int(height)))
+            result = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+        }
+        return result ?? UIImage()
+    }
+
+    /// 设置图片尺寸
+    /// 高度固定，宽度按照原始比例
+    /// - Parameter height: 高度
+    /// - Parameter scale: 放大倍数，0表示使用当前屏幕像素
+    /// - Returns: 处理好的图片
+    public func resize(height: CGFloat, scale: CGFloat = 0) -> UIImage {
+        var result: UIImage?
+        let size = base.size
+        if height != size.height, size.height != 0 {
+            let width = height / size.height * size.width
+            UIGraphicsBeginImageContextWithOptions(CGSize(width: Int(width), height: Int(height)), false, scale)
+            base.draw(in: CGRect(x: 0, y: 0, width: Int(width), height: Int(height)))
+            result = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+        }
+        return result ?? UIImage()
+    }
+
+    /// 压缩到指定尺寸以下
+    /// - Parameter toBytes: 字节数
+    /// - Returns: 压缩后的data，如果压缩失败或者压缩到最小压缩率还不到要求，则返回nil
+    func compressOriginalImage(toBytes: Int) -> Data? {
+        var compression: CGFloat = 1
+        let minCompression: CGFloat = 0.1
+        guard var imageData = base.jpegData(compressionQuality: compression) else {
+            return nil
+        }
+        if imageData.count < toBytes {
+            return imageData
+        }
+        while imageData.count > toBytes, compression > minCompression {
+            compression -= 0.1
+            guard let tempData = base.jpegData(compressionQuality: compression) else {
+                return nil
+            }
+            imageData = tempData
+        }
+        if imageData.count > toBytes {
+            return nil
+        }
+        return imageData
+    }
+
     /// 图片旋转
     ///
     /// - Parameter orientation: 旋转方向
