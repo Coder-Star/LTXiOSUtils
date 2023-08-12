@@ -240,16 +240,16 @@ extension UITextView {
         if limitLength > 0, wordCountLabel != nil {
             wordCountLabel!.frame = CGRect(x: 0,
                                            y: bounds.height - UITextView.wordCountLabelHeight + contentOffset.y,
-                                           width: bounds.width - textContainer.lineFragmentPadding,
+                                           width: bounds.width - textContainer.lineFragmentPadding - contentInset.right,
                                            height: UITextView.wordCountLabelHeight)
         }
 
         if !placeholder.isEmpty, placeholderLabel != nil {
-            let width = bounds.width - textContainer.lineFragmentPadding * 2
+            let width = bounds.width - textContainer.lineFragmentPadding * 2 - contentInset.left - contentInset.right
             let size = placeholderLabel!.sizeThatFits(CGSize(width: width, height: .zero))
             placeholderLabel!.frame = CGRect(x: textContainer.lineFragmentPadding,
                                              y: textContainerInset.top,
-                                             width: size.width - contentInset.left - contentInset.right,
+                                             width: size.width,
                                              height: size.height)
         }
 
