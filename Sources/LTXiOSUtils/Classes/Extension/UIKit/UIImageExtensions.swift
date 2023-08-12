@@ -143,7 +143,7 @@ extension TxExtensionWrapper where Base: UIImage {
     /// 压缩到指定尺寸以下
     /// - Parameter toBytes: 字节数
     /// - Returns: 压缩后的data，如果压缩失败或者压缩到最小压缩率还不到要求，则返回nil
-    func compressOriginalImage(toBytes: Int) -> Data? {
+    public func compressOriginalImage(toBytes: Int) -> Data? {
         var compression: CGFloat = 1
         let minCompression: CGFloat = 0.1
         guard var imageData = base.jpegData(compressionQuality: compression) else {
