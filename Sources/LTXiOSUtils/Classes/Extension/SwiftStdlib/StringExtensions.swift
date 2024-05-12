@@ -64,8 +64,8 @@ extension TxExtensionWrapper where Base == String {
     ///
     /// - Parameter dateType: 日期类型
     /// - Returns: 日期
-    public func toDate(dateType: DateFormateType) -> Date? {
-        return toDate(dateTypeStr: dateType.rawValue)
+    public func toDate(dateType: DateFormateType, timeZone: TimeZone = TimeZone.current) -> Date? {
+        return toDate(dateTypeStr: dateType.rawValue, timeZone: timeZone)
     }
 
     /// 时间转日期
