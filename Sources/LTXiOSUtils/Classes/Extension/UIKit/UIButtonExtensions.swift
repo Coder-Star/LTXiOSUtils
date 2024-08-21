@@ -127,7 +127,7 @@ extension UIButton {
         }
         // 保证方法只交换一次
         DispatchQueue.tx.once(token: "AssociatedKeysWithUIButtonRepeatClick") {
-            let originalSelector = #selector(UIButton.sendAction)
+            let originalSelector = #selector(UIButton.sendAction(_:to:for:))
             let swizzledSelector = #selector(UIButton.sendActionWithRepeatClick(action:to:forEvent:))
 
             // 原有方法，通过方法编号找到方法
