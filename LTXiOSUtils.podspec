@@ -14,10 +14,8 @@ Pod::Spec.new do |s|
   s.swift_version = ["5","4.2"]
   #  s.static_framework  =  true
 
-  # 模块化，假如组件中有OC代码，需要模块化，就需要进行开启，并且配合public_header_files使用，其中public_header_files加入的.h文件会反映到umbrella.h文件中去，如果自己创建framework，就需要自己创建umbrella.h文件，将自己想要保留的oc .h文件加入进去
   s.pod_target_xcconfig = {
-    'DEFINES_MODULE' => 'YES',
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+    'DEFINES_MODULE' => 'YES'
   }
 
   s.subspec 'Extension' do |extension|
