@@ -40,17 +40,28 @@ open class CSPaddingLabel: UILabel {
         }
     }
 
-    open override func drawText(in rect: CGRect) {
-        let insets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
-        super.drawText(in: rect.inset(by: insets))
+    override open func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
+        let insetRect = bounds.inset(by: edgeInsets)
+        let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
+        let invertedInsets = UIEdgeInsets(
+            top: -edgeInsets.top,
+            left: -edgeInsets.left,
+            bottom: -edgeInsets.bottom,
+            right: -edgeInsets.right
+        )
+        return textRect.inset(by: invertedInsets)
     }
 
-    open override var intrinsicContentSize: CGSize {
+    override open func drawText(in rect: CGRect) {
+        super.drawText(in: rect.inset(by: edgeInsets))
+    }
+
+    override open var intrinsicContentSize: CGSize {
         let size = super.intrinsicContentSize
         return CGSize(width: size.width + leftInset + rightInset, height: size.height + topInset + bottomInset)
     }
 
-    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+    override open func sizeThatFits(_ size: CGSize) -> CGSize {
         let size = super.sizeThatFits(size)
         return CGSize(width: size.width + leftInset + rightInset, height: size.height + topInset + bottomInset)
     }
