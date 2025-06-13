@@ -13,6 +13,24 @@ extension String: TxExtensionWrapperCompatibleValue {}
 // MARK: - 字符串截取
 
 extension TxExtensionWrapper where Base == String {
+
+    /// 删除指定前缀
+    /// - Parameter prefix: 前缀
+    /// - Returns: 删除后的字符串
+    private func deletingPrefix(_ prefix: String) -> String {
+        guard base.hasPrefix(prefix) else { return base }
+        return String(base.dropFirst(prefix.count))
+    }
+    
+    
+    /// 删除指定后缀
+    /// - Parameter suffix: 后缀
+    /// - Returns: 删除后的字符串
+    func deletingSuffix(_ suffix: String) -> String {
+        guard base.hasSuffix(suffix) else { return base }
+        return String(base.dropLast(suffix.count))
+    }
+    
     /// 截取字符串前指定位，异常情况返回原字符串
     ///
     /// - Parameter count: 位数值
