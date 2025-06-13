@@ -17,7 +17,7 @@ extension TxExtensionWrapper where Base == String {
     /// 删除指定前缀
     /// - Parameter prefix: 前缀
     /// - Returns: 删除后的字符串
-    private func deletingPrefix(_ prefix: String) -> String {
+    public func deletingPrefix(_ prefix: String) -> String {
         guard base.hasPrefix(prefix) else { return base }
         return String(base.dropFirst(prefix.count))
     }
@@ -26,7 +26,7 @@ extension TxExtensionWrapper where Base == String {
     /// 删除指定后缀
     /// - Parameter suffix: 后缀
     /// - Returns: 删除后的字符串
-    func deletingSuffix(_ suffix: String) -> String {
+    public func deletingSuffix(_ suffix: String) -> String {
         guard base.hasSuffix(suffix) else { return base }
         return String(base.dropLast(suffix.count))
     }
