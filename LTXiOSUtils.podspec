@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 #  s.source       = { :git => 'local', :tag => s.version} # 本地开发，local是随便起的名字
 
   s.requires_arc = true
-  s.swift_version = ["5","4.2"]
+  s.swift_version = '5.0'
   #  s.static_framework  =  true
 
   s.pod_target_xcconfig = {
@@ -19,38 +19,7 @@ Pod::Spec.new do |s|
   }
 
   s.subspec 'Extension' do |extension|
-    extension.source_files = 'Sources/LTXiOSUtils/Classes/Extension/*.swift'
-
-    extension.subspec 'Core' do |core|
-      core.source_files = 'Sources/LTXiOSUtils/Classes/Extension/Core/*.swift'
-    end
-
-    extension.subspec 'SwiftStdlib' do |swift|
-      swift.dependency "LTXiOSUtils/Extension/Core"
-      swift.source_files = 'Sources/LTXiOSUtils/Classes/Extension/SwiftStdlib/*.swift'
-    end
-
-    extension.subspec 'Foundation' do |foundation|
-      foundation.dependency "LTXiOSUtils/Extension/Core"
-      foundation.source_files = 'Sources/LTXiOSUtils/Classes/Extension/Foundation/*.swift'
-    end
-
-
-    extension.subspec 'UIKit' do |uiKit|
-      uiKit.dependency "LTXiOSUtils/Extension/Core"
-      uiKit.source_files = 'Sources/LTXiOSUtils/Classes/Extension/UIKit/*.swift'
-    end
-
-    extension.subspec 'WebKit' do |webKit|
-      webKit.dependency "LTXiOSUtils/Extension/Core"
-      webKit.source_files = 'Sources/LTXiOSUtils/Classes/Extension/WebKit/*.swift'
-    end
-
-    extension.subspec 'Dispatch' do |dispatch|
-      dispatch.dependency "LTXiOSUtils/Extension/Core"
-      dispatch.source_files = 'Sources/LTXiOSUtils/Classes/Extension/Dispatch/*.swift'
-    end
-
+    extension.source_files = 'Sources/LTXiOSUtils/Classes/Extension/**/*.swift'
   end
 
   # 工具类
@@ -68,6 +37,7 @@ Pod::Spec.new do |s|
 
   # UI组件
   s.subspec 'Component' do |component|
+    component.dependency "LTXiOSUtils/Extension"
     component.source_files = 'Sources/LTXiOSUtils/Classes/Component/**/*.swift'
 
     component.subspec 'Resources' do |resources|
