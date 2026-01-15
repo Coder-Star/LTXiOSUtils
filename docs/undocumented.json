@@ -1,1727 +1,2070 @@
 {
   "warnings": [
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/BadgeView/BadgeControl.swift",
-      "line": 24,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/BadgeView/BadgeControl.swift",
+      "line": 20,
       "symbol": "BadgeControl",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/BadgeView/BadgeControl.swift",
-      "line": 38,
-      "symbol": "BadgeControl.default()",
-      "symbol_kind": "source.lang.swift.decl.function.method.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/BadgeView/BadgeControl.swift",
-      "line": 42,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/BadgeView/BadgeControl.swift",
+      "line": 91,
       "symbol": "BadgeControl.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/BadgeView/BadgeControl.swift",
-      "line": 47,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/BadgeView/BadgeControl.swift",
+      "line": 96,
       "symbol": "BadgeControl.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/BadgeView/BadgeControl.swift",
-      "line": 92,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/BadgeView/BadgeControl.swift",
+      "line": 101,
       "symbol": "BadgeControl.backgroundColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/BadgeView/UIView+BadgeView.swift",
+      "line": 25,
+      "symbol": "TxExtensionWrapper.set(type:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
       "line": 19,
       "symbol": "CSPaddingLabel.topInset",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
       "line": 22,
       "symbol": "CSPaddingLabel.bottomInset",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
       "line": 25,
       "symbol": "CSPaddingLabel.leftInset",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
       "line": 28,
       "symbol": "CSPaddingLabel.rightInset",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
       "line": 31,
       "symbol": "CSPaddingLabel.edgeInsets",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
       "line": 43,
       "symbol": "CSPaddingLabel.drawText(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
-      "line": 48,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
+      "line": 47,
       "symbol": "CSPaddingLabel.intrinsicContentSize",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
-      "line": 53,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CSPaddingLabel.swift",
+      "line": 52,
       "symbol": "CSPaddingLabel.sizeThatFits(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/Checkbox.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/Checkbox.swift",
       "line": 11,
       "symbol": "Checkbox",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/Checkbox.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/Checkbox.swift",
       "line": 66,
       "symbol": "Checkbox.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/Checkbox.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/Checkbox.swift",
       "line": 71,
       "symbol": "Checkbox.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/Checkbox.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/Checkbox.swift",
       "line": 91,
       "symbol": "Checkbox.draw(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/Checkbox.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/Checkbox.swift",
       "line": 230,
       "symbol": "Checkbox.point(inside:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CommonShowTextView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 10,
+      "symbol": "ClickableLabelDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 17,
+      "symbol": "ClickableLabel",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 24,
+      "symbol": "ClickableLabel.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 51,
+      "symbol": "ClickableLabel.text",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 57,
+      "symbol": "ClickableLabel.attributedText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 63,
+      "symbol": "ClickableLabel.font",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 69,
+      "symbol": "ClickableLabel.textColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 75,
+      "symbol": "ClickableLabel.lineBreakMode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 81,
+      "symbol": "ClickableLabel.numberOfLines",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 87,
+      "symbol": "ClickableLabel.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 92,
+      "symbol": "ClickableLabel.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 97,
+      "symbol": "ClickableLabel.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 109,
+      "symbol": "ClickableLabel.drawText(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 211,
+      "symbol": "ClickableLabel",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 212,
+      "symbol": "ClickableLabel.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 225,
+      "symbol": "ClickableLabel.touchesMoved(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 241,
+      "symbol": "ClickableLabel.touchesEnded(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ClickableLabel.swift",
+      "line": 253,
+      "symbol": "ClickableLabel.touchesCancelled(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CommonShowTextView.swift",
       "line": 20,
       "symbol": "CommonShowTextView",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CommonShowTextView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CommonShowTextView.swift",
       "line": 32,
       "symbol": "CommonShowTextView.attributedText",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CommonShowTextView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CommonShowTextView.swift",
       "line": 38,
       "symbol": "CommonShowTextView.text",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CommonShowTextView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/CommonShowTextView.swift",
       "line": 44,
       "symbol": "CommonShowTextView.init(frame:textContainer:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 8,
+      "symbol": "ExpandableLabelDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 9,
+      "symbol": "ExpandableLabelDelegate.willExpandLabel(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 10,
+      "symbol": "ExpandableLabelDelegate.didExpandLabel(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 11,
+      "symbol": "ExpandableLabelDelegate.willCollapseLabel(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 12,
+      "symbol": "ExpandableLabelDelegate.didCollapseLabel(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 15,
+      "symbol": "ExpandableLabel",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 16,
+      "symbol": "ExpandableLabel.TextReplacementType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 17,
+      "symbol": "ExpandableLabel.TextReplacementType.character",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 18,
+      "symbol": "ExpandableLabel.TextReplacementType.word",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 71,
+      "symbol": "ExpandableLabel.textReplacementType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 82,
+      "symbol": "ExpandableLabel.numberOfLines",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 88,
+      "symbol": "ExpandableLabel.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 93,
+      "symbol": "ExpandableLabel.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 98,
+      "symbol": "ExpandableLabel.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 102,
+      "symbol": "ExpandableLabel.text",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 115,
+      "symbol": "ExpandableLabel.expandedText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 116,
+      "symbol": "ExpandableLabel.attributedText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 134,
+      "symbol": "ExpandableLabel.setLessLinkWith(lessLink:attributes:position:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 149,
+      "symbol": "ExpandableLabel",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 150,
+      "symbol": "ExpandableLabel.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 154,
+      "symbol": "ExpandableLabel.touchesCancelled(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 158,
+      "symbol": "ExpandableLabel.touchesEnded(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 184,
+      "symbol": "ExpandableLabel.touchesMoved(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ExpandableLabel.swift",
+      "line": 439,
+      "symbol": "UILabel.check(touch:isInRange:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
       "line": 32,
       "symbol": "FoldTableViewDataSource",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
       "line": 33,
       "symbol": "FoldTableViewDataSource.tableView(_:canExpandSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
       "line": 34,
       "symbol": "FoldTableViewDataSource.tableView(_:expandableCellForSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
       "line": 37,
       "symbol": "FoldTableViewDataSource",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
       "line": 44,
       "symbol": "FoldTableViewDelegate",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
       "line": 45,
       "symbol": "FoldTableViewDelegate.tableView(_:FoldState:changeForSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldAbstractions.swift",
       "line": 48,
       "symbol": "FoldTableViewDelegate",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 3,
       "symbol": "FoldTableView",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 11,
       "symbol": "FoldTableView.expandedSections",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 12,
       "symbol": "FoldTableView.expandingAnimation",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 13,
       "symbol": "FoldTableView.collapsingAnimation",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 14,
       "symbol": "FoldTableView.animationDuration",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 16,
       "symbol": "FoldTableView.dataSource",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 25,
       "symbol": "FoldTableView.delegate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 34,
       "symbol": "FoldTableView.init(frame:style:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 38,
       "symbol": "FoldTableView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 42,
       "symbol": "FoldTableView.awakeFromNib()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 50,
       "symbol": "FoldTableView",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 106,
       "symbol": "FoldTableView",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 107,
       "symbol": "FoldTableView.tableView(_:numberOfRowsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 116,
       "symbol": "FoldTableView.tableView(_:cellForRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 140,
       "symbol": "FoldTableView",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 141,
       "symbol": "FoldTableView.tableView(_:didSelectRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 164,
       "symbol": "FoldTableView",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 169,
       "symbol": "FoldTableView.responds(to:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/FoldTableView/FoldTableView.swift",
       "line": 179,
       "symbol": "FoldTableView.forwardingTarget(for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
       "line": 22,
       "symbol": "DefaultGridMenuCell",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
       "line": 30,
       "symbol": "DefaultGridMenuCell.imageView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
       "line": 32,
       "symbol": "DefaultGridMenuCell.text",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
       "line": 38,
       "symbol": "DefaultGridMenuCell.font",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
       "line": 44,
       "symbol": "DefaultGridMenuCell.textColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/DefaultGridMenuCell.swift",
       "line": 50,
       "symbol": "DefaultGridMenuCell.markType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
       "line": 30,
       "symbol": "GridMenuView",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
       "line": 191,
       "symbol": "GridMenuView",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
       "line": 291,
       "symbol": "GridMenuView",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
       "line": 292,
       "symbol": "GridMenuView.collectionView(_:numberOfItemsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
       "line": 301,
       "symbol": "GridMenuView.collectionView(_:cellForItemAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
       "line": 318,
       "symbol": "GridMenuView",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
       "line": 319,
       "symbol": "GridMenuView.collectionView(_:didSelectItemAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
       "line": 326,
       "symbol": "GridMenuView.scrollViewDidEndDecelerating(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/GridMenuView.swift",
       "line": 335,
       "symbol": "GridMenuView.scrollViewDidScroll(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/PageControl.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/PageControl.swift",
       "line": 22,
       "symbol": "PageControl",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/PageControl.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/PageControl.swift",
       "line": 51,
       "symbol": "PageControl.intrinsicContentSize",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/PageControl.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/PageControl.swift",
       "line": 74,
       "symbol": "PageControl.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/PageControl.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/PageControl.swift",
       "line": 79,
       "symbol": "PageControl.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/PageControl.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/PageControl.swift",
       "line": 90,
       "symbol": "PageControl.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/ScrollPageControlView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/ScrollPageControlView.swift",
       "line": 11,
       "symbol": "ScrollPageControlView",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/ScrollPageControlView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/ScrollPageControlView.swift",
       "line": 47,
       "symbol": "ScrollPageControlView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/ScrollPageControlView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/ScrollPageControlView.swift",
       "line": 52,
       "symbol": "ScrollPageControlView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/ScrollPageControlView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GridMenuView/ScrollPageControlView.swift",
       "line": 62,
       "symbol": "ScrollPageControlView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
       "line": 20,
       "symbol": "GrowingTextView",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
       "line": 21,
       "symbol": "GrowingTextView.text",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
       "line": 25,
       "symbol": "GrowingTextView.attributedText",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
       "line": 52,
       "symbol": "GrowingTextView.init(frame:textContainer:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
       "line": 57,
       "symbol": "GrowingTextView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
       "line": 73,
       "symbol": "GrowingTextView.intrinsicContentSize",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/GrowingTextView.swift",
       "line": 89,
       "symbol": "GrowingTextView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
       "line": 81,
       "symbol": "ImagePickGridView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
       "line": 86,
       "symbol": "ImagePickGridView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
       "line": 91,
       "symbol": "ImagePickGridView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
       "line": 187,
       "symbol": "ImagePickGridView.collectionView(_:numberOfItemsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
       "line": 191,
       "symbol": "ImagePickGridView.collectionView(_:cellForItemAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
       "line": 210,
       "symbol": "ImagePickGridView.collectionView(_:didSelectItemAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
       "line": 260,
       "symbol": "ImagePickGridViewCell",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
       "line": 261,
       "symbol": "ImagePickGridViewCell.deleteButtonWidth",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
       "line": 263,
       "symbol": "ImagePickGridViewCell.imageView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
       "line": 268,
       "symbol": "ImagePickGridViewCell.deleteButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/ImagePickGridView.swift",
       "line": 275,
       "symbol": "ImagePickGridViewCell.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 11,
       "symbol": "MaskPopupViewAnimationProtocol",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 49,
       "symbol": "MaskPopupView",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 137,
       "symbol": "MaskPopupView.hitTest(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 156,
       "symbol": "MaskPopupView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 220,
       "symbol": "MaskBackgroundView",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 244,
       "symbol": "MaskBackgroundView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 257,
       "symbol": "MaskBackgroundView.hitTest(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 266,
       "symbol": "MaskBackgroundView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 285,
       "symbol": "MaskPopupViewBaseAnimator.displayDuration",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 286,
       "symbol": "MaskPopupViewBaseAnimator.displayAnimationOptions",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 290,
       "symbol": "MaskPopupViewBaseAnimator.dismissDuration",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 291,
       "symbol": "MaskPopupViewBaseAnimator.dismissAnimationOptions",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 295,
       "symbol": "MaskPopupViewBaseAnimator.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 329,
       "symbol": "MaskPopupViewLeftwardAnimator.setup(contentView:backgroundView:containerView:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 350,
       "symbol": "MaskPopupViewRightwardAnimator.setup(contentView:backgroundView:containerView:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 371,
       "symbol": "MaskPopupViewUpwardAnimator.setup(contentView:backgroundView:containerView:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 392,
       "symbol": "MaskPopupViewDownwardAnimator.setup(contentView:backgroundView:containerView:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 413,
       "symbol": "MaskPopupViewFadeInOutAnimator.setup(contentView:backgroundView:containerView:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 430,
       "symbol": "MaskPopupViewZoomInOutAnimator.setup(contentView:backgroundView:containerView:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/MaskPopupView.swift",
       "line": 450,
       "symbol": "MaskPopupViewSpringDownwardAnimator.display(contentView:backgroundView:animated:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 10,
       "symbol": "RollingNoticeViewDataSource",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 11,
-      "symbol": "RollingNoticeViewDataSource.numberOfRowsFor(roolingView:)",
+      "symbol": "RollingNoticeViewDataSource.numberOfRowsFor(rollingView:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 12,
-      "symbol": "RollingNoticeViewDataSource.rollingNoticeView(roolingView:cellAtIndex:)",
+      "symbol": "RollingNoticeViewDataSource.rollingNoticeView(rollingView:cellAtIndex:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 15,
       "symbol": "RollingNoticeViewDelegate",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 16,
       "symbol": "RollingNoticeViewDelegate.rollingNoticeView(_:didClickAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 19,
       "symbol": "RollingNoticeViewDelegate",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 20,
       "symbol": "RollingNoticeViewDelegate.rollingNoticeView(_:didClickAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 23,
       "symbol": "RollingNoticeView",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 48,
       "symbol": "RollingNoticeView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 53,
       "symbol": "RollingNoticeView.register(_:forCellReuseIdentifier:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 57,
       "symbol": "RollingNoticeView.register(_:forCellReuseIdentifier:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 61,
       "symbol": "RollingNoticeView.dequeueReusableCell(withIdentifier:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 107,
       "symbol": "RollingNoticeView.stopRoll()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 121,
       "symbol": "RollingNoticeView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 219,
       "symbol": "RollingNoticeCell.reuseIdentifier",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 227,
       "symbol": "RollingNoticeCell.init(reuseIdentifier:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/RollingNoticeView.swift",
       "line": 233,
       "symbol": "RollingNoticeCell.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
       "line": 28,
       "symbol": "SpinnerButton",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
       "line": 94,
       "symbol": "SpinnerButton.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
       "line": 99,
       "symbol": "SpinnerButton.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
       "line": 104,
       "symbol": "SpinnerButton.init(title:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
       "line": 110,
       "symbol": "SpinnerButton.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/SpinnerButton.swift",
       "line": 125,
       "symbol": "SpinnerButton",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeNode.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeNode.swift",
       "line": 55,
       "symbol": "TreeNode.init(name:filterName:ID:parentID:sordCode:type:isTop:isLeaf:data:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 28,
       "symbol": "TreeTableView",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 74,
       "symbol": "TreeTableView.refreshControl",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 81,
       "symbol": "TreeTableView.tableView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 93,
       "symbol": "TreeTableView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 103,
       "symbol": "TreeTableView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 118,
       "symbol": "TreeTableView.scrollViewDidScroll(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 123,
       "symbol": "TreeTableView",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 231,
       "symbol": "TreeTableView",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 232,
       "symbol": "TreeTableView.tableView(_:numberOfRowsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 236,
       "symbol": "TreeTableView.tableView(_:cellForRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 256,
       "symbol": "TreeTableView.tableView(_:viewForHeaderInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 260,
       "symbol": "TreeTableView.tableView(_:heightForHeaderInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 264,
       "symbol": "TreeTableView.tableView(_:didSelectRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 270,
       "symbol": "TreeTableView",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableView.swift",
       "line": 285,
       "symbol": "TreeTableView.search(searchBar:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewCell.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewCell.swift",
       "line": 24,
       "symbol": "TreeTableViewCell",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewCell.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewCell.swift",
       "line": 72,
       "symbol": "TreeTableViewCell.init(style:reuseIdentifier:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewCell.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewCell.swift",
       "line": 82,
       "symbol": "TreeTableViewCell.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewCell.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewCell.swift",
       "line": 104,
       "symbol": "TreeTableViewCell",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
       "line": 20,
       "symbol": "TreeTableViewSearchBar",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
       "line": 21,
       "symbol": "TreeTableViewSearchBar.searchTextField",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
       "line": 35,
       "symbol": "TreeTableViewSearchBar.delegate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
       "line": 37,
       "symbol": "TreeTableViewSearchBar.text",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
       "line": 41,
       "symbol": "TreeTableViewSearchBar.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
       "line": 69,
       "symbol": "TreeTableViewSearchBar",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
       "line": 70,
       "symbol": "TreeTableViewSearchBar.textFieldDidBeginEditing(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Component/Class/TreeTableView/TreeTableViewSearchBar.swift",
       "line": 74,
       "symbol": "TreeTableViewSearchBar.textFieldShouldReturn(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITapGestureRecognizerExtensions.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITapGestureRecognizerExtensions.swift",
       "line": 41,
       "symbol": "UITapGestureRecognizer.gestureRecognizerShouldBegin(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITextFieldExtensions.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITextFieldExtensions.swift",
       "line": 27,
       "symbol": "UITextField.csLeftPaddingWidth",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITextFieldExtensions.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITextFieldExtensions.swift",
       "line": 39,
       "symbol": "UITextField.csRigthPaddingWidth",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITextViewExtensions.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UITextViewExtensions.swift",
       "line": 171,
       "symbol": "UITextView.observeValue(forKeyPath:of:change:context:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
-      "line": 161,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
+      "line": 157,
+      "symbol": "UIView.CornerRadii.init(topLeft:topRight:bottomLeft:bottomRight:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
+      "line": 230,
       "symbol": "UIView.rightBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
-      "line": 167,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
+      "line": 236,
       "symbol": "UIView.leftBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
-      "line": 173,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
+      "line": 242,
       "symbol": "UIView.topBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
-      "line": 179,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
+      "line": 248,
       "symbol": "UIView.buttomBorder(width:borderColor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
-      "line": 579,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
+      "line": 648,
       "symbol": "UIImageView.hitTest(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
-      "line": 597,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
+      "line": 666,
       "symbol": "UILabel.hitTest(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
-      "line": 617,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Extension/UIKit/UIViewExtensions.swift",
+      "line": 686,
       "symbol": "UIButton.hitTest(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/Atomic.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/Atomic.swift",
       "line": 33,
       "symbol": "Atomic.init(wrappedValue:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/Atomic.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/Atomic.swift",
       "line": 47,
       "symbol": "Atomic.projectedValue",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
       "line": 28,
       "symbol": "UserDefaultsStoreValue",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
       "line": 42,
       "symbol": "UserDefaultsWrapper",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
       "line": 71,
       "symbol": "UserDefaultsWrapper.observe(change:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/PropertyWrapper/UserDefaultWrapper.swift",
       "line": 93,
       "symbol": "UserDefaultsObservation.observeValue(forKeyPath:of:change:context:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 47,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 75,
-      "symbol": "ApplicationServiceManagerDelegate.getService(by:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 120,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 154,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 230,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 232,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:shouldSaveApplicationState:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 243,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:shouldRestoreApplicationState:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 254,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:viewControllerWithRestorationIdentifierPath:coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 265,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:willEncodeRestorableStateWith:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 272,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:didDecodeRestorableStateWith:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 281,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 283,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:userDidAcceptCloudKitShareWith:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 292,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 294,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:willContinueUserActivityWithType:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 318,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:didUpdate:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 325,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:didFailToContinueUserActivityWithType:error:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 334,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 338,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:performFetchWithCompletionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 348,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:handleEventsForBackgroundURLSession:completionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 364,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 380,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 396,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 398,
-      "symbol": "ApplicationServiceManagerDelegate.applicationShouldRequestHealthAuthorization(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 407,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 409,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:willChangeStatusBarOrientation:duration:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 416,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:didChangeStatusBarOrientation:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 423,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:willChangeStatusBarFrame:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 430,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:didChangeStatusBarFrame:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 439,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 457,
-      "symbol": "ApplicationServiceManagerDelegate.userNotificationCenter(_:openSettingsFor:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 466,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 499,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:didRegister:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 506,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:didReceiveRemoteNotification:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 513,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:didReceive:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 520,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:handleActionWithIdentifier:for:completionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 535,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 551,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:handleActionWithIdentifier:forRemoteNotification:completionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 566,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:handleActionWithIdentifier:for:withResponseInfo:completionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 584,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 586,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:handle:completionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 598,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 600,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:open:options:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 613,
-      "symbol": "ApplicationServiceManagerDelegate",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ApplicationServiceManager.swift",
-      "line": 615,
-      "symbol": "ApplicationServiceManagerDelegate.application(_:handleWatchKitExtensionRequest:reply:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/AsyncOperation.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/AsyncOperation.swift",
       "line": 10,
       "symbol": "AsyncOperation",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/AsyncOperation.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/AsyncOperation.swift",
       "line": 72,
       "symbol": "AsyncOperation.start()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/AsyncOperation.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/AsyncOperation.swift",
       "line": 85,
       "symbol": "AsyncOperation.main()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/AsyncOperation.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/AsyncOperation.swift",
       "line": 96,
       "symbol": "AsyncOperation",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/Log/Log.swift",
-      "line": 18,
-      "symbol": "LogLevel",
-      "symbol_kind": "source.lang.swift.decl.enum",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/Debouncer+Throttler.swift",
+      "line": 21,
+      "symbol": "Debouncer.init(seconds:queue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/NotificationToken.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/Debouncer+Throttler.swift",
+      "line": 27,
+      "symbol": "Debouncer.invoke(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/Debouncer+Throttler.swift",
+      "line": 51,
+      "symbol": "Throttler.init(seconds:queue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/Debouncer+Throttler.swift",
+      "line": 57,
+      "symbol": "Throttler.invoke(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/LaunchImageUtils.swift",
+      "line": 10,
+      "symbol": "LaunchImageUtils",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/LaunchImageUtils.swift",
+      "line": 11,
+      "symbol": "LaunchImageUtils.clearLaunchScreenCache()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/LaunchImageUtils.swift",
+      "line": 26,
+      "symbol": "LaunchImageUtils.launchImageCacheDirectory()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/LockUtils.swift",
+      "line": 14,
+      "symbol": "SpinLock.lock()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/LockUtils.swift",
+      "line": 18,
+      "symbol": "SpinLock.unlock()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/LockUtils.swift",
+      "line": 28,
+      "symbol": "RecursiveSpinLock.lock()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/LockUtils.swift",
+      "line": 39,
+      "symbol": "RecursiveSpinLock.unlock()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 57,
+      "symbol": "UIApplication.managerDelegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 64,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 126,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 127,
+      "symbol": "ModuleAppDelegate.application(_:customEvent:param:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 140,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 174,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 250,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 252,
+      "symbol": "ModuleAppDelegate.application(_:shouldSaveApplicationState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 263,
+      "symbol": "ModuleAppDelegate.application(_:shouldRestoreApplicationState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 274,
+      "symbol": "ModuleAppDelegate.application(_:viewControllerWithRestorationIdentifierPath:coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 285,
+      "symbol": "ModuleAppDelegate.application(_:willEncodeRestorableStateWith:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 292,
+      "symbol": "ModuleAppDelegate.application(_:didDecodeRestorableStateWith:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 301,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 303,
+      "symbol": "ModuleAppDelegate.application(_:userDidAcceptCloudKitShareWith:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 312,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 314,
+      "symbol": "ModuleAppDelegate.application(_:willContinueUserActivityWithType:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 338,
+      "symbol": "ModuleAppDelegate.application(_:didUpdate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 345,
+      "symbol": "ModuleAppDelegate.application(_:didFailToContinueUserActivityWithType:error:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 354,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 358,
+      "symbol": "ModuleAppDelegate.application(_:performFetchWithCompletionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 368,
+      "symbol": "ModuleAppDelegate.application(_:handleEventsForBackgroundURLSession:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 384,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 400,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 416,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 418,
+      "symbol": "ModuleAppDelegate.applicationShouldRequestHealthAuthorization(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 427,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 429,
+      "symbol": "ModuleAppDelegate.application(_:willChangeStatusBarOrientation:duration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 436,
+      "symbol": "ModuleAppDelegate.application(_:didChangeStatusBarOrientation:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 443,
+      "symbol": "ModuleAppDelegate.application(_:willChangeStatusBarFrame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 450,
+      "symbol": "ModuleAppDelegate.application(_:didChangeStatusBarFrame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 459,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 477,
+      "symbol": "ModuleAppDelegate.userNotificationCenter(_:openSettingsFor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 486,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 521,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 523,
+      "symbol": "ModuleAppDelegate.application(_:handle:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 535,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 537,
+      "symbol": "ModuleAppDelegate.application(_:open:options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 550,
+      "symbol": "ModuleAppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/ModuleManager.swift",
+      "line": 552,
+      "symbol": "ModuleAppDelegate.application(_:handleWatchKitExtensionRequest:reply:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/NotificationToken.swift",
       "line": 10,
       "symbol": "NotificationToken",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/RuntimeUtils.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/RuntimeUtils.swift",
       "line": 12,
       "symbol": "RuntimeUtils",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/RuntimeUtils.swift",
-      "line": 64,
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/RuntimeUtils.swift",
+      "line": 84,
       "symbol": "RuntimeUtils",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/SwiftDemangle.swift",
+      "line": 18,
+      "symbol": "SwiftDemangle",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 10,
       "symbol": "WeakProxy",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 13,
       "symbol": "WeakProxy.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 18,
       "symbol": "WeakProxy.proxy(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 23,
       "symbol": "WeakProxy",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 25,
       "symbol": "WeakProxy.forwardingTarget(for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 34,
       "symbol": "WeakProxy.responds(to:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 38,
       "symbol": "WeakProxy.conforms(to:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 42,
       "symbol": "WeakProxy.isEqual(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 46,
       "symbol": "WeakProxy.superclass",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 50,
       "symbol": "WeakProxy.isKind(of:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 54,
       "symbol": "WeakProxy.isMember(of:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 58,
       "symbol": "WeakProxy.description",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakProxy.swift",
       "line": 62,
       "symbol": "WeakProxy.debugDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakWKScriptMessageHandler.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakWKScriptMessageHandler.swift",
       "line": 19,
       "symbol": "WeakWKScriptMessageHandler.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakWKScriptMessageHandler.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakWKScriptMessageHandler.swift",
       "line": 26,
       "symbol": "WeakWKScriptMessageHandler.userContentController(_:didReceive:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakWKScriptMessageHandler.swift",
+      "file": "/Users/bytedance/CoderStar/LTXiOSUtils/Sources/LTXiOSUtils/Classes/Util/WeakWKScriptMessageHandler.swift",
       "line": 32,
       "symbol": "WKUserContentController.weakAdd(_:name:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/coderstar/CoderStar/Projects/iOS_Projects/LTXiOSUtils/LTXiOSUtilsDemo"
+  "source_directory": "/Users/bytedance/CoderStar/LTXiOSUtils/LTXiOSUtilsDemo"
 }
