@@ -6,6 +6,10 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 /// 角标伸缩模式
 public enum BadgeViewFlexMode {

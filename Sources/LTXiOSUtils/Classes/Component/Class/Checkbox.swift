@@ -7,6 +7,10 @@
 
 import Foundation
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 public class Checkbox: UIControl {
     /// 选择框内部选中样式

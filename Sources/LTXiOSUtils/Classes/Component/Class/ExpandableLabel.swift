@@ -3,6 +3,10 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 typealias LineIndexTuple = (line: CTLine, index: Int)
 public protocol ExpandableLabelDelegate: AnyObject {

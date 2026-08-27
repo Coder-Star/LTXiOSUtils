@@ -7,6 +7,10 @@
 
 import Foundation
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 public protocol MaskPopupViewAnimationProtocol: AnyObject {
     /// 初始化配置动画驱动器

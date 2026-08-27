@@ -7,6 +7,10 @@
 
 import Foundation
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 /**
  使用时可不使用高度和宽度约束，如果想使用，高度及宽度应设置文字宽高度+padding值，

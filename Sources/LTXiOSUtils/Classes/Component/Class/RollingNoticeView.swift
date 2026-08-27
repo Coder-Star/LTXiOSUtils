@@ -6,6 +6,10 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 public protocol RollingNoticeViewDataSource: AnyObject {
     func numberOfRowsFor(rollingView: RollingNoticeView) -> Int

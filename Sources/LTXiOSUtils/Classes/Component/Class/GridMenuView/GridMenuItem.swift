@@ -6,6 +6,11 @@
 //
 
 import Foundation
+import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 /// 格子菜单实体
 public struct GridMenuItem {

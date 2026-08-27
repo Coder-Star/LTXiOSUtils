@@ -6,6 +6,10 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 /// PageControl样式
 public enum PageControlStyle {

@@ -6,6 +6,10 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 /// 动画类型
 public enum AnimationType {

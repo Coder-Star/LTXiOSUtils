@@ -6,6 +6,11 @@
 //
 
 import Foundation
+import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 /// 节点状态
 public enum TreeNodeCheckState {

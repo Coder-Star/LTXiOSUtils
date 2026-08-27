@@ -40,3 +40,17 @@
 ## Features
 
 - 写demo
+
+## Swift Package Manager
+
+在 Xcode 中通过 `File > Add Package Dependencies...` 添加：
+
+`https://github.com/Coder-Star/LTXiOSUtils.git`
+
+如果需要使用全部功能，选择 `LTXiOSUtils` product，然后在代码中导入：
+
+```swift
+import LTXiOSUtils
+```
+
+也可以按需选择并导入 `LTXiOSUtilsExtension`、`LTXiOSUtilsUtil`、`LTXiOSUtilsPropertyWrapper` 或 `LTXiOSUtilsComponent`。

@@ -1,4 +1,8 @@
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 open class FoldTableView: UITableView {
     // MARK: - private

@@ -7,6 +7,10 @@
 
 import Foundation
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 /// 图片选取View代理
 @objc

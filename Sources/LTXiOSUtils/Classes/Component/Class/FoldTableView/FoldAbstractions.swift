@@ -1,4 +1,9 @@
 import Foundation
+import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 /// cell折叠状态
 public enum FoldState: Int {

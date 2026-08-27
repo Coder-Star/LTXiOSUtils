@@ -6,6 +6,10 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 extension TxExtensionWrapper where Base: UIBarButtonItem {
     /// 通过Xcode视图调试工具找到UIBarButtonItem的Badge所在父视图为:UIImageView

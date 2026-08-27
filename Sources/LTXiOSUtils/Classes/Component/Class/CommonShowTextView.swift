@@ -6,6 +6,11 @@
 //
 
 import Foundation
+import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 /// CommonLabel支持的可点击跳转的类型
 public enum CommonShowTextViewUrlType {

@@ -6,6 +6,10 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 extension TxExtensionWrapper where Base: UITabBarItem {
     /// 通过Xcode视图调试工具找到UITabBarItem原生Badge所在父视图

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LTXiOSUtils"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.platform     = :ios, "10.0" # iOS平台最低版本 10.0
   s.summary      = "通用工具类以及组件的整合、封装以及使用介绍"
   s.homepage     = "https://github.com/Coder-Star/LTXiOSUtils"
@@ -24,7 +24,10 @@ Pod::Spec.new do |s|
 
   # 工具类
   s.subspec 'Util' do |util|
-    util.source_files = 'Sources/LTXiOSUtils/Classes/Util/**/*'
+    util.source_files = [
+      'Sources/LTXiOSUtils/Classes/Util/**/*',
+      'Sources/LTXiOSUtils/Classes/NCRuntimeUtils/**/*'
+    ]
     util.subspec 'Log' do |log|
       log.source_files = 'Sources/LTXiOSUtils/Classes/Util/Log/*.swift'
     end

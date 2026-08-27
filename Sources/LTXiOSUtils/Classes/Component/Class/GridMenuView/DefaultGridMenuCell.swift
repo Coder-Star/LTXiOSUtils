@@ -6,6 +6,11 @@
 //
 
 import Foundation
+import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 /// 角标显示样式
 public enum CornerMarkType {

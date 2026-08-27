@@ -6,6 +6,11 @@
 //
 
 import Foundation
+import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 /// 徽标相关尺寸
 public struct BadgeSizeConfig {

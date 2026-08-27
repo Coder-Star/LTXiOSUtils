@@ -7,6 +7,10 @@
 
 import Foundation
 import UIKit
+#if SWIFT_PACKAGE
+import LTXiOSUtilsExtension
+import LTXiOSUtilsUtil
+#endif
 
 open class ScrollPageControlView: UIView {
     /// 偏移量
